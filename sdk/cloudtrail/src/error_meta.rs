@@ -107,8 +107,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AddTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AddTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AddTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::AddTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AddTagsErrorKind::CloudTrailArnInvalidException(inner) => {
@@ -144,8 +147,11 @@ impl From<smithy_http::result::SdkError<crate::error::AddTagsError>> for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateTrailError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateTrailError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateTrailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateTrailError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateTrailErrorKind::CloudTrailAccessNotEnabledException(inner) => Error::CloudTrailAccessNotEnabledException(inner),
@@ -182,8 +188,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateTrailError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteTrailError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTrailError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteTrailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTrailError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteTrailErrorKind::ConflictException(inner) => Error::ConflictException(inner),
@@ -200,8 +209,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteTrailError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTrailsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTrailsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeTrailsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTrailsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeTrailsErrorKind::InvalidTrailNameException(inner) => {
@@ -219,8 +231,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTrailsError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetEventSelectorsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetEventSelectorsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetEventSelectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetEventSelectorsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetEventSelectorsErrorKind::InvalidTrailNameException(inner) => {
@@ -243,8 +258,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetEventSelectorsError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetInsightSelectorsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetInsightSelectorsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetInsightSelectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetInsightSelectorsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetInsightSelectorsErrorKind::InsightNotEnabledException(inner) => {
@@ -270,8 +288,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetInsightSelectorsError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetTrailError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetTrailError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetTrailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetTrailError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetTrailErrorKind::InvalidTrailNameException(inner) => {
@@ -292,8 +313,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetTrailError>> for Error 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetTrailStatusError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetTrailStatusError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetTrailStatusError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetTrailStatusError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetTrailStatusErrorKind::InvalidTrailNameException(inner) => {
@@ -314,8 +338,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetTrailStatusError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListPublicKeysError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListPublicKeysError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListPublicKeysError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListPublicKeysError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListPublicKeysErrorKind::InvalidTimeRangeException(inner) => {
@@ -336,8 +363,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListPublicKeysError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsErrorKind::CloudTrailArnInvalidException(inner) => {
@@ -367,8 +397,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsError>> for Error 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTrailsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTrailsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTrailsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTrailsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTrailsErrorKind::OperationNotPermittedException(inner) => {
@@ -383,8 +416,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTrailsError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::LookupEventsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::LookupEventsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::LookupEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::LookupEventsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::LookupEventsErrorKind::InvalidEventCategoryException(inner) => {
@@ -414,8 +450,11 @@ impl From<smithy_http::result::SdkError<crate::error::LookupEventsError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutEventSelectorsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutEventSelectorsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutEventSelectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutEventSelectorsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::PutEventSelectorsErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
@@ -432,8 +471,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutEventSelectorsError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutInsightSelectorsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutInsightSelectorsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutInsightSelectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutInsightSelectorsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::PutInsightSelectorsErrorKind::InsufficientEncryptionPolicyException(inner) => Error::InsufficientEncryptionPolicyException(inner),
@@ -453,8 +495,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutInsightSelectorsError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RemoveTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RemoveTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RemoveTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RemoveTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RemoveTagsErrorKind::CloudTrailArnInvalidException(inner) => {
@@ -487,8 +532,11 @@ impl From<smithy_http::result::SdkError<crate::error::RemoveTagsError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartLoggingError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartLoggingError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartLoggingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StartLoggingError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::StartLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
@@ -504,8 +552,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartLoggingError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StopLoggingError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StopLoggingError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StopLoggingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StopLoggingError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::StopLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
@@ -521,8 +572,11 @@ impl From<smithy_http::result::SdkError<crate::error::StopLoggingError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateTrailError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateTrailError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateTrailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateTrailError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateTrailErrorKind::CloudTrailAccessNotEnabledException(inner) => Error::CloudTrailAccessNotEnabledException(inner),

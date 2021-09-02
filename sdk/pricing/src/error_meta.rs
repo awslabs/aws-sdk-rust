@@ -21,8 +21,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeServicesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeServicesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeServicesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeServicesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeServicesErrorKind::ExpiredNextTokenException(inner) => {
@@ -48,8 +51,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeServicesError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetAttributeValuesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetAttributeValuesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetAttributeValuesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetAttributeValuesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetAttributeValuesErrorKind::ExpiredNextTokenException(inner) => {
@@ -75,8 +81,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetAttributeValuesError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetProductsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetProductsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetProductsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetProductsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetProductsErrorKind::ExpiredNextTokenException(inner) => {

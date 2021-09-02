@@ -3,7 +3,7 @@
 pub fn parse_configure_logs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ConfigureLogsOutput, crate::error::ConfigureLogsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ConfigureLogsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -159,7 +159,7 @@ pub fn parse_configure_logs_response(
 pub fn parse_create_asset_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAssetOutput, crate::error::CreateAssetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAssetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -317,7 +317,7 @@ pub fn parse_create_packaging_configuration_error(
     crate::output::CreatePackagingConfigurationOutput,
     crate::error::CreatePackagingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePackagingConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -485,7 +485,7 @@ pub fn parse_create_packaging_group_error(
     crate::output::CreatePackagingGroupOutput,
     crate::error::CreatePackagingGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePackagingGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -646,7 +646,7 @@ pub fn parse_create_packaging_group_response(
 pub fn parse_delete_asset_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAssetOutput, crate::error::DeleteAssetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAssetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -802,7 +802,7 @@ pub fn parse_delete_packaging_configuration_error(
     crate::output::DeletePackagingConfigurationOutput,
     crate::error::DeletePackagingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePackagingConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -965,7 +965,7 @@ pub fn parse_delete_packaging_group_error(
     crate::output::DeletePackagingGroupOutput,
     crate::error::DeletePackagingGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePackagingGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1121,7 +1121,7 @@ pub fn parse_delete_packaging_group_response(
 pub fn parse_describe_asset_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeAssetOutput, crate::error::DescribeAssetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAssetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1280,7 +1280,7 @@ pub fn parse_describe_packaging_configuration_error(
     crate::output::DescribePackagingConfigurationOutput,
     crate::error::DescribePackagingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePackagingConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1448,7 +1448,7 @@ pub fn parse_describe_packaging_group_error(
     crate::output::DescribePackagingGroupOutput,
     crate::error::DescribePackagingGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePackagingGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1617,7 +1617,7 @@ pub fn parse_describe_packaging_group_response(
 pub fn parse_list_assets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAssetsOutput, crate::error::ListAssetsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAssetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1775,7 +1775,7 @@ pub fn parse_list_packaging_configurations_error(
     crate::output::ListPackagingConfigurationsOutput,
     crate::error::ListPackagingConfigurationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPackagingConfigurationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1943,7 +1943,7 @@ pub fn parse_list_packaging_groups_error(
     crate::output::ListPackagingGroupsOutput,
     crate::error::ListPackagingGroupsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPackagingGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2107,7 +2107,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     Err(crate::error::ListTagsForResourceError::generic(generic))
 }
@@ -2136,7 +2136,7 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     Err(crate::error::TagResourceError::generic(generic))
 }
@@ -2157,7 +2157,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     Err(crate::error::UntagResourceError::generic(generic))
 }
@@ -2181,7 +2181,7 @@ pub fn parse_update_packaging_group_error(
     crate::output::UpdatePackagingGroupOutput,
     crate::error::UpdatePackagingGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdatePackagingGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

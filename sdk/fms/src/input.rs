@@ -55,6 +55,7 @@ impl AssociateAdminAccountInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_associate_admin_account(&self)
                 .map_err(|err| {
@@ -62,8 +63,10 @@ impl AssociateAdminAccountInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -84,7 +87,7 @@ impl AssociateAdminAccountInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -195,14 +198,17 @@ impl DeleteAppsListInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_delete_apps_list(&self).map_err(
                 |err| smithy_http::operation::BuildError::SerializationError(err.into()),
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -223,7 +229,7 @@ impl DeleteAppsListInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -321,6 +327,7 @@ impl DeleteNotificationChannelInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_delete_notification_channel(&self)
                 .map_err(|err| {
@@ -328,8 +335,10 @@ impl DeleteNotificationChannelInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -350,7 +359,7 @@ impl DeleteNotificationChannelInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -499,6 +508,7 @@ impl DeletePolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_delete_policy(&self).map_err(|err| {
@@ -506,8 +516,10 @@ impl DeletePolicyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -528,7 +540,7 @@ impl DeletePolicyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -636,6 +648,7 @@ impl DeleteProtocolsListInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_delete_protocols_list(&self)
                 .map_err(|err| {
@@ -643,8 +656,10 @@ impl DeleteProtocolsListInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -665,7 +680,7 @@ impl DeleteProtocolsListInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -763,6 +778,7 @@ impl DisassociateAdminAccountInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_disassociate_admin_account(&self)
                 .map_err(|err| {
@@ -770,8 +786,10 @@ impl DisassociateAdminAccountInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -792,7 +810,7 @@ impl DisassociateAdminAccountInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -889,14 +907,17 @@ impl GetAdminAccountInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_get_admin_account(&self).map_err(
                 |err| smithy_http::operation::BuildError::SerializationError(err.into()),
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -917,7 +938,7 @@ impl GetAdminAccountInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1036,6 +1057,7 @@ impl GetAppsListInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_get_apps_list(&self).map_err(|err| {
@@ -1043,8 +1065,10 @@ impl GetAppsListInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1065,7 +1089,7 @@ impl GetAppsListInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1187,6 +1211,7 @@ impl GetComplianceDetailInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_get_compliance_detail(&self)
                 .map_err(|err| {
@@ -1194,8 +1219,10 @@ impl GetComplianceDetailInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1216,7 +1243,7 @@ impl GetComplianceDetailInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1313,6 +1340,7 @@ impl GetNotificationChannelInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_get_notification_channel(&self)
                 .map_err(|err| {
@@ -1320,8 +1348,10 @@ impl GetNotificationChannelInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1342,7 +1372,7 @@ impl GetNotificationChannelInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1450,6 +1480,7 @@ impl GetPolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_get_policy(&self).map_err(|err| {
@@ -1457,8 +1488,10 @@ impl GetPolicyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1479,7 +1512,7 @@ impl GetPolicyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1652,6 +1685,7 @@ impl GetProtectionStatusInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_get_protection_status(&self)
                 .map_err(|err| {
@@ -1659,8 +1693,10 @@ impl GetProtectionStatusInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1681,7 +1717,7 @@ impl GetProtectionStatusInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1802,6 +1838,7 @@ impl GetProtocolsListInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_get_protocols_list(&self)
                 .map_err(|err| {
@@ -1809,8 +1846,10 @@ impl GetProtocolsListInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1831,7 +1870,7 @@ impl GetProtocolsListInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1987,6 +2026,7 @@ impl GetViolationDetailsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_get_violation_details(&self)
                 .map_err(|err| {
@@ -1994,8 +2034,10 @@ impl GetViolationDetailsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2016,7 +2058,7 @@ impl GetViolationDetailsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2151,14 +2193,17 @@ impl ListAppsListsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_apps_lists(&self).map_err(
                 |err| smithy_http::operation::BuildError::SerializationError(err.into()),
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2179,7 +2224,7 @@ impl ListAppsListsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2321,6 +2366,7 @@ impl ListComplianceStatusInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_compliance_status(&self)
                 .map_err(|err| {
@@ -2328,8 +2374,10 @@ impl ListComplianceStatusInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2350,7 +2398,7 @@ impl ListComplianceStatusInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2479,6 +2527,7 @@ impl ListMemberAccountsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_member_accounts(&self)
                 .map_err(|err| {
@@ -2486,8 +2535,10 @@ impl ListMemberAccountsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2508,7 +2559,7 @@ impl ListMemberAccountsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2636,6 +2687,7 @@ impl ListPoliciesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_list_policies(&self).map_err(|err| {
@@ -2643,8 +2695,10 @@ impl ListPoliciesInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2665,7 +2719,7 @@ impl ListPoliciesInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2799,6 +2853,7 @@ impl ListProtocolsListsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_protocols_lists(&self)
                 .map_err(|err| {
@@ -2806,8 +2861,10 @@ impl ListProtocolsListsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2828,7 +2885,7 @@ impl ListProtocolsListsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2938,6 +2995,7 @@ impl ListTagsForResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
@@ -2945,8 +3003,10 @@ impl ListTagsForResourceInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2967,7 +3027,7 @@ impl ListTagsForResourceInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3093,6 +3153,7 @@ impl PutAppsListInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_put_apps_list(&self).map_err(|err| {
@@ -3100,8 +3161,10 @@ impl PutAppsListInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3122,7 +3185,7 @@ impl PutAppsListInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3248,6 +3311,7 @@ impl PutNotificationChannelInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_put_notification_channel(&self)
                 .map_err(|err| {
@@ -3255,8 +3319,10 @@ impl PutNotificationChannelInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3277,7 +3343,7 @@ impl PutNotificationChannelInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3400,6 +3466,7 @@ impl PutPolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_put_policy(&self).map_err(|err| {
@@ -3407,8 +3474,10 @@ impl PutPolicyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3429,7 +3498,7 @@ impl PutPolicyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3552,6 +3621,7 @@ impl PutProtocolsListInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_put_protocols_list(&self)
                 .map_err(|err| {
@@ -3559,8 +3629,10 @@ impl PutProtocolsListInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3581,7 +3653,7 @@ impl PutProtocolsListInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3704,6 +3776,7 @@ impl TagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
@@ -3711,8 +3784,10 @@ impl TagResourceInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3733,7 +3808,7 @@ impl TagResourceInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3853,6 +3928,7 @@ impl UntagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
@@ -3860,8 +3936,10 @@ impl UntagResourceInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3882,7 +3960,7 @@ impl UntagResourceInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );

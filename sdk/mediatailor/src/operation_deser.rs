@@ -3,7 +3,7 @@
 pub fn parse_create_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateChannelOutput, crate::error::CreateChannelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateChannelError::unhandled)?;
     Err(crate::error::CreateChannelError::generic(generic))
 }
@@ -27,7 +27,7 @@ pub fn parse_create_channel_response(
 pub fn parse_create_program_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateProgramOutput, crate::error::CreateProgramError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateProgramError::unhandled)?;
     Err(crate::error::CreateProgramError::generic(generic))
 }
@@ -54,7 +54,7 @@ pub fn parse_create_source_location_error(
     crate::output::CreateSourceLocationOutput,
     crate::error::CreateSourceLocationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSourceLocationError::unhandled)?;
     Err(crate::error::CreateSourceLocationError::generic(generic))
 }
@@ -83,7 +83,7 @@ pub fn parse_create_source_location_response(
 pub fn parse_create_vod_source_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateVodSourceOutput, crate::error::CreateVodSourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVodSourceError::unhandled)?;
     Err(crate::error::CreateVodSourceError::generic(generic))
 }
@@ -107,7 +107,7 @@ pub fn parse_create_vod_source_response(
 pub fn parse_delete_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteChannelError::unhandled)?;
     Err(crate::error::DeleteChannelError::generic(generic))
 }
@@ -131,7 +131,7 @@ pub fn parse_delete_channel_policy_error(
     crate::output::DeleteChannelPolicyOutput,
     crate::error::DeleteChannelPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteChannelPolicyError::unhandled)?;
     Err(crate::error::DeleteChannelPolicyError::generic(generic))
 }
@@ -158,7 +158,7 @@ pub fn parse_delete_playback_configuration_error(
     crate::output::DeletePlaybackConfigurationOutput,
     crate::error::DeletePlaybackConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePlaybackConfigurationError::unhandled)?;
     Err(crate::error::DeletePlaybackConfigurationError::generic(
         generic,
@@ -184,7 +184,7 @@ pub fn parse_delete_playback_configuration_response(
 pub fn parse_delete_program_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteProgramOutput, crate::error::DeleteProgramError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteProgramError::unhandled)?;
     Err(crate::error::DeleteProgramError::generic(generic))
 }
@@ -208,7 +208,7 @@ pub fn parse_delete_source_location_error(
     crate::output::DeleteSourceLocationOutput,
     crate::error::DeleteSourceLocationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSourceLocationError::unhandled)?;
     Err(crate::error::DeleteSourceLocationError::generic(generic))
 }
@@ -232,7 +232,7 @@ pub fn parse_delete_source_location_response(
 pub fn parse_delete_vod_source_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteVodSourceOutput, crate::error::DeleteVodSourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVodSourceError::unhandled)?;
     Err(crate::error::DeleteVodSourceError::generic(generic))
 }
@@ -253,7 +253,7 @@ pub fn parse_delete_vod_source_response(
 pub fn parse_describe_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeChannelOutput, crate::error::DescribeChannelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeChannelError::unhandled)?;
     Err(crate::error::DescribeChannelError::generic(generic))
 }
@@ -277,7 +277,7 @@ pub fn parse_describe_channel_response(
 pub fn parse_describe_program_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeProgramOutput, crate::error::DescribeProgramError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeProgramError::unhandled)?;
     Err(crate::error::DescribeProgramError::generic(generic))
 }
@@ -304,7 +304,7 @@ pub fn parse_describe_source_location_error(
     crate::output::DescribeSourceLocationOutput,
     crate::error::DescribeSourceLocationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSourceLocationError::unhandled)?;
     Err(crate::error::DescribeSourceLocationError::generic(generic))
 }
@@ -334,7 +334,7 @@ pub fn parse_describe_vod_source_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeVodSourceOutput, crate::error::DescribeVodSourceError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVodSourceError::unhandled)?;
     Err(crate::error::DescribeVodSourceError::generic(generic))
 }
@@ -362,7 +362,7 @@ pub fn parse_get_channel_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetChannelPolicyOutput, crate::error::GetChannelPolicyError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetChannelPolicyError::unhandled)?;
     Err(crate::error::GetChannelPolicyError::generic(generic))
 }
@@ -390,7 +390,7 @@ pub fn parse_get_channel_schedule_error(
     crate::output::GetChannelScheduleOutput,
     crate::error::GetChannelScheduleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetChannelScheduleError::unhandled)?;
     Err(crate::error::GetChannelScheduleError::generic(generic))
 }
@@ -422,7 +422,7 @@ pub fn parse_get_playback_configuration_error(
     crate::output::GetPlaybackConfigurationOutput,
     crate::error::GetPlaybackConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPlaybackConfigurationError::unhandled)?;
     Err(crate::error::GetPlaybackConfigurationError::generic(
         generic,
@@ -453,7 +453,7 @@ pub fn parse_get_playback_configuration_response(
 pub fn parse_list_alerts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAlertsOutput, crate::error::ListAlertsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAlertsError::unhandled)?;
     Err(crate::error::ListAlertsError::generic(generic))
 }
@@ -476,7 +476,7 @@ pub fn parse_list_alerts_response(
 pub fn parse_list_channels_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListChannelsError::unhandled)?;
     Err(crate::error::ListChannelsError::generic(generic))
 }
@@ -502,7 +502,7 @@ pub fn parse_list_playback_configurations_error(
     crate::output::ListPlaybackConfigurationsOutput,
     crate::error::ListPlaybackConfigurationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPlaybackConfigurationsError::unhandled)?;
     Err(crate::error::ListPlaybackConfigurationsError::generic(
         generic,
@@ -536,7 +536,7 @@ pub fn parse_list_source_locations_error(
     crate::output::ListSourceLocationsOutput,
     crate::error::ListSourceLocationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSourceLocationsError::unhandled)?;
     Err(crate::error::ListSourceLocationsError::generic(generic))
 }
@@ -568,7 +568,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -626,7 +626,7 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_list_vod_sources_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListVodSourcesOutput, crate::error::ListVodSourcesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListVodSourcesError::unhandled)?;
     Err(crate::error::ListVodSourcesError::generic(generic))
 }
@@ -651,7 +651,7 @@ pub fn parse_put_channel_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutChannelPolicyOutput, crate::error::PutChannelPolicyError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutChannelPolicyError::unhandled)?;
     Err(crate::error::PutChannelPolicyError::generic(generic))
 }
@@ -676,7 +676,7 @@ pub fn parse_put_playback_configuration_error(
     crate::output::PutPlaybackConfigurationOutput,
     crate::error::PutPlaybackConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutPlaybackConfigurationError::unhandled)?;
     Err(crate::error::PutPlaybackConfigurationError::generic(
         generic,
@@ -707,7 +707,7 @@ pub fn parse_put_playback_configuration_response(
 pub fn parse_start_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartChannelOutput, crate::error::StartChannelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartChannelError::unhandled)?;
     Err(crate::error::StartChannelError::generic(generic))
 }
@@ -728,7 +728,7 @@ pub fn parse_start_channel_response(
 pub fn parse_stop_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopChannelOutput, crate::error::StopChannelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopChannelError::unhandled)?;
     Err(crate::error::StopChannelError::generic(generic))
 }
@@ -749,7 +749,7 @@ pub fn parse_stop_channel_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -799,7 +799,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -849,7 +849,7 @@ pub fn parse_untag_resource_response(
 pub fn parse_update_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateChannelOutput, crate::error::UpdateChannelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateChannelError::unhandled)?;
     Err(crate::error::UpdateChannelError::generic(generic))
 }
@@ -876,7 +876,7 @@ pub fn parse_update_source_location_error(
     crate::output::UpdateSourceLocationOutput,
     crate::error::UpdateSourceLocationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateSourceLocationError::unhandled)?;
     Err(crate::error::UpdateSourceLocationError::generic(generic))
 }
@@ -905,7 +905,7 @@ pub fn parse_update_source_location_response(
 pub fn parse_update_vod_source_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateVodSourceOutput, crate::error::UpdateVodSourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateVodSourceError::unhandled)?;
     Err(crate::error::UpdateVodSourceError::generic(generic))
 }

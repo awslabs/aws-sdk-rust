@@ -61,8 +61,8 @@ impl AssociateTeamMemberError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -198,8 +198,8 @@ impl CreateProjectError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -320,8 +320,8 @@ impl CreateUserProfileError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -412,8 +412,8 @@ impl DeleteProjectError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -504,8 +504,8 @@ impl DeleteUserProfileError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -593,8 +593,8 @@ impl DescribeProjectError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -701,8 +701,8 @@ impl DescribeUserProfileError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -797,8 +797,8 @@ impl DisassociateTeamMemberError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -903,8 +903,8 @@ impl ListProjectsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -992,8 +992,8 @@ impl ListResourcesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1088,8 +1088,8 @@ impl ListTagsForProjectError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1187,8 +1187,8 @@ impl ListTeamMembersError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1281,8 +1281,8 @@ impl ListUserProfilesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1375,8 +1375,8 @@ impl TagProjectError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1474,8 +1474,8 @@ impl UntagProjectError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1572,8 +1572,8 @@ impl UpdateProjectError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1669,8 +1669,8 @@ impl UpdateTeamMemberError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1794,8 +1794,8 @@ impl UpdateUserProfileError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }

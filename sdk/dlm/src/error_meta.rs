@@ -19,8 +19,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateLifecyclePolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateLifecyclePolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateLifecyclePolicyError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateLifecyclePolicyErrorKind::InternalServerException(inner) => {
@@ -40,8 +45,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateLifecyclePolicyError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteLifecyclePolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteLifecyclePolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteLifecyclePolicyError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteLifecyclePolicyErrorKind::InternalServerException(inner) => {
@@ -61,8 +71,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteLifecyclePolicyError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetLifecyclePoliciesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetLifecyclePoliciesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetLifecyclePoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetLifecyclePoliciesError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetLifecyclePoliciesErrorKind::InternalServerException(inner) => {
@@ -85,8 +100,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetLifecyclePoliciesError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetLifecyclePolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetLifecyclePolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetLifecyclePolicyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetLifecyclePolicyErrorKind::InternalServerException(inner) => {
@@ -106,8 +124,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetLifecyclePolicyError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => {
@@ -127,8 +148,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::InternalServerException(inner) => {
@@ -146,8 +170,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::InternalServerException(inner) => {
@@ -165,8 +192,13 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateLifecyclePolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateLifecyclePolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateLifecyclePolicyError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateLifecyclePolicyErrorKind::InternalServerException(inner) => {

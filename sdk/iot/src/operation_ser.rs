@@ -892,30 +892,30 @@ pub fn serialize_operation_validate_security_profile_behaviors(
 
 pub fn serialize_member_create_topic_rule_input_topic_rule_payload(
     input: &crate::model::TopicRulePayload,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_topic_rule_payload(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_replace_topic_rule_input_topic_rule_payload(
     input: &crate::model::TopicRulePayload,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_topic_rule_payload(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_set_logging_options_input_logging_options_payload(
     input: &crate::model::LoggingOptionsPayload,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_logging_options_payload(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }

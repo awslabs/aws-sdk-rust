@@ -4,6 +4,7 @@
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
+#![allow(clippy::vec_init_then_push)]
 //! <fullname>Amazon Elasticsearch Configuration Service</fullname>
 //! <p>Use the Amazon Elasticsearch Configuration API to create, configure, and manage Elasticsearch domains.</p>
 //! <p>For sample code that uses the Configuration API, see the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-samples.html">Amazon Elasticsearch Service Developer Guide</a>.
@@ -28,6 +29,7 @@ mod json_deser;
 mod json_errors;
 mod json_ser;
 pub mod model;
+mod no_credentials;
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
@@ -38,8 +40,8 @@ pub use smithy_http::result::SdkError;
 pub use smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("elasticsearchservice", PKG_VERSION);
-pub use aws_auth::Credentials;
 pub use aws_types::region::Region;
+pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
 pub use smithy_http::endpoint::Endpoint;

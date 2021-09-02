@@ -6,7 +6,7 @@ pub fn parse_attach_managed_policy_to_permission_set_error(
     crate::output::AttachManagedPolicyToPermissionSetOutput,
     crate::error::AttachManagedPolicyToPermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AttachManagedPolicyToPermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -142,7 +142,7 @@ pub fn parse_create_account_assignment_error(
     crate::output::CreateAccountAssignmentOutput,
     crate::error::CreateAccountAssignmentError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAccountAssignmentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -329,7 +329,7 @@ pub fn parse_create_instance_access_control_attribute_configuration_error(
     crate::output::CreateInstanceAccessControlAttributeConfigurationOutput,
     crate::error::CreateInstanceAccessControlAttributeConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateInstanceAccessControlAttributeConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -453,7 +453,7 @@ pub fn parse_create_permission_set_error(
     crate::output::CreatePermissionSetOutput,
     crate::error::CreatePermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -636,7 +636,7 @@ pub fn parse_delete_account_assignment_error(
     crate::output::DeleteAccountAssignmentOutput,
     crate::error::DeleteAccountAssignmentError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAccountAssignmentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -805,7 +805,7 @@ pub fn parse_delete_inline_policy_from_permission_set_error(
     crate::output::DeleteInlinePolicyFromPermissionSetOutput,
     crate::error::DeleteInlinePolicyFromPermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteInlinePolicyFromPermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -927,7 +927,7 @@ pub fn parse_delete_instance_access_control_attribute_configuration_error(
     crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput,
     crate::error::DeleteInstanceAccessControlAttributeConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteInstanceAccessControlAttributeConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1051,7 +1051,7 @@ pub fn parse_delete_permission_set_error(
     crate::output::DeletePermissionSetOutput,
     crate::error::DeletePermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1211,7 +1211,7 @@ pub fn parse_describe_account_assignment_creation_status_error(
     crate::output::DescribeAccountAssignmentCreationStatusOutput,
     crate::error::DescribeAccountAssignmentCreationStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAccountAssignmentCreationStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1326,7 +1326,7 @@ pub fn parse_describe_account_assignment_deletion_status_error(
     crate::output::DescribeAccountAssignmentDeletionStatusOutput,
     crate::error::DescribeAccountAssignmentDeletionStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAccountAssignmentDeletionStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1441,7 +1441,7 @@ pub fn parse_describe_instance_access_control_attribute_configuration_error(
     crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput,
     crate::error::DescribeInstanceAccessControlAttributeConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response).map_err(
+    let generic = crate::json_deser::parse_http_generic_error(response).map_err(
         crate::error::DescribeInstanceAccessControlAttributeConfigurationError::unhandled,
     )?;
     let error_code =
@@ -1552,7 +1552,7 @@ pub fn parse_describe_permission_set_error(
     crate::output::DescribePermissionSetOutput,
     crate::error::DescribePermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1696,7 +1696,7 @@ pub fn parse_describe_permission_set_provisioning_status_error(
     crate::output::DescribePermissionSetProvisioningStatusOutput,
     crate::error::DescribePermissionSetProvisioningStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePermissionSetProvisioningStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1811,7 +1811,7 @@ pub fn parse_detach_managed_policy_from_permission_set_error(
     crate::output::DetachManagedPolicyFromPermissionSetOutput,
     crate::error::DetachManagedPolicyFromPermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetachManagedPolicyFromPermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1933,7 +1933,7 @@ pub fn parse_get_inline_policy_for_permission_set_error(
     crate::output::GetInlinePolicyForPermissionSetOutput,
     crate::error::GetInlinePolicyForPermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetInlinePolicyForPermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2080,7 +2080,7 @@ pub fn parse_list_account_assignment_creation_status_error(
     crate::output::ListAccountAssignmentCreationStatusOutput,
     crate::error::ListAccountAssignmentCreationStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAccountAssignmentCreationStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2193,7 +2193,7 @@ pub fn parse_list_account_assignment_deletion_status_error(
     crate::output::ListAccountAssignmentDeletionStatusOutput,
     crate::error::ListAccountAssignmentDeletionStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAccountAssignmentDeletionStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2306,7 +2306,7 @@ pub fn parse_list_account_assignments_error(
     crate::output::ListAccountAssignmentsOutput,
     crate::error::ListAccountAssignmentsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAccountAssignmentsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2454,7 +2454,7 @@ pub fn parse_list_accounts_for_provisioned_permission_set_error(
     crate::output::ListAccountsForProvisionedPermissionSetOutput,
     crate::error::ListAccountsForProvisionedPermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAccountsForProvisionedPermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2566,7 +2566,7 @@ pub fn parse_list_accounts_for_provisioned_permission_set_response(
 pub fn parse_list_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListInstancesOutput, crate::error::ListInstancesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListInstancesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2685,7 +2685,7 @@ pub fn parse_list_managed_policies_in_permission_set_error(
     crate::output::ListManagedPoliciesInPermissionSetOutput,
     crate::error::ListManagedPoliciesInPermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListManagedPoliciesInPermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2835,7 +2835,7 @@ pub fn parse_list_permission_set_provisioning_status_error(
     crate::output::ListPermissionSetProvisioningStatusOutput,
     crate::error::ListPermissionSetProvisioningStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPermissionSetProvisioningStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2948,7 +2948,7 @@ pub fn parse_list_permission_sets_error(
     crate::output::ListPermissionSetsOutput,
     crate::error::ListPermissionSetsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPermissionSetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3092,7 +3092,7 @@ pub fn parse_list_permission_sets_provisioned_to_account_error(
     crate::output::ListPermissionSetsProvisionedToAccountOutput,
     crate::error::ListPermissionSetsProvisionedToAccountError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPermissionSetsProvisionedToAccountError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3207,7 +3207,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3351,7 +3351,7 @@ pub fn parse_provision_permission_set_error(
     crate::output::ProvisionPermissionSetOutput,
     crate::error::ProvisionPermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ProvisionPermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3520,7 +3520,7 @@ pub fn parse_put_inline_policy_to_permission_set_error(
     crate::output::PutInlinePolicyToPermissionSetOutput,
     crate::error::PutInlinePolicyToPermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutInlinePolicyToPermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3699,7 +3699,7 @@ pub fn parse_put_inline_policy_to_permission_set_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3871,7 +3871,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4028,7 +4028,7 @@ pub fn parse_update_instance_access_control_attribute_configuration_error(
     crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput,
     crate::error::UpdateInstanceAccessControlAttributeConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateInstanceAccessControlAttributeConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4152,7 +4152,7 @@ pub fn parse_update_permission_set_error(
     crate::output::UpdatePermissionSetOutput,
     crate::error::UpdatePermissionSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdatePermissionSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

@@ -6,7 +6,7 @@ pub fn parse_batch_create_channel_membership_error(
     crate::output::BatchCreateChannelMembershipOutput,
     crate::error::BatchCreateChannelMembershipError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -171,7 +171,7 @@ pub fn parse_batch_create_channel_membership_response(
 pub fn parse_create_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateChannelOutput, crate::error::CreateChannelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateChannelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -367,7 +367,7 @@ pub fn parse_create_channel_ban_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateChannelBanOutput, crate::error::CreateChannelBanError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateChannelBanError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -566,7 +566,7 @@ pub fn parse_create_channel_membership_error(
     crate::output::CreateChannelMembershipOutput,
     crate::error::CreateChannelMembershipError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateChannelMembershipError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -777,7 +777,7 @@ pub fn parse_create_channel_moderator_error(
     crate::output::CreateChannelModeratorOutput,
     crate::error::CreateChannelModeratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateChannelModeratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -981,7 +981,7 @@ pub fn parse_create_channel_moderator_response(
 pub fn parse_delete_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteChannelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1135,7 +1135,7 @@ pub fn parse_delete_channel_ban_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteChannelBanOutput, crate::error::DeleteChannelBanError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteChannelBanError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1292,7 +1292,7 @@ pub fn parse_delete_channel_membership_error(
     crate::output::DeleteChannelMembershipOutput,
     crate::error::DeleteChannelMembershipError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteChannelMembershipError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1480,7 +1480,7 @@ pub fn parse_delete_channel_message_error(
     crate::output::DeleteChannelMessageOutput,
     crate::error::DeleteChannelMessageError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteChannelMessageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1639,7 +1639,7 @@ pub fn parse_delete_channel_moderator_error(
     crate::output::DeleteChannelModeratorOutput,
     crate::error::DeleteChannelModeratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteChannelModeratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1799,7 +1799,7 @@ pub fn parse_delete_channel_moderator_response(
 pub fn parse_describe_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeChannelOutput, crate::error::DescribeChannelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeChannelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1958,7 +1958,7 @@ pub fn parse_describe_channel_ban_error(
     crate::output::DescribeChannelBanOutput,
     crate::error::DescribeChannelBanError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeChannelBanError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2143,7 +2143,7 @@ pub fn parse_describe_channel_membership_error(
     crate::output::DescribeChannelMembershipOutput,
     crate::error::DescribeChannelMembershipError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeChannelMembershipError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2336,7 +2336,7 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
     crate::output::DescribeChannelMembershipForAppInstanceUserOutput,
     crate::error::DescribeChannelMembershipForAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeChannelMembershipForAppInstanceUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2464,7 +2464,7 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
     crate::output::DescribeChannelModeratedByAppInstanceUserOutput,
     crate::error::DescribeChannelModeratedByAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeChannelModeratedByAppInstanceUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2595,7 +2595,7 @@ pub fn parse_describe_channel_moderator_error(
     crate::output::DescribeChannelModeratorOutput,
     crate::error::DescribeChannelModeratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeChannelModeratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2786,7 +2786,7 @@ pub fn parse_get_channel_message_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetChannelMessageOutput, crate::error::GetChannelMessageError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetChannelMessageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2969,7 +2969,7 @@ pub fn parse_get_messaging_session_endpoint_error(
     crate::output::GetMessagingSessionEndpointOutput,
     crate::error::GetMessagingSessionEndpointError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetMessagingSessionEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3113,7 +3113,7 @@ pub fn parse_get_messaging_session_endpoint_response(
 pub fn parse_list_channel_bans_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListChannelBansOutput, crate::error::ListChannelBansError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListChannelBansError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3272,7 +3272,7 @@ pub fn parse_list_channel_memberships_error(
     crate::output::ListChannelMembershipsOutput,
     crate::error::ListChannelMembershipsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListChannelMembershipsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3440,7 +3440,7 @@ pub fn parse_list_channel_memberships_for_app_instance_user_error(
     crate::output::ListChannelMembershipsForAppInstanceUserOutput,
     crate::error::ListChannelMembershipsForAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListChannelMembershipsForAppInstanceUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3570,7 +3570,7 @@ pub fn parse_list_channel_messages_error(
     crate::output::ListChannelMessagesOutput,
     crate::error::ListChannelMessagesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListChannelMessagesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3734,7 +3734,7 @@ pub fn parse_list_channel_moderators_error(
     crate::output::ListChannelModeratorsOutput,
     crate::error::ListChannelModeratorsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListChannelModeratorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3895,7 +3895,7 @@ pub fn parse_list_channel_moderators_response(
 pub fn parse_list_channels_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListChannelsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4053,7 +4053,7 @@ pub fn parse_list_channels_moderated_by_app_instance_user_error(
     crate::output::ListChannelsModeratedByAppInstanceUserOutput,
     crate::error::ListChannelsModeratedByAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4182,7 +4182,7 @@ pub fn parse_redact_channel_message_error(
     crate::output::RedactChannelMessageOutput,
     crate::error::RedactChannelMessageError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RedactChannelMessageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4346,7 +4346,7 @@ pub fn parse_send_channel_message_error(
     crate::output::SendChannelMessageOutput,
     crate::error::SendChannelMessageError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendChannelMessageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4528,7 +4528,7 @@ pub fn parse_send_channel_message_response(
 pub fn parse_update_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateChannelOutput, crate::error::UpdateChannelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateChannelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4708,7 +4708,7 @@ pub fn parse_update_channel_message_error(
     crate::output::UpdateChannelMessageOutput,
     crate::error::UpdateChannelMessageError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateChannelMessageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4893,7 +4893,7 @@ pub fn parse_update_channel_read_marker_error(
     crate::output::UpdateChannelReadMarkerOutput,
     crate::error::UpdateChannelReadMarkerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateChannelReadMarkerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

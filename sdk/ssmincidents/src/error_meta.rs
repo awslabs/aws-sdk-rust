@@ -25,8 +25,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateReplicationSetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateReplicationSetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateReplicationSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateReplicationSetError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateReplicationSetErrorKind::AccessDeniedException(inner) => {
@@ -55,8 +60,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateReplicationSetError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateResponsePlanError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateResponsePlanError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateResponsePlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateResponsePlanError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateResponsePlanErrorKind::AccessDeniedException(inner) => {
@@ -85,8 +93,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateResponsePlanError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateTimelineEventError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateTimelineEventError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateTimelineEventError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateTimelineEventError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateTimelineEventErrorKind::AccessDeniedException(inner) => {
@@ -115,8 +126,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateTimelineEventError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteIncidentRecordError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteIncidentRecordError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteIncidentRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteIncidentRecordError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteIncidentRecordErrorKind::AccessDeniedException(inner) => {
@@ -139,8 +155,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteIncidentRecordError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteReplicationSetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteReplicationSetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteReplicationSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteReplicationSetError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteReplicationSetErrorKind::AccessDeniedException(inner) => {
@@ -166,8 +187,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteReplicationSetError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteResourcePolicyErrorKind::AccessDeniedException(inner) => {
@@ -193,8 +219,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteResponsePlanError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteResponsePlanError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteResponsePlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteResponsePlanError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteResponsePlanErrorKind::AccessDeniedException(inner) => {
@@ -217,8 +246,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteResponsePlanError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteTimelineEventError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTimelineEventError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteTimelineEventError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTimelineEventError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteTimelineEventErrorKind::AccessDeniedException(inner) => {
@@ -241,8 +273,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteTimelineEventError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetIncidentRecordError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetIncidentRecordError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetIncidentRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetIncidentRecordError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetIncidentRecordErrorKind::AccessDeniedException(inner) => {
@@ -268,8 +303,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetIncidentRecordError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetReplicationSetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetReplicationSetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetReplicationSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetReplicationSetError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetReplicationSetErrorKind::AccessDeniedException(inner) => {
@@ -295,8 +333,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetReplicationSetError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetResourcePoliciesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetResourcePoliciesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetResourcePoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetResourcePoliciesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetResourcePoliciesErrorKind::AccessDeniedException(inner) => {
@@ -322,8 +363,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetResourcePoliciesError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetResponsePlanError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetResponsePlanError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetResponsePlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetResponsePlanError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetResponsePlanErrorKind::AccessDeniedException(inner) => {
@@ -347,8 +391,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetResponsePlanError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetTimelineEventError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetTimelineEventError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetTimelineEventError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetTimelineEventError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetTimelineEventErrorKind::AccessDeniedException(inner) => {
@@ -374,8 +421,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetTimelineEventError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListIncidentRecordsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListIncidentRecordsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListIncidentRecordsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListIncidentRecordsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListIncidentRecordsErrorKind::AccessDeniedException(inner) => {
@@ -398,8 +448,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListIncidentRecordsError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListRelatedItemsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListRelatedItemsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListRelatedItemsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListRelatedItemsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListRelatedItemsErrorKind::AccessDeniedException(inner) => {
@@ -422,8 +475,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListRelatedItemsError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListReplicationSetsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListReplicationSetsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListReplicationSetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListReplicationSetsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListReplicationSetsErrorKind::AccessDeniedException(inner) => {
@@ -446,8 +502,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListReplicationSetsError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListResponsePlansError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListResponsePlansError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListResponsePlansError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListResponsePlansError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListResponsePlansErrorKind::AccessDeniedException(inner) => {
@@ -470,8 +529,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListResponsePlansError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
@@ -497,8 +559,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTimelineEventsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTimelineEventsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTimelineEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTimelineEventsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTimelineEventsErrorKind::AccessDeniedException(inner) => {
@@ -521,8 +586,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTimelineEventsError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutResourcePolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutResourcePolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutResourcePolicyErrorKind::AccessDeniedException(inner) => {
@@ -548,8 +616,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutResourcePolicyError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartIncidentError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartIncidentError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartIncidentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StartIncidentError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StartIncidentErrorKind::AccessDeniedException(inner) => {
@@ -576,8 +647,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartIncidentError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
@@ -607,8 +681,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
@@ -635,9 +712,13 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateDeletionProtectionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateDeletionProtectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateDeletionProtectionError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateDeletionProtectionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -664,8 +745,13 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDeletionProtectionEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateIncidentRecordError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateIncidentRecordError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateIncidentRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateIncidentRecordError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateIncidentRecordErrorKind::AccessDeniedException(inner) => {
@@ -694,8 +780,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateIncidentRecordError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateRelatedItemsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateRelatedItemsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateRelatedItemsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateRelatedItemsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateRelatedItemsErrorKind::AccessDeniedException(inner) => {
@@ -724,8 +813,13 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateRelatedItemsError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateReplicationSetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateReplicationSetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateReplicationSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateReplicationSetError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateReplicationSetErrorKind::AccessDeniedException(inner) => {
@@ -751,8 +845,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateReplicationSetError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateResponsePlanError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateResponsePlanError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateResponsePlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateResponsePlanError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateResponsePlanErrorKind::AccessDeniedException(inner) => {
@@ -781,8 +878,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateResponsePlanError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateTimelineEventError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateTimelineEventError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateTimelineEventError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateTimelineEventError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateTimelineEventErrorKind::AccessDeniedException(inner) => {

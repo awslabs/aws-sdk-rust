@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_snowball::model::Address;
-use aws_sdk_snowball::{Client, Config, Error, Region, PKG_VERSION};
-use aws_types::region::{self, ProvideRegion};
+use aws_sdk_snowball::{Client, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -96,9 +96,10 @@ async fn main() -> Result<(), Error> {
         verbose,
     } = Opt::from_args();
 
-    let region_provider = region::ChainProvider::first_try(region.map(Region::new))
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
 
     println!();
 
@@ -106,7 +107,7 @@ async fn main() -> Result<(), Error> {
         println!("Snowball version:       {}", PKG_VERSION);
         println!(
             "Region:                 {}",
-            region_provider.region().unwrap().as_ref()
+            shared_config.region().unwrap()
         );
         println!("City:                   {}", &city);
         println!("Company:                {:?}", &company);
@@ -139,8 +140,7 @@ async fn main() -> Result<(), Error> {
         .set_is_restricted(Some(false))
         .build();
 
-    let conf = Config::builder().region(region_provider).build();
-    let client = Client::from_conf(conf);
+    let client = Client::new(&shared_config);
 
     let result = client.create_address().address(new_address).send().await?;
 

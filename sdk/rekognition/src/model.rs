@@ -1381,6 +1381,14 @@ pub struct ComparedFace {
     pub pose: std::option::Option<crate::model::Pose>,
     /// <p>Identifies face image brightness and sharpness. </p>
     pub quality: std::option::Option<crate::model::ImageQuality>,
+    /// <p> The emotions that appear to be expressed on the face,
+    /// and the confidence level in the determination. Valid values include "Happy", "Sad",
+    /// "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".
+    /// </p>
+    pub emotions: std::option::Option<std::vec::Vec<crate::model::Emotion>>,
+    /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination.
+    /// </p>
+    pub smile: std::option::Option<crate::model::Smile>,
 }
 impl std::fmt::Debug for ComparedFace {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1390,6 +1398,8 @@ impl std::fmt::Debug for ComparedFace {
         formatter.field("landmarks", &self.landmarks);
         formatter.field("pose", &self.pose);
         formatter.field("quality", &self.quality);
+        formatter.field("emotions", &self.emotions);
+        formatter.field("smile", &self.smile);
         formatter.finish()
     }
 }
@@ -1404,6 +1414,8 @@ pub mod compared_face {
         pub(crate) landmarks: std::option::Option<std::vec::Vec<crate::model::Landmark>>,
         pub(crate) pose: std::option::Option<crate::model::Pose>,
         pub(crate) quality: std::option::Option<crate::model::ImageQuality>,
+        pub(crate) emotions: std::option::Option<std::vec::Vec<crate::model::Emotion>>,
+        pub(crate) smile: std::option::Option<crate::model::Smile>,
     }
     impl Builder {
         /// <p>Bounding box of the face.</p>
@@ -1461,6 +1473,29 @@ pub mod compared_face {
             self.quality = input;
             self
         }
+        pub fn emotions(mut self, input: impl Into<crate::model::Emotion>) -> Self {
+            let mut v = self.emotions.unwrap_or_default();
+            v.push(input.into());
+            self.emotions = Some(v);
+            self
+        }
+        pub fn set_emotions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Emotion>>,
+        ) -> Self {
+            self.emotions = input;
+            self
+        }
+        /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination.
+        /// </p>
+        pub fn smile(mut self, input: crate::model::Smile) -> Self {
+            self.smile = Some(input);
+            self
+        }
+        pub fn set_smile(mut self, input: std::option::Option<crate::model::Smile>) -> Self {
+            self.smile = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ComparedFace`](crate::model::ComparedFace)
         pub fn build(self) -> crate::model::ComparedFace {
             crate::model::ComparedFace {
@@ -1469,6 +1504,8 @@ pub mod compared_face {
                 landmarks: self.landmarks,
                 pose: self.pose,
                 quality: self.quality,
+                emotions: self.emotions,
+                smile: self.smile,
             }
         }
     }
@@ -1477,6 +1514,215 @@ impl ComparedFace {
     /// Creates a new builder-style object to manufacture [`ComparedFace`](crate::model::ComparedFace)
     pub fn builder() -> crate::model::compared_face::Builder {
         crate::model::compared_face::Builder::default()
+    }
+}
+
+/// <p>Indicates whether or not the face is smiling, and the confidence level in the
+/// determination.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Smile {
+    /// <p>Boolean value that indicates whether the face is smiling or not.</p>
+    pub value: bool,
+    /// <p>Level of confidence in the determination.</p>
+    pub confidence: std::option::Option<f32>,
+}
+impl std::fmt::Debug for Smile {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Smile");
+        formatter.field("value", &self.value);
+        formatter.field("confidence", &self.confidence);
+        formatter.finish()
+    }
+}
+/// See [`Smile`](crate::model::Smile)
+pub mod smile {
+    /// A builder for [`Smile`](crate::model::Smile)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) value: std::option::Option<bool>,
+        pub(crate) confidence: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>Boolean value that indicates whether the face is smiling or not.</p>
+        pub fn value(mut self, input: bool) -> Self {
+            self.value = Some(input);
+            self
+        }
+        pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>Level of confidence in the determination.</p>
+        pub fn confidence(mut self, input: f32) -> Self {
+            self.confidence = Some(input);
+            self
+        }
+        pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+            self.confidence = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Smile`](crate::model::Smile)
+        pub fn build(self) -> crate::model::Smile {
+            crate::model::Smile {
+                value: self.value.unwrap_or_default(),
+                confidence: self.confidence,
+            }
+        }
+    }
+}
+impl Smile {
+    /// Creates a new builder-style object to manufacture [`Smile`](crate::model::Smile)
+    pub fn builder() -> crate::model::smile::Builder {
+        crate::model::smile::Builder::default()
+    }
+}
+
+/// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination.
+/// The API is only making a determination of the physical appearance of a person's face. It is not a determination
+/// of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have
+/// a sad face might not be sad emotionally.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Emotion {
+    /// <p>Type of emotion detected.</p>
+    pub r#type: std::option::Option<crate::model::EmotionName>,
+    /// <p>Level of confidence in the determination.</p>
+    pub confidence: std::option::Option<f32>,
+}
+impl std::fmt::Debug for Emotion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Emotion");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("confidence", &self.confidence);
+        formatter.finish()
+    }
+}
+/// See [`Emotion`](crate::model::Emotion)
+pub mod emotion {
+    /// A builder for [`Emotion`](crate::model::Emotion)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::EmotionName>,
+        pub(crate) confidence: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>Type of emotion detected.</p>
+        pub fn r#type(mut self, input: crate::model::EmotionName) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<crate::model::EmotionName>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Level of confidence in the determination.</p>
+        pub fn confidence(mut self, input: f32) -> Self {
+            self.confidence = Some(input);
+            self
+        }
+        pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+            self.confidence = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Emotion`](crate::model::Emotion)
+        pub fn build(self) -> crate::model::Emotion {
+            crate::model::Emotion {
+                r#type: self.r#type,
+                confidence: self.confidence,
+            }
+        }
+    }
+}
+impl Emotion {
+    /// Creates a new builder-style object to manufacture [`Emotion`](crate::model::Emotion)
+    pub fn builder() -> crate::model::emotion::Builder {
+        crate::model::emotion::Builder::default()
+    }
+}
+
+/// **NOTE:** `EmotionName::Unknown` has been renamed to `::UnknownValue`.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EmotionName {
+    Angry,
+    Calm,
+    Confused,
+    Disgusted,
+    Fear,
+    Happy,
+    Sad,
+    Surprised,
+    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    UnknownValue,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EmotionName {
+    fn from(s: &str) -> Self {
+        match s {
+            "ANGRY" => EmotionName::Angry,
+            "CALM" => EmotionName::Calm,
+            "CONFUSED" => EmotionName::Confused,
+            "DISGUSTED" => EmotionName::Disgusted,
+            "FEAR" => EmotionName::Fear,
+            "HAPPY" => EmotionName::Happy,
+            "SAD" => EmotionName::Sad,
+            "SURPRISED" => EmotionName::Surprised,
+            "UNKNOWN" => EmotionName::UnknownValue,
+            other => EmotionName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EmotionName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EmotionName::from(s))
+    }
+}
+impl EmotionName {
+    pub fn as_str(&self) -> &str {
+        match self {
+            EmotionName::Angry => "ANGRY",
+            EmotionName::Calm => "CALM",
+            EmotionName::Confused => "CONFUSED",
+            EmotionName::Disgusted => "DISGUSTED",
+            EmotionName::Fear => "FEAR",
+            EmotionName::Happy => "HAPPY",
+            EmotionName::Sad => "SAD",
+            EmotionName::Surprised => "SURPRISED",
+            EmotionName::UnknownValue => "UNKNOWN",
+            EmotionName::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ANGRY",
+            "CALM",
+            "CONFUSED",
+            "DISGUSTED",
+            "FEAR",
+            "HAPPY",
+            "SAD",
+            "SURPRISED",
+            "UNKNOWN",
+        ]
+    }
+}
+impl AsRef<str> for EmotionName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1885,6 +2131,8 @@ pub struct Celebrity {
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the
     /// celebrity.</p>
     pub match_confidence: std::option::Option<f32>,
+    /// <p>The known gender identity for the celebrity that matches the provided ID.</p>
+    pub known_gender: std::option::Option<crate::model::KnownGender>,
 }
 impl std::fmt::Debug for Celebrity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1894,6 +2142,7 @@ impl std::fmt::Debug for Celebrity {
         formatter.field("id", &self.id);
         formatter.field("face", &self.face);
         formatter.field("match_confidence", &self.match_confidence);
+        formatter.field("known_gender", &self.known_gender);
         formatter.finish()
     }
 }
@@ -1908,6 +2157,7 @@ pub mod celebrity {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) face: std::option::Option<crate::model::ComparedFace>,
         pub(crate) match_confidence: std::option::Option<f32>,
+        pub(crate) known_gender: std::option::Option<crate::model::KnownGender>,
     }
     impl Builder {
         pub fn urls(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1961,6 +2211,18 @@ pub mod celebrity {
             self.match_confidence = input;
             self
         }
+        /// <p>The known gender identity for the celebrity that matches the provided ID.</p>
+        pub fn known_gender(mut self, input: crate::model::KnownGender) -> Self {
+            self.known_gender = Some(input);
+            self
+        }
+        pub fn set_known_gender(
+            mut self,
+            input: std::option::Option<crate::model::KnownGender>,
+        ) -> Self {
+            self.known_gender = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Celebrity`](crate::model::Celebrity)
         pub fn build(self) -> crate::model::Celebrity {
             crate::model::Celebrity {
@@ -1969,6 +2231,7 @@ pub mod celebrity {
                 id: self.id,
                 face: self.face,
                 match_confidence: self.match_confidence,
+                known_gender: self.known_gender,
             }
         }
     }
@@ -1977,6 +2240,107 @@ impl Celebrity {
     /// Creates a new builder-style object to manufacture [`Celebrity`](crate::model::Celebrity)
     pub fn builder() -> crate::model::celebrity::Builder {
         crate::model::celebrity::Builder::default()
+    }
+}
+
+/// <p>The known gender identity for the celebrity that matches the provided ID.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KnownGender {
+    /// <p>A string value of the KnownGender info about the Celebrity.</p>
+    pub r#type: std::option::Option<crate::model::KnownGenderType>,
+}
+impl std::fmt::Debug for KnownGender {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KnownGender");
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`KnownGender`](crate::model::KnownGender)
+pub mod known_gender {
+    /// A builder for [`KnownGender`](crate::model::KnownGender)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::KnownGenderType>,
+    }
+    impl Builder {
+        /// <p>A string value of the KnownGender info about the Celebrity.</p>
+        pub fn r#type(mut self, input: crate::model::KnownGenderType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::KnownGenderType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`KnownGender`](crate::model::KnownGender)
+        pub fn build(self) -> crate::model::KnownGender {
+            crate::model::KnownGender {
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl KnownGender {
+    /// Creates a new builder-style object to manufacture [`KnownGender`](crate::model::KnownGender)
+    pub fn builder() -> crate::model::known_gender::Builder {
+        crate::model::known_gender::Builder::default()
+    }
+}
+
+/// <p>A list of enum string of possible gender values that Celebrity returns.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum KnownGenderType {
+    Female,
+    Male,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for KnownGenderType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Female" => KnownGenderType::Female,
+            "Male" => KnownGenderType::Male,
+            other => KnownGenderType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for KnownGenderType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(KnownGenderType::from(s))
+    }
+}
+impl KnownGenderType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            KnownGenderType::Female => "Female",
+            KnownGenderType::Male => "Male",
+            KnownGenderType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Female", "Male"]
+    }
+}
+impl AsRef<str> for KnownGenderType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2511,153 +2875,6 @@ impl FaceDetail {
     }
 }
 
-/// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination.
-/// The API is only making a determination of the physical appearance of a person's face. It is not a determination
-/// of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have
-/// a sad face might not be sad emotionally.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Emotion {
-    /// <p>Type of emotion detected.</p>
-    pub r#type: std::option::Option<crate::model::EmotionName>,
-    /// <p>Level of confidence in the determination.</p>
-    pub confidence: std::option::Option<f32>,
-}
-impl std::fmt::Debug for Emotion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Emotion");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
-    }
-}
-/// See [`Emotion`](crate::model::Emotion)
-pub mod emotion {
-    /// A builder for [`Emotion`](crate::model::Emotion)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) r#type: std::option::Option<crate::model::EmotionName>,
-        pub(crate) confidence: std::option::Option<f32>,
-    }
-    impl Builder {
-        /// <p>Type of emotion detected.</p>
-        pub fn r#type(mut self, input: crate::model::EmotionName) -> Self {
-            self.r#type = Some(input);
-            self
-        }
-        pub fn set_type(mut self, input: std::option::Option<crate::model::EmotionName>) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// <p>Level of confidence in the determination.</p>
-        pub fn confidence(mut self, input: f32) -> Self {
-            self.confidence = Some(input);
-            self
-        }
-        pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Emotion`](crate::model::Emotion)
-        pub fn build(self) -> crate::model::Emotion {
-            crate::model::Emotion {
-                r#type: self.r#type,
-                confidence: self.confidence,
-            }
-        }
-    }
-}
-impl Emotion {
-    /// Creates a new builder-style object to manufacture [`Emotion`](crate::model::Emotion)
-    pub fn builder() -> crate::model::emotion::Builder {
-        crate::model::emotion::Builder::default()
-    }
-}
-
-/// **NOTE:** `EmotionName::Unknown` has been renamed to `::UnknownValue`.
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum EmotionName {
-    Angry,
-    Calm,
-    Confused,
-    Disgusted,
-    Fear,
-    Happy,
-    Sad,
-    Surprised,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
-    UnknownValue,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for EmotionName {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANGRY" => EmotionName::Angry,
-            "CALM" => EmotionName::Calm,
-            "CONFUSED" => EmotionName::Confused,
-            "DISGUSTED" => EmotionName::Disgusted,
-            "FEAR" => EmotionName::Fear,
-            "HAPPY" => EmotionName::Happy,
-            "SAD" => EmotionName::Sad,
-            "SURPRISED" => EmotionName::Surprised,
-            "UNKNOWN" => EmotionName::UnknownValue,
-            other => EmotionName::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for EmotionName {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EmotionName::from(s))
-    }
-}
-impl EmotionName {
-    pub fn as_str(&self) -> &str {
-        match self {
-            EmotionName::Angry => "ANGRY",
-            EmotionName::Calm => "CALM",
-            EmotionName::Confused => "CONFUSED",
-            EmotionName::Disgusted => "DISGUSTED",
-            EmotionName::Fear => "FEAR",
-            EmotionName::Happy => "HAPPY",
-            EmotionName::Sad => "SAD",
-            EmotionName::Surprised => "SURPRISED",
-            EmotionName::UnknownValue => "UNKNOWN",
-            EmotionName::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "ANGRY",
-            "CALM",
-            "CONFUSED",
-            "DISGUSTED",
-            "FEAR",
-            "HAPPY",
-            "SAD",
-            "SURPRISED",
-            "UNKNOWN",
-        ]
-    }
-}
-impl AsRef<str> for EmotionName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the
 /// determination.</p>
 #[non_exhaustive]
@@ -3146,68 +3363,6 @@ impl Eyeglasses {
     /// Creates a new builder-style object to manufacture [`Eyeglasses`](crate::model::Eyeglasses)
     pub fn builder() -> crate::model::eyeglasses::Builder {
         crate::model::eyeglasses::Builder::default()
-    }
-}
-
-/// <p>Indicates whether or not the face is smiling, and the confidence level in the
-/// determination.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Smile {
-    /// <p>Boolean value that indicates whether the face is smiling or not.</p>
-    pub value: bool,
-    /// <p>Level of confidence in the determination.</p>
-    pub confidence: std::option::Option<f32>,
-}
-impl std::fmt::Debug for Smile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Smile");
-        formatter.field("value", &self.value);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
-    }
-}
-/// See [`Smile`](crate::model::Smile)
-pub mod smile {
-    /// A builder for [`Smile`](crate::model::Smile)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) value: std::option::Option<bool>,
-        pub(crate) confidence: std::option::Option<f32>,
-    }
-    impl Builder {
-        /// <p>Boolean value that indicates whether the face is smiling or not.</p>
-        pub fn value(mut self, input: bool) -> Self {
-            self.value = Some(input);
-            self
-        }
-        pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.value = input;
-            self
-        }
-        /// <p>Level of confidence in the determination.</p>
-        pub fn confidence(mut self, input: f32) -> Self {
-            self.confidence = Some(input);
-            self
-        }
-        pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Smile`](crate::model::Smile)
-        pub fn build(self) -> crate::model::Smile {
-            crate::model::Smile {
-                value: self.value.unwrap_or_default(),
-                confidence: self.confidence,
-            }
-        }
-    }
-}
-impl Smile {
-    /// Creates a new builder-style object to manufacture [`Smile`](crate::model::Smile)
-    pub fn builder() -> crate::model::smile::Builder {
-        crate::model::smile::Builder::default()
     }
 }
 

@@ -3,7 +3,7 @@
 pub fn parse_delete_session_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteSessionOutput, crate::error::DeleteSessionError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSessionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -160,7 +160,7 @@ pub fn parse_delete_session_response(
 pub fn parse_get_session_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSessionOutput, crate::error::GetSessionError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSessionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -363,7 +363,7 @@ pub fn parse_put_session(
 pub fn parse_put_session_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutSessionOutput, crate::error::PutSessionError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutSessionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -548,7 +548,7 @@ pub fn parse_put_session_error(
 pub fn parse_recognize_text_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RecognizeTextOutput, crate::error::RecognizeTextError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RecognizeTextError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -802,7 +802,7 @@ pub fn parse_recognize_utterance_error(
     crate::output::RecognizeUtteranceOutput,
     crate::error::RecognizeUtteranceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RecognizeUtteranceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

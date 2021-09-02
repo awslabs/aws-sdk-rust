@@ -2,8 +2,7 @@
 pub struct Config {
     pub(crate) endpoint_resolver: ::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>,
     pub(crate) region: Option<aws_types::region::Region>,
-    pub(crate) credentials_provider:
-        std::sync::Arc<dyn aws_auth::provider::AsyncProvideCredentials>,
+    pub(crate) credentials_provider: aws_types::credentials::SharedCredentialsProvider,
 }
 impl std::fmt::Debug for Config {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15,10 +14,13 @@ impl Config {
     pub fn builder() -> Builder {
         Builder::default()
     }
+    pub fn new(config: &aws_types::config::Config) -> Self {
+        Builder::from(config).build()
+    }
     /// The signature version 4 service signing name to use in the credential scope when signing requests.
     ///
-    /// The signing service may be overidden by the `Endpoint`, or by specifying a custom [`SigningService`](aws_types::SigningService) during
-    /// operation construction
+    /// The signing service may be overridden by the `Endpoint`, or by specifying a custom
+    /// [`SigningService`](aws_types::SigningService) during operation construction
     pub fn signing_service(&self) -> &'static str {
         "es"
     }
@@ -27,7 +29,7 @@ impl Config {
 pub struct Builder {
     endpoint_resolver: Option<::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
     region: Option<aws_types::region::Region>,
-    credentials_provider: Option<std::sync::Arc<dyn aws_auth::provider::AsyncProvideCredentials>>,
+    credentials_provider: Option<aws_types::credentials::SharedCredentialsProvider>,
 }
 impl Builder {
     pub fn new() -> Self {
@@ -40,16 +42,26 @@ impl Builder {
         self.endpoint_resolver = Some(::std::sync::Arc::new(endpoint_resolver));
         self
     }
-    pub fn region(mut self, region_provider: impl aws_types::region::ProvideRegion) -> Self {
-        self.region = region_provider.region();
+    pub fn region(mut self, region: impl Into<Option<aws_types::region::Region>>) -> Self {
+        self.region = region.into();
         self
     }
     /// Set the credentials provider for this service
     pub fn credentials_provider(
         mut self,
-        credentials_provider: impl aws_auth::provider::AsyncProvideCredentials + 'static,
+        credentials_provider: impl aws_types::credentials::ProvideCredentials + 'static,
     ) -> Self {
-        self.credentials_provider = Some(std::sync::Arc::new(credentials_provider));
+        self.credentials_provider = Some(aws_types::credentials::SharedCredentialsProvider::new(
+            credentials_provider,
+        ));
+        self
+    }
+
+    pub fn set_credentials_provider(
+        &mut self,
+        credentials_provider: Option<aws_types::credentials::SharedCredentialsProvider>,
+    ) -> &mut Self {
+        self.credentials_provider = credentials_provider;
         self
     }
     pub fn build(self) -> Config {
@@ -57,14 +69,27 @@ impl Builder {
             endpoint_resolver: self
                 .endpoint_resolver
                 .unwrap_or_else(|| ::std::sync::Arc::new(crate::aws_endpoint::endpoint_resolver())),
-            region: {
-                use aws_types::region::ProvideRegion;
-                self.region
-                    .or_else(|| aws_types::region::default_provider().region())
-            },
-            credentials_provider: self
-                .credentials_provider
-                .unwrap_or_else(|| std::sync::Arc::new(aws_auth::provider::default_provider())),
+            region: self.region,
+            credentials_provider: self.credentials_provider.unwrap_or_else(|| {
+                aws_types::credentials::SharedCredentialsProvider::new(
+                    crate::no_credentials::NoCredentials,
+                )
+            }),
         }
+    }
+}
+
+impl From<&aws_types::config::Config> for Builder {
+    fn from(input: &aws_types::config::Config) -> Self {
+        let mut builder = Builder::default();
+        builder = builder.region(input.region().cloned());
+        builder.set_credentials_provider(input.credentials_provider().cloned());
+        builder
+    }
+}
+
+impl From<&aws_types::config::Config> for Config {
+    fn from(config: &aws_types::config::Config) -> Self {
+        Builder::from(config).build()
     }
 }

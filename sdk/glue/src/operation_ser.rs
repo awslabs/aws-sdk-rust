@@ -49,6 +49,16 @@ pub fn serialize_operation_batch_delete_table_version(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_batch_get_blueprints(
+    input: &crate::input::BatchGetBlueprintsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_batch_get_blueprints_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_batch_get_crawlers(
     input: &crate::input::BatchGetCrawlersInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -145,6 +155,16 @@ pub fn serialize_operation_check_schema_version_validity(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_check_schema_version_validity_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_create_blueprint(
+    input: &crate::input::CreateBlueprintInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_create_blueprint_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -315,6 +335,16 @@ pub fn serialize_operation_create_workflow(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_create_workflow_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_delete_blueprint(
+    input: &crate::input::DeleteBlueprintInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_delete_blueprint_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -531,6 +561,36 @@ pub fn serialize_operation_delete_workflow(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_delete_workflow_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_get_blueprint(
+    input: &crate::input::GetBlueprintInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_get_blueprint_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_get_blueprint_run(
+    input: &crate::input::GetBlueprintRunInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_get_blueprint_run_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_get_blueprint_runs(
+    input: &crate::input::GetBlueprintRunsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_get_blueprint_runs_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -1071,6 +1131,16 @@ pub fn serialize_operation_import_catalog_to_glue(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_list_blueprints(
+    input: &crate::input::ListBlueprintsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_list_blueprints_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_list_crawlers(
     input: &crate::input::ListCrawlersInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -1264,6 +1334,16 @@ pub fn serialize_operation_search_tables(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_start_blueprint_run(
+    input: &crate::input::StartBlueprintRunInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_start_blueprint_run_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_start_crawler(
     input: &crate::input::StartCrawlerInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -1413,6 +1493,16 @@ pub fn serialize_operation_untag_resource(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_untag_resource_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_update_blueprint(
+    input: &crate::input::UpdateBlueprintInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_update_blueprint_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

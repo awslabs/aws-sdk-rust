@@ -4,6 +4,7 @@
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
+#![allow(clippy::vec_init_then_push)]
 //! <p>You use the AmazonCloudSearch2013 API to upload documents to a search domain and search those documents. </p>
 //! <p>The endpoints for submitting <code>UploadDocuments</code>, <code>Search</code>, and <code>Suggest</code> requests are domain-specific. To get the endpoints for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. The domain endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. You submit suggest requests to the search endpoint. </p>
 //! <p>For more information, see the <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide">Amazon CloudSearch Developer Guide</a>.</p>
@@ -23,6 +24,7 @@ pub mod input;
 mod json_deser;
 mod json_errors;
 pub mod model;
+mod no_credentials;
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
@@ -33,8 +35,8 @@ pub use smithy_http::result::SdkError;
 pub use smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("cloudsearchdomain", PKG_VERSION);
-pub use aws_auth::Credentials;
 pub use aws_types::region::Region;
+pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
 pub use smithy_http::endpoint::Endpoint;

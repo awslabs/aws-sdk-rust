@@ -23,8 +23,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetMediaError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetMediaError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetMediaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetMediaError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetMediaErrorKind::ClientLimitExceededException(inner) => {

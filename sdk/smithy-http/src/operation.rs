@@ -4,11 +4,10 @@
  */
 
 use crate::body::SdkBody;
-use crate::property_bag::PropertyBag;
+use crate::property_bag::{PropertyBag, SharedPropertyBag};
 use std::borrow::Cow;
 use std::error::Error;
 use std::ops::{Deref, DerefMut};
-use std::sync::{Arc, Mutex, MutexGuard};
 use thiserror::Error;
 
 #[derive(Clone, Debug)]
@@ -147,7 +146,7 @@ pub struct Request {
     ///
     /// Middleware can read and write from the property bag and use its
     /// contents to augment the request (see [`Request::augment`](Request::augment))
-    properties: Arc<Mutex<PropertyBag>>,
+    properties: SharedPropertyBag,
 }
 
 impl Request {
@@ -155,8 +154,13 @@ impl Request {
     pub fn new(inner: http::Request<SdkBody>) -> Self {
         Request {
             inner,
-            properties: Arc::new(Mutex::new(PropertyBag::new())),
+            properties: SharedPropertyBag::new(),
         }
+    }
+
+    /// Creates a new operation `Request` from its parts.
+    pub fn from_parts(inner: http::Request<SdkBody>, properties: SharedPropertyBag) -> Self {
+        Request { inner, properties }
     }
 
     /// Allows modification of the HTTP request and associated properties with a fallible closure.
@@ -165,7 +169,7 @@ impl Request {
         f: impl FnOnce(http::Request<SdkBody>, &mut PropertyBag) -> Result<http::Request<SdkBody>, T>,
     ) -> Result<Request, T> {
         let inner = {
-            let properties: &mut PropertyBag = &mut self.properties.lock().unwrap();
+            let properties: &mut PropertyBag = &mut self.properties.acquire_mut();
             f(self.inner, properties)?
         };
         Ok(Request {
@@ -175,13 +179,13 @@ impl Request {
     }
 
     /// Gives mutable access to the properties.
-    pub fn properties_mut(&mut self) -> MutexGuard<'_, PropertyBag> {
-        self.properties.lock().unwrap()
+    pub fn properties_mut(&mut self) -> impl DerefMut<Target = PropertyBag> + '_ {
+        self.properties.acquire_mut()
     }
 
     /// Gives readonly access to the properties.
-    pub fn properties(&self) -> MutexGuard<'_, PropertyBag> {
-        self.properties.lock().unwrap()
+    pub fn properties(&self) -> impl Deref<Target = PropertyBag> + '_ {
+        self.properties.acquire()
     }
 
     /// Gives mutable access to the underlying HTTP request.
@@ -216,7 +220,7 @@ impl Request {
     }
 
     /// Consumes the operation `Request` and returns the underlying HTTP request and properties.
-    pub fn into_parts(self) -> (http::Request<SdkBody>, Arc<Mutex<PropertyBag>>) {
+    pub fn into_parts(self) -> (http::Request<SdkBody>, SharedPropertyBag) {
         (self.inner, self.properties)
     }
 }
@@ -230,7 +234,7 @@ pub struct Response {
     inner: http::Response<SdkBody>,
 
     /// Property bag of configuration options
-    properties: Arc<Mutex<PropertyBag>>,
+    properties: SharedPropertyBag,
 }
 
 impl Response {
@@ -238,18 +242,18 @@ impl Response {
     pub fn new(inner: http::Response<SdkBody>) -> Self {
         Response {
             inner,
-            properties: Arc::new(Mutex::new(PropertyBag::new())),
+            properties: SharedPropertyBag::new(),
         }
     }
 
     /// Gives mutable access to the properties.
-    pub fn properties_mut(&mut self) -> MutexGuard<'_, PropertyBag> {
-        self.properties.lock().unwrap()
+    pub fn properties_mut(&mut self) -> impl DerefMut<Target = PropertyBag> + '_ {
+        self.properties.acquire_mut()
     }
 
     /// Gives readonly access to the properties.
-    pub fn properties(&self) -> MutexGuard<'_, PropertyBag> {
-        self.properties.lock().unwrap()
+    pub fn properties(&self) -> impl Deref<Target = PropertyBag> + '_ {
+        self.properties.acquire()
     }
 
     /// Gives mutable access to the underlying HTTP response.
@@ -263,12 +267,12 @@ impl Response {
     }
 
     /// Consumes the operation `Request` and returns the underlying HTTP response and properties.
-    pub fn into_parts(self) -> (http::Response<SdkBody>, Arc<Mutex<PropertyBag>>) {
+    pub fn into_parts(self) -> (http::Response<SdkBody>, SharedPropertyBag) {
         (self.inner, self.properties)
     }
 
     /// Creates a new operation `Response` from an HTTP response and property bag.
-    pub fn from_parts(inner: http::Response<SdkBody>, properties: Arc<Mutex<PropertyBag>>) -> Self {
+    pub fn from_parts(inner: http::Response<SdkBody>, properties: SharedPropertyBag) -> Self {
         Response { inner, properties }
     }
 }
@@ -304,6 +308,6 @@ mod test {
         );
         assert_eq!(request.headers().get(CONTENT_LENGTH).unwrap(), "456");
         assert_eq!(request.body().bytes().unwrap(), "hello world!".as_bytes());
-        assert_eq!(config.lock().unwrap().get::<&str>(), Some(&"hello"));
+        assert_eq!(config.acquire().get::<&str>(), Some(&"hello"));
     }
 }

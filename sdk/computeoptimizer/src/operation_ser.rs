@@ -116,6 +116,19 @@ pub fn serialize_operation_get_enrollment_status(
     Ok(smithy_http::body::SdkBody::from("{}"))
 }
 
+pub fn serialize_operation_get_enrollment_statuses_for_organization(
+    input: &crate::input::GetEnrollmentStatusesForOrganizationInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_get_enrollment_statuses_for_organization_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_get_lambda_function_recommendations(
     input: &crate::input::GetLambdaFunctionRecommendationsInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

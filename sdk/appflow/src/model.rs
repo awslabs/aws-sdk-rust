@@ -416,6 +416,8 @@ pub struct ConnectorOperator {
     pub veeva: std::option::Option<crate::model::VeevaConnectorOperator>,
     /// <p> The operation to be performed on the provided Zendesk source fields. </p>
     pub zendesk: std::option::Option<crate::model::ZendeskConnectorOperator>,
+    /// <p> The operation to be performed on the provided SAPOData source fields. </p>
+    pub sapo_data: std::option::Option<crate::model::SapoDataConnectorOperator>,
 }
 impl std::fmt::Debug for ConnectorOperator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -434,6 +436,7 @@ impl std::fmt::Debug for ConnectorOperator {
         formatter.field("trendmicro", &self.trendmicro);
         formatter.field("veeva", &self.veeva);
         formatter.field("zendesk", &self.zendesk);
+        formatter.field("sapo_data", &self.sapo_data);
         formatter.finish()
     }
 }
@@ -458,6 +461,7 @@ pub mod connector_operator {
         pub(crate) trendmicro: std::option::Option<crate::model::TrendmicroConnectorOperator>,
         pub(crate) veeva: std::option::Option<crate::model::VeevaConnectorOperator>,
         pub(crate) zendesk: std::option::Option<crate::model::ZendeskConnectorOperator>,
+        pub(crate) sapo_data: std::option::Option<crate::model::SapoDataConnectorOperator>,
     }
     impl Builder {
         /// <p> The operation to be performed on the provided Amplitude source fields. </p>
@@ -631,6 +635,18 @@ pub mod connector_operator {
             self.zendesk = input;
             self
         }
+        /// <p> The operation to be performed on the provided SAPOData source fields. </p>
+        pub fn sapo_data(mut self, input: crate::model::SapoDataConnectorOperator) -> Self {
+            self.sapo_data = Some(input);
+            self
+        }
+        pub fn set_sapo_data(
+            mut self,
+            input: std::option::Option<crate::model::SapoDataConnectorOperator>,
+        ) -> Self {
+            self.sapo_data = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConnectorOperator`](crate::model::ConnectorOperator)
         pub fn build(self) -> crate::model::ConnectorOperator {
             crate::model::ConnectorOperator {
@@ -648,6 +664,7 @@ pub mod connector_operator {
                 trendmicro: self.trendmicro,
                 veeva: self.veeva,
                 zendesk: self.zendesk,
+                sapo_data: self.sapo_data,
             }
         }
     }
@@ -656,6 +673,135 @@ impl ConnectorOperator {
     /// Creates a new builder-style object to manufacture [`ConnectorOperator`](crate::model::ConnectorOperator)
     pub fn builder() -> crate::model::connector_operator::Builder {
         crate::model::connector_operator::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SapoDataConnectorOperator {
+    Addition,
+    Between,
+    Contains,
+    Division,
+    EqualTo,
+    GreaterThan,
+    GreaterThanOrEqualTo,
+    LessThan,
+    LessThanOrEqualTo,
+    MaskAll,
+    MaskFirstN,
+    MaskLastN,
+    Multiplication,
+    NotEqualTo,
+    NoOp,
+    Projection,
+    Subtraction,
+    ValidateNonNegative,
+    ValidateNonNull,
+    ValidateNonZero,
+    ValidateNumeric,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SapoDataConnectorOperator {
+    fn from(s: &str) -> Self {
+        match s {
+            "ADDITION" => SapoDataConnectorOperator::Addition,
+            "BETWEEN" => SapoDataConnectorOperator::Between,
+            "CONTAINS" => SapoDataConnectorOperator::Contains,
+            "DIVISION" => SapoDataConnectorOperator::Division,
+            "EQUAL_TO" => SapoDataConnectorOperator::EqualTo,
+            "GREATER_THAN" => SapoDataConnectorOperator::GreaterThan,
+            "GREATER_THAN_OR_EQUAL_TO" => SapoDataConnectorOperator::GreaterThanOrEqualTo,
+            "LESS_THAN" => SapoDataConnectorOperator::LessThan,
+            "LESS_THAN_OR_EQUAL_TO" => SapoDataConnectorOperator::LessThanOrEqualTo,
+            "MASK_ALL" => SapoDataConnectorOperator::MaskAll,
+            "MASK_FIRST_N" => SapoDataConnectorOperator::MaskFirstN,
+            "MASK_LAST_N" => SapoDataConnectorOperator::MaskLastN,
+            "MULTIPLICATION" => SapoDataConnectorOperator::Multiplication,
+            "NOT_EQUAL_TO" => SapoDataConnectorOperator::NotEqualTo,
+            "NO_OP" => SapoDataConnectorOperator::NoOp,
+            "PROJECTION" => SapoDataConnectorOperator::Projection,
+            "SUBTRACTION" => SapoDataConnectorOperator::Subtraction,
+            "VALIDATE_NON_NEGATIVE" => SapoDataConnectorOperator::ValidateNonNegative,
+            "VALIDATE_NON_NULL" => SapoDataConnectorOperator::ValidateNonNull,
+            "VALIDATE_NON_ZERO" => SapoDataConnectorOperator::ValidateNonZero,
+            "VALIDATE_NUMERIC" => SapoDataConnectorOperator::ValidateNumeric,
+            other => SapoDataConnectorOperator::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SapoDataConnectorOperator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SapoDataConnectorOperator::from(s))
+    }
+}
+impl SapoDataConnectorOperator {
+    pub fn as_str(&self) -> &str {
+        match self {
+            SapoDataConnectorOperator::Addition => "ADDITION",
+            SapoDataConnectorOperator::Between => "BETWEEN",
+            SapoDataConnectorOperator::Contains => "CONTAINS",
+            SapoDataConnectorOperator::Division => "DIVISION",
+            SapoDataConnectorOperator::EqualTo => "EQUAL_TO",
+            SapoDataConnectorOperator::GreaterThan => "GREATER_THAN",
+            SapoDataConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+            SapoDataConnectorOperator::LessThan => "LESS_THAN",
+            SapoDataConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+            SapoDataConnectorOperator::MaskAll => "MASK_ALL",
+            SapoDataConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+            SapoDataConnectorOperator::MaskLastN => "MASK_LAST_N",
+            SapoDataConnectorOperator::Multiplication => "MULTIPLICATION",
+            SapoDataConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
+            SapoDataConnectorOperator::NoOp => "NO_OP",
+            SapoDataConnectorOperator::Projection => "PROJECTION",
+            SapoDataConnectorOperator::Subtraction => "SUBTRACTION",
+            SapoDataConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+            SapoDataConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+            SapoDataConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+            SapoDataConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+            SapoDataConnectorOperator::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ADDITION",
+            "BETWEEN",
+            "CONTAINS",
+            "DIVISION",
+            "EQUAL_TO",
+            "GREATER_THAN",
+            "GREATER_THAN_OR_EQUAL_TO",
+            "LESS_THAN",
+            "LESS_THAN_OR_EQUAL_TO",
+            "MASK_ALL",
+            "MASK_FIRST_N",
+            "MASK_LAST_N",
+            "MULTIPLICATION",
+            "NOT_EQUAL_TO",
+            "NO_OP",
+            "PROJECTION",
+            "SUBTRACTION",
+            "VALIDATE_NON_NEGATIVE",
+            "VALIDATE_NON_NULL",
+            "VALIDATE_NON_ZERO",
+            "VALIDATE_NUMERIC",
+        ]
+    }
+}
+impl AsRef<str> for SapoDataConnectorOperator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2124,7 +2270,7 @@ pub struct DestinationFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p> The name of the connector profile. This name must be unique for each connector profile in
-    /// the AWS account. </p>
+    /// the Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> This stores the information that is required to query a particular connector. </p>
     pub destination_connector_properties:
@@ -2167,7 +2313,7 @@ pub mod destination_flow_config {
             self
         }
         /// <p> The name of the connector profile. This name must be unique for each connector profile in
-        /// the AWS account. </p>
+        /// the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
@@ -3967,6 +4113,7 @@ pub enum ConnectorType {
     Marketo,
     Redshift,
     S3,
+    Sapodata,
     Salesforce,
     Servicenow,
     Singular,
@@ -3994,6 +4141,7 @@ impl std::convert::From<&str> for ConnectorType {
             "Marketo" => ConnectorType::Marketo,
             "Redshift" => ConnectorType::Redshift,
             "S3" => ConnectorType::S3,
+            "SAPOData" => ConnectorType::Sapodata,
             "Salesforce" => ConnectorType::Salesforce,
             "Servicenow" => ConnectorType::Servicenow,
             "Singular" => ConnectorType::Singular,
@@ -4029,6 +4177,7 @@ impl ConnectorType {
             ConnectorType::Marketo => "Marketo",
             ConnectorType::Redshift => "Redshift",
             ConnectorType::S3 => "S3",
+            ConnectorType::Sapodata => "SAPOData",
             ConnectorType::Salesforce => "Salesforce",
             ConnectorType::Servicenow => "Servicenow",
             ConnectorType::Singular => "Singular",
@@ -4055,6 +4204,7 @@ impl ConnectorType {
             "Marketo",
             "Redshift",
             "S3",
+            "SAPOData",
             "Salesforce",
             "Servicenow",
             "Singular",
@@ -4081,7 +4231,7 @@ pub struct SourceFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p> The name of the connector profile. This name must be unique for each connector profile in
-    /// the AWS account. </p>
+    /// the Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> Specifies the information that is required to query a particular source connector.
     /// </p>
@@ -4131,7 +4281,7 @@ pub mod source_flow_config {
             self
         }
         /// <p> The name of the connector profile. This name must be unique for each connector profile in
-        /// the AWS account. </p>
+        /// the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
@@ -4279,6 +4429,8 @@ pub struct SourceConnectorProperties {
     pub veeva: std::option::Option<crate::model::VeevaSourceProperties>,
     /// <p> Specifies the information that is required for querying Zendesk. </p>
     pub zendesk: std::option::Option<crate::model::ZendeskSourceProperties>,
+    /// <p> The properties that are applied when using SAPOData as a flow source. </p>
+    pub sapo_data: std::option::Option<crate::model::SapoDataSourceProperties>,
 }
 impl std::fmt::Debug for SourceConnectorProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4297,6 +4449,7 @@ impl std::fmt::Debug for SourceConnectorProperties {
         formatter.field("trendmicro", &self.trendmicro);
         formatter.field("veeva", &self.veeva);
         formatter.field("zendesk", &self.zendesk);
+        formatter.field("sapo_data", &self.sapo_data);
         formatter.finish()
     }
 }
@@ -4321,6 +4474,7 @@ pub mod source_connector_properties {
         pub(crate) trendmicro: std::option::Option<crate::model::TrendmicroSourceProperties>,
         pub(crate) veeva: std::option::Option<crate::model::VeevaSourceProperties>,
         pub(crate) zendesk: std::option::Option<crate::model::ZendeskSourceProperties>,
+        pub(crate) sapo_data: std::option::Option<crate::model::SapoDataSourceProperties>,
     }
     impl Builder {
         /// <p> Specifies the information that is required for querying Amplitude. </p>
@@ -4494,6 +4648,18 @@ pub mod source_connector_properties {
             self.zendesk = input;
             self
         }
+        /// <p> The properties that are applied when using SAPOData as a flow source. </p>
+        pub fn sapo_data(mut self, input: crate::model::SapoDataSourceProperties) -> Self {
+            self.sapo_data = Some(input);
+            self
+        }
+        pub fn set_sapo_data(
+            mut self,
+            input: std::option::Option<crate::model::SapoDataSourceProperties>,
+        ) -> Self {
+            self.sapo_data = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SourceConnectorProperties`](crate::model::SourceConnectorProperties)
         pub fn build(self) -> crate::model::SourceConnectorProperties {
             crate::model::SourceConnectorProperties {
@@ -4511,6 +4677,7 @@ pub mod source_connector_properties {
                 trendmicro: self.trendmicro,
                 veeva: self.veeva,
                 zendesk: self.zendesk,
+                sapo_data: self.sapo_data,
             }
         }
     }
@@ -4519,6 +4686,53 @@ impl SourceConnectorProperties {
     /// Creates a new builder-style object to manufacture [`SourceConnectorProperties`](crate::model::SourceConnectorProperties)
     pub fn builder() -> crate::model::source_connector_properties::Builder {
         crate::model::source_connector_properties::Builder::default()
+    }
+}
+
+/// <p> The properties that are applied when using SAPOData as a flow source. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SapoDataSourceProperties {
+    /// <p> The object path specified in the SAPOData flow source. </p>
+    pub object_path: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for SapoDataSourceProperties {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SapoDataSourceProperties");
+        formatter.field("object_path", &self.object_path);
+        formatter.finish()
+    }
+}
+/// See [`SapoDataSourceProperties`](crate::model::SapoDataSourceProperties)
+pub mod sapo_data_source_properties {
+    /// A builder for [`SapoDataSourceProperties`](crate::model::SapoDataSourceProperties)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) object_path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The object path specified in the SAPOData flow source. </p>
+        pub fn object_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object_path = Some(input.into());
+            self
+        }
+        pub fn set_object_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SapoDataSourceProperties`](crate::model::SapoDataSourceProperties)
+        pub fn build(self) -> crate::model::SapoDataSourceProperties {
+            crate::model::SapoDataSourceProperties {
+                object_path: self.object_path,
+            }
+        }
+    }
+}
+impl SapoDataSourceProperties {
+    /// Creates a new builder-style object to manufacture [`SapoDataSourceProperties`](crate::model::SapoDataSourceProperties)
+    pub fn builder() -> crate::model::sapo_data_source_properties::Builder {
+        crate::model::sapo_data_source_properties::Builder::default()
     }
 }
 
@@ -4575,11 +4789,23 @@ impl ZendeskSourceProperties {
 pub struct VeevaSourceProperties {
     /// <p> The object specified in the Veeva flow source. </p>
     pub object: std::option::Option<std::string::String>,
+    /// <p>The document type specified in the Veeva document extract flow.</p>
+    pub document_type: std::option::Option<std::string::String>,
+    /// <p>Boolean value to include source files in Veeva document extract flow.</p>
+    pub include_source_files: bool,
+    /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
+    pub include_renditions: bool,
+    /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
+    pub include_all_versions: bool,
 }
 impl std::fmt::Debug for VeevaSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VeevaSourceProperties");
         formatter.field("object", &self.object);
+        formatter.field("document_type", &self.document_type);
+        formatter.field("include_source_files", &self.include_source_files);
+        formatter.field("include_renditions", &self.include_renditions);
+        formatter.field("include_all_versions", &self.include_all_versions);
         formatter.finish()
     }
 }
@@ -4590,6 +4816,10 @@ pub mod veeva_source_properties {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
+        pub(crate) document_type: std::option::Option<std::string::String>,
+        pub(crate) include_source_files: std::option::Option<bool>,
+        pub(crate) include_renditions: std::option::Option<bool>,
+        pub(crate) include_all_versions: std::option::Option<bool>,
     }
     impl Builder {
         /// <p> The object specified in the Veeva flow source. </p>
@@ -4601,10 +4831,53 @@ pub mod veeva_source_properties {
             self.object = input;
             self
         }
+        /// <p>The document type specified in the Veeva document extract flow.</p>
+        pub fn document_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_type = Some(input.into());
+            self
+        }
+        pub fn set_document_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_type = input;
+            self
+        }
+        /// <p>Boolean value to include source files in Veeva document extract flow.</p>
+        pub fn include_source_files(mut self, input: bool) -> Self {
+            self.include_source_files = Some(input);
+            self
+        }
+        pub fn set_include_source_files(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_source_files = input;
+            self
+        }
+        /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
+        pub fn include_renditions(mut self, input: bool) -> Self {
+            self.include_renditions = Some(input);
+            self
+        }
+        pub fn set_include_renditions(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_renditions = input;
+            self
+        }
+        /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
+        pub fn include_all_versions(mut self, input: bool) -> Self {
+            self.include_all_versions = Some(input);
+            self
+        }
+        pub fn set_include_all_versions(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_all_versions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`VeevaSourceProperties`](crate::model::VeevaSourceProperties)
         pub fn build(self) -> crate::model::VeevaSourceProperties {
             crate::model::VeevaSourceProperties {
                 object: self.object,
+                document_type: self.document_type,
+                include_source_files: self.include_source_files.unwrap_or_default(),
+                include_renditions: self.include_renditions.unwrap_or_default(),
+                include_all_versions: self.include_all_versions.unwrap_or_default(),
             }
         }
     }
@@ -5735,6 +6008,8 @@ pub struct ConnectorProfileCredentials {
     pub veeva: std::option::Option<crate::model::VeevaConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Zendesk. </p>
     pub zendesk: std::option::Option<crate::model::ZendeskConnectorProfileCredentials>,
+    /// <p> The connector-specific profile credentials required when using SAPOData. </p>
+    pub sapo_data: std::option::Option<crate::model::SapoDataConnectorProfileCredentials>,
 }
 impl std::fmt::Debug for ConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5755,6 +6030,7 @@ impl std::fmt::Debug for ConnectorProfileCredentials {
         formatter.field("trendmicro", &self.trendmicro);
         formatter.field("veeva", &self.veeva);
         formatter.field("zendesk", &self.zendesk);
+        formatter.field("sapo_data", &self.sapo_data);
         formatter.finish()
     }
 }
@@ -5789,6 +6065,8 @@ pub mod connector_profile_credentials {
             std::option::Option<crate::model::TrendmicroConnectorProfileCredentials>,
         pub(crate) veeva: std::option::Option<crate::model::VeevaConnectorProfileCredentials>,
         pub(crate) zendesk: std::option::Option<crate::model::ZendeskConnectorProfileCredentials>,
+        pub(crate) sapo_data:
+            std::option::Option<crate::model::SapoDataConnectorProfileCredentials>,
     }
     impl Builder {
         /// <p> The connector-specific credentials required when using Amplitude. </p>
@@ -6016,6 +6294,21 @@ pub mod connector_profile_credentials {
             self.zendesk = input;
             self
         }
+        /// <p> The connector-specific profile credentials required when using SAPOData. </p>
+        pub fn sapo_data(
+            mut self,
+            input: crate::model::SapoDataConnectorProfileCredentials,
+        ) -> Self {
+            self.sapo_data = Some(input);
+            self
+        }
+        pub fn set_sapo_data(
+            mut self,
+            input: std::option::Option<crate::model::SapoDataConnectorProfileCredentials>,
+        ) -> Self {
+            self.sapo_data = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConnectorProfileCredentials`](crate::model::ConnectorProfileCredentials)
         pub fn build(self) -> crate::model::ConnectorProfileCredentials {
             crate::model::ConnectorProfileCredentials {
@@ -6035,6 +6328,7 @@ pub mod connector_profile_credentials {
                 trendmicro: self.trendmicro,
                 veeva: self.veeva,
                 zendesk: self.zendesk,
+                sapo_data: self.sapo_data,
             }
         }
     }
@@ -6043,6 +6337,316 @@ impl ConnectorProfileCredentials {
     /// Creates a new builder-style object to manufacture [`ConnectorProfileCredentials`](crate::model::ConnectorProfileCredentials)
     pub fn builder() -> crate::model::connector_profile_credentials::Builder {
         crate::model::connector_profile_credentials::Builder::default()
+    }
+}
+
+/// <p> The connector-specific profile credentials required when using SAPOData. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SapoDataConnectorProfileCredentials {
+    /// <p> The SAPOData basic authentication credentials. </p>
+    pub basic_auth_credentials: std::option::Option<crate::model::BasicAuthCredentials>,
+    /// <p> The SAPOData OAuth type authentication credentials. </p>
+    pub o_auth_credentials: std::option::Option<crate::model::OAuthCredentials>,
+}
+impl std::fmt::Debug for SapoDataConnectorProfileCredentials {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SapoDataConnectorProfileCredentials");
+        formatter.field("basic_auth_credentials", &self.basic_auth_credentials);
+        formatter.field("o_auth_credentials", &self.o_auth_credentials);
+        formatter.finish()
+    }
+}
+/// See [`SapoDataConnectorProfileCredentials`](crate::model::SapoDataConnectorProfileCredentials)
+pub mod sapo_data_connector_profile_credentials {
+    /// A builder for [`SapoDataConnectorProfileCredentials`](crate::model::SapoDataConnectorProfileCredentials)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) basic_auth_credentials: std::option::Option<crate::model::BasicAuthCredentials>,
+        pub(crate) o_auth_credentials: std::option::Option<crate::model::OAuthCredentials>,
+    }
+    impl Builder {
+        /// <p> The SAPOData basic authentication credentials. </p>
+        pub fn basic_auth_credentials(mut self, input: crate::model::BasicAuthCredentials) -> Self {
+            self.basic_auth_credentials = Some(input);
+            self
+        }
+        pub fn set_basic_auth_credentials(
+            mut self,
+            input: std::option::Option<crate::model::BasicAuthCredentials>,
+        ) -> Self {
+            self.basic_auth_credentials = input;
+            self
+        }
+        /// <p> The SAPOData OAuth type authentication credentials. </p>
+        pub fn o_auth_credentials(mut self, input: crate::model::OAuthCredentials) -> Self {
+            self.o_auth_credentials = Some(input);
+            self
+        }
+        pub fn set_o_auth_credentials(
+            mut self,
+            input: std::option::Option<crate::model::OAuthCredentials>,
+        ) -> Self {
+            self.o_auth_credentials = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SapoDataConnectorProfileCredentials`](crate::model::SapoDataConnectorProfileCredentials)
+        pub fn build(self) -> crate::model::SapoDataConnectorProfileCredentials {
+            crate::model::SapoDataConnectorProfileCredentials {
+                basic_auth_credentials: self.basic_auth_credentials,
+                o_auth_credentials: self.o_auth_credentials,
+            }
+        }
+    }
+}
+impl SapoDataConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`SapoDataConnectorProfileCredentials`](crate::model::SapoDataConnectorProfileCredentials)
+    pub fn builder() -> crate::model::sapo_data_connector_profile_credentials::Builder {
+        crate::model::sapo_data_connector_profile_credentials::Builder::default()
+    }
+}
+
+/// <p> The OAuth credentials required for OAuth type authentication. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OAuthCredentials {
+    /// <p> The identifier for the desired client. </p>
+    pub client_id: std::option::Option<std::string::String>,
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
+    /// </p>
+    pub client_secret: std::option::Option<std::string::String>,
+    /// <p> The access token used to access protected SAPOData resources. </p>
+    pub access_token: std::option::Option<std::string::String>,
+    /// <p> The refresh token used to refresh expired access token. </p>
+    pub refresh_token: std::option::Option<std::string::String>,
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
+    /// </p>
+    pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
+}
+impl std::fmt::Debug for OAuthCredentials {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OAuthCredentials");
+        formatter.field("client_id", &self.client_id);
+        formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("refresh_token", &self.refresh_token);
+        formatter.field("o_auth_request", &self.o_auth_request);
+        formatter.finish()
+    }
+}
+/// See [`OAuthCredentials`](crate::model::OAuthCredentials)
+pub mod o_auth_credentials {
+    /// A builder for [`OAuthCredentials`](crate::model::OAuthCredentials)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_id: std::option::Option<std::string::String>,
+        pub(crate) client_secret: std::option::Option<std::string::String>,
+        pub(crate) access_token: std::option::Option<std::string::String>,
+        pub(crate) refresh_token: std::option::Option<std::string::String>,
+        pub(crate) o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
+    }
+    impl Builder {
+        /// <p> The identifier for the desired client. </p>
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_id = Some(input.into());
+            self
+        }
+        pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_id = input;
+            self
+        }
+        /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
+        /// </p>
+        pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_secret = Some(input.into());
+            self
+        }
+        pub fn set_client_secret(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_secret = input;
+            self
+        }
+        /// <p> The access token used to access protected SAPOData resources. </p>
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_token = Some(input.into());
+            self
+        }
+        pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_token = input;
+            self
+        }
+        /// <p> The refresh token used to refresh expired access token. </p>
+        pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.refresh_token = Some(input.into());
+            self
+        }
+        pub fn set_refresh_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.refresh_token = input;
+            self
+        }
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
+        /// </p>
+        pub fn o_auth_request(mut self, input: crate::model::ConnectorOAuthRequest) -> Self {
+            self.o_auth_request = Some(input);
+            self
+        }
+        pub fn set_o_auth_request(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorOAuthRequest>,
+        ) -> Self {
+            self.o_auth_request = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OAuthCredentials`](crate::model::OAuthCredentials)
+        pub fn build(self) -> crate::model::OAuthCredentials {
+            crate::model::OAuthCredentials {
+                client_id: self.client_id,
+                client_secret: self.client_secret,
+                access_token: self.access_token,
+                refresh_token: self.refresh_token,
+                o_auth_request: self.o_auth_request,
+            }
+        }
+    }
+}
+impl OAuthCredentials {
+    /// Creates a new builder-style object to manufacture [`OAuthCredentials`](crate::model::OAuthCredentials)
+    pub fn builder() -> crate::model::o_auth_credentials::Builder {
+        crate::model::o_auth_credentials::Builder::default()
+    }
+}
+
+/// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce,
+/// Google Analytics, Marketo, Zendesk, and Slack. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConnectorOAuthRequest {
+    /// <p> The code provided by the connector when it has been authenticated via the connected app.
+    /// </p>
+    pub auth_code: std::option::Option<std::string::String>,
+    /// <p> The URL to which the authentication server redirects the browser after authorization has
+    /// been granted. </p>
+    pub redirect_uri: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ConnectorOAuthRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectorOAuthRequest");
+        formatter.field("auth_code", &self.auth_code);
+        formatter.field("redirect_uri", &self.redirect_uri);
+        formatter.finish()
+    }
+}
+/// See [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest)
+pub mod connector_o_auth_request {
+    /// A builder for [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) auth_code: std::option::Option<std::string::String>,
+        pub(crate) redirect_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The code provided by the connector when it has been authenticated via the connected app.
+        /// </p>
+        pub fn auth_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_code = Some(input.into());
+            self
+        }
+        pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auth_code = input;
+            self
+        }
+        /// <p> The URL to which the authentication server redirects the browser after authorization has
+        /// been granted. </p>
+        pub fn redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.redirect_uri = Some(input.into());
+            self
+        }
+        pub fn set_redirect_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.redirect_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest)
+        pub fn build(self) -> crate::model::ConnectorOAuthRequest {
+            crate::model::ConnectorOAuthRequest {
+                auth_code: self.auth_code,
+                redirect_uri: self.redirect_uri,
+            }
+        }
+    }
+}
+impl ConnectorOAuthRequest {
+    /// Creates a new builder-style object to manufacture [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest)
+    pub fn builder() -> crate::model::connector_o_auth_request::Builder {
+        crate::model::connector_o_auth_request::Builder::default()
+    }
+}
+
+/// <p> The basic auth credentials required for basic authentication. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BasicAuthCredentials {
+    /// <p> The username to use to connect to a resource. </p>
+    pub username: std::option::Option<std::string::String>,
+    /// <p> The password to use to connect to a resource.</p>
+    pub password: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for BasicAuthCredentials {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BasicAuthCredentials");
+        formatter.field("username", &self.username);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`BasicAuthCredentials`](crate::model::BasicAuthCredentials)
+pub mod basic_auth_credentials {
+    /// A builder for [`BasicAuthCredentials`](crate::model::BasicAuthCredentials)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) username: std::option::Option<std::string::String>,
+        pub(crate) password: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The username to use to connect to a resource. </p>
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
+            self
+        }
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
+            self
+        }
+        /// <p> The password to use to connect to a resource.</p>
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password = Some(input.into());
+            self
+        }
+        pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.password = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BasicAuthCredentials`](crate::model::BasicAuthCredentials)
+        pub fn build(self) -> crate::model::BasicAuthCredentials {
+            crate::model::BasicAuthCredentials {
+                username: self.username,
+                password: self.password,
+            }
+        }
+    }
+}
+impl BasicAuthCredentials {
+    /// Creates a new builder-style object to manufacture [`BasicAuthCredentials`](crate::model::BasicAuthCredentials)
+    pub fn builder() -> crate::model::basic_auth_credentials::Builder {
+        crate::model::basic_auth_credentials::Builder::default()
     }
 }
 
@@ -6142,72 +6746,6 @@ impl ZendeskConnectorProfileCredentials {
     /// Creates a new builder-style object to manufacture [`ZendeskConnectorProfileCredentials`](crate::model::ZendeskConnectorProfileCredentials)
     pub fn builder() -> crate::model::zendesk_connector_profile_credentials::Builder {
         crate::model::zendesk_connector_profile_credentials::Builder::default()
-    }
-}
-
-/// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce,
-/// Google Analytics, Marketo, Zendesk, and Slack. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConnectorOAuthRequest {
-    /// <p> The code provided by the connector when it has been authenticated via the connected app.
-    /// </p>
-    pub auth_code: std::option::Option<std::string::String>,
-    /// <p> The URL to which the authentication server redirects the browser after authorization has
-    /// been granted. </p>
-    pub redirect_uri: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConnectorOAuthRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorOAuthRequest");
-        formatter.field("auth_code", &self.auth_code);
-        formatter.field("redirect_uri", &self.redirect_uri);
-        formatter.finish()
-    }
-}
-/// See [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest)
-pub mod connector_o_auth_request {
-    /// A builder for [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) auth_code: std::option::Option<std::string::String>,
-        pub(crate) redirect_uri: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p> The code provided by the connector when it has been authenticated via the connected app.
-        /// </p>
-        pub fn auth_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.auth_code = Some(input.into());
-            self
-        }
-        pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.auth_code = input;
-            self
-        }
-        /// <p> The URL to which the authentication server redirects the browser after authorization has
-        /// been granted. </p>
-        pub fn redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
-            self.redirect_uri = Some(input.into());
-            self
-        }
-        pub fn set_redirect_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.redirect_uri = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest)
-        pub fn build(self) -> crate::model::ConnectorOAuthRequest {
-            crate::model::ConnectorOAuthRequest {
-                auth_code: self.auth_code,
-                redirect_uri: self.redirect_uri,
-            }
-        }
-    }
-}
-impl ConnectorOAuthRequest {
-    /// Creates a new builder-style object to manufacture [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest)
-    pub fn builder() -> crate::model::connector_o_auth_request::Builder {
-        crate::model::connector_o_auth_request::Builder::default()
     }
 }
 
@@ -7367,6 +7905,8 @@ pub struct ConnectorProfileProperties {
     pub veeva: std::option::Option<crate::model::VeevaConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Zendesk. </p>
     pub zendesk: std::option::Option<crate::model::ZendeskConnectorProfileProperties>,
+    /// <p> The connector-specific profile properties required when using SAPOData. </p>
+    pub sapo_data: std::option::Option<crate::model::SapoDataConnectorProfileProperties>,
 }
 impl std::fmt::Debug for ConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7387,6 +7927,7 @@ impl std::fmt::Debug for ConnectorProfileProperties {
         formatter.field("trendmicro", &self.trendmicro);
         formatter.field("veeva", &self.veeva);
         formatter.field("zendesk", &self.zendesk);
+        formatter.field("sapo_data", &self.sapo_data);
         formatter.finish()
     }
 }
@@ -7421,6 +7962,7 @@ pub mod connector_profile_properties {
             std::option::Option<crate::model::TrendmicroConnectorProfileProperties>,
         pub(crate) veeva: std::option::Option<crate::model::VeevaConnectorProfileProperties>,
         pub(crate) zendesk: std::option::Option<crate::model::ZendeskConnectorProfileProperties>,
+        pub(crate) sapo_data: std::option::Option<crate::model::SapoDataConnectorProfileProperties>,
     }
     impl Builder {
         /// <p> The connector-specific properties required by Amplitude. </p>
@@ -7642,6 +8184,21 @@ pub mod connector_profile_properties {
             self.zendesk = input;
             self
         }
+        /// <p> The connector-specific profile properties required when using SAPOData. </p>
+        pub fn sapo_data(
+            mut self,
+            input: crate::model::SapoDataConnectorProfileProperties,
+        ) -> Self {
+            self.sapo_data = Some(input);
+            self
+        }
+        pub fn set_sapo_data(
+            mut self,
+            input: std::option::Option<crate::model::SapoDataConnectorProfileProperties>,
+        ) -> Self {
+            self.sapo_data = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConnectorProfileProperties`](crate::model::ConnectorProfileProperties)
         pub fn build(self) -> crate::model::ConnectorProfileProperties {
             crate::model::ConnectorProfileProperties {
@@ -7661,6 +8218,7 @@ pub mod connector_profile_properties {
                 trendmicro: self.trendmicro,
                 veeva: self.veeva,
                 zendesk: self.zendesk,
+                sapo_data: self.sapo_data,
             }
         }
     }
@@ -7669,6 +8227,241 @@ impl ConnectorProfileProperties {
     /// Creates a new builder-style object to manufacture [`ConnectorProfileProperties`](crate::model::ConnectorProfileProperties)
     pub fn builder() -> crate::model::connector_profile_properties::Builder {
         crate::model::connector_profile_properties::Builder::default()
+    }
+}
+
+/// <p> The connector-specific profile properties required when using SAPOData. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SapoDataConnectorProfileProperties {
+    /// <p> The location of the SAPOData resource. </p>
+    pub application_host_url: std::option::Option<std::string::String>,
+    /// <p> The application path to catalog service. </p>
+    pub application_service_path: std::option::Option<std::string::String>,
+    /// <p> The port number of the SAPOData instance. </p>
+    pub port_number: std::option::Option<i32>,
+    /// <p> The client number for the client creating the connection. </p>
+    pub client_number: std::option::Option<std::string::String>,
+    /// <p> The logon language of SAPOData instance. </p>
+    pub logon_language: std::option::Option<std::string::String>,
+    /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
+    pub private_link_service_name: std::option::Option<std::string::String>,
+    /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
+    pub o_auth_properties: std::option::Option<crate::model::OAuthProperties>,
+}
+impl std::fmt::Debug for SapoDataConnectorProfileProperties {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SapoDataConnectorProfileProperties");
+        formatter.field("application_host_url", &self.application_host_url);
+        formatter.field("application_service_path", &self.application_service_path);
+        formatter.field("port_number", &self.port_number);
+        formatter.field("client_number", &self.client_number);
+        formatter.field("logon_language", &self.logon_language);
+        formatter.field("private_link_service_name", &self.private_link_service_name);
+        formatter.field("o_auth_properties", &self.o_auth_properties);
+        formatter.finish()
+    }
+}
+/// See [`SapoDataConnectorProfileProperties`](crate::model::SapoDataConnectorProfileProperties)
+pub mod sapo_data_connector_profile_properties {
+    /// A builder for [`SapoDataConnectorProfileProperties`](crate::model::SapoDataConnectorProfileProperties)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_host_url: std::option::Option<std::string::String>,
+        pub(crate) application_service_path: std::option::Option<std::string::String>,
+        pub(crate) port_number: std::option::Option<i32>,
+        pub(crate) client_number: std::option::Option<std::string::String>,
+        pub(crate) logon_language: std::option::Option<std::string::String>,
+        pub(crate) private_link_service_name: std::option::Option<std::string::String>,
+        pub(crate) o_auth_properties: std::option::Option<crate::model::OAuthProperties>,
+    }
+    impl Builder {
+        /// <p> The location of the SAPOData resource. </p>
+        pub fn application_host_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_host_url = Some(input.into());
+            self
+        }
+        pub fn set_application_host_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_host_url = input;
+            self
+        }
+        /// <p> The application path to catalog service. </p>
+        pub fn application_service_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_service_path = Some(input.into());
+            self
+        }
+        pub fn set_application_service_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_service_path = input;
+            self
+        }
+        /// <p> The port number of the SAPOData instance. </p>
+        pub fn port_number(mut self, input: i32) -> Self {
+            self.port_number = Some(input);
+            self
+        }
+        pub fn set_port_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.port_number = input;
+            self
+        }
+        /// <p> The client number for the client creating the connection. </p>
+        pub fn client_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_number = Some(input.into());
+            self
+        }
+        pub fn set_client_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_number = input;
+            self
+        }
+        /// <p> The logon language of SAPOData instance. </p>
+        pub fn logon_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logon_language = Some(input.into());
+            self
+        }
+        pub fn set_logon_language(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.logon_language = input;
+            self
+        }
+        /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
+        pub fn private_link_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.private_link_service_name = Some(input.into());
+            self
+        }
+        pub fn set_private_link_service_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.private_link_service_name = input;
+            self
+        }
+        /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
+        pub fn o_auth_properties(mut self, input: crate::model::OAuthProperties) -> Self {
+            self.o_auth_properties = Some(input);
+            self
+        }
+        pub fn set_o_auth_properties(
+            mut self,
+            input: std::option::Option<crate::model::OAuthProperties>,
+        ) -> Self {
+            self.o_auth_properties = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SapoDataConnectorProfileProperties`](crate::model::SapoDataConnectorProfileProperties)
+        pub fn build(self) -> crate::model::SapoDataConnectorProfileProperties {
+            crate::model::SapoDataConnectorProfileProperties {
+                application_host_url: self.application_host_url,
+                application_service_path: self.application_service_path,
+                port_number: self.port_number,
+                client_number: self.client_number,
+                logon_language: self.logon_language,
+                private_link_service_name: self.private_link_service_name,
+                o_auth_properties: self.o_auth_properties,
+            }
+        }
+    }
+}
+impl SapoDataConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`SapoDataConnectorProfileProperties`](crate::model::SapoDataConnectorProfileProperties)
+    pub fn builder() -> crate::model::sapo_data_connector_profile_properties::Builder {
+        crate::model::sapo_data_connector_profile_properties::Builder::default()
+    }
+}
+
+/// <p> The OAuth properties required for OAuth type authentication. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OAuthProperties {
+    /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired
+    /// access token using refresh token.</p>
+    pub token_url: std::option::Option<std::string::String>,
+    /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type
+    /// authentication. </p>
+    pub auth_code_url: std::option::Option<std::string::String>,
+    /// <p> The OAuth scopes required for OAuth type authentication. </p>
+    pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for OAuthProperties {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OAuthProperties");
+        formatter.field("token_url", &self.token_url);
+        formatter.field("auth_code_url", &self.auth_code_url);
+        formatter.field("o_auth_scopes", &self.o_auth_scopes);
+        formatter.finish()
+    }
+}
+/// See [`OAuthProperties`](crate::model::OAuthProperties)
+pub mod o_auth_properties {
+    /// A builder for [`OAuthProperties`](crate::model::OAuthProperties)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) token_url: std::option::Option<std::string::String>,
+        pub(crate) auth_code_url: std::option::Option<std::string::String>,
+        pub(crate) o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired
+        /// access token using refresh token.</p>
+        pub fn token_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.token_url = Some(input.into());
+            self
+        }
+        pub fn set_token_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token_url = input;
+            self
+        }
+        /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type
+        /// authentication. </p>
+        pub fn auth_code_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_code_url = Some(input.into());
+            self
+        }
+        pub fn set_auth_code_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.auth_code_url = input;
+            self
+        }
+        pub fn o_auth_scopes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.o_auth_scopes.unwrap_or_default();
+            v.push(input.into());
+            self.o_auth_scopes = Some(v);
+            self
+        }
+        pub fn set_o_auth_scopes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.o_auth_scopes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OAuthProperties`](crate::model::OAuthProperties)
+        pub fn build(self) -> crate::model::OAuthProperties {
+            crate::model::OAuthProperties {
+                token_url: self.token_url,
+                auth_code_url: self.auth_code_url,
+                o_auth_scopes: self.o_auth_scopes,
+            }
+        }
+    }
+}
+impl OAuthProperties {
+    /// Creates a new builder-style object to manufacture [`OAuthProperties`](crate::model::OAuthProperties)
+    pub fn builder() -> crate::model::o_auth_properties::Builder {
+        crate::model::o_auth_properties::Builder::default()
     }
 }
 
@@ -7814,7 +8607,7 @@ pub struct SnowflakeConnectorProfileProperties {
     pub private_link_service_name: std::option::Option<std::string::String>,
     /// <p> The name of the account. </p>
     pub account_name: std::option::Option<std::string::String>,
-    /// <p> The AWS Region of the Snowflake account. </p>
+    /// <p> The Amazon Web Services Region of the Snowflake account. </p>
     pub region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnowflakeConnectorProfileProperties {
@@ -7907,7 +8700,7 @@ pub mod snowflake_connector_profile_properties {
             self.account_name = input;
             self
         }
-        /// <p> The AWS Region of the Snowflake account. </p>
+        /// <p> The Amazon Web Services Region of the Snowflake account. </p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -9592,6 +10385,8 @@ pub struct ConnectorMetadata {
     pub customer_profiles: std::option::Option<crate::model::CustomerProfilesMetadata>,
     /// <p> The connector metadata specific to Amazon Honeycode. </p>
     pub honeycode: std::option::Option<crate::model::HoneycodeMetadata>,
+    /// <p> The connector metadata specific to SAPOData. </p>
+    pub sapo_data: std::option::Option<crate::model::SapoDataMetadata>,
 }
 impl std::fmt::Debug for ConnectorMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9616,6 +10411,7 @@ impl std::fmt::Debug for ConnectorMetadata {
         formatter.field("upsolver", &self.upsolver);
         formatter.field("customer_profiles", &self.customer_profiles);
         formatter.field("honeycode", &self.honeycode);
+        formatter.field("sapo_data", &self.sapo_data);
         formatter.finish()
     }
 }
@@ -9645,6 +10441,7 @@ pub mod connector_metadata {
         pub(crate) upsolver: std::option::Option<crate::model::UpsolverMetadata>,
         pub(crate) customer_profiles: std::option::Option<crate::model::CustomerProfilesMetadata>,
         pub(crate) honeycode: std::option::Option<crate::model::HoneycodeMetadata>,
+        pub(crate) sapo_data: std::option::Option<crate::model::SapoDataMetadata>,
     }
     impl Builder {
         /// <p> The connector metadata specific to Amplitude. </p>
@@ -9884,6 +10681,18 @@ pub mod connector_metadata {
             self.honeycode = input;
             self
         }
+        /// <p> The connector metadata specific to SAPOData. </p>
+        pub fn sapo_data(mut self, input: crate::model::SapoDataMetadata) -> Self {
+            self.sapo_data = Some(input);
+            self
+        }
+        pub fn set_sapo_data(
+            mut self,
+            input: std::option::Option<crate::model::SapoDataMetadata>,
+        ) -> Self {
+            self.sapo_data = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConnectorMetadata`](crate::model::ConnectorMetadata)
         pub fn build(self) -> crate::model::ConnectorMetadata {
             crate::model::ConnectorMetadata {
@@ -9907,6 +10716,7 @@ pub mod connector_metadata {
                 upsolver: self.upsolver,
                 customer_profiles: self.customer_profiles,
                 honeycode: self.honeycode,
+                sapo_data: self.sapo_data,
             }
         }
     }
@@ -9915,6 +10725,36 @@ impl ConnectorMetadata {
     /// Creates a new builder-style object to manufacture [`ConnectorMetadata`](crate::model::ConnectorMetadata)
     pub fn builder() -> crate::model::connector_metadata::Builder {
         crate::model::connector_metadata::Builder::default()
+    }
+}
+
+/// <p> The connector metadata specific to SAPOData. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SapoDataMetadata {}
+impl std::fmt::Debug for SapoDataMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SapoDataMetadata");
+        formatter.finish()
+    }
+}
+/// See [`SapoDataMetadata`](crate::model::SapoDataMetadata)
+pub mod sapo_data_metadata {
+    /// A builder for [`SapoDataMetadata`](crate::model::SapoDataMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`SapoDataMetadata`](crate::model::SapoDataMetadata)
+        pub fn build(self) -> crate::model::SapoDataMetadata {
+            crate::model::SapoDataMetadata {}
+        }
+    }
+}
+impl SapoDataMetadata {
+    /// Creates a new builder-style object to manufacture [`SapoDataMetadata`](crate::model::SapoDataMetadata)
+    pub fn builder() -> crate::model::sapo_data_metadata::Builder {
+        crate::model::sapo_data_metadata::Builder::default()
     }
 }
 
@@ -10174,7 +11014,7 @@ impl TrendmicroMetadata {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnowflakeMetadata {
-    /// <p> Specifies the supported AWS Regions when using Snowflake. </p>
+    /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
     pub supported_regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for SnowflakeMetadata {
@@ -10717,7 +11557,7 @@ pub struct ConnectorProfile {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
     pub connector_profile_arn: std::option::Option<std::string::String>,
     /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the AWS account. </p>
+    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
@@ -10731,6 +11571,9 @@ pub struct ConnectorProfile {
     pub created_at: std::option::Option<smithy_types::Instant>,
     /// <p> Specifies when the connector profile was last updated. </p>
     pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    /// <p> Specifies the private connection provisioning state. </p>
+    pub private_connection_provisioning_state:
+        std::option::Option<crate::model::PrivateConnectionProvisioningState>,
 }
 impl std::fmt::Debug for ConnectorProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10746,6 +11589,10 @@ impl std::fmt::Debug for ConnectorProfile {
         );
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field(
+            "private_connection_provisioning_state",
+            &self.private_connection_provisioning_state,
+        );
         formatter.finish()
     }
 }
@@ -10764,6 +11611,8 @@ pub mod connector_profile {
             std::option::Option<crate::model::ConnectorProfileProperties>,
         pub(crate) created_at: std::option::Option<smithy_types::Instant>,
         pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) private_connection_provisioning_state:
+            std::option::Option<crate::model::PrivateConnectionProvisioningState>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
@@ -10779,7 +11628,7 @@ pub mod connector_profile {
             self
         }
         /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the AWS account. </p>
+        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
@@ -10863,6 +11712,21 @@ pub mod connector_profile {
             self.last_updated_at = input;
             self
         }
+        /// <p> Specifies the private connection provisioning state. </p>
+        pub fn private_connection_provisioning_state(
+            mut self,
+            input: crate::model::PrivateConnectionProvisioningState,
+        ) -> Self {
+            self.private_connection_provisioning_state = Some(input);
+            self
+        }
+        pub fn set_private_connection_provisioning_state(
+            mut self,
+            input: std::option::Option<crate::model::PrivateConnectionProvisioningState>,
+        ) -> Self {
+            self.private_connection_provisioning_state = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConnectorProfile`](crate::model::ConnectorProfile)
         pub fn build(self) -> crate::model::ConnectorProfile {
             crate::model::ConnectorProfile {
@@ -10874,6 +11738,7 @@ pub mod connector_profile {
                 connector_profile_properties: self.connector_profile_properties,
                 created_at: self.created_at,
                 last_updated_at: self.last_updated_at,
+                private_connection_provisioning_state: self.private_connection_provisioning_state,
             }
         }
     }
@@ -10882,6 +11747,216 @@ impl ConnectorProfile {
     /// Creates a new builder-style object to manufacture [`ConnectorProfile`](crate::model::ConnectorProfile)
     pub fn builder() -> crate::model::connector_profile::Builder {
         crate::model::connector_profile::Builder::default()
+    }
+}
+
+/// <p> Specifies the private connection provisioning state. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PrivateConnectionProvisioningState {
+    /// <p> Specifies the private connection provisioning status. </p>
+    pub status: std::option::Option<crate::model::PrivateConnectionProvisioningStatus>,
+    /// <p> Specifies the private connection provisioning failure reason. </p>
+    pub failure_message: std::option::Option<std::string::String>,
+    /// <p> Specifies the private connection provisioning failure cause. </p>
+    pub failure_cause: std::option::Option<crate::model::PrivateConnectionProvisioningFailureCause>,
+}
+impl std::fmt::Debug for PrivateConnectionProvisioningState {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PrivateConnectionProvisioningState");
+        formatter.field("status", &self.status);
+        formatter.field("failure_message", &self.failure_message);
+        formatter.field("failure_cause", &self.failure_cause);
+        formatter.finish()
+    }
+}
+/// See [`PrivateConnectionProvisioningState`](crate::model::PrivateConnectionProvisioningState)
+pub mod private_connection_provisioning_state {
+    /// A builder for [`PrivateConnectionProvisioningState`](crate::model::PrivateConnectionProvisioningState)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::PrivateConnectionProvisioningStatus>,
+        pub(crate) failure_message: std::option::Option<std::string::String>,
+        pub(crate) failure_cause:
+            std::option::Option<crate::model::PrivateConnectionProvisioningFailureCause>,
+    }
+    impl Builder {
+        /// <p> Specifies the private connection provisioning status. </p>
+        pub fn status(mut self, input: crate::model::PrivateConnectionProvisioningStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::PrivateConnectionProvisioningStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p> Specifies the private connection provisioning failure reason. </p>
+        pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_message = Some(input.into());
+            self
+        }
+        pub fn set_failure_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_message = input;
+            self
+        }
+        /// <p> Specifies the private connection provisioning failure cause. </p>
+        pub fn failure_cause(
+            mut self,
+            input: crate::model::PrivateConnectionProvisioningFailureCause,
+        ) -> Self {
+            self.failure_cause = Some(input);
+            self
+        }
+        pub fn set_failure_cause(
+            mut self,
+            input: std::option::Option<crate::model::PrivateConnectionProvisioningFailureCause>,
+        ) -> Self {
+            self.failure_cause = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PrivateConnectionProvisioningState`](crate::model::PrivateConnectionProvisioningState)
+        pub fn build(self) -> crate::model::PrivateConnectionProvisioningState {
+            crate::model::PrivateConnectionProvisioningState {
+                status: self.status,
+                failure_message: self.failure_message,
+                failure_cause: self.failure_cause,
+            }
+        }
+    }
+}
+impl PrivateConnectionProvisioningState {
+    /// Creates a new builder-style object to manufacture [`PrivateConnectionProvisioningState`](crate::model::PrivateConnectionProvisioningState)
+    pub fn builder() -> crate::model::private_connection_provisioning_state::Builder {
+        crate::model::private_connection_provisioning_state::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PrivateConnectionProvisioningFailureCause {
+    AccessDenied,
+    ConnectorAuthentication,
+    ConnectorServer,
+    InternalServer,
+    Validation,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PrivateConnectionProvisioningFailureCause {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCESS_DENIED" => PrivateConnectionProvisioningFailureCause::AccessDenied,
+            "CONNECTOR_AUTHENTICATION" => {
+                PrivateConnectionProvisioningFailureCause::ConnectorAuthentication
+            }
+            "CONNECTOR_SERVER" => PrivateConnectionProvisioningFailureCause::ConnectorServer,
+            "INTERNAL_SERVER" => PrivateConnectionProvisioningFailureCause::InternalServer,
+            "VALIDATION" => PrivateConnectionProvisioningFailureCause::Validation,
+            other => PrivateConnectionProvisioningFailureCause::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PrivateConnectionProvisioningFailureCause {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PrivateConnectionProvisioningFailureCause::from(s))
+    }
+}
+impl PrivateConnectionProvisioningFailureCause {
+    pub fn as_str(&self) -> &str {
+        match self {
+            PrivateConnectionProvisioningFailureCause::AccessDenied => "ACCESS_DENIED",
+            PrivateConnectionProvisioningFailureCause::ConnectorAuthentication => {
+                "CONNECTOR_AUTHENTICATION"
+            }
+            PrivateConnectionProvisioningFailureCause::ConnectorServer => "CONNECTOR_SERVER",
+            PrivateConnectionProvisioningFailureCause::InternalServer => "INTERNAL_SERVER",
+            PrivateConnectionProvisioningFailureCause::Validation => "VALIDATION",
+            PrivateConnectionProvisioningFailureCause::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACCESS_DENIED",
+            "CONNECTOR_AUTHENTICATION",
+            "CONNECTOR_SERVER",
+            "INTERNAL_SERVER",
+            "VALIDATION",
+        ]
+    }
+}
+impl AsRef<str> for PrivateConnectionProvisioningFailureCause {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PrivateConnectionProvisioningStatus {
+    Created,
+    Failed,
+    Pending,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PrivateConnectionProvisioningStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATED" => PrivateConnectionProvisioningStatus::Created,
+            "FAILED" => PrivateConnectionProvisioningStatus::Failed,
+            "PENDING" => PrivateConnectionProvisioningStatus::Pending,
+            other => PrivateConnectionProvisioningStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PrivateConnectionProvisioningStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PrivateConnectionProvisioningStatus::from(s))
+    }
+}
+impl PrivateConnectionProvisioningStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            PrivateConnectionProvisioningStatus::Created => "CREATED",
+            PrivateConnectionProvisioningStatus::Failed => "FAILED",
+            PrivateConnectionProvisioningStatus::Pending => "PENDING",
+            PrivateConnectionProvisioningStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CREATED", "FAILED", "PENDING"]
+    }
+}
+impl AsRef<str> for PrivateConnectionProvisioningStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

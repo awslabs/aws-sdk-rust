@@ -3,7 +3,7 @@
 pub fn parse_analyze_document_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AnalyzeDocumentOutput, crate::error::AnalyzeDocumentError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AnalyzeDocumentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -239,7 +239,7 @@ pub fn parse_analyze_document_response(
 pub fn parse_analyze_expense_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AnalyzeExpenseOutput, crate::error::AnalyzeExpenseError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AnalyzeExpenseError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -460,7 +460,7 @@ pub fn parse_detect_document_text_error(
     crate::output::DetectDocumentTextOutput,
     crate::error::DetectDocumentTextError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectDocumentTextError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -686,7 +686,7 @@ pub fn parse_get_document_analysis_error(
     crate::output::GetDocumentAnalysisOutput,
     crate::error::GetDocumentAnalysisError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -894,7 +894,7 @@ pub fn parse_get_document_text_detection_error(
     crate::output::GetDocumentTextDetectionOutput,
     crate::error::GetDocumentTextDetectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1050,7 +1050,7 @@ pub fn parse_start_document_analysis_error(
     crate::output::StartDocumentAnalysisOutput,
     crate::error::StartDocumentAnalysisError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1338,7 +1338,7 @@ pub fn parse_start_document_text_detection_error(
     crate::output::StartDocumentTextDetectionOutput,
     crate::error::StartDocumentTextDetectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

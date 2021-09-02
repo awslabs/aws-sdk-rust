@@ -9,7 +9,8 @@ use cloudwatch::Client;
 async fn main() -> Result<(), cloudwatch::Error> {
     tracing_subscriber::fmt::init();
 
-    let client = Client::from_env();
+    let shared_config = aws_config::load_from_env().await;
+    let client = Client::new(&shared_config);
     let rsp = client.list_metrics().send().await?;
     let metrics = rsp.metrics.unwrap_or_default();
     println!("found {} metric(s)", metrics.len());

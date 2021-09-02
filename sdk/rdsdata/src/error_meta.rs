@@ -23,8 +23,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchExecuteStatementError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchExecuteStatementError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchExecuteStatementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::BatchExecuteStatementError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchExecuteStatementErrorKind::BadRequestException(inner) => {
@@ -50,8 +55,11 @@ impl From<smithy_http::result::SdkError<crate::error::BatchExecuteStatementError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BeginTransactionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BeginTransactionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BeginTransactionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::BeginTransactionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BeginTransactionErrorKind::BadRequestException(inner) => {
@@ -77,8 +85,11 @@ impl From<smithy_http::result::SdkError<crate::error::BeginTransactionError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CommitTransactionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CommitTransactionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CommitTransactionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CommitTransactionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CommitTransactionErrorKind::BadRequestException(inner) => {
@@ -107,8 +118,11 @@ impl From<smithy_http::result::SdkError<crate::error::CommitTransactionError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ExecuteSqlError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ExecuteSqlError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ExecuteSqlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ExecuteSqlError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ExecuteSqlErrorKind::BadRequestException(inner) => {
@@ -129,8 +143,11 @@ impl From<smithy_http::result::SdkError<crate::error::ExecuteSqlError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ExecuteStatementError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ExecuteStatementError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ExecuteStatementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ExecuteStatementError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ExecuteStatementErrorKind::BadRequestException(inner) => {
@@ -156,8 +173,11 @@ impl From<smithy_http::result::SdkError<crate::error::ExecuteStatementError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RollbackTransactionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RollbackTransactionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RollbackTransactionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RollbackTransactionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RollbackTransactionErrorKind::BadRequestException(inner) => {

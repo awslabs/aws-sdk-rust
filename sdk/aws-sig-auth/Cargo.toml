@@ -7,12 +7,17 @@ license = "Apache-2.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+sign-eventstream = ["smithy-eventstream", "aws-sigv4/sign-eventstream"]
+default = []
+
 [dependencies]
 http = "0.2.2"
 aws-sigv4 = { path = "../aws-sigv4" }
 aws-auth = { path = "../aws-auth" }
 aws-types = { path = "../aws-types" }
 smithy-http = { path = "../smithy-http" }
+smithy-eventstream = { path = "../smithy-eventstream", optional = true }
 # Trying this out as an experiment. thiserror can be removed and replaced with hand written error
 # implementations and it is not a breaking change.
 thiserror = "1"

@@ -6,7 +6,7 @@ pub fn parse_associate_tracker_consumer_error(
     crate::output::AssociateTrackerConsumerOutput,
     crate::error::AssociateTrackerConsumerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateTrackerConsumerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -188,7 +188,7 @@ pub fn parse_batch_delete_device_position_history_error(
     crate::output::BatchDeleteDevicePositionHistoryOutput,
     crate::error::BatchDeleteDevicePositionHistoryError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDeleteDevicePositionHistoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -338,7 +338,7 @@ pub fn parse_batch_delete_geofence_error(
     crate::output::BatchDeleteGeofenceOutput,
     crate::error::BatchDeleteGeofenceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDeleteGeofenceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -482,7 +482,7 @@ pub fn parse_batch_evaluate_geofences_error(
     crate::output::BatchEvaluateGeofencesOutput,
     crate::error::BatchEvaluateGeofencesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchEvaluateGeofencesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -630,7 +630,7 @@ pub fn parse_batch_get_device_position_error(
     crate::output::BatchGetDevicePositionOutput,
     crate::error::BatchGetDevicePositionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchGetDevicePositionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -776,7 +776,7 @@ pub fn parse_batch_put_geofence_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchPutGeofenceOutput, crate::error::BatchPutGeofenceError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchPutGeofenceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -916,7 +916,7 @@ pub fn parse_batch_update_device_position_error(
     crate::output::BatchUpdateDevicePositionOutput,
     crate::error::BatchUpdateDevicePositionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchUpdateDevicePositionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1063,7 +1063,7 @@ pub fn parse_batch_update_device_position_response(
 pub fn parse_calculate_route_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CalculateRouteOutput, crate::error::CalculateRouteError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CalculateRouteError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1202,7 +1202,7 @@ pub fn parse_create_geofence_collection_error(
     crate::output::CreateGeofenceCollectionOutput,
     crate::error::CreateGeofenceCollectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateGeofenceCollectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1348,7 +1348,7 @@ pub fn parse_create_geofence_collection_response(
 pub fn parse_create_map_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateMapOutput, crate::error::CreateMapError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateMapError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1485,7 +1485,7 @@ pub fn parse_create_place_index_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreatePlaceIndexOutput, crate::error::CreatePlaceIndexError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePlaceIndexError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1626,7 +1626,7 @@ pub fn parse_create_route_calculator_error(
     crate::output::CreateRouteCalculatorOutput,
     crate::error::CreateRouteCalculatorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateRouteCalculatorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1768,7 +1768,7 @@ pub fn parse_create_route_calculator_response(
 pub fn parse_create_tracker_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTrackerOutput, crate::error::CreateTrackerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTrackerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1908,7 +1908,7 @@ pub fn parse_delete_geofence_collection_error(
     crate::output::DeleteGeofenceCollectionOutput,
     crate::error::DeleteGeofenceCollectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteGeofenceCollectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2048,7 +2048,7 @@ pub fn parse_delete_geofence_collection_response(
 pub fn parse_delete_map_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteMapOutput, crate::error::DeleteMapError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteMapError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2182,7 +2182,7 @@ pub fn parse_delete_place_index_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeletePlaceIndexOutput, crate::error::DeletePlaceIndexError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePlaceIndexError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2319,7 +2319,7 @@ pub fn parse_delete_route_calculator_error(
     crate::output::DeleteRouteCalculatorOutput,
     crate::error::DeleteRouteCalculatorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRouteCalculatorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2455,7 +2455,7 @@ pub fn parse_delete_route_calculator_response(
 pub fn parse_delete_tracker_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTrackerOutput, crate::error::DeleteTrackerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTrackerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2591,7 +2591,7 @@ pub fn parse_describe_geofence_collection_error(
     crate::output::DescribeGeofenceCollectionOutput,
     crate::error::DescribeGeofenceCollectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeGeofenceCollectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2738,7 +2738,7 @@ pub fn parse_describe_geofence_collection_response(
 pub fn parse_describe_map_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeMapOutput, crate::error::DescribeMapError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeMapError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2876,7 +2876,7 @@ pub fn parse_describe_place_index_error(
     crate::output::DescribePlaceIndexOutput,
     crate::error::DescribePlaceIndexError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePlaceIndexError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3020,7 +3020,7 @@ pub fn parse_describe_route_calculator_error(
     crate::output::DescribeRouteCalculatorOutput,
     crate::error::DescribeRouteCalculatorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRouteCalculatorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3165,7 +3165,7 @@ pub fn parse_describe_route_calculator_response(
 pub fn parse_describe_tracker_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeTrackerOutput, crate::error::DescribeTrackerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTrackerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3304,7 +3304,7 @@ pub fn parse_disassociate_tracker_consumer_error(
     crate::output::DisassociateTrackerConsumerOutput,
     crate::error::DisassociateTrackerConsumerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateTrackerConsumerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3447,7 +3447,7 @@ pub fn parse_get_device_position_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetDevicePositionOutput, crate::error::GetDevicePositionError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDevicePositionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3589,7 +3589,7 @@ pub fn parse_get_device_position_history_error(
     crate::output::GetDevicePositionHistoryOutput,
     crate::error::GetDevicePositionHistoryError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDevicePositionHistoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3734,7 +3734,7 @@ pub fn parse_get_device_position_history_response(
 pub fn parse_get_geofence_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetGeofenceOutput, crate::error::GetGeofenceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetGeofenceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3869,7 +3869,7 @@ pub fn parse_get_geofence_response(
 pub fn parse_get_map_glyphs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetMapGlyphsOutput, crate::error::GetMapGlyphsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetMapGlyphsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4017,7 +4017,7 @@ pub fn parse_get_map_glyphs_response(
 pub fn parse_get_map_sprites_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetMapSpritesOutput, crate::error::GetMapSpritesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetMapSpritesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4168,7 +4168,7 @@ pub fn parse_get_map_style_descriptor_error(
     crate::output::GetMapStyleDescriptorOutput,
     crate::error::GetMapStyleDescriptorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetMapStyleDescriptorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4311,7 +4311,7 @@ pub fn parse_get_map_style_descriptor_response(
 pub fn parse_get_map_tile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetMapTileOutput, crate::error::GetMapTileError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetMapTileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4462,7 +4462,7 @@ pub fn parse_list_device_positions_error(
     crate::output::ListDevicePositionsOutput,
     crate::error::ListDevicePositionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDevicePositionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4586,7 +4586,7 @@ pub fn parse_list_geofence_collections_error(
     crate::output::ListGeofenceCollectionsOutput,
     crate::error::ListGeofenceCollectionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListGeofenceCollectionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4711,7 +4711,7 @@ pub fn parse_list_geofence_collections_response(
 pub fn parse_list_geofences_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGeofencesOutput, crate::error::ListGeofencesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListGeofencesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4847,7 +4847,7 @@ pub fn parse_list_geofences_response(
 pub fn parse_list_maps_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListMapsOutput, crate::error::ListMapsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListMapsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4963,7 +4963,7 @@ pub fn parse_list_place_indexes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPlaceIndexesOutput, crate::error::ListPlaceIndexesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPlaceIndexesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5083,7 +5083,7 @@ pub fn parse_list_route_calculators_error(
     crate::output::ListRouteCalculatorsOutput,
     crate::error::ListRouteCalculatorsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRouteCalculatorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5207,7 +5207,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5351,7 +5351,7 @@ pub fn parse_list_tracker_consumers_error(
     crate::output::ListTrackerConsumersOutput,
     crate::error::ListTrackerConsumersError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTrackerConsumersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5492,7 +5492,7 @@ pub fn parse_list_tracker_consumers_response(
 pub fn parse_list_trackers_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTrackersOutput, crate::error::ListTrackersError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTrackersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5607,7 +5607,7 @@ pub fn parse_list_trackers_response(
 pub fn parse_put_geofence_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutGeofenceOutput, crate::error::PutGeofenceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutGeofenceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5766,7 +5766,7 @@ pub fn parse_search_place_index_for_position_error(
     crate::output::SearchPlaceIndexForPositionOutput,
     crate::error::SearchPlaceIndexForPositionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SearchPlaceIndexForPositionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5916,7 +5916,7 @@ pub fn parse_search_place_index_for_text_error(
     crate::output::SearchPlaceIndexForTextOutput,
     crate::error::SearchPlaceIndexForTextError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SearchPlaceIndexForTextError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6061,7 +6061,7 @@ pub fn parse_search_place_index_for_text_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6194,7 +6194,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6330,7 +6330,7 @@ pub fn parse_update_geofence_collection_error(
     crate::output::UpdateGeofenceCollectionOutput,
     crate::error::UpdateGeofenceCollectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateGeofenceCollectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6475,7 +6475,7 @@ pub fn parse_update_geofence_collection_response(
 pub fn parse_update_map_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateMapOutput, crate::error::UpdateMapError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateMapError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6611,7 +6611,7 @@ pub fn parse_update_place_index_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdatePlaceIndexOutput, crate::error::UpdatePlaceIndexError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdatePlaceIndexError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6751,7 +6751,7 @@ pub fn parse_update_route_calculator_error(
     crate::output::UpdateRouteCalculatorOutput,
     crate::error::UpdateRouteCalculatorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateRouteCalculatorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6892,7 +6892,7 @@ pub fn parse_update_route_calculator_response(
 pub fn parse_update_tracker_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateTrackerOutput, crate::error::UpdateTrackerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateTrackerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

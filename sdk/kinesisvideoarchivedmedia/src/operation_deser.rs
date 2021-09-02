@@ -29,7 +29,7 @@ pub fn parse_get_clip(
 pub fn parse_get_clip_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetClipOutput, crate::error::GetClipError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetClipError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -227,7 +227,7 @@ pub fn parse_get_dash_streaming_session_url_error(
     crate::output::GetDashStreamingSessionUrlOutput,
     crate::error::GetDASHStreamingSessionURLError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -383,7 +383,7 @@ pub fn parse_get_hls_streaming_session_url_error(
     crate::output::GetHlsStreamingSessionUrlOutput,
     crate::error::GetHLSStreamingSessionURLError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -562,7 +562,7 @@ pub fn parse_get_media_for_fragment_list_error(
     crate::output::GetMediaForFragmentListOutput,
     crate::error::GetMediaForFragmentListError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetMediaForFragmentListError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -667,7 +667,7 @@ pub fn parse_get_media_for_fragment_list_error(
 pub fn parse_list_fragments_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListFragmentsOutput, crate::error::ListFragmentsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFragmentsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

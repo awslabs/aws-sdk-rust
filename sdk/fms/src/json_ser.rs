@@ -459,6 +459,11 @@ pub fn serialize_structure_policy(
             .key("RemediationEnabled")
             .boolean(input.remediation_enabled);
     }
+    if input.delete_unused_fm_managed_resources {
+        object
+            .key("DeleteUnusedFMManagedResources")
+            .boolean(input.delete_unused_fm_managed_resources);
+    }
     if let Some(var_92) = &input.include_map {
         let mut object_93 = object.key("IncludeMap").start_object();
         for (key_94, value_95) in var_92 {

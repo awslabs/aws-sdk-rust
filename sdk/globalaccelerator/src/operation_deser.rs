@@ -6,7 +6,7 @@ pub fn parse_add_custom_routing_endpoints_error(
     crate::output::AddCustomRoutingEndpointsOutput,
     crate::error::AddCustomRoutingEndpointsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -194,7 +194,7 @@ pub fn parse_advertise_byoip_cidr_error(
     crate::output::AdvertiseByoipCidrOutput,
     crate::error::AdvertiseByoipCidrError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -334,7 +334,7 @@ pub fn parse_allow_custom_routing_traffic_error(
     crate::output::AllowCustomRoutingTrafficOutput,
     crate::error::AllowCustomRoutingTrafficError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -412,7 +412,7 @@ pub fn parse_create_accelerator_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAcceleratorOutput, crate::error::CreateAcceleratorError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAcceleratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -508,7 +508,7 @@ pub fn parse_create_custom_routing_accelerator_error(
     crate::output::CreateCustomRoutingAcceleratorOutput,
     crate::error::CreateCustomRoutingAcceleratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -635,7 +635,7 @@ pub fn parse_create_custom_routing_endpoint_group_error(
     crate::output::CreateCustomRoutingEndpointGroupOutput,
     crate::error::CreateCustomRoutingEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -790,7 +790,7 @@ pub fn parse_create_custom_routing_listener_error(
     crate::output::CreateCustomRoutingListenerOutput,
     crate::error::CreateCustomRoutingListenerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -938,7 +938,7 @@ pub fn parse_create_endpoint_group_error(
     crate::output::CreateEndpointGroupOutput,
     crate::error::CreateEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateEndpointGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1117,7 +1117,7 @@ pub fn parse_create_endpoint_group_response(
 pub fn parse_create_listener_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateListenerOutput, crate::error::CreateListenerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateListenerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1250,7 +1250,7 @@ pub fn parse_delete_accelerator_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAcceleratorOutput, crate::error::DeleteAcceleratorError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAcceleratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1378,7 +1378,7 @@ pub fn parse_delete_custom_routing_accelerator_error(
     crate::output::DeleteCustomRoutingAcceleratorOutput,
     crate::error::DeleteCustomRoutingAcceleratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteCustomRoutingAcceleratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1484,7 +1484,7 @@ pub fn parse_delete_custom_routing_endpoint_group_error(
     crate::output::DeleteCustomRoutingEndpointGroupOutput,
     crate::error::DeleteCustomRoutingEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteCustomRoutingEndpointGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1564,7 +1564,7 @@ pub fn parse_delete_custom_routing_listener_error(
     crate::output::DeleteCustomRoutingListenerOutput,
     crate::error::DeleteCustomRoutingListenerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteCustomRoutingListenerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1659,7 +1659,7 @@ pub fn parse_delete_endpoint_group_error(
     crate::output::DeleteEndpointGroupOutput,
     crate::error::DeleteEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEndpointGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1748,7 +1748,7 @@ pub fn parse_delete_endpoint_group_response(
 pub fn parse_delete_listener_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteListenerOutput, crate::error::DeleteListenerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteListenerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1857,7 +1857,7 @@ pub fn parse_deny_custom_routing_traffic_error(
     crate::output::DenyCustomRoutingTrafficOutput,
     crate::error::DenyCustomRoutingTrafficError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DenyCustomRoutingTrafficError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1935,7 +1935,7 @@ pub fn parse_deprovision_byoip_cidr_error(
     crate::output::DeprovisionByoipCidrOutput,
     crate::error::DeprovisionByoipCidrError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2075,7 +2075,7 @@ pub fn parse_describe_accelerator_error(
     crate::output::DescribeAcceleratorOutput,
     crate::error::DescribeAcceleratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAcceleratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2174,7 +2174,7 @@ pub fn parse_describe_accelerator_attributes_error(
     crate::output::DescribeAcceleratorAttributesOutput,
     crate::error::DescribeAcceleratorAttributesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2281,7 +2281,7 @@ pub fn parse_describe_custom_routing_accelerator_error(
     crate::output::DescribeCustomRoutingAcceleratorOutput,
     crate::error::DescribeCustomRoutingAcceleratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCustomRoutingAcceleratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2366,7 +2366,7 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
     crate::output::DescribeCustomRoutingAcceleratorAttributesOutput,
     crate::error::DescribeCustomRoutingAcceleratorAttributesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCustomRoutingAcceleratorAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2454,7 +2454,7 @@ pub fn parse_describe_custom_routing_endpoint_group_error(
     crate::output::DescribeCustomRoutingEndpointGroupOutput,
     crate::error::DescribeCustomRoutingEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCustomRoutingEndpointGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2539,7 +2539,7 @@ pub fn parse_describe_custom_routing_listener_error(
     crate::output::DescribeCustomRoutingListenerOutput,
     crate::error::DescribeCustomRoutingListenerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2645,7 +2645,7 @@ pub fn parse_describe_endpoint_group_error(
     crate::output::DescribeEndpointGroupOutput,
     crate::error::DescribeEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEndpointGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2740,7 +2740,7 @@ pub fn parse_describe_listener_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeListenerOutput, crate::error::DescribeListenerError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeListenerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2833,7 +2833,7 @@ pub fn parse_list_accelerators_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAcceleratorsOutput, crate::error::ListAcceleratorsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAcceleratorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2925,7 +2925,7 @@ pub fn parse_list_accelerators_response(
 pub fn parse_list_byoip_cidrs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListByoipCidrsOutput, crate::error::ListByoipCidrsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListByoipCidrsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3040,7 +3040,7 @@ pub fn parse_list_custom_routing_accelerators_error(
     crate::output::ListCustomRoutingAcceleratorsOutput,
     crate::error::ListCustomRoutingAcceleratorsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3146,7 +3146,7 @@ pub fn parse_list_custom_routing_endpoint_groups_error(
     crate::output::ListCustomRoutingEndpointGroupsOutput,
     crate::error::ListCustomRoutingEndpointGroupsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCustomRoutingEndpointGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3243,7 +3243,7 @@ pub fn parse_list_custom_routing_listeners_error(
     crate::output::ListCustomRoutingListenersOutput,
     crate::error::ListCustomRoutingListenersError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3370,7 +3370,7 @@ pub fn parse_list_custom_routing_port_mappings_error(
     crate::output::ListCustomRoutingPortMappingsOutput,
     crate::error::ListCustomRoutingPortMappingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3520,7 +3520,7 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
     crate::output::ListCustomRoutingPortMappingsByDestinationOutput,
     crate::error::ListCustomRoutingPortMappingsByDestinationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCustomRoutingPortMappingsByDestinationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3620,7 +3620,7 @@ pub fn parse_list_endpoint_groups_error(
     crate::output::ListEndpointGroupsOutput,
     crate::error::ListEndpointGroupsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListEndpointGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3736,7 +3736,7 @@ pub fn parse_list_endpoint_groups_response(
 pub fn parse_list_listeners_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListListenersOutput, crate::error::ListListenersError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListListenersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3850,7 +3850,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3949,7 +3949,7 @@ pub fn parse_provision_byoip_cidr_error(
     crate::output::ProvisionByoipCidrOutput,
     crate::error::ProvisionByoipCidrError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4090,7 +4090,7 @@ pub fn parse_remove_custom_routing_endpoints_error(
     crate::output::RemoveCustomRoutingEndpointsOutput,
     crate::error::RemoveCustomRoutingEndpointsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4254,7 +4254,7 @@ pub fn parse_remove_custom_routing_endpoints_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4342,7 +4342,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4431,7 +4431,7 @@ pub fn parse_update_accelerator_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateAcceleratorOutput, crate::error::UpdateAcceleratorError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateAcceleratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4526,7 +4526,7 @@ pub fn parse_update_accelerator_attributes_error(
     crate::output::UpdateAcceleratorAttributesOutput,
     crate::error::UpdateAcceleratorAttributesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4652,7 +4652,7 @@ pub fn parse_update_custom_routing_accelerator_error(
     crate::output::UpdateCustomRoutingAcceleratorOutput,
     crate::error::UpdateCustomRoutingAcceleratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4758,7 +4758,7 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
     crate::output::UpdateCustomRoutingAcceleratorAttributesOutput,
     crate::error::UpdateCustomRoutingAcceleratorAttributesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateCustomRoutingAcceleratorAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4859,7 +4859,7 @@ pub fn parse_update_custom_routing_listener_error(
     crate::output::UpdateCustomRoutingListenerOutput,
     crate::error::UpdateCustomRoutingListenerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5009,7 +5009,7 @@ pub fn parse_update_endpoint_group_error(
     crate::output::UpdateEndpointGroupOutput,
     crate::error::UpdateEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5145,7 +5145,7 @@ pub fn parse_update_endpoint_group_response(
 pub fn parse_update_listener_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateListenerOutput, crate::error::UpdateListenerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateListenerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5278,7 +5278,7 @@ pub fn parse_withdraw_byoip_cidr_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::WithdrawByoipCidrOutput, crate::error::WithdrawByoipCidrError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

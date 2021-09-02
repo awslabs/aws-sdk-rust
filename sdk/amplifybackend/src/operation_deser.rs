@@ -3,7 +3,7 @@
 pub fn parse_clone_backend_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CloneBackendOutput, crate::error::CloneBackendError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CloneBackendError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -119,7 +119,7 @@ pub fn parse_clone_backend_response(
 pub fn parse_create_backend_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateBackendOutput, crate::error::CreateBackendError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateBackendError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -237,7 +237,7 @@ pub fn parse_create_backend_api_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateBackendApiOutput, crate::error::CreateBackendAPIError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateBackendAPIError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -356,7 +356,7 @@ pub fn parse_create_backend_auth_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateBackendAuthOutput, crate::error::CreateBackendAuthError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateBackendAuthError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -479,7 +479,7 @@ pub fn parse_create_backend_config_error(
     crate::output::CreateBackendConfigOutput,
     crate::error::CreateBackendConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateBackendConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -601,7 +601,7 @@ pub fn parse_create_backend_config_response(
 pub fn parse_create_token_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTokenOutput, crate::error::CreateTokenError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTokenError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -717,7 +717,7 @@ pub fn parse_create_token_response(
 pub fn parse_delete_backend_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBackendOutput, crate::error::DeleteBackendError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBackendError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -835,7 +835,7 @@ pub fn parse_delete_backend_api_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBackendApiOutput, crate::error::DeleteBackendAPIError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBackendAPIError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -954,7 +954,7 @@ pub fn parse_delete_backend_auth_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBackendAuthOutput, crate::error::DeleteBackendAuthError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBackendAuthError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1074,7 +1074,7 @@ pub fn parse_delete_backend_auth_response(
 pub fn parse_delete_token_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTokenOutput, crate::error::DeleteTokenError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTokenError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1193,7 +1193,7 @@ pub fn parse_generate_backend_api_models_error(
     crate::output::GenerateBackendApiModelsOutput,
     crate::error::GenerateBackendAPIModelsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GenerateBackendAPIModelsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1319,7 +1319,7 @@ pub fn parse_generate_backend_api_models_response(
 pub fn parse_get_backend_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBackendOutput, crate::error::GetBackendError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBackendError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1435,7 +1435,7 @@ pub fn parse_get_backend_response(
 pub fn parse_get_backend_api_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBackendApiOutput, crate::error::GetBackendAPIError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBackendAPIError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1555,7 +1555,7 @@ pub fn parse_get_backend_api_models_error(
     crate::output::GetBackendApiModelsOutput,
     crate::error::GetBackendAPIModelsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBackendAPIModelsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1677,7 +1677,7 @@ pub fn parse_get_backend_api_models_response(
 pub fn parse_get_backend_auth_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBackendAuthOutput, crate::error::GetBackendAuthError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBackendAuthError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1794,7 +1794,7 @@ pub fn parse_get_backend_auth_response(
 pub fn parse_get_backend_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBackendJobOutput, crate::error::GetBackendJobError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBackendJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1911,7 +1911,7 @@ pub fn parse_get_backend_job_response(
 pub fn parse_get_token_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetTokenOutput, crate::error::GetTokenError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTokenError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2028,7 +2028,7 @@ pub fn parse_import_backend_auth_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportBackendAuthOutput, crate::error::ImportBackendAuthError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportBackendAuthError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2148,7 +2148,7 @@ pub fn parse_import_backend_auth_response(
 pub fn parse_list_backend_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListBackendJobsOutput, crate::error::ListBackendJobsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBackendJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2266,7 +2266,7 @@ pub fn parse_remove_all_backends_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RemoveAllBackendsOutput, crate::error::RemoveAllBackendsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveAllBackendsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2389,7 +2389,7 @@ pub fn parse_remove_backend_config_error(
     crate::output::RemoveBackendConfigOutput,
     crate::error::RemoveBackendConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveBackendConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2512,7 +2512,7 @@ pub fn parse_update_backend_api_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateBackendApiOutput, crate::error::UpdateBackendAPIError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateBackendAPIError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2631,7 +2631,7 @@ pub fn parse_update_backend_auth_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateBackendAuthOutput, crate::error::UpdateBackendAuthError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateBackendAuthError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2754,7 +2754,7 @@ pub fn parse_update_backend_config_error(
     crate::output::UpdateBackendConfigOutput,
     crate::error::UpdateBackendConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateBackendConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2877,7 +2877,7 @@ pub fn parse_update_backend_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateBackendJobOutput, crate::error::UpdateBackendJobError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateBackendJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

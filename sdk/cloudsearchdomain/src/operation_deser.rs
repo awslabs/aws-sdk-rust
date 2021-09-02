@@ -3,7 +3,7 @@
 pub fn parse_search_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SearchOutput, crate::error::SearchError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SearchError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -55,7 +55,7 @@ pub fn parse_search_response(
 pub fn parse_suggest_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SuggestOutput, crate::error::SuggestError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SuggestError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -107,7 +107,7 @@ pub fn parse_suggest_response(
 pub fn parse_upload_documents_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UploadDocumentsOutput, crate::error::UploadDocumentsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UploadDocumentsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

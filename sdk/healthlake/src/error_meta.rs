@@ -23,8 +23,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateFHIRDatastoreError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateFHIRDatastoreError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateFHIRDatastoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateFHIRDatastoreError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateFHIRDatastoreErrorKind::AccessDeniedException(inner) => {
@@ -47,8 +50,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateFHIRDatastoreError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteFHIRDatastoreError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteFHIRDatastoreError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteFHIRDatastoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteFHIRDatastoreError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteFHIRDatastoreErrorKind::AccessDeniedException(inner) => {
@@ -77,8 +83,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteFHIRDatastoreError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeFHIRDatastoreError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeFHIRDatastoreError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeFHIRDatastoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeFHIRDatastoreError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeFHIRDatastoreErrorKind::InternalServerException(inner) => {
@@ -101,8 +112,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeFHIRDatastoreError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeFHIRExportJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeFHIRExportJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeFHIRExportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeFHIRExportJobError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeFHIRExportJobErrorKind::InternalServerException(inner) => {
@@ -125,8 +141,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeFHIRExportJobError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeFHIRImportJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeFHIRImportJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeFHIRImportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeFHIRImportJobError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeFHIRImportJobErrorKind::InternalServerException(inner) => {
@@ -149,8 +170,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeFHIRImportJobError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListFHIRDatastoresError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListFHIRDatastoresError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListFHIRDatastoresError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListFHIRDatastoresError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListFHIRDatastoresErrorKind::InternalServerException(inner) => {
@@ -170,8 +194,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListFHIRDatastoresError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListFHIRExportJobsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListFHIRExportJobsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListFHIRExportJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListFHIRExportJobsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListFHIRExportJobsErrorKind::AccessDeniedException(inner) => {
@@ -197,8 +224,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListFHIRExportJobsError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListFHIRImportJobsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListFHIRImportJobsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListFHIRImportJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListFHIRImportJobsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListFHIRImportJobsErrorKind::AccessDeniedException(inner) => {
@@ -224,8 +254,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListFHIRImportJobsError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
@@ -242,8 +275,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartFHIRExportJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartFHIRExportJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartFHIRExportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StartFHIRExportJobError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StartFHIRExportJobErrorKind::AccessDeniedException(inner) => {
@@ -269,8 +305,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartFHIRExportJobError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartFHIRImportJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartFHIRImportJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartFHIRImportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StartFHIRImportJobError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StartFHIRImportJobErrorKind::AccessDeniedException(inner) => {
@@ -296,8 +335,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartFHIRImportJobError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
@@ -312,8 +354,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {

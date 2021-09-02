@@ -6,7 +6,7 @@ pub fn parse_cancel_journal_kinesis_stream_error(
     crate::output::CancelJournalKinesisStreamOutput,
     crate::error::CancelJournalKinesisStreamError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -89,7 +89,7 @@ pub fn parse_cancel_journal_kinesis_stream_response(
 pub fn parse_create_ledger_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLedgerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -202,7 +202,7 @@ pub fn parse_create_ledger_response(
 pub fn parse_delete_ledger_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLedgerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -315,7 +315,7 @@ pub fn parse_describe_journal_kinesis_stream_error(
     crate::output::DescribeJournalKinesisStreamOutput,
     crate::error::DescribeJournalKinesisStreamError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -401,7 +401,7 @@ pub fn parse_describe_journal_s3_export_error(
     crate::output::DescribeJournalS3ExportOutput,
     crate::error::DescribeJournalS3ExportError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeJournalS3ExportError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -462,7 +462,7 @@ pub fn parse_describe_journal_s3_export_response(
 pub fn parse_describe_ledger_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLedgerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -537,7 +537,7 @@ pub fn parse_export_journal_to_s3_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ExportJournalToS3Output, crate::error::ExportJournalToS3Error>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExportJournalToS3Error::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -610,7 +610,7 @@ pub fn parse_export_journal_to_s3_response(
 pub fn parse_get_block_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBlockOutput, crate::error::GetBlockError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBlockError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -701,7 +701,7 @@ pub fn parse_get_block_response(
 pub fn parse_get_digest_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetDigestOutput, crate::error::GetDigestError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDigestError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -792,7 +792,7 @@ pub fn parse_get_digest_response(
 pub fn parse_get_revision_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRevisionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -886,7 +886,7 @@ pub fn parse_list_journal_kinesis_streams_for_ledger_error(
     crate::output::ListJournalKinesisStreamsForLedgerOutput,
     crate::error::ListJournalKinesisStreamsForLedgerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -971,7 +971,7 @@ pub fn parse_list_journal_s3_exports_error(
     crate::output::ListJournalS3ExportsOutput,
     crate::error::ListJournalS3ExportsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListJournalS3ExportsError::unhandled)?;
     Err(crate::error::ListJournalS3ExportsError::generic(generic))
 }
@@ -1003,7 +1003,7 @@ pub fn parse_list_journal_s3_exports_for_ledger_error(
     crate::output::ListJournalS3ExportsForLedgerOutput,
     crate::error::ListJournalS3ExportsForLedgerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListJournalS3ExportsForLedgerError::unhandled)?;
     Err(crate::error::ListJournalS3ExportsForLedgerError::generic(
         generic,
@@ -1035,7 +1035,7 @@ pub fn parse_list_journal_s3_exports_for_ledger_response(
 pub fn parse_list_ledgers_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListLedgersOutput, crate::error::ListLedgersError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListLedgersError::unhandled)?;
     Err(crate::error::ListLedgersError::generic(generic))
 }
@@ -1061,7 +1061,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1143,7 +1143,7 @@ pub fn parse_stream_journal_to_kinesis_error(
     crate::output::StreamJournalToKinesisOutput,
     crate::error::StreamJournalToKinesisError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StreamJournalToKinesisError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1245,7 +1245,7 @@ pub fn parse_stream_journal_to_kinesis_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1316,7 +1316,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1387,7 +1387,7 @@ pub fn parse_untag_resource_response(
 pub fn parse_update_ledger_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateLedgerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1463,7 +1463,7 @@ pub fn parse_update_ledger_permissions_mode_error(
     crate::output::UpdateLedgerPermissionsModeOutput,
     crate::error::UpdateLedgerPermissionsModeError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateLedgerPermissionsModeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

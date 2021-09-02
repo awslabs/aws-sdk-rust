@@ -4,7 +4,7 @@ pub fn parse_create_access_point_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAccessPointOutput, crate::error::CreateAccessPointError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAccessPointError::unhandled)?;
     Err(crate::error::CreateAccessPointError::generic(generic))
 }
@@ -32,7 +32,7 @@ pub fn parse_create_access_point_for_object_lambda_error(
     crate::output::CreateAccessPointForObjectLambdaOutput,
     crate::error::CreateAccessPointForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAccessPointForObjectLambdaError::unhandled)?;
     Err(crate::error::CreateAccessPointForObjectLambdaError::generic(generic))
 }
@@ -62,7 +62,7 @@ pub fn parse_create_access_point_for_object_lambda_response(
 pub fn parse_create_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateBucketError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -145,7 +145,7 @@ pub fn parse_create_bucket_response(
 pub fn parse_create_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateJobOutput, crate::error::CreateJobError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -261,7 +261,7 @@ pub fn parse_delete_access_point_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAccessPointOutput, crate::error::DeleteAccessPointError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAccessPointError::unhandled)?;
     Err(crate::error::DeleteAccessPointError::generic(generic))
 }
@@ -286,7 +286,7 @@ pub fn parse_delete_access_point_for_object_lambda_error(
     crate::output::DeleteAccessPointForObjectLambdaOutput,
     crate::error::DeleteAccessPointForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAccessPointForObjectLambdaError::unhandled)?;
     Err(crate::error::DeleteAccessPointForObjectLambdaError::generic(generic))
 }
@@ -314,7 +314,7 @@ pub fn parse_delete_access_point_policy_error(
     crate::output::DeleteAccessPointPolicyOutput,
     crate::error::DeleteAccessPointPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAccessPointPolicyError::unhandled)?;
     Err(crate::error::DeleteAccessPointPolicyError::generic(generic))
 }
@@ -341,7 +341,7 @@ pub fn parse_delete_access_point_policy_for_object_lambda_error(
     crate::output::DeleteAccessPointPolicyForObjectLambdaOutput,
     crate::error::DeleteAccessPointPolicyForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAccessPointPolicyForObjectLambdaError::unhandled)?;
     Err(crate::error::DeleteAccessPointPolicyForObjectLambdaError::generic(generic))
 }
@@ -366,7 +366,7 @@ pub fn parse_delete_access_point_policy_for_object_lambda_response(
 pub fn parse_delete_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketError::unhandled)?;
     Err(crate::error::DeleteBucketError::generic(generic))
 }
@@ -390,7 +390,7 @@ pub fn parse_delete_bucket_lifecycle_configuration_error(
     crate::output::DeleteBucketLifecycleConfigurationOutput,
     crate::error::DeleteBucketLifecycleConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketLifecycleConfigurationError::unhandled)?;
     Err(crate::error::DeleteBucketLifecycleConfigurationError::generic(generic))
 }
@@ -418,7 +418,7 @@ pub fn parse_delete_bucket_policy_error(
     crate::output::DeleteBucketPolicyOutput,
     crate::error::DeleteBucketPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketPolicyError::unhandled)?;
     Err(crate::error::DeleteBucketPolicyError::generic(generic))
 }
@@ -445,7 +445,7 @@ pub fn parse_delete_bucket_tagging_error(
     crate::output::DeleteBucketTaggingOutput,
     crate::error::DeleteBucketTaggingError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketTaggingError::unhandled)?;
     Err(crate::error::DeleteBucketTaggingError::generic(generic))
 }
@@ -470,7 +470,7 @@ pub fn parse_delete_job_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteJobTaggingOutput, crate::error::DeleteJobTaggingError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteJobTaggingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -566,7 +566,7 @@ pub fn parse_delete_public_access_block_error(
     crate::output::DeletePublicAccessBlockOutput,
     crate::error::DeletePublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePublicAccessBlockError::unhandled)?;
     Err(crate::error::DeletePublicAccessBlockError::generic(generic))
 }
@@ -593,7 +593,7 @@ pub fn parse_delete_storage_lens_configuration_error(
     crate::output::DeleteStorageLensConfigurationOutput,
     crate::error::DeleteStorageLensConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteStorageLensConfigurationError::unhandled)?;
     Err(crate::error::DeleteStorageLensConfigurationError::generic(
         generic,
@@ -623,7 +623,7 @@ pub fn parse_delete_storage_lens_configuration_tagging_error(
     crate::output::DeleteStorageLensConfigurationTaggingOutput,
     crate::error::DeleteStorageLensConfigurationTaggingError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteStorageLensConfigurationTaggingError::unhandled)?;
     Err(crate::error::DeleteStorageLensConfigurationTaggingError::generic(generic))
 }
@@ -648,7 +648,7 @@ pub fn parse_delete_storage_lens_configuration_tagging_response(
 pub fn parse_describe_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeJobOutput, crate::error::DescribeJobError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -763,7 +763,7 @@ pub fn parse_describe_job_response(
 pub fn parse_get_access_point_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAccessPointOutput, crate::error::GetAccessPointError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccessPointError::unhandled)?;
     Err(crate::error::GetAccessPointError::generic(generic))
 }
@@ -790,7 +790,7 @@ pub fn parse_get_access_point_configuration_for_object_lambda_error(
     crate::output::GetAccessPointConfigurationForObjectLambdaOutput,
     crate::error::GetAccessPointConfigurationForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccessPointConfigurationForObjectLambdaError::unhandled)?;
     Err(crate::error::GetAccessPointConfigurationForObjectLambdaError::generic(generic))
 }
@@ -822,7 +822,7 @@ pub fn parse_get_access_point_for_object_lambda_error(
     crate::output::GetAccessPointForObjectLambdaOutput,
     crate::error::GetAccessPointForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccessPointForObjectLambdaError::unhandled)?;
     Err(crate::error::GetAccessPointForObjectLambdaError::generic(
         generic,
@@ -857,7 +857,7 @@ pub fn parse_get_access_point_policy_error(
     crate::output::GetAccessPointPolicyOutput,
     crate::error::GetAccessPointPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccessPointPolicyError::unhandled)?;
     Err(crate::error::GetAccessPointPolicyError::generic(generic))
 }
@@ -889,7 +889,7 @@ pub fn parse_get_access_point_policy_for_object_lambda_error(
     crate::output::GetAccessPointPolicyForObjectLambdaOutput,
     crate::error::GetAccessPointPolicyForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccessPointPolicyForObjectLambdaError::unhandled)?;
     Err(crate::error::GetAccessPointPolicyForObjectLambdaError::generic(generic))
 }
@@ -922,7 +922,7 @@ pub fn parse_get_access_point_policy_status_error(
     crate::output::GetAccessPointPolicyStatusOutput,
     crate::error::GetAccessPointPolicyStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccessPointPolicyStatusError::unhandled)?;
     Err(crate::error::GetAccessPointPolicyStatusError::generic(
         generic,
@@ -956,7 +956,7 @@ pub fn parse_get_access_point_policy_status_for_object_lambda_error(
     crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput,
     crate::error::GetAccessPointPolicyStatusForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccessPointPolicyStatusForObjectLambdaError::unhandled)?;
     Err(crate::error::GetAccessPointPolicyStatusForObjectLambdaError::generic(generic))
 }
@@ -985,7 +985,7 @@ pub fn parse_get_access_point_policy_status_for_object_lambda_response(
 pub fn parse_get_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketOutput, crate::error::GetBucketError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketError::unhandled)?;
     Err(crate::error::GetBucketError::generic(generic))
 }
@@ -1011,7 +1011,7 @@ pub fn parse_get_bucket_lifecycle_configuration_error(
     crate::output::GetBucketLifecycleConfigurationOutput,
     crate::error::GetBucketLifecycleConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketLifecycleConfigurationError::unhandled)?;
     Err(crate::error::GetBucketLifecycleConfigurationError::generic(
         generic,
@@ -1043,7 +1043,7 @@ pub fn parse_get_bucket_lifecycle_configuration_response(
 pub fn parse_get_bucket_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketPolicyOutput, crate::error::GetBucketPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketPolicyError::unhandled)?;
     Err(crate::error::GetBucketPolicyError::generic(generic))
 }
@@ -1068,7 +1068,7 @@ pub fn parse_get_bucket_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketTaggingOutput, crate::error::GetBucketTaggingError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketTaggingError::unhandled)?;
     Err(crate::error::GetBucketTaggingError::generic(generic))
 }
@@ -1093,7 +1093,7 @@ pub fn parse_get_bucket_tagging_response(
 pub fn parse_get_job_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetJobTaggingOutput, crate::error::GetJobTaggingError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetJobTaggingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1191,7 +1191,7 @@ pub fn parse_get_public_access_block_error(
     crate::output::GetPublicAccessBlockOutput,
     crate::error::GetPublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPublicAccessBlockError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1247,7 +1247,7 @@ pub fn parse_get_storage_lens_configuration_error(
     crate::output::GetStorageLensConfigurationOutput,
     crate::error::GetStorageLensConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetStorageLensConfigurationError::unhandled)?;
     Err(crate::error::GetStorageLensConfigurationError::generic(
         generic,
@@ -1279,7 +1279,7 @@ pub fn parse_get_storage_lens_configuration_tagging_error(
     crate::output::GetStorageLensConfigurationTaggingOutput,
     crate::error::GetStorageLensConfigurationTaggingError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetStorageLensConfigurationTaggingError::unhandled)?;
     Err(crate::error::GetStorageLensConfigurationTaggingError::generic(generic))
 }
@@ -1310,7 +1310,7 @@ pub fn parse_list_access_points_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAccessPointsOutput, crate::error::ListAccessPointsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAccessPointsError::unhandled)?;
     Err(crate::error::ListAccessPointsError::generic(generic))
 }
@@ -1338,7 +1338,7 @@ pub fn parse_list_access_points_for_object_lambda_error(
     crate::output::ListAccessPointsForObjectLambdaOutput,
     crate::error::ListAccessPointsForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAccessPointsForObjectLambdaError::unhandled)?;
     Err(crate::error::ListAccessPointsForObjectLambdaError::generic(
         generic,
@@ -1370,7 +1370,7 @@ pub fn parse_list_access_points_for_object_lambda_response(
 pub fn parse_list_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListJobsOutput, crate::error::ListJobsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1468,7 +1468,7 @@ pub fn parse_list_regional_buckets_error(
     crate::output::ListRegionalBucketsOutput,
     crate::error::ListRegionalBucketsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRegionalBucketsError::unhandled)?;
     Err(crate::error::ListRegionalBucketsError::generic(generic))
 }
@@ -1500,7 +1500,7 @@ pub fn parse_list_storage_lens_configurations_error(
     crate::output::ListStorageLensConfigurationsOutput,
     crate::error::ListStorageLensConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListStorageLensConfigurationsError::unhandled)?;
     Err(crate::error::ListStorageLensConfigurationsError::generic(
         generic,
@@ -1534,7 +1534,7 @@ pub fn parse_put_access_point_configuration_for_object_lambda_error(
     crate::output::PutAccessPointConfigurationForObjectLambdaOutput,
     crate::error::PutAccessPointConfigurationForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutAccessPointConfigurationForObjectLambdaError::unhandled)?;
     Err(crate::error::PutAccessPointConfigurationForObjectLambdaError::generic(generic))
 }
@@ -1560,7 +1560,7 @@ pub fn parse_put_access_point_policy_error(
     crate::output::PutAccessPointPolicyOutput,
     crate::error::PutAccessPointPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutAccessPointPolicyError::unhandled)?;
     Err(crate::error::PutAccessPointPolicyError::generic(generic))
 }
@@ -1587,7 +1587,7 @@ pub fn parse_put_access_point_policy_for_object_lambda_error(
     crate::output::PutAccessPointPolicyForObjectLambdaOutput,
     crate::error::PutAccessPointPolicyForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutAccessPointPolicyForObjectLambdaError::unhandled)?;
     Err(crate::error::PutAccessPointPolicyForObjectLambdaError::generic(generic))
 }
@@ -1615,7 +1615,7 @@ pub fn parse_put_bucket_lifecycle_configuration_error(
     crate::output::PutBucketLifecycleConfigurationOutput,
     crate::error::PutBucketLifecycleConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketLifecycleConfigurationError::unhandled)?;
     Err(crate::error::PutBucketLifecycleConfigurationError::generic(
         generic,
@@ -1642,7 +1642,7 @@ pub fn parse_put_bucket_lifecycle_configuration_response(
 pub fn parse_put_bucket_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketPolicyOutput, crate::error::PutBucketPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketPolicyError::unhandled)?;
     Err(crate::error::PutBucketPolicyError::generic(generic))
 }
@@ -1664,7 +1664,7 @@ pub fn parse_put_bucket_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketTaggingOutput, crate::error::PutBucketTaggingError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketTaggingError::unhandled)?;
     Err(crate::error::PutBucketTaggingError::generic(generic))
 }
@@ -1686,7 +1686,7 @@ pub fn parse_put_bucket_tagging_response(
 pub fn parse_put_job_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutJobTaggingOutput, crate::error::PutJobTaggingError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutJobTaggingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1802,7 +1802,7 @@ pub fn parse_put_public_access_block_error(
     crate::output::PutPublicAccessBlockOutput,
     crate::error::PutPublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutPublicAccessBlockError::unhandled)?;
     Err(crate::error::PutPublicAccessBlockError::generic(generic))
 }
@@ -1829,7 +1829,7 @@ pub fn parse_put_storage_lens_configuration_error(
     crate::output::PutStorageLensConfigurationOutput,
     crate::error::PutStorageLensConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutStorageLensConfigurationError::unhandled)?;
     Err(crate::error::PutStorageLensConfigurationError::generic(
         generic,
@@ -1858,7 +1858,7 @@ pub fn parse_put_storage_lens_configuration_tagging_error(
     crate::output::PutStorageLensConfigurationTaggingOutput,
     crate::error::PutStorageLensConfigurationTaggingError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutStorageLensConfigurationTaggingError::unhandled)?;
     Err(crate::error::PutStorageLensConfigurationTaggingError::generic(generic))
 }
@@ -1884,7 +1884,7 @@ pub fn parse_update_job_priority_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateJobPriorityOutput, crate::error::UpdateJobPriorityError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateJobPriorityError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2001,7 +2001,7 @@ pub fn parse_update_job_priority_response(
 pub fn parse_update_job_status_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateJobStatusOutput, crate::error::UpdateJobStatusError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateJobStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

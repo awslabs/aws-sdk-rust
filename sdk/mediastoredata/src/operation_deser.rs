@@ -3,7 +3,7 @@
 pub fn parse_delete_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteObjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -94,7 +94,7 @@ pub fn parse_delete_object_response(
 pub fn parse_describe_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeObjectOutput, crate::error::DescribeObjectError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeObjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -312,7 +312,7 @@ pub fn parse_get_object(
 pub fn parse_get_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetObjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -409,7 +409,7 @@ pub fn parse_get_object_error(
 pub fn parse_list_items_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListItemsOutput, crate::error::ListItemsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListItemsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -481,7 +481,7 @@ pub fn parse_list_items_response(
 pub fn parse_put_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutObjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

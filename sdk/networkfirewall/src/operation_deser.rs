@@ -6,7 +6,7 @@ pub fn parse_associate_firewall_policy_error(
     crate::output::AssociateFirewallPolicyOutput,
     crate::error::AssociateFirewallPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateFirewallPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -174,7 +174,7 @@ pub fn parse_associate_subnets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AssociateSubnetsOutput, crate::error::AssociateSubnetsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateSubnetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -353,7 +353,7 @@ pub fn parse_associate_subnets_response(
 pub fn parse_create_firewall_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateFirewallOutput, crate::error::CreateFirewallError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateFirewallError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -514,7 +514,7 @@ pub fn parse_create_firewall_policy_error(
     crate::output::CreateFirewallPolicyOutput,
     crate::error::CreateFirewallPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateFirewallPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -655,7 +655,7 @@ pub fn parse_create_firewall_policy_response(
 pub fn parse_create_rule_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateRuleGroupOutput, crate::error::CreateRuleGroupError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateRuleGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -791,7 +791,7 @@ pub fn parse_create_rule_group_response(
 pub fn parse_delete_firewall_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteFirewallOutput, crate::error::DeleteFirewallError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteFirewallError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -951,7 +951,7 @@ pub fn parse_delete_firewall_policy_error(
     crate::output::DeleteFirewallPolicyOutput,
     crate::error::DeleteFirewallPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteFirewallPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1116,7 +1116,7 @@ pub fn parse_delete_resource_policy_error(
     crate::output::DeleteResourcePolicyOutput,
     crate::error::DeleteResourcePolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1231,7 +1231,7 @@ pub fn parse_delete_resource_policy_response(
 pub fn parse_delete_rule_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRuleGroupOutput, crate::error::DeleteRuleGroupError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRuleGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1389,7 +1389,7 @@ pub fn parse_describe_firewall_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeFirewallOutput, crate::error::DescribeFirewallError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFirewallError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1508,7 +1508,7 @@ pub fn parse_describe_firewall_policy_error(
     crate::output::DescribeFirewallPolicyOutput,
     crate::error::DescribeFirewallPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFirewallPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1635,7 +1635,7 @@ pub fn parse_describe_logging_configuration_error(
     crate::output::DescribeLoggingConfigurationOutput,
     crate::error::DescribeLoggingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLoggingConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1764,7 +1764,7 @@ pub fn parse_describe_resource_policy_error(
     crate::output::DescribeResourcePolicyOutput,
     crate::error::DescribeResourcePolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeResourcePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1889,7 +1889,7 @@ pub fn parse_describe_rule_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeRuleGroupOutput, crate::error::DescribeRuleGroupError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRuleGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2010,7 +2010,7 @@ pub fn parse_disassociate_subnets_error(
     crate::output::DisassociateSubnetsOutput,
     crate::error::DisassociateSubnetsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateSubnetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2176,7 +2176,7 @@ pub fn parse_list_firewall_policies_error(
     crate::output::ListFirewallPoliciesOutput,
     crate::error::ListFirewallPoliciesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFirewallPoliciesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2276,7 +2276,7 @@ pub fn parse_list_firewall_policies_response(
 pub fn parse_list_firewalls_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListFirewallsOutput, crate::error::ListFirewallsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFirewallsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2371,7 +2371,7 @@ pub fn parse_list_firewalls_response(
 pub fn parse_list_rule_groups_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListRuleGroupsOutput, crate::error::ListRuleGroupsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRuleGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2469,7 +2469,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2548,7 +2548,7 @@ pub fn parse_put_resource_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutResourcePolicyOutput, crate::error::PutResourcePolicyError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutResourcePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2679,7 +2679,7 @@ pub fn parse_put_resource_policy_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2749,7 +2749,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2822,7 +2822,7 @@ pub fn parse_update_firewall_delete_protection_error(
     crate::output::UpdateFirewallDeleteProtectionOutput,
     crate::error::UpdateFirewallDeleteProtectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateFirewallDeleteProtectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2988,7 +2988,7 @@ pub fn parse_update_firewall_description_error(
     crate::output::UpdateFirewallDescriptionOutput,
     crate::error::UpdateFirewallDescriptionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateFirewallDescriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3138,7 +3138,7 @@ pub fn parse_update_firewall_policy_error(
     crate::output::UpdateFirewallPolicyOutput,
     crate::error::UpdateFirewallPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateFirewallPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3282,7 +3282,7 @@ pub fn parse_update_firewall_policy_change_protection_error(
     crate::output::UpdateFirewallPolicyChangeProtectionOutput,
     crate::error::UpdateFirewallPolicyChangeProtectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateFirewallPolicyChangeProtectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3409,7 +3409,7 @@ pub fn parse_update_logging_configuration_error(
     crate::output::UpdateLoggingConfigurationOutput,
     crate::error::UpdateLoggingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateLoggingConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3575,7 +3575,7 @@ pub fn parse_update_logging_configuration_response(
 pub fn parse_update_rule_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateRuleGroupOutput, crate::error::UpdateRuleGroupError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateRuleGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3714,7 +3714,7 @@ pub fn parse_update_subnet_change_protection_error(
     crate::output::UpdateSubnetChangeProtectionOutput,
     crate::error::UpdateSubnetChangeProtectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateSubnetChangeProtectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

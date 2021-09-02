@@ -4,6 +4,7 @@
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
+#![allow(clippy::vec_init_then_push)]
 //! <p>Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you to run
 //! open-source big data frameworks on Amazon Elastic Kubernetes Service (Amazon EKS). With
 //! this deployment option, you can focus on running analytics workloads while Amazon EMR on
@@ -44,6 +45,7 @@ mod json_deser;
 mod json_errors;
 mod json_ser;
 pub mod model;
+mod no_credentials;
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
@@ -54,8 +56,8 @@ pub use smithy_http::result::SdkError;
 pub use smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("emrcontainers", PKG_VERSION);
-pub use aws_auth::Credentials;
 pub use aws_types::region::Region;
+pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
 pub use smithy_http::endpoint::Endpoint;

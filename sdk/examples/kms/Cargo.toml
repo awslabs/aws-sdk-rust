@@ -6,6 +6,7 @@ edition = "2018"
 description = "Example usage of the KMS service"
 
 [dependencies]
+aws-config = { path = "../../aws-config" }
 kms = { package = "aws-sdk-kms", path = "../../kms" }
 aws-hyper = { path = "../../aws-hyper" }
 aws-types = { path = "../../aws-types" }

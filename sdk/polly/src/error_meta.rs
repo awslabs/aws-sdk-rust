@@ -55,8 +55,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteLexiconError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteLexiconError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteLexiconError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteLexiconError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteLexiconErrorKind::LexiconNotFoundException(inner) => {
@@ -71,8 +74,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteLexiconError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeVoicesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeVoicesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeVoicesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeVoicesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeVoicesErrorKind::InvalidNextTokenException(inner) => {
@@ -87,8 +93,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeVoicesError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetLexiconError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetLexiconError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetLexiconError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetLexiconError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetLexiconErrorKind::LexiconNotFoundException(inner) => {
@@ -103,8 +112,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetLexiconError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetSpeechSynthesisTaskError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetSpeechSynthesisTaskError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetSpeechSynthesisTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetSpeechSynthesisTaskError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(inner) => {
@@ -124,8 +138,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetSpeechSynthesisTaskErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListLexiconsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListLexiconsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListLexiconsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListLexiconsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListLexiconsErrorKind::InvalidNextTokenException(inner) => {
@@ -140,9 +157,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListLexiconsError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListSpeechSynthesisTasksError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListSpeechSynthesisTasksError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListSpeechSynthesisTasksError>,
+        err: smithy_http::result::SdkError<crate::error::ListSpeechSynthesisTasksError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -160,8 +181,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListSpeechSynthesisTasksEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutLexiconError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutLexiconError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutLexiconError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutLexiconError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutLexiconErrorKind::InvalidLexiconException(inner) => {
@@ -191,9 +215,13 @@ impl From<smithy_http::result::SdkError<crate::error::PutLexiconError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartSpeechSynthesisTaskError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartSpeechSynthesisTaskError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StartSpeechSynthesisTaskError>,
+        err: smithy_http::result::SdkError<crate::error::StartSpeechSynthesisTaskError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -215,8 +243,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartSpeechSynthesisTaskEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SynthesizeSpeechError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::SynthesizeSpeechError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::SynthesizeSpeechError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::SynthesizeSpeechError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::SynthesizeSpeechErrorKind::EngineNotSupportedException(inner) => Error::EngineNotSupportedException(inner),

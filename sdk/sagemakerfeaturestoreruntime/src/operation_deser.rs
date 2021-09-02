@@ -3,7 +3,7 @@
 pub fn parse_batch_get_record_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchGetRecordOutput, crate::error::BatchGetRecordError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchGetRecordError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -119,7 +119,7 @@ pub fn parse_batch_get_record_response(
 pub fn parse_delete_record_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRecordOutput, crate::error::DeleteRecordError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRecordError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -232,7 +232,7 @@ pub fn parse_delete_record_response(
 pub fn parse_get_record_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRecordOutput, crate::error::GetRecordError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRecordError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -368,7 +368,7 @@ pub fn parse_get_record_response(
 pub fn parse_put_record_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutRecordOutput, crate::error::PutRecordError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutRecordError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

@@ -31,8 +31,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchCreateTableRowsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchCreateTableRowsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchCreateTableRowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::BatchCreateTableRowsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchCreateTableRowsErrorKind::AccessDeniedException(inner) => {
@@ -67,8 +72,13 @@ impl From<smithy_http::result::SdkError<crate::error::BatchCreateTableRowsError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchDeleteTableRowsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchDeleteTableRowsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchDeleteTableRowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::BatchDeleteTableRowsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchDeleteTableRowsErrorKind::AccessDeniedException(inner) => {
@@ -100,8 +110,13 @@ impl From<smithy_http::result::SdkError<crate::error::BatchDeleteTableRowsError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchUpdateTableRowsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchUpdateTableRowsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchUpdateTableRowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::BatchUpdateTableRowsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchUpdateTableRowsErrorKind::AccessDeniedException(inner) => {
@@ -133,8 +148,13 @@ impl From<smithy_http::result::SdkError<crate::error::BatchUpdateTableRowsError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchUpsertTableRowsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchUpsertTableRowsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchUpsertTableRowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::BatchUpsertTableRowsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchUpsertTableRowsErrorKind::AccessDeniedException(inner) => {
@@ -169,9 +189,13 @@ impl From<smithy_http::result::SdkError<crate::error::BatchUpsertTableRowsError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTableDataImportJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeTableDataImportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeTableDataImportJobError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeTableDataImportJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -201,8 +225,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTableDataImportJob
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetScreenDataError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetScreenDataError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetScreenDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetScreenDataError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetScreenDataErrorKind::AccessDeniedException(inner) => {
@@ -232,8 +259,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetScreenDataError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::InvokeScreenAutomationError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::InvokeScreenAutomationError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::InvokeScreenAutomationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::InvokeScreenAutomationError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::InvokeScreenAutomationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
@@ -251,8 +283,11 @@ impl From<smithy_http::result::SdkError<crate::error::InvokeScreenAutomationErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTableColumnsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTableColumnsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTableColumnsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTableColumnsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTableColumnsErrorKind::AccessDeniedException(inner) => {
@@ -284,8 +319,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTableColumnsError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTableRowsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTableRowsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTableRowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTableRowsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTableRowsErrorKind::AccessDeniedException(inner) => {
@@ -315,8 +353,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTableRowsError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTablesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTablesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTablesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTablesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTablesErrorKind::AccessDeniedException(inner) => {
@@ -346,8 +387,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTablesError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::QueryTableRowsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::QueryTableRowsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::QueryTableRowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::QueryTableRowsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::QueryTableRowsErrorKind::AccessDeniedException(inner) => {
@@ -377,9 +421,12 @@ impl From<smithy_http::result::SdkError<crate::error::QueryTableRowsError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartTableDataImportJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartTableDataImportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StartTableDataImportJobError>,
+        err: smithy_http::result::SdkError<crate::error::StartTableDataImportJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {

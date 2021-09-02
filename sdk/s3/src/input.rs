@@ -104,12 +104,15 @@ impl AbortMultipartUploadInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -132,7 +135,7 @@ impl AbortMultipartUploadInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -384,14 +387,17 @@ impl CompleteMultipartUploadInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_complete_multipart_upload_input(
                 &self.multipart_upload,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -414,7 +420,7 @@ impl CompleteMultipartUploadInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1211,12 +1217,15 @@ impl CopyObjectInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1239,7 +1248,7 @@ impl CopyObjectInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2200,14 +2209,17 @@ impl CreateBucketInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_create_bucket_input(
                 &self.create_bucket_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2230,7 +2242,7 @@ impl CreateBucketInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2901,12 +2913,15 @@ impl CreateMultipartUploadInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2929,7 +2944,7 @@ impl CreateMultipartUploadInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3587,12 +3602,15 @@ impl DeleteBucketInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3615,7 +3633,7 @@ impl DeleteBucketInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3780,12 +3798,15 @@ impl DeleteBucketAnalyticsConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3808,7 +3829,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3972,12 +3993,15 @@ impl DeleteBucketCorsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4000,7 +4024,7 @@ impl DeleteBucketCorsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4162,12 +4186,15 @@ impl DeleteBucketEncryptionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4190,7 +4217,7 @@ impl DeleteBucketEncryptionInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4352,12 +4379,15 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4380,7 +4410,7 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4532,12 +4562,15 @@ impl DeleteBucketInventoryConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4560,7 +4593,7 @@ impl DeleteBucketInventoryConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4724,12 +4757,15 @@ impl DeleteBucketLifecycleInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4752,7 +4788,7 @@ impl DeleteBucketLifecycleInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4925,12 +4961,15 @@ impl DeleteBucketMetricsConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4953,7 +4992,7 @@ impl DeleteBucketMetricsConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5118,12 +5157,15 @@ impl DeleteBucketOwnershipControlsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -5146,7 +5188,7 @@ impl DeleteBucketOwnershipControlsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5307,12 +5349,15 @@ impl DeleteBucketPolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -5335,7 +5380,7 @@ impl DeleteBucketPolicyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5497,12 +5542,15 @@ impl DeleteBucketReplicationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -5525,7 +5573,7 @@ impl DeleteBucketReplicationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5686,12 +5734,15 @@ impl DeleteBucketTaggingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -5714,7 +5765,7 @@ impl DeleteBucketTaggingInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5875,12 +5926,15 @@ impl DeleteBucketWebsiteInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -5903,7 +5957,7 @@ impl DeleteBucketWebsiteInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6072,7 +6126,8 @@ pub mod delete_object_input {
             self
         }
         /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process
-        /// this operation.</p>
+        /// this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
+        /// permission.</p>
         pub fn bypass_governance_retention(mut self, input: bool) -> Self {
             self.bypass_governance_retention = Some(input);
             self
@@ -6128,12 +6183,15 @@ impl DeleteObjectInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -6156,7 +6214,7 @@ impl DeleteObjectInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6378,7 +6436,8 @@ pub mod delete_objects_input {
             self
         }
         /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object
-        /// Lock in place. You must have sufficient permissions to perform this operation.</p>
+        /// Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
+        /// permission.</p>
         pub fn bypass_governance_retention(mut self, input: bool) -> Self {
             self.bypass_governance_retention = Some(input);
             self
@@ -6442,12 +6501,15 @@ impl DeleteObjectsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_delete_objects_input(&self.delete)?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -6485,7 +6547,7 @@ impl DeleteObjectsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6724,12 +6786,15 @@ impl DeleteObjectTaggingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -6752,7 +6817,7 @@ impl DeleteObjectTaggingInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6934,12 +6999,15 @@ impl DeletePublicAccessBlockInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -6962,7 +7030,7 @@ impl DeletePublicAccessBlockInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7124,12 +7192,15 @@ impl GetBucketAccelerateConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -7152,7 +7223,7 @@ impl GetBucketAccelerateConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7311,12 +7382,15 @@ impl GetBucketAclInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -7339,7 +7413,7 @@ impl GetBucketAclInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7509,12 +7583,15 @@ impl GetBucketAnalyticsConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -7537,7 +7614,7 @@ impl GetBucketAnalyticsConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7700,12 +7777,15 @@ impl GetBucketCorsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -7728,7 +7808,7 @@ impl GetBucketCorsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7887,12 +7967,15 @@ impl GetBucketEncryptionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -7915,7 +7998,7 @@ impl GetBucketEncryptionInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8077,12 +8160,15 @@ impl GetBucketIntelligentTieringConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -8105,7 +8191,7 @@ impl GetBucketIntelligentTieringConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8257,12 +8343,15 @@ impl GetBucketInventoryConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -8285,7 +8374,7 @@ impl GetBucketInventoryConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8451,12 +8540,15 @@ impl GetBucketLifecycleConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -8479,7 +8571,7 @@ impl GetBucketLifecycleConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8640,12 +8732,15 @@ impl GetBucketLocationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -8668,7 +8763,7 @@ impl GetBucketLocationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8829,12 +8924,15 @@ impl GetBucketLoggingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -8857,7 +8955,7 @@ impl GetBucketLoggingInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9030,12 +9128,15 @@ impl GetBucketMetricsConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -9058,7 +9159,7 @@ impl GetBucketMetricsConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9224,12 +9325,15 @@ impl GetBucketNotificationConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -9252,7 +9356,7 @@ impl GetBucketNotificationConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9415,12 +9519,15 @@ impl GetBucketOwnershipControlsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -9443,7 +9550,7 @@ impl GetBucketOwnershipControlsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9604,12 +9711,15 @@ impl GetBucketPolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -9632,7 +9742,7 @@ impl GetBucketPolicyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9793,12 +9903,15 @@ impl GetBucketPolicyStatusInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -9821,7 +9934,7 @@ impl GetBucketPolicyStatusInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9982,12 +10095,15 @@ impl GetBucketReplicationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -10010,7 +10126,7 @@ impl GetBucketReplicationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10172,12 +10288,15 @@ impl GetBucketRequestPaymentInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -10200,7 +10319,7 @@ impl GetBucketRequestPaymentInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10361,12 +10480,15 @@ impl GetBucketTaggingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -10389,7 +10511,7 @@ impl GetBucketTaggingInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10550,12 +10672,15 @@ impl GetBucketVersioningInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -10578,7 +10703,7 @@ impl GetBucketVersioningInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10739,12 +10864,15 @@ impl GetBucketWebsiteInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -10767,7 +10895,7 @@ impl GetBucketWebsiteInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11188,12 +11316,15 @@ impl GetObjectInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -11216,7 +11347,7 @@ impl GetObjectInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11642,12 +11773,15 @@ impl GetObjectAclInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -11670,7 +11804,7 @@ impl GetObjectAclInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11905,12 +12039,15 @@ impl GetObjectLegalHoldInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -11933,7 +12070,7 @@ impl GetObjectLegalHoldInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -12133,12 +12270,15 @@ impl GetObjectLockConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -12161,7 +12301,7 @@ impl GetObjectLockConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -12362,12 +12502,15 @@ impl GetObjectRetentionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -12390,7 +12533,7 @@ impl GetObjectRetentionInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -12629,12 +12772,15 @@ impl GetObjectTaggingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -12657,7 +12803,7 @@ impl GetObjectTaggingInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -12883,12 +13029,15 @@ impl GetObjectTorrentInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -12911,7 +13060,7 @@ impl GetObjectTorrentInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -13107,12 +13256,15 @@ impl GetPublicAccessBlockInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -13135,7 +13287,7 @@ impl GetPublicAccessBlockInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -13296,12 +13448,15 @@ impl HeadBucketInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -13324,7 +13479,7 @@ impl HeadBucketInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -13650,12 +13805,15 @@ impl HeadObjectInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -13678,7 +13836,7 @@ impl HeadObjectInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -14044,12 +14202,15 @@ impl ListBucketAnalyticsConfigurationsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -14072,7 +14233,7 @@ impl ListBucketAnalyticsConfigurationsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -14245,12 +14406,15 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -14273,7 +14437,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -14434,12 +14598,15 @@ impl ListBucketInventoryConfigurationsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -14462,7 +14629,7 @@ impl ListBucketInventoryConfigurationsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -14648,12 +14815,15 @@ impl ListBucketMetricsConfigurationsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -14676,7 +14846,7 @@ impl ListBucketMetricsConfigurationsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -14815,12 +14985,15 @@ impl ListBucketsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -14843,7 +15016,7 @@ impl ListBucketsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -15054,12 +15227,15 @@ impl ListMultipartUploadsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -15082,7 +15258,7 @@ impl ListMultipartUploadsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -15347,12 +15523,15 @@ impl ListObjectsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -15375,7 +15554,7 @@ impl ListObjectsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -15672,12 +15851,15 @@ impl ListObjectsV2Input {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -15700,7 +15882,7 @@ impl ListObjectsV2Input {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -15994,12 +16176,15 @@ impl ListObjectVersionsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -16022,7 +16207,7 @@ impl ListObjectVersionsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -16272,12 +16457,15 @@ impl ListPartsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -16300,7 +16488,7 @@ impl ListPartsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -16524,14 +16712,17 @@ impl PutBucketAccelerateConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_accelerate_configuration_input(
                 &self.accelerate_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -16554,7 +16745,7 @@ impl PutBucketAccelerateConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -16823,14 +17014,17 @@ impl PutBucketAclInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_acl_input(
                 &self.access_control_policy,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -16868,7 +17062,7 @@ impl PutBucketAclInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -17182,14 +17376,17 @@ impl PutBucketAnalyticsConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_analytics_configuration_input(
                 &self.analytics_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -17212,7 +17409,7 @@ impl PutBucketAnalyticsConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -17406,13 +17603,16 @@ impl PutBucketCorsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::ser_payload_put_bucket_cors_input(&self.cors_configuration)?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -17450,7 +17650,7 @@ impl PutBucketCorsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -17659,14 +17859,17 @@ impl PutBucketEncryptionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_encryption_input(
                 &self.server_side_encryption_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -17704,7 +17907,7 @@ impl PutBucketEncryptionInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -17902,14 +18105,17 @@ impl PutBucketIntelligentTieringConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::ser_payload_put_bucket_intelligent_tiering_configuration_input(& self.intelligent_tiering_configuration)?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -17932,7 +18138,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -18101,14 +18307,17 @@ impl PutBucketInventoryConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_inventory_configuration_input(
                 &self.inventory_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -18131,7 +18340,7 @@ impl PutBucketInventoryConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -18314,14 +18523,17 @@ impl PutBucketLifecycleConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_lifecycle_configuration_input(
                 &self.lifecycle_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -18359,7 +18571,7 @@ impl PutBucketLifecycleConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -18546,14 +18758,17 @@ impl PutBucketLoggingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_logging_input(
                 &self.bucket_logging_status,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -18591,7 +18806,7 @@ impl PutBucketLoggingInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -18796,14 +19011,17 @@ impl PutBucketMetricsConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_metrics_configuration_input(
                 &self.metrics_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -18826,7 +19044,7 @@ impl PutBucketMetricsConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -19010,6 +19228,7 @@ impl PutBucketNotificationConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::ser_payload_put_bucket_notification_configuration_input(
@@ -19017,8 +19236,10 @@ impl PutBucketNotificationConfigurationInput {
                 )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -19041,7 +19262,7 @@ impl PutBucketNotificationConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -19230,14 +19451,17 @@ impl PutBucketOwnershipControlsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_ownership_controls_input(
                 &self.ownership_controls,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -19275,7 +19499,7 @@ impl PutBucketOwnershipControlsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -19494,12 +19718,15 @@ impl PutBucketPolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_policy_input(&self.policy)?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -19537,7 +19764,7 @@ impl PutBucketPolicyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -19779,14 +20006,17 @@ impl PutBucketReplicationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_replication_input(
                 &self.replication_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -19824,7 +20054,7 @@ impl PutBucketReplicationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -20055,14 +20285,17 @@ impl PutBucketRequestPaymentInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_request_payment_input(
                 &self.request_payment_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -20100,7 +20333,7 @@ impl PutBucketRequestPaymentInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -20304,12 +20537,15 @@ impl PutBucketTaggingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_tagging_input(&self.tagging)?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -20347,7 +20583,7 @@ impl PutBucketTaggingInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -20571,14 +20807,17 @@ impl PutBucketVersioningInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_versioning_input(
                 &self.versioning_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -20616,7 +20855,7 @@ impl PutBucketVersioningInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -20841,14 +21080,17 @@ impl PutBucketWebsiteInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_website_input(
                 &self.website_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -20886,7 +21128,7 @@ impl PutBucketWebsiteInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -21536,12 +21778,15 @@ impl PutObjectInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_object_input(self.body)?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -21564,7 +21809,7 @@ impl PutObjectInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -22414,14 +22659,17 @@ impl PutObjectAclInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_object_acl_input(
                 &self.access_control_policy,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -22459,7 +22707,7 @@ impl PutObjectAclInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -22847,13 +23095,16 @@ impl PutObjectLegalHoldInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::ser_payload_put_object_legal_hold_input(&self.legal_hold)?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -22891,7 +23142,7 @@ impl PutObjectLegalHoldInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -23166,14 +23417,17 @@ impl PutObjectLockConfigurationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_object_lock_configuration_input(
                 &self.object_lock_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -23211,7 +23465,7 @@ impl PutObjectLockConfigurationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -23506,13 +23760,16 @@ impl PutObjectRetentionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::ser_payload_put_object_retention_input(&self.retention)?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -23550,7 +23807,7 @@ impl PutObjectRetentionInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -23850,12 +24107,15 @@ impl PutObjectTaggingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_object_tagging_input(&self.tagging)?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -23893,7 +24153,7 @@ impl PutObjectTaggingInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -24142,14 +24402,17 @@ impl PutPublicAccessBlockInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_public_access_block_input(
                 &self.public_access_block_configuration,
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request = request.augment(|mut req, _| {
                 let data = req.body().bytes().ok_or_else(|| {
                     smithy_http::operation::BuildError::SerializationError(
@@ -24187,7 +24450,7 @@ impl PutPublicAccessBlockInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -24419,13 +24682,16 @@ impl RestoreObjectInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::ser_payload_restore_object_input(&self.restore_request)?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -24448,7 +24714,7 @@ impl RestoreObjectInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -24578,6 +24844,438 @@ impl RestoreObjectInput {
     /// Creates a new builder-style object to manufacture [`RestoreObjectInput`](crate::input::RestoreObjectInput)
     pub fn builder() -> crate::input::restore_object_input::Builder {
         crate::input::restore_object_input::Builder::default()
+    }
+}
+
+/// See [`SelectObjectContentInput`](crate::input::SelectObjectContentInput)
+pub mod select_object_content_input {
+    /// A builder for [`SelectObjectContentInput`](crate::input::SelectObjectContentInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_algorithm: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_key: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_key_md5: std::option::Option<std::string::String>,
+        pub(crate) expression: std::option::Option<std::string::String>,
+        pub(crate) expression_type: std::option::Option<crate::model::ExpressionType>,
+        pub(crate) request_progress: std::option::Option<crate::model::RequestProgress>,
+        pub(crate) input_serialization: std::option::Option<crate::model::InputSerialization>,
+        pub(crate) output_serialization: std::option::Option<crate::model::OutputSerialization>,
+        pub(crate) scan_range: std::option::Option<crate::model::ScanRange>,
+        pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The S3 bucket.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>The object key.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The SSE Algorithm used to encrypt the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
+            self
+        }
+        pub fn set_sse_customer_algorithm(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_algorithm = input;
+            self
+        }
+        /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
+        /// (Using Customer-Provided Encryption Keys</a>. </p>
+        pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key = Some(input.into());
+            self
+        }
+        pub fn set_sse_customer_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_key = input;
+            self
+        }
+        /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
+        /// (Using Customer-Provided Encryption Keys</a>. </p>
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
+            self
+        }
+        pub fn set_sse_customer_key_md5(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_key_md5 = input;
+            self
+        }
+        /// <p>The expression that is used to query the object.</p>
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expression = Some(input.into());
+            self
+        }
+        pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression = input;
+            self
+        }
+        /// <p>The type of the provided expression (for example, SQL).</p>
+        pub fn expression_type(mut self, input: crate::model::ExpressionType) -> Self {
+            self.expression_type = Some(input);
+            self
+        }
+        pub fn set_expression_type(
+            mut self,
+            input: std::option::Option<crate::model::ExpressionType>,
+        ) -> Self {
+            self.expression_type = input;
+            self
+        }
+        /// <p>Specifies if periodic request progress information should be enabled.</p>
+        pub fn request_progress(mut self, input: crate::model::RequestProgress) -> Self {
+            self.request_progress = Some(input);
+            self
+        }
+        pub fn set_request_progress(
+            mut self,
+            input: std::option::Option<crate::model::RequestProgress>,
+        ) -> Self {
+            self.request_progress = input;
+            self
+        }
+        /// <p>Describes the format of the data in the object that is being queried.</p>
+        pub fn input_serialization(mut self, input: crate::model::InputSerialization) -> Self {
+            self.input_serialization = Some(input);
+            self
+        }
+        pub fn set_input_serialization(
+            mut self,
+            input: std::option::Option<crate::model::InputSerialization>,
+        ) -> Self {
+            self.input_serialization = input;
+            self
+        }
+        /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
+        pub fn output_serialization(mut self, input: crate::model::OutputSerialization) -> Self {
+            self.output_serialization = Some(input);
+            self
+        }
+        pub fn set_output_serialization(
+            mut self,
+            input: std::option::Option<crate::model::OutputSerialization>,
+        ) -> Self {
+            self.output_serialization = input;
+            self
+        }
+        /// <p>Specifies the byte range of the object to get the records from. A record is processed
+        /// when its first byte is contained by the range. This parameter is optional, but when
+        /// specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the
+        /// start and end of the range.</p>
+        /// <p>
+        /// <code>ScanRange</code>may be used in the following ways:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code><scanrange><start>50</start><end>100</end></scanrange></code>
+        /// - process only the records starting between the bytes 50 and 100 (inclusive, counting
+        /// from zero)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code><scanrange><start>50</start></scanrange></code> -
+        /// process only the records starting after the byte 50</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code><scanrange><end>50</end></scanrange></code> -
+        /// process only the records within the last 50 bytes of the file.</p>
+        /// </li>
+        /// </ul>
+        pub fn scan_range(mut self, input: crate::model::ScanRange) -> Self {
+            self.scan_range = Some(input);
+            self
+        }
+        pub fn set_scan_range(
+            mut self,
+            input: std::option::Option<crate::model::ScanRange>,
+        ) -> Self {
+            self.scan_range = input;
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expected_bucket_owner = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SelectObjectContentInput`](crate::input::SelectObjectContentInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::SelectObjectContentInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SelectObjectContentInput {
+                bucket: self.bucket,
+                key: self.key,
+                sse_customer_algorithm: self.sse_customer_algorithm,
+                sse_customer_key: self.sse_customer_key,
+                sse_customer_key_md5: self.sse_customer_key_md5,
+                expression: self.expression,
+                expression_type: self.expression_type,
+                request_progress: self.request_progress,
+                input_serialization: self.input_serialization,
+                output_serialization: self.output_serialization,
+                scan_range: self.scan_range,
+                expected_bucket_owner: self.expected_bucket_owner,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SelectObjectContentInputOperationOutputAlias = crate::operation::SelectObjectContent;
+#[doc(hidden)]
+pub type SelectObjectContentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl SelectObjectContentInput {
+    /// Consumes the builder and constructs an Operation<[`SelectObjectContent`](crate::operation::SelectObjectContent)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::SelectObjectContent,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_select_object_content(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_options.content_sha256_header = true;
+            signing_config.signing_options.double_uri_encode = false;
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::SelectObjectContent::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "SelectObjectContent",
+                "s3",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_662 = &self.bucket;
+        let input_662 =
+            input_662
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+        let bucket = smithy_http::label::fmt_string(input_662, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_663 = &self.key;
+        let input_663 =
+            input_663
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+        let key = smithy_http::label::fmt_string(input_663, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
+    }
+    fn add_headers(
+        &self,
+        mut builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        if let Some(inner_664) = &self.sse_customer_algorithm {
+            let formatted_665 = AsRef::<str>::as_ref(inner_664);
+            if !formatted_665.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_665;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "sse_customer_algorithm",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header(
+                    "x-amz-server-side-encryption-customer-algorithm",
+                    header_value,
+                );
+            }
+        }
+        if let Some(inner_666) = &self.sse_customer_key {
+            let formatted_667 = AsRef::<str>::as_ref(inner_666);
+            if !formatted_667.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_667;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "sse_customer_key",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &"*** Sensitive Data Redacted ***", err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
+            }
+        }
+        if let Some(inner_668) = &self.sse_customer_key_md5 {
+            let formatted_669 = AsRef::<str>::as_ref(inner_668);
+            if !formatted_669.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_669;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "sse_customer_key_md5",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header(
+                    "x-amz-server-side-encryption-customer-key-MD5",
+                    header_value,
+                );
+            }
+        }
+        if let Some(inner_670) = &self.expected_bucket_owner {
+            let formatted_671 = AsRef::<str>::as_ref(inner_670);
+            if !formatted_671.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_671;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "expected_bucket_owner",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("x-amz-expected-bucket-owner", header_value);
+            }
+        }
+        Ok(builder)
+    }
+    fn uri_query(&self, mut output: &mut String) {
+        let mut query = smithy_http::query::Writer::new(&mut output);
+        query.push_v("select");
+        query.push_kv("select-type", "2");
+        query.push_kv("x-id", "SelectObjectContent");
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        self.uri_query(&mut uri);
+        let builder = self.add_headers(builder)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`SelectObjectContentInput`](crate::input::SelectObjectContentInput)
+    pub fn builder() -> crate::input::select_object_content_input::Builder {
+        crate::input::select_object_content_input::Builder::default()
     }
 }
 
@@ -24783,12 +25481,15 @@ impl UploadPartInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_upload_part_input(self.body)?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -24811,7 +25512,7 @@ impl UploadPartInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -24825,30 +25526,30 @@ impl UploadPartInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_662 = &self.bucket;
-        let input_662 =
-            input_662
+        let input_672 = &self.bucket;
+        let input_672 =
+            input_672
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_662, false);
+        let bucket = smithy_http::label::fmt_string(input_672, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
                 details: "cannot be empty or unset",
             });
         }
-        let input_663 = &self.key;
-        let input_663 =
-            input_663
+        let input_673 = &self.key;
+        let input_673 =
+            input_673
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-        let key = smithy_http::label::fmt_string(input_663, true);
+        let key = smithy_http::label::fmt_string(input_673, true);
         if key.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "key",
@@ -24865,10 +25566,10 @@ impl UploadPartInput {
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if self.content_length != 0 {
             let mut encoder = smithy_types::primitive::Encoder::from(self.content_length);
-            let formatted_664 = encoder.encode();
-            if !formatted_664.is_empty() {
+            let formatted_674 = encoder.encode();
+            if !formatted_674.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_664;
+                let header_value = formatted_674;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24882,11 +25583,11 @@ impl UploadPartInput {
                 builder = builder.header("Content-Length", header_value);
             }
         }
-        if let Some(inner_665) = &self.content_md5 {
-            let formatted_666 = AsRef::<str>::as_ref(inner_665);
-            if !formatted_666.is_empty() {
+        if let Some(inner_675) = &self.content_md5 {
+            let formatted_676 = AsRef::<str>::as_ref(inner_675);
+            if !formatted_676.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_666;
+                let header_value = formatted_676;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24900,11 +25601,11 @@ impl UploadPartInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_667) = &self.sse_customer_algorithm {
-            let formatted_668 = AsRef::<str>::as_ref(inner_667);
-            if !formatted_668.is_empty() {
+        if let Some(inner_677) = &self.sse_customer_algorithm {
+            let formatted_678 = AsRef::<str>::as_ref(inner_677);
+            if !formatted_678.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_668;
+                let header_value = formatted_678;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24921,11 +25622,11 @@ impl UploadPartInput {
                 );
             }
         }
-        if let Some(inner_669) = &self.sse_customer_key {
-            let formatted_670 = AsRef::<str>::as_ref(inner_669);
-            if !formatted_670.is_empty() {
+        if let Some(inner_679) = &self.sse_customer_key {
+            let formatted_680 = AsRef::<str>::as_ref(inner_679);
+            if !formatted_680.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_670;
+                let header_value = formatted_680;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24939,11 +25640,11 @@ impl UploadPartInput {
                 builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
             }
         }
-        if let Some(inner_671) = &self.sse_customer_key_md5 {
-            let formatted_672 = AsRef::<str>::as_ref(inner_671);
-            if !formatted_672.is_empty() {
+        if let Some(inner_681) = &self.sse_customer_key_md5 {
+            let formatted_682 = AsRef::<str>::as_ref(inner_681);
+            if !formatted_682.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_672;
+                let header_value = formatted_682;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24960,11 +25661,11 @@ impl UploadPartInput {
                 );
             }
         }
-        if let Some(inner_673) = &self.request_payer {
-            let formatted_674 = AsRef::<str>::as_ref(inner_673);
-            if !formatted_674.is_empty() {
+        if let Some(inner_683) = &self.request_payer {
+            let formatted_684 = AsRef::<str>::as_ref(inner_683);
+            if !formatted_684.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_674;
+                let header_value = formatted_684;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24978,11 +25679,11 @@ impl UploadPartInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_675) = &self.expected_bucket_owner {
-            let formatted_676 = AsRef::<str>::as_ref(inner_675);
-            if !formatted_676.is_empty() {
+        if let Some(inner_685) = &self.expected_bucket_owner {
+            let formatted_686 = AsRef::<str>::as_ref(inner_685);
+            if !formatted_686.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_676;
+                let header_value = formatted_686;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25007,8 +25708,8 @@ impl UploadPartInput {
                 &smithy_types::primitive::Encoder::from(self.part_number).encode(),
             );
         }
-        if let Some(inner_677) = &self.upload_id {
-            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_677));
+        if let Some(inner_687) = &self.upload_id {
+            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_687));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -25394,12 +26095,15 @@ impl UploadPartCopyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -25422,7 +26126,7 @@ impl UploadPartCopyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -25439,30 +26143,30 @@ impl UploadPartCopyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_678 = &self.bucket;
-        let input_678 =
-            input_678
+        let input_688 = &self.bucket;
+        let input_688 =
+            input_688
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_678, false);
+        let bucket = smithy_http::label::fmt_string(input_688, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
                 details: "cannot be empty or unset",
             });
         }
-        let input_679 = &self.key;
-        let input_679 =
-            input_679
+        let input_689 = &self.key;
+        let input_689 =
+            input_689
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-        let key = smithy_http::label::fmt_string(input_679, true);
+        let key = smithy_http::label::fmt_string(input_689, true);
         if key.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "key",
@@ -25477,11 +26181,11 @@ impl UploadPartCopyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_680) = &self.copy_source {
-            let formatted_681 = AsRef::<str>::as_ref(inner_680);
-            if !formatted_681.is_empty() {
+        if let Some(inner_690) = &self.copy_source {
+            let formatted_691 = AsRef::<str>::as_ref(inner_690);
+            if !formatted_691.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_681;
+                let header_value = formatted_691;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25495,11 +26199,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source", header_value);
             }
         }
-        if let Some(inner_682) = &self.copy_source_if_match {
-            let formatted_683 = AsRef::<str>::as_ref(inner_682);
-            if !formatted_683.is_empty() {
+        if let Some(inner_692) = &self.copy_source_if_match {
+            let formatted_693 = AsRef::<str>::as_ref(inner_692);
+            if !formatted_693.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_683;
+                let header_value = formatted_693;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25513,11 +26217,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source-if-match", header_value);
             }
         }
-        if let Some(inner_684) = &self.copy_source_if_modified_since {
-            let formatted_685 = inner_684.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_685.is_empty() {
+        if let Some(inner_694) = &self.copy_source_if_modified_since {
+            let formatted_695 = inner_694.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_695.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_685;
+                let header_value = formatted_695;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25531,11 +26235,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source-if-modified-since", header_value);
             }
         }
-        if let Some(inner_686) = &self.copy_source_if_none_match {
-            let formatted_687 = AsRef::<str>::as_ref(inner_686);
-            if !formatted_687.is_empty() {
+        if let Some(inner_696) = &self.copy_source_if_none_match {
+            let formatted_697 = AsRef::<str>::as_ref(inner_696);
+            if !formatted_697.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_687;
+                let header_value = formatted_697;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25549,11 +26253,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source-if-none-match", header_value);
             }
         }
-        if let Some(inner_688) = &self.copy_source_if_unmodified_since {
-            let formatted_689 = inner_688.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_689.is_empty() {
+        if let Some(inner_698) = &self.copy_source_if_unmodified_since {
+            let formatted_699 = inner_698.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_699.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_689;
+                let header_value = formatted_699;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25567,11 +26271,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source-if-unmodified-since", header_value);
             }
         }
-        if let Some(inner_690) = &self.copy_source_range {
-            let formatted_691 = AsRef::<str>::as_ref(inner_690);
-            if !formatted_691.is_empty() {
+        if let Some(inner_700) = &self.copy_source_range {
+            let formatted_701 = AsRef::<str>::as_ref(inner_700);
+            if !formatted_701.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_691;
+                let header_value = formatted_701;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25585,11 +26289,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source-range", header_value);
             }
         }
-        if let Some(inner_692) = &self.sse_customer_algorithm {
-            let formatted_693 = AsRef::<str>::as_ref(inner_692);
-            if !formatted_693.is_empty() {
+        if let Some(inner_702) = &self.sse_customer_algorithm {
+            let formatted_703 = AsRef::<str>::as_ref(inner_702);
+            if !formatted_703.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_693;
+                let header_value = formatted_703;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25606,11 +26310,11 @@ impl UploadPartCopyInput {
                 );
             }
         }
-        if let Some(inner_694) = &self.sse_customer_key {
-            let formatted_695 = AsRef::<str>::as_ref(inner_694);
-            if !formatted_695.is_empty() {
+        if let Some(inner_704) = &self.sse_customer_key {
+            let formatted_705 = AsRef::<str>::as_ref(inner_704);
+            if !formatted_705.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_695;
+                let header_value = formatted_705;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25624,11 +26328,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
             }
         }
-        if let Some(inner_696) = &self.sse_customer_key_md5 {
-            let formatted_697 = AsRef::<str>::as_ref(inner_696);
-            if !formatted_697.is_empty() {
+        if let Some(inner_706) = &self.sse_customer_key_md5 {
+            let formatted_707 = AsRef::<str>::as_ref(inner_706);
+            if !formatted_707.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_697;
+                let header_value = formatted_707;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25645,11 +26349,11 @@ impl UploadPartCopyInput {
                 );
             }
         }
-        if let Some(inner_698) = &self.copy_source_sse_customer_algorithm {
-            let formatted_699 = AsRef::<str>::as_ref(inner_698);
-            if !formatted_699.is_empty() {
+        if let Some(inner_708) = &self.copy_source_sse_customer_algorithm {
+            let formatted_709 = AsRef::<str>::as_ref(inner_708);
+            if !formatted_709.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_699;
+                let header_value = formatted_709;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25666,11 +26370,11 @@ impl UploadPartCopyInput {
                 );
             }
         }
-        if let Some(inner_700) = &self.copy_source_sse_customer_key {
-            let formatted_701 = AsRef::<str>::as_ref(inner_700);
-            if !formatted_701.is_empty() {
+        if let Some(inner_710) = &self.copy_source_sse_customer_key {
+            let formatted_711 = AsRef::<str>::as_ref(inner_710);
+            if !formatted_711.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_701;
+                let header_value = formatted_711;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25687,11 +26391,11 @@ impl UploadPartCopyInput {
                 );
             }
         }
-        if let Some(inner_702) = &self.copy_source_sse_customer_key_md5 {
-            let formatted_703 = AsRef::<str>::as_ref(inner_702);
-            if !formatted_703.is_empty() {
+        if let Some(inner_712) = &self.copy_source_sse_customer_key_md5 {
+            let formatted_713 = AsRef::<str>::as_ref(inner_712);
+            if !formatted_713.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_703;
+                let header_value = formatted_713;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25708,11 +26412,11 @@ impl UploadPartCopyInput {
                 );
             }
         }
-        if let Some(inner_704) = &self.request_payer {
-            let formatted_705 = AsRef::<str>::as_ref(inner_704);
-            if !formatted_705.is_empty() {
+        if let Some(inner_714) = &self.request_payer {
+            let formatted_715 = AsRef::<str>::as_ref(inner_714);
+            if !formatted_715.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_705;
+                let header_value = formatted_715;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25726,11 +26430,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_706) = &self.expected_bucket_owner {
-            let formatted_707 = AsRef::<str>::as_ref(inner_706);
-            if !formatted_707.is_empty() {
+        if let Some(inner_716) = &self.expected_bucket_owner {
+            let formatted_717 = AsRef::<str>::as_ref(inner_716);
+            if !formatted_717.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_707;
+                let header_value = formatted_717;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25744,11 +26448,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-expected-bucket-owner", header_value);
             }
         }
-        if let Some(inner_708) = &self.expected_source_bucket_owner {
-            let formatted_709 = AsRef::<str>::as_ref(inner_708);
-            if !formatted_709.is_empty() {
+        if let Some(inner_718) = &self.expected_source_bucket_owner {
+            let formatted_719 = AsRef::<str>::as_ref(inner_718);
+            if !formatted_719.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_709;
+                let header_value = formatted_719;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25773,8 +26477,8 @@ impl UploadPartCopyInput {
                 &smithy_types::primitive::Encoder::from(self.part_number).encode(),
             );
         }
-        if let Some(inner_710) = &self.upload_id {
-            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_710));
+        if let Some(inner_720) = &self.upload_id {
+            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_720));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -26423,13 +27127,16 @@ impl WriteGetObjectResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::ser_payload_write_get_object_response_input(self.body)?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             let endpoint_prefix = {
                 let request_route = self.request_route.as_deref().unwrap_or_default();
                 if request_route.is_empty() {
@@ -26476,7 +27183,7 @@ impl WriteGetObjectResponseInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -26500,11 +27207,11 @@ impl WriteGetObjectResponseInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_711) = &self.request_route {
-            let formatted_712 = AsRef::<str>::as_ref(inner_711);
-            if !formatted_712.is_empty() {
+        if let Some(inner_721) = &self.request_route {
+            let formatted_722 = AsRef::<str>::as_ref(inner_721);
+            if !formatted_722.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_712;
+                let header_value = formatted_722;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26518,11 +27225,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-request-route", header_value);
             }
         }
-        if let Some(inner_713) = &self.request_token {
-            let formatted_714 = AsRef::<str>::as_ref(inner_713);
-            if !formatted_714.is_empty() {
+        if let Some(inner_723) = &self.request_token {
+            let formatted_724 = AsRef::<str>::as_ref(inner_723);
+            if !formatted_724.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_714;
+                let header_value = formatted_724;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26538,10 +27245,10 @@ impl WriteGetObjectResponseInput {
         }
         if self.status_code != 0 {
             let mut encoder = smithy_types::primitive::Encoder::from(self.status_code);
-            let formatted_715 = encoder.encode();
-            if !formatted_715.is_empty() {
+            let formatted_725 = encoder.encode();
+            if !formatted_725.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_715;
+                let header_value = formatted_725;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26555,11 +27262,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-status", header_value);
             }
         }
-        if let Some(inner_716) = &self.error_code {
-            let formatted_717 = AsRef::<str>::as_ref(inner_716);
-            if !formatted_717.is_empty() {
+        if let Some(inner_726) = &self.error_code {
+            let formatted_727 = AsRef::<str>::as_ref(inner_726);
+            if !formatted_727.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_717;
+                let header_value = formatted_727;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26573,11 +27280,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-error-code", header_value);
             }
         }
-        if let Some(inner_718) = &self.error_message {
-            let formatted_719 = AsRef::<str>::as_ref(inner_718);
-            if !formatted_719.is_empty() {
+        if let Some(inner_728) = &self.error_message {
+            let formatted_729 = AsRef::<str>::as_ref(inner_728);
+            if !formatted_729.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_719;
+                let header_value = formatted_729;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26591,11 +27298,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-error-message", header_value);
             }
         }
-        if let Some(inner_720) = &self.accept_ranges {
-            let formatted_721 = AsRef::<str>::as_ref(inner_720);
-            if !formatted_721.is_empty() {
+        if let Some(inner_730) = &self.accept_ranges {
+            let formatted_731 = AsRef::<str>::as_ref(inner_730);
+            if !formatted_731.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_721;
+                let header_value = formatted_731;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26609,11 +27316,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-accept-ranges", header_value);
             }
         }
-        if let Some(inner_722) = &self.cache_control {
-            let formatted_723 = AsRef::<str>::as_ref(inner_722);
-            if !formatted_723.is_empty() {
+        if let Some(inner_732) = &self.cache_control {
+            let formatted_733 = AsRef::<str>::as_ref(inner_732);
+            if !formatted_733.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_723;
+                let header_value = formatted_733;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26627,11 +27334,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-Cache-Control", header_value);
             }
         }
-        if let Some(inner_724) = &self.content_disposition {
-            let formatted_725 = AsRef::<str>::as_ref(inner_724);
-            if !formatted_725.is_empty() {
+        if let Some(inner_734) = &self.content_disposition {
+            let formatted_735 = AsRef::<str>::as_ref(inner_734);
+            if !formatted_735.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_725;
+                let header_value = formatted_735;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26645,11 +27352,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-Content-Disposition", header_value);
             }
         }
-        if let Some(inner_726) = &self.content_encoding {
-            let formatted_727 = AsRef::<str>::as_ref(inner_726);
-            if !formatted_727.is_empty() {
+        if let Some(inner_736) = &self.content_encoding {
+            let formatted_737 = AsRef::<str>::as_ref(inner_736);
+            if !formatted_737.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_727;
+                let header_value = formatted_737;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26663,11 +27370,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-Content-Encoding", header_value);
             }
         }
-        if let Some(inner_728) = &self.content_language {
-            let formatted_729 = AsRef::<str>::as_ref(inner_728);
-            if !formatted_729.is_empty() {
+        if let Some(inner_738) = &self.content_language {
+            let formatted_739 = AsRef::<str>::as_ref(inner_738);
+            if !formatted_739.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_729;
+                let header_value = formatted_739;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26683,10 +27390,10 @@ impl WriteGetObjectResponseInput {
         }
         if self.content_length != 0 {
             let mut encoder = smithy_types::primitive::Encoder::from(self.content_length);
-            let formatted_730 = encoder.encode();
-            if !formatted_730.is_empty() {
+            let formatted_740 = encoder.encode();
+            if !formatted_740.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_730;
+                let header_value = formatted_740;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26700,11 +27407,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("Content-Length", header_value);
             }
         }
-        if let Some(inner_731) = &self.content_range {
-            let formatted_732 = AsRef::<str>::as_ref(inner_731);
-            if !formatted_732.is_empty() {
+        if let Some(inner_741) = &self.content_range {
+            let formatted_742 = AsRef::<str>::as_ref(inner_741);
+            if !formatted_742.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_732;
+                let header_value = formatted_742;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26718,11 +27425,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-Content-Range", header_value);
             }
         }
-        if let Some(inner_733) = &self.content_type {
-            let formatted_734 = AsRef::<str>::as_ref(inner_733);
-            if !formatted_734.is_empty() {
+        if let Some(inner_743) = &self.content_type {
+            let formatted_744 = AsRef::<str>::as_ref(inner_743);
+            if !formatted_744.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_734;
+                let header_value = formatted_744;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26738,10 +27445,10 @@ impl WriteGetObjectResponseInput {
         }
         if self.delete_marker {
             let mut encoder = smithy_types::primitive::Encoder::from(self.delete_marker);
-            let formatted_735 = encoder.encode();
-            if !formatted_735.is_empty() {
+            let formatted_745 = encoder.encode();
+            if !formatted_745.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_735;
+                let header_value = formatted_745;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26755,11 +27462,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-delete-marker", header_value);
             }
         }
-        if let Some(inner_736) = &self.e_tag {
-            let formatted_737 = AsRef::<str>::as_ref(inner_736);
-            if !formatted_737.is_empty() {
+        if let Some(inner_746) = &self.e_tag {
+            let formatted_747 = AsRef::<str>::as_ref(inner_746);
+            if !formatted_747.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_737;
+                let header_value = formatted_747;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26773,11 +27480,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-ETag", header_value);
             }
         }
-        if let Some(inner_738) = &self.expires {
-            let formatted_739 = inner_738.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_739.is_empty() {
+        if let Some(inner_748) = &self.expires {
+            let formatted_749 = inner_748.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_749.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_739;
+                let header_value = formatted_749;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26791,11 +27498,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-Expires", header_value);
             }
         }
-        if let Some(inner_740) = &self.expiration {
-            let formatted_741 = AsRef::<str>::as_ref(inner_740);
-            if !formatted_741.is_empty() {
+        if let Some(inner_750) = &self.expiration {
+            let formatted_751 = AsRef::<str>::as_ref(inner_750);
+            if !formatted_751.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_741;
+                let header_value = formatted_751;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26809,11 +27516,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-expiration", header_value);
             }
         }
-        if let Some(inner_742) = &self.last_modified {
-            let formatted_743 = inner_742.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_743.is_empty() {
+        if let Some(inner_752) = &self.last_modified {
+            let formatted_753 = inner_752.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_753.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_743;
+                let header_value = formatted_753;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26829,10 +27536,10 @@ impl WriteGetObjectResponseInput {
         }
         if self.missing_meta != 0 {
             let mut encoder = smithy_types::primitive::Encoder::from(self.missing_meta);
-            let formatted_744 = encoder.encode();
-            if !formatted_744.is_empty() {
+            let formatted_754 = encoder.encode();
+            if !formatted_754.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_744;
+                let header_value = formatted_754;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26846,11 +27553,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-missing-meta", header_value);
             }
         }
-        if let Some(inner_745) = &self.object_lock_mode {
-            let formatted_746 = AsRef::<str>::as_ref(inner_745);
-            if !formatted_746.is_empty() {
+        if let Some(inner_755) = &self.object_lock_mode {
+            let formatted_756 = AsRef::<str>::as_ref(inner_755);
+            if !formatted_756.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_746;
+                let header_value = formatted_756;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26864,11 +27571,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-object-lock-mode", header_value);
             }
         }
-        if let Some(inner_747) = &self.object_lock_legal_hold_status {
-            let formatted_748 = AsRef::<str>::as_ref(inner_747);
-            if !formatted_748.is_empty() {
+        if let Some(inner_757) = &self.object_lock_legal_hold_status {
+            let formatted_758 = AsRef::<str>::as_ref(inner_757);
+            if !formatted_758.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_748;
+                let header_value = formatted_758;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26885,11 +27592,11 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_749) = &self.object_lock_retain_until_date {
-            let formatted_750 = inner_749.fmt(smithy_types::instant::Format::DateTime);
-            if !formatted_750.is_empty() {
+        if let Some(inner_759) = &self.object_lock_retain_until_date {
+            let formatted_760 = inner_759.fmt(smithy_types::instant::Format::DateTime);
+            if !formatted_760.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_750;
+                let header_value = formatted_760;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26908,10 +27615,10 @@ impl WriteGetObjectResponseInput {
         }
         if self.parts_count != 0 {
             let mut encoder = smithy_types::primitive::Encoder::from(self.parts_count);
-            let formatted_751 = encoder.encode();
-            if !formatted_751.is_empty() {
+            let formatted_761 = encoder.encode();
+            if !formatted_761.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_751;
+                let header_value = formatted_761;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26925,11 +27632,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-mp-parts-count", header_value);
             }
         }
-        if let Some(inner_752) = &self.replication_status {
-            let formatted_753 = AsRef::<str>::as_ref(inner_752);
-            if !formatted_753.is_empty() {
+        if let Some(inner_762) = &self.replication_status {
+            let formatted_763 = AsRef::<str>::as_ref(inner_762);
+            if !formatted_763.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_753;
+                let header_value = formatted_763;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26943,11 +27650,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-replication-status", header_value);
             }
         }
-        if let Some(inner_754) = &self.request_charged {
-            let formatted_755 = AsRef::<str>::as_ref(inner_754);
-            if !formatted_755.is_empty() {
+        if let Some(inner_764) = &self.request_charged {
+            let formatted_765 = AsRef::<str>::as_ref(inner_764);
+            if !formatted_765.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_755;
+                let header_value = formatted_765;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26961,11 +27668,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-request-charged", header_value);
             }
         }
-        if let Some(inner_756) = &self.restore {
-            let formatted_757 = AsRef::<str>::as_ref(inner_756);
-            if !formatted_757.is_empty() {
+        if let Some(inner_766) = &self.restore {
+            let formatted_767 = AsRef::<str>::as_ref(inner_766);
+            if !formatted_767.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_757;
+                let header_value = formatted_767;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26979,11 +27686,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-restore", header_value);
             }
         }
-        if let Some(inner_758) = &self.server_side_encryption {
-            let formatted_759 = AsRef::<str>::as_ref(inner_758);
-            if !formatted_759.is_empty() {
+        if let Some(inner_768) = &self.server_side_encryption {
+            let formatted_769 = AsRef::<str>::as_ref(inner_768);
+            if !formatted_769.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_759;
+                let header_value = formatted_769;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27000,11 +27707,11 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_760) = &self.sse_customer_algorithm {
-            let formatted_761 = AsRef::<str>::as_ref(inner_760);
-            if !formatted_761.is_empty() {
+        if let Some(inner_770) = &self.sse_customer_algorithm {
+            let formatted_771 = AsRef::<str>::as_ref(inner_770);
+            if !formatted_771.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_761;
+                let header_value = formatted_771;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27021,11 +27728,11 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_762) = &self.ssekms_key_id {
-            let formatted_763 = AsRef::<str>::as_ref(inner_762);
-            if !formatted_763.is_empty() {
+        if let Some(inner_772) = &self.ssekms_key_id {
+            let formatted_773 = AsRef::<str>::as_ref(inner_772);
+            if !formatted_773.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_763;
+                let header_value = formatted_773;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27042,11 +27749,11 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_764) = &self.sse_customer_key_md5 {
-            let formatted_765 = AsRef::<str>::as_ref(inner_764);
-            if !formatted_765.is_empty() {
+        if let Some(inner_774) = &self.sse_customer_key_md5 {
+            let formatted_775 = AsRef::<str>::as_ref(inner_774);
+            if !formatted_775.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_765;
+                let header_value = formatted_775;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27063,11 +27770,11 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_766) = &self.storage_class {
-            let formatted_767 = AsRef::<str>::as_ref(inner_766);
-            if !formatted_767.is_empty() {
+        if let Some(inner_776) = &self.storage_class {
+            let formatted_777 = AsRef::<str>::as_ref(inner_776);
+            if !formatted_777.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_767;
+                let header_value = formatted_777;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27083,10 +27790,10 @@ impl WriteGetObjectResponseInput {
         }
         if self.tag_count != 0 {
             let mut encoder = smithy_types::primitive::Encoder::from(self.tag_count);
-            let formatted_768 = encoder.encode();
-            if !formatted_768.is_empty() {
+            let formatted_778 = encoder.encode();
+            if !formatted_778.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_768;
+                let header_value = formatted_778;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27100,11 +27807,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-tagging-count", header_value);
             }
         }
-        if let Some(inner_769) = &self.version_id {
-            let formatted_770 = AsRef::<str>::as_ref(inner_769);
-            if !formatted_770.is_empty() {
+        if let Some(inner_779) = &self.version_id {
+            let formatted_780 = AsRef::<str>::as_ref(inner_779);
+            if !formatted_780.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_770;
+                let header_value = formatted_780;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27120,10 +27827,10 @@ impl WriteGetObjectResponseInput {
         }
         if self.bucket_key_enabled {
             let mut encoder = smithy_types::primitive::Encoder::from(self.bucket_key_enabled);
-            let formatted_771 = encoder.encode();
-            if !formatted_771.is_empty() {
+            let formatted_781 = encoder.encode();
+            if !formatted_781.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_771;
+                let header_value = formatted_781;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27140,8 +27847,8 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_772) = &self.metadata {
-            for (k, v) in inner_772 {
+        if let Some(inner_782) = &self.metadata {
+            for (k, v) in inner_782 {
                 use std::str::FromStr;
                 let header_name =
                     http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
@@ -27615,6 +28322,84 @@ impl std::fmt::Debug for UploadPartInput {
         formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
         formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
         formatter.field("request_payer", &self.request_payer);
+        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.finish()
+    }
+}
+
+/// <p>Request to filter the contents of an Amazon S3 object based on a simple Structured Query
+/// Language (SQL) statement. In the request, along with the SQL expression, you must specify a
+/// data serialization format (JSON or CSV) of the object. Amazon S3 uses this to parse object data
+/// into records. It returns only records that match the specified SQL expression. You must
+/// also specify the data serialization format for the response. For more information, see
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select API Documentation</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SelectObjectContentInput {
+    /// <p>The S3 bucket.</p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>The object key.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The SSE Algorithm used to encrypt the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+    pub sse_customer_algorithm: std::option::Option<std::string::String>,
+    /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
+    /// (Using Customer-Provided Encryption Keys</a>. </p>
+    pub sse_customer_key: std::option::Option<std::string::String>,
+    /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
+    /// (Using Customer-Provided Encryption Keys</a>. </p>
+    pub sse_customer_key_md5: std::option::Option<std::string::String>,
+    /// <p>The expression that is used to query the object.</p>
+    pub expression: std::option::Option<std::string::String>,
+    /// <p>The type of the provided expression (for example, SQL).</p>
+    pub expression_type: std::option::Option<crate::model::ExpressionType>,
+    /// <p>Specifies if periodic request progress information should be enabled.</p>
+    pub request_progress: std::option::Option<crate::model::RequestProgress>,
+    /// <p>Describes the format of the data in the object that is being queried.</p>
+    pub input_serialization: std::option::Option<crate::model::InputSerialization>,
+    /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
+    pub output_serialization: std::option::Option<crate::model::OutputSerialization>,
+    /// <p>Specifies the byte range of the object to get the records from. A record is processed
+    /// when its first byte is contained by the range. This parameter is optional, but when
+    /// specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the
+    /// start and end of the range.</p>
+    /// <p>
+    /// <code>ScanRange</code>may be used in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code><scanrange><start>50</start><end>100</end></scanrange></code>
+    /// - process only the records starting between the bytes 50 and 100 (inclusive, counting
+    /// from zero)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code><scanrange><start>50</start></scanrange></code> -
+    /// process only the records starting after the byte 50</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code><scanrange><end>50</end></scanrange></code> -
+    /// process only the records within the last 50 bytes of the file.</p>
+    /// </li>
+    /// </ul>
+    pub scan_range: std::option::Option<crate::model::ScanRange>,
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    pub expected_bucket_owner: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for SelectObjectContentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SelectObjectContentInput");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("key", &self.key);
+        formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+        formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+        formatter.field("expression", &self.expression);
+        formatter.field("expression_type", &self.expression_type);
+        formatter.field("request_progress", &self.request_progress);
+        formatter.field("input_serialization", &self.input_serialization);
+        formatter.field("output_serialization", &self.output_serialization);
+        formatter.field("scan_range", &self.scan_range);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
     }
@@ -29702,7 +30487,8 @@ pub struct DeleteObjectsInput {
     /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object
-    /// Lock in place. You must have sufficient permissions to perform this operation.</p>
+    /// Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
+    /// permission.</p>
     pub bypass_governance_retention: bool,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -29746,7 +30532,8 @@ pub struct DeleteObjectInput {
     /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process
-    /// this operation.</p>
+    /// this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
+    /// permission.</p>
     pub bypass_governance_retention: bool,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,

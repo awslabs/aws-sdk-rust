@@ -6,7 +6,7 @@ pub fn parse_batch_create_variable_error(
     crate::output::BatchCreateVariableOutput,
     crate::error::BatchCreateVariableError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchCreateVariableError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -128,7 +128,7 @@ pub fn parse_batch_get_variable_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchGetVariableOutput, crate::error::BatchGetVariableError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchGetVariableError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -248,7 +248,7 @@ pub fn parse_cancel_batch_prediction_job_error(
     crate::output::CancelBatchPredictionJobOutput,
     crate::error::CancelBatchPredictionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelBatchPredictionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -323,6 +323,27 @@ pub fn parse_cancel_batch_prediction_job_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::CancelBatchPredictionJobError {
+            meta: generic,
+            kind: crate::error::CancelBatchPredictionJobErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CancelBatchPredictionJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::CancelBatchPredictionJobError {
             meta: generic,
             kind: crate::error::CancelBatchPredictionJobErrorKind::ValidationException({
@@ -370,7 +391,7 @@ pub fn parse_create_batch_prediction_job_error(
     crate::output::CreateBatchPredictionJobOutput,
     crate::error::CreateBatchPredictionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateBatchPredictionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -445,6 +466,27 @@ pub fn parse_create_batch_prediction_job_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::CreateBatchPredictionJobError {
+            meta: generic,
+            kind: crate::error::CreateBatchPredictionJobErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBatchPredictionJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::CreateBatchPredictionJobError {
             meta: generic,
             kind: crate::error::CreateBatchPredictionJobErrorKind::ValidationException({
@@ -492,7 +534,7 @@ pub fn parse_create_detector_version_error(
     crate::output::CreateDetectorVersionOutput,
     crate::error::CreateDetectorVersionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDetectorVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -633,7 +675,7 @@ pub fn parse_create_detector_version_response(
 pub fn parse_create_model_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateModelOutput, crate::error::CreateModelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateModelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -672,6 +714,27 @@ pub fn parse_create_model_error(
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateModelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::CreateModelError {
+            meta: generic,
+            kind: crate::error::CreateModelErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -728,7 +791,7 @@ pub fn parse_create_model_version_error(
     crate::output::CreateModelVersionOutput,
     crate::error::CreateModelVersionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateModelVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -799,6 +862,27 @@ pub fn parse_create_model_version_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::CreateModelVersionError {
+            meta: generic,
+            kind: crate::error::CreateModelVersionErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateModelVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::CreateModelVersionError {
             meta: generic,
             kind: crate::error::CreateModelVersionErrorKind::ValidationException({
@@ -848,7 +932,7 @@ pub fn parse_create_model_version_response(
 pub fn parse_create_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateRuleOutput, crate::error::CreateRuleError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -963,7 +1047,7 @@ pub fn parse_create_rule_response(
 pub fn parse_create_variable_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateVariableOutput, crate::error::CreateVariableError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVariableError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1079,7 +1163,7 @@ pub fn parse_delete_batch_prediction_job_error(
     crate::output::DeleteBatchPredictionJobOutput,
     crate::error::DeleteBatchPredictionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBatchPredictionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1154,6 +1238,27 @@ pub fn parse_delete_batch_prediction_job_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::DeleteBatchPredictionJobError {
+            meta: generic,
+            kind: crate::error::DeleteBatchPredictionJobErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteBatchPredictionJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DeleteBatchPredictionJobError {
             meta: generic,
             kind: crate::error::DeleteBatchPredictionJobErrorKind::ValidationException({
@@ -1198,7 +1303,7 @@ pub fn parse_delete_batch_prediction_job_response(
 pub fn parse_delete_detector_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDetectorOutput, crate::error::DeleteDetectorError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDetectorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1335,7 +1440,7 @@ pub fn parse_delete_detector_version_error(
     crate::output::DeleteDetectorVersionOutput,
     crate::error::DeleteDetectorVersionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDetectorVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1493,7 +1598,7 @@ pub fn parse_delete_entity_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteEntityTypeOutput, crate::error::DeleteEntityTypeError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEntityTypeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1565,6 +1670,27 @@ pub fn parse_delete_entity_type_error(
                 tmp
             }),
         },
+        "ThrottlingException" => crate::error::DeleteEntityTypeError {
+            meta: generic,
+            kind: crate::error::DeleteEntityTypeErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DeleteEntityTypeError {
             meta: generic,
             kind: crate::error::DeleteEntityTypeErrorKind::ValidationException({
@@ -1607,7 +1733,7 @@ pub fn parse_delete_entity_type_response(
 pub fn parse_delete_event_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteEventOutput, crate::error::DeleteEventError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEventError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1720,7 +1846,7 @@ pub fn parse_delete_event_response(
 pub fn parse_delete_event_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteEventTypeOutput, crate::error::DeleteEventTypeError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEventTypeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1792,6 +1918,27 @@ pub fn parse_delete_event_type_error(
                 tmp
             }),
         },
+        "ThrottlingException" => crate::error::DeleteEventTypeError {
+            meta: generic,
+            kind: crate::error::DeleteEventTypeErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteEventTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DeleteEventTypeError {
             meta: generic,
             kind: crate::error::DeleteEventTypeErrorKind::ValidationException({
@@ -1836,7 +1983,7 @@ pub fn parse_delete_external_model_error(
     crate::output::DeleteExternalModelOutput,
     crate::error::DeleteExternalModelError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteExternalModelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1973,7 +2120,7 @@ pub fn parse_delete_external_model_response(
 pub fn parse_delete_label_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteLabelOutput, crate::error::DeleteLabelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLabelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2012,6 +2159,27 @@ pub fn parse_delete_label_error(
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteLabelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DeleteLabelError {
+            meta: generic,
+            kind: crate::error::DeleteLabelErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2065,7 +2233,7 @@ pub fn parse_delete_label_response(
 pub fn parse_delete_model_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteModelOutput, crate::error::DeleteModelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteModelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2137,6 +2305,27 @@ pub fn parse_delete_model_error(
                 tmp
             }),
         },
+        "ThrottlingException" => crate::error::DeleteModelError {
+            meta: generic,
+            kind: crate::error::DeleteModelErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteModelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DeleteModelError {
             meta: generic,
             kind: crate::error::DeleteModelErrorKind::ValidationException({
@@ -2181,7 +2370,7 @@ pub fn parse_delete_model_version_error(
     crate::output::DeleteModelVersionOutput,
     crate::error::DeleteModelVersionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteModelVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2253,6 +2442,27 @@ pub fn parse_delete_model_version_error(
                 tmp
             }),
         },
+        "ThrottlingException" => crate::error::DeleteModelVersionError {
+            meta: generic,
+            kind: crate::error::DeleteModelVersionErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteModelVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DeleteModelVersionError {
             meta: generic,
             kind: crate::error::DeleteModelVersionErrorKind::ValidationException({
@@ -2297,7 +2507,7 @@ pub fn parse_delete_model_version_response(
 pub fn parse_delete_outcome_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteOutcomeOutput, crate::error::DeleteOutcomeError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteOutcomeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2431,7 +2641,7 @@ pub fn parse_delete_outcome_response(
 pub fn parse_delete_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRuleOutput, crate::error::DeleteRuleError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2565,7 +2775,7 @@ pub fn parse_delete_rule_response(
 pub fn parse_delete_variable_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteVariableOutput, crate::error::DeleteVariableError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVariableError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2700,7 +2910,7 @@ pub fn parse_describe_detector_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeDetectorOutput, crate::error::DescribeDetectorError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDetectorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2840,7 +3050,7 @@ pub fn parse_describe_model_versions_error(
     crate::output::DescribeModelVersionsOutput,
     crate::error::DescribeModelVersionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeModelVersionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2911,6 +3121,27 @@ pub fn parse_describe_model_versions_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::DescribeModelVersionsError {
+            meta: generic,
+            kind: crate::error::DescribeModelVersionsErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeModelVersionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DescribeModelVersionsError {
             meta: generic,
             kind: crate::error::DescribeModelVersionsErrorKind::ValidationException({
@@ -2963,7 +3194,7 @@ pub fn parse_get_batch_prediction_jobs_error(
     crate::output::GetBatchPredictionJobsOutput,
     crate::error::GetBatchPredictionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBatchPredictionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3038,6 +3269,27 @@ pub fn parse_get_batch_prediction_jobs_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::GetBatchPredictionJobsError {
+            meta: generic,
+            kind: crate::error::GetBatchPredictionJobsErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetBatchPredictionJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::GetBatchPredictionJobsError {
             meta: generic,
             kind: crate::error::GetBatchPredictionJobsErrorKind::ValidationException({
@@ -3087,7 +3339,7 @@ pub fn parse_get_batch_prediction_jobs_response(
 pub fn parse_get_detectors_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetDetectorsOutput, crate::error::GetDetectorsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDetectorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3225,7 +3477,7 @@ pub fn parse_get_detector_version_error(
     crate::output::GetDetectorVersionOutput,
     crate::error::GetDetectorVersionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDetectorVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3366,7 +3618,7 @@ pub fn parse_get_detector_version_response(
 pub fn parse_get_entity_types_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetEntityTypesOutput, crate::error::GetEntityTypesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEntityTypesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3437,6 +3689,27 @@ pub fn parse_get_entity_types_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::GetEntityTypesError {
+            meta: generic,
+            kind: crate::error::GetEntityTypesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetEntityTypesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::GetEntityTypesError {
             meta: generic,
             kind: crate::error::GetEntityTypesErrorKind::ValidationException({
@@ -3484,7 +3757,7 @@ pub fn parse_get_event_prediction_error(
     crate::output::GetEventPredictionOutput,
     crate::error::GetEventPredictionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEventPredictionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3576,6 +3849,26 @@ pub fn parse_get_event_prediction_error(
                 }),
             }
         }
+        "ResourceUnavailableException" => {
+            crate::error::GetEventPredictionError {
+                meta: generic,
+                kind: crate::error::GetEventPredictionErrorKind::ResourceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEventPredictionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ThrottlingException" => crate::error::GetEventPredictionError {
             meta: generic,
             kind: crate::error::GetEventPredictionErrorKind::ThrottlingException({
@@ -3646,7 +3939,7 @@ pub fn parse_get_event_prediction_response(
 pub fn parse_get_event_types_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetEventTypesOutput, crate::error::GetEventTypesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEventTypesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3717,6 +4010,27 @@ pub fn parse_get_event_types_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::GetEventTypesError {
+            meta: generic,
+            kind: crate::error::GetEventTypesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetEventTypesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::GetEventTypesError {
             meta: generic,
             kind: crate::error::GetEventTypesErrorKind::ValidationException({
@@ -3762,7 +4076,7 @@ pub fn parse_get_external_models_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetExternalModelsOutput, crate::error::GetExternalModelsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetExternalModelsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3904,7 +4218,7 @@ pub fn parse_get_kms_encryption_key_error(
     crate::output::GetKmsEncryptionKeyOutput,
     crate::error::GetKMSEncryptionKeyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetKMSEncryptionKeyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3975,6 +4289,27 @@ pub fn parse_get_kms_encryption_key_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::GetKMSEncryptionKeyError {
+            meta: generic,
+            kind: crate::error::GetKMSEncryptionKeyErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetKMSEncryptionKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetKMSEncryptionKeyError::generic(generic),
     })
 }
@@ -4003,7 +4338,7 @@ pub fn parse_get_kms_encryption_key_response(
 pub fn parse_get_labels_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetLabelsOutput, crate::error::GetLabelsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetLabelsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4074,6 +4409,27 @@ pub fn parse_get_labels_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::GetLabelsError {
+            meta: generic,
+            kind: crate::error::GetLabelsErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetLabelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::GetLabelsError {
             meta: generic,
             kind: crate::error::GetLabelsErrorKind::ValidationException({
@@ -4117,7 +4473,7 @@ pub fn parse_get_labels_response(
 pub fn parse_get_models_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetModelsOutput, crate::error::GetModelsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetModelsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4188,6 +4544,27 @@ pub fn parse_get_models_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::GetModelsError {
+            meta: generic,
+            kind: crate::error::GetModelsErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetModelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::GetModelsError {
             meta: generic,
             kind: crate::error::GetModelsErrorKind::ValidationException({
@@ -4231,7 +4608,7 @@ pub fn parse_get_models_response(
 pub fn parse_get_model_version_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetModelVersionOutput, crate::error::GetModelVersionError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetModelVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4302,6 +4679,27 @@ pub fn parse_get_model_version_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::GetModelVersionError {
+            meta: generic,
+            kind: crate::error::GetModelVersionErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetModelVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::GetModelVersionError {
             meta: generic,
             kind: crate::error::GetModelVersionErrorKind::ValidationException({
@@ -4346,7 +4744,7 @@ pub fn parse_get_model_version_response(
 pub fn parse_get_outcomes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetOutcomesOutput, crate::error::GetOutcomesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetOutcomesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4481,7 +4879,7 @@ pub fn parse_get_outcomes_response(
 pub fn parse_get_rules_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRulesOutput, crate::error::GetRulesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRulesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4616,7 +5014,7 @@ pub fn parse_get_rules_response(
 pub fn parse_get_variables_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetVariablesOutput, crate::error::GetVariablesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetVariablesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4754,7 +5152,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4804,6 +5202,27 @@ pub fn parse_list_tags_for_resource_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::ValidationException({
@@ -4853,7 +5272,7 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_put_detector_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutDetectorOutput, crate::error::PutDetectorError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutDetectorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4871,6 +5290,27 @@ pub fn parse_put_detector_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutDetectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::PutDetectorError {
+            meta: generic,
+            kind: crate::error::PutDetectorErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -4966,7 +5406,7 @@ pub fn parse_put_detector_response(
 pub fn parse_put_entity_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutEntityTypeOutput, crate::error::PutEntityTypeError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutEntityTypeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4996,6 +5436,27 @@ pub fn parse_put_entity_type_error(
                 tmp
             }),
         },
+        "ConflictException" => crate::error::PutEntityTypeError {
+            meta: generic,
+            kind: crate::error::PutEntityTypeErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServerException" => crate::error::PutEntityTypeError {
             meta: generic,
             kind: crate::error::PutEntityTypeErrorKind::InternalServerException({
@@ -5005,6 +5466,27 @@ pub fn parse_put_entity_type_error(
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutEntityTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::PutEntityTypeError {
+            meta: generic,
+            kind: crate::error::PutEntityTypeErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -5058,7 +5540,7 @@ pub fn parse_put_entity_type_response(
 pub fn parse_put_event_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutEventTypeOutput, crate::error::PutEventTypeError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutEventTypeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5088,6 +5570,27 @@ pub fn parse_put_event_type_error(
                 tmp
             }),
         },
+        "ConflictException" => crate::error::PutEventTypeError {
+            meta: generic,
+            kind: crate::error::PutEventTypeErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutEventTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServerException" => crate::error::PutEventTypeError {
             meta: generic,
             kind: crate::error::PutEventTypeErrorKind::InternalServerException({
@@ -5097,6 +5600,27 @@ pub fn parse_put_event_type_error(
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutEventTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::PutEventTypeError {
+            meta: generic,
+            kind: crate::error::PutEventTypeErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -5151,7 +5675,7 @@ pub fn parse_put_external_model_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutExternalModelOutput, crate::error::PutExternalModelError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutExternalModelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5169,6 +5693,27 @@ pub fn parse_put_external_model_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutExternalModelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::PutExternalModelError {
+            meta: generic,
+            kind: crate::error::PutExternalModelErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -5268,7 +5813,7 @@ pub fn parse_put_kms_encryption_key_error(
     crate::output::PutKmsEncryptionKeyOutput,
     crate::error::PutKMSEncryptionKeyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutKMSEncryptionKeyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5286,6 +5831,27 @@ pub fn parse_put_kms_encryption_key_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutKMSEncryptionKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::PutKMSEncryptionKeyError {
+            meta: generic,
+            kind: crate::error::PutKMSEncryptionKeyErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -5339,6 +5905,27 @@ pub fn parse_put_kms_encryption_key_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::PutKMSEncryptionKeyError {
+            meta: generic,
+            kind: crate::error::PutKMSEncryptionKeyErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutKMSEncryptionKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::PutKMSEncryptionKeyError {
             meta: generic,
             kind: crate::error::PutKMSEncryptionKeyErrorKind::ValidationException({
@@ -5383,7 +5970,7 @@ pub fn parse_put_kms_encryption_key_response(
 pub fn parse_put_label_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutLabelOutput, crate::error::PutLabelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutLabelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5413,6 +6000,27 @@ pub fn parse_put_label_error(
                 tmp
             }),
         },
+        "ConflictException" => crate::error::PutLabelError {
+            meta: generic,
+            kind: crate::error::PutLabelErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutLabelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServerException" => crate::error::PutLabelError {
             meta: generic,
             kind: crate::error::PutLabelErrorKind::InternalServerException({
@@ -5422,6 +6030,27 @@ pub fn parse_put_label_error(
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutLabelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::PutLabelError {
+            meta: generic,
+            kind: crate::error::PutLabelErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -5475,7 +6104,7 @@ pub fn parse_put_label_response(
 pub fn parse_put_outcome_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutOutcomeOutput, crate::error::PutOutcomeError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutOutcomeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5493,6 +6122,27 @@ pub fn parse_put_outcome_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutOutcomeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::PutOutcomeError {
+            meta: generic,
+            kind: crate::error::PutOutcomeErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -5588,7 +6238,7 @@ pub fn parse_put_outcome_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5638,6 +6288,27 @@ pub fn parse_tag_resource_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::ValidationException({
@@ -5679,7 +6350,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5729,6 +6400,27 @@ pub fn parse_untag_resource_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::ValidationException({
@@ -5773,7 +6465,7 @@ pub fn parse_update_detector_version_error(
     crate::output::UpdateDetectorVersionOutput,
     crate::error::UpdateDetectorVersionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateDetectorVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5791,6 +6483,27 @@ pub fn parse_update_detector_version_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateDetectorVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::UpdateDetectorVersionError {
+            meta: generic,
+            kind: crate::error::UpdateDetectorVersionErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -5912,7 +6625,7 @@ pub fn parse_update_detector_version_metadata_error(
     crate::output::UpdateDetectorVersionMetadataOutput,
     crate::error::UpdateDetectorVersionMetadataError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateDetectorVersionMetadataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5934,6 +6647,27 @@ pub fn parse_update_detector_version_metadata_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateDetectorVersionMetadataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::UpdateDetectorVersionMetadataError {
+            meta: generic,
+            kind: crate::error::UpdateDetectorVersionMetadataErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -6035,7 +6769,7 @@ pub fn parse_update_detector_version_status_error(
     crate::output::UpdateDetectorVersionStatusOutput,
     crate::error::UpdateDetectorVersionStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateDetectorVersionStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6057,6 +6791,27 @@ pub fn parse_update_detector_version_status_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateDetectorVersionStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::UpdateDetectorVersionStatusError {
+            meta: generic,
+            kind: crate::error::UpdateDetectorVersionStatusErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -6177,7 +6932,7 @@ pub fn parse_update_detector_version_status_response(
 pub fn parse_update_model_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateModelOutput, crate::error::UpdateModelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateModelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6195,6 +6950,27 @@ pub fn parse_update_model_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateModelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::UpdateModelError {
+            meta: generic,
+            kind: crate::error::UpdateModelErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -6248,6 +7024,27 @@ pub fn parse_update_model_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::UpdateModelError {
+            meta: generic,
+            kind: crate::error::UpdateModelErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateModelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::UpdateModelError {
             meta: generic,
             kind: crate::error::UpdateModelErrorKind::ValidationException({
@@ -6292,7 +7089,7 @@ pub fn parse_update_model_version_error(
     crate::output::UpdateModelVersionOutput,
     crate::error::UpdateModelVersionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateModelVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6310,6 +7107,27 @@ pub fn parse_update_model_version_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateModelVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::UpdateModelVersionError {
+            meta: generic,
+            kind: crate::error::UpdateModelVersionErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -6363,6 +7181,27 @@ pub fn parse_update_model_version_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::UpdateModelVersionError {
+            meta: generic,
+            kind: crate::error::UpdateModelVersionErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateModelVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::UpdateModelVersionError {
             meta: generic,
             kind: crate::error::UpdateModelVersionErrorKind::ValidationException({
@@ -6415,7 +7254,7 @@ pub fn parse_update_model_version_status_error(
     crate::output::UpdateModelVersionStatusOutput,
     crate::error::UpdateModelVersionStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateModelVersionStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6437,6 +7276,27 @@ pub fn parse_update_model_version_status_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateModelVersionStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::UpdateModelVersionStatusError {
+            meta: generic,
+            kind: crate::error::UpdateModelVersionStatusErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -6490,6 +7350,27 @@ pub fn parse_update_model_version_status_error(
                 }),
             }
         }
+        "ThrottlingException" => crate::error::UpdateModelVersionStatusError {
+            meta: generic,
+            kind: crate::error::UpdateModelVersionStatusErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateModelVersionStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::UpdateModelVersionStatusError {
             meta: generic,
             kind: crate::error::UpdateModelVersionStatusErrorKind::ValidationException({
@@ -6537,7 +7418,7 @@ pub fn parse_update_rule_metadata_error(
     crate::output::UpdateRuleMetadataOutput,
     crate::error::UpdateRuleMetadataError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateRuleMetadataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6555,6 +7436,27 @@ pub fn parse_update_rule_metadata_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateRuleMetadataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::UpdateRuleMetadataError {
+            meta: generic,
+            kind: crate::error::UpdateRuleMetadataErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -6674,7 +7576,7 @@ pub fn parse_update_rule_version_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateRuleVersionOutput, crate::error::UpdateRuleVersionError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateRuleVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6692,6 +7594,27 @@ pub fn parse_update_rule_version_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateRuleVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::UpdateRuleVersionError {
+            meta: generic,
+            kind: crate::error::UpdateRuleVersionErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -6813,7 +7736,7 @@ pub fn parse_update_rule_version_response(
 pub fn parse_update_variable_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateVariableOutput, crate::error::UpdateVariableError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateVariableError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6831,6 +7754,27 @@ pub fn parse_update_variable_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateVariableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::UpdateVariableError {
+            meta: generic,
+            kind: crate::error::UpdateVariableErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
                         response.body().as_ref(),
                         output,
                     )

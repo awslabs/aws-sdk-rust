@@ -4698,7 +4698,7 @@ pub struct TransitGatewayMulticastGroup {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of resource, for example a VPC attachment.</p>
     pub resource_type: std::option::Option<crate::model::TransitGatewayAttachmentResourceType>,
-    /// <p> The ID of the AWS account that owns the transit gateway multicast domain group resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
     pub resource_owner_id: std::option::Option<std::string::String>,
     /// <p>The ID of the transit gateway attachment.</p>
     pub network_interface_id: std::option::Option<std::string::String>,
@@ -4811,7 +4811,7 @@ pub mod transit_gateway_multicast_group {
             self.resource_type = input;
             self
         }
-        /// <p> The ID of the AWS account that owns the transit gateway multicast domain group resource.</p>
+        /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
         pub fn resource_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner_id = Some(input.into());
             self
@@ -7344,6 +7344,8 @@ pub struct InstanceMetadataOptionsResponse {
     /// instance metadata.</p>
     /// </note>
     pub http_endpoint: std::option::Option<crate::model::InstanceMetadataEndpointState>,
+    /// <p>Whether or not the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+    pub http_protocol_ipv6: std::option::Option<crate::model::InstanceMetadataProtocolState>,
 }
 impl std::fmt::Debug for InstanceMetadataOptionsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7355,6 +7357,7 @@ impl std::fmt::Debug for InstanceMetadataOptionsResponse {
             &self.http_put_response_hop_limit,
         );
         formatter.field("http_endpoint", &self.http_endpoint);
+        formatter.field("http_protocol_ipv6", &self.http_protocol_ipv6);
         formatter.finish()
     }
 }
@@ -7368,6 +7371,8 @@ pub mod instance_metadata_options_response {
         pub(crate) http_tokens: std::option::Option<crate::model::HttpTokensState>,
         pub(crate) http_put_response_hop_limit: std::option::Option<i32>,
         pub(crate) http_endpoint: std::option::Option<crate::model::InstanceMetadataEndpointState>,
+        pub(crate) http_protocol_ipv6:
+            std::option::Option<crate::model::InstanceMetadataProtocolState>,
     }
     impl Builder {
         /// <p>The state of the metadata option changes.</p>
@@ -7439,6 +7444,21 @@ pub mod instance_metadata_options_response {
             self.http_endpoint = input;
             self
         }
+        /// <p>Whether or not the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+        pub fn http_protocol_ipv6(
+            mut self,
+            input: crate::model::InstanceMetadataProtocolState,
+        ) -> Self {
+            self.http_protocol_ipv6 = Some(input);
+            self
+        }
+        pub fn set_http_protocol_ipv6(
+            mut self,
+            input: std::option::Option<crate::model::InstanceMetadataProtocolState>,
+        ) -> Self {
+            self.http_protocol_ipv6 = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceMetadataOptionsResponse`](crate::model::InstanceMetadataOptionsResponse)
         pub fn build(self) -> crate::model::InstanceMetadataOptionsResponse {
             crate::model::InstanceMetadataOptionsResponse {
@@ -7446,6 +7466,7 @@ pub mod instance_metadata_options_response {
                 http_tokens: self.http_tokens,
                 http_put_response_hop_limit: self.http_put_response_hop_limit,
                 http_endpoint: self.http_endpoint,
+                http_protocol_ipv6: self.http_protocol_ipv6,
             }
         }
     }
@@ -7454,6 +7475,56 @@ impl InstanceMetadataOptionsResponse {
     /// Creates a new builder-style object to manufacture [`InstanceMetadataOptionsResponse`](crate::model::InstanceMetadataOptionsResponse)
     pub fn builder() -> crate::model::instance_metadata_options_response::Builder {
         crate::model::instance_metadata_options_response::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InstanceMetadataProtocolState {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for InstanceMetadataProtocolState {
+    fn from(s: &str) -> Self {
+        match s {
+            "disabled" => InstanceMetadataProtocolState::Disabled,
+            "enabled" => InstanceMetadataProtocolState::Enabled,
+            other => InstanceMetadataProtocolState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for InstanceMetadataProtocolState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InstanceMetadataProtocolState::from(s))
+    }
+}
+impl InstanceMetadataProtocolState {
+    pub fn as_str(&self) -> &str {
+        match self {
+            InstanceMetadataProtocolState::Disabled => "disabled",
+            InstanceMetadataProtocolState::Enabled => "enabled",
+            InstanceMetadataProtocolState::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["disabled", "enabled"]
+    }
+}
+impl AsRef<str> for InstanceMetadataProtocolState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -8715,11 +8786,11 @@ impl InstanceNetworkInterface {
     }
 }
 
-/// <p>Information about an IPv6 delegated prefix.</p>
+/// <p>Information about an IPv6 prefix.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceIpv6Prefix {
-    /// <p>One or more IPv6 delegated prefixes assigned to the network interface.</p>
+    /// <p>One or more IPv6 prefixes assigned to the network interface.</p>
     pub ipv6_prefix: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceIpv6Prefix {
@@ -8738,7 +8809,7 @@ pub mod instance_ipv6_prefix {
         pub(crate) ipv6_prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>One or more IPv6 delegated prefixes assigned to the network interface.</p>
+        /// <p>One or more IPv6 prefixes assigned to the network interface.</p>
         pub fn ipv6_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.ipv6_prefix = Some(input.into());
             self
@@ -8762,11 +8833,11 @@ impl InstanceIpv6Prefix {
     }
 }
 
-/// <p>Information about an IPv4 delegated prefix.</p>
+/// <p>Information about an IPv4 prefix.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceIpv4Prefix {
-    /// <p>One or more IPv4 delegated prefixes assigned to the network interface.</p>
+    /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
     pub ipv4_prefix: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceIpv4Prefix {
@@ -8785,7 +8856,7 @@ pub mod instance_ipv4_prefix {
         pub(crate) ipv4_prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>One or more IPv4 delegated prefixes assigned to the network interface.</p>
+        /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
         pub fn ipv4_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.ipv4_prefix = Some(input.into());
             self
@@ -10600,6 +10671,15 @@ pub enum InstanceType {
     M6gdMedium,
     M6gdMetal,
     M6gdXlarge,
+    M6i12xlarge,
+    M6i16xlarge,
+    M6i24xlarge,
+    M6i2xlarge,
+    M6i32xlarge,
+    M6i4xlarge,
+    M6i8xlarge,
+    M6iLarge,
+    M6iXlarge,
     Mac1Metal,
     P216xlarge,
     P28xlarge,
@@ -11014,6 +11094,15 @@ impl std::convert::From<&str> for InstanceType {
             "m6gd.medium" => InstanceType::M6gdMedium,
             "m6gd.metal" => InstanceType::M6gdMetal,
             "m6gd.xlarge" => InstanceType::M6gdXlarge,
+            "m6i.12xlarge" => InstanceType::M6i12xlarge,
+            "m6i.16xlarge" => InstanceType::M6i16xlarge,
+            "m6i.24xlarge" => InstanceType::M6i24xlarge,
+            "m6i.2xlarge" => InstanceType::M6i2xlarge,
+            "m6i.32xlarge" => InstanceType::M6i32xlarge,
+            "m6i.4xlarge" => InstanceType::M6i4xlarge,
+            "m6i.8xlarge" => InstanceType::M6i8xlarge,
+            "m6i.large" => InstanceType::M6iLarge,
+            "m6i.xlarge" => InstanceType::M6iXlarge,
             "mac1.metal" => InstanceType::Mac1Metal,
             "p2.16xlarge" => InstanceType::P216xlarge,
             "p2.8xlarge" => InstanceType::P28xlarge,
@@ -11436,6 +11525,15 @@ impl InstanceType {
             InstanceType::M6gdMedium => "m6gd.medium",
             InstanceType::M6gdMetal => "m6gd.metal",
             InstanceType::M6gdXlarge => "m6gd.xlarge",
+            InstanceType::M6i12xlarge => "m6i.12xlarge",
+            InstanceType::M6i16xlarge => "m6i.16xlarge",
+            InstanceType::M6i24xlarge => "m6i.24xlarge",
+            InstanceType::M6i2xlarge => "m6i.2xlarge",
+            InstanceType::M6i32xlarge => "m6i.32xlarge",
+            InstanceType::M6i4xlarge => "m6i.4xlarge",
+            InstanceType::M6i8xlarge => "m6i.8xlarge",
+            InstanceType::M6iLarge => "m6i.large",
+            InstanceType::M6iXlarge => "m6i.xlarge",
             InstanceType::Mac1Metal => "mac1.metal",
             InstanceType::P216xlarge => "p2.16xlarge",
             InstanceType::P28xlarge => "p2.8xlarge",
@@ -11849,6 +11947,15 @@ impl InstanceType {
             "m6gd.medium",
             "m6gd.metal",
             "m6gd.xlarge",
+            "m6i.12xlarge",
+            "m6i.16xlarge",
+            "m6i.24xlarge",
+            "m6i.2xlarge",
+            "m6i.32xlarge",
+            "m6i.4xlarge",
+            "m6i.8xlarge",
+            "m6i.large",
+            "m6i.xlarge",
             "mac1.metal",
             "p2.16xlarge",
             "p2.8xlarge",
@@ -12096,6 +12203,8 @@ pub struct InstanceMetadataOptionsRequest {
     /// instance metadata.</p>
     /// </note>
     pub http_endpoint: std::option::Option<crate::model::InstanceMetadataEndpointState>,
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    pub http_protocol_ipv6: std::option::Option<crate::model::InstanceMetadataProtocolState>,
 }
 impl std::fmt::Debug for InstanceMetadataOptionsRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12106,6 +12215,7 @@ impl std::fmt::Debug for InstanceMetadataOptionsRequest {
             &self.http_put_response_hop_limit,
         );
         formatter.field("http_endpoint", &self.http_endpoint);
+        formatter.field("http_protocol_ipv6", &self.http_protocol_ipv6);
         formatter.finish()
     }
 }
@@ -12118,6 +12228,8 @@ pub mod instance_metadata_options_request {
         pub(crate) http_tokens: std::option::Option<crate::model::HttpTokensState>,
         pub(crate) http_put_response_hop_limit: std::option::Option<i32>,
         pub(crate) http_endpoint: std::option::Option<crate::model::InstanceMetadataEndpointState>,
+        pub(crate) http_protocol_ipv6:
+            std::option::Option<crate::model::InstanceMetadataProtocolState>,
     }
     impl Builder {
         /// <p>The state of token usage for your instance metadata requests. If the parameter is not
@@ -12171,12 +12283,28 @@ pub mod instance_metadata_options_request {
             self.http_endpoint = input;
             self
         }
+        /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+        pub fn http_protocol_ipv6(
+            mut self,
+            input: crate::model::InstanceMetadataProtocolState,
+        ) -> Self {
+            self.http_protocol_ipv6 = Some(input);
+            self
+        }
+        pub fn set_http_protocol_ipv6(
+            mut self,
+            input: std::option::Option<crate::model::InstanceMetadataProtocolState>,
+        ) -> Self {
+            self.http_protocol_ipv6 = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceMetadataOptionsRequest`](crate::model::InstanceMetadataOptionsRequest)
         pub fn build(self) -> crate::model::InstanceMetadataOptionsRequest {
             crate::model::InstanceMetadataOptionsRequest {
                 http_tokens: self.http_tokens,
                 http_put_response_hop_limit: self.http_put_response_hop_limit,
                 http_endpoint: self.http_endpoint,
+                http_protocol_ipv6: self.http_protocol_ipv6,
             }
         }
     }
@@ -13239,6 +13367,9 @@ pub struct InstanceNetworkInterfaceSpecification {
     /// <p>The index of the network card. Some instance types support multiple network cards.
     /// The primary network interface must be assigned to network card index 0.
     /// The default is network card index 0.</p>
+    /// <p>If you are using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a> to create Spot Instances, omit this parameter because
+    /// you can’t specify the network card index when using this API. To specify the network
+    /// card index, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
     pub network_card_index: std::option::Option<i32>,
     /// <p>One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot
     /// use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
@@ -13504,6 +13635,9 @@ pub mod instance_network_interface_specification {
         /// <p>The index of the network card. Some instance types support multiple network cards.
         /// The primary network interface must be assigned to network card index 0.
         /// The default is network card index 0.</p>
+        /// <p>If you are using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a> to create Spot Instances, omit this parameter because
+        /// you can’t specify the network card index when using this API. To specify the network
+        /// card index, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
         pub fn network_card_index(mut self, input: i32) -> Self {
             self.network_card_index = Some(input);
             self
@@ -13597,11 +13731,11 @@ impl InstanceNetworkInterfaceSpecification {
     }
 }
 
-/// <p>Describes the IPv4 Prefix Delegation option for a network interface.</p>
+/// <p>Describes the IPv4 prefix option for a network interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ipv6PrefixSpecificationRequest {
-    /// <p>The IPv6 Prefix Delegation prefix.</p>
+    /// <p>The IPv6 prefix.</p>
     pub ipv6_prefix: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Ipv6PrefixSpecificationRequest {
@@ -13620,7 +13754,7 @@ pub mod ipv6_prefix_specification_request {
         pub(crate) ipv6_prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IPv6 Prefix Delegation prefix.</p>
+        /// <p>The IPv6 prefix.</p>
         pub fn ipv6_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.ipv6_prefix = Some(input.into());
             self
@@ -13644,11 +13778,12 @@ impl Ipv6PrefixSpecificationRequest {
     }
 }
 
-/// <p>Describes the IPv4 Prefix Delegation option for a network interface.</p>
+/// <p>Describes the IPv4 prefix option for a network interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ipv4PrefixSpecificationRequest {
-    /// <p>The IPv4 Prefix Delegation prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the
+    /// <p>The IPv4 prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+    /// Assigning prefixes to Amazon EC2 network interfaces</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub ipv4_prefix: std::option::Option<std::string::String>,
 }
@@ -13668,7 +13803,8 @@ pub mod ipv4_prefix_specification_request {
         pub(crate) ipv4_prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IPv4 Prefix Delegation prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the
+        /// <p>The IPv4 prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+        /// Assigning prefixes to Amazon EC2 network interfaces</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn ipv4_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.ipv4_prefix = Some(input.into());
@@ -13919,7 +14055,8 @@ impl RunInstancesMonitoringEnabled {
     }
 }
 
-/// <p>Describes a block device mapping.</p>
+/// <p>Describes a block device mapping, which defines the EBS volumes and instance store
+/// volumes to attach to an instance at launch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockDeviceMapping {
@@ -13939,7 +14076,9 @@ pub struct BlockDeviceMapping {
     /// <p>Parameters used to automatically set up EBS volumes when the instance is
     /// launched.</p>
     pub ebs: std::option::Option<crate::model::EbsBlockDevice>,
-    /// <p>To omit the device from the block device mapping, specify an empty string.</p>
+    /// <p>To omit the device from the block device mapping, specify an empty string. When this
+    /// property is specified, the device is removed from the block device mapping regardless of
+    /// the assigned value.</p>
     pub no_device: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BlockDeviceMapping {
@@ -14001,7 +14140,9 @@ pub mod block_device_mapping {
             self.ebs = input;
             self
         }
-        /// <p>To omit the device from the block device mapping, specify an empty string.</p>
+        /// <p>To omit the device from the block device mapping, specify an empty string. When this
+        /// property is specified, the device is removed from the block device mapping regardless of
+        /// the assigned value.</p>
         pub fn no_device(mut self, input: impl Into<std::string::String>) -> Self {
             self.no_device = Some(input.into());
             self
@@ -19450,7 +19591,7 @@ pub struct TransitGatewayVpcAttachment {
     pub transit_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the VPC.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
     pub vpc_owner_id: std::option::Option<std::string::String>,
     /// <p>The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.</p>
     pub state: std::option::Option<crate::model::TransitGatewayAttachmentState>,
@@ -19534,7 +19675,7 @@ pub mod transit_gateway_vpc_attachment {
             self.vpc_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the VPC.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
         pub fn vpc_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_owner_id = Some(input.into());
             self
@@ -20189,7 +20330,7 @@ impl PeeringAttachmentStatus {
 pub struct PeeringTgwInfo {
     /// <p>The ID of the transit gateway.</p>
     pub transit_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the transit gateway.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The Region of the transit gateway.</p>
     pub region: std::option::Option<std::string::String>,
@@ -20226,7 +20367,7 @@ pub mod peering_tgw_info {
             self.transit_gateway_id = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the transit gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -20273,7 +20414,7 @@ pub struct TransitGatewayMulticastDomainAssociations {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of resource, for example a VPC attachment.</p>
     pub resource_type: std::option::Option<crate::model::TransitGatewayAttachmentResourceType>,
-    /// <p> The ID of the AWS account that owns the resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
     pub resource_owner_id: std::option::Option<std::string::String>,
     /// <p>The subnets associated with the multicast domain.</p>
     pub subnets: std::option::Option<std::vec::Vec<crate::model::SubnetAssociation>>,
@@ -20365,7 +20506,7 @@ pub mod transit_gateway_multicast_domain_associations {
             self.resource_type = input;
             self
         }
-        /// <p> The ID of the AWS account that owns the resource.</p>
+        /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
         pub fn resource_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner_id = Some(input.into());
             self
@@ -25230,7 +25371,7 @@ pub struct TransitGateway {
     pub transit_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The state of the transit gateway.</p>
     pub state: std::option::Option<crate::model::TransitGatewayState>,
-    /// <p>The ID of the AWS account ID that owns the transit gateway.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The description of the transit gateway.</p>
     pub description: std::option::Option<std::string::String>,
@@ -25307,7 +25448,7 @@ pub mod transit_gateway {
             self.state = input;
             self
         }
-        /// <p>The ID of the AWS account ID that owns the transit gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -32068,8 +32209,7 @@ pub struct SnapshotTaskDetail {
     pub encrypted: std::option::Option<bool>,
     /// <p>The format of the disk image from which the snapshot is created.</p>
     pub format: std::option::Option<std::string::String>,
-    /// <p>The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create
-    /// the encrypted snapshot.</p>
+    /// <p>The identifier for the KMS key that was used to create the encrypted snapshot.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The percentage of completion for the import snapshot task.</p>
     pub progress: std::option::Option<std::string::String>,
@@ -32156,8 +32296,7 @@ pub mod snapshot_task_detail {
             self.format = input;
             self
         }
-        /// <p>The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create
-        /// the encrypted snapshot.</p>
+        /// <p>The identifier for the KMS key that was used to create the encrypted snapshot.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -32791,7 +32930,7 @@ impl ImportInstanceLaunchSpecification {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserData {
-    /// <p>The user data. If you are using an AWS SDK or command line tool, Base64-encoding is performed for you, and you
+    /// <p>The user data. If you are using an Amazon Web Services SDK or command line tool, Base64-encoding is performed for you, and you
     /// can load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
     pub data: std::option::Option<std::string::String>,
 }
@@ -32811,7 +32950,7 @@ pub mod user_data {
         pub(crate) data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The user data. If you are using an AWS SDK or command line tool, Base64-encoding is performed for you, and you
+        /// <p>The user data. If you are using an Amazon Web Services SDK or command line tool, Base64-encoding is performed for you, and you
         /// can load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
             self.data = Some(input.into());
@@ -33663,7 +33802,7 @@ pub struct TransitGatewayMulticastDomainAssociation {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of resource, for example a VPC attachment.</p>
     pub resource_type: std::option::Option<crate::model::TransitGatewayAttachmentResourceType>,
-    /// <p> The ID of the AWS account that owns the transit gateway multicast domain association resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain association resource.</p>
     pub resource_owner_id: std::option::Option<std::string::String>,
     /// <p>The subnet associated with the transit gateway multicast domain.</p>
     pub subnet: std::option::Option<crate::model::SubnetAssociation>,
@@ -33735,7 +33874,7 @@ pub mod transit_gateway_multicast_domain_association {
             self.resource_type = input;
             self
         }
-        /// <p> The ID of the AWS account that owns the transit gateway multicast domain association resource.</p>
+        /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain association resource.</p>
         pub fn resource_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner_id = Some(input.into());
             self
@@ -44626,6 +44765,10 @@ impl AsRef<str> for VolumeAttributeName {
     }
 }
 
+/// <note>
+/// <p>Currently available in <b>limited preview only</b>.
+/// If you are interested in using this feature, contact your account manager.</p>
+/// </note>
 /// <p>Information about an association between a branch network interface with a trunk network interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -44642,7 +44785,7 @@ pub struct TrunkInterfaceAssociation {
     pub vlan_id: std::option::Option<i32>,
     /// <p>The application key when you use the GRE protocol.</p>
     pub gre_key: std::option::Option<i32>,
-    /// <p> The tags.</p>
+    /// <p>The tags for the trunk interface association.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for TrunkInterfaceAssociation {
@@ -45054,7 +45197,7 @@ pub struct TransitGatewayMulticastDomain {
     pub transit_gateway_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
     pub transit_gateway_multicast_domain_arn: std::option::Option<std::string::String>,
-    /// <p> The ID of the AWS account that owns the transit gateway multiicast domain.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The options for the transit gateway multicast domain.</p>
     pub options: std::option::Option<crate::model::TransitGatewayMulticastDomainOptions>,
@@ -45143,7 +45286,7 @@ pub mod transit_gateway_multicast_domain {
             self.transit_gateway_multicast_domain_arn = input;
             self
         }
-        /// <p> The ID of the AWS account that owns the transit gateway multiicast domain.</p>
+        /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -46296,9 +46439,9 @@ pub struct TransitGatewayAttachment {
     pub transit_gateway_attachment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the transit gateway.</p>
     pub transit_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the transit gateway.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     pub transit_gateway_owner_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the resource.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
     pub resource_owner_id: std::option::Option<std::string::String>,
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub resource_type: std::option::Option<crate::model::TransitGatewayAttachmentResourceType>,
@@ -46379,7 +46522,7 @@ pub mod transit_gateway_attachment {
             self.transit_gateway_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the transit gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
         pub fn transit_gateway_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.transit_gateway_owner_id = Some(input.into());
             self
@@ -46391,7 +46534,7 @@ pub mod transit_gateway_attachment {
             self.transit_gateway_owner_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the resource.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
         pub fn resource_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner_id = Some(input.into());
             self
@@ -48293,7 +48436,7 @@ pub struct EventInformation {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>modify_successful</code> - The EC2 Fleet or Spot Fleet request was modified.</p>
+    /// <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was modified.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -48432,7 +48575,7 @@ pub mod event_information {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>modify_successful</code> - The EC2 Fleet or Spot Fleet request was modified.</p>
+        /// <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was modified.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -53900,13 +54043,9 @@ pub struct NetworkInterface {
     /// <p>The private IPv4 addresses associated with the network interface.</p>
     pub private_ip_addresses:
         std::option::Option<std::vec::Vec<crate::model::NetworkInterfacePrivateIpAddress>>,
-    /// <p>The IPv4 Prefix Delegation prefixes
-    /// that are
-    /// assigned to the network interface.</p>
+    /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
     pub ipv4_prefixes: std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecification>>,
-    /// <p>The IPv6 Prefix Delegation prefixes
-    /// that are
-    /// assigned to the network interface.</p>
+    /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
     pub ipv6_prefixes: std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecification>>,
     /// <p>The alias or Amazon Web Services account ID of the principal or service that created the network interface.</p>
     pub requester_id: std::option::Option<std::string::String>,
@@ -54293,11 +54432,11 @@ impl NetworkInterface {
     }
 }
 
-/// <p>Describes the IPv6 Prefix Delegation.</p>
+/// <p>Describes the IPv6 prefix.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ipv6PrefixSpecification {
-    /// <p>The IPv6 Prefix Delegation prefix.</p>
+    /// <p>The IPv6 prefix.</p>
     pub ipv6_prefix: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Ipv6PrefixSpecification {
@@ -54316,7 +54455,7 @@ pub mod ipv6_prefix_specification {
         pub(crate) ipv6_prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IPv6 Prefix Delegation prefix.</p>
+        /// <p>The IPv6 prefix.</p>
         pub fn ipv6_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.ipv6_prefix = Some(input.into());
             self
@@ -54340,11 +54479,12 @@ impl Ipv6PrefixSpecification {
     }
 }
 
-/// <p>Describes an IPv4 Prefix Delegation.</p>
+/// <p>Describes an IPv4 prefix.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ipv4PrefixSpecification {
-    /// <p>The IPv4 Prefix Delegation prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the
+    /// <p>The IPv4 prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+    /// Assigning prefixes to Amazon EC2 network interfaces</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub ipv4_prefix: std::option::Option<std::string::String>,
 }
@@ -54364,7 +54504,8 @@ pub mod ipv4_prefix_specification {
         pub(crate) ipv4_prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IPv4 Prefix Delegation prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the
+        /// <p>The IPv4 prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+        /// Assigning prefixes to Amazon EC2 network interfaces</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn ipv4_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.ipv4_prefix = Some(input.into());
@@ -59467,6 +59608,8 @@ pub struct NetworkInfo {
     pub efa_supported: std::option::Option<bool>,
     /// <p>Describes the Elastic Fabric Adapters for the instance type.</p>
     pub efa_info: std::option::Option<crate::model::EfaInfo>,
+    /// <p>Indicates whether the instance type automatically encrypts in-transit traffic between instances.</p>
+    pub encryption_in_transit_supported: std::option::Option<bool>,
 }
 impl std::fmt::Debug for NetworkInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59494,6 +59637,10 @@ impl std::fmt::Debug for NetworkInfo {
         formatter.field("ena_support", &self.ena_support);
         formatter.field("efa_supported", &self.efa_supported);
         formatter.field("efa_info", &self.efa_info);
+        formatter.field(
+            "encryption_in_transit_supported",
+            &self.encryption_in_transit_supported,
+        );
         formatter.finish()
     }
 }
@@ -59514,6 +59661,7 @@ pub mod network_info {
         pub(crate) ena_support: std::option::Option<crate::model::EnaSupport>,
         pub(crate) efa_supported: std::option::Option<bool>,
         pub(crate) efa_info: std::option::Option<crate::model::EfaInfo>,
+        pub(crate) encryption_in_transit_supported: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The network performance.</p>
@@ -59625,6 +59773,18 @@ pub mod network_info {
             self.efa_info = input;
             self
         }
+        /// <p>Indicates whether the instance type automatically encrypts in-transit traffic between instances.</p>
+        pub fn encryption_in_transit_supported(mut self, input: bool) -> Self {
+            self.encryption_in_transit_supported = Some(input);
+            self
+        }
+        pub fn set_encryption_in_transit_supported(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.encryption_in_transit_supported = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NetworkInfo`](crate::model::NetworkInfo)
         pub fn build(self) -> crate::model::NetworkInfo {
             crate::model::NetworkInfo {
@@ -59639,6 +59799,7 @@ pub mod network_info {
                 ena_support: self.ena_support,
                 efa_supported: self.efa_supported,
                 efa_info: self.efa_info,
+                encryption_in_transit_supported: self.encryption_in_transit_supported,
             }
         }
     }
@@ -61811,8 +61972,7 @@ pub struct ImportImageTask {
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The ID of the import image task.</p>
     pub import_task_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create
-    /// the encrypted image.</p>
+    /// <p>The identifier for the KMS key that was used to create the encrypted image.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The license type of the virtual machine.</p>
     pub license_type: std::option::Option<std::string::String>,
@@ -61831,6 +61991,10 @@ pub struct ImportImageTask {
     /// <p>The ARNs of the license configurations that are associated with the import image task.</p>
     pub license_specifications:
         std::option::Option<std::vec::Vec<crate::model::ImportImageLicenseConfigurationResponse>>,
+    /// <p>The usage operation value.</p>
+    pub usage_operation: std::option::Option<std::string::String>,
+    /// <p>The boot mode of the virtual machine.</p>
+    pub boot_mode: std::option::Option<crate::model::BootModeValues>,
 }
 impl std::fmt::Debug for ImportImageTask {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -61850,6 +62014,8 @@ impl std::fmt::Debug for ImportImageTask {
         formatter.field("status_message", &self.status_message);
         formatter.field("tags", &self.tags);
         formatter.field("license_specifications", &self.license_specifications);
+        formatter.field("usage_operation", &self.usage_operation);
+        formatter.field("boot_mode", &self.boot_mode);
         formatter.finish()
     }
 }
@@ -61877,6 +62043,8 @@ pub mod import_image_task {
         pub(crate) license_specifications: std::option::Option<
             std::vec::Vec<crate::model::ImportImageLicenseConfigurationResponse>,
         >,
+        pub(crate) usage_operation: std::option::Option<std::string::String>,
+        pub(crate) boot_mode: std::option::Option<crate::model::BootModeValues>,
     }
     impl Builder {
         /// <p>The architecture of the virtual machine.</p>
@@ -61940,8 +62108,7 @@ pub mod import_image_task {
             self.import_task_id = input;
             self
         }
-        /// <p>The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create
-        /// the encrypted image.</p>
+        /// <p>The identifier for the KMS key that was used to create the encrypted image.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -62042,6 +62209,30 @@ pub mod import_image_task {
             self.license_specifications = input;
             self
         }
+        /// <p>The usage operation value.</p>
+        pub fn usage_operation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_operation = Some(input.into());
+            self
+        }
+        pub fn set_usage_operation(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_operation = input;
+            self
+        }
+        /// <p>The boot mode of the virtual machine.</p>
+        pub fn boot_mode(mut self, input: crate::model::BootModeValues) -> Self {
+            self.boot_mode = Some(input);
+            self
+        }
+        pub fn set_boot_mode(
+            mut self,
+            input: std::option::Option<crate::model::BootModeValues>,
+        ) -> Self {
+            self.boot_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportImageTask`](crate::model::ImportImageTask)
         pub fn build(self) -> crate::model::ImportImageTask {
             crate::model::ImportImageTask {
@@ -62060,6 +62251,8 @@ pub mod import_image_task {
                 status_message: self.status_message,
                 tags: self.tags,
                 license_specifications: self.license_specifications,
+                usage_operation: self.usage_operation,
+                boot_mode: self.boot_mode,
             }
         }
     }
@@ -67912,8 +68105,7 @@ pub struct ExportToS3Task {
     /// <p>The format for the exported image.</p>
     pub disk_image_format: std::option::Option<crate::model::DiskImageFormat>,
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and grant
-    /// WRITE and READ_ACP permissions to the AWS account
-    /// <code>vm-import-export@amazon.com</code>.</p>
+    /// WRITE and READ_ACP permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The encryption key for your S3 bucket.</p>
     pub s3_key: std::option::Option<std::string::String>,
@@ -67966,8 +68158,7 @@ pub mod export_to_s3_task {
             self
         }
         /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and grant
-        /// WRITE and READ_ACP permissions to the AWS account
-        /// <code>vm-import-export@amazon.com</code>.</p>
+        /// WRITE and READ_ACP permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket = Some(input.into());
             self
@@ -79105,8 +79296,7 @@ pub struct ExportToS3TaskSpecification {
     /// <p>The format for the exported image.</p>
     pub disk_image_format: std::option::Option<crate::model::DiskImageFormat>,
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and grant
-    /// WRITE and READ_ACP permissions to the AWS account
-    /// <code>vm-import-export@amazon.com</code>.</p>
+    /// WRITE and READ_ACP permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix +
     /// exportTaskId + '.' + diskImageFormat.</p>
@@ -79160,8 +79350,7 @@ pub mod export_to_s3_task_specification {
             self
         }
         /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and grant
-        /// WRITE and READ_ACP permissions to the AWS account
-        /// <code>vm-import-export@amazon.com</code>.</p>
+        /// WRITE and READ_ACP permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket = Some(input.into());
             self

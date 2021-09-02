@@ -25,8 +25,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteScalingPolicyErrorKind::ConcurrentUpdateException(inner) => {
@@ -49,8 +52,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteScheduledActionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteScheduledActionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteScheduledActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteScheduledActionError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteScheduledActionErrorKind::ConcurrentUpdateException(inner) => {
@@ -73,9 +81,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteScheduledActionError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeregisterScalableTargetError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeregisterScalableTargetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeregisterScalableTargetError>,
+        err: smithy_http::result::SdkError<crate::error::DeregisterScalableTargetError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -99,9 +111,12 @@ impl From<smithy_http::result::SdkError<crate::error::DeregisterScalableTargetEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeScalableTargetsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeScalableTargetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeScalableTargetsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeScalableTargetsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -125,9 +140,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeScalableTargetsErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeScalingActivitiesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeScalingActivitiesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeScalingActivitiesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeScalingActivitiesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -151,9 +170,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeScalingActivitiesE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -180,9 +202,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -206,8 +232,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeScheduledActionsEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutScalingPolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutScalingPolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutScalingPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutScalingPolicyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutScalingPolicyErrorKind::ConcurrentUpdateException(inner) => {
@@ -236,8 +265,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutScalingPolicyError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutScheduledActionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutScheduledActionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutScheduledActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutScheduledActionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutScheduledActionErrorKind::ConcurrentUpdateException(inner) => {
@@ -263,8 +295,13 @@ impl From<smithy_http::result::SdkError<crate::error::PutScheduledActionError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RegisterScalableTargetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RegisterScalableTargetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RegisterScalableTargetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::RegisterScalableTargetError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RegisterScalableTargetErrorKind::ConcurrentUpdateException(inner) => {

@@ -31,9 +31,8 @@ impl smithy_http::response::ParseStrictResponse for CreateCallAnalyticsCategory 
     }
 }
 
-/// <p>Creates a new custom language model. Use Amazon S3 prefixes to provide the location of your
-/// input files. The time it takes to create your model depends on the size of your training
-/// data.</p>
+/// <p>Creates a new custom language model. Use Amazon S3 prefixes to provide the location of your input files. The time it
+/// takes to create your model depends on the size of your training data.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLanguageModel {
     _private: (),
@@ -61,9 +60,7 @@ impl smithy_http::response::ParseStrictResponse for CreateLanguageModel {
     }
 }
 
-/// <p>Creates a new custom vocabulary that you can use to
-/// change
-/// how Amazon Transcribe Medical transcribes your audio file.</p>
+/// <p>Creates a new custom vocabulary that you can use to modify how Amazon Transcribe Medical transcribes your audio file.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMedicalVocabulary {
     _private: (),
@@ -91,8 +88,8 @@ impl smithy_http::response::ParseStrictResponse for CreateMedicalVocabulary {
     }
 }
 
-/// <p>Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles
-/// transcription of an audio file.</p>
+/// <p>Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an
+/// audio file.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVocabulary {
     _private: (),
@@ -120,8 +117,8 @@ impl smithy_http::response::ParseStrictResponse for CreateVocabulary {
     }
 }
 
-/// <p>Creates a new vocabulary filter that you can use to filter words, such as profane
-/// words, from the output of a transcription job.</p>
+/// <p>Creates a new vocabulary filter that you can use to filter words, such as profane words, from the output of
+/// a transcription job.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVocabularyFilter {
     _private: (),
@@ -289,8 +286,8 @@ impl smithy_http::response::ParseStrictResponse for DeleteMedicalVocabulary {
     }
 }
 
-/// <p>Deletes a previously submitted transcription job along with any other generated
-/// results such as the transcription, models, and so on.</p>
+/// <p>Deletes a previously submitted transcription job along with any other generated results such as the
+/// transcription, models, and so on.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTranscriptionJob {
     _private: (),
@@ -374,11 +371,10 @@ impl smithy_http::response::ParseStrictResponse for DeleteVocabularyFilter {
     }
 }
 
-/// <p>Gets information about a single custom language model. Use this information to see
-/// details about the language model in your Amazon Web Services account. You can also see
-/// whether the base language model used to create your custom language model has been
-/// updated. If Amazon Transcribe has updated the base model, you can create a new custom language model
-/// using the updated base model. If the language model wasn't created, you can use this
+/// <p>Gets information about a single custom language model. Use this information to see details about the
+/// language model in your Amazon Web Services account. You can also see whether the base language model used
+/// to create your custom language model has been updated. If Amazon Transcribe has updated the base model, you can create a
+/// new custom language model using the updated base model. If the language model wasn't created, you can use this
 /// operation to understand why Amazon Transcribe couldn't create it. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLanguageModel {
@@ -467,10 +463,9 @@ impl smithy_http::response::ParseStrictResponse for GetCallAnalyticsJob {
     }
 }
 
-/// <p>Returns information about a transcription job from Amazon Transcribe Medical. To see the status of the
-/// job, check the <code>TranscriptionJobStatus</code> field. If the status is
-/// <code>COMPLETED</code>, the job is finished. You find the results of the completed
-/// job in the <code>TranscriptFileUri</code> field.</p>
+/// <p>Returns information about a transcription job from Amazon Transcribe Medical. To see the status of the job, check the
+/// <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished. You
+/// find the results of the completed job in the <code>TranscriptFileUri</code> field.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetMedicalTranscriptionJob {
     _private: (),
@@ -527,10 +522,9 @@ impl smithy_http::response::ParseStrictResponse for GetMedicalVocabulary {
 }
 
 /// <p>Returns information about a transcription job. To see the status of the job, check the
-/// <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>,
-/// the job is finished and you can find the results at the location specified in the
-/// <code>TranscriptFileUri</code> field. If you enable content redaction, the redacted
-/// transcript appears in <code>RedactedTranscriptFileUri</code>.</p>
+/// <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and
+/// you can find the results at the location specified in the <code>TranscriptFileUri</code> field. If you enable content
+/// redaction, the redacted transcript appears in <code>RedactedTranscriptFileUri</code>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetTranscriptionJob {
     _private: (),
@@ -670,10 +664,9 @@ impl smithy_http::response::ParseStrictResponse for ListCallAnalyticsJobs {
     }
 }
 
-/// <p>Provides more information about the custom language models you've created. You can use
-/// the information in this list to find a specific custom language model. You can then use
-/// the  operation to get more information about
-/// it.</p>
+/// <p>Provides more information about the custom language models you've created. You can use the information in
+/// this list to find a specific custom language model. You can then use the
+/// operation to get more information about it.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListLanguageModels {
     _private: (),
@@ -701,8 +694,7 @@ impl smithy_http::response::ParseStrictResponse for ListLanguageModels {
     }
 }
 
-/// <p>Lists medical transcription jobs with a specified status or substring that matches
-/// their names.</p>
+/// <p>Lists medical transcription jobs with a specified status or substring that matches their names.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListMedicalTranscriptionJobs {
     _private: (),
@@ -730,8 +722,8 @@ impl smithy_http::response::ParseStrictResponse for ListMedicalTranscriptionJobs
     }
 }
 
-/// <p>Returns a list of vocabularies that match the specified criteria. If you don't enter a
-/// value in any of the request parameters, returns the entire list of vocabularies.</p>
+/// <p>Returns a list of vocabularies that match the specified criteria. If you don't enter a value in any of the request
+/// parameters, returns the entire list of vocabularies.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListMedicalVocabularies {
     _private: (),
@@ -755,6 +747,34 @@ impl smithy_http::response::ParseStrictResponse for ListMedicalVocabularies {
             crate::operation_deser::parse_list_medical_vocabularies_error(response)
         } else {
             crate::operation_deser::parse_list_medical_vocabularies_response(response)
+        }
+    }
+}
+
+/// <p>Lists all tags associated with a given transcription job, vocabulary, or resource.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListTagsForResource {
+    _private: (),
+}
+impl ListTagsForResource {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
+        } else {
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -787,8 +807,8 @@ impl smithy_http::response::ParseStrictResponse for ListTranscriptionJobs {
     }
 }
 
-/// <p>Returns a list of vocabularies that match the specified criteria. If no criteria are
-/// specified, returns the entire list of vocabularies.</p>
+/// <p>Returns a list of vocabularies that match the specified criteria. If no criteria are specified, returns the entire list
+/// of vocabularies.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListVocabularies {
     _private: (),
@@ -844,12 +864,11 @@ impl smithy_http::response::ParseStrictResponse for ListVocabularyFilters {
     }
 }
 
-/// <p>Starts an asynchronous analytics job that not only transcribes the audio recording of a caller and
-/// agent, but also returns additional insights. These insights include how quickly or loudly the caller
-/// or agent was speaking. To retrieve additional insights with your analytics jobs, create
-/// categories. A category is a way to classify analytics jobs based on attributes, such as a customer's
-/// sentiment or a particular phrase being used during the call. For more information, see the
-/// operation. </p>
+/// <p>Starts an asynchronous analytics job that not only transcribes the audio recording of a caller and agent, but
+/// also returns additional insights. These insights include how quickly or loudly the caller or agent was speaking. To
+/// retrieve additional insights with your analytics jobs, create categories. A category is a way to classify analytics jobs
+/// based on attributes, such as a customer's sentiment or a particular phrase being used during the call. For more
+/// information, see the  operation. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartCallAnalyticsJob {
     _private: (),
@@ -933,9 +952,60 @@ impl smithy_http::response::ParseStrictResponse for StartTranscriptionJob {
     }
 }
 
+/// <p>Tags a Amazon Transcribe resource with the given list of tags.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct TagResource {
+    _private: (),
+}
+impl TagResource {
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for TagResource {
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_tag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_tag_resource_response(response)
+        }
+    }
+}
+
+/// <p>Removes specified tags from a specified Amazon Transcribe resource.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UntagResource {
+    _private: (),
+}
+impl UntagResource {
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UntagResource {
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_untag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
 /// <p>Updates the call analytics category with new values. The <code>UpdateCallAnalyticsCategory</code>
-/// operation overwrites all of the existing information with the values that you provide in the
-/// request. </p>
+/// operation overwrites all of the existing information with the values that you provide in the request. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCallAnalyticsCategory {
     _private: (),
@@ -963,10 +1033,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateCallAnalyticsCategory 
     }
 }
 
-/// <p>Updates a vocabulary with new values that you provide in a different text file from
-/// the one you used to create the vocabulary. The <code>UpdateMedicalVocabulary</code>
-/// operation overwrites all of the existing information with the values that you provide in
-/// the request.</p>
+/// <p>Updates a vocabulary with new values that you provide in a different text file from the one you used to create
+/// the vocabulary. The <code>UpdateMedicalVocabulary</code> operation overwrites all of the existing information
+/// with the values that you provide in the request.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMedicalVocabulary {
     _private: (),
@@ -994,9 +1063,8 @@ impl smithy_http::response::ParseStrictResponse for UpdateMedicalVocabulary {
     }
 }
 
-/// <p>Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code>
-/// operation overwrites all of the existing information with the values that you provide in
-/// the request. </p>
+/// <p>Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites
+/// all of the existing information with the values that you provide in the request. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateVocabulary {
     _private: (),

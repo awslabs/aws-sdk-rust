@@ -35,8 +35,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateAppError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateAppError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateAppError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateAppErrorKind::InternalError(inner) => {
@@ -60,8 +63,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateAppError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateReplicationJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateReplicationJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateReplicationJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateReplicationJobError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateReplicationJobErrorKind::InternalError(inner) => Error::InternalError(inner),
@@ -79,8 +87,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateReplicationJobError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteAppError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteAppError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteAppError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteAppErrorKind::InternalError(inner) => {
@@ -104,11 +115,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteAppError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteAppLaunchConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteAppLaunchConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteAppLaunchConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteAppLaunchConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -123,11 +136,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteAppLaunchConfigurati
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteAppReplicationConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteAppReplicationConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteAppReplicationConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteAppReplicationConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -142,11 +157,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteAppReplicationConfig
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteAppValidationConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteAppValidationConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteAppValidationConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteAppValidationConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -161,8 +178,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteAppValidationConfigu
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteReplicationJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteReplicationJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteReplicationJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteReplicationJobError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteReplicationJobErrorKind::InvalidParameterException(inner) => {
@@ -188,8 +210,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteReplicationJobError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteServerCatalogError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteServerCatalogError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteServerCatalogError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteServerCatalogError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteServerCatalogErrorKind::InvalidParameterException(inner) => {
@@ -212,8 +237,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteServerCatalogError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisassociateConnectorError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DisassociateConnectorError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DisassociateConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DisassociateConnectorError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DisassociateConnectorErrorKind::InvalidParameterException(inner) => {
@@ -236,8 +266,11 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateConnectorError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GenerateChangeSetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GenerateChangeSetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GenerateChangeSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GenerateChangeSetError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GenerateChangeSetErrorKind::InternalError(inner) => {
@@ -263,8 +296,11 @@ impl From<smithy_http::result::SdkError<crate::error::GenerateChangeSetError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GenerateTemplateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GenerateTemplateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GenerateTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GenerateTemplateError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GenerateTemplateErrorKind::InternalError(inner) => {
@@ -290,8 +326,11 @@ impl From<smithy_http::result::SdkError<crate::error::GenerateTemplateError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetAppError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetAppError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetAppError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetAppErrorKind::InternalError(inner) => Error::InternalError(inner),
@@ -313,9 +352,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetAppError>> for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetAppLaunchConfigurationError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetAppLaunchConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetAppLaunchConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::GetAppLaunchConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -330,11 +373,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetAppLaunchConfigurationE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetAppReplicationConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetAppReplicationConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetAppReplicationConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::GetAppReplicationConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -349,11 +394,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetAppReplicationConfigura
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetAppValidationConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetAppValidationConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetAppValidationConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::GetAppValidationConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -368,8 +415,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetAppValidationConfigurat
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetAppValidationOutputError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetAppValidationOutputError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetAppValidationOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetAppValidationOutputError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetAppValidationOutputErrorKind::InternalError(inner) => Error::InternalError(inner),
@@ -383,8 +435,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetAppValidationOutputErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetConnectorsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetConnectorsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetConnectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetConnectorsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetConnectorsErrorKind::UnauthorizedOperationException(inner) => {
@@ -396,8 +451,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetConnectorsError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetReplicationJobsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetReplicationJobsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetReplicationJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetReplicationJobsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetReplicationJobsErrorKind::InvalidParameterException(inner) => {
@@ -417,8 +475,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetReplicationJobsError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetReplicationRunsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetReplicationRunsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetReplicationRunsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetReplicationRunsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetReplicationRunsErrorKind::InvalidParameterException(inner) => {
@@ -438,8 +499,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetReplicationRunsError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetServersError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetServersError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetServersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetServersError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetServersErrorKind::InternalError(inner) => {
@@ -460,8 +524,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetServersError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ImportAppCatalogError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ImportAppCatalogError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ImportAppCatalogError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ImportAppCatalogError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ImportAppCatalogErrorKind::InternalError(inner) => {
@@ -487,8 +554,11 @@ impl From<smithy_http::result::SdkError<crate::error::ImportAppCatalogError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ImportServerCatalogError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ImportServerCatalogError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ImportServerCatalogError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ImportServerCatalogError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ImportServerCatalogErrorKind::InvalidParameterException(inner) => {
@@ -514,8 +584,11 @@ impl From<smithy_http::result::SdkError<crate::error::ImportServerCatalogError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::LaunchAppError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::LaunchAppError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::LaunchAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::LaunchAppError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::LaunchAppErrorKind::InternalError(inner) => {
@@ -539,8 +612,11 @@ impl From<smithy_http::result::SdkError<crate::error::LaunchAppError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListAppsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListAppsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListAppsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListAppsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListAppsErrorKind::InternalError(inner) => {
@@ -564,9 +640,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListAppsError>> for Error 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::NotifyAppValidationOutputError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::NotifyAppValidationOutputError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::NotifyAppValidationOutputError>,
+        err: smithy_http::result::SdkError<crate::error::NotifyAppValidationOutputError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -581,9 +661,13 @@ impl From<smithy_http::result::SdkError<crate::error::NotifyAppValidationOutputE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutAppLaunchConfigurationError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutAppLaunchConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::PutAppLaunchConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::PutAppLaunchConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -598,11 +682,13 @@ impl From<smithy_http::result::SdkError<crate::error::PutAppLaunchConfigurationE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutAppReplicationConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::PutAppReplicationConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::PutAppReplicationConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::PutAppReplicationConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -617,11 +703,13 @@ impl From<smithy_http::result::SdkError<crate::error::PutAppReplicationConfigura
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutAppValidationConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::PutAppValidationConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::PutAppValidationConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::PutAppValidationConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -636,8 +724,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutAppValidationConfigurat
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartAppReplicationError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartAppReplicationError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartAppReplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StartAppReplicationError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StartAppReplicationErrorKind::InternalError(inner) => {
@@ -663,9 +754,13 @@ impl From<smithy_http::result::SdkError<crate::error::StartAppReplicationError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartOnDemandAppReplicationError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartOnDemandAppReplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StartOnDemandAppReplicationError>,
+        err: smithy_http::result::SdkError<crate::error::StartOnDemandAppReplicationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -680,9 +775,13 @@ impl From<smithy_http::result::SdkError<crate::error::StartOnDemandAppReplicatio
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartOnDemandReplicationRunError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartOnDemandReplicationRunError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StartOnDemandReplicationRunError>,
+        err: smithy_http::result::SdkError<crate::error::StartOnDemandReplicationRunError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -698,8 +797,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartOnDemandReplicationRu
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StopAppReplicationError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StopAppReplicationError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StopAppReplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StopAppReplicationError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StopAppReplicationErrorKind::InternalError(inner) => {
@@ -725,8 +827,11 @@ impl From<smithy_http::result::SdkError<crate::error::StopAppReplicationError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TerminateAppError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TerminateAppError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TerminateAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TerminateAppError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TerminateAppErrorKind::InternalError(inner) => {
@@ -750,8 +855,11 @@ impl From<smithy_http::result::SdkError<crate::error::TerminateAppError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateAppError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateAppError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateAppError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateAppErrorKind::InternalError(inner) => {
@@ -775,8 +883,13 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateAppError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateReplicationJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateReplicationJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateReplicationJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateReplicationJobError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateReplicationJobErrorKind::InternalError(inner) => {

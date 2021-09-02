@@ -910,6 +910,17 @@ impl AsRef<str> for PiiEntitiesDetectionMode {
 pub struct TopicsDetectionJobProperties {
     /// <p>The identifier assigned to the topic detection job.</p>
     pub job_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:topics-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the topic detection job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The current status of the topic detection job. If the status is <code>Failed</code>,
@@ -957,6 +968,7 @@ impl std::fmt::Debug for TopicsDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TopicsDetectionJobProperties");
         formatter.field("job_id", &self.job_id);
+        formatter.field("job_arn", &self.job_arn);
         formatter.field("job_name", &self.job_name);
         formatter.field("job_status", &self.job_status);
         formatter.field("message", &self.message);
@@ -978,6 +990,7 @@ pub mod topics_detection_job_properties {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -998,6 +1011,24 @@ pub mod topics_detection_job_properties {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:topics-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
             self
         }
         /// <p>The name of the topic detection job.</p>
@@ -1144,6 +1175,7 @@ pub mod topics_detection_job_properties {
         pub fn build(self) -> crate::model::TopicsDetectionJobProperties {
             crate::model::TopicsDetectionJobProperties {
                 job_id: self.job_id,
+                job_arn: self.job_arn,
                 job_name: self.job_name,
                 job_status: self.job_status,
                 message: self.message,
@@ -1281,6 +1313,17 @@ impl TopicsDetectionJobFilter {
 pub struct SentimentDetectionJobProperties {
     /// <p>The identifier assigned to the sentiment detection job.</p>
     pub job_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:sentiment-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub job_arn: std::option::Option<std::string::String>,
     /// <p>The name that you assigned to the sentiment detection job</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The current status of the sentiment detection job. If the status is <code>FAILED</code>,
@@ -1327,6 +1370,7 @@ impl std::fmt::Debug for SentimentDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SentimentDetectionJobProperties");
         formatter.field("job_id", &self.job_id);
+        formatter.field("job_arn", &self.job_arn);
         formatter.field("job_name", &self.job_name);
         formatter.field("job_status", &self.job_status);
         formatter.field("message", &self.message);
@@ -1348,6 +1392,7 @@ pub mod sentiment_detection_job_properties {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1368,6 +1413,24 @@ pub mod sentiment_detection_job_properties {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:sentiment-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
             self
         }
         /// <p>The name that you assigned to the sentiment detection job</p>
@@ -1516,6 +1579,7 @@ pub mod sentiment_detection_job_properties {
         pub fn build(self) -> crate::model::SentimentDetectionJobProperties {
             crate::model::SentimentDetectionJobProperties {
                 job_id: self.job_id,
+                job_arn: self.job_arn,
                 job_name: self.job_name,
                 job_status: self.job_status,
                 message: self.message,
@@ -1653,6 +1717,17 @@ impl SentimentDetectionJobFilter {
 pub struct PiiEntitiesDetectionJobProperties {
     /// <p>The identifier assigned to the PII entities detection job.</p>
     pub job_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:pii-entities-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub job_arn: std::option::Option<std::string::String>,
     /// <p>The name that you assigned the PII entities detection job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The current status of the PII entities detection job. If the status is
@@ -1687,6 +1762,7 @@ impl std::fmt::Debug for PiiEntitiesDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PiiEntitiesDetectionJobProperties");
         formatter.field("job_id", &self.job_id);
+        formatter.field("job_arn", &self.job_arn);
         formatter.field("job_name", &self.job_name);
         formatter.field("job_status", &self.job_status);
         formatter.field("message", &self.message);
@@ -1708,6 +1784,7 @@ pub mod pii_entities_detection_job_properties {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1728,6 +1805,24 @@ pub mod pii_entities_detection_job_properties {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:pii-entities-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
             self
         }
         /// <p>The name that you assigned the PII entities detection job.</p>
@@ -1864,6 +1959,7 @@ pub mod pii_entities_detection_job_properties {
         pub fn build(self) -> crate::model::PiiEntitiesDetectionJobProperties {
             crate::model::PiiEntitiesDetectionJobProperties {
                 job_id: self.job_id,
+                job_arn: self.job_arn,
                 job_name: self.job_name,
                 job_status: self.job_status,
                 message: self.message,
@@ -2065,6 +2161,17 @@ impl PiiEntitiesDetectionJobFilter {
 pub struct KeyPhrasesDetectionJobProperties {
     /// <p>The identifier assigned to the key phrases detection job.</p>
     pub job_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the key phrases detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:key-phrases-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:key-phrases-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub job_arn: std::option::Option<std::string::String>,
     /// <p>The name that you assigned the key phrases detection job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The current status of the key phrases detection job. If the status is <code>FAILED</code>,
@@ -2111,6 +2218,7 @@ impl std::fmt::Debug for KeyPhrasesDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KeyPhrasesDetectionJobProperties");
         formatter.field("job_id", &self.job_id);
+        formatter.field("job_arn", &self.job_arn);
         formatter.field("job_name", &self.job_name);
         formatter.field("job_status", &self.job_status);
         formatter.field("message", &self.message);
@@ -2132,6 +2240,7 @@ pub mod key_phrases_detection_job_properties {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2152,6 +2261,24 @@ pub mod key_phrases_detection_job_properties {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the key phrases detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:key-phrases-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:key-phrases-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
             self
         }
         /// <p>The name that you assigned the key phrases detection job.</p>
@@ -2300,6 +2427,7 @@ pub mod key_phrases_detection_job_properties {
         pub fn build(self) -> crate::model::KeyPhrasesDetectionJobProperties {
             crate::model::KeyPhrasesDetectionJobProperties {
                 job_id: self.job_id,
+                job_arn: self.job_arn,
                 job_name: self.job_name,
                 job_status: self.job_status,
                 message: self.message,
@@ -2437,6 +2565,17 @@ impl KeyPhrasesDetectionJobFilter {
 pub struct EventsDetectionJobProperties {
     /// <p>The identifier assigned to the events detection job.</p>
     pub job_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:events-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub job_arn: std::option::Option<std::string::String>,
     /// <p>The name you assigned the events detection job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The current status of the events detection job.</p>
@@ -2465,6 +2604,7 @@ impl std::fmt::Debug for EventsDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventsDetectionJobProperties");
         formatter.field("job_id", &self.job_id);
+        formatter.field("job_arn", &self.job_arn);
         formatter.field("job_name", &self.job_name);
         formatter.field("job_status", &self.job_status);
         formatter.field("message", &self.message);
@@ -2485,6 +2625,7 @@ pub mod events_detection_job_properties {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2504,6 +2645,24 @@ pub mod events_detection_job_properties {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:events-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
             self
         }
         /// <p>The name you assigned the events detection job.</p>
@@ -2625,6 +2784,7 @@ pub mod events_detection_job_properties {
         pub fn build(self) -> crate::model::EventsDetectionJobProperties {
             crate::model::EventsDetectionJobProperties {
                 job_id: self.job_id,
+                job_arn: self.job_arn,
                 job_name: self.job_name,
                 job_status: self.job_status,
                 message: self.message,
@@ -4160,6 +4320,17 @@ impl EntityRecognizerFilter {
 pub struct EntitiesDetectionJobProperties {
     /// <p>The identifier assigned to the entities detection job.</p>
     pub job_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:entities-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub job_arn: std::option::Option<std::string::String>,
     /// <p>The name that you assigned the entities detection job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The current status of the entities detection job. If the status is <code>FAILED</code>,
@@ -4208,6 +4379,7 @@ impl std::fmt::Debug for EntitiesDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntitiesDetectionJobProperties");
         formatter.field("job_id", &self.job_id);
+        formatter.field("job_arn", &self.job_arn);
         formatter.field("job_name", &self.job_name);
         formatter.field("job_status", &self.job_status);
         formatter.field("message", &self.message);
@@ -4230,6 +4402,7 @@ pub mod entities_detection_job_properties {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4251,6 +4424,24 @@ pub mod entities_detection_job_properties {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:entities-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
             self
         }
         /// <p>The name that you assigned the entities detection job.</p>
@@ -4411,6 +4602,7 @@ pub mod entities_detection_job_properties {
         pub fn build(self) -> crate::model::EntitiesDetectionJobProperties {
             crate::model::EntitiesDetectionJobProperties {
                 job_id: self.job_id,
+                job_arn: self.job_arn,
                 job_name: self.job_name,
                 job_status: self.job_status,
                 message: self.message,
@@ -4891,6 +5083,17 @@ impl EndpointFilter {
 pub struct DominantLanguageDetectionJobProperties {
     /// <p>The identifier assigned to the dominant language detection job.</p>
     pub job_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique,
+    /// fully qualified identifier for the job. It includes the AWS account, Region, and the job ID.
+    /// The format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:dominant-language-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub job_arn: std::option::Option<std::string::String>,
     /// <p>The name that you assigned to the dominant language detection job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The current status of the dominant language detection job. If the status is
@@ -4936,6 +5139,7 @@ impl std::fmt::Debug for DominantLanguageDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DominantLanguageDetectionJobProperties");
         formatter.field("job_id", &self.job_id);
+        formatter.field("job_arn", &self.job_arn);
         formatter.field("job_name", &self.job_name);
         formatter.field("job_status", &self.job_status);
         formatter.field("message", &self.message);
@@ -4956,6 +5160,7 @@ pub mod dominant_language_detection_job_properties {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4975,6 +5180,24 @@ pub mod dominant_language_detection_job_properties {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique,
+        /// fully qualified identifier for the job. It includes the AWS account, Region, and the job ID.
+        /// The format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:dominant-language-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
             self
         }
         /// <p>The name that you assigned to the dominant language detection job.</p>
@@ -5112,6 +5335,7 @@ pub mod dominant_language_detection_job_properties {
         pub fn build(self) -> crate::model::DominantLanguageDetectionJobProperties {
             crate::model::DominantLanguageDetectionJobProperties {
                 job_id: self.job_id,
+                job_arn: self.job_arn,
                 job_name: self.job_name,
                 job_status: self.job_status,
                 message: self.message,
@@ -6397,6 +6621,17 @@ impl DocumentClassifierFilter {
 pub struct DocumentClassificationJobProperties {
     /// <p>The identifier assigned to the document classification job.</p>
     pub job_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:document-classification-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub job_arn: std::option::Option<std::string::String>,
     /// <p>The name that you assigned to the document classification job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The current status of the document classification job. If the status is
@@ -6443,6 +6678,7 @@ impl std::fmt::Debug for DocumentClassificationJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentClassificationJobProperties");
         formatter.field("job_id", &self.job_id);
+        formatter.field("job_arn", &self.job_arn);
         formatter.field("job_name", &self.job_name);
         formatter.field("job_status", &self.job_status);
         formatter.field("message", &self.message);
@@ -6464,6 +6700,7 @@ pub mod document_classification_job_properties {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6484,6 +6721,24 @@ pub mod document_classification_job_properties {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:document-classification-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
             self
         }
         /// <p>The name that you assigned to the document classification job.</p>
@@ -6632,6 +6887,7 @@ pub mod document_classification_job_properties {
         pub fn build(self) -> crate::model::DocumentClassificationJobProperties {
             crate::model::DocumentClassificationJobProperties {
                 job_id: self.job_id,
+                job_arn: self.job_arn,
                 job_name: self.job_name,
                 job_status: self.job_status,
                 message: self.message,

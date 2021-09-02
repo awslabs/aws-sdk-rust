@@ -6,7 +6,7 @@ pub fn parse_accept_resource_share_invitation_error(
     crate::output::AcceptResourceShareInvitationOutput,
     crate::error::AcceptResourceShareInvitationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AcceptResourceShareInvitationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -190,7 +190,7 @@ pub fn parse_associate_resource_share_error(
     crate::output::AssociateResourceShareOutput,
     crate::error::AssociateResourceShareError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateResourceShareError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -433,7 +433,7 @@ pub fn parse_associate_resource_share_permission_error(
     crate::output::AssociateResourceSharePermissionOutput,
     crate::error::AssociateResourceSharePermissionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateResourceSharePermissionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -574,7 +574,7 @@ pub fn parse_create_resource_share_error(
     crate::output::CreateResourceShareOutput,
     crate::error::CreateResourceShareError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateResourceShareError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -837,7 +837,7 @@ pub fn parse_delete_resource_share_error(
     crate::output::DeleteResourceShareOutput,
     crate::error::DeleteResourceShareError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteResourceShareError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1059,7 +1059,7 @@ pub fn parse_disassociate_resource_share_error(
     crate::output::DisassociateResourceShareOutput,
     crate::error::DisassociateResourceShareError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateResourceShareError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1243,7 +1243,7 @@ pub fn parse_disassociate_resource_share_permission_error(
     crate::output::DisassociateResourceSharePermissionOutput,
     crate::error::DisassociateResourceSharePermissionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateResourceSharePermissionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1398,7 +1398,7 @@ pub fn parse_enable_sharing_with_aws_organization_error(
     crate::output::EnableSharingWithAwsOrganizationOutput,
     crate::error::EnableSharingWithAwsOrganizationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableSharingWithAwsOrganizationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1480,7 +1480,7 @@ pub fn parse_enable_sharing_with_aws_organization_response(
 pub fn parse_get_permission_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetPermissionOutput, crate::error::GetPermissionError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPermissionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1638,7 +1638,7 @@ pub fn parse_get_resource_policies_error(
     crate::output::GetResourcePoliciesOutput,
     crate::error::GetResourcePoliciesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResourcePoliciesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1800,7 +1800,7 @@ pub fn parse_get_resource_share_associations_error(
     crate::output::GetResourceShareAssociationsOutput,
     crate::error::GetResourceShareAssociationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResourceShareAssociationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1992,7 +1992,7 @@ pub fn parse_get_resource_share_invitations_error(
     crate::output::GetResourceShareInvitationsOutput,
     crate::error::GetResourceShareInvitationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResourceShareInvitationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2146,7 +2146,7 @@ pub fn parse_get_resource_shares_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetResourceSharesOutput, crate::error::GetResourceSharesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResourceSharesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2309,7 +2309,7 @@ pub fn parse_list_pending_invitation_resources_error(
     crate::output::ListPendingInvitationResourcesOutput,
     crate::error::ListPendingInvitationResourcesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPendingInvitationResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2473,7 +2473,7 @@ pub fn parse_list_pending_invitation_resources_response(
 pub fn parse_list_permissions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPermissionsOutput, crate::error::ListPermissionsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPermissionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2606,7 +2606,7 @@ pub fn parse_list_permissions_response(
 pub fn parse_list_principals_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPrincipalsOutput, crate::error::ListPrincipalsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPrincipalsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2763,7 +2763,7 @@ pub fn parse_list_principals_response(
 pub fn parse_list_resources_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListResourcesOutput, crate::error::ListResourcesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2943,7 +2943,7 @@ pub fn parse_list_resource_share_permissions_error(
     crate::output::ListResourceSharePermissionsOutput,
     crate::error::ListResourceSharePermissionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResourceSharePermissionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3133,7 +3133,7 @@ pub fn parse_list_resource_types_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListResourceTypesOutput, crate::error::ListResourceTypesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResourceTypesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3254,7 +3254,7 @@ pub fn parse_promote_resource_share_created_from_policy_error(
     crate::output::PromoteResourceShareCreatedFromPolicyOutput,
     crate::error::PromoteResourceShareCreatedFromPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PromoteResourceShareCreatedFromPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3411,7 +3411,7 @@ pub fn parse_reject_resource_share_invitation_error(
     crate::output::RejectResourceShareInvitationOutput,
     crate::error::RejectResourceShareInvitationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RejectResourceShareInvitationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3592,7 +3592,7 @@ pub fn parse_reject_resource_share_invitation_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3784,7 +3784,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3879,7 +3879,7 @@ pub fn parse_update_resource_share_error(
     crate::output::UpdateResourceShareOutput,
     crate::error::UpdateResourceShareError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateResourceShareError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

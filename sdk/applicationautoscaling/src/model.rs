@@ -125,6 +125,8 @@ pub enum ScalableDimension {
     DynamoDbTableWriteCapacityUnits,
     Ec2SpotFleetRequestTargetCapacity,
     EcsServiceDesiredCount,
+    ElastiCacheReplicationGroupNodeGroups,
+    ElastiCacheReplicationGroupReplicas,
     EmrInstanceGroupInstanceCount,
     KafkaBrokerStorageVolumeSize,
     LambdaFunctionProvisionedConcurrency,
@@ -164,6 +166,12 @@ impl std::convert::From<&str> for ScalableDimension {
                 ScalableDimension::Ec2SpotFleetRequestTargetCapacity
             }
             "ecs:service:DesiredCount" => ScalableDimension::EcsServiceDesiredCount,
+            "elasticache:replication-group:NodeGroups" => {
+                ScalableDimension::ElastiCacheReplicationGroupNodeGroups
+            }
+            "elasticache:replication-group:Replicas" => {
+                ScalableDimension::ElastiCacheReplicationGroupReplicas
+            }
             "elasticmapreduce:instancegroup:InstanceCount" => {
                 ScalableDimension::EmrInstanceGroupInstanceCount
             }
@@ -217,6 +225,12 @@ impl ScalableDimension {
                 "ec2:spot-fleet-request:TargetCapacity"
             }
             ScalableDimension::EcsServiceDesiredCount => "ecs:service:DesiredCount",
+            ScalableDimension::ElastiCacheReplicationGroupNodeGroups => {
+                "elasticache:replication-group:NodeGroups"
+            }
+            ScalableDimension::ElastiCacheReplicationGroupReplicas => {
+                "elasticache:replication-group:Replicas"
+            }
             ScalableDimension::EmrInstanceGroupInstanceCount => {
                 "elasticmapreduce:instancegroup:InstanceCount"
             }
@@ -245,6 +259,8 @@ impl ScalableDimension {
             "dynamodb:table:WriteCapacityUnits",
             "ec2:spot-fleet-request:TargetCapacity",
             "ecs:service:DesiredCount",
+            "elasticache:replication-group:NodeGroups",
+            "elasticache:replication-group:Replicas",
             "elasticmapreduce:instancegroup:InstanceCount",
             "kafka:broker-storage:VolumeSize",
             "lambda:function:ProvisionedConcurrency",
@@ -277,6 +293,7 @@ pub enum ServiceNamespace {
     Dynamodb,
     Ec2,
     Ecs,
+    Elasticache,
     Emr,
     Kafka,
     Lambda,
@@ -295,6 +312,7 @@ impl std::convert::From<&str> for ServiceNamespace {
             "dynamodb" => ServiceNamespace::Dynamodb,
             "ec2" => ServiceNamespace::Ec2,
             "ecs" => ServiceNamespace::Ecs,
+            "elasticache" => ServiceNamespace::Elasticache,
             "elasticmapreduce" => ServiceNamespace::Emr,
             "kafka" => ServiceNamespace::Kafka,
             "lambda" => ServiceNamespace::Lambda,
@@ -321,6 +339,7 @@ impl ServiceNamespace {
             ServiceNamespace::Dynamodb => "dynamodb",
             ServiceNamespace::Ec2 => "ec2",
             ServiceNamespace::Ecs => "ecs",
+            ServiceNamespace::Elasticache => "elasticache",
             ServiceNamespace::Emr => "elasticmapreduce",
             ServiceNamespace::Kafka => "kafka",
             ServiceNamespace::Lambda => "lambda",
@@ -338,6 +357,7 @@ impl ServiceNamespace {
             "dynamodb",
             "ec2",
             "ecs",
+            "elasticache",
             "elasticmapreduce",
             "kafka",
             "lambda",
@@ -519,7 +539,8 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// cooldown period ends. While the cooldown period is in effect, the capacity added by the
     /// initiating scale-out activity is calculated as part of the desired capacity for the next
     /// scale-out activity.</p>
-    /// <p>Application Auto Scaling provides a default value of 300 for the following scalable targets:</p>
+    /// <p>Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+    /// and a default value of 300 for the following scalable targets:</p>
     /// <ul>
     /// <li>
     /// <p>ECS services</p>
@@ -572,7 +593,8 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// until the cooldown period has expired. However, if another alarm triggers a scale-out activity
     /// during the scale-in cooldown period, Application Auto Scaling scales out the target immediately. In this case,
     /// the scale-in cooldown period stops and doesn't complete.</p>
-    /// <p>Application Auto Scaling provides a default value of 300 for the following scalable targets:</p>
+    /// <p>Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+    /// and a default value of 300 for the following scalable targets:</p>
     /// <ul>
     /// <li>
     /// <p>ECS services</p>
@@ -713,7 +735,8 @@ pub mod target_tracking_scaling_policy_configuration {
         /// cooldown period ends. While the cooldown period is in effect, the capacity added by the
         /// initiating scale-out activity is calculated as part of the desired capacity for the next
         /// scale-out activity.</p>
-        /// <p>Application Auto Scaling provides a default value of 300 for the following scalable targets:</p>
+        /// <p>Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+        /// and a default value of 300 for the following scalable targets:</p>
         /// <ul>
         /// <li>
         /// <p>ECS services</p>
@@ -773,7 +796,8 @@ pub mod target_tracking_scaling_policy_configuration {
         /// until the cooldown period has expired. However, if another alarm triggers a scale-out activity
         /// during the scale-in cooldown period, Application Auto Scaling scales out the target immediately. In this case,
         /// the scale-in cooldown period stops and doesn't complete.</p>
-        /// <p>Application Auto Scaling provides a default value of 300 for the following scalable targets:</p>
+        /// <p>Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+        /// and a default value of 300 for the following scalable targets:</p>
         /// <ul>
         /// <li>
         /// <p>ECS services</p>
@@ -861,7 +885,7 @@ impl TargetTrackingScalingPolicyConfiguration {
 
 /// <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use
 /// with Application Auto Scaling.</p>
-/// <p>For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">AWS
+/// <p>For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services
 /// Services That Publish CloudWatch Metrics</a> in the <i>Amazon CloudWatch User
 /// Guide</i>.</p>
 /// <p>To create your customized metric specification:</p>
@@ -1114,7 +1138,7 @@ impl MetricDimension {
 
 /// <p>Represents a predefined metric for a target tracking scaling policy to use with
 /// Application Auto Scaling.</p>
-/// <p>Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a
+/// <p>Only the Amazon Web Services that you're using send metrics to Amazon CloudWatch. To determine whether a
 /// desired metric already exists by looking up its namespace and dimension using the CloudWatch
 /// metrics dashboard in the console, follow the procedure in <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Building dashboards
 /// with CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.</p>
@@ -1129,9 +1153,10 @@ pub struct PredefinedMetricSpecification {
     /// group attached to the Spot Fleet request or ECS service.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN
     /// and the final portion of the target group ARN into a single value, separated by a forward
-    /// slash (/). The format is
-    /// app/<load-balancer-name>/<load-balancer-id>/targetgroup/<target-group-name>/<target-group-id>,
-    /// where:</p>
+    /// slash (/). The format of the resource label is:</p>
+    /// <p>
+    /// <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+    /// <p>Where:</p>
     /// <ul>
     /// <li>
     /// <p>app/<load-balancer-name>/<load-balancer-id> is the final portion of
@@ -1142,8 +1167,6 @@ pub struct PredefinedMetricSpecification {
     /// of the target group ARN.</p>
     /// </li>
     /// </ul>
-    /// <p>This is an example:
-    /// app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
     /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub resource_label: std::option::Option<std::string::String>,
@@ -1184,9 +1207,10 @@ pub mod predefined_metric_specification {
         /// group attached to the Spot Fleet request or ECS service.</p>
         /// <p>You create the resource label by appending the final portion of the load balancer ARN
         /// and the final portion of the target group ARN into a single value, separated by a forward
-        /// slash (/). The format is
-        /// app/<load-balancer-name>/<load-balancer-id>/targetgroup/<target-group-name>/<target-group-id>,
-        /// where:</p>
+        /// slash (/). The format of the resource label is:</p>
+        /// <p>
+        /// <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+        /// <p>Where:</p>
         /// <ul>
         /// <li>
         /// <p>app/<load-balancer-name>/<load-balancer-id> is the final portion of
@@ -1197,8 +1221,6 @@ pub mod predefined_metric_specification {
         /// of the target group ARN.</p>
         /// </li>
         /// </ul>
-        /// <p>This is an example:
-        /// app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
         /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
         /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn resource_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1251,6 +1273,9 @@ pub enum MetricType {
     Ec2SpotFleetRequestAverageNetworkOut,
     EcsServiceAverageCpuUtilization,
     EcsServiceAverageMemoryUtilization,
+    ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
+    ElastiCachePrimaryEngineCpuUtilization,
+    ElastiCacheReplicaEngineCpuUtilization,
     KafkaBrokerStorageUtilization,
     LambdaProvisionedConcurrencyUtilization,
     RdsReaderAverageCpuUtilization,
@@ -1282,6 +1307,15 @@ impl std::convert::From<&str> for MetricType {
             }
             "ECSServiceAverageCPUUtilization" => MetricType::EcsServiceAverageCpuUtilization,
             "ECSServiceAverageMemoryUtilization" => MetricType::EcsServiceAverageMemoryUtilization,
+            "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage" => {
+                MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage
+            }
+            "ElastiCachePrimaryEngineCPUUtilization" => {
+                MetricType::ElastiCachePrimaryEngineCpuUtilization
+            }
+            "ElastiCacheReplicaEngineCPUUtilization" => {
+                MetricType::ElastiCacheReplicaEngineCpuUtilization
+            }
             "KafkaBrokerStorageUtilization" => MetricType::KafkaBrokerStorageUtilization,
             "LambdaProvisionedConcurrencyUtilization" => {
                 MetricType::LambdaProvisionedConcurrencyUtilization
@@ -1327,6 +1361,15 @@ impl MetricType {
             }
             MetricType::EcsServiceAverageCpuUtilization => "ECSServiceAverageCPUUtilization",
             MetricType::EcsServiceAverageMemoryUtilization => "ECSServiceAverageMemoryUtilization",
+            MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => {
+                "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage"
+            }
+            MetricType::ElastiCachePrimaryEngineCpuUtilization => {
+                "ElastiCachePrimaryEngineCPUUtilization"
+            }
+            MetricType::ElastiCacheReplicaEngineCpuUtilization => {
+                "ElastiCacheReplicaEngineCPUUtilization"
+            }
             MetricType::KafkaBrokerStorageUtilization => "KafkaBrokerStorageUtilization",
             MetricType::LambdaProvisionedConcurrencyUtilization => {
                 "LambdaProvisionedConcurrencyUtilization"
@@ -1355,6 +1398,9 @@ impl MetricType {
             "EC2SpotFleetRequestAverageNetworkOut",
             "ECSServiceAverageCPUUtilization",
             "ECSServiceAverageMemoryUtilization",
+            "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage",
+            "ElastiCachePrimaryEngineCPUUtilization",
+            "ElastiCacheReplicaEngineCPUUtilization",
             "KafkaBrokerStorageUtilization",
             "LambdaProvisionedConcurrencyUtilization",
             "RDSReaderAverageCPUUtilization",
@@ -1409,7 +1455,8 @@ pub struct StepScalingPolicyConfiguration {
     /// expired. However, if another alarm triggers a scale-out activity during the cooldown period
     /// after a scale-in activity, Application Auto Scaling scales out the target immediately. In this case, the
     /// cooldown period for the scale-in activity stops and doesn't complete.</p>
-    /// <p>Application Auto Scaling provides a default value of 300 for the following scalable targets:</p>
+    /// <p>Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+    /// and a default value of 300 for the following scalable targets:</p>
     /// <ul>
     /// <li>
     /// <p>ECS services</p>
@@ -1547,7 +1594,8 @@ pub mod step_scaling_policy_configuration {
         /// expired. However, if another alarm triggers a scale-out activity during the cooldown period
         /// after a scale-in activity, Application Auto Scaling scales out the target immediately. In this case, the
         /// cooldown period for the scale-in activity stops and doesn't complete.</p>
-        /// <p>Application Auto Scaling provides a default value of 300 for the following scalable targets:</p>
+        /// <p>Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+        /// and a default value of 300 for the following scalable targets:</p>
         /// <ul>
         /// <li>
         /// <p>ECS services</p>
@@ -1940,7 +1988,7 @@ pub struct ScheduledAction {
     pub scheduled_action_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     pub scheduled_action_arn: std::option::Option<std::string::String>,
-    /// <p>The namespace of the AWS service that provides the resource, or a
+    /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
     /// <code>custom-resource</code>.</p>
     pub service_namespace: std::option::Option<crate::model::ServiceNamespace>,
     /// <p>The schedule for this action. The following formats are supported:</p>
@@ -2027,6 +2075,10 @@ pub struct ScheduledAction {
     /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
     /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+    /// Example: <code>replication-group/mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -2037,11 +2089,11 @@ pub struct ScheduledAction {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2093,11 +2145,19 @@ pub struct ScheduledAction {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>cassandra:table:WriteCapacityUnits</code> -  The provisioned write capacity for an Amazon Keyspaces table.</p>
+    /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -2173,7 +2233,7 @@ pub mod scheduled_action {
             self.scheduled_action_arn = input;
             self
         }
-        /// <p>The namespace of the AWS service that provides the resource, or a
+        /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
         /// <code>custom-resource</code>.</p>
         pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
             self.service_namespace = Some(input);
@@ -2284,6 +2344,10 @@ pub mod scheduled_action {
         /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
         /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+        /// Example: <code>replication-group/mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -2301,11 +2365,11 @@ pub mod scheduled_action {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2357,11 +2421,19 @@ pub mod scheduled_action {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>cassandra:table:WriteCapacityUnits</code> -  The provisioned write capacity for an Amazon Keyspaces table.</p>
+        /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -2456,7 +2528,7 @@ pub struct ScalingPolicy {
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The name of the scaling policy.</p>
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The namespace of the AWS service that provides the resource, or a
+    /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
     /// <code>custom-resource</code>.</p>
     pub service_namespace: std::option::Option<crate::model::ServiceNamespace>,
     /// <p>The identifier of the resource associated with the scaling policy.
@@ -2517,6 +2589,10 @@ pub struct ScalingPolicy {
     /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
     /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+    /// Example: <code>replication-group/mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -2527,11 +2603,11 @@ pub struct ScalingPolicy {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2583,11 +2659,19 @@ pub struct ScalingPolicy {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>cassandra:table:WriteCapacityUnits</code> -  The provisioned write capacity for an Amazon Keyspaces table.</p>
+    /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -2664,7 +2748,7 @@ pub mod scaling_policy {
             self.policy_name = input;
             self
         }
-        /// <p>The namespace of the AWS service that provides the resource, or a
+        /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
         /// <code>custom-resource</code>.</p>
         pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
             self.service_namespace = Some(input);
@@ -2735,6 +2819,10 @@ pub mod scaling_policy {
         /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
         /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+        /// Example: <code>replication-group/mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -2752,11 +2840,11 @@ pub mod scaling_policy {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2808,11 +2896,19 @@ pub mod scaling_policy {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>cassandra:table:WriteCapacityUnits</code> -  The provisioned write capacity for an Amazon Keyspaces table.</p>
+        /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -2924,7 +3020,7 @@ impl ScalingPolicy {
 pub struct ScalingActivity {
     /// <p>The unique identifier of the scaling activity.</p>
     pub activity_id: std::option::Option<std::string::String>,
-    /// <p>The namespace of the AWS service that provides the resource, or a
+    /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
     /// <code>custom-resource</code>.</p>
     pub service_namespace: std::option::Option<crate::model::ServiceNamespace>,
     /// <p>The identifier of the resource associated with the scaling activity.
@@ -2985,6 +3081,10 @@ pub struct ScalingActivity {
     /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
     /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+    /// Example: <code>replication-group/mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -2995,11 +3095,11 @@ pub struct ScalingActivity {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3051,11 +3151,19 @@ pub struct ScalingActivity {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>cassandra:table:WriteCapacityUnits</code> -  The provisioned write capacity for an Amazon Keyspaces table.</p>
+    /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -3119,7 +3227,7 @@ pub mod scaling_activity {
             self.activity_id = input;
             self
         }
-        /// <p>The namespace of the AWS service that provides the resource, or a
+        /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
         /// <code>custom-resource</code>.</p>
         pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
             self.service_namespace = Some(input);
@@ -3190,6 +3298,10 @@ pub mod scaling_activity {
         /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
         /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+        /// Example: <code>replication-group/mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -3207,11 +3319,11 @@ pub mod scaling_activity {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3263,11 +3375,19 @@ pub mod scaling_activity {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>cassandra:table:WriteCapacityUnits</code> -  The provisioned write capacity for an Amazon Keyspaces table.</p>
+        /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -3448,7 +3568,7 @@ impl AsRef<str> for ScalingActivityStatusCode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalableTarget {
-    /// <p>The namespace of the AWS service that provides the resource, or a
+    /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
     /// <code>custom-resource</code>.</p>
     pub service_namespace: std::option::Option<crate::model::ServiceNamespace>,
     /// <p>The identifier of the resource associated with the scalable target.
@@ -3509,6 +3629,10 @@ pub struct ScalableTarget {
     /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
     /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+    /// Example: <code>replication-group/mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension associated with the scalable target.
@@ -3520,11 +3644,11 @@ pub struct ScalableTarget {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3576,11 +3700,19 @@ pub struct ScalableTarget {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>cassandra:table:WriteCapacityUnits</code> -  The provisioned write capacity for an Amazon Keyspaces table.</p>
+    /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -3627,7 +3759,7 @@ pub mod scalable_target {
         pub(crate) suspended_state: std::option::Option<crate::model::SuspendedState>,
     }
     impl Builder {
-        /// <p>The namespace of the AWS service that provides the resource, or a
+        /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
         /// <code>custom-resource</code>.</p>
         pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
             self.service_namespace = Some(input);
@@ -3698,6 +3830,10 @@ pub mod scalable_target {
         /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
         /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+        /// Example: <code>replication-group/mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -3716,11 +3852,11 @@ pub mod scalable_target {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3772,11 +3908,19 @@ pub mod scalable_target {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>cassandra:table:WriteCapacityUnits</code> -  The provisioned write capacity for an Amazon Keyspaces table.</p>
+        /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {

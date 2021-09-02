@@ -6,7 +6,7 @@ pub fn parse_create_fhir_datastore_error(
     crate::output::CreateFhirDatastoreOutput,
     crate::error::CreateFHIRDatastoreError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateFHIRDatastoreError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -130,7 +130,7 @@ pub fn parse_delete_fhir_datastore_error(
     crate::output::DeleteFhirDatastoreOutput,
     crate::error::DeleteFHIRDatastoreError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteFHIRDatastoreError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -295,7 +295,7 @@ pub fn parse_describe_fhir_datastore_error(
     crate::output::DescribeFhirDatastoreOutput,
     crate::error::DescribeFHIRDatastoreError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFHIRDatastoreError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -418,7 +418,7 @@ pub fn parse_describe_fhir_export_job_error(
     crate::output::DescribeFhirExportJobOutput,
     crate::error::DescribeFHIRExportJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFHIRExportJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -541,7 +541,7 @@ pub fn parse_describe_fhir_import_job_error(
     crate::output::DescribeFhirImportJobOutput,
     crate::error::DescribeFHIRImportJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFHIRImportJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -664,7 +664,7 @@ pub fn parse_list_fhir_datastores_error(
     crate::output::ListFhirDatastoresOutput,
     crate::error::ListFHIRDatastoresError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFHIRDatastoresError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -767,7 +767,7 @@ pub fn parse_list_fhir_export_jobs_error(
     crate::output::ListFhirExportJobsOutput,
     crate::error::ListFHIRExportJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFHIRExportJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -911,7 +911,7 @@ pub fn parse_list_fhir_import_jobs_error(
     crate::output::ListFhirImportJobsOutput,
     crate::error::ListFHIRImportJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFHIRImportJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1055,7 +1055,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1136,7 +1136,7 @@ pub fn parse_start_fhir_export_job_error(
     crate::output::StartFhirExportJobOutput,
     crate::error::StartFHIRExportJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartFHIRExportJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1280,7 +1280,7 @@ pub fn parse_start_fhir_import_job_error(
     crate::output::StartFhirImportJobOutput,
     crate::error::StartFHIRImportJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartFHIRImportJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1421,7 +1421,7 @@ pub fn parse_start_fhir_import_job_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1491,7 +1491,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

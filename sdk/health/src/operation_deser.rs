@@ -6,7 +6,7 @@ pub fn parse_describe_affected_accounts_for_organization_error(
     crate::output::DescribeAffectedAccountsForOrganizationOutput,
     crate::error::DescribeAffectedAccountsForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAffectedAccountsForOrganizationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -65,7 +65,7 @@ pub fn parse_describe_affected_entities_error(
     crate::output::DescribeAffectedEntitiesOutput,
     crate::error::DescribeAffectedEntitiesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -151,7 +151,7 @@ pub fn parse_describe_affected_entities_for_organization_error(
     crate::output::DescribeAffectedEntitiesForOrganizationOutput,
     crate::error::DescribeAffectedEntitiesForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -224,7 +224,7 @@ pub fn parse_describe_entity_aggregates_error(
     crate::output::DescribeEntityAggregatesOutput,
     crate::error::DescribeEntityAggregatesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEntityAggregatesError::unhandled)?;
     Err(crate::error::DescribeEntityAggregatesError::generic(
         generic,
@@ -258,7 +258,7 @@ pub fn parse_describe_event_aggregates_error(
     crate::output::DescribeEventAggregatesOutput,
     crate::error::DescribeEventAggregatesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventAggregatesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -323,7 +323,7 @@ pub fn parse_describe_event_details_error(
     crate::output::DescribeEventDetailsOutput,
     crate::error::DescribeEventDetailsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventDetailsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -384,7 +384,7 @@ pub fn parse_describe_event_details_for_organization_error(
     crate::output::DescribeEventDetailsForOrganizationOutput,
     crate::error::DescribeEventDetailsForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventDetailsForOrganizationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -445,7 +445,7 @@ pub fn parse_describe_event_details_for_organization_response(
 pub fn parse_describe_events_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -522,7 +522,7 @@ pub fn parse_describe_events_for_organization_error(
     crate::output::DescribeEventsForOrganizationOutput,
     crate::error::DescribeEventsForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -608,7 +608,7 @@ pub fn parse_describe_event_types_error(
     crate::output::DescribeEventTypesOutput,
     crate::error::DescribeEventTypesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventTypesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -690,7 +690,7 @@ pub fn parse_describe_health_service_status_for_organization_error(
     crate::output::DescribeHealthServiceStatusForOrganizationOutput,
     crate::error::DescribeHealthServiceStatusForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeHealthServiceStatusForOrganizationError::unhandled)?;
     Err(crate::error::DescribeHealthServiceStatusForOrganizationError::generic(generic))
 }
@@ -725,7 +725,7 @@ pub fn parse_disable_health_service_access_for_organization_error(
     crate::output::DisableHealthServiceAccessForOrganizationOutput,
     crate::error::DisableHealthServiceAccessForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableHealthServiceAccessForOrganizationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -780,7 +780,7 @@ pub fn parse_enable_health_service_access_for_organization_error(
     crate::output::EnableHealthServiceAccessForOrganizationOutput,
     crate::error::EnableHealthServiceAccessForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableHealthServiceAccessForOrganizationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

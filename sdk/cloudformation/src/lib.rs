@@ -4,21 +4,22 @@
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
+#![allow(clippy::vec_init_then_push)]
 //! <fullname>AWS CloudFormation</fullname>
-//! <p>CloudFormation allows you to create and manage Amazon Web Services
-//! infrastructure deployments predictably and repeatedly. You can use CloudFormation
-//! to leverage Amazon Web Services products, such as Amazon Elastic Compute Cloud, Amazon
-//! Elastic Block Store, Amazon Simple Notification Service, Elastic Load Balancing, and Auto
-//! Scaling to build highly-reliable, highly scalable, cost-effective applications without
-//! creating or configuring the underlying Amazon Web Services infrastructure.</p>
+//! <p>CloudFormation allows you to create and manage Amazon Web Services infrastructure deployments
+//! predictably and repeatedly. You can use CloudFormation to leverage Amazon Web Services products, such
+//! as Amazon Elastic Compute Cloud, Amazon Elastic Block Store, Amazon Simple Notification
+//! Service, Elastic Load Balancing, and Auto Scaling to build highly-reliable, highly
+//! scalable, cost-effective applications without creating or configuring the underlying Amazon Web Services
+//! infrastructure.</p>
 //! <p>With CloudFormation, you declare all of your resources and dependencies in a
 //! template file. The template defines a collection of resources as a single unit called a
-//! stack. CloudFormation creates and deletes all member resources of the stack
-//! together and manages all dependencies between the resources for you.</p>
+//! stack. CloudFormation creates and deletes all member resources of the stack together
+//! and manages all dependencies between the resources for you.</p>
 //! <p>For more information about CloudFormation, see the <a href="http://aws.amazon.com/cloudformation/">CloudFormation Product Page</a>.</p>
-//! <p>CloudFormation makes use of other Amazon Web Services products. If you need
-//! additional technical information about a specific Amazon Web Services product, you can find
-//! the product's technical documentation at <a href="https://docs.aws.amazon.com/">
+//! <p>CloudFormation makes use of other Amazon Web Services products. If you need additional
+//! technical information about a specific Amazon Web Services product, you can find the product's technical
+//! documentation at <a href="https://docs.aws.amazon.com/">
 //! <code>docs.aws.amazon.com</code>
 //! </a>.</p>
 
@@ -36,6 +37,7 @@ mod error_meta;
 mod idempotency_token;
 pub mod input;
 pub mod model;
+mod no_credentials;
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
@@ -49,8 +51,8 @@ pub use smithy_http::result::SdkError;
 pub use smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("cloudformation", PKG_VERSION);
-pub use aws_auth::Credentials;
 pub use aws_types::region::Region;
+pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
 pub use smithy_http::endpoint::Endpoint;

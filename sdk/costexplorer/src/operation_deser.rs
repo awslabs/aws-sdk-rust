@@ -6,7 +6,7 @@ pub fn parse_create_anomaly_monitor_error(
     crate::output::CreateAnomalyMonitorOutput,
     crate::error::CreateAnomalyMonitorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAnomalyMonitorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -67,7 +67,7 @@ pub fn parse_create_anomaly_subscription_error(
     crate::output::CreateAnomalySubscriptionOutput,
     crate::error::CreateAnomalySubscriptionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAnomalySubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -153,7 +153,7 @@ pub fn parse_create_cost_category_definition_error(
     crate::output::CreateCostCategoryDefinitionOutput,
     crate::error::CreateCostCategoryDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCostCategoryDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -239,7 +239,7 @@ pub fn parse_delete_anomaly_monitor_error(
     crate::output::DeleteAnomalyMonitorOutput,
     crate::error::DeleteAnomalyMonitorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAnomalyMonitorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -316,7 +316,7 @@ pub fn parse_delete_anomaly_subscription_error(
     crate::output::DeleteAnomalySubscriptionOutput,
     crate::error::DeleteAnomalySubscriptionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAnomalySubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -399,7 +399,7 @@ pub fn parse_delete_cost_category_definition_error(
     crate::output::DeleteCostCategoryDefinitionOutput,
     crate::error::DeleteCostCategoryDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteCostCategoryDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -486,7 +486,7 @@ pub fn parse_describe_cost_category_definition_error(
     crate::output::DescribeCostCategoryDefinitionOutput,
     crate::error::DescribeCostCategoryDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCostCategoryDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -565,7 +565,7 @@ pub fn parse_describe_cost_category_definition_response(
 pub fn parse_get_anomalies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAnomaliesOutput, crate::error::GetAnomaliesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAnomaliesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -640,7 +640,7 @@ pub fn parse_get_anomaly_monitors_error(
     crate::output::GetAnomalyMonitorsOutput,
     crate::error::GetAnomalyMonitorsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAnomalyMonitorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -742,7 +742,7 @@ pub fn parse_get_anomaly_subscriptions_error(
     crate::output::GetAnomalySubscriptionsOutput,
     crate::error::GetAnomalySubscriptionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAnomalySubscriptionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -846,7 +846,7 @@ pub fn parse_get_anomaly_subscriptions_response(
 pub fn parse_get_cost_and_usage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCostAndUsageOutput, crate::error::GetCostAndUsageError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCostAndUsageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -985,7 +985,7 @@ pub fn parse_get_cost_and_usage_with_resources_error(
     crate::output::GetCostAndUsageWithResourcesOutput,
     crate::error::GetCostAndUsageWithResourcesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCostAndUsageWithResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1134,7 +1134,7 @@ pub fn parse_get_cost_categories_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCostCategoriesOutput, crate::error::GetCostCategoriesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCostCategoriesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1273,7 +1273,7 @@ pub fn parse_get_cost_categories_response(
 pub fn parse_get_cost_forecast_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCostForecastOutput, crate::error::GetCostForecastError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCostForecastError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1350,7 +1350,7 @@ pub fn parse_get_dimension_values_error(
     crate::output::GetDimensionValuesOutput,
     crate::error::GetDimensionValuesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDimensionValuesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1494,7 +1494,7 @@ pub fn parse_get_reservation_coverage_error(
     crate::output::GetReservationCoverageOutput,
     crate::error::GetReservationCoverageError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetReservationCoverageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1600,7 +1600,7 @@ pub fn parse_get_reservation_purchase_recommendation_error(
     crate::output::GetReservationPurchaseRecommendationOutput,
     crate::error::GetReservationPurchaseRecommendationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetReservationPurchaseRecommendationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1685,7 +1685,7 @@ pub fn parse_get_reservation_utilization_error(
     crate::output::GetReservationUtilizationOutput,
     crate::error::GetReservationUtilizationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetReservationUtilizationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1793,7 +1793,7 @@ pub fn parse_get_rightsizing_recommendation_error(
     crate::output::GetRightsizingRecommendationOutput,
     crate::error::GetRightsizingRecommendationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRightsizingRecommendationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1880,7 +1880,7 @@ pub fn parse_get_savings_plans_coverage_error(
     crate::output::GetSavingsPlansCoverageOutput,
     crate::error::GetSavingsPlansCoverageError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSavingsPlansCoverageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1986,7 +1986,7 @@ pub fn parse_get_savings_plans_purchase_recommendation_error(
     crate::output::GetSavingsPlansPurchaseRecommendationOutput,
     crate::error::GetSavingsPlansPurchaseRecommendationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSavingsPlansPurchaseRecommendationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2059,7 +2059,7 @@ pub fn parse_get_savings_plans_utilization_error(
     crate::output::GetSavingsPlansUtilizationOutput,
     crate::error::GetSavingsPlansUtilizationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSavingsPlansUtilizationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2145,7 +2145,7 @@ pub fn parse_get_savings_plans_utilization_details_error(
     crate::output::GetSavingsPlansUtilizationDetailsOutput,
     crate::error::GetSavingsPlansUtilizationDetailsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSavingsPlansUtilizationDetailsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2250,7 +2250,7 @@ pub fn parse_get_savings_plans_utilization_details_response(
 pub fn parse_get_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetTagsOutput, crate::error::GetTagsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2386,7 +2386,7 @@ pub fn parse_get_usage_forecast_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetUsageForecastOutput, crate::error::GetUsageForecastError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetUsageForecastError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2482,7 +2482,7 @@ pub fn parse_list_cost_category_definitions_error(
     crate::output::ListCostCategoryDefinitionsOutput,
     crate::error::ListCostCategoryDefinitionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCostCategoryDefinitionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2547,7 +2547,7 @@ pub fn parse_provide_anomaly_feedback_error(
     crate::output::ProvideAnomalyFeedbackOutput,
     crate::error::ProvideAnomalyFeedbackError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ProvideAnomalyFeedbackError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2612,7 +2612,7 @@ pub fn parse_update_anomaly_monitor_error(
     crate::output::UpdateAnomalyMonitorOutput,
     crate::error::UpdateAnomalyMonitorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateAnomalyMonitorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2694,7 +2694,7 @@ pub fn parse_update_anomaly_subscription_error(
     crate::output::UpdateAnomalySubscriptionOutput,
     crate::error::UpdateAnomalySubscriptionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateAnomalySubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2803,7 +2803,7 @@ pub fn parse_update_cost_category_definition_error(
     crate::output::UpdateCostCategoryDefinitionOutput,
     crate::error::UpdateCostCategoryDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateCostCategoryDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

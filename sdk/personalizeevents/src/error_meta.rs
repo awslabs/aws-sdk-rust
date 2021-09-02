@@ -17,8 +17,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutEventsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutEventsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutEventsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutEventsErrorKind::InvalidInputException(inner) => {
@@ -30,8 +33,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutEventsError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutItemsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutItemsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutItemsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutItemsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutItemsErrorKind::InvalidInputException(inner) => {
@@ -49,8 +55,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutItemsError>> for Error 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutUsersError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutUsersError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutUsersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutUsersError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutUsersErrorKind::InvalidInputException(inner) => {

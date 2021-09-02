@@ -4,6 +4,7 @@
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
+#![allow(clippy::vec_init_then_push)]
 //! <p> AWS CodeArtifact is a fully managed artifact repository compatible with language-native
 //! package managers and build tools such as npm, Apache Maven, and pip. You can use CodeArtifact to
 //! share packages with development teams and pull packages. Packages can be pulled from both
@@ -273,6 +274,7 @@ mod json_deser;
 mod json_errors;
 mod json_ser;
 pub mod model;
+mod no_credentials;
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
@@ -283,8 +285,8 @@ pub use smithy_http::result::SdkError;
 pub use smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("codeartifact", PKG_VERSION);
-pub use aws_auth::Credentials;
 pub use aws_types::region::Region;
+pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
 pub use smithy_http::endpoint::Endpoint;

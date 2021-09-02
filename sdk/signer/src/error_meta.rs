@@ -31,8 +31,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AddProfilePermissionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AddProfilePermissionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AddProfilePermissionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::AddProfilePermissionError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AddProfilePermissionErrorKind::AccessDeniedException(inner) => {
@@ -64,8 +69,13 @@ impl From<smithy_http::result::SdkError<crate::error::AddProfilePermissionError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CancelSigningProfileError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CancelSigningProfileError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CancelSigningProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CancelSigningProfileError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CancelSigningProfileErrorKind::AccessDeniedException(inner) => {
@@ -88,8 +98,11 @@ impl From<smithy_http::result::SdkError<crate::error::CancelSigningProfileError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeSigningJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeSigningJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeSigningJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeSigningJobError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeSigningJobErrorKind::AccessDeniedException(inner) => {
@@ -112,8 +125,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeSigningJobError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetSigningPlatformError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetSigningPlatformError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetSigningPlatformError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetSigningPlatformError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetSigningPlatformErrorKind::AccessDeniedException(inner) => {
@@ -136,8 +152,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetSigningPlatformError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetSigningProfileError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetSigningProfileError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetSigningProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetSigningProfileError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetSigningProfileErrorKind::AccessDeniedException(inner) => {
@@ -160,8 +179,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetSigningProfileError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListProfilePermissionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListProfilePermissionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListProfilePermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListProfilePermissionsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListProfilePermissionsErrorKind::AccessDeniedException(inner) => {
@@ -187,8 +211,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListProfilePermissionsErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListSigningJobsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListSigningJobsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListSigningJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListSigningJobsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListSigningJobsErrorKind::AccessDeniedException(inner) => {
@@ -209,8 +236,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListSigningJobsError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListSigningPlatformsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListSigningPlatformsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListSigningPlatformsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListSigningPlatformsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListSigningPlatformsErrorKind::AccessDeniedException(inner) => {
@@ -233,8 +265,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListSigningPlatformsError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListSigningProfilesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListSigningProfilesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListSigningProfilesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListSigningProfilesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListSigningProfilesErrorKind::AccessDeniedException(inner) => {
@@ -254,8 +289,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListSigningProfilesError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => {
@@ -278,8 +316,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutSigningProfileError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutSigningProfileError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutSigningProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutSigningProfileError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutSigningProfileErrorKind::AccessDeniedException(inner) => {
@@ -305,9 +346,12 @@ impl From<smithy_http::result::SdkError<crate::error::PutSigningProfileError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RemoveProfilePermissionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::RemoveProfilePermissionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RemoveProfilePermissionError>,
+        err: smithy_http::result::SdkError<crate::error::RemoveProfilePermissionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -337,8 +381,11 @@ impl From<smithy_http::result::SdkError<crate::error::RemoveProfilePermissionErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RevokeSignatureError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RevokeSignatureError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RevokeSignatureError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RevokeSignatureError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RevokeSignatureErrorKind::AccessDeniedException(inner) => {
@@ -362,8 +409,13 @@ impl From<smithy_http::result::SdkError<crate::error::RevokeSignatureError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RevokeSigningProfileError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RevokeSigningProfileError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RevokeSigningProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::RevokeSigningProfileError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RevokeSigningProfileErrorKind::AccessDeniedException(inner) => {
@@ -389,8 +441,11 @@ impl From<smithy_http::result::SdkError<crate::error::RevokeSigningProfileError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartSigningJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartSigningJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartSigningJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StartSigningJobError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StartSigningJobErrorKind::AccessDeniedException(inner) => {
@@ -417,8 +472,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartSigningJobError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::BadRequestException(inner) => {
@@ -439,8 +497,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::BadRequestException(inner) => {

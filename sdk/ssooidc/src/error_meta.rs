@@ -35,8 +35,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateTokenError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateTokenError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateTokenError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateTokenError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateTokenErrorKind::AccessDeniedException(inner) => {
@@ -78,8 +81,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateTokenError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RegisterClientError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RegisterClientError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RegisterClientError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RegisterClientError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RegisterClientErrorKind::InternalServerException(inner) => {
@@ -100,9 +106,13 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterClientError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartDeviceAuthorizationError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartDeviceAuthorizationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StartDeviceAuthorizationError>,
+        err: smithy_http::result::SdkError<crate::error::StartDeviceAuthorizationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {

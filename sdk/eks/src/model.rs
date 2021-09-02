@@ -308,6 +308,7 @@ pub enum ErrorCode {
     InsufficientFreeAddresses,
     InsufficientNumberOfReplicas,
     IpNotAvailable,
+    K8SResourceNotFound,
     NodeCreationFailure,
     OperationNotPermitted,
     PodEvictionFailure,
@@ -331,6 +332,7 @@ impl std::convert::From<&str> for ErrorCode {
             "InsufficientFreeAddresses" => ErrorCode::InsufficientFreeAddresses,
             "InsufficientNumberOfReplicas" => ErrorCode::InsufficientNumberOfReplicas,
             "IpNotAvailable" => ErrorCode::IpNotAvailable,
+            "K8sResourceNotFound" => ErrorCode::K8SResourceNotFound,
             "NodeCreationFailure" => ErrorCode::NodeCreationFailure,
             "OperationNotPermitted" => ErrorCode::OperationNotPermitted,
             "PodEvictionFailure" => ErrorCode::PodEvictionFailure,
@@ -361,6 +363,7 @@ impl ErrorCode {
             ErrorCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
             ErrorCode::InsufficientNumberOfReplicas => "InsufficientNumberOfReplicas",
             ErrorCode::IpNotAvailable => "IpNotAvailable",
+            ErrorCode::K8SResourceNotFound => "K8sResourceNotFound",
             ErrorCode::NodeCreationFailure => "NodeCreationFailure",
             ErrorCode::OperationNotPermitted => "OperationNotPermitted",
             ErrorCode::PodEvictionFailure => "PodEvictionFailure",
@@ -382,6 +385,7 @@ impl ErrorCode {
             "InsufficientFreeAddresses",
             "InsufficientNumberOfReplicas",
             "IpNotAvailable",
+            "K8sResourceNotFound",
             "NodeCreationFailure",
             "OperationNotPermitted",
             "PodEvictionFailure",
@@ -5228,6 +5232,7 @@ pub enum AddonIssueCode {
     ConfigurationConflict,
     InsufficientNumberOfReplicas,
     InternalFailure,
+    K8SResourceNotFound,
     UnsupportedAddonModification,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5241,6 +5246,7 @@ impl std::convert::From<&str> for AddonIssueCode {
             "ConfigurationConflict" => AddonIssueCode::ConfigurationConflict,
             "InsufficientNumberOfReplicas" => AddonIssueCode::InsufficientNumberOfReplicas,
             "InternalFailure" => AddonIssueCode::InternalFailure,
+            "K8sResourceNotFound" => AddonIssueCode::K8SResourceNotFound,
             "UnsupportedAddonModification" => AddonIssueCode::UnsupportedAddonModification,
             other => AddonIssueCode::Unknown(other.to_owned()),
         }
@@ -5262,6 +5268,7 @@ impl AddonIssueCode {
             AddonIssueCode::ConfigurationConflict => "ConfigurationConflict",
             AddonIssueCode::InsufficientNumberOfReplicas => "InsufficientNumberOfReplicas",
             AddonIssueCode::InternalFailure => "InternalFailure",
+            AddonIssueCode::K8SResourceNotFound => "K8sResourceNotFound",
             AddonIssueCode::UnsupportedAddonModification => "UnsupportedAddonModification",
             AddonIssueCode::Unknown(s) => s.as_ref(),
         }
@@ -5274,6 +5281,7 @@ impl AddonIssueCode {
             "ConfigurationConflict",
             "InsufficientNumberOfReplicas",
             "InternalFailure",
+            "K8sResourceNotFound",
             "UnsupportedAddonModification",
         ]
     }

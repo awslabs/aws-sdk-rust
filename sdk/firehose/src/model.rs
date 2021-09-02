@@ -228,19 +228,20 @@ impl HttpEndpointDestinationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
     /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+    /// AWS Service Namespaces</a>.</p>
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
     /// them to S3. This prefix appears immediately following the bucket name. For information
-    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option. If no value is specified, <code>BufferingHints</code> object
     /// default values are used.</p>
@@ -293,7 +294,8 @@ pub mod s3_destination_update {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -302,8 +304,8 @@ pub mod s3_destination_update {
             self.role_arn = input;
             self
         }
-        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+        /// AWS Service Namespaces</a>.</p>
         pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_arn = Some(input.into());
             self
@@ -313,8 +315,8 @@ pub mod s3_destination_update {
             self
         }
         /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
@@ -325,8 +327,8 @@ pub mod s3_destination_update {
         }
         /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
         /// them to S3. This prefix appears immediately following the bucket name. For information
-        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn error_output_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_output_prefix = Some(input.into());
             self
@@ -1132,9 +1134,13 @@ impl ProcessorParameter {
 pub enum ProcessorParameterName {
     BufferIntervalInSeconds,
     BufferSizeInMb,
+    Delimiter,
+    JsonParsingEngine,
     LambdaArn,
+    MetadataExtractionQuery,
     LambdaNumberOfRetries,
     RoleArn,
+    SubRecordType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -1143,9 +1149,13 @@ impl std::convert::From<&str> for ProcessorParameterName {
         match s {
             "BufferIntervalInSeconds" => ProcessorParameterName::BufferIntervalInSeconds,
             "BufferSizeInMBs" => ProcessorParameterName::BufferSizeInMb,
+            "Delimiter" => ProcessorParameterName::Delimiter,
+            "JsonParsingEngine" => ProcessorParameterName::JsonParsingEngine,
             "LambdaArn" => ProcessorParameterName::LambdaArn,
+            "MetadataExtractionQuery" => ProcessorParameterName::MetadataExtractionQuery,
             "NumberOfRetries" => ProcessorParameterName::LambdaNumberOfRetries,
             "RoleArn" => ProcessorParameterName::RoleArn,
+            "SubRecordType" => ProcessorParameterName::SubRecordType,
             other => ProcessorParameterName::Unknown(other.to_owned()),
         }
     }
@@ -1162,9 +1172,13 @@ impl ProcessorParameterName {
         match self {
             ProcessorParameterName::BufferIntervalInSeconds => "BufferIntervalInSeconds",
             ProcessorParameterName::BufferSizeInMb => "BufferSizeInMBs",
+            ProcessorParameterName::Delimiter => "Delimiter",
+            ProcessorParameterName::JsonParsingEngine => "JsonParsingEngine",
             ProcessorParameterName::LambdaArn => "LambdaArn",
+            ProcessorParameterName::MetadataExtractionQuery => "MetadataExtractionQuery",
             ProcessorParameterName::LambdaNumberOfRetries => "NumberOfRetries",
             ProcessorParameterName::RoleArn => "RoleArn",
+            ProcessorParameterName::SubRecordType => "SubRecordType",
             ProcessorParameterName::Unknown(s) => s.as_ref(),
         }
     }
@@ -1172,9 +1186,13 @@ impl ProcessorParameterName {
         &[
             "BufferIntervalInSeconds",
             "BufferSizeInMBs",
+            "Delimiter",
+            "JsonParsingEngine",
             "LambdaArn",
+            "MetadataExtractionQuery",
             "NumberOfRetries",
             "RoleArn",
+            "SubRecordType",
         ]
     }
 }
@@ -1195,14 +1213,20 @@ impl AsRef<str> for ProcessorParameterName {
     std::hash::Hash,
 )]
 pub enum ProcessorType {
+    AppendDelimiterToRecord,
     Lambda,
+    MetadataExtraction,
+    RecordDeAggregation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ProcessorType {
     fn from(s: &str) -> Self {
         match s {
+            "AppendDelimiterToRecord" => ProcessorType::AppendDelimiterToRecord,
             "Lambda" => ProcessorType::Lambda,
+            "MetadataExtraction" => ProcessorType::MetadataExtraction,
+            "RecordDeAggregation" => ProcessorType::RecordDeAggregation,
             other => ProcessorType::Unknown(other.to_owned()),
         }
     }
@@ -1217,12 +1241,20 @@ impl std::str::FromStr for ProcessorType {
 impl ProcessorType {
     pub fn as_str(&self) -> &str {
         match self {
+            ProcessorType::AppendDelimiterToRecord => "AppendDelimiterToRecord",
             ProcessorType::Lambda => "Lambda",
+            ProcessorType::MetadataExtraction => "MetadataExtraction",
+            ProcessorType::RecordDeAggregation => "RecordDeAggregation",
             ProcessorType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["Lambda"]
+        &[
+            "AppendDelimiterToRecord",
+            "Lambda",
+            "MetadataExtraction",
+            "RecordDeAggregation",
+        ]
     }
 }
 impl AsRef<str> for ProcessorType {
@@ -1505,6 +1537,11 @@ impl HttpEndpointBufferingHints {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpEndpointConfiguration {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p>
+    /// <important>
+    /// <p>If you choose an HTTP endpoint as your destination, review and follow the
+    /// instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint
+    /// Delivery Request and Response Specifications</a>.</p>
+    /// </important>
     pub url: std::option::Option<std::string::String>,
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
     pub name: std::option::Option<std::string::String>,
@@ -1533,6 +1570,11 @@ pub mod http_endpoint_configuration {
     }
     impl Builder {
         /// <p>The URL of the HTTP endpoint selected as the destination.</p>
+        /// <important>
+        /// <p>If you choose an HTTP endpoint as your destination, review and follow the
+        /// instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint
+        /// Delivery Request and Response Specifications</a>.</p>
+        /// </important>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
@@ -1958,14 +2000,14 @@ pub struct ElasticsearchDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose
     /// for calling the Amazon ES Configuration API and for indexing documents. For more
     /// information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-    /// Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+    /// AWS Service Namespaces</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon ES domain. The IAM role must have permissions
     /// for <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>,
     /// and <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in
-    /// <code>RoleARN</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// <code>RoleARN</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+    /// AWS Service Namespaces</a>.</p>
     /// <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
     pub domain_arn: std::option::Option<std::string::String>,
     /// <p>The endpoint to use when communicating with the cluster. Specify either this
@@ -2044,8 +2086,8 @@ pub mod elasticsearch_destination_update {
         /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose
         /// for calling the Amazon ES Configuration API and for indexing documents. For more
         /// information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-        /// Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+        /// AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -2057,8 +2099,8 @@ pub mod elasticsearch_destination_update {
         /// <p>The ARN of the Amazon ES domain. The IAM role must have permissions
         /// for <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>,
         /// and <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in
-        /// <code>RoleARN</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <code>RoleARN</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+        /// AWS Service Namespaces</a>.</p>
         /// <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
         pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_arn = Some(input.into());
@@ -2406,7 +2448,8 @@ impl AsRef<str> for ElasticsearchIndexRotationPeriod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The database connection string.</p>
     pub cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -2477,7 +2520,8 @@ pub mod redshift_destination_update {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -2867,19 +2911,20 @@ impl CopyCommand {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedS3DestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
     /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+    /// AWS Service Namespaces</a>.</p>
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
     /// them to S3. This prefix appears immediately following the bucket name. For information
-    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option.</p>
     pub buffering_hints: std::option::Option<crate::model::BufferingHints>,
@@ -2902,6 +2947,12 @@ pub struct ExtendedS3DestinationUpdate {
     /// the Parquet or ORC format before writing it to Amazon S3.</p>
     pub data_format_conversion_configuration:
         std::option::Option<crate::model::DataFormatConversionConfiguration>,
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets
+    /// from the streaming data by partitioning it based on partition keys. Currently, dynamic
+    /// partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+    /// </p>
+    pub dynamic_partitioning_configuration:
+        std::option::Option<crate::model::DynamicPartitioningConfiguration>,
 }
 impl std::fmt::Debug for ExtendedS3DestinationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2923,6 +2974,10 @@ impl std::fmt::Debug for ExtendedS3DestinationUpdate {
         formatter.field(
             "data_format_conversion_configuration",
             &self.data_format_conversion_configuration,
+        );
+        formatter.field(
+            "dynamic_partitioning_configuration",
+            &self.dynamic_partitioning_configuration,
         );
         formatter.finish()
     }
@@ -2949,10 +3004,13 @@ pub mod extended_s3_destination_update {
         pub(crate) s3_backup_update: std::option::Option<crate::model::S3DestinationUpdate>,
         pub(crate) data_format_conversion_configuration:
             std::option::Option<crate::model::DataFormatConversionConfiguration>,
+        pub(crate) dynamic_partitioning_configuration:
+            std::option::Option<crate::model::DynamicPartitioningConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -2961,8 +3019,8 @@ pub mod extended_s3_destination_update {
             self.role_arn = input;
             self
         }
-        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+        /// AWS Service Namespaces</a>.</p>
         pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_arn = Some(input.into());
             self
@@ -2972,8 +3030,8 @@ pub mod extended_s3_destination_update {
             self
         }
         /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
@@ -2984,8 +3042,8 @@ pub mod extended_s3_destination_update {
         }
         /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
         /// them to S3. This prefix appears immediately following the bucket name. For information
-        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn error_output_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_output_prefix = Some(input.into());
             self
@@ -3109,6 +3167,24 @@ pub mod extended_s3_destination_update {
             self.data_format_conversion_configuration = input;
             self
         }
+        /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets
+        /// from the streaming data by partitioning it based on partition keys. Currently, dynamic
+        /// partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+        /// </p>
+        pub fn dynamic_partitioning_configuration(
+            mut self,
+            input: crate::model::DynamicPartitioningConfiguration,
+        ) -> Self {
+            self.dynamic_partitioning_configuration = Some(input);
+            self
+        }
+        pub fn set_dynamic_partitioning_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DynamicPartitioningConfiguration>,
+        ) -> Self {
+            self.dynamic_partitioning_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExtendedS3DestinationUpdate`](crate::model::ExtendedS3DestinationUpdate)
         pub fn build(self) -> crate::model::ExtendedS3DestinationUpdate {
             crate::model::ExtendedS3DestinationUpdate {
@@ -3124,6 +3200,7 @@ pub mod extended_s3_destination_update {
                 s3_backup_mode: self.s3_backup_mode,
                 s3_backup_update: self.s3_backup_update,
                 data_format_conversion_configuration: self.data_format_conversion_configuration,
+                dynamic_partitioning_configuration: self.dynamic_partitioning_configuration,
             }
         }
     }
@@ -3135,11 +3212,133 @@ impl ExtendedS3DestinationUpdate {
     }
 }
 
+/// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets
+/// from the streaming data by partitioning it based on partition keys. Currently, dynamic
+/// partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DynamicPartitioningConfiguration {
+    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon
+    /// S3 prefix.</p>
+    pub retry_options: std::option::Option<crate::model::RetryOptions>,
+    /// <p>Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose
+    /// delivery stream.</p>
+    pub enabled: std::option::Option<bool>,
+}
+impl std::fmt::Debug for DynamicPartitioningConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DynamicPartitioningConfiguration");
+        formatter.field("retry_options", &self.retry_options);
+        formatter.field("enabled", &self.enabled);
+        formatter.finish()
+    }
+}
+/// See [`DynamicPartitioningConfiguration`](crate::model::DynamicPartitioningConfiguration)
+pub mod dynamic_partitioning_configuration {
+    /// A builder for [`DynamicPartitioningConfiguration`](crate::model::DynamicPartitioningConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) retry_options: std::option::Option<crate::model::RetryOptions>,
+        pub(crate) enabled: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon
+        /// S3 prefix.</p>
+        pub fn retry_options(mut self, input: crate::model::RetryOptions) -> Self {
+            self.retry_options = Some(input);
+            self
+        }
+        pub fn set_retry_options(
+            mut self,
+            input: std::option::Option<crate::model::RetryOptions>,
+        ) -> Self {
+            self.retry_options = input;
+            self
+        }
+        /// <p>Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose
+        /// delivery stream.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DynamicPartitioningConfiguration`](crate::model::DynamicPartitioningConfiguration)
+        pub fn build(self) -> crate::model::DynamicPartitioningConfiguration {
+            crate::model::DynamicPartitioningConfiguration {
+                retry_options: self.retry_options,
+                enabled: self.enabled,
+            }
+        }
+    }
+}
+impl DynamicPartitioningConfiguration {
+    /// Creates a new builder-style object to manufacture [`DynamicPartitioningConfiguration`](crate::model::DynamicPartitioningConfiguration)
+    pub fn builder() -> crate::model::dynamic_partitioning_configuration::Builder {
+        crate::model::dynamic_partitioning_configuration::Builder::default()
+    }
+}
+
+/// <p> The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon
+/// S3 prefix.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RetryOptions {
+    /// <p>The period of time during which Kinesis Data Firehose retries to deliver data to the
+    /// specified Amazon S3 prefix.</p>
+    pub duration_in_seconds: std::option::Option<i32>,
+}
+impl std::fmt::Debug for RetryOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RetryOptions");
+        formatter.field("duration_in_seconds", &self.duration_in_seconds);
+        formatter.finish()
+    }
+}
+/// See [`RetryOptions`](crate::model::RetryOptions)
+pub mod retry_options {
+    /// A builder for [`RetryOptions`](crate::model::RetryOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) duration_in_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The period of time during which Kinesis Data Firehose retries to deliver data to the
+        /// specified Amazon S3 prefix.</p>
+        pub fn duration_in_seconds(mut self, input: i32) -> Self {
+            self.duration_in_seconds = Some(input);
+            self
+        }
+        pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration_in_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RetryOptions`](crate::model::RetryOptions)
+        pub fn build(self) -> crate::model::RetryOptions {
+            crate::model::RetryOptions {
+                duration_in_seconds: self.duration_in_seconds,
+            }
+        }
+    }
+}
+impl RetryOptions {
+    /// Creates a new builder-style object to manufacture [`RetryOptions`](crate::model::RetryOptions)
+    pub fn builder() -> crate::model::retry_options::Builder {
+        crate::model::retry_options::Builder::default()
+    }
+}
+
 /// <p>Specifies that you want Kinesis Data Firehose to convert data from the JSON format to
 /// the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the
 /// serializer and deserializer that you specify, in addition to the column information from
 /// the AWS Glue table, to deserialize your input data from JSON and then serialize it to the
-/// Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>.</p>
+/// Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record
+/// Format Conversion</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataFormatConversionConfiguration {
@@ -4294,15 +4493,30 @@ pub struct SchemaConfiguration {
     /// <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in
     /// the same account you use for Kinesis Data Firehose. Cross-account roles aren't
     /// allowed.</p>
+    /// <important>
+    /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
+    /// the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is
+    /// required and its value must be specified.</p>
+    /// </important>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS account ID is
     /// used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the AWS Glue database that contains the schema for the output
     /// data.</p>
+    /// <important>
+    /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
+    /// the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property
+    /// is required and its value must be specified.</p>
+    /// </important>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Specifies the AWS Glue table that contains the column information that constitutes your
     /// data schema.</p>
+    /// <important>
+    /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
+    /// the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is
+    /// required and its value must be specified.</p>
+    /// </important>
     pub table_name: std::option::Option<std::string::String>,
     /// <p>If you don't specify an AWS Region, the default is the current Region.</p>
     pub region: std::option::Option<std::string::String>,
@@ -4341,6 +4555,11 @@ pub mod schema_configuration {
         /// <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in
         /// the same account you use for Kinesis Data Firehose. Cross-account roles aren't
         /// allowed.</p>
+        /// <important>
+        /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
+        /// the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is
+        /// required and its value must be specified.</p>
+        /// </important>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -4361,6 +4580,11 @@ pub mod schema_configuration {
         }
         /// <p>Specifies the name of the AWS Glue database that contains the schema for the output
         /// data.</p>
+        /// <important>
+        /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
+        /// the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property
+        /// is required and its value must be specified.</p>
+        /// </important>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
@@ -4374,6 +4598,11 @@ pub mod schema_configuration {
         }
         /// <p>Specifies the AWS Glue table that contains the column information that constitutes your
         /// data schema.</p>
+        /// <important>
+        /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
+        /// the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is
+        /// required and its value must be specified.</p>
+        /// </important>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_name = Some(input.into());
             self
@@ -4551,9 +4780,10 @@ pub struct DeliveryStreamEncryptionConfigurationInput {
     /// <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a service-account CMK.</p>
     pub key_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the type of customer master key (CMK) to use for encryption. The default
-    /// setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
-    /// <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the
-    /// Amazon KMS operation <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant that allows the Kinesis Data Firehose service to
+    /// setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+    /// Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
+    /// <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
+    /// CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant that allows the Kinesis Data Firehose service to
     /// use the customer managed CMK to perform encryption and decryption. Kinesis Data Firehose
     /// manages that grant. </p>
     /// <p>When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a
@@ -4565,8 +4795,9 @@ pub struct DeliveryStreamEncryptionConfigurationInput {
     /// <code>LimitExceededException</code>. </p>
     /// <important>
     /// <p>To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't
-    /// support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service
-    /// developer guide.</p>
+    /// support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
+    /// Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service developer
+    /// guide.</p>
     /// </important>
     pub key_type: std::option::Option<crate::model::KeyType>,
 }
@@ -4600,9 +4831,10 @@ pub mod delivery_stream_encryption_configuration_input {
             self
         }
         /// <p>Indicates the type of customer master key (CMK) to use for encryption. The default
-        /// setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
-        /// <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the
-        /// Amazon KMS operation <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant that allows the Kinesis Data Firehose service to
+        /// setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+        /// Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
+        /// <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
+        /// CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant that allows the Kinesis Data Firehose service to
         /// use the customer managed CMK to perform encryption and decryption. Kinesis Data Firehose
         /// manages that grant. </p>
         /// <p>When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a
@@ -4614,8 +4846,9 @@ pub mod delivery_stream_encryption_configuration_input {
         /// <code>LimitExceededException</code>. </p>
         /// <important>
         /// <p>To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't
-        /// support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service
-        /// developer guide.</p>
+        /// support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
+        /// Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service developer
+        /// guide.</p>
         /// </important>
         pub fn key_type(mut self, input: crate::model::KeyType) -> Self {
             self.key_type = Some(input);
@@ -4876,7 +5109,8 @@ pub struct DeliveryStreamDescription {
     /// <p>The name of the delivery stream.</p>
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the delivery stream. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     pub delivery_stream_arn: std::option::Option<std::string::String>,
     /// <p>The status of the delivery stream. If the status of a delivery stream is
     /// <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke
@@ -4977,7 +5211,8 @@ pub mod delivery_stream_description {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the delivery stream. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn delivery_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_stream_arn = Some(input.into());
             self
@@ -5593,19 +5828,20 @@ impl HttpEndpointDestinationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
     /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+    /// AWS Service Namespaces</a>.</p>
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
     /// them to S3. This prefix appears immediately following the bucket name. For information
-    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option. If no value is specified, <code>BufferingHints</code> object
     /// default values are used.</p>
@@ -5655,7 +5891,8 @@ pub mod s3_destination_description {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -5664,8 +5901,8 @@ pub mod s3_destination_description {
             self.role_arn = input;
             self
         }
-        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+        /// AWS Service Namespaces</a>.</p>
         pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_arn = Some(input.into());
             self
@@ -5675,8 +5912,8 @@ pub mod s3_destination_description {
             self
         }
         /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
@@ -5687,8 +5924,8 @@ pub mod s3_destination_description {
         }
         /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
         /// them to S3. This prefix appears immediately following the bucket name. For information
-        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn error_output_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_output_prefix = Some(input.into());
             self
@@ -6066,7 +6303,8 @@ impl SplunkDestinationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon ES domain. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
     /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
@@ -6155,7 +6393,8 @@ pub mod elasticsearch_destination_description {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -6361,7 +6600,8 @@ pub struct VpcConfigurationDescription {
     /// scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To
     /// help you calculate the quota you need, assume that Kinesis Data Firehose can create up to
     /// three ENIs for this delivery stream for each of the subnets specified here. For more
-    /// information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces </a> in the Amazon VPC Quotas topic.</p>
+    /// information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces
+    /// </a> in the Amazon VPC Quotas topic.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN of the IAM role that the delivery stream uses to create endpoints in the
     /// destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can
@@ -6420,7 +6660,8 @@ pub struct VpcConfigurationDescription {
     /// that the Amazon ES domain's security group allows HTTPS traffic from the security groups
     /// specified here. If you use the same security group for both your delivery stream and the
     /// Amazon ES domain, make sure the security group inbound rule allows HTTPS traffic. For more
-    /// information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security group rules</a> in the Amazon VPC documentation.</p>
+    /// information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security group
+    /// rules</a> in the Amazon VPC documentation.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the Amazon ES destination's VPC.</p>
     pub vpc_id: std::option::Option<std::string::String>,
@@ -6612,7 +6853,8 @@ impl AsRef<str> for ElasticsearchS3BackupMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The database connection string.</p>
     pub cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -6679,7 +6921,8 @@ pub mod redshift_destination_description {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -6835,19 +7078,20 @@ impl RedshiftDestinationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedS3DestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
     /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+    /// AWS Service Namespaces</a>.</p>
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
     /// them to S3. This prefix appears immediately following the bucket name. For information
-    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option.</p>
     pub buffering_hints: std::option::Option<crate::model::BufferingHints>,
@@ -6869,6 +7113,12 @@ pub struct ExtendedS3DestinationDescription {
     /// the Parquet or ORC format before writing it to Amazon S3.</p>
     pub data_format_conversion_configuration:
         std::option::Option<crate::model::DataFormatConversionConfiguration>,
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets
+    /// from the streaming data by partitioning it based on partition keys. Currently, dynamic
+    /// partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+    /// </p>
+    pub dynamic_partitioning_configuration:
+        std::option::Option<crate::model::DynamicPartitioningConfiguration>,
 }
 impl std::fmt::Debug for ExtendedS3DestinationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6890,6 +7140,10 @@ impl std::fmt::Debug for ExtendedS3DestinationDescription {
         formatter.field(
             "data_format_conversion_configuration",
             &self.data_format_conversion_configuration,
+        );
+        formatter.field(
+            "dynamic_partitioning_configuration",
+            &self.dynamic_partitioning_configuration,
         );
         formatter.finish()
     }
@@ -6917,10 +7171,13 @@ pub mod extended_s3_destination_description {
             std::option::Option<crate::model::S3DestinationDescription>,
         pub(crate) data_format_conversion_configuration:
             std::option::Option<crate::model::DataFormatConversionConfiguration>,
+        pub(crate) dynamic_partitioning_configuration:
+            std::option::Option<crate::model::DynamicPartitioningConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -6929,8 +7186,8 @@ pub mod extended_s3_destination_description {
             self.role_arn = input;
             self
         }
-        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+        /// AWS Service Namespaces</a>.</p>
         pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_arn = Some(input.into());
             self
@@ -6940,8 +7197,8 @@ pub mod extended_s3_destination_description {
             self
         }
         /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
@@ -6952,8 +7209,8 @@ pub mod extended_s3_destination_description {
         }
         /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
         /// them to S3. This prefix appears immediately following the bucket name. For information
-        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn error_output_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_output_prefix = Some(input.into());
             self
@@ -7079,6 +7336,24 @@ pub mod extended_s3_destination_description {
             self.data_format_conversion_configuration = input;
             self
         }
+        /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets
+        /// from the streaming data by partitioning it based on partition keys. Currently, dynamic
+        /// partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+        /// </p>
+        pub fn dynamic_partitioning_configuration(
+            mut self,
+            input: crate::model::DynamicPartitioningConfiguration,
+        ) -> Self {
+            self.dynamic_partitioning_configuration = Some(input);
+            self
+        }
+        pub fn set_dynamic_partitioning_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DynamicPartitioningConfiguration>,
+        ) -> Self {
+            self.dynamic_partitioning_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExtendedS3DestinationDescription`](crate::model::ExtendedS3DestinationDescription)
         pub fn build(self) -> crate::model::ExtendedS3DestinationDescription {
             crate::model::ExtendedS3DestinationDescription {
@@ -7094,6 +7369,7 @@ pub mod extended_s3_destination_description {
                 s3_backup_mode: self.s3_backup_mode,
                 s3_backup_description: self.s3_backup_description,
                 data_format_conversion_configuration: self.data_format_conversion_configuration,
+                dynamic_partitioning_configuration: self.dynamic_partitioning_configuration,
             }
         }
     }
@@ -7172,10 +7448,12 @@ impl SourceDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamSourceDescription {
     /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+    /// Kinesis Data Streams ARN Format</a>.</p>
     pub kinesis_stream_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role used by the source Kinesis data stream. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM) ARN Format</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
+    /// Access Management (IAM) ARN Format</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting
     /// with this timestamp.</p>
@@ -7202,7 +7480,8 @@ pub mod kinesis_stream_source_description {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+        /// Kinesis Data Streams ARN Format</a>.</p>
         pub fn kinesis_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kinesis_stream_arn = Some(input.into());
             self
@@ -7215,7 +7494,8 @@ pub mod kinesis_stream_source_description {
             self
         }
         /// <p>The ARN of the role used by the source Kinesis data stream. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM) ARN Format</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
+        /// Access Management (IAM) ARN Format</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -7266,7 +7546,8 @@ pub struct DeliveryStreamEncryptionConfiguration {
     /// <code>KeyARN</code>.</p>
     pub key_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the type of customer master key (CMK) that is used for encryption. The default
-    /// setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>.</p>
+    /// setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+    /// Master Keys (CMKs)</a>.</p>
     pub key_type: std::option::Option<crate::model::KeyType>,
     /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full
     /// description of the different values of this status, see <a>StartDeliveryStreamEncryption</a> and <a>StopDeliveryStreamEncryption</a>. If this status is <code>ENABLING_FAILED</code>
@@ -7313,7 +7594,8 @@ pub mod delivery_stream_encryption_configuration {
             self
         }
         /// <p>Indicates the type of customer master key (CMK) that is used for encryption. The default
-        /// setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>.</p>
+        /// setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+        /// Master Keys (CMKs)</a>.</p>
         pub fn key_type(mut self, input: crate::model::KeyType) -> Self {
             self.key_type = Some(input);
             self
@@ -7903,19 +8185,20 @@ impl HttpEndpointDestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
     /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+    /// AWS Service Namespaces</a>.</p>
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
     /// them to S3. This prefix appears immediately following the bucket name. For information
-    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option. If no value is specified, <code>BufferingHints</code> object
     /// default values are used.</p>
@@ -7968,7 +8251,8 @@ pub mod s3_destination_configuration {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -7977,8 +8261,8 @@ pub mod s3_destination_configuration {
             self.role_arn = input;
             self
         }
-        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+        /// AWS Service Namespaces</a>.</p>
         pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_arn = Some(input.into());
             self
@@ -7988,8 +8272,8 @@ pub mod s3_destination_configuration {
             self
         }
         /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
@@ -8000,8 +8284,8 @@ pub mod s3_destination_configuration {
         }
         /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
         /// them to S3. This prefix appears immediately following the bucket name. For information
-        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn error_output_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_output_prefix = Some(input.into());
             self
@@ -8322,8 +8606,8 @@ pub struct ElasticsearchDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose
     /// for calling the Amazon ES Configuration API and for indexing documents. For more
     /// information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-    /// Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+    /// AWS Service Namespaces</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon ES domain. The IAM role must have permissions
     /// for <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>,
@@ -8422,8 +8706,8 @@ pub mod elasticsearch_destination_configuration {
         /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose
         /// for calling the Amazon ES Configuration API and for indexing documents. For more
         /// information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-        /// Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+        /// AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -8641,7 +8925,8 @@ pub struct VpcConfiguration {
     /// scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To
     /// help you calculate the quota you need, assume that Kinesis Data Firehose can create up to
     /// three ENIs for this delivery stream for each of the subnets specified here. For more
-    /// information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces </a> in the Amazon VPC Quotas topic.</p>
+    /// information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces
+    /// </a> in the Amazon VPC Quotas topic.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN of the IAM role that you want the delivery stream to use to create endpoints in
     /// the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you
@@ -8700,7 +8985,8 @@ pub struct VpcConfiguration {
     /// group. Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the
     /// security groups specified here. If you use the same security group for both your delivery
     /// stream and the Amazon ES domain, make sure the security group inbound rule allows HTTPS
-    /// traffic. For more information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security group rules</a> in the Amazon VPC documentation.</p>
+    /// traffic. For more information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security group
+    /// rules</a> in the Amazon VPC documentation.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for VpcConfiguration {
@@ -8828,7 +9114,8 @@ impl VpcConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The database connection string.</p>
     pub cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -8902,7 +9189,8 @@ pub mod redshift_destination_configuration {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -9072,19 +9360,20 @@ impl RedshiftDestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedS3DestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
     /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+    /// AWS Service Namespaces</a>.</p>
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
     /// them to S3. This prefix appears immediately following the bucket name. For information
-    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-    /// for Amazon S3 Objects</a>.</p>
+    /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+    /// Objects</a>.</p>
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option.</p>
     pub buffering_hints: std::option::Option<crate::model::BufferingHints>,
@@ -9108,6 +9397,12 @@ pub struct ExtendedS3DestinationConfiguration {
     /// the Parquet or ORC format before writing it to Amazon S3.</p>
     pub data_format_conversion_configuration:
         std::option::Option<crate::model::DataFormatConversionConfiguration>,
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets
+    /// from the streaming data by partitioning it based on partition keys. Currently, dynamic
+    /// partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+    /// </p>
+    pub dynamic_partitioning_configuration:
+        std::option::Option<crate::model::DynamicPartitioningConfiguration>,
 }
 impl std::fmt::Debug for ExtendedS3DestinationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9129,6 +9424,10 @@ impl std::fmt::Debug for ExtendedS3DestinationConfiguration {
         formatter.field(
             "data_format_conversion_configuration",
             &self.data_format_conversion_configuration,
+        );
+        formatter.field(
+            "dynamic_partitioning_configuration",
+            &self.dynamic_partitioning_configuration,
         );
         formatter.finish()
     }
@@ -9156,10 +9455,13 @@ pub mod extended_s3_destination_configuration {
             std::option::Option<crate::model::S3DestinationConfiguration>,
         pub(crate) data_format_conversion_configuration:
             std::option::Option<crate::model::DataFormatConversionConfiguration>,
+        pub(crate) dynamic_partitioning_configuration:
+            std::option::Option<crate::model::DynamicPartitioningConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -9168,8 +9470,8 @@ pub mod extended_s3_destination_configuration {
             self.role_arn = input;
             self
         }
-        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+        /// AWS Service Namespaces</a>.</p>
         pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_arn = Some(input.into());
             self
@@ -9179,8 +9481,8 @@ pub mod extended_s3_destination_configuration {
             self
         }
         /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3
-        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
@@ -9191,8 +9493,8 @@ pub mod extended_s3_destination_configuration {
         }
         /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
         /// them to S3. This prefix appears immediately following the bucket name. For information
-        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes
-        /// for Amazon S3 Objects</a>.</p>
+        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+        /// Objects</a>.</p>
         pub fn error_output_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_output_prefix = Some(input.into());
             self
@@ -9320,6 +9622,24 @@ pub mod extended_s3_destination_configuration {
             self.data_format_conversion_configuration = input;
             self
         }
+        /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets
+        /// from the streaming data by partitioning it based on partition keys. Currently, dynamic
+        /// partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+        /// </p>
+        pub fn dynamic_partitioning_configuration(
+            mut self,
+            input: crate::model::DynamicPartitioningConfiguration,
+        ) -> Self {
+            self.dynamic_partitioning_configuration = Some(input);
+            self
+        }
+        pub fn set_dynamic_partitioning_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DynamicPartitioningConfiguration>,
+        ) -> Self {
+            self.dynamic_partitioning_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExtendedS3DestinationConfiguration`](crate::model::ExtendedS3DestinationConfiguration)
         pub fn build(self) -> crate::model::ExtendedS3DestinationConfiguration {
             crate::model::ExtendedS3DestinationConfiguration {
@@ -9335,6 +9655,7 @@ pub mod extended_s3_destination_configuration {
                 s3_backup_mode: self.s3_backup_mode,
                 s3_backup_configuration: self.s3_backup_configuration,
                 data_format_conversion_configuration: self.data_format_conversion_configuration,
+                dynamic_partitioning_configuration: self.dynamic_partitioning_configuration,
             }
         }
     }
@@ -9351,10 +9672,12 @@ impl ExtendedS3DestinationConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamSourceConfiguration {
-    /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
+    /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+    /// Kinesis Data Streams ARN Format</a>.</p>
     pub kinesis_stream_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that provides access to the source Kinesis data stream. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM) ARN Format</a>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
+    /// Access Management (IAM) ARN Format</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KinesisStreamSourceConfiguration {
@@ -9375,7 +9698,8 @@ pub mod kinesis_stream_source_configuration {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
+        /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+        /// Kinesis Data Streams ARN Format</a>.</p>
         pub fn kinesis_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kinesis_stream_arn = Some(input.into());
             self
@@ -9388,7 +9712,8 @@ pub mod kinesis_stream_source_configuration {
             self
         }
         /// <p>The ARN of the role that provides access to the source Kinesis data stream. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM) ARN Format</a>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
+        /// Access Management (IAM) ARN Format</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self

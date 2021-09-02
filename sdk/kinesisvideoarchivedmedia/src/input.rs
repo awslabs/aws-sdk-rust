@@ -71,6 +71,7 @@ impl GetClipInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_get_clip(&self).map_err(|err| {
@@ -78,8 +79,10 @@ impl GetClipInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -100,7 +103,7 @@ impl GetClipInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -393,10 +396,10 @@ pub mod get_dash_streaming_session_url_input {
     }
 }
 #[doc(hidden)]
-pub type GetDASHStreamingSessionURLInputOperationOutputAlias =
+pub type GetDashStreamingSessionUrlInputOperationOutputAlias =
     crate::operation::GetDASHStreamingSessionURL;
 #[doc(hidden)]
-pub type GetDASHStreamingSessionURLInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDashStreamingSessionUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetDashStreamingSessionUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetDASHStreamingSessionURL`](crate::operation::GetDASHStreamingSessionURL)>
     #[allow(clippy::let_and_return)]
@@ -411,6 +414,7 @@ impl GetDashStreamingSessionUrlInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_get_dash_streaming_session_url(&self)
@@ -419,8 +423,10 @@ impl GetDashStreamingSessionUrlInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -441,7 +447,7 @@ impl GetDashStreamingSessionUrlInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -782,10 +788,10 @@ pub mod get_hls_streaming_session_url_input {
     }
 }
 #[doc(hidden)]
-pub type GetHLSStreamingSessionURLInputOperationOutputAlias =
+pub type GetHlsStreamingSessionUrlInputOperationOutputAlias =
     crate::operation::GetHLSStreamingSessionURL;
 #[doc(hidden)]
-pub type GetHLSStreamingSessionURLInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetHlsStreamingSessionUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetHlsStreamingSessionUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetHLSStreamingSessionURL`](crate::operation::GetHLSStreamingSessionURL)>
     #[allow(clippy::let_and_return)]
@@ -800,6 +806,7 @@ impl GetHlsStreamingSessionUrlInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_get_hls_streaming_session_url(&self)
@@ -808,8 +815,10 @@ impl GetHlsStreamingSessionUrlInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -830,7 +839,7 @@ impl GetHlsStreamingSessionUrlInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -959,6 +968,7 @@ impl GetMediaForFragmentListInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_get_media_for_fragment_list(&self)
                 .map_err(|err| {
@@ -966,8 +976,10 @@ impl GetMediaForFragmentListInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -988,7 +1000,7 @@ impl GetMediaForFragmentListInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1139,6 +1151,7 @@ impl ListFragmentsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_list_fragments(&self).map_err(|err| {
@@ -1146,8 +1159,10 @@ impl ListFragmentsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1168,7 +1183,7 @@ impl ListFragmentsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );

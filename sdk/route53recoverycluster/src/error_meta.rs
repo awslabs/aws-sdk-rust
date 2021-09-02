@@ -25,8 +25,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetRoutingControlStateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetRoutingControlStateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetRoutingControlStateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetRoutingControlStateError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetRoutingControlStateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
@@ -41,9 +46,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetRoutingControlStateErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateRoutingControlStateError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateRoutingControlStateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateRoutingControlStateError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateRoutingControlStateError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -60,9 +69,13 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateRoutingControlStateE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateRoutingControlStatesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateRoutingControlStatesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateRoutingControlStatesError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateRoutingControlStatesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {

@@ -6,7 +6,7 @@ pub fn parse_batch_execute_statement_error(
     crate::output::BatchExecuteStatementOutput,
     crate::error::BatchExecuteStatementError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchExecuteStatementError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -149,7 +149,7 @@ pub fn parse_begin_transaction_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BeginTransactionOutput, crate::error::BeginTransactionError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BeginTransactionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -288,7 +288,7 @@ pub fn parse_commit_transaction_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CommitTransactionOutput, crate::error::CommitTransactionError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CommitTransactionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -447,7 +447,7 @@ pub fn parse_commit_transaction_response(
 pub fn parse_execute_sql_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ExecuteSqlOutput, crate::error::ExecuteSqlError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExecuteSqlError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -562,7 +562,7 @@ pub fn parse_execute_statement_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ExecuteStatementOutput, crate::error::ExecuteStatementError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExecuteStatementError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -703,7 +703,7 @@ pub fn parse_rollback_transaction_error(
     crate::output::RollbackTransactionOutput,
     crate::error::RollbackTransactionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RollbackTransactionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

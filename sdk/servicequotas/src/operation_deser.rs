@@ -6,7 +6,7 @@ pub fn parse_associate_service_quota_template_error(
     crate::output::AssociateServiceQuotaTemplateOutput,
     crate::error::AssociateServiceQuotaTemplateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -157,7 +157,7 @@ pub fn parse_delete_service_quota_increase_request_from_template_error(
     crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput,
     crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -323,7 +323,7 @@ pub fn parse_disassociate_service_quota_template_error(
     crate::output::DisassociateServiceQuotaTemplateOutput,
     crate::error::DisassociateServiceQuotaTemplateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -473,7 +473,7 @@ pub fn parse_get_association_for_service_quota_template_error(
     crate::output::GetAssociationForServiceQuotaTemplateOutput,
     crate::error::GetAssociationForServiceQuotaTemplateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -630,7 +630,7 @@ pub fn parse_get_aws_default_service_quota_error(
     crate::output::GetAwsDefaultServiceQuotaOutput,
     crate::error::GetAWSDefaultServiceQuotaError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAWSDefaultServiceQuotaError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -780,7 +780,7 @@ pub fn parse_get_requested_service_quota_change_error(
     crate::output::GetRequestedServiceQuotaChangeOutput,
     crate::error::GetRequestedServiceQuotaChangeError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRequestedServiceQuotaChangeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -927,7 +927,7 @@ pub fn parse_get_requested_service_quota_change_response(
 pub fn parse_get_service_quota_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetServiceQuotaOutput, crate::error::GetServiceQuotaError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetServiceQuotaError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1068,7 +1068,7 @@ pub fn parse_get_service_quota_increase_request_from_template_error(
     crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput,
     crate::error::GetServiceQuotaIncreaseRequestFromTemplateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1238,7 +1238,7 @@ pub fn parse_list_aws_default_service_quotas_error(
     crate::output::ListAwsDefaultServiceQuotasOutput,
     crate::error::ListAWSDefaultServiceQuotasError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1410,7 +1410,7 @@ pub fn parse_list_requested_service_quota_change_history_error(
     crate::output::ListRequestedServiceQuotaChangeHistoryOutput,
     crate::error::ListRequestedServiceQuotaChangeHistoryError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1539,7 +1539,7 @@ pub fn parse_list_requested_service_quota_change_history_by_quota_error(
     crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput,
     crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1664,7 +1664,7 @@ pub fn parse_list_service_quota_increase_requests_in_template_error(
     crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput,
     crate::error::ListServiceQuotaIncreaseRequestsInTemplateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1818,7 +1818,7 @@ pub fn parse_list_service_quotas_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListServiceQuotasOutput, crate::error::ListServiceQuotasError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListServiceQuotasError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1977,7 +1977,7 @@ pub fn parse_list_service_quotas_response(
 pub fn parse_list_services_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListServicesOutput, crate::error::ListServicesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListServicesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2114,7 +2114,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2260,7 +2260,7 @@ pub fn parse_put_service_quota_increase_request_into_template_error(
     crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput,
     crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2444,7 +2444,7 @@ pub fn parse_request_service_quota_increase_error(
     crate::output::RequestServiceQuotaIncreaseOutput,
     crate::error::RequestServiceQuotaIncreaseError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2675,7 +2675,7 @@ pub fn parse_request_service_quota_increase_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2851,7 +2851,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

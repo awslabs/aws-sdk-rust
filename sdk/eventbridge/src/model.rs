@@ -3530,6 +3530,7 @@ impl AsRef<str> for AssignPublicIp {
 )]
 pub enum LaunchType {
     Ec2,
+    External,
     Fargate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3538,6 +3539,7 @@ impl std::convert::From<&str> for LaunchType {
     fn from(s: &str) -> Self {
         match s {
             "EC2" => LaunchType::Ec2,
+            "EXTERNAL" => LaunchType::External,
             "FARGATE" => LaunchType::Fargate,
             other => LaunchType::Unknown(other.to_owned()),
         }
@@ -3554,12 +3556,13 @@ impl LaunchType {
     pub fn as_str(&self) -> &str {
         match self {
             LaunchType::Ec2 => "EC2",
+            LaunchType::External => "EXTERNAL",
             LaunchType::Fargate => "FARGATE",
             LaunchType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["EC2", "FARGATE"]
+        &["EC2", "EXTERNAL", "FARGATE"]
     }
 }
 impl AsRef<str> for LaunchType {

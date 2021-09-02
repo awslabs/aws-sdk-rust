@@ -3,7 +3,7 @@
 pub fn parse_create_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -181,7 +181,7 @@ pub fn parse_create_control_panel_error(
     crate::output::CreateControlPanelOutput,
     crate::error::CreateControlPanelError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateControlPanelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -364,7 +364,7 @@ pub fn parse_create_routing_control_error(
     crate::output::CreateRoutingControlOutput,
     crate::error::CreateRoutingControlError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateRoutingControlError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -545,7 +545,7 @@ pub fn parse_create_safety_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateSafetyRuleOutput, crate::error::CreateSafetyRuleError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSafetyRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -620,7 +620,7 @@ pub fn parse_create_safety_rule_response(
 pub fn parse_delete_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -777,7 +777,7 @@ pub fn parse_delete_control_panel_error(
     crate::output::DeleteControlPanelOutput,
     crate::error::DeleteControlPanelError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteControlPanelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -937,7 +937,7 @@ pub fn parse_delete_routing_control_error(
     crate::output::DeleteRoutingControlOutput,
     crate::error::DeleteRoutingControlError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRoutingControlError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1095,7 +1095,7 @@ pub fn parse_delete_safety_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteSafetyRuleOutput, crate::error::DeleteSafetyRuleError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSafetyRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1187,7 +1187,7 @@ pub fn parse_delete_safety_rule_response(
 pub fn parse_describe_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeClusterOutput, crate::error::DescribeClusterError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1347,7 +1347,7 @@ pub fn parse_describe_control_panel_error(
     crate::output::DescribeControlPanelOutput,
     crate::error::DescribeControlPanelError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeControlPanelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1512,7 +1512,7 @@ pub fn parse_describe_routing_control_error(
     crate::output::DescribeRoutingControlOutput,
     crate::error::DescribeRoutingControlError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRoutingControlError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1681,7 +1681,7 @@ pub fn parse_describe_safety_rule_error(
     crate::output::DescribeSafetyRuleOutput,
     crate::error::DescribeSafetyRuleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSafetyRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1762,7 +1762,7 @@ pub fn parse_list_associated_route53_health_checks_error(
     crate::output::ListAssociatedRoute53HealthChecksOutput,
     crate::error::ListAssociatedRoute53HealthChecksError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAssociatedRoute53HealthChecksError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1871,7 +1871,7 @@ pub fn parse_list_associated_route53_health_checks_response(
 pub fn parse_list_clusters_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListClustersOutput, crate::error::ListClustersError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListClustersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2007,7 +2007,7 @@ pub fn parse_list_control_panels_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListControlPanelsOutput, crate::error::ListControlPanelsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListControlPanelsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2149,7 +2149,7 @@ pub fn parse_list_routing_controls_error(
     crate::output::ListRoutingControlsOutput,
     crate::error::ListRoutingControlsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRoutingControlsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2290,7 +2290,7 @@ pub fn parse_list_routing_controls_response(
 pub fn parse_list_safety_rules_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListSafetyRulesOutput, crate::error::ListSafetyRulesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSafetyRulesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2429,7 +2429,7 @@ pub fn parse_update_control_panel_error(
     crate::output::UpdateControlPanelOutput,
     crate::error::UpdateControlPanelError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateControlPanelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2594,7 +2594,7 @@ pub fn parse_update_routing_control_error(
     crate::output::UpdateRoutingControlOutput,
     crate::error::UpdateRoutingControlError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateRoutingControlError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2757,7 +2757,7 @@ pub fn parse_update_safety_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateSafetyRuleOutput, crate::error::UpdateSafetyRuleError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateSafetyRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

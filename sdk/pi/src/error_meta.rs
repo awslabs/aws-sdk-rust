@@ -17,8 +17,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDimensionKeysError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeDimensionKeysError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeDimensionKeysError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeDimensionKeysError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeDimensionKeysErrorKind::InternalServiceError(inner) => {
@@ -38,8 +43,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDimensionKeysError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetDimensionKeyDetailsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetDimensionKeyDetailsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDimensionKeyDetailsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetDimensionKeyDetailsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetDimensionKeyDetailsErrorKind::InternalServiceError(inner) => {
@@ -59,8 +69,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetDimensionKeyDetailsErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetResourceMetricsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetResourceMetricsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetResourceMetricsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetResourceMetricsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetResourceMetricsErrorKind::InternalServiceError(inner) => {

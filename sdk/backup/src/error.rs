@@ -55,8 +55,8 @@ impl CreateBackupPlanError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -172,8 +172,8 @@ impl CreateBackupSelectionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -289,8 +289,8 @@ impl CreateBackupVaultError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -352,6 +352,240 @@ impl std::error::Error for CreateBackupVaultError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CreateFrameworkError {
+    pub kind: CreateFrameworkErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateFrameworkErrorKind {
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateFrameworkError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateFrameworkErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateFrameworkErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            CreateFrameworkErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateFrameworkErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            CreateFrameworkErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateFrameworkErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateFrameworkError {
+    fn code(&self) -> Option<&str> {
+        CreateFrameworkError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateFrameworkError {
+    pub fn new(kind: CreateFrameworkErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateFrameworkErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateFrameworkErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFrameworkErrorKind::AlreadyExistsException(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFrameworkErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFrameworkErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFrameworkErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFrameworkErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for CreateFrameworkError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateFrameworkErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateFrameworkErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            CreateFrameworkErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateFrameworkErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            CreateFrameworkErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateFrameworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateReportPlanError {
+    pub kind: CreateReportPlanErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateReportPlanErrorKind {
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateReportPlanError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateReportPlanErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateReportPlanErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            CreateReportPlanErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateReportPlanErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            CreateReportPlanErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateReportPlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateReportPlanError {
+    fn code(&self) -> Option<&str> {
+        CreateReportPlanError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateReportPlanError {
+    pub fn new(kind: CreateReportPlanErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateReportPlanErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateReportPlanErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReportPlanErrorKind::AlreadyExistsException(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReportPlanErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReportPlanErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReportPlanErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReportPlanErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for CreateReportPlanError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateReportPlanErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateReportPlanErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            CreateReportPlanErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateReportPlanErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            CreateReportPlanErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateReportPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DeleteBackupPlanError {
     pub kind: DeleteBackupPlanErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -406,8 +640,8 @@ impl DeleteBackupPlanError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -521,8 +755,8 @@ impl DeleteBackupSelectionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -631,8 +865,8 @@ impl DeleteBackupVaultError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -754,8 +988,8 @@ impl DeleteBackupVaultAccessPolicyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -878,8 +1112,8 @@ impl DeleteBackupVaultNotificationsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -942,6 +1176,120 @@ impl std::error::Error for DeleteBackupVaultNotificationsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeleteFrameworkError {
+    pub kind: DeleteFrameworkErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteFrameworkErrorKind {
+    ConflictException(crate::error::ConflictException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteFrameworkError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteFrameworkErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteFrameworkErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            DeleteFrameworkErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            DeleteFrameworkErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteFrameworkErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteFrameworkErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteFrameworkError {
+    fn code(&self) -> Option<&str> {
+        DeleteFrameworkError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteFrameworkError {
+    pub fn new(kind: DeleteFrameworkErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteFrameworkErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteFrameworkErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteFrameworkErrorKind::ConflictException(_))
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFrameworkErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFrameworkErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFrameworkErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFrameworkErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteFrameworkError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteFrameworkErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteFrameworkErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            DeleteFrameworkErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            DeleteFrameworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteFrameworkErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteFrameworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DeleteRecoveryPointError {
     pub kind: DeleteRecoveryPointErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -998,8 +1346,8 @@ impl DeleteRecoveryPointError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1068,6 +1416,120 @@ impl std::error::Error for DeleteRecoveryPointError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeleteReportPlanError {
+    pub kind: DeleteReportPlanErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteReportPlanErrorKind {
+    ConflictException(crate::error::ConflictException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteReportPlanError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteReportPlanErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteReportPlanErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            DeleteReportPlanErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            DeleteReportPlanErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteReportPlanErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteReportPlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteReportPlanError {
+    fn code(&self) -> Option<&str> {
+        DeleteReportPlanError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteReportPlanError {
+    pub fn new(kind: DeleteReportPlanErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteReportPlanErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteReportPlanErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteReportPlanErrorKind::ConflictException(_))
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReportPlanErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReportPlanErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReportPlanErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReportPlanErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteReportPlanError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteReportPlanErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteReportPlanErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            DeleteReportPlanErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            DeleteReportPlanErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteReportPlanErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteReportPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeBackupJobError {
     pub kind: DescribeBackupJobErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -1122,8 +1584,8 @@ impl DescribeBackupJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1237,8 +1699,8 @@ impl DescribeBackupVaultError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1345,8 +1807,8 @@ impl DescribeCopyJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1401,6 +1863,114 @@ impl std::error::Error for DescribeCopyJobError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DescribeFrameworkError {
+    pub kind: DescribeFrameworkErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeFrameworkErrorKind {
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeFrameworkError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeFrameworkErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            DescribeFrameworkErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            DescribeFrameworkErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeFrameworkErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeFrameworkErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeFrameworkError {
+    fn code(&self) -> Option<&str> {
+        DescribeFrameworkError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeFrameworkError {
+    pub fn new(kind: DescribeFrameworkErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeFrameworkErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeFrameworkErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFrameworkErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFrameworkErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFrameworkErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFrameworkErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeFrameworkError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeFrameworkErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            DescribeFrameworkErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            DescribeFrameworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeFrameworkErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeFrameworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeGlobalSettingsError {
     pub kind: DescribeGlobalSettingsErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -1449,8 +2019,8 @@ impl DescribeGlobalSettingsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1549,8 +2119,8 @@ impl DescribeProtectedResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1661,8 +2231,8 @@ impl DescribeRecoveryPointError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1763,8 +2333,8 @@ impl DescribeRegionSettingsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1792,6 +2362,213 @@ impl std::error::Error for DescribeRegionSettingsError {
         match &self.kind {
             DescribeRegionSettingsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeRegionSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeReportJobError {
+    pub kind: DescribeReportJobErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeReportJobErrorKind {
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeReportJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeReportJobErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            DescribeReportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeReportJobErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeReportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeReportJobError {
+    fn code(&self) -> Option<&str> {
+        DescribeReportJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeReportJobError {
+    pub fn new(kind: DescribeReportJobErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeReportJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeReportJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReportJobErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReportJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReportJobErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeReportJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeReportJobErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            DescribeReportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeReportJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeReportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeReportPlanError {
+    pub kind: DescribeReportPlanErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeReportPlanErrorKind {
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeReportPlanError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeReportPlanErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            DescribeReportPlanErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            DescribeReportPlanErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeReportPlanErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeReportPlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeReportPlanError {
+    fn code(&self) -> Option<&str> {
+        DescribeReportPlanError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeReportPlanError {
+    pub fn new(kind: DescribeReportPlanErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeReportPlanErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeReportPlanErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReportPlanErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReportPlanErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReportPlanErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReportPlanErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeReportPlanError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeReportPlanErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            DescribeReportPlanErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            DescribeReportPlanErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeReportPlanErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeReportPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1852,8 +2629,8 @@ impl DescribeRestoreJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1979,8 +2756,8 @@ impl DisassociateRecoveryPointError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2111,8 +2888,8 @@ impl ExportBackupPlanTemplateError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2223,8 +3000,8 @@ impl GetBackupPlanError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2333,8 +3110,8 @@ impl GetBackupPlanFromJSONError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2454,8 +3231,8 @@ impl GetBackupPlanFromTemplateError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2566,8 +3343,8 @@ impl GetBackupSelectionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2680,8 +3457,8 @@ impl GetBackupVaultAccessPolicyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2802,8 +3579,8 @@ impl GetBackupVaultNotificationsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2924,8 +3701,8 @@ impl GetRecoveryPointRestoreMetadataError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3036,8 +3813,8 @@ impl GetSupportedResourceTypesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3119,8 +3896,8 @@ impl ListBackupJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3213,8 +3990,8 @@ impl ListBackupPlansError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3325,8 +4102,8 @@ impl ListBackupPlanTemplatesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3441,8 +4218,8 @@ impl ListBackupPlanVersionsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3549,8 +4326,8 @@ impl ListBackupSelectionsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3657,8 +4434,8 @@ impl ListBackupVaultsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3761,8 +4538,8 @@ impl ListCopyJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3797,6 +4574,96 @@ impl std::error::Error for ListCopyJobsError {
             ListCopyJobsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListCopyJobsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListCopyJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListFrameworksError {
+    pub kind: ListFrameworksErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListFrameworksErrorKind {
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListFrameworksError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListFrameworksErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListFrameworksErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListFrameworksErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListFrameworksError {
+    fn code(&self) -> Option<&str> {
+        ListFrameworksError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListFrameworksError {
+    pub fn new(kind: ListFrameworksErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListFrameworksErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListFrameworksErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFrameworksErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFrameworksErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListFrameworksError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListFrameworksErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListFrameworksErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListFrameworksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3853,8 +4720,8 @@ impl ListProtectedResourcesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3955,8 +4822,8 @@ impl ListRecoveryPointsByBackupVaultError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4079,8 +4946,8 @@ impl ListRecoveryPointsByResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4143,6 +5010,186 @@ impl std::error::Error for ListRecoveryPointsByResourceError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct ListReportJobsError {
+    pub kind: ListReportJobsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListReportJobsErrorKind {
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListReportJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListReportJobsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListReportJobsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListReportJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListReportJobsError {
+    fn code(&self) -> Option<&str> {
+        ListReportJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListReportJobsError {
+    pub fn new(kind: ListReportJobsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListReportJobsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListReportJobsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReportJobsErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReportJobsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListReportJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListReportJobsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListReportJobsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListReportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListReportPlansError {
+    pub kind: ListReportPlansErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListReportPlansErrorKind {
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListReportPlansError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListReportPlansErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListReportPlansErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListReportPlansErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListReportPlansError {
+    fn code(&self) -> Option<&str> {
+        ListReportPlansError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListReportPlansError {
+    pub fn new(kind: ListReportPlansErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListReportPlansErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListReportPlansErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReportPlansErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReportPlansErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListReportPlansError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListReportPlansErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListReportPlansErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListReportPlansErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct ListRestoreJobsError {
     pub kind: ListRestoreJobsErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -4195,8 +5242,8 @@ impl ListRestoreJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4303,8 +5350,8 @@ impl ListTagsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4414,8 +5461,8 @@ impl PutBackupVaultAccessPolicyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4536,8 +5583,8 @@ impl PutBackupVaultNotificationsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4654,8 +5701,8 @@ impl StartBackupJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4780,8 +5827,8 @@ impl StartCopyJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4847,6 +5894,114 @@ impl std::error::Error for StartCopyJobError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct StartReportJobError {
+    pub kind: StartReportJobErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartReportJobErrorKind {
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartReportJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartReportJobErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            StartReportJobErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            StartReportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartReportJobErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            StartReportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for StartReportJobError {
+    fn code(&self) -> Option<&str> {
+        StartReportJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartReportJobError {
+    pub fn new(kind: StartReportJobErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartReportJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartReportJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReportJobErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReportJobErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReportJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReportJobErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for StartReportJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartReportJobErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            StartReportJobErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            StartReportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartReportJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            StartReportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct StartRestoreJobError {
     pub kind: StartRestoreJobErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -4899,8 +6054,8 @@ impl StartRestoreJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5009,8 +6164,8 @@ impl StopBackupJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5126,8 +6281,8 @@ impl TagResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5238,8 +6393,8 @@ impl UntagResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5346,8 +6501,8 @@ impl UpdateBackupPlanError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5396,6 +6551,129 @@ impl std::error::Error for UpdateBackupPlanError {
             UpdateBackupPlanErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateBackupPlanErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateBackupPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateFrameworkError {
+    pub kind: UpdateFrameworkErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateFrameworkErrorKind {
+    ConflictException(crate::error::ConflictException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateFrameworkError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateFrameworkErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateFrameworkErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            UpdateFrameworkErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateFrameworkErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            UpdateFrameworkErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateFrameworkErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateFrameworkErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateFrameworkError {
+    fn code(&self) -> Option<&str> {
+        UpdateFrameworkError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateFrameworkError {
+    pub fn new(kind: UpdateFrameworkErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateFrameworkErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateFrameworkErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateFrameworkErrorKind::ConflictException(_))
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFrameworkErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFrameworkErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFrameworkErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFrameworkErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFrameworkErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateFrameworkError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateFrameworkErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateFrameworkErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            UpdateFrameworkErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateFrameworkErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            UpdateFrameworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateFrameworkErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateFrameworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5454,8 +6732,8 @@ impl UpdateGlobalSettingsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5570,8 +6848,8 @@ impl UpdateRecoveryPointLifecycleError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5684,8 +6962,8 @@ impl UpdateRegionSettingsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5727,6 +7005,120 @@ impl std::error::Error for UpdateRegionSettingsError {
             UpdateRegionSettingsErrorKind::MissingParameterValueException(_inner) => Some(_inner),
             UpdateRegionSettingsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateRegionSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateReportPlanError {
+    pub kind: UpdateReportPlanErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateReportPlanErrorKind {
+    ConflictException(crate::error::ConflictException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateReportPlanError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateReportPlanErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateReportPlanErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            UpdateReportPlanErrorKind::MissingParameterValueException(_inner) => _inner.fmt(f),
+            UpdateReportPlanErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateReportPlanErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateReportPlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateReportPlanError {
+    fn code(&self) -> Option<&str> {
+        UpdateReportPlanError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateReportPlanError {
+    pub fn new(kind: UpdateReportPlanErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateReportPlanErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateReportPlanErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateReportPlanErrorKind::ConflictException(_))
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReportPlanErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReportPlanErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReportPlanErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReportPlanErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateReportPlanError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateReportPlanErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateReportPlanErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            UpdateReportPlanErrorKind::MissingParameterValueException(_inner) => Some(_inner),
+            UpdateReportPlanErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateReportPlanErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateReportPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5831,6 +7223,106 @@ impl ServiceUnavailableException {
     }
 }
 
+/// <p>A resource that is required for the action doesn't exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotFoundException {
+    pub code: std::option::Option<std::string::String>,
+    pub message: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub context: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceNotFoundException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("context", &self.context);
+        formatter.finish()
+    }
+}
+impl ResourceNotFoundException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceNotFoundException")?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceNotFoundException {}
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+pub mod resource_not_found_exception {
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) context: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p></p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p></p>
+        pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.context = Some(input.into());
+            self
+        }
+        pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.context = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
+                code: self.code,
+                message: self.message,
+                r#type: self.r#type,
+                context: self.context,
+            }
+        }
+    }
+}
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
+    }
+}
+
 /// <p>Indicates that a required parameter is missing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5860,8 +7352,8 @@ impl MissingParameterValueException {
 impl std::fmt::Display for MissingParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MissingParameterValueException")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
@@ -5961,8 +7453,8 @@ impl InvalidParameterValueException {
 impl std::fmt::Display for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterValueException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -6032,20 +7524,19 @@ impl InvalidParameterValueException {
     }
 }
 
-/// <p>A resource that is required for the action doesn't exist.</p>
+/// <p>Backup can't perform the action that you requested until it finishes
+/// performing a previous action. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNotFoundException {
+pub struct ConflictException {
     pub code: std::option::Option<std::string::String>,
     pub message: std::option::Option<std::string::String>,
-    /// <p></p>
     pub r#type: std::option::Option<std::string::String>,
-    /// <p></p>
     pub context: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundException {
+impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
+        let mut formatter = f.debug_struct("ConflictException");
         formatter.field("code", &self.code);
         formatter.field("message", &self.message);
         formatter.field("r#type", &self.r#type);
@@ -6053,24 +7544,24 @@ impl std::fmt::Debug for ResourceNotFoundException {
         formatter.finish()
     }
 }
-impl ResourceNotFoundException {
+impl ConflictException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceNotFoundException {
+impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        write!(f, "ConflictException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceNotFoundException {}
-/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-pub mod resource_not_found_exception {
-    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException)
+pub mod conflict_exception {
+    /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6096,7 +7587,6 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// <p></p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
@@ -6105,7 +7595,6 @@ pub mod resource_not_found_exception {
             self.r#type = input;
             self
         }
-        /// <p></p>
         pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
             self.context = Some(input.into());
             self
@@ -6114,9 +7603,9 @@ pub mod resource_not_found_exception {
             self.context = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-        pub fn build(self) -> crate::error::ResourceNotFoundException {
-            crate::error::ResourceNotFoundException {
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
                 code: self.code,
                 message: self.message,
                 r#type: self.r#type,
@@ -6125,10 +7614,10 @@ pub mod resource_not_found_exception {
         }
     }
 }
-impl ResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
-        crate::error::resource_not_found_exception::Builder::default()
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
     }
 }
 
@@ -6162,8 +7651,8 @@ impl InvalidRequestException {
 impl std::fmt::Display for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRequestException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -6263,8 +7752,8 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -6334,8 +7823,8 @@ impl LimitExceededException {
     }
 }
 
-/// <p>AWS Backup is already performing an action on this recovery point. It can't perform the
-/// action you requested until the first action finishes. Try again later.</p>
+/// <p>Backup is already performing an action on this recovery point. It can't
+/// perform the action you requested until the first action finishes. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceStateException {
@@ -6364,8 +7853,8 @@ impl InvalidResourceStateException {
 impl std::fmt::Display for InvalidResourceStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResourceStateException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
@@ -6435,8 +7924,7 @@ impl InvalidResourceStateException {
     }
 }
 
-/// <p>A dependent AWS service or resource returned an error to the AWS Backup service, and the
-/// action cannot be completed.</p>
+/// <p>A dependent Amazon Web Services service or resource returned an error to the Backup service, and the action cannot be completed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DependencyFailureException {
@@ -6465,8 +7953,8 @@ impl DependencyFailureException {
 impl std::fmt::Display for DependencyFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DependencyFailureException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -6571,8 +8059,8 @@ impl AlreadyExistsException {
 impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlreadyExistsException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }

@@ -6,7 +6,7 @@ pub fn parse_delete_report_definition_error(
     crate::output::DeleteReportDefinitionOutput,
     crate::error::DeleteReportDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteReportDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -92,7 +92,7 @@ pub fn parse_describe_report_definitions_error(
     crate::output::DescribeReportDefinitionsOutput,
     crate::error::DescribeReportDefinitionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReportDefinitionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -157,7 +157,7 @@ pub fn parse_modify_report_definition_error(
     crate::output::ModifyReportDefinitionOutput,
     crate::error::ModifyReportDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyReportDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -238,7 +238,7 @@ pub fn parse_put_report_definition_error(
     crate::output::PutReportDefinitionOutput,
     crate::error::PutReportDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutReportDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

@@ -6,7 +6,7 @@ pub fn parse_add_attachments_to_set_error(
     crate::output::AddAttachmentsToSetOutput,
     crate::error::AddAttachmentsToSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -149,7 +149,7 @@ pub fn parse_add_communication_to_case_error(
     crate::output::AddCommunicationToCaseOutput,
     crate::error::AddCommunicationToCaseError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -275,7 +275,7 @@ pub fn parse_add_communication_to_case_response(
 pub fn parse_create_case_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateCaseOutput, crate::error::CreateCaseError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCaseError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -393,7 +393,7 @@ pub fn parse_describe_attachment_error(
     crate::output::DescribeAttachmentOutput,
     crate::error::DescribeAttachmentError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAttachmentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -490,7 +490,7 @@ pub fn parse_describe_attachment_response(
 pub fn parse_describe_cases_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeCasesOutput, crate::error::DescribeCasesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCasesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -567,7 +567,7 @@ pub fn parse_describe_communications_error(
     crate::output::DescribeCommunicationsOutput,
     crate::error::DescribeCommunicationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCommunicationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -651,7 +651,7 @@ pub fn parse_describe_services_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeServicesOutput, crate::error::DescribeServicesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeServicesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -708,7 +708,7 @@ pub fn parse_describe_severity_levels_error(
     crate::output::DescribeSeverityLevelsOutput,
     crate::error::DescribeSeverityLevelsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSeverityLevelsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -773,7 +773,7 @@ pub fn parse_describe_trusted_advisor_check_refresh_statuses_error(
     crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput,
     crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -834,7 +834,7 @@ pub fn parse_describe_trusted_advisor_check_result_error(
     crate::output::DescribeTrustedAdvisorCheckResultOutput,
     crate::error::DescribeTrustedAdvisorCheckResultError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTrustedAdvisorCheckResultError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -898,7 +898,7 @@ pub fn parse_describe_trusted_advisor_checks_error(
     crate::output::DescribeTrustedAdvisorChecksOutput,
     crate::error::DescribeTrustedAdvisorChecksError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTrustedAdvisorChecksError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -963,7 +963,7 @@ pub fn parse_describe_trusted_advisor_check_summaries_error(
     crate::output::DescribeTrustedAdvisorCheckSummariesOutput,
     crate::error::DescribeTrustedAdvisorCheckSummariesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTrustedAdvisorCheckSummariesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1029,7 +1029,7 @@ pub fn parse_refresh_trusted_advisor_check_error(
     crate::output::RefreshTrustedAdvisorCheckOutput,
     crate::error::RefreshTrustedAdvisorCheckError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RefreshTrustedAdvisorCheckError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1091,7 +1091,7 @@ pub fn parse_refresh_trusted_advisor_check_response(
 pub fn parse_resolve_case_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ResolveCaseOutput, crate::error::ResolveCaseError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResolveCaseError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

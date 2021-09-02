@@ -4,7 +4,7 @@ pub fn parse_describe_services_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeServicesOutput, crate::error::DescribeServicesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeServicesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -144,7 +144,7 @@ pub fn parse_get_attribute_values_error(
     crate::output::GetAttributeValuesOutput,
     crate::error::GetAttributeValuesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAttributeValuesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -285,7 +285,7 @@ pub fn parse_get_attribute_values_response(
 pub fn parse_get_products_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetProductsOutput, crate::error::GetProductsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetProductsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

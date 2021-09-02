@@ -31,8 +31,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteThingShadowError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteThingShadowError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteThingShadowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteThingShadowError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteThingShadowErrorKind::InternalFailureException(inner) => {
@@ -67,8 +70,47 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteThingShadowError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetThingShadowError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetThingShadowError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetRetainedMessageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetRetainedMessageError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetRetainedMessageErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::GetRetainedMessageErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::GetRetainedMessageErrorKind::MethodNotAllowedException(inner) => {
+                    Error::MethodNotAllowedException(inner)
+                }
+                crate::error::GetRetainedMessageErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetRetainedMessageErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::GetRetainedMessageErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetRetainedMessageErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::GetRetainedMessageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::GetThingShadowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetThingShadowError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetThingShadowErrorKind::InternalFailureException(inner) => {
@@ -101,9 +143,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetThingShadowError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListNamedShadowsForThingError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListNamedShadowsForThingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListNamedShadowsForThingError>,
+        err: smithy_http::result::SdkError<crate::error::ListNamedShadowsForThingError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -136,8 +182,46 @@ impl From<smithy_http::result::SdkError<crate::error::ListNamedShadowsForThingEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PublishError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PublishError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListRetainedMessagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListRetainedMessagesError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListRetainedMessagesErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::ListRetainedMessagesErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListRetainedMessagesErrorKind::MethodNotAllowedException(inner) => {
+                    Error::MethodNotAllowedException(inner)
+                }
+                crate::error::ListRetainedMessagesErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::ListRetainedMessagesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListRetainedMessagesErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::ListRetainedMessagesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::PublishError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PublishError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PublishErrorKind::InternalFailureException(inner) => {
@@ -158,8 +242,11 @@ impl From<smithy_http::result::SdkError<crate::error::PublishError>> for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateThingShadowError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateThingShadowError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateThingShadowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateThingShadowError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateThingShadowErrorKind::ConflictException(inner) => {

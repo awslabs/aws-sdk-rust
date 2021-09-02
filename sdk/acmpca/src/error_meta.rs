@@ -49,9 +49,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateCertificateAuthorityError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateCertificateAuthorityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateCertificateAuthorityError>,
+        err: smithy_http::result::SdkError<crate::error::CreateCertificateAuthorityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -75,12 +79,16 @@ impl From<smithy_http::result::SdkError<crate::error::CreateCertificateAuthority
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateCertificateAuthorityAuditReportError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::CreateCertificateAuthorityAuditReportError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::CreateCertificateAuthorityAuditReportError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -97,8 +105,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateCertificateAuthority
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreatePermissionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreatePermissionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreatePermissionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreatePermissionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreatePermissionErrorKind::InvalidArnException(inner) => {
@@ -127,9 +138,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreatePermissionError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteCertificateAuthorityError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteCertificateAuthorityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteCertificateAuthorityError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteCertificateAuthorityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -143,8 +158,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteCertificateAuthority
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeletePermissionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeletePermissionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeletePermissionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeletePermissionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeletePermissionErrorKind::InvalidArnException(inner) => {
@@ -167,8 +185,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeletePermissionError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeletePolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeletePolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeletePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeletePolicyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeletePolicyErrorKind::ConcurrentModificationException(inner) => {
@@ -195,11 +216,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeletePolicyError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeCertificateAuthorityError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeCertificateAuthorityError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeCertificateAuthorityError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeCertificateAuthorityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -217,12 +240,20 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeCertificateAuthori
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeCertificateAuthorityAuditReportError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<
+            crate::error::DescribeCertificateAuthorityAuditReportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DescribeCertificateAuthorityAuditReportError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -236,8 +267,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeCertificateAuthori
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetCertificateError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetCertificateErrorKind::InvalidArnException(inner) => {
@@ -261,11 +295,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetCertificateError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCertificateError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCertificateError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCertificateError>,
+        err: smithy_http::result::SdkError<
+            crate::error::GetCertificateAuthorityCertificateError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -278,9 +318,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCer
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCsrError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCsrError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCsrError>,
+        err: smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCsrError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -307,8 +351,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCsr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetPolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetPolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetPolicyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetPolicyErrorKind::InvalidArnException(inner) => {
@@ -329,12 +376,16 @@ impl From<smithy_http::result::SdkError<crate::error::GetPolicyError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ImportCertificateAuthorityCertificateError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::ImportCertificateAuthorityCertificateError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::ImportCertificateAuthorityCertificateError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -354,8 +405,11 @@ impl From<smithy_http::result::SdkError<crate::error::ImportCertificateAuthority
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::IssueCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::IssueCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::IssueCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::IssueCertificateError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::IssueCertificateErrorKind::InvalidArgsException(inner) => {
@@ -384,9 +438,13 @@ impl From<smithy_http::result::SdkError<crate::error::IssueCertificateError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListCertificateAuthoritiesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListCertificateAuthoritiesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListCertificateAuthoritiesError>,
+        err: smithy_http::result::SdkError<crate::error::ListCertificateAuthoritiesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -401,8 +459,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListCertificateAuthorities
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListPermissionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListPermissionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListPermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListPermissionsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListPermissionsErrorKind::InvalidArnException(inner) => {
@@ -426,8 +487,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListPermissionsError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsErrorKind::InvalidArnException(inner) => {
@@ -445,8 +509,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsError>> for Error 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutPolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutPolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutPolicyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutPolicyErrorKind::ConcurrentModificationException(inner) => {
@@ -476,9 +543,13 @@ impl From<smithy_http::result::SdkError<crate::error::PutPolicyError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RestoreCertificateAuthorityError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::RestoreCertificateAuthorityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RestoreCertificateAuthorityError>,
+        err: smithy_http::result::SdkError<crate::error::RestoreCertificateAuthorityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -499,8 +570,11 @@ impl From<smithy_http::result::SdkError<crate::error::RestoreCertificateAuthorit
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RevokeCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RevokeCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RevokeCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RevokeCertificateError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RevokeCertificateErrorKind::ConcurrentModificationException(
@@ -538,9 +612,12 @@ impl From<smithy_http::result::SdkError<crate::error::RevokeCertificateError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagCertificateAuthorityError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagCertificateAuthorityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::TagCertificateAuthorityError>,
+        err: smithy_http::result::SdkError<crate::error::TagCertificateAuthorityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -567,9 +644,13 @@ impl From<smithy_http::result::SdkError<crate::error::TagCertificateAuthorityErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagCertificateAuthorityError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagCertificateAuthorityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UntagCertificateAuthorityError>,
+        err: smithy_http::result::SdkError<crate::error::UntagCertificateAuthorityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -593,9 +674,13 @@ impl From<smithy_http::result::SdkError<crate::error::UntagCertificateAuthorityE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateCertificateAuthorityError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateCertificateAuthorityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateCertificateAuthorityError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateCertificateAuthorityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {

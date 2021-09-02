@@ -4,7 +4,7 @@ pub fn parse_create_scaling_plan_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateScalingPlanOutput, crate::error::CreateScalingPlanError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateScalingPlanError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -125,7 +125,7 @@ pub fn parse_delete_scaling_plan_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteScalingPlanOutput, crate::error::DeleteScalingPlanError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteScalingPlanError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -243,7 +243,7 @@ pub fn parse_describe_scaling_plan_resources_error(
     crate::output::DescribeScalingPlanResourcesOutput,
     crate::error::DescribeScalingPlanResourcesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeScalingPlanResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -373,7 +373,7 @@ pub fn parse_describe_scaling_plans_error(
     crate::output::DescribeScalingPlansOutput,
     crate::error::DescribeScalingPlansError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeScalingPlansError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -497,7 +497,7 @@ pub fn parse_get_scaling_plan_resource_forecast_data_error(
     crate::output::GetScalingPlanResourceForecastDataOutput,
     crate::error::GetScalingPlanResourceForecastDataError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetScalingPlanResourceForecastDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -580,7 +580,7 @@ pub fn parse_update_scaling_plan_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateScalingPlanOutput, crate::error::UpdateScalingPlanError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateScalingPlanError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

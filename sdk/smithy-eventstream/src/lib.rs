@@ -8,4 +8,5 @@
 mod buf;
 pub mod error;
 pub mod frame;
+pub mod smithy;
 pub mod str_bytes;

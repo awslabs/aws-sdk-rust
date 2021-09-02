@@ -6,7 +6,7 @@ pub fn parse_accept_inbound_cross_cluster_search_connection_error(
     crate::output::AcceptInboundCrossClusterSearchConnectionOutput,
     crate::error::AcceptInboundCrossClusterSearchConnectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AcceptInboundCrossClusterSearchConnectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -91,7 +91,7 @@ pub fn parse_accept_inbound_cross_cluster_search_connection_response(
 pub fn parse_add_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddTagsOutput, crate::error::AddTagsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -205,7 +205,7 @@ pub fn parse_associate_package_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AssociatePackageOutput, crate::error::AssociatePackageError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociatePackageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -366,7 +366,7 @@ pub fn parse_cancel_elasticsearch_service_software_update_error(
     crate::output::CancelElasticsearchServiceSoftwareUpdateOutput,
     crate::error::CancelElasticsearchServiceSoftwareUpdateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelElasticsearchServiceSoftwareUpdateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -467,7 +467,7 @@ pub fn parse_create_elasticsearch_domain_error(
     crate::output::CreateElasticsearchDomainOutput,
     crate::error::CreateElasticsearchDomainError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateElasticsearchDomainError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -658,7 +658,7 @@ pub fn parse_create_outbound_cross_cluster_search_connection_error(
     crate::output::CreateOutboundCrossClusterSearchConnectionOutput,
     crate::error::CreateOutboundCrossClusterSearchConnectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateOutboundCrossClusterSearchConnectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -758,7 +758,7 @@ pub fn parse_create_outbound_cross_cluster_search_connection_response(
 pub fn parse_create_package_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreatePackageOutput, crate::error::CreatePackageError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePackageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -937,7 +937,7 @@ pub fn parse_delete_elasticsearch_domain_error(
     crate::output::DeleteElasticsearchDomainOutput,
     crate::error::DeleteElasticsearchDomainError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteElasticsearchDomainError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1066,7 +1066,7 @@ pub fn parse_delete_elasticsearch_service_role_error(
     crate::output::DeleteElasticsearchServiceRoleOutput,
     crate::error::DeleteElasticsearchServiceRoleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteElasticsearchServiceRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1165,7 +1165,7 @@ pub fn parse_delete_inbound_cross_cluster_search_connection_error(
     crate::output::DeleteInboundCrossClusterSearchConnectionOutput,
     crate::error::DeleteInboundCrossClusterSearchConnectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteInboundCrossClusterSearchConnectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1239,7 +1239,7 @@ pub fn parse_delete_outbound_cross_cluster_search_connection_error(
     crate::output::DeleteOutboundCrossClusterSearchConnectionOutput,
     crate::error::DeleteOutboundCrossClusterSearchConnectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteOutboundCrossClusterSearchConnectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1311,7 +1311,7 @@ pub fn parse_delete_outbound_cross_cluster_search_connection_response(
 pub fn parse_delete_package_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeletePackageOutput, crate::error::DeletePackageError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePackageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1471,7 +1471,7 @@ pub fn parse_describe_domain_auto_tunes_error(
     crate::output::DescribeDomainAutoTunesOutput,
     crate::error::DescribeDomainAutoTunesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDomainAutoTunesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1598,7 +1598,7 @@ pub fn parse_describe_elasticsearch_domain_error(
     crate::output::DescribeElasticsearchDomainOutput,
     crate::error::DescribeElasticsearchDomainError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeElasticsearchDomainError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1727,7 +1727,7 @@ pub fn parse_describe_elasticsearch_domain_config_error(
     crate::output::DescribeElasticsearchDomainConfigOutput,
     crate::error::DescribeElasticsearchDomainConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeElasticsearchDomainConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1854,7 +1854,7 @@ pub fn parse_describe_elasticsearch_domains_error(
     crate::output::DescribeElasticsearchDomainsOutput,
     crate::error::DescribeElasticsearchDomainsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeElasticsearchDomainsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1961,7 +1961,7 @@ pub fn parse_describe_elasticsearch_instance_type_limits_error(
     crate::output::DescribeElasticsearchInstanceTypeLimitsOutput,
     crate::error::DescribeElasticsearchInstanceTypeLimitsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeElasticsearchInstanceTypeLimitsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2090,7 +2090,7 @@ pub fn parse_describe_inbound_cross_cluster_search_connections_error(
     crate::output::DescribeInboundCrossClusterSearchConnectionsOutput,
     crate::error::DescribeInboundCrossClusterSearchConnectionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInboundCrossClusterSearchConnectionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2162,7 +2162,7 @@ pub fn parse_describe_outbound_cross_cluster_search_connections_error(
     crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput,
     crate::error::DescribeOutboundCrossClusterSearchConnectionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeOutboundCrossClusterSearchConnectionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2234,7 +2234,7 @@ pub fn parse_describe_packages_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribePackagesOutput, crate::error::DescribePackagesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePackagesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2374,7 +2374,7 @@ pub fn parse_describe_reserved_elasticsearch_instance_offerings_error(
     crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput,
     crate::error::DescribeReservedElasticsearchInstanceOfferingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReservedElasticsearchInstanceOfferingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2478,7 +2478,7 @@ pub fn parse_describe_reserved_elasticsearch_instances_error(
     crate::output::DescribeReservedElasticsearchInstancesOutput,
     crate::error::DescribeReservedElasticsearchInstancesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReservedElasticsearchInstancesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2577,7 +2577,7 @@ pub fn parse_dissociate_package_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DissociatePackageOutput, crate::error::DissociatePackageError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DissociatePackageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2738,7 +2738,7 @@ pub fn parse_get_compatible_elasticsearch_versions_error(
     crate::output::GetCompatibleElasticsearchVersionsOutput,
     crate::error::GetCompatibleElasticsearchVersionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCompatibleElasticsearchVersionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2851,7 +2851,7 @@ pub fn parse_get_package_version_history_error(
     crate::output::GetPackageVersionHistoryOutput,
     crate::error::GetPackageVersionHistoryError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPackageVersionHistoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2997,7 +2997,7 @@ pub fn parse_get_upgrade_history_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetUpgradeHistoryOutput, crate::error::GetUpgradeHistoryError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetUpgradeHistoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3136,7 +3136,7 @@ pub fn parse_get_upgrade_status_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetUpgradeStatusOutput, crate::error::GetUpgradeStatusError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetUpgradeStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3272,7 +3272,7 @@ pub fn parse_get_upgrade_status_response(
 pub fn parse_list_domain_names_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListDomainNamesOutput, crate::error::ListDomainNamesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDomainNamesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3349,7 +3349,7 @@ pub fn parse_list_domains_for_package_error(
     crate::output::ListDomainsForPackageOutput,
     crate::error::ListDomainsForPackageError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDomainsForPackageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3493,7 +3493,7 @@ pub fn parse_list_elasticsearch_instance_types_error(
     crate::output::ListElasticsearchInstanceTypesOutput,
     crate::error::ListElasticsearchInstanceTypesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListElasticsearchInstanceTypesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3617,7 +3617,7 @@ pub fn parse_list_elasticsearch_versions_error(
     crate::output::ListElasticsearchVersionsOutput,
     crate::error::ListElasticsearchVersionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListElasticsearchVersionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3746,7 +3746,7 @@ pub fn parse_list_packages_for_domain_error(
     crate::output::ListPackagesForDomainOutput,
     crate::error::ListPackagesForDomainError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPackagesForDomainError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3887,7 +3887,7 @@ pub fn parse_list_packages_for_domain_response(
 pub fn parse_list_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4004,7 +4004,7 @@ pub fn parse_purchase_reserved_elasticsearch_instance_offering_error(
     crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput,
     crate::error::PurchaseReservedElasticsearchInstanceOfferingError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PurchaseReservedElasticsearchInstanceOfferingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4134,7 +4134,7 @@ pub fn parse_reject_inbound_cross_cluster_search_connection_error(
     crate::output::RejectInboundCrossClusterSearchConnectionOutput,
     crate::error::RejectInboundCrossClusterSearchConnectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RejectInboundCrossClusterSearchConnectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4205,7 +4205,7 @@ pub fn parse_reject_inbound_cross_cluster_search_connection_response(
 pub fn parse_remove_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RemoveTagsOutput, crate::error::RemoveTagsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4300,7 +4300,7 @@ pub fn parse_start_elasticsearch_service_software_update_error(
     crate::output::StartElasticsearchServiceSoftwareUpdateOutput,
     crate::error::StartElasticsearchServiceSoftwareUpdateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartElasticsearchServiceSoftwareUpdateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4401,7 +4401,7 @@ pub fn parse_update_elasticsearch_domain_config_error(
     crate::output::UpdateElasticsearchDomainConfigOutput,
     crate::error::UpdateElasticsearchDomainConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateElasticsearchDomainConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4564,7 +4564,7 @@ pub fn parse_update_elasticsearch_domain_config_response(
 pub fn parse_update_package_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdatePackageOutput, crate::error::UpdatePackageError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdatePackageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4724,7 +4724,7 @@ pub fn parse_upgrade_elasticsearch_domain_error(
     crate::output::UpgradeElasticsearchDomainOutput,
     crate::error::UpgradeElasticsearchDomainError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpgradeElasticsearchDomainError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

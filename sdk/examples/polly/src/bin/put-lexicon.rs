@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_types::region::ProvideRegion;
-use polly::{Client, Config, Error, Region, PKG_VERSION};
+use aws_config::meta::region::RegionProviderChain;
+use polly::{Client, Error, Region, PKG_VERSION};
 
 use structopt::StructOpt;
 
@@ -12,7 +12,7 @@ use structopt::StructOpt;
 struct Opt {
     /// The default AWS Region.
     #[structopt(short, long)]
-    default_region: Option<String>,
+    region: Option<String>,
 
     /// The name of the lexicon.
     #[structopt(short, long)]
@@ -37,7 +37,7 @@ struct Opt {
 /// * `-f FROM` - The original text to customize.
 /// * `-n NAME` - The name of the lexicon.
 /// * `-t TO` - The customized version of the original text.
-/// * `[-d DEFAULT-REGION]` - The Region in which the client is created.
+/// * `[-r REGION]` - The Region in which the client is created.
 ///    If not supplied, uses the value of the **AWS_REGION** environment variable.
 ///    If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-v]` - Whether to display additional information.
@@ -48,30 +48,27 @@ async fn main() -> Result<(), Error> {
     let Opt {
         from,
         name,
-        default_region,
+        region,
         to,
         verbose,
     } = Opt::from_args();
 
-    let region = default_region
-        .as_ref()
-        .map(|region| Region::new(region.clone()))
-        .or_else(|| aws_types::region::default_provider().region())
-        .unwrap_or_else(|| Region::new("us-west-2"));
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
     println!();
 
     if verbose {
         println!("Polly version:    {}", PKG_VERSION);
-        println!("Region:           {:?}", &region);
+        println!("Region:           {:?}", shared_config.region().unwrap());
         println!("Lexicon name:     {}", &name);
         println!("Text to replace:  {}", &from);
         println!("Replacement text: {}", &to);
         println!();
     }
-
-    let config = Config::builder().region(region).build();
-    let client = Client::from_conf(config);
 
     let content = format!("<?xml version=\"1.0\" encoding=\"UTF-8\"?>
     <lexicon version=\"1.0\" xmlns=\"http://www.w3.org/2005/01/pronunciation-lexicon\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"

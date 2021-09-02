@@ -53,8 +53,8 @@ impl BatchCreateVariableError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -161,8 +161,8 @@ impl BatchGetVariableError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -227,6 +227,7 @@ pub enum CancelBatchPredictionJobErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -237,6 +238,7 @@ impl std::fmt::Display for CancelBatchPredictionJobError {
             CancelBatchPredictionJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CancelBatchPredictionJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CancelBatchPredictionJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CancelBatchPredictionJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CancelBatchPredictionJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CancelBatchPredictionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -269,8 +271,8 @@ impl CancelBatchPredictionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -304,6 +306,12 @@ impl CancelBatchPredictionJobError {
             CancelBatchPredictionJobErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelBatchPredictionJobErrorKind::ThrottlingException(_)
+        )
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -317,6 +325,7 @@ impl std::error::Error for CancelBatchPredictionJobError {
             CancelBatchPredictionJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CancelBatchPredictionJobErrorKind::InternalServerException(_inner) => Some(_inner),
             CancelBatchPredictionJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CancelBatchPredictionJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             CancelBatchPredictionJobErrorKind::ValidationException(_inner) => Some(_inner),
             CancelBatchPredictionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -335,6 +344,7 @@ pub enum CreateBatchPredictionJobErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -345,6 +355,7 @@ impl std::fmt::Display for CreateBatchPredictionJobError {
             CreateBatchPredictionJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateBatchPredictionJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateBatchPredictionJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateBatchPredictionJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateBatchPredictionJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateBatchPredictionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -377,8 +388,8 @@ impl CreateBatchPredictionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -412,6 +423,12 @@ impl CreateBatchPredictionJobError {
             CreateBatchPredictionJobErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchPredictionJobErrorKind::ThrottlingException(_)
+        )
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -425,6 +442,7 @@ impl std::error::Error for CreateBatchPredictionJobError {
             CreateBatchPredictionJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateBatchPredictionJobErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateBatchPredictionJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateBatchPredictionJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateBatchPredictionJobErrorKind::ValidationException(_inner) => Some(_inner),
             CreateBatchPredictionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -487,8 +505,8 @@ impl CreateDetectorVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -559,6 +577,7 @@ pub struct CreateModelError {
 pub enum CreateModelErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -568,6 +587,7 @@ impl std::fmt::Display for CreateModelError {
         match &self.kind {
             CreateModelErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateModelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateModelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateModelErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateModelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -600,8 +620,8 @@ impl CreateModelError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -623,6 +643,9 @@ impl CreateModelError {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::InternalServerException(_))
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::ValidationException(_))
     }
@@ -632,6 +655,7 @@ impl std::error::Error for CreateModelError {
         match &self.kind {
             CreateModelErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateModelErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateModelErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateModelErrorKind::ValidationException(_inner) => Some(_inner),
             CreateModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -650,6 +674,7 @@ pub enum CreateModelVersionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -660,6 +685,7 @@ impl std::fmt::Display for CreateModelVersionError {
             CreateModelVersionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateModelVersionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateModelVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateModelVersionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateModelVersionErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateModelVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -692,8 +718,8 @@ impl CreateModelVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -727,6 +753,12 @@ impl CreateModelVersionError {
             CreateModelVersionErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelVersionErrorKind::ThrottlingException(_)
+        )
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -740,6 +772,7 @@ impl std::error::Error for CreateModelVersionError {
             CreateModelVersionErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateModelVersionErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateModelVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateModelVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateModelVersionErrorKind::ValidationException(_inner) => Some(_inner),
             CreateModelVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -800,8 +833,8 @@ impl CreateRuleError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -896,8 +929,8 @@ impl CreateVariableError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -956,6 +989,7 @@ pub enum DeleteBatchPredictionJobErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -966,6 +1000,7 @@ impl std::fmt::Display for DeleteBatchPredictionJobError {
             DeleteBatchPredictionJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DeleteBatchPredictionJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DeleteBatchPredictionJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteBatchPredictionJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteBatchPredictionJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteBatchPredictionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -998,8 +1033,8 @@ impl DeleteBatchPredictionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1033,6 +1068,12 @@ impl DeleteBatchPredictionJobError {
             DeleteBatchPredictionJobErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBatchPredictionJobErrorKind::ThrottlingException(_)
+        )
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1046,6 +1087,7 @@ impl std::error::Error for DeleteBatchPredictionJobError {
             DeleteBatchPredictionJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteBatchPredictionJobErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteBatchPredictionJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteBatchPredictionJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteBatchPredictionJobErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteBatchPredictionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1108,8 +1150,8 @@ impl DeleteDetectorError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1218,8 +1260,8 @@ impl DeleteDetectorVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1298,6 +1340,7 @@ pub enum DeleteEntityTypeErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1308,6 +1351,7 @@ impl std::fmt::Display for DeleteEntityTypeError {
             DeleteEntityTypeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DeleteEntityTypeErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteEntityTypeErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteEntityTypeErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteEntityTypeErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteEntityTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1340,8 +1384,8 @@ impl DeleteEntityTypeError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1372,6 +1416,12 @@ impl DeleteEntityTypeError {
             DeleteEntityTypeErrorKind::InternalServerException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEntityTypeErrorKind::ThrottlingException(_)
+        )
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1385,6 +1435,7 @@ impl std::error::Error for DeleteEntityTypeError {
             DeleteEntityTypeErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteEntityTypeErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteEntityTypeErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteEntityTypeErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteEntityTypeErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteEntityTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1445,8 +1496,8 @@ impl DeleteEventError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1499,6 +1550,7 @@ pub enum DeleteEventTypeErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1509,6 +1561,7 @@ impl std::fmt::Display for DeleteEventTypeError {
             DeleteEventTypeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DeleteEventTypeErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteEventTypeErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteEventTypeErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteEventTypeErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteEventTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1541,8 +1594,8 @@ impl DeleteEventTypeError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1573,6 +1626,9 @@ impl DeleteEventTypeError {
             DeleteEventTypeErrorKind::InternalServerException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteEventTypeErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteEventTypeErrorKind::ValidationException(_))
     }
@@ -1583,6 +1639,7 @@ impl std::error::Error for DeleteEventTypeError {
             DeleteEventTypeErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteEventTypeErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteEventTypeErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteEventTypeErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteEventTypeErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteEventTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1645,8 +1702,8 @@ impl DeleteExternalModelError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1717,6 +1774,7 @@ pub struct DeleteLabelError {
 pub enum DeleteLabelErrorKind {
     ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1726,6 +1784,7 @@ impl std::fmt::Display for DeleteLabelError {
         match &self.kind {
             DeleteLabelErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteLabelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteLabelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteLabelErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteLabelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1758,8 +1817,8 @@ impl DeleteLabelError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1781,6 +1840,9 @@ impl DeleteLabelError {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteLabelErrorKind::InternalServerException(_))
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLabelErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteLabelErrorKind::ValidationException(_))
     }
@@ -1790,6 +1852,7 @@ impl std::error::Error for DeleteLabelError {
         match &self.kind {
             DeleteLabelErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteLabelErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteLabelErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteLabelErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteLabelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1808,6 +1871,7 @@ pub enum DeleteModelErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1818,6 +1882,7 @@ impl std::fmt::Display for DeleteModelError {
             DeleteModelErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DeleteModelErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteModelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteModelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteModelErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteModelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1850,8 +1915,8 @@ impl DeleteModelError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1876,6 +1941,9 @@ impl DeleteModelError {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::InternalServerException(_))
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteModelErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::ValidationException(_))
     }
@@ -1886,6 +1954,7 @@ impl std::error::Error for DeleteModelError {
             DeleteModelErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteModelErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteModelErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteModelErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteModelErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1904,6 +1973,7 @@ pub enum DeleteModelVersionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1914,6 +1984,7 @@ impl std::fmt::Display for DeleteModelVersionError {
             DeleteModelVersionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DeleteModelVersionErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteModelVersionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteModelVersionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteModelVersionErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteModelVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1946,8 +2017,8 @@ impl DeleteModelVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1981,6 +2052,12 @@ impl DeleteModelVersionError {
             DeleteModelVersionErrorKind::InternalServerException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteModelVersionErrorKind::ThrottlingException(_)
+        )
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1994,6 +2071,7 @@ impl std::error::Error for DeleteModelVersionError {
             DeleteModelVersionErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteModelVersionErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteModelVersionErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteModelVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteModelVersionErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteModelVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2056,8 +2134,8 @@ impl DeleteOutcomeError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2161,8 +2239,8 @@ impl DeleteRuleError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2263,8 +2341,8 @@ impl DeleteVariableError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2371,8 +2449,8 @@ impl DescribeDetectorError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2444,6 +2522,7 @@ pub enum DescribeModelVersionsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2454,6 +2533,7 @@ impl std::fmt::Display for DescribeModelVersionsError {
             DescribeModelVersionsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DescribeModelVersionsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DescribeModelVersionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeModelVersionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DescribeModelVersionsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DescribeModelVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2486,8 +2566,8 @@ impl DescribeModelVersionsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2521,6 +2601,12 @@ impl DescribeModelVersionsError {
             DescribeModelVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeModelVersionsErrorKind::ThrottlingException(_)
+        )
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2534,6 +2620,7 @@ impl std::error::Error for DescribeModelVersionsError {
             DescribeModelVersionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DescribeModelVersionsErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeModelVersionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeModelVersionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeModelVersionsErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeModelVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2552,6 +2639,7 @@ pub enum GetBatchPredictionJobsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2562,6 +2650,7 @@ impl std::fmt::Display for GetBatchPredictionJobsError {
             GetBatchPredictionJobsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetBatchPredictionJobsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetBatchPredictionJobsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetBatchPredictionJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             GetBatchPredictionJobsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetBatchPredictionJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2594,8 +2683,8 @@ impl GetBatchPredictionJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2629,6 +2718,12 @@ impl GetBatchPredictionJobsError {
             GetBatchPredictionJobsErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBatchPredictionJobsErrorKind::ThrottlingException(_)
+        )
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2642,6 +2737,7 @@ impl std::error::Error for GetBatchPredictionJobsError {
             GetBatchPredictionJobsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetBatchPredictionJobsErrorKind::InternalServerException(_inner) => Some(_inner),
             GetBatchPredictionJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetBatchPredictionJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetBatchPredictionJobsErrorKind::ValidationException(_inner) => Some(_inner),
             GetBatchPredictionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2704,8 +2800,8 @@ impl GetDetectorsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2812,8 +2908,8 @@ impl GetDetectorVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2885,6 +2981,7 @@ pub enum GetEntityTypesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2895,6 +2992,7 @@ impl std::fmt::Display for GetEntityTypesError {
             GetEntityTypesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetEntityTypesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetEntityTypesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetEntityTypesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             GetEntityTypesErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetEntityTypesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2927,8 +3025,8 @@ impl GetEntityTypesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2962,6 +3060,9 @@ impl GetEntityTypesError {
             GetEntityTypesErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetEntityTypesErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetEntityTypesErrorKind::ValidationException(_))
     }
@@ -2972,6 +3073,7 @@ impl std::error::Error for GetEntityTypesError {
             GetEntityTypesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetEntityTypesErrorKind::InternalServerException(_inner) => Some(_inner),
             GetEntityTypesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetEntityTypesErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetEntityTypesErrorKind::ValidationException(_inner) => Some(_inner),
             GetEntityTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2991,6 +3093,7 @@ pub enum GetEventPredictionErrorKind {
     ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceUnavailableException(crate::error::ResourceUnavailableException),
     ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -3003,6 +3106,7 @@ impl std::fmt::Display for GetEventPredictionError {
             GetEventPredictionErrorKind::ConflictException(_inner) => _inner.fmt(f),
             GetEventPredictionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetEventPredictionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetEventPredictionErrorKind::ResourceUnavailableException(_inner) => _inner.fmt(f),
             GetEventPredictionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             GetEventPredictionErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetEventPredictionErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -3036,8 +3140,8 @@ impl GetEventPredictionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3077,6 +3181,12 @@ impl GetEventPredictionError {
             GetEventPredictionErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_resource_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventPredictionErrorKind::ResourceUnavailableException(_)
+        )
+    }
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3097,6 +3207,7 @@ impl std::error::Error for GetEventPredictionError {
             GetEventPredictionErrorKind::ConflictException(_inner) => Some(_inner),
             GetEventPredictionErrorKind::InternalServerException(_inner) => Some(_inner),
             GetEventPredictionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetEventPredictionErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             GetEventPredictionErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetEventPredictionErrorKind::ValidationException(_inner) => Some(_inner),
             GetEventPredictionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -3116,6 +3227,7 @@ pub enum GetEventTypesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3126,6 +3238,7 @@ impl std::fmt::Display for GetEventTypesError {
             GetEventTypesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetEventTypesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetEventTypesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetEventTypesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             GetEventTypesErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetEventTypesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -3158,8 +3271,8 @@ impl GetEventTypesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3190,6 +3303,9 @@ impl GetEventTypesError {
             GetEventTypesErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetEventTypesErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetEventTypesErrorKind::ValidationException(_))
     }
@@ -3200,6 +3316,7 @@ impl std::error::Error for GetEventTypesError {
             GetEventTypesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetEventTypesErrorKind::InternalServerException(_inner) => Some(_inner),
             GetEventTypesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetEventTypesErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetEventTypesErrorKind::ValidationException(_inner) => Some(_inner),
             GetEventTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -3262,8 +3379,8 @@ impl GetExternalModelsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3335,6 +3452,7 @@ pub enum GetKMSEncryptionKeyErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3344,6 +3462,7 @@ impl std::fmt::Display for GetKMSEncryptionKeyError {
             GetKMSEncryptionKeyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetKMSEncryptionKeyErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetKMSEncryptionKeyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetKMSEncryptionKeyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             GetKMSEncryptionKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3375,8 +3494,8 @@ impl GetKMSEncryptionKeyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3410,6 +3529,12 @@ impl GetKMSEncryptionKeyError {
             GetKMSEncryptionKeyErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetKMSEncryptionKeyErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for GetKMSEncryptionKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3417,6 +3542,7 @@ impl std::error::Error for GetKMSEncryptionKeyError {
             GetKMSEncryptionKeyErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetKMSEncryptionKeyErrorKind::InternalServerException(_inner) => Some(_inner),
             GetKMSEncryptionKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetKMSEncryptionKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetKMSEncryptionKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3434,6 +3560,7 @@ pub enum GetLabelsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3444,6 +3571,7 @@ impl std::fmt::Display for GetLabelsError {
             GetLabelsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetLabelsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetLabelsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetLabelsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             GetLabelsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetLabelsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -3476,8 +3604,8 @@ impl GetLabelsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3502,6 +3630,9 @@ impl GetLabelsError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetLabelsErrorKind::ResourceNotFoundException(_))
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetLabelsErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetLabelsErrorKind::ValidationException(_))
     }
@@ -3512,6 +3643,7 @@ impl std::error::Error for GetLabelsError {
             GetLabelsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetLabelsErrorKind::InternalServerException(_inner) => Some(_inner),
             GetLabelsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetLabelsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetLabelsErrorKind::ValidationException(_inner) => Some(_inner),
             GetLabelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -3530,6 +3662,7 @@ pub enum GetModelsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3540,6 +3673,7 @@ impl std::fmt::Display for GetModelsError {
             GetModelsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetModelsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetModelsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetModelsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             GetModelsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetModelsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -3572,8 +3706,8 @@ impl GetModelsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3598,6 +3732,9 @@ impl GetModelsError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetModelsErrorKind::ResourceNotFoundException(_))
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetModelsErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetModelsErrorKind::ValidationException(_))
     }
@@ -3608,6 +3745,7 @@ impl std::error::Error for GetModelsError {
             GetModelsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetModelsErrorKind::InternalServerException(_inner) => Some(_inner),
             GetModelsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetModelsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetModelsErrorKind::ValidationException(_inner) => Some(_inner),
             GetModelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -3626,6 +3764,7 @@ pub enum GetModelVersionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3636,6 +3775,7 @@ impl std::fmt::Display for GetModelVersionError {
             GetModelVersionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetModelVersionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetModelVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetModelVersionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             GetModelVersionErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetModelVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -3668,8 +3808,8 @@ impl GetModelVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3703,6 +3843,9 @@ impl GetModelVersionError {
             GetModelVersionErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetModelVersionErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetModelVersionErrorKind::ValidationException(_))
     }
@@ -3713,6 +3856,7 @@ impl std::error::Error for GetModelVersionError {
             GetModelVersionErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetModelVersionErrorKind::InternalServerException(_inner) => Some(_inner),
             GetModelVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetModelVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetModelVersionErrorKind::ValidationException(_inner) => Some(_inner),
             GetModelVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -3775,8 +3919,8 @@ impl GetOutcomesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3880,8 +4024,8 @@ impl GetRulesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3982,8 +4126,8 @@ impl GetVariablesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4045,6 +4189,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4054,6 +4199,7 @@ impl std::fmt::Display for ListTagsForResourceError {
         match &self.kind {
             ListTagsForResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4086,8 +4232,8 @@ impl ListTagsForResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4115,6 +4261,12 @@ impl ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ThrottlingException(_)
+        )
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4127,6 +4279,7 @@ impl std::error::Error for ListTagsForResourceError {
         match &self.kind {
             ListTagsForResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -4143,6 +4296,7 @@ pub struct PutDetectorError {
 #[derive(std::fmt::Debug)]
 pub enum PutDetectorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
@@ -4153,6 +4307,7 @@ impl std::fmt::Display for PutDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             PutDetectorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutDetectorErrorKind::ConflictException(_inner) => _inner.fmt(f),
             PutDetectorErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             PutDetectorErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             PutDetectorErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -4187,8 +4342,8 @@ impl PutDetectorError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4207,6 +4362,9 @@ impl PutDetectorError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PutDetectorErrorKind::AccessDeniedException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutDetectorErrorKind::ConflictException(_))
+    }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, PutDetectorErrorKind::InternalServerException(_))
     }
@@ -4221,6 +4379,7 @@ impl std::error::Error for PutDetectorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutDetectorErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutDetectorErrorKind::ConflictException(_inner) => Some(_inner),
             PutDetectorErrorKind::InternalServerException(_inner) => Some(_inner),
             PutDetectorErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutDetectorErrorKind::ValidationException(_inner) => Some(_inner),
@@ -4239,7 +4398,9 @@ pub struct PutEntityTypeError {
 #[derive(std::fmt::Debug)]
 pub enum PutEntityTypeErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4248,7 +4409,9 @@ impl std::fmt::Display for PutEntityTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             PutEntityTypeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutEntityTypeErrorKind::ConflictException(_inner) => _inner.fmt(f),
             PutEntityTypeErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            PutEntityTypeErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             PutEntityTypeErrorKind::ValidationException(_inner) => _inner.fmt(f),
             PutEntityTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4281,8 +4444,8 @@ impl PutEntityTypeError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4301,11 +4464,17 @@ impl PutEntityTypeError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PutEntityTypeErrorKind::AccessDeniedException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutEntityTypeErrorKind::ConflictException(_))
+    }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEntityTypeErrorKind::InternalServerException(_)
         )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, PutEntityTypeErrorKind::ThrottlingException(_))
     }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PutEntityTypeErrorKind::ValidationException(_))
@@ -4315,7 +4484,9 @@ impl std::error::Error for PutEntityTypeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutEntityTypeErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutEntityTypeErrorKind::ConflictException(_inner) => Some(_inner),
             PutEntityTypeErrorKind::InternalServerException(_inner) => Some(_inner),
+            PutEntityTypeErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutEntityTypeErrorKind::ValidationException(_inner) => Some(_inner),
             PutEntityTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -4332,7 +4503,9 @@ pub struct PutEventTypeError {
 #[derive(std::fmt::Debug)]
 pub enum PutEventTypeErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4341,7 +4514,9 @@ impl std::fmt::Display for PutEventTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             PutEventTypeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutEventTypeErrorKind::ConflictException(_inner) => _inner.fmt(f),
             PutEventTypeErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            PutEventTypeErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             PutEventTypeErrorKind::ValidationException(_inner) => _inner.fmt(f),
             PutEventTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4374,8 +4549,8 @@ impl PutEventTypeError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4394,11 +4569,17 @@ impl PutEventTypeError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PutEventTypeErrorKind::AccessDeniedException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutEventTypeErrorKind::ConflictException(_))
+    }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventTypeErrorKind::InternalServerException(_)
         )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, PutEventTypeErrorKind::ThrottlingException(_))
     }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PutEventTypeErrorKind::ValidationException(_))
@@ -4408,7 +4589,9 @@ impl std::error::Error for PutEventTypeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutEventTypeErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutEventTypeErrorKind::ConflictException(_inner) => Some(_inner),
             PutEventTypeErrorKind::InternalServerException(_inner) => Some(_inner),
+            PutEventTypeErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutEventTypeErrorKind::ValidationException(_inner) => Some(_inner),
             PutEventTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -4425,6 +4608,7 @@ pub struct PutExternalModelError {
 #[derive(std::fmt::Debug)]
 pub enum PutExternalModelErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
@@ -4435,6 +4619,7 @@ impl std::fmt::Display for PutExternalModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             PutExternalModelErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutExternalModelErrorKind::ConflictException(_inner) => _inner.fmt(f),
             PutExternalModelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             PutExternalModelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             PutExternalModelErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -4469,8 +4654,8 @@ impl PutExternalModelError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4491,6 +4676,9 @@ impl PutExternalModelError {
             &self.kind,
             PutExternalModelErrorKind::AccessDeniedException(_)
         )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutExternalModelErrorKind::ConflictException(_))
     }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -4515,6 +4703,7 @@ impl std::error::Error for PutExternalModelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutExternalModelErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutExternalModelErrorKind::ConflictException(_inner) => Some(_inner),
             PutExternalModelErrorKind::InternalServerException(_inner) => Some(_inner),
             PutExternalModelErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutExternalModelErrorKind::ValidationException(_inner) => Some(_inner),
@@ -4533,8 +4722,10 @@ pub struct PutKMSEncryptionKeyError {
 #[derive(std::fmt::Debug)]
 pub enum PutKMSEncryptionKeyErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4543,8 +4734,10 @@ impl std::fmt::Display for PutKMSEncryptionKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             PutKMSEncryptionKeyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutKMSEncryptionKeyErrorKind::ConflictException(_inner) => _inner.fmt(f),
             PutKMSEncryptionKeyErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             PutKMSEncryptionKeyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PutKMSEncryptionKeyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             PutKMSEncryptionKeyErrorKind::ValidationException(_inner) => _inner.fmt(f),
             PutKMSEncryptionKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4577,8 +4770,8 @@ impl PutKMSEncryptionKeyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4600,6 +4793,12 @@ impl PutKMSEncryptionKeyError {
             PutKMSEncryptionKeyErrorKind::AccessDeniedException(_)
         )
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutKMSEncryptionKeyErrorKind::ConflictException(_)
+        )
+    }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4610,6 +4809,12 @@ impl PutKMSEncryptionKeyError {
         matches!(
             &self.kind,
             PutKMSEncryptionKeyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutKMSEncryptionKeyErrorKind::ThrottlingException(_)
         )
     }
     pub fn is_validation_exception(&self) -> bool {
@@ -4623,8 +4828,10 @@ impl std::error::Error for PutKMSEncryptionKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutKMSEncryptionKeyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutKMSEncryptionKeyErrorKind::ConflictException(_inner) => Some(_inner),
             PutKMSEncryptionKeyErrorKind::InternalServerException(_inner) => Some(_inner),
             PutKMSEncryptionKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PutKMSEncryptionKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutKMSEncryptionKeyErrorKind::ValidationException(_inner) => Some(_inner),
             PutKMSEncryptionKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -4641,7 +4848,9 @@ pub struct PutLabelError {
 #[derive(std::fmt::Debug)]
 pub enum PutLabelErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4650,7 +4859,9 @@ impl std::fmt::Display for PutLabelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             PutLabelErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutLabelErrorKind::ConflictException(_inner) => _inner.fmt(f),
             PutLabelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            PutLabelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             PutLabelErrorKind::ValidationException(_inner) => _inner.fmt(f),
             PutLabelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4683,8 +4894,8 @@ impl PutLabelError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4703,8 +4914,14 @@ impl PutLabelError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PutLabelErrorKind::AccessDeniedException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutLabelErrorKind::ConflictException(_))
+    }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, PutLabelErrorKind::InternalServerException(_))
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, PutLabelErrorKind::ThrottlingException(_))
     }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PutLabelErrorKind::ValidationException(_))
@@ -4714,7 +4931,9 @@ impl std::error::Error for PutLabelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutLabelErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutLabelErrorKind::ConflictException(_inner) => Some(_inner),
             PutLabelErrorKind::InternalServerException(_inner) => Some(_inner),
+            PutLabelErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutLabelErrorKind::ValidationException(_inner) => Some(_inner),
             PutLabelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -4731,6 +4950,7 @@ pub struct PutOutcomeError {
 #[derive(std::fmt::Debug)]
 pub enum PutOutcomeErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
@@ -4741,6 +4961,7 @@ impl std::fmt::Display for PutOutcomeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             PutOutcomeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutOutcomeErrorKind::ConflictException(_inner) => _inner.fmt(f),
             PutOutcomeErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             PutOutcomeErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             PutOutcomeErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -4775,8 +4996,8 @@ impl PutOutcomeError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4795,6 +5016,9 @@ impl PutOutcomeError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PutOutcomeErrorKind::AccessDeniedException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutOutcomeErrorKind::ConflictException(_))
+    }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, PutOutcomeErrorKind::InternalServerException(_))
     }
@@ -4809,6 +5033,7 @@ impl std::error::Error for PutOutcomeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutOutcomeErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutOutcomeErrorKind::ConflictException(_inner) => Some(_inner),
             PutOutcomeErrorKind::InternalServerException(_inner) => Some(_inner),
             PutOutcomeErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutOutcomeErrorKind::ValidationException(_inner) => Some(_inner),
@@ -4828,6 +5053,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4837,6 +5063,7 @@ impl std::fmt::Display for TagResourceError {
         match &self.kind {
             TagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4869,8 +5096,8 @@ impl TagResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4895,6 +5122,9 @@ impl TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -4904,6 +5134,7 @@ impl std::error::Error for TagResourceError {
         match &self.kind {
             TagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -4921,6 +5152,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4930,6 +5162,7 @@ impl std::fmt::Display for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4962,8 +5195,8 @@ impl UntagResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4988,6 +5221,9 @@ impl UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -4997,6 +5233,7 @@ impl std::error::Error for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -5013,6 +5250,7 @@ pub struct UpdateDetectorVersionError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateDetectorVersionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ThrottlingException(crate::error::ThrottlingException),
@@ -5024,6 +5262,7 @@ impl std::fmt::Display for UpdateDetectorVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateDetectorVersionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateDetectorVersionErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateDetectorVersionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateDetectorVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateDetectorVersionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -5059,8 +5298,8 @@ impl UpdateDetectorVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5080,6 +5319,12 @@ impl UpdateDetectorVersionError {
         matches!(
             &self.kind,
             UpdateDetectorVersionErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDetectorVersionErrorKind::ConflictException(_)
         )
     }
     pub fn is_internal_server_exception(&self) -> bool {
@@ -5111,6 +5356,7 @@ impl std::error::Error for UpdateDetectorVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateDetectorVersionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateDetectorVersionErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateDetectorVersionErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateDetectorVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDetectorVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
@@ -5130,6 +5376,7 @@ pub struct UpdateDetectorVersionMetadataError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateDetectorVersionMetadataErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
@@ -5140,6 +5387,7 @@ impl std::fmt::Display for UpdateDetectorVersionMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateDetectorVersionMetadataErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateDetectorVersionMetadataErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateDetectorVersionMetadataErrorKind::InternalServerException(_inner) => {
                 _inner.fmt(f)
             }
@@ -5176,8 +5424,8 @@ impl UpdateDetectorVersionMetadataError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5197,6 +5445,12 @@ impl UpdateDetectorVersionMetadataError {
         matches!(
             &self.kind,
             UpdateDetectorVersionMetadataErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDetectorVersionMetadataErrorKind::ConflictException(_)
         )
     }
     pub fn is_internal_server_exception(&self) -> bool {
@@ -5222,6 +5476,7 @@ impl std::error::Error for UpdateDetectorVersionMetadataError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateDetectorVersionMetadataErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateDetectorVersionMetadataErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateDetectorVersionMetadataErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateDetectorVersionMetadataErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateDetectorVersionMetadataErrorKind::ValidationException(_inner) => Some(_inner),
@@ -5240,6 +5495,7 @@ pub struct UpdateDetectorVersionStatusError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateDetectorVersionStatusErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ThrottlingException(crate::error::ThrottlingException),
@@ -5251,6 +5507,7 @@ impl std::fmt::Display for UpdateDetectorVersionStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateDetectorVersionStatusErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateDetectorVersionStatusErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateDetectorVersionStatusErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateDetectorVersionStatusErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
@@ -5288,8 +5545,8 @@ impl UpdateDetectorVersionStatusError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5309,6 +5566,12 @@ impl UpdateDetectorVersionStatusError {
         matches!(
             &self.kind,
             UpdateDetectorVersionStatusErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDetectorVersionStatusErrorKind::ConflictException(_)
         )
     }
     pub fn is_internal_server_exception(&self) -> bool {
@@ -5340,6 +5603,7 @@ impl std::error::Error for UpdateDetectorVersionStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateDetectorVersionStatusErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateDetectorVersionStatusErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateDetectorVersionStatusErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateDetectorVersionStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDetectorVersionStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
@@ -5359,8 +5623,10 @@ pub struct UpdateModelError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateModelErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5369,8 +5635,10 @@ impl std::fmt::Display for UpdateModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateModelErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateModelErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateModelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateModelErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateModelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateModelErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateModelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -5403,8 +5671,8 @@ impl UpdateModelError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5423,6 +5691,9 @@ impl UpdateModelError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateModelErrorKind::AccessDeniedException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::ConflictException(_))
+    }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateModelErrorKind::InternalServerException(_))
     }
@@ -5432,6 +5703,9 @@ impl UpdateModelError {
             UpdateModelErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::ThrottlingException(_))
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateModelErrorKind::ValidationException(_))
     }
@@ -5440,8 +5714,10 @@ impl std::error::Error for UpdateModelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateModelErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateModelErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateModelErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateModelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateModelErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateModelErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -5458,8 +5734,10 @@ pub struct UpdateModelVersionError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateModelVersionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5468,8 +5746,10 @@ impl std::fmt::Display for UpdateModelVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateModelVersionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateModelVersionErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateModelVersionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateModelVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateModelVersionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateModelVersionErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateModelVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -5502,8 +5782,8 @@ impl UpdateModelVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5525,6 +5805,12 @@ impl UpdateModelVersionError {
             UpdateModelVersionErrorKind::AccessDeniedException(_)
         )
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateModelVersionErrorKind::ConflictException(_)
+        )
+    }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5535,6 +5821,12 @@ impl UpdateModelVersionError {
         matches!(
             &self.kind,
             UpdateModelVersionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateModelVersionErrorKind::ThrottlingException(_)
         )
     }
     pub fn is_validation_exception(&self) -> bool {
@@ -5548,8 +5840,10 @@ impl std::error::Error for UpdateModelVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateModelVersionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateModelVersionErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateModelVersionErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateModelVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateModelVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateModelVersionErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateModelVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -5566,8 +5860,10 @@ pub struct UpdateModelVersionStatusError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateModelVersionStatusErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5576,8 +5872,10 @@ impl std::fmt::Display for UpdateModelVersionStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateModelVersionStatusErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateModelVersionStatusErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateModelVersionStatusErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateModelVersionStatusErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateModelVersionStatusErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateModelVersionStatusErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateModelVersionStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -5610,8 +5908,8 @@ impl UpdateModelVersionStatusError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5633,6 +5931,12 @@ impl UpdateModelVersionStatusError {
             UpdateModelVersionStatusErrorKind::AccessDeniedException(_)
         )
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateModelVersionStatusErrorKind::ConflictException(_)
+        )
+    }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5643,6 +5947,12 @@ impl UpdateModelVersionStatusError {
         matches!(
             &self.kind,
             UpdateModelVersionStatusErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateModelVersionStatusErrorKind::ThrottlingException(_)
         )
     }
     pub fn is_validation_exception(&self) -> bool {
@@ -5656,8 +5966,10 @@ impl std::error::Error for UpdateModelVersionStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateModelVersionStatusErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateModelVersionStatusErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateModelVersionStatusErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateModelVersionStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateModelVersionStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateModelVersionStatusErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateModelVersionStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -5674,6 +5986,7 @@ pub struct UpdateRuleMetadataError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateRuleMetadataErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ThrottlingException(crate::error::ThrottlingException),
@@ -5685,6 +5998,7 @@ impl std::fmt::Display for UpdateRuleMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateRuleMetadataErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateRuleMetadataErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateRuleMetadataErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateRuleMetadataErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateRuleMetadataErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -5720,8 +6034,8 @@ impl UpdateRuleMetadataError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5741,6 +6055,12 @@ impl UpdateRuleMetadataError {
         matches!(
             &self.kind,
             UpdateRuleMetadataErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRuleMetadataErrorKind::ConflictException(_)
         )
     }
     pub fn is_internal_server_exception(&self) -> bool {
@@ -5772,6 +6092,7 @@ impl std::error::Error for UpdateRuleMetadataError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateRuleMetadataErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateRuleMetadataErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateRuleMetadataErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateRuleMetadataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateRuleMetadataErrorKind::ThrottlingException(_inner) => Some(_inner),
@@ -5791,6 +6112,7 @@ pub struct UpdateRuleVersionError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateRuleVersionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ThrottlingException(crate::error::ThrottlingException),
@@ -5802,6 +6124,7 @@ impl std::fmt::Display for UpdateRuleVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateRuleVersionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateRuleVersionErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateRuleVersionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateRuleVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateRuleVersionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -5837,8 +6160,8 @@ impl UpdateRuleVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5859,6 +6182,9 @@ impl UpdateRuleVersionError {
             &self.kind,
             UpdateRuleVersionErrorKind::AccessDeniedException(_)
         )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRuleVersionErrorKind::ConflictException(_))
     }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -5889,6 +6215,7 @@ impl std::error::Error for UpdateRuleVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateRuleVersionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateRuleVersionErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateRuleVersionErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateRuleVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateRuleVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
@@ -5908,6 +6235,7 @@ pub struct UpdateVariableError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateVariableErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ThrottlingException(crate::error::ThrottlingException),
@@ -5919,6 +6247,7 @@ impl std::fmt::Display for UpdateVariableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateVariableErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateVariableErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateVariableErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateVariableErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateVariableErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -5954,8 +6283,8 @@ impl UpdateVariableError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5976,6 +6305,9 @@ impl UpdateVariableError {
             &self.kind,
             UpdateVariableErrorKind::AccessDeniedException(_)
         )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateVariableErrorKind::ConflictException(_))
     }
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -6000,6 +6332,7 @@ impl std::error::Error for UpdateVariableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateVariableErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateVariableErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateVariableErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateVariableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateVariableErrorKind::ThrottlingException(_inner) => Some(_inner),
@@ -6129,7 +6462,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>An exception indicating the specified resource was not found.</p>
+/// <p>An exception indicating the specified resource was not found. This can occur if you submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector name or version does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -6249,6 +6582,77 @@ impl InternalServerException {
     }
 }
 
+/// <p>An exception indicating there was a conflict during a delete operation. The following delete operations can cause a conflict exception:</p>
+/// <ul>
+/// <li>
+/// <p>DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or <code>DetectorVersions</code>.</p>
+/// </li>
+/// <li>
+/// <p>DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is <code>ACTIVE</code>.</p>
+/// </li>
+/// <li>
+/// <p>DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.</p>
+/// </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConflictException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConflictException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ConflictException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConflictException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException)
+pub mod conflict_exception {
+    /// A builder for [`ConflictException`](crate::error::ConflictException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
+    }
+}
+
 /// <p>An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6270,8 +6674,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -6309,48 +6713,39 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>An exception indicating there was a conflict during a delete operation. The following delete operations can cause a conflict exception:</p>
-/// <ul>
-/// <li>
-/// <p>DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or <code>DetectorVersions</code>.</p>
-/// </li>
-/// <li>
-/// <p>DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is <code>ACTIVE</code>.</p>
-/// </li>
-/// <li>
-/// <p>DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.</p>
-/// </li>
-/// </ul>
+/// <p>
+/// An exception indicating that the attached customer-owned (external) model threw an exception when Amazon Fraud Detector invoked the model.
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConflictException {
+pub struct ResourceUnavailableException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConflictException {
+impl std::fmt::Debug for ResourceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
+        let mut formatter = f.debug_struct("ResourceUnavailableException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ConflictException {
+impl ResourceUnavailableException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ConflictException {
+impl std::fmt::Display for ResourceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConflictException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        write!(f, "ResourceUnavailableException")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ConflictException {}
-/// See [`ConflictException`](crate::error::ConflictException)
-pub mod conflict_exception {
-    /// A builder for [`ConflictException`](crate::error::ConflictException)
+impl std::error::Error for ResourceUnavailableException {}
+/// See [`ResourceUnavailableException`](crate::error::ResourceUnavailableException)
+pub mod resource_unavailable_exception {
+    /// A builder for [`ResourceUnavailableException`](crate::error::ResourceUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6365,17 +6760,17 @@ pub mod conflict_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
-        pub fn build(self) -> crate::error::ConflictException {
-            crate::error::ConflictException {
+        /// Consumes the builder and constructs a [`ResourceUnavailableException`](crate::error::ResourceUnavailableException)
+        pub fn build(self) -> crate::error::ResourceUnavailableException {
+            crate::error::ResourceUnavailableException {
                 message: self.message,
             }
         }
     }
 }
-impl ConflictException {
-    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
-    pub fn builder() -> crate::error::conflict_exception::Builder {
-        crate::error::conflict_exception::Builder::default()
+impl ResourceUnavailableException {
+    /// Creates a new builder-style object to manufacture [`ResourceUnavailableException`](crate::error::ResourceUnavailableException)
+    pub fn builder() -> crate::error::resource_unavailable_exception::Builder {
+        crate::error::resource_unavailable_exception::Builder::default()
     }
 }

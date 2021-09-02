@@ -1,5 +1,5 @@
-use aws_sdk_ecr::{Config, Region};
-use aws_types::region;
+use aws_config::meta::region::RegionProviderChain;
+use aws_sdk_ecr::Region;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -24,10 +24,11 @@ async fn main() -> Result<(), aws_sdk_ecr::Error> {
     if verbose {
         tracing_subscriber::fmt::init();
     }
-    let provider = region::ChainProvider::first_try(region.map(Region::new))
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
-        .or_else(Region::new("us-east-2"));
-    let client = aws_sdk_ecr::Client::from_conf(Config::builder().region(provider).build());
+        .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = aws_sdk_ecr::Client::new(&shared_config);
     let rsp = client
         .list_images()
         .repository_name(&repository)

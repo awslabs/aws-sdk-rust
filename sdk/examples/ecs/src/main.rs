@@ -1,6 +1,7 @@
 #[tokio::main]
 async fn main() -> Result<(), aws_sdk_ecs::Error> {
-    let client = aws_sdk_ecs::Client::from_env();
+    let shared_config = aws_config::load_from_env().await;
+    let client = aws_sdk_ecs::Client::new(&shared_config);
     let cluster = client
         .create_cluster()
         .cluster_name("test_cluster")

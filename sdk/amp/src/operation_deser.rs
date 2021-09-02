@@ -3,7 +3,7 @@
 pub fn parse_create_workspace_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateWorkspaceOutput, crate::error::CreateWorkspaceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateWorkspaceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -166,7 +166,7 @@ pub fn parse_create_workspace_response(
 pub fn parse_delete_workspace_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteWorkspaceOutput, crate::error::DeleteWorkspaceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteWorkspaceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -308,7 +308,7 @@ pub fn parse_describe_workspace_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeWorkspaceOutput, crate::error::DescribeWorkspaceError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeWorkspaceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -453,7 +453,7 @@ pub fn parse_describe_workspace_response(
 pub fn parse_list_workspaces_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListWorkspacesOutput, crate::error::ListWorkspacesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListWorkspacesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -580,7 +580,7 @@ pub fn parse_update_workspace_alias_error(
     crate::output::UpdateWorkspaceAliasOutput,
     crate::error::UpdateWorkspaceAliasError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateWorkspaceAliasError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

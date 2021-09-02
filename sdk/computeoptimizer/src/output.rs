@@ -217,6 +217,83 @@ impl GetLambdaFunctionRecommendationsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEnrollmentStatusesForOrganizationOutput {
+    /// <p>An array of objects that describe the enrollment statuses of organization member
+    /// accounts.</p>
+    pub account_enrollment_statuses:
+        std::option::Option<std::vec::Vec<crate::model::AccountEnrollmentStatus>>,
+    /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
+    /// <p>This value is null when there are no more pages of account enrollment statuses to
+    /// return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetEnrollmentStatusesForOrganizationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEnrollmentStatusesForOrganizationOutput");
+        formatter.field(
+            "account_enrollment_statuses",
+            &self.account_enrollment_statuses,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput)
+pub mod get_enrollment_statuses_for_organization_output {
+    /// A builder for [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_enrollment_statuses:
+            std::option::Option<std::vec::Vec<crate::model::AccountEnrollmentStatus>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn account_enrollment_statuses(
+            mut self,
+            input: impl Into<crate::model::AccountEnrollmentStatus>,
+        ) -> Self {
+            let mut v = self.account_enrollment_statuses.unwrap_or_default();
+            v.push(input.into());
+            self.account_enrollment_statuses = Some(v);
+            self
+        }
+        pub fn set_account_enrollment_statuses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AccountEnrollmentStatus>>,
+        ) -> Self {
+            self.account_enrollment_statuses = input;
+            self
+        }
+        /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
+        /// <p>This value is null when there are no more pages of account enrollment statuses to
+        /// return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput)
+        pub fn build(self) -> crate::output::GetEnrollmentStatusesForOrganizationOutput {
+            crate::output::GetEnrollmentStatusesForOrganizationOutput {
+                account_enrollment_statuses: self.account_enrollment_statuses,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetEnrollmentStatusesForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput)
+    pub fn builder() -> crate::output::get_enrollment_statuses_for_organization_output::Builder {
+        crate::output::get_enrollment_statuses_for_organization_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnrollmentStatusOutput {
     /// <p>The enrollment status of the account.</p>
     pub status: std::option::Option<crate::model::Status>,
@@ -224,9 +301,15 @@ pub struct GetEnrollmentStatusOutput {
     /// <p>For example, an account might show a status of <code>Pending</code> because member
     /// accounts of an organization require more time to be enrolled in the service.</p>
     pub status_reason: std::option::Option<std::string::String>,
-    /// <p>Confirms the enrollment status of member accounts within the organization, if the
-    /// account is a management account of an organization.</p>
+    /// <p>Confirms the enrollment status of member accounts of the organization, if the account
+    /// is a management account of an organization.</p>
     pub member_accounts_enrolled: bool,
+    /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last
+    /// updated.</p>
+    pub last_updated_timestamp: std::option::Option<smithy_types::Instant>,
+    /// <p>The count of organization member accounts that are opted in to the service, if your
+    /// account is an organization management account.</p>
+    pub number_of_member_accounts_opted_in: std::option::Option<i32>,
 }
 impl std::fmt::Debug for GetEnrollmentStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -234,6 +317,11 @@ impl std::fmt::Debug for GetEnrollmentStatusOutput {
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
         formatter.field("member_accounts_enrolled", &self.member_accounts_enrolled);
+        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
+        formatter.field(
+            "number_of_member_accounts_opted_in",
+            &self.number_of_member_accounts_opted_in,
+        );
         formatter.finish()
     }
 }
@@ -246,6 +334,8 @@ pub mod get_enrollment_status_output {
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
         pub(crate) member_accounts_enrolled: std::option::Option<bool>,
+        pub(crate) last_updated_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) number_of_member_accounts_opted_in: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The enrollment status of the account.</p>
@@ -271,8 +361,8 @@ pub mod get_enrollment_status_output {
             self.status_reason = input;
             self
         }
-        /// <p>Confirms the enrollment status of member accounts within the organization, if the
-        /// account is a management account of an organization.</p>
+        /// <p>Confirms the enrollment status of member accounts of the organization, if the account
+        /// is a management account of an organization.</p>
         pub fn member_accounts_enrolled(mut self, input: bool) -> Self {
             self.member_accounts_enrolled = Some(input);
             self
@@ -281,12 +371,40 @@ pub mod get_enrollment_status_output {
             self.member_accounts_enrolled = input;
             self
         }
+        /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last
+        /// updated.</p>
+        pub fn last_updated_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_timestamp = Some(input);
+            self
+        }
+        pub fn set_last_updated_timestamp(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_updated_timestamp = input;
+            self
+        }
+        /// <p>The count of organization member accounts that are opted in to the service, if your
+        /// account is an organization management account.</p>
+        pub fn number_of_member_accounts_opted_in(mut self, input: i32) -> Self {
+            self.number_of_member_accounts_opted_in = Some(input);
+            self
+        }
+        pub fn set_number_of_member_accounts_opted_in(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.number_of_member_accounts_opted_in = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput)
         pub fn build(self) -> crate::output::GetEnrollmentStatusOutput {
             crate::output::GetEnrollmentStatusOutput {
                 status: self.status,
                 status_reason: self.status_reason,
                 member_accounts_enrolled: self.member_accounts_enrolled.unwrap_or_default(),
+                last_updated_timestamp: self.last_updated_timestamp,
+                number_of_member_accounts_opted_in: self.number_of_member_accounts_opted_in,
             }
         }
     }
@@ -301,7 +419,7 @@ impl GetEnrollmentStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEc2RecommendationProjectedMetricsOutput {
-    /// <p>An array of objects that describe a projected metrics.</p>
+    /// <p>An array of objects that describes projected metrics.</p>
     pub recommended_option_projected_metrics:
         std::option::Option<std::vec::Vec<crate::model::RecommendedOptionProjectedMetric>>,
 }
@@ -549,9 +667,10 @@ impl GetEbsVolumeRecommendationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAutoScalingGroupRecommendationsOutput {
-    /// <p>The token to use to advance to the next page of Auto Scaling group recommendations.</p>
-    /// <p>This value is null when there are no more pages of Auto Scaling group recommendations to
-    /// return.</p>
+    /// <p>The token to use to advance to the next page of Auto Scaling group
+    /// recommendations.</p>
+    /// <p>This value is null when there are no more pages of Auto Scaling group
+    /// recommendations to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of objects that describe Auto Scaling group recommendations.</p>
     pub auto_scaling_group_recommendations:
@@ -585,9 +704,10 @@ pub mod get_auto_scaling_group_recommendations_output {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
     }
     impl Builder {
-        /// <p>The token to use to advance to the next page of Auto Scaling group recommendations.</p>
-        /// <p>This value is null when there are no more pages of Auto Scaling group recommendations to
-        /// return.</p>
+        /// <p>The token to use to advance to the next page of Auto Scaling group
+        /// recommendations.</p>
+        /// <p>This value is null when there are no more pages of Auto Scaling group
+        /// recommendations to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -646,11 +766,11 @@ impl GetAutoScalingGroupRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportLambdaFunctionRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID
-    /// to view the status of an export job.</p>
+    /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+    /// ID to view the status of an export job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a
-    /// recommendations export file, and its associated metadata file.</p>
+    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
+    /// object keys of a recommendations export file, and its associated metadata file.</p>
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
 impl std::fmt::Debug for ExportLambdaFunctionRecommendationsOutput {
@@ -672,8 +792,8 @@ pub mod export_lambda_function_recommendations_output {
     }
     impl Builder {
         /// <p>The identification number of the export job.</p>
-        /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID
-        /// to view the status of an export job.</p>
+        /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+        /// ID to view the status of an export job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
@@ -682,8 +802,8 @@ pub mod export_lambda_function_recommendations_output {
             self.job_id = input;
             self
         }
-        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a
-        /// recommendations export file, and its associated metadata file.</p>
+        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
+        /// object keys of a recommendations export file, and its associated metadata file.</p>
         pub fn s3_destination(mut self, input: crate::model::S3Destination) -> Self {
             self.s3_destination = Some(input);
             self
@@ -715,11 +835,11 @@ impl ExportLambdaFunctionRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportEc2InstanceRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID
-    /// to view the status of an export job.</p>
+    /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+    /// ID to view the status of an export job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export
-    /// file.</p>
+    /// <p>An object that describes the destination Amazon S3 bucket of a recommendations
+    /// export file.</p>
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
 impl std::fmt::Debug for ExportEc2InstanceRecommendationsOutput {
@@ -741,8 +861,8 @@ pub mod export_ec2_instance_recommendations_output {
     }
     impl Builder {
         /// <p>The identification number of the export job.</p>
-        /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID
-        /// to view the status of an export job.</p>
+        /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+        /// ID to view the status of an export job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
@@ -751,8 +871,8 @@ pub mod export_ec2_instance_recommendations_output {
             self.job_id = input;
             self
         }
-        /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export
-        /// file.</p>
+        /// <p>An object that describes the destination Amazon S3 bucket of a recommendations
+        /// export file.</p>
         pub fn s3_destination(mut self, input: crate::model::S3Destination) -> Self {
             self.s3_destination = Some(input);
             self
@@ -784,11 +904,11 @@ impl ExportEc2InstanceRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportEbsVolumeRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID
-    /// to view the status of an export job.</p>
+    /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+    /// ID to view the status of an export job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a
-    /// recommendations export file, and its associated metadata file.</p>
+    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
+    /// object keys of a recommendations export file, and its associated metadata file.</p>
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
 impl std::fmt::Debug for ExportEbsVolumeRecommendationsOutput {
@@ -810,8 +930,8 @@ pub mod export_ebs_volume_recommendations_output {
     }
     impl Builder {
         /// <p>The identification number of the export job.</p>
-        /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID
-        /// to view the status of an export job.</p>
+        /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+        /// ID to view the status of an export job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
@@ -820,8 +940,8 @@ pub mod export_ebs_volume_recommendations_output {
             self.job_id = input;
             self
         }
-        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a
-        /// recommendations export file, and its associated metadata file.</p>
+        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
+        /// object keys of a recommendations export file, and its associated metadata file.</p>
         pub fn s3_destination(mut self, input: crate::model::S3Destination) -> Self {
             self.s3_destination = Some(input);
             self
@@ -853,11 +973,11 @@ impl ExportEbsVolumeRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportAutoScalingGroupRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID
-    /// to view the status of an export job.</p>
+    /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+    /// ID to view the status of an export job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export
-    /// file.</p>
+    /// <p>An object that describes the destination Amazon S3 bucket of a recommendations
+    /// export file.</p>
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
 impl std::fmt::Debug for ExportAutoScalingGroupRecommendationsOutput {
@@ -879,8 +999,8 @@ pub mod export_auto_scaling_group_recommendations_output {
     }
     impl Builder {
         /// <p>The identification number of the export job.</p>
-        /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID
-        /// to view the status of an export job.</p>
+        /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+        /// ID to view the status of an export job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
@@ -889,8 +1009,8 @@ pub mod export_auto_scaling_group_recommendations_output {
             self.job_id = input;
             self
         }
-        /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export
-        /// file.</p>
+        /// <p>An object that describes the destination Amazon S3 bucket of a recommendations
+        /// export file.</p>
         pub fn s3_destination(mut self, input: crate::model::S3Destination) -> Self {
             self.s3_destination = Some(input);
             self

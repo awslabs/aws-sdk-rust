@@ -4,7 +4,7 @@ pub fn parse_delete_thing_shadow_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteThingShadowOutput, crate::error::DeleteThingShadowError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteThingShadowError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -196,10 +196,194 @@ pub fn parse_delete_thing_shadow_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_retained_message_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetRetainedMessageOutput,
+    crate::error::GetRetainedMessageError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetRetainedMessageError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetRetainedMessageError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalFailureException" => crate::error::GetRetainedMessageError {
+            meta: generic,
+            kind: crate::error::GetRetainedMessageErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetRetainedMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::GetRetainedMessageError {
+            meta: generic,
+            kind: crate::error::GetRetainedMessageErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetRetainedMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MethodNotAllowedException" => {
+            crate::error::GetRetainedMessageError {
+                meta: generic,
+                kind: crate::error::GetRetainedMessageErrorKind::MethodNotAllowedException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::method_not_allowed_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_method_not_allowed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRetainedMessageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFoundException" => {
+            crate::error::GetRetainedMessageError {
+                meta: generic,
+                kind: crate::error::GetRetainedMessageErrorKind::ResourceNotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRetainedMessageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetRetainedMessageError {
+                meta: generic,
+                kind: crate::error::GetRetainedMessageErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRetainedMessageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ThrottlingException" => crate::error::GetRetainedMessageError {
+            meta: generic,
+            kind: crate::error::GetRetainedMessageErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetRetainedMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedException" => crate::error::GetRetainedMessageError {
+            meta: generic,
+            kind: crate::error::GetRetainedMessageErrorKind::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetRetainedMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetRetainedMessageError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_retained_message_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetRetainedMessageOutput,
+    crate::error::GetRetainedMessageError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_retained_message_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_get_retained_message(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetRetainedMessageError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_thing_shadow_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetThingShadowOutput, crate::error::GetThingShadowError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetThingShadowError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -398,7 +582,7 @@ pub fn parse_list_named_shadows_for_thing_error(
     crate::output::ListNamedShadowsForThingOutput,
     crate::error::ListNamedShadowsForThingError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListNamedShadowsForThingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -582,10 +766,174 @@ pub fn parse_list_named_shadows_for_thing_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_retained_messages_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListRetainedMessagesOutput,
+    crate::error::ListRetainedMessagesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListRetainedMessagesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListRetainedMessagesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalFailureException" => crate::error::ListRetainedMessagesError {
+            meta: generic,
+            kind: crate::error::ListRetainedMessagesErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListRetainedMessagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::ListRetainedMessagesError {
+            meta: generic,
+            kind: crate::error::ListRetainedMessagesErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListRetainedMessagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MethodNotAllowedException" => {
+            crate::error::ListRetainedMessagesError {
+                meta: generic,
+                kind: crate::error::ListRetainedMessagesErrorKind::MethodNotAllowedException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::method_not_allowed_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_method_not_allowed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRetainedMessagesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListRetainedMessagesError {
+                meta: generic,
+                kind: crate::error::ListRetainedMessagesErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRetainedMessagesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ThrottlingException" => crate::error::ListRetainedMessagesError {
+            meta: generic,
+            kind: crate::error::ListRetainedMessagesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListRetainedMessagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedException" => crate::error::ListRetainedMessagesError {
+            meta: generic,
+            kind: crate::error::ListRetainedMessagesErrorKind::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListRetainedMessagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListRetainedMessagesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_retained_messages_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListRetainedMessagesOutput,
+    crate::error::ListRetainedMessagesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_retained_messages_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_list_retained_messages(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListRetainedMessagesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_publish_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PublishOutput, crate::error::PublishError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PublishError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -698,7 +1046,7 @@ pub fn parse_update_thing_shadow_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateThingShadowOutput, crate::error::UpdateThingShadowError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateThingShadowError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

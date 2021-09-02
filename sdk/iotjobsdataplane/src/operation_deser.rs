@@ -6,7 +6,7 @@ pub fn parse_describe_job_execution_error(
     crate::output::DescribeJobExecutionOutput,
     crate::error::DescribeJobExecutionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeJobExecutionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -167,7 +167,7 @@ pub fn parse_get_pending_job_executions_error(
     crate::output::GetPendingJobExecutionsOutput,
     crate::error::GetPendingJobExecutionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPendingJobExecutionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -313,7 +313,7 @@ pub fn parse_start_next_pending_job_execution_error(
     crate::output::StartNextPendingJobExecutionOutput,
     crate::error::StartNextPendingJobExecutionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartNextPendingJobExecutionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -462,7 +462,7 @@ pub fn parse_update_job_execution_error(
     crate::output::UpdateJobExecutionOutput,
     crate::error::UpdateJobExecutionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateJobExecutionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

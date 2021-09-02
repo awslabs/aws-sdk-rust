@@ -6,7 +6,7 @@
 
 use bytes::Bytes;
 use http::header::ToStrError;
-use http::Response;
+use http::{HeaderMap, HeaderValue};
 use smithy_json::deserialize::token::skip_value;
 use smithy_json::deserialize::{json_token_iter, Error as DeserializeError, Token};
 use smithy_types::Error as SmithyError;
@@ -16,14 +16,6 @@ use std::borrow::Cow;
 #[allow(unused)]
 pub fn is_error<B>(response: &http::Response<B>) -> bool {
     !response.status().is_success()
-}
-
-fn error_type_from_header<B>(response: &http::Response<B>) -> Result<Option<&str>, ToStrError> {
-    response
-        .headers()
-        .get("X-Amzn-Errortype")
-        .map(|v| v.to_str())
-        .transpose()
 }
 
 fn sanitize_error_code(error_code: &str) -> &str {
@@ -38,13 +30,6 @@ fn sanitize_error_code(error_code: &str) -> &str {
         Some(idx) => &error_code[idx + 1..],
         None => &error_code,
     }
-}
-
-fn request_id(response: &Response<Bytes>) -> Option<&str> {
-    response
-        .headers()
-        .get("X-Amzn-Requestid")
-        .and_then(|v| v.to_str().ok())
 }
 
 struct ErrorBody<'a> {
@@ -91,11 +76,27 @@ fn parse_error_body(bytes: &[u8]) -> Result<ErrorBody, DeserializeError> {
     })
 }
 
-pub fn parse_generic_error(response: &Response<Bytes>) -> Result<SmithyError, DeserializeError> {
-    let ErrorBody { code, message } = parse_error_body(response.body().as_ref())?;
+fn error_type_from_header(headers: &HeaderMap<HeaderValue>) -> Result<Option<&str>, ToStrError> {
+    headers
+        .get("X-Amzn-Errortype")
+        .map(|v| v.to_str())
+        .transpose()
+}
+
+fn request_id(headers: &HeaderMap<HeaderValue>) -> Option<&str> {
+    headers
+        .get("X-Amzn-Requestid")
+        .and_then(|v| v.to_str().ok())
+}
+
+pub fn parse_generic_error(
+    payload: &Bytes,
+    headers: &HeaderMap<HeaderValue>,
+) -> Result<SmithyError, DeserializeError> {
+    let ErrorBody { code, message } = parse_error_body(payload.as_ref())?;
 
     let mut err_builder = SmithyError::builder();
-    if let Some(code) = error_type_from_header(response)
+    if let Some(code) = error_type_from_header(headers)
         .map_err(|_| DeserializeError::custom("X-Amzn-Errortype header was not valid UTF-8"))?
         .or_else(|| code.as_deref())
         .map(|c| sanitize_error_code(c))
@@ -105,7 +106,7 @@ pub fn parse_generic_error(response: &Response<Bytes>) -> Result<SmithyError, De
     if let Some(message) = message {
         err_builder.message(message);
     }
-    if let Some(request_id) = request_id(response) {
+    if let Some(request_id) = request_id(headers) {
         err_builder.request_id(request_id);
     }
     Ok(err_builder.build())
@@ -127,7 +128,7 @@ mod test {
             ))
             .unwrap();
         assert_eq!(
-            parse_generic_error(&response).unwrap(),
+            parse_generic_error(response.body(), response.headers()).unwrap(),
             Error::builder()
                 .code("FooError")
                 .message("Go to foo")
@@ -209,7 +210,7 @@ mod test {
             ))
             .unwrap();
         assert_eq!(
-            parse_generic_error(&response).unwrap(),
+            parse_generic_error(response.body(), response.headers()).unwrap(),
             Error::builder()
                 .code("ResourceNotFoundException")
                 .message("Functions from 'us-west-2' are not reachable from us-east-1")

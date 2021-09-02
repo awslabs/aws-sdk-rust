@@ -6,4 +6,5 @@
 //! Useful runtime-agnostic future implementations.
 
 pub mod never;
+pub mod now_or_later;
 pub mod timeout;

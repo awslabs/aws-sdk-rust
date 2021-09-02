@@ -25,7 +25,7 @@ pub fn parse_get_raw_message_content_error(
     crate::output::GetRawMessageContentOutput,
     crate::error::GetRawMessageContentError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRawMessageContentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -65,7 +65,7 @@ pub fn parse_put_raw_message_content_error(
     crate::output::PutRawMessageContentOutput,
     crate::error::PutRawMessageContentError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutRawMessageContentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

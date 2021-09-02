@@ -6,7 +6,7 @@ pub fn parse_batch_detect_dominant_language_error(
     crate::output::BatchDetectDominantLanguageOutput,
     crate::error::BatchDetectDominantLanguageError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDetectDominantLanguageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -136,7 +136,7 @@ pub fn parse_batch_detect_entities_error(
     crate::output::BatchDetectEntitiesOutput,
     crate::error::BatchDetectEntitiesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDetectEntitiesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -274,7 +274,7 @@ pub fn parse_batch_detect_key_phrases_error(
     crate::output::BatchDetectKeyPhrasesOutput,
     crate::error::BatchDetectKeyPhrasesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDetectKeyPhrasesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -412,7 +412,7 @@ pub fn parse_batch_detect_sentiment_error(
     crate::output::BatchDetectSentimentOutput,
     crate::error::BatchDetectSentimentError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDetectSentimentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -548,7 +548,7 @@ pub fn parse_batch_detect_syntax_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchDetectSyntaxOutput, crate::error::BatchDetectSyntaxError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDetectSyntaxError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -682,7 +682,7 @@ pub fn parse_classify_document_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ClassifyDocumentOutput, crate::error::ClassifyDocumentError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ClassifyDocumentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -798,7 +798,7 @@ pub fn parse_contains_pii_entities_error(
     crate::output::ContainsPiiEntitiesOutput,
     crate::error::ContainsPiiEntitiesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ContainsPiiEntitiesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -918,7 +918,7 @@ pub fn parse_create_document_classifier_error(
     crate::output::CreateDocumentClassifierOutput,
     crate::error::CreateDocumentClassifierError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDocumentClassifierError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1127,7 +1127,7 @@ pub fn parse_create_document_classifier_response(
 pub fn parse_create_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateEndpointOutput, crate::error::CreateEndpointError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1326,7 +1326,7 @@ pub fn parse_create_entity_recognizer_error(
     crate::output::CreateEntityRecognizerOutput,
     crate::error::CreateEntityRecognizerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateEntityRecognizerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1536,7 +1536,7 @@ pub fn parse_delete_document_classifier_error(
     crate::output::DeleteDocumentClassifierOutput,
     crate::error::DeleteDocumentClassifierError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDocumentClassifierError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1699,7 +1699,7 @@ pub fn parse_delete_document_classifier_response(
 pub fn parse_delete_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteEndpointOutput, crate::error::DeleteEndpointError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1836,7 +1836,7 @@ pub fn parse_delete_entity_recognizer_error(
     crate::output::DeleteEntityRecognizerOutput,
     crate::error::DeleteEntityRecognizerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEntityRecognizerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2002,7 +2002,7 @@ pub fn parse_describe_document_classification_job_error(
     crate::output::DescribeDocumentClassificationJobOutput,
     crate::error::DescribeDocumentClassificationJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDocumentClassificationJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2141,7 +2141,7 @@ pub fn parse_describe_document_classifier_error(
     crate::output::DescribeDocumentClassifierOutput,
     crate::error::DescribeDocumentClassifierError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDocumentClassifierError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2271,7 +2271,7 @@ pub fn parse_describe_dominant_language_detection_job_error(
     crate::output::DescribeDominantLanguageDetectionJobOutput,
     crate::error::DescribeDominantLanguageDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDominantLanguageDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2368,7 +2368,7 @@ pub fn parse_describe_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeEndpointOutput, crate::error::DescribeEndpointError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2488,7 +2488,7 @@ pub fn parse_describe_entities_detection_job_error(
     crate::output::DescribeEntitiesDetectionJobOutput,
     crate::error::DescribeEntitiesDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEntitiesDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2617,7 +2617,7 @@ pub fn parse_describe_entity_recognizer_error(
     crate::output::DescribeEntityRecognizerOutput,
     crate::error::DescribeEntityRecognizerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEntityRecognizerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2745,7 +2745,7 @@ pub fn parse_describe_events_detection_job_error(
     crate::output::DescribeEventsDetectionJobOutput,
     crate::error::DescribeEventsDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventsDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2874,7 +2874,7 @@ pub fn parse_describe_key_phrases_detection_job_error(
     crate::output::DescribeKeyPhrasesDetectionJobOutput,
     crate::error::DescribeKeyPhrasesDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeKeyPhrasesDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3001,7 +3001,7 @@ pub fn parse_describe_pii_entities_detection_job_error(
     crate::output::DescribePiiEntitiesDetectionJobOutput,
     crate::error::DescribePiiEntitiesDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePiiEntitiesDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3132,7 +3132,7 @@ pub fn parse_describe_sentiment_detection_job_error(
     crate::output::DescribeSentimentDetectionJobOutput,
     crate::error::DescribeSentimentDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSentimentDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3261,7 +3261,7 @@ pub fn parse_describe_topics_detection_job_error(
     crate::output::DescribeTopicsDetectionJobOutput,
     crate::error::DescribeTopicsDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTopicsDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3390,7 +3390,7 @@ pub fn parse_detect_dominant_language_error(
     crate::output::DetectDominantLanguageOutput,
     crate::error::DetectDominantLanguageError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectDominantLanguageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3491,7 +3491,7 @@ pub fn parse_detect_dominant_language_response(
 pub fn parse_detect_entities_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetectEntitiesOutput, crate::error::DetectEntitiesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectEntitiesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3624,7 +3624,7 @@ pub fn parse_detect_key_phrases_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetectKeyPhrasesOutput, crate::error::DetectKeyPhrasesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectKeyPhrasesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3738,7 +3738,7 @@ pub fn parse_detect_pii_entities_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetectPiiEntitiesOutput, crate::error::DetectPiiEntitiesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectPiiEntitiesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3853,7 +3853,7 @@ pub fn parse_detect_pii_entities_response(
 pub fn parse_detect_sentiment_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetectSentimentOutput, crate::error::DetectSentimentError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectSentimentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3965,7 +3965,7 @@ pub fn parse_detect_sentiment_response(
 pub fn parse_detect_syntax_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetectSyntaxOutput, crate::error::DetectSyntaxError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectSyntaxError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4079,7 +4079,7 @@ pub fn parse_list_document_classification_jobs_error(
     crate::output::ListDocumentClassificationJobsOutput,
     crate::error::ListDocumentClassificationJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDocumentClassificationJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4206,7 +4206,7 @@ pub fn parse_list_document_classifiers_error(
     crate::output::ListDocumentClassifiersOutput,
     crate::error::ListDocumentClassifiersError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDocumentClassifiersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4335,7 +4335,7 @@ pub fn parse_list_dominant_language_detection_jobs_error(
     crate::output::ListDominantLanguageDetectionJobsOutput,
     crate::error::ListDominantLanguageDetectionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDominantLanguageDetectionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4473,7 +4473,7 @@ pub fn parse_list_dominant_language_detection_jobs_response(
 pub fn parse_list_endpoints_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListEndpointsOutput, crate::error::ListEndpointsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListEndpointsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4572,7 +4572,7 @@ pub fn parse_list_entities_detection_jobs_error(
     crate::output::ListEntitiesDetectionJobsOutput,
     crate::error::ListEntitiesDetectionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListEntitiesDetectionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4701,7 +4701,7 @@ pub fn parse_list_entity_recognizers_error(
     crate::output::ListEntityRecognizersOutput,
     crate::error::ListEntityRecognizersError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListEntityRecognizersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4826,7 +4826,7 @@ pub fn parse_list_events_detection_jobs_error(
     crate::output::ListEventsDetectionJobsOutput,
     crate::error::ListEventsDetectionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListEventsDetectionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4955,7 +4955,7 @@ pub fn parse_list_key_phrases_detection_jobs_error(
     crate::output::ListKeyPhrasesDetectionJobsOutput,
     crate::error::ListKeyPhrasesDetectionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListKeyPhrasesDetectionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5084,7 +5084,7 @@ pub fn parse_list_pii_entities_detection_jobs_error(
     crate::output::ListPiiEntitiesDetectionJobsOutput,
     crate::error::ListPiiEntitiesDetectionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPiiEntitiesDetectionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5213,7 +5213,7 @@ pub fn parse_list_sentiment_detection_jobs_error(
     crate::output::ListSentimentDetectionJobsOutput,
     crate::error::ListSentimentDetectionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSentimentDetectionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5342,7 +5342,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5444,7 +5444,7 @@ pub fn parse_list_topics_detection_jobs_error(
     crate::output::ListTopicsDetectionJobsOutput,
     crate::error::ListTopicsDetectionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTopicsDetectionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5573,7 +5573,7 @@ pub fn parse_start_document_classification_job_error(
     crate::output::StartDocumentClassificationJobOutput,
     crate::error::StartDocumentClassificationJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartDocumentClassificationJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5708,6 +5708,27 @@ pub fn parse_start_document_classification_job_error(
                     ),
             }
         }
+        "TooManyTagsException" => crate::error::StartDocumentClassificationJobError {
+            meta: generic,
+            kind: crate::error::StartDocumentClassificationJobErrorKind::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartDocumentClassificationJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartDocumentClassificationJobError::generic(generic),
     })
 }
@@ -5740,7 +5761,7 @@ pub fn parse_start_dominant_language_detection_job_error(
     crate::output::StartDominantLanguageDetectionJobOutput,
     crate::error::StartDominantLanguageDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartDominantLanguageDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5847,6 +5868,27 @@ pub fn parse_start_dominant_language_detection_job_error(
                     },
                 ),
         },
+        "TooManyTagsException" => crate::error::StartDominantLanguageDetectionJobError {
+            meta: generic,
+            kind: crate::error::StartDominantLanguageDetectionJobErrorKind::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartDominantLanguageDetectionJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartDominantLanguageDetectionJobError::generic(generic),
     })
 }
@@ -5879,7 +5921,7 @@ pub fn parse_start_entities_detection_job_error(
     crate::output::StartEntitiesDetectionJobOutput,
     crate::error::StartEntitiesDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartEntitiesDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6023,6 +6065,27 @@ pub fn parse_start_entities_detection_job_error(
                 tmp
             }),
         },
+        "TooManyTagsException" => crate::error::StartEntitiesDetectionJobError {
+            meta: generic,
+            kind: crate::error::StartEntitiesDetectionJobErrorKind::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartEntitiesDetectionJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartEntitiesDetectionJobError::generic(generic),
     })
 }
@@ -6054,7 +6117,7 @@ pub fn parse_start_events_detection_job_error(
     crate::output::StartEventsDetectionJobOutput,
     crate::error::StartEventsDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartEventsDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6151,6 +6214,27 @@ pub fn parse_start_events_detection_job_error(
                 tmp
             }),
         },
+        "TooManyTagsException" => crate::error::StartEventsDetectionJobError {
+            meta: generic,
+            kind: crate::error::StartEventsDetectionJobErrorKind::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartEventsDetectionJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartEventsDetectionJobError::generic(generic),
     })
 }
@@ -6182,7 +6266,7 @@ pub fn parse_start_key_phrases_detection_job_error(
     crate::output::StartKeyPhrasesDetectionJobOutput,
     crate::error::StartKeyPhrasesDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartKeyPhrasesDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6281,6 +6365,27 @@ pub fn parse_start_key_phrases_detection_job_error(
                 ),
             }
         }
+        "TooManyTagsException" => crate::error::StartKeyPhrasesDetectionJobError {
+            meta: generic,
+            kind: crate::error::StartKeyPhrasesDetectionJobErrorKind::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartKeyPhrasesDetectionJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartKeyPhrasesDetectionJobError::generic(generic),
     })
 }
@@ -6312,7 +6417,7 @@ pub fn parse_start_pii_entities_detection_job_error(
     crate::output::StartPiiEntitiesDetectionJobOutput,
     crate::error::StartPiiEntitiesDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartPiiEntitiesDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6411,6 +6516,27 @@ pub fn parse_start_pii_entities_detection_job_error(
                 ),
             }
         }
+        "TooManyTagsException" => crate::error::StartPiiEntitiesDetectionJobError {
+            meta: generic,
+            kind: crate::error::StartPiiEntitiesDetectionJobErrorKind::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartPiiEntitiesDetectionJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartPiiEntitiesDetectionJobError::generic(generic),
     })
 }
@@ -6442,7 +6568,7 @@ pub fn parse_start_sentiment_detection_job_error(
     crate::output::StartSentimentDetectionJobOutput,
     crate::error::StartSentimentDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartSentimentDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6541,6 +6667,27 @@ pub fn parse_start_sentiment_detection_job_error(
                 ),
             }
         }
+        "TooManyTagsException" => crate::error::StartSentimentDetectionJobError {
+            meta: generic,
+            kind: crate::error::StartSentimentDetectionJobErrorKind::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartSentimentDetectionJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartSentimentDetectionJobError::generic(generic),
     })
 }
@@ -6572,7 +6719,7 @@ pub fn parse_start_topics_detection_job_error(
     crate::output::StartTopicsDetectionJobOutput,
     crate::error::StartTopicsDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartTopicsDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6669,6 +6816,27 @@ pub fn parse_start_topics_detection_job_error(
                 tmp
             }),
         },
+        "TooManyTagsException" => crate::error::StartTopicsDetectionJobError {
+            meta: generic,
+            kind: crate::error::StartTopicsDetectionJobErrorKind::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartTopicsDetectionJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartTopicsDetectionJobError::generic(generic),
     })
 }
@@ -6700,7 +6868,7 @@ pub fn parse_stop_dominant_language_detection_job_error(
     crate::output::StopDominantLanguageDetectionJobOutput,
     crate::error::StopDominantLanguageDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopDominantLanguageDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6810,7 +6978,7 @@ pub fn parse_stop_entities_detection_job_error(
     crate::output::StopEntitiesDetectionJobOutput,
     crate::error::StopEntitiesDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopEntitiesDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6917,7 +7085,7 @@ pub fn parse_stop_events_detection_job_error(
     crate::output::StopEventsDetectionJobOutput,
     crate::error::StopEventsDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopEventsDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7024,7 +7192,7 @@ pub fn parse_stop_key_phrases_detection_job_error(
     crate::output::StopKeyPhrasesDetectionJobOutput,
     crate::error::StopKeyPhrasesDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopKeyPhrasesDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7131,7 +7299,7 @@ pub fn parse_stop_pii_entities_detection_job_error(
     crate::output::StopPiiEntitiesDetectionJobOutput,
     crate::error::StopPiiEntitiesDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopPiiEntitiesDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7238,7 +7406,7 @@ pub fn parse_stop_sentiment_detection_job_error(
     crate::output::StopSentimentDetectionJobOutput,
     crate::error::StopSentimentDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopSentimentDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7345,7 +7513,7 @@ pub fn parse_stop_training_document_classifier_error(
     crate::output::StopTrainingDocumentClassifierOutput,
     crate::error::StopTrainingDocumentClassifierError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopTrainingDocumentClassifierError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7466,7 +7634,7 @@ pub fn parse_stop_training_entity_recognizer_error(
     crate::output::StopTrainingEntityRecognizerOutput,
     crate::error::StopTrainingEntityRecognizerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopTrainingEntityRecognizerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7588,7 +7756,7 @@ pub fn parse_stop_training_entity_recognizer_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7718,7 +7886,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7849,7 +8017,7 @@ pub fn parse_untag_resource_response(
 pub fn parse_update_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateEndpointOutput, crate::error::UpdateEndpointError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

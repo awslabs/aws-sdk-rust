@@ -6,7 +6,7 @@ pub fn parse_associate_team_member_error(
     crate::output::AssociateTeamMemberOutput,
     crate::error::AssociateTeamMemberError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateTeamMemberError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -183,7 +183,7 @@ pub fn parse_associate_team_member_response(
 pub fn parse_create_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateProjectOutput, crate::error::CreateProjectError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateProjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -352,7 +352,7 @@ pub fn parse_create_user_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateUserProfileOutput, crate::error::CreateUserProfileError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateUserProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -426,7 +426,7 @@ pub fn parse_create_user_profile_response(
 pub fn parse_delete_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteProjectOutput, crate::error::DeleteProjectError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteProjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -518,7 +518,7 @@ pub fn parse_delete_user_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteUserProfileOutput, crate::error::DeleteUserProfileError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteUserProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -574,7 +574,7 @@ pub fn parse_delete_user_profile_response(
 pub fn parse_describe_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeProjectOutput, crate::error::DescribeProjectError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeProjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -710,7 +710,7 @@ pub fn parse_describe_user_profile_error(
     crate::output::DescribeUserProfileOutput,
     crate::error::DescribeUserProfileError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeUserProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -789,7 +789,7 @@ pub fn parse_disassociate_team_member_error(
     crate::output::DisassociateTeamMemberOutput,
     crate::error::DisassociateTeamMemberError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateTeamMemberError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -906,7 +906,7 @@ pub fn parse_disassociate_team_member_response(
 pub fn parse_list_projects_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListProjectsOutput, crate::error::ListProjectsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListProjectsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -978,7 +978,7 @@ pub fn parse_list_projects_response(
 pub fn parse_list_resources_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListResourcesOutput, crate::error::ListResourcesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1076,7 +1076,7 @@ pub fn parse_list_tags_for_project_error(
     crate::output::ListTagsForProjectOutput,
     crate::error::ListTagsForProjectError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForProjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1176,7 +1176,7 @@ pub fn parse_list_tags_for_project_response(
 pub fn parse_list_team_members_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTeamMembersOutput, crate::error::ListTeamMembersError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTeamMembersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1272,7 +1272,7 @@ pub fn parse_list_user_profiles_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListUserProfilesOutput, crate::error::ListUserProfilesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListUserProfilesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1346,7 +1346,7 @@ pub fn parse_list_user_profiles_response(
 pub fn parse_tag_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagProjectOutput, crate::error::TagProjectError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagProjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1459,7 +1459,7 @@ pub fn parse_tag_project_response(
 pub fn parse_untag_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagProjectOutput, crate::error::UntagProjectError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagProjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1570,7 +1570,7 @@ pub fn parse_untag_project_response(
 pub fn parse_update_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateProjectOutput, crate::error::UpdateProjectError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateProjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1643,7 +1643,7 @@ pub fn parse_update_team_member_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateTeamMemberOutput, crate::error::UpdateTeamMemberError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateTeamMemberError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1819,7 +1819,7 @@ pub fn parse_update_user_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateUserProfileOutput, crate::error::UpdateUserProfileError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateUserProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

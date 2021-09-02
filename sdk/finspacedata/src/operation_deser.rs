@@ -3,7 +3,7 @@
 pub fn parse_create_changeset_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateChangesetOutput, crate::error::CreateChangesetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateChangesetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -142,7 +142,7 @@ pub fn parse_get_programmatic_access_credentials_error(
     crate::output::GetProgrammaticAccessCredentialsOutput,
     crate::error::GetProgrammaticAccessCredentialsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetProgrammaticAccessCredentialsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -250,7 +250,7 @@ pub fn parse_get_working_location_error(
     crate::output::GetWorkingLocationOutput,
     crate::error::GetWorkingLocationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetWorkingLocationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

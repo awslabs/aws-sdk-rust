@@ -3,7 +3,7 @@
 pub fn parse_add_permission_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddPermissionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -118,7 +118,7 @@ pub fn parse_check_if_phone_number_is_opted_out_error(
     crate::output::CheckIfPhoneNumberIsOptedOutOutput,
     crate::error::CheckIfPhoneNumberIsOptedOutError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -246,7 +246,7 @@ pub fn parse_confirm_subscription_error(
     crate::output::ConfirmSubscriptionOutput,
     crate::error::ConfirmSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -405,7 +405,7 @@ pub fn parse_create_platform_application_error(
     crate::output::CreatePlatformApplicationOutput,
     crate::error::CreatePlatformApplicationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePlatformApplicationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -513,7 +513,7 @@ pub fn parse_create_platform_endpoint_error(
     crate::output::CreatePlatformEndpointOutput,
     crate::error::CreatePlatformEndpointError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -640,7 +640,7 @@ pub fn parse_create_sms_sandbox_phone_number_error(
     crate::output::CreateSmsSandboxPhoneNumberOutput,
     crate::error::CreateSMSSandboxPhoneNumberError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -801,7 +801,7 @@ pub fn parse_create_sms_sandbox_phone_number_response(
 pub fn parse_create_topic_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTopicOutput, crate::error::CreateTopicError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTopicError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1020,7 +1020,7 @@ pub fn parse_create_topic_response(
 pub fn parse_delete_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteEndpointOutput, crate::error::DeleteEndpointError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1114,7 +1114,7 @@ pub fn parse_delete_platform_application_error(
     crate::output::DeletePlatformApplicationOutput,
     crate::error::DeletePlatformApplicationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePlatformApplicationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1217,7 +1217,7 @@ pub fn parse_delete_sms_sandbox_phone_number_error(
     crate::output::DeleteSmsSandboxPhoneNumberOutput,
     crate::error::DeleteSMSSandboxPhoneNumberError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1379,7 +1379,7 @@ pub fn parse_delete_sms_sandbox_phone_number_response(
 pub fn parse_delete_topic_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTopicOutput, crate::error::DeleteTopicError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTopicError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1557,7 +1557,7 @@ pub fn parse_get_endpoint_attributes_error(
     crate::output::GetEndpointAttributesOutput,
     crate::error::GetEndpointAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1680,7 +1680,7 @@ pub fn parse_get_platform_application_attributes_error(
     crate::output::GetPlatformApplicationAttributesOutput,
     crate::error::GetPlatformApplicationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1807,7 +1807,7 @@ pub fn parse_get_sms_attributes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSmsAttributesOutput, crate::error::GetSMSAttributesError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSMSAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1926,7 +1926,7 @@ pub fn parse_get_sms_sandbox_account_status_error(
     crate::output::GetSmsSandboxAccountStatusOutput,
     crate::error::GetSMSSandboxAccountStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2035,7 +2035,7 @@ pub fn parse_get_subscription_attributes_error(
     crate::output::GetSubscriptionAttributesOutput,
     crate::error::GetSubscriptionAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2164,7 +2164,7 @@ pub fn parse_get_topic_attributes_error(
     crate::output::GetTopicAttributesOutput,
     crate::error::GetTopicAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTopicAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2308,7 +2308,7 @@ pub fn parse_list_endpoints_by_platform_application_error(
     crate::output::ListEndpointsByPlatformApplicationOutput,
     crate::error::ListEndpointsByPlatformApplicationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2407,7 +2407,7 @@ pub fn parse_list_origination_numbers_error(
     crate::output::ListOriginationNumbersOutput,
     crate::error::ListOriginationNumbersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2555,7 +2555,7 @@ pub fn parse_list_phone_numbers_opted_out_error(
     crate::output::ListPhoneNumbersOptedOutOutput,
     crate::error::ListPhoneNumbersOptedOutError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2684,7 +2684,7 @@ pub fn parse_list_platform_applications_error(
     crate::output::ListPlatformApplicationsOutput,
     crate::error::ListPlatformApplicationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2792,7 +2792,7 @@ pub fn parse_list_sms_sandbox_phone_numbers_error(
     crate::output::ListSmsSandboxPhoneNumbersOutput,
     crate::error::ListSMSSandboxPhoneNumbersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2942,7 +2942,7 @@ pub fn parse_list_subscriptions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListSubscriptionsOutput, crate::error::ListSubscriptionsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSubscriptionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3040,7 +3040,7 @@ pub fn parse_list_subscriptions_by_topic_error(
     crate::output::ListSubscriptionsByTopicOutput,
     crate::error::ListSubscriptionsByTopicError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3169,7 +3169,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3311,7 +3311,7 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_list_topics_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTopicsOutput, crate::error::ListTopicsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTopicsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3405,7 +3405,7 @@ pub fn parse_opt_in_phone_number_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::OptInPhoneNumberOutput, crate::error::OptInPhoneNumberError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3518,7 +3518,7 @@ pub fn parse_opt_in_phone_number_response(
 pub fn parse_publish_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PublishOutput, crate::error::PublishError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PublishError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3837,7 +3837,7 @@ pub fn parse_remove_permission_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemovePermissionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3953,7 +3953,7 @@ pub fn parse_set_endpoint_attributes_error(
     crate::output::SetEndpointAttributesOutput,
     crate::error::SetEndpointAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4071,7 +4071,7 @@ pub fn parse_set_platform_application_attributes_error(
     crate::output::SetPlatformApplicationAttributesOutput,
     crate::error::SetPlatformApplicationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4193,7 +4193,7 @@ pub fn parse_set_sms_attributes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SetSmsAttributesOutput, crate::error::SetSMSAttributesError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetSMSAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4309,7 +4309,7 @@ pub fn parse_set_subscription_attributes_error(
     crate::output::SetSubscriptionAttributesOutput,
     crate::error::SetSubscriptionAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4452,7 +4452,7 @@ pub fn parse_set_topic_attributes_error(
     crate::output::SetTopicAttributesOutput,
     crate::error::SetTopicAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetTopicAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4588,7 +4588,7 @@ pub fn parse_set_topic_attributes_response(
 pub fn parse_subscribe_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SubscribeOutput, crate::error::SubscribeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SubscribeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4759,7 +4759,7 @@ pub fn parse_subscribe_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4936,7 +4936,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_unsubscribe_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UnsubscribeOutput, crate::error::UnsubscribeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UnsubscribeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5069,7 +5069,7 @@ pub fn parse_unsubscribe_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5249,7 +5249,7 @@ pub fn parse_verify_sms_sandbox_phone_number_error(
     crate::output::VerifySmsSandboxPhoneNumberOutput,
     crate::error::VerifySMSSandboxPhoneNumberError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

@@ -15,7 +15,7 @@ pub mod create_connector_profile_input {
     }
     impl Builder {
         /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in your AWS account. </p>
+        /// <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
@@ -52,7 +52,7 @@ pub mod create_connector_profile_input {
             self
         }
         /// <p> Indicates the connection mode and specifies whether it is public or private. Private
-        /// flows use AWS PrivateLink to route data over AWS infrastructure without exposing it to the
+        /// flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the
         /// public internet. </p>
         pub fn connection_mode(mut self, input: crate::model::ConnectionMode) -> Self {
             self.connection_mode = Some(input);
@@ -115,6 +115,7 @@ impl CreateConnectorProfileInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_create_connector_profile(&self)
                 .map_err(|err| {
@@ -122,8 +123,10 @@ impl CreateConnectorProfileInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -144,7 +147,7 @@ impl CreateConnectorProfileInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -356,6 +359,7 @@ impl CreateFlowInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_create_flow(&self).map_err(|err| {
@@ -363,8 +367,10 @@ impl CreateFlowInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -385,7 +391,7 @@ impl CreateFlowInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -503,6 +509,7 @@ impl DeleteConnectorProfileInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_delete_connector_profile(&self)
                 .map_err(|err| {
@@ -510,8 +517,10 @@ impl DeleteConnectorProfileInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -532,7 +541,7 @@ impl DeleteConnectorProfileInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -645,6 +654,7 @@ impl DeleteFlowInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_delete_flow(&self).map_err(|err| {
@@ -652,8 +662,10 @@ impl DeleteFlowInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -674,7 +686,7 @@ impl DeleteFlowInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -763,7 +775,7 @@ pub mod describe_connector_entity_input {
             self
         }
         /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the AWS account. </p>
+        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
@@ -809,6 +821,7 @@ impl DescribeConnectorEntityInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_describe_connector_entity(&self)
                 .map_err(|err| {
@@ -816,8 +829,10 @@ impl DescribeConnectorEntityInput {
             })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -838,7 +853,7 @@ impl DescribeConnectorEntityInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -982,6 +997,7 @@ impl DescribeConnectorProfilesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_describe_connector_profiles(&self)
                 .map_err(|err| {
@@ -989,8 +1005,10 @@ impl DescribeConnectorProfilesInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1011,7 +1029,7 @@ impl DescribeConnectorProfilesInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1128,6 +1146,7 @@ impl DescribeConnectorsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_describe_connectors(&self)
                 .map_err(|err| {
@@ -1135,8 +1154,10 @@ impl DescribeConnectorsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1157,7 +1178,7 @@ impl DescribeConnectorsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1258,6 +1279,7 @@ impl DescribeFlowInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_describe_flow(&self).map_err(|err| {
@@ -1265,8 +1287,10 @@ impl DescribeFlowInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1287,7 +1311,7 @@ impl DescribeFlowInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1414,6 +1438,7 @@ impl DescribeFlowExecutionRecordsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_describe_flow_execution_records(&self)
@@ -1422,8 +1447,10 @@ impl DescribeFlowExecutionRecordsInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1444,7 +1471,7 @@ impl DescribeFlowExecutionRecordsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1509,7 +1536,7 @@ pub mod list_connector_entities_input {
     }
     impl Builder {
         /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the AWS account, and is used to query the downstream
+        /// <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream
         /// connector. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
@@ -1583,6 +1610,7 @@ impl ListConnectorEntitiesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_connector_entities(&self)
                 .map_err(|err| {
@@ -1590,8 +1618,10 @@ impl ListConnectorEntitiesInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1612,7 +1642,7 @@ impl ListConnectorEntitiesInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1723,6 +1753,7 @@ impl ListFlowsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_list_flows(&self).map_err(|err| {
@@ -1730,8 +1761,10 @@ impl ListFlowsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1752,7 +1785,7 @@ impl ListFlowsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1852,12 +1885,15 @@ impl ListTagsForResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1878,7 +1914,7 @@ impl ListTagsForResourceInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1994,6 +2030,7 @@ impl StartFlowInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_start_flow(&self).map_err(|err| {
@@ -2001,8 +2038,10 @@ impl StartFlowInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2023,7 +2062,7 @@ impl StartFlowInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2122,6 +2161,7 @@ impl StopFlowInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_stop_flow(&self).map_err(|err| {
@@ -2129,8 +2169,10 @@ impl StopFlowInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2151,7 +2193,7 @@ impl StopFlowInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2269,6 +2311,7 @@ impl TagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
@@ -2276,8 +2319,10 @@ impl TagResourceInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2298,7 +2343,7 @@ impl TagResourceInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2428,12 +2473,15 @@ impl UntagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2454,7 +2502,7 @@ impl UntagResourceInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2544,7 +2592,7 @@ pub mod update_connector_profile_input {
     }
     impl Builder {
         /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in
-        /// the AWS Account. </p>
+        /// the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
@@ -2616,6 +2664,7 @@ impl UpdateConnectorProfileInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_update_connector_profile(&self)
                 .map_err(|err| {
@@ -2623,8 +2672,10 @@ impl UpdateConnectorProfileInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2645,7 +2696,7 @@ impl UpdateConnectorProfileInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2820,6 +2871,7 @@ impl UpdateFlowInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_update_flow(&self).map_err(|err| {
@@ -2827,8 +2879,10 @@ impl UpdateFlowInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2849,7 +2903,7 @@ impl UpdateFlowInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2943,7 +2997,7 @@ impl std::fmt::Debug for UpdateFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectorProfileInput {
     /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in
-    /// the AWS Account. </p>
+    /// the Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> Indicates the connection mode and if it is public or private. </p>
     pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
@@ -3060,7 +3114,7 @@ impl std::fmt::Debug for ListFlowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorEntitiesInput {
     /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the AWS account, and is used to query the downstream
+    /// <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream
     /// connector. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
@@ -3140,7 +3194,7 @@ impl std::fmt::Debug for DescribeConnectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorProfilesInput {
     /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the AWS account. </p>
+    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub connector_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
@@ -3169,7 +3223,7 @@ pub struct DescribeConnectorEntityInput {
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the AWS account. </p>
+    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeConnectorEntityInput {
@@ -3271,7 +3325,7 @@ impl std::fmt::Debug for CreateFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectorProfileInput {
     /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in your AWS account. </p>
+    /// <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
     /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
@@ -3281,7 +3335,7 @@ pub struct CreateConnectorProfileInput {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p> Indicates the connection mode and specifies whether it is public or private. Private
-    /// flows use AWS PrivateLink to route data over AWS infrastructure without exposing it to the
+    /// flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the
     /// public internet. </p>
     pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
     /// <p> Defines the connector-specific configuration and credentials. </p>

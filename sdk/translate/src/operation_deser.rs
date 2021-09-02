@@ -6,7 +6,7 @@ pub fn parse_create_parallel_data_error(
     crate::output::CreateParallelDataOutput,
     crate::error::CreateParallelDataError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateParallelDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -170,7 +170,7 @@ pub fn parse_delete_parallel_data_error(
     crate::output::DeleteParallelDataOutput,
     crate::error::DeleteParallelDataError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteParallelDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -289,7 +289,7 @@ pub fn parse_delete_terminology_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTerminologyOutput, crate::error::DeleteTerminologyError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTerminologyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -403,7 +403,7 @@ pub fn parse_describe_text_translation_job_error(
     crate::output::DescribeTextTranslationJobOutput,
     crate::error::DescribeTextTranslationJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTextTranslationJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -509,7 +509,7 @@ pub fn parse_describe_text_translation_job_response(
 pub fn parse_get_parallel_data_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetParallelDataOutput, crate::error::GetParallelDataError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetParallelDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -622,7 +622,7 @@ pub fn parse_get_parallel_data_response(
 pub fn parse_get_terminology_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetTerminologyOutput, crate::error::GetTerminologyError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTerminologyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -736,7 +736,7 @@ pub fn parse_import_terminology_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportTerminologyOutput, crate::error::ImportTerminologyError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportTerminologyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -852,7 +852,7 @@ pub fn parse_list_parallel_data_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListParallelDataOutput, crate::error::ListParallelDataError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListParallelDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -947,7 +947,7 @@ pub fn parse_list_terminologies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTerminologiesOutput, crate::error::ListTerminologiesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTerminologiesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1044,7 +1044,7 @@ pub fn parse_list_text_translation_jobs_error(
     crate::output::ListTextTranslationJobsOutput,
     crate::error::ListTextTranslationJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTextTranslationJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1173,7 +1173,7 @@ pub fn parse_start_text_translation_job_error(
     crate::output::StartTextTranslationJobOutput,
     crate::error::StartTextTranslationJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartTextTranslationJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1321,7 +1321,7 @@ pub fn parse_stop_text_translation_job_error(
     crate::output::StopTextTranslationJobOutput,
     crate::error::StopTextTranslationJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopTextTranslationJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1425,7 +1425,7 @@ pub fn parse_stop_text_translation_job_response(
 pub fn parse_translate_text_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TranslateTextOutput, crate::error::TranslateTextError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TranslateTextError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1619,7 +1619,7 @@ pub fn parse_update_parallel_data_error(
     crate::output::UpdateParallelDataOutput,
     crate::error::UpdateParallelDataError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateParallelDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

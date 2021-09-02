@@ -6,7 +6,7 @@ pub fn parse_create_home_region_control_error(
     crate::output::CreateHomeRegionControlOutput,
     crate::error::CreateHomeRegionControlError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -177,7 +177,7 @@ pub fn parse_describe_home_region_controls_error(
     crate::output::DescribeHomeRegionControlsOutput,
     crate::error::DescribeHomeRegionControlsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeHomeRegionControlsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -325,7 +325,7 @@ pub fn parse_describe_home_region_controls_response(
 pub fn parse_get_home_region_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetHomeRegionOutput, crate::error::GetHomeRegionError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetHomeRegionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

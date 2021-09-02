@@ -55,8 +55,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AddTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AddTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AddTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::AddTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AddTagsErrorKind::AccessPointNotFoundException(inner) => {
@@ -74,11 +77,13 @@ impl From<smithy_http::result::SdkError<crate::error::AddTagsError>> for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ApplySecurityGroupsToLoadBalancerError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ApplySecurityGroupsToLoadBalancerError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ApplySecurityGroupsToLoadBalancerError>,
+        err: smithy_http::result::SdkError<crate::error::ApplySecurityGroupsToLoadBalancerError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -91,9 +96,13 @@ impl From<smithy_http::result::SdkError<crate::error::ApplySecurityGroupsToLoadB
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AttachLoadBalancerToSubnetsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::AttachLoadBalancerToSubnetsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AttachLoadBalancerToSubnetsError>,
+        err: smithy_http::result::SdkError<crate::error::AttachLoadBalancerToSubnetsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -107,8 +116,13 @@ impl From<smithy_http::result::SdkError<crate::error::AttachLoadBalancerToSubnet
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ConfigureHealthCheckError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ConfigureHealthCheckError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ConfigureHealthCheckError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ConfigureHealthCheckError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ConfigureHealthCheckErrorKind::AccessPointNotFoundException(
@@ -122,11 +136,13 @@ impl From<smithy_http::result::SdkError<crate::error::ConfigureHealthCheckError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateAppCookieStickinessPolicyError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateAppCookieStickinessPolicyError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateAppCookieStickinessPolicyError>,
+        err: smithy_http::result::SdkError<crate::error::CreateAppCookieStickinessPolicyError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -140,11 +156,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateAppCookieStickinessP
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateLBCookieStickinessPolicyError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateLBCookieStickinessPolicyError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateLBCookieStickinessPolicyError>,
+        err: smithy_http::result::SdkError<crate::error::CreateLBCookieStickinessPolicyError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -158,8 +176,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateLBCookieStickinessPo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateLoadBalancerError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateLoadBalancerError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateLoadBalancerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateLoadBalancerError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateLoadBalancerErrorKind::CertificateNotFoundException(inner) => {
@@ -206,9 +227,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateLoadBalancerError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateLoadBalancerListenersError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateLoadBalancerListenersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateLoadBalancerListenersError>,
+        err: smithy_http::result::SdkError<crate::error::CreateLoadBalancerListenersError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -223,9 +248,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateLoadBalancerListener
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateLoadBalancerPolicyError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateLoadBalancerPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateLoadBalancerPolicyError>,
+        err: smithy_http::result::SdkError<crate::error::CreateLoadBalancerPolicyError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -240,8 +269,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateLoadBalancerPolicyEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteLoadBalancerError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteLoadBalancerError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteLoadBalancerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteLoadBalancerError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteLoadBalancerErrorKind::Unhandled(inner) => {
@@ -252,9 +284,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteLoadBalancerError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteLoadBalancerListenersError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteLoadBalancerListenersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteLoadBalancerListenersError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteLoadBalancerListenersError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -265,9 +301,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteLoadBalancerListener
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteLoadBalancerPolicyError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteLoadBalancerPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteLoadBalancerPolicyError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteLoadBalancerPolicyError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -279,11 +319,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteLoadBalancerPolicyEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeregisterInstancesFromLoadBalancerError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::DeregisterInstancesFromLoadBalancerError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeregisterInstancesFromLoadBalancerError>,
+        err: smithy_http::result::SdkError<
+            crate::error::DeregisterInstancesFromLoadBalancerError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -295,8 +341,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeregisterInstancesFromLoa
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeAccountLimitsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeAccountLimitsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeAccountLimitsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeAccountLimitsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeAccountLimitsErrorKind::Unhandled(inner) => {
@@ -307,8 +358,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeAccountLimitsError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeInstanceHealthError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeInstanceHealthError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeInstanceHealthError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeInstanceHealthError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeInstanceHealthErrorKind::AccessPointNotFoundException(
@@ -325,11 +381,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeInstanceHealthErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancerAttributesError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancerAttributesError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeLoadBalancerAttributesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeLoadBalancerAttributesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -341,11 +399,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancerAttrib
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancerPoliciesError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancerPoliciesError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeLoadBalancerPoliciesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeLoadBalancerPoliciesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -357,11 +417,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancerPolici
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancerPolicyTypesError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancerPolicyTypesError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeLoadBalancerPolicyTypesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeLoadBalancerPolicyTypesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -372,8 +434,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancerPolicy
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancersError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeLoadBalancersError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeLoadBalancersError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeLoadBalancersErrorKind::AccessPointNotFoundException(
@@ -390,8 +457,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLoadBalancersError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeTagsErrorKind::AccessPointNotFoundException(inner) => {
@@ -403,11 +473,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTagsError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DetachLoadBalancerFromSubnetsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DetachLoadBalancerFromSubnetsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DetachLoadBalancerFromSubnetsError>,
+        err: smithy_http::result::SdkError<crate::error::DetachLoadBalancerFromSubnetsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -419,12 +491,20 @@ impl From<smithy_http::result::SdkError<crate::error::DetachLoadBalancerFromSubn
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisableAvailabilityZonesForLoadBalancerError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<
+            crate::error::DisableAvailabilityZonesForLoadBalancerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DisableAvailabilityZonesForLoadBalancerError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -437,12 +517,17 @@ impl From<smithy_http::result::SdkError<crate::error::DisableAvailabilityZonesFo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::EnableAvailabilityZonesForLoadBalancerError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<crate::error::EnableAvailabilityZonesForLoadBalancerError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::EnableAvailabilityZonesForLoadBalancerError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -454,11 +539,13 @@ impl From<smithy_http::result::SdkError<crate::error::EnableAvailabilityZonesFor
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyLoadBalancerAttributesError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyLoadBalancerAttributesError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ModifyLoadBalancerAttributesError>,
+        err: smithy_http::result::SdkError<crate::error::ModifyLoadBalancerAttributesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -471,11 +558,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyLoadBalancerAttribut
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RegisterInstancesWithLoadBalancerError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::RegisterInstancesWithLoadBalancerError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RegisterInstancesWithLoadBalancerError>,
+        err: smithy_http::result::SdkError<crate::error::RegisterInstancesWithLoadBalancerError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -487,8 +576,11 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterInstancesWithLoadB
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RemoveTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RemoveTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RemoveTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RemoveTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RemoveTagsErrorKind::AccessPointNotFoundException(inner) => {
@@ -500,12 +592,16 @@ impl From<smithy_http::result::SdkError<crate::error::RemoveTagsError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SetLoadBalancerListenerSSLCertificateError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::SetLoadBalancerListenerSSLCertificateError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::SetLoadBalancerListenerSSLCertificateError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -521,12 +617,20 @@ impl From<smithy_http::result::SdkError<crate::error::SetLoadBalancerListenerSSL
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SetLoadBalancerPoliciesForBackendServerError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<
+            crate::error::SetLoadBalancerPoliciesForBackendServerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::SetLoadBalancerPoliciesForBackendServerError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -540,11 +644,13 @@ impl From<smithy_http::result::SdkError<crate::error::SetLoadBalancerPoliciesFor
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SetLoadBalancerPoliciesOfListenerError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::SetLoadBalancerPoliciesOfListenerError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::SetLoadBalancerPoliciesOfListenerError>,
+        err: smithy_http::result::SdkError<crate::error::SetLoadBalancerPoliciesOfListenerError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {

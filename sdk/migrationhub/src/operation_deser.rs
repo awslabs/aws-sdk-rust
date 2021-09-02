@@ -6,7 +6,7 @@ pub fn parse_associate_created_artifact_error(
     crate::output::AssociateCreatedArtifactOutput,
     crate::error::AssociateCreatedArtifactError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateCreatedArtifactError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -233,7 +233,7 @@ pub fn parse_associate_discovered_resource_error(
     crate::output::AssociateDiscoveredResourceOutput,
     crate::error::AssociateDiscoveredResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateDiscoveredResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -483,7 +483,7 @@ pub fn parse_create_progress_update_stream_error(
     crate::output::CreateProgressUpdateStreamOutput,
     crate::error::CreateProgressUpdateStreamError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateProgressUpdateStreamError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -693,7 +693,7 @@ pub fn parse_delete_progress_update_stream_error(
     crate::output::DeleteProgressUpdateStreamOutput,
     crate::error::DeleteProgressUpdateStreamError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteProgressUpdateStreamError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -925,7 +925,7 @@ pub fn parse_describe_application_state_error(
     crate::output::DescribeApplicationStateOutput,
     crate::error::DescribeApplicationStateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeApplicationStateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1136,7 +1136,7 @@ pub fn parse_describe_migration_task_error(
     crate::output::DescribeMigrationTaskOutput,
     crate::error::DescribeMigrationTaskError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeMigrationTaskError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1320,7 +1320,7 @@ pub fn parse_disassociate_created_artifact_error(
     crate::output::DisassociateCreatedArtifactOutput,
     crate::error::DisassociateCreatedArtifactError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateCreatedArtifactError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1549,7 +1549,7 @@ pub fn parse_disassociate_discovered_resource_error(
     crate::output::DisassociateDiscoveredResourceOutput,
     crate::error::DisassociateDiscoveredResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateDiscoveredResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1771,7 +1771,7 @@ pub fn parse_import_migration_task_error(
     crate::output::ImportMigrationTaskOutput,
     crate::error::ImportMigrationTaskError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportMigrationTaskError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1992,7 +1992,7 @@ pub fn parse_list_application_states_error(
     crate::output::ListApplicationStatesOutput,
     crate::error::ListApplicationStatesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListApplicationStatesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2156,7 +2156,7 @@ pub fn parse_list_created_artifacts_error(
     crate::output::ListCreatedArtifactsOutput,
     crate::error::ListCreatedArtifactsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCreatedArtifactsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2340,7 +2340,7 @@ pub fn parse_list_discovered_resources_error(
     crate::output::ListDiscoveredResourcesOutput,
     crate::error::ListDiscoveredResourcesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDiscoveredResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2530,7 +2530,7 @@ pub fn parse_list_migration_tasks_error(
     crate::output::ListMigrationTasksOutput,
     crate::error::ListMigrationTasksError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListMigrationTasksError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2735,7 +2735,7 @@ pub fn parse_list_progress_update_streams_error(
     crate::output::ListProgressUpdateStreamsOutput,
     crate::error::ListProgressUpdateStreamsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListProgressUpdateStreamsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2907,7 +2907,7 @@ pub fn parse_notify_application_state_error(
     crate::output::NotifyApplicationStateOutput,
     crate::error::NotifyApplicationStateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::NotifyApplicationStateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3153,7 +3153,7 @@ pub fn parse_notify_migration_task_state_error(
     crate::output::NotifyMigrationTaskStateOutput,
     crate::error::NotifyMigrationTaskStateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::NotifyMigrationTaskStateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3380,7 +3380,7 @@ pub fn parse_put_resource_attributes_error(
     crate::output::PutResourceAttributesOutput,
     crate::error::PutResourceAttributesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutResourceAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

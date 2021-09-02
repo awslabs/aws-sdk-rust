@@ -63,8 +63,8 @@ impl DeleteThingShadowError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -149,6 +149,141 @@ impl std::error::Error for DeleteThingShadowError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct GetRetainedMessageError {
+    pub kind: GetRetainedMessageErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetRetainedMessageErrorKind {
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottlingException(crate::error::ThrottlingException),
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetRetainedMessageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetRetainedMessageErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            GetRetainedMessageErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            GetRetainedMessageErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            GetRetainedMessageErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetRetainedMessageErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            GetRetainedMessageErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetRetainedMessageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            GetRetainedMessageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetRetainedMessageError {
+    fn code(&self) -> Option<&str> {
+        GetRetainedMessageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetRetainedMessageError {
+    pub fn new(kind: GetRetainedMessageErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetRetainedMessageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetRetainedMessageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRetainedMessageErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRetainedMessageErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_method_not_allowed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRetainedMessageErrorKind::MethodNotAllowedException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRetainedMessageErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRetainedMessageErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRetainedMessageErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRetainedMessageErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for GetRetainedMessageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetRetainedMessageErrorKind::InternalFailureException(_inner) => Some(_inner),
+            GetRetainedMessageErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            GetRetainedMessageErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            GetRetainedMessageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetRetainedMessageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            GetRetainedMessageErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetRetainedMessageErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            GetRetainedMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct GetThingShadowError {
     pub kind: GetThingShadowErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -209,8 +344,8 @@ impl GetThingShadowError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -348,8 +483,8 @@ impl ListNamedShadowsForThingError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -425,6 +560,132 @@ impl std::error::Error for ListNamedShadowsForThingError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct ListRetainedMessagesError {
+    pub kind: ListRetainedMessagesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListRetainedMessagesErrorKind {
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottlingException(crate::error::ThrottlingException),
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListRetainedMessagesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListRetainedMessagesErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            ListRetainedMessagesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListRetainedMessagesErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            ListRetainedMessagesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListRetainedMessagesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListRetainedMessagesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            ListRetainedMessagesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListRetainedMessagesError {
+    fn code(&self) -> Option<&str> {
+        ListRetainedMessagesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListRetainedMessagesError {
+    pub fn new(kind: ListRetainedMessagesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListRetainedMessagesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListRetainedMessagesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRetainedMessagesErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRetainedMessagesErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_method_not_allowed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRetainedMessagesErrorKind::MethodNotAllowedException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRetainedMessagesErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRetainedMessagesErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRetainedMessagesErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for ListRetainedMessagesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListRetainedMessagesErrorKind::InternalFailureException(_inner) => Some(_inner),
+            ListRetainedMessagesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListRetainedMessagesErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            ListRetainedMessagesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListRetainedMessagesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListRetainedMessagesErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            ListRetainedMessagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct PublishError {
     pub kind: PublishErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -477,8 +738,8 @@ impl PublishError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -585,8 +846,8 @@ impl UpdateThingShadowError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }

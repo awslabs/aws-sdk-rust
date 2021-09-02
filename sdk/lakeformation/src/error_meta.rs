@@ -29,8 +29,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AddLFTagsToResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AddLFTagsToResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AddLFTagsToResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::AddLFTagsToResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AddLFTagsToResourceErrorKind::AccessDeniedException(inner) => {
@@ -59,8 +62,13 @@ impl From<smithy_http::result::SdkError<crate::error::AddLFTagsToResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchGrantPermissionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchGrantPermissionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchGrantPermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::BatchGrantPermissionsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchGrantPermissionsErrorKind::InvalidInputException(inner) => {
@@ -77,8 +85,13 @@ impl From<smithy_http::result::SdkError<crate::error::BatchGrantPermissionsError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchRevokePermissionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchRevokePermissionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchRevokePermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::BatchRevokePermissionsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchRevokePermissionsErrorKind::InvalidInputException(inner) => {
@@ -95,8 +108,11 @@ impl From<smithy_http::result::SdkError<crate::error::BatchRevokePermissionsErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateLFTagError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateLFTagError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateLFTagError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateLFTagError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateLFTagErrorKind::AccessDeniedException(inner) => {
@@ -123,8 +139,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateLFTagError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteLFTagError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteLFTagError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteLFTagError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteLFTagError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteLFTagErrorKind::AccessDeniedException(inner) => {
@@ -148,8 +167,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteLFTagError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeregisterResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeregisterResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeregisterResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeregisterResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeregisterResourceErrorKind::EntityNotFoundException(inner) => {
@@ -172,8 +194,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeregisterResourceError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeResourceErrorKind::EntityNotFoundException(inner) => {
@@ -196,8 +221,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeResourceError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetDataLakeSettingsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetDataLakeSettingsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDataLakeSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetDataLakeSettingsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetDataLakeSettingsErrorKind::EntityNotFoundException(inner) => {
@@ -217,11 +245,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetDataLakeSettingsError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetEffectivePermissionsForPathError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetEffectivePermissionsForPathError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetEffectivePermissionsForPathError>,
+        err: smithy_http::result::SdkError<crate::error::GetEffectivePermissionsForPathError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -235,8 +265,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetEffectivePermissionsFor
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetLFTagError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetLFTagError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetLFTagError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetLFTagError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetLFTagErrorKind::AccessDeniedException(inner) => {
@@ -260,8 +293,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetLFTagError>> for Error 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetResourceLFTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetResourceLFTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetResourceLFTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetResourceLFTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetResourceLFTagsErrorKind::AccessDeniedException(inner) => {
@@ -290,8 +326,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetResourceLFTagsError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GrantPermissionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GrantPermissionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GrantPermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GrantPermissionsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GrantPermissionsErrorKind::ConcurrentModificationException(inner) => {
@@ -311,8 +350,11 @@ impl From<smithy_http::result::SdkError<crate::error::GrantPermissionsError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListLFTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListLFTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListLFTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListLFTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListLFTagsErrorKind::EntityNotFoundException(inner) => {
@@ -333,8 +375,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListLFTagsError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListPermissionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListPermissionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListPermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListPermissionsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListPermissionsErrorKind::InternalServiceException(inner) => {
@@ -352,8 +397,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListPermissionsError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListResourcesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListResourcesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListResourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListResourcesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListResourcesErrorKind::InternalServiceException(inner) => {
@@ -371,8 +419,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListResourcesError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutDataLakeSettingsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutDataLakeSettingsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutDataLakeSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutDataLakeSettingsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutDataLakeSettingsErrorKind::InternalServiceException(inner) => {
@@ -389,8 +440,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutDataLakeSettingsError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RegisterResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RegisterResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RegisterResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RegisterResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RegisterResourceErrorKind::AlreadyExistsException(inner) => {
@@ -413,9 +467,13 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterResourceError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RemoveLFTagsFromResourceError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::RemoveLFTagsFromResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RemoveLFTagsFromResourceError>,
+        err: smithy_http::result::SdkError<crate::error::RemoveLFTagsFromResourceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -432,8 +490,11 @@ impl From<smithy_http::result::SdkError<crate::error::RemoveLFTagsFromResourceEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RevokePermissionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RevokePermissionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RevokePermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RevokePermissionsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RevokePermissionsErrorKind::ConcurrentModificationException(
@@ -453,9 +514,12 @@ impl From<smithy_http::result::SdkError<crate::error::RevokePermissionsError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SearchDatabasesByLFTagsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::SearchDatabasesByLFTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::SearchDatabasesByLFTagsError>,
+        err: smithy_http::result::SdkError<crate::error::SearchDatabasesByLFTagsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -485,8 +549,13 @@ impl From<smithy_http::result::SdkError<crate::error::SearchDatabasesByLFTagsErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SearchTablesByLFTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::SearchTablesByLFTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::SearchTablesByLFTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::SearchTablesByLFTagsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SearchTablesByLFTagsErrorKind::AccessDeniedException(inner) => {
@@ -515,8 +584,11 @@ impl From<smithy_http::result::SdkError<crate::error::SearchTablesByLFTagsError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateLFTagError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateLFTagError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateLFTagError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateLFTagError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateLFTagErrorKind::AccessDeniedException(inner) => {
@@ -543,8 +615,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateLFTagError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateResourceErrorKind::EntityNotFoundException(inner) => {

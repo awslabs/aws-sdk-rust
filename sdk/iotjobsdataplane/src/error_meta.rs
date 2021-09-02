@@ -25,8 +25,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeJobExecutionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeJobExecutionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeJobExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeJobExecutionError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeJobExecutionErrorKind::CertificateValidationException(
@@ -55,9 +60,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeJobExecutionError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetPendingJobExecutionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetPendingJobExecutionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetPendingJobExecutionsError>,
+        err: smithy_http::result::SdkError<crate::error::GetPendingJobExecutionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -84,11 +92,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetPendingJobExecutionsErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartNextPendingJobExecutionError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::StartNextPendingJobExecutionError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StartNextPendingJobExecutionError>,
+        err: smithy_http::result::SdkError<crate::error::StartNextPendingJobExecutionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -103,8 +113,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartNextPendingJobExecuti
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateJobExecutionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateJobExecutionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateJobExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateJobExecutionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateJobExecutionErrorKind::CertificateValidationException(

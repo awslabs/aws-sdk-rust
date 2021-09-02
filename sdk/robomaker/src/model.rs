@@ -1557,7 +1557,7 @@ pub struct SimulationJobRequest {
     /// <dl>
     /// <dt>Continue</dt>
     /// <dd>
-    /// <p>Restart the simulation job in the same host instance.</p>
+    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
     /// </dd>
     /// <dt>Fail</dt>
     /// <dd>
@@ -1686,7 +1686,7 @@ pub mod simulation_job_request {
         /// <dl>
         /// <dt>Continue</dt>
         /// <dd>
-        /// <p>Restart the simulation job in the same host instance.</p>
+        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
         /// <dt>Fail</dt>
         /// <dd>
@@ -6766,7 +6766,7 @@ pub struct SimulationJob {
     /// <dl>
     /// <dt>Continue</dt>
     /// <dd>
-    /// <p>Restart the simulation job in the same host instance.</p>
+    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
     /// </dd>
     /// <dt>Fail</dt>
     /// <dd>
@@ -6935,7 +6935,7 @@ pub mod simulation_job {
         /// <dl>
         /// <dt>Continue</dt>
         /// <dd>
-        /// <p>Restart the simulation job in the same host instance.</p>
+        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
         /// <dt>Fail</dt>
         /// <dd>

@@ -23,8 +23,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ConfigureLogsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ConfigureLogsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ConfigureLogsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ConfigureLogsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ConfigureLogsErrorKind::ForbiddenException(inner) => {
@@ -51,8 +54,11 @@ impl From<smithy_http::result::SdkError<crate::error::ConfigureLogsError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateChannelError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateChannelError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateChannelError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateChannelErrorKind::ForbiddenException(inner) => {
@@ -79,8 +85,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateChannelError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateHarvestJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateHarvestJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateHarvestJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateHarvestJobError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateHarvestJobErrorKind::ForbiddenException(inner) => {
@@ -109,8 +118,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateHarvestJobError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateOriginEndpointError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateOriginEndpointError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateOriginEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateOriginEndpointError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateOriginEndpointErrorKind::ForbiddenException(inner) => {
@@ -139,8 +153,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateOriginEndpointError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteChannelError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteChannelError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteChannelError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteChannelErrorKind::ForbiddenException(inner) => {
@@ -167,8 +184,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteChannelError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteOriginEndpointError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteOriginEndpointError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteOriginEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteOriginEndpointError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteOriginEndpointErrorKind::ForbiddenException(inner) => {
@@ -197,8 +219,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteOriginEndpointError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeChannelError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeChannelError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeChannelError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeChannelErrorKind::ForbiddenException(inner) => {
@@ -225,8 +250,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeChannelError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeHarvestJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeHarvestJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeHarvestJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeHarvestJobError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeHarvestJobErrorKind::ForbiddenException(inner) => {
@@ -255,8 +283,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeHarvestJobError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeOriginEndpointError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeOriginEndpointError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeOriginEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeOriginEndpointError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeOriginEndpointErrorKind::ForbiddenException(inner) => {
@@ -285,8 +318,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeOriginEndpointErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListChannelsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListChannelsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListChannelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListChannelsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListChannelsErrorKind::ForbiddenException(inner) => {
@@ -313,8 +349,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListChannelsError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListHarvestJobsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListHarvestJobsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListHarvestJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListHarvestJobsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListHarvestJobsErrorKind::ForbiddenException(inner) => {
@@ -341,8 +380,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListHarvestJobsError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListOriginEndpointsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListOriginEndpointsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListOriginEndpointsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListOriginEndpointsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListOriginEndpointsErrorKind::ForbiddenException(inner) => {
@@ -371,8 +413,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListOriginEndpointsError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
@@ -383,9 +428,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RotateChannelCredentialsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::RotateChannelCredentialsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RotateChannelCredentialsError>,
+        err: smithy_http::result::SdkError<crate::error::RotateChannelCredentialsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -415,11 +464,13 @@ impl From<smithy_http::result::SdkError<crate::error::RotateChannelCredentialsEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RotateIngestEndpointCredentialsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::RotateIngestEndpointCredentialsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RotateIngestEndpointCredentialsError>,
+        err: smithy_http::result::SdkError<crate::error::RotateIngestEndpointCredentialsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -435,8 +486,11 @@ impl From<smithy_http::result::SdkError<crate::error::RotateIngestEndpointCreden
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
@@ -445,8 +499,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
@@ -455,8 +512,11 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateChannelError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateChannelError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateChannelError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateChannelErrorKind::ForbiddenException(inner) => {
@@ -483,8 +543,13 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateChannelError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateOriginEndpointError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateOriginEndpointError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateOriginEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateOriginEndpointError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateOriginEndpointErrorKind::ForbiddenException(inner) => {

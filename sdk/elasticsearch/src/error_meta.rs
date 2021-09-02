@@ -33,14 +33,20 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl
+impl<R>
     From<
-        smithy_http::result::SdkError<crate::error::AcceptInboundCrossClusterSearchConnectionError>,
+        smithy_http::result::SdkError<
+            crate::error::AcceptInboundCrossClusterSearchConnectionError,
+            R,
+        >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::AcceptInboundCrossClusterSearchConnectionError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -54,8 +60,11 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AddTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AddTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AddTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::AddTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AddTagsErrorKind::BaseException(inner) => Error::BaseException(inner),
@@ -74,8 +83,11 @@ impl From<smithy_http::result::SdkError<crate::error::AddTagsError>> for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociatePackageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AssociatePackageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociatePackageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::AssociatePackageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AssociatePackageErrorKind::AccessDeniedException(inner) => {
@@ -104,13 +116,20 @@ impl From<smithy_http::result::SdkError<crate::error::AssociatePackageError>> fo
         }
     }
 }
-impl
-    From<smithy_http::result::SdkError<crate::error::CancelElasticsearchServiceSoftwareUpdateError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<
+            crate::error::CancelElasticsearchServiceSoftwareUpdateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::CancelElasticsearchServiceSoftwareUpdateError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -125,9 +144,13 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateElasticsearchDomainError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateElasticsearchDomainError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateElasticsearchDomainError>,
+        err: smithy_http::result::SdkError<crate::error::CreateElasticsearchDomainError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -144,16 +167,20 @@ impl From<smithy_http::result::SdkError<crate::error::CreateElasticsearchDomainE
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::CreateOutboundCrossClusterSearchConnectionError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::CreateOutboundCrossClusterSearchConnectionError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -168,8 +195,11 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreatePackageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreatePackageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreatePackageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreatePackageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreatePackageErrorKind::AccessDeniedException(inner) => {
@@ -199,9 +229,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreatePackageError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteElasticsearchDomainError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteElasticsearchDomainError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteElasticsearchDomainError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteElasticsearchDomainError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -225,11 +259,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteElasticsearchDomainE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteElasticsearchServiceRoleError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteElasticsearchServiceRoleError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteElasticsearchServiceRoleError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteElasticsearchServiceRoleError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -250,14 +286,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteElasticsearchService
         }
     }
 }
-impl
+impl<R>
     From<
-        smithy_http::result::SdkError<crate::error::DeleteInboundCrossClusterSearchConnectionError>,
+        smithy_http::result::SdkError<
+            crate::error::DeleteInboundCrossClusterSearchConnectionError,
+            R,
+        >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DeleteInboundCrossClusterSearchConnectionError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -270,16 +312,20 @@ impl
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::DeleteOutboundCrossClusterSearchConnectionError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DeleteOutboundCrossClusterSearchConnectionError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -292,8 +338,11 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeletePackageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeletePackageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeletePackageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeletePackageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeletePackageErrorKind::AccessDeniedException(inner) => {
@@ -320,9 +369,12 @@ impl From<smithy_http::result::SdkError<crate::error::DeletePackageError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDomainAutoTunesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeDomainAutoTunesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeDomainAutoTunesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeDomainAutoTunesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -346,9 +398,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDomainAutoTunesErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -372,11 +428,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomai
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainConfigError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainConfigError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainConfigError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainConfigError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -390,11 +448,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomai
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -415,12 +475,20 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomai
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeElasticsearchInstanceTypeLimitsError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<
+            crate::error::DescribeElasticsearchInstanceTypeLimitsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DescribeElasticsearchInstanceTypeLimitsError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -437,16 +505,20 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeElasticsearchInsta
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::DescribeInboundCrossClusterSearchConnectionsError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DescribeInboundCrossClusterSearchConnectionsError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -459,16 +531,20 @@ impl
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::DescribeOutboundCrossClusterSearchConnectionsError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DescribeOutboundCrossClusterSearchConnectionsError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -481,8 +557,11 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribePackagesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribePackagesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribePackagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribePackagesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribePackagesErrorKind::AccessDeniedException(inner) => {
@@ -508,16 +587,20 @@ impl From<smithy_http::result::SdkError<crate::error::DescribePackagesError>> fo
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::DescribeReservedElasticsearchInstanceOfferingsError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DescribeReservedElasticsearchInstanceOfferingsError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -532,12 +615,17 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeReservedElasticsearchInstancesError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<crate::error::DescribeReservedElasticsearchInstancesError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DescribeReservedElasticsearchInstancesError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -552,8 +640,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeReservedElasticsea
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DissociatePackageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DissociatePackageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DissociatePackageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DissociatePackageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DissociatePackageErrorKind::AccessDeniedException(inner) => {
@@ -582,11 +673,17 @@ impl From<smithy_http::result::SdkError<crate::error::DissociatePackageError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetCompatibleElasticsearchVersionsError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::GetCompatibleElasticsearchVersionsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetCompatibleElasticsearchVersionsError>,
+        err: smithy_http::result::SdkError<
+            crate::error::GetCompatibleElasticsearchVersionsError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -601,9 +698,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetCompatibleElasticsearch
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetPackageVersionHistoryError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetPackageVersionHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetPackageVersionHistoryError>,
+        err: smithy_http::result::SdkError<crate::error::GetPackageVersionHistoryError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -630,8 +731,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetPackageVersionHistoryEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetUpgradeHistoryError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetUpgradeHistoryError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetUpgradeHistoryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetUpgradeHistoryError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetUpgradeHistoryErrorKind::BaseException(inner) => {
@@ -657,8 +761,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetUpgradeHistoryError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetUpgradeStatusError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetUpgradeStatusError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetUpgradeStatusError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetUpgradeStatusError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetUpgradeStatusErrorKind::BaseException(inner) => {
@@ -684,8 +791,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetUpgradeStatusError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListDomainNamesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListDomainNamesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDomainNamesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListDomainNamesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListDomainNamesErrorKind::BaseException(inner) => {
@@ -700,8 +810,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListDomainNamesError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListDomainsForPackageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListDomainsForPackageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDomainsForPackageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListDomainsForPackageError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListDomainsForPackageErrorKind::AccessDeniedException(inner) => {
@@ -727,11 +842,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListDomainsForPackageError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListElasticsearchInstanceTypesError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ListElasticsearchInstanceTypesError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListElasticsearchInstanceTypesError>,
+        err: smithy_http::result::SdkError<crate::error::ListElasticsearchInstanceTypesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -745,9 +862,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListElasticsearchInstanceT
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListElasticsearchVersionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListElasticsearchVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListElasticsearchVersionsError>,
+        err: smithy_http::result::SdkError<crate::error::ListElasticsearchVersionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -771,8 +892,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListElasticsearchVersionsE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListPackagesForDomainError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListPackagesForDomainError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListPackagesForDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListPackagesForDomainError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListPackagesForDomainErrorKind::AccessDeniedException(inner) => {
@@ -798,8 +924,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListPackagesForDomainError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsErrorKind::BaseException(inner) => {
@@ -820,16 +949,20 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsError>> for Error 
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::PurchaseReservedElasticsearchInstanceOfferingError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::PurchaseReservedElasticsearchInstanceOfferingError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -846,14 +979,20 @@ impl
         }
     }
 }
-impl
+impl<R>
     From<
-        smithy_http::result::SdkError<crate::error::RejectInboundCrossClusterSearchConnectionError>,
+        smithy_http::result::SdkError<
+            crate::error::RejectInboundCrossClusterSearchConnectionError,
+            R,
+        >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::RejectInboundCrossClusterSearchConnectionError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -866,8 +1005,11 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RemoveTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RemoveTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RemoveTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RemoveTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RemoveTagsErrorKind::BaseException(inner) => {
@@ -885,12 +1027,20 @@ impl From<smithy_http::result::SdkError<crate::error::RemoveTagsError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartElasticsearchServiceSoftwareUpdateError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<
+            crate::error::StartElasticsearchServiceSoftwareUpdateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::StartElasticsearchServiceSoftwareUpdateError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -905,11 +1055,13 @@ impl From<smithy_http::result::SdkError<crate::error::StartElasticsearchServiceS
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateElasticsearchDomainConfigError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateElasticsearchDomainConfigError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateElasticsearchDomainConfigError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateElasticsearchDomainConfigError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -925,8 +1077,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateElasticsearchDomainC
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdatePackageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdatePackageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdatePackageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdatePackageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdatePackageErrorKind::AccessDeniedException(inner) => {
@@ -953,9 +1108,13 @@ impl From<smithy_http::result::SdkError<crate::error::UpdatePackageError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpgradeElasticsearchDomainError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpgradeElasticsearchDomainError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpgradeElasticsearchDomainError>,
+        err: smithy_http::result::SdkError<crate::error::UpgradeElasticsearchDomainError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {

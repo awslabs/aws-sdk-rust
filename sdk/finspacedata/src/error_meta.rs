@@ -21,8 +21,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateChangesetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateChangesetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateChangesetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateChangesetError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateChangesetErrorKind::AccessDeniedException(inner) => {
@@ -46,11 +49,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateChangesetError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetProgrammaticAccessCredentialsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetProgrammaticAccessCredentialsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetProgrammaticAccessCredentialsError>,
+        err: smithy_http::result::SdkError<crate::error::GetProgrammaticAccessCredentialsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -63,8 +68,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetProgrammaticAccessCrede
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetWorkingLocationError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetWorkingLocationError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetWorkingLocationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetWorkingLocationError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetWorkingLocationErrorKind::AccessDeniedException(inner) => {

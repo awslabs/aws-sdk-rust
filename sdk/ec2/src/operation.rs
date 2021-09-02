@@ -333,7 +333,8 @@ impl smithy_http::response::ParseStrictResponse for ApplySecurityGroupsToClientV
 /// <p>You must specify either the IPv6 addresses or the IPv6 address count in the request. </p>
 /// <p>You can optionally use Prefix Delegation on the network interface. You must specify
 /// either the IPV6 Prefix Delegation prefixes, or the IPv6 Prefix Delegation count. For
-/// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+/// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssignIpv6Addresses {
     _private: (),
@@ -375,7 +376,8 @@ impl smithy_http::response::ParseStrictResponse for AssignIpv6Addresses {
 /// <p>You must specify either the IP addresses or the IP address count in the request.</p>
 /// <p>You can optionally use Prefix Delegation on the network interface. You must specify
 /// either the IPv4 Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
-/// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+/// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssignPrivateIpAddresses {
     _private: (),
@@ -679,7 +681,8 @@ impl smithy_http::response::ParseStrictResponse for AssociateSubnetCidrBlock {
 }
 
 /// <p>Associates the specified subnets and transit gateway attachments with the specified transit gateway multicast domain.</p>
-/// <p>The transit gateway attachment must be in the available state before you can add a resource. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html">DescribeTransitGatewayAttachments</a> to see the state of the attachment.</p>
+/// <p>The transit gateway attachment must be in the available state before you can add a resource. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html">DescribeTransitGatewayAttachments</a>
+/// to see the state of the attachment.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateTransitGatewayMulticastDomain {
     _private: (),
@@ -738,11 +741,13 @@ impl smithy_http::response::ParseStrictResponse for AssociateTransitGatewayRoute
     }
 }
 
+/// <note>
+/// <p>This API action is currently in <b>limited preview only</b>.
+/// If you are interested in using this feature, contact your account manager.</p>
+/// </note>
 /// <p>Associates a branch network interface with a trunk network interface.</p>
 /// <p>Before you create the association, run the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a> command and set
 /// <code>--interface-type</code> to <code>trunk</code>. You must also create a network interface for each branch network interface that you want to associate with the trunk network interface.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-/// Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateTrunkInterface {
     _private: (),
@@ -3184,7 +3189,7 @@ impl smithy_http::response::ParseStrictResponse for CreateTransitGateway {
 }
 
 /// <p>Creates a Connect attachment from a specified transit gateway attachment. A Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection between a transit gateway and an appliance.</p>
-/// <p>A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the underlying transport mechanism. </p>
+/// <p>A Connect attachment uses an existing VPC or Amazon Web Services Direct Connect attachment as the underlying transport mechanism.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTransitGatewayConnect {
     _private: (),
@@ -3274,10 +3279,10 @@ impl smithy_http::response::ParseStrictResponse for CreateTransitGatewayMulticas
 
 /// <p>Requests a transit gateway peering attachment between the specified transit gateway
 /// (requester) and a peer transit gateway (accepter). The transit gateways must be in
-/// different Regions. The peer transit gateway can be in your account or a different AWS
-/// account. </p>
-/// <p>After you create the peering attachment, the owner of the accepter
-/// transit gateway must accept the attachment request.</p>
+/// different Regions. The peer transit gateway can be in your account or a different
+/// Amazon Web Services account.</p>
+/// <p>After you create the peering attachment, the owner of the accepter transit gateway
+/// must accept the attachment request.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTransitGatewayPeeringAttachment {
     _private: (),
@@ -8981,6 +8986,10 @@ impl smithy_http::response::ParseStrictResponse for DescribeTransitGatewayVpcAtt
     }
 }
 
+/// <note>
+/// <p>This API action is currently in <b>limited preview only</b>.
+/// If you are interested in using this feature, contact your account manager.</p>
+/// </note>
 /// <p>Describes one or more network interface trunk associations.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTrunkInterfaceAssociations {
@@ -10247,6 +10256,10 @@ impl smithy_http::response::ParseStrictResponse for DisassociateTransitGatewayRo
     }
 }
 
+/// <note>
+/// <p>This API action is currently in <b>limited preview only</b>.
+/// If you are interested in using this feature, contact your account manager.</p>
+/// </note>
 /// <p>Removes an association between a branch network interface with a trunk network interface.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateTrunkInterface {
@@ -11545,7 +11558,7 @@ impl smithy_http::response::ParseStrictResponse for ImportImage {
 /// <p>Creates an import instance task using metadata from the specified disk image.</p>
 /// <p>This API action supports only single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>
 /// instead.</p>
-/// <p>This API action is not supported by the AWS Command Line Interface (AWS CLI). For
+/// <p>This API action is not supported by the Command Line Interface (CLI). For
 /// information about using the Amazon EC2 CLI, which is deprecated, see
 /// <a href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing a VM to Amazon EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
 /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
@@ -11637,7 +11650,7 @@ impl smithy_http::response::ParseStrictResponse for ImportSnapshot {
 /// <p>This API action supports only single-volume VMs. To import multi-volume VMs, use
 /// <a>ImportImage</a> instead. To import a disk to a snapshot, use
 /// <a>ImportSnapshot</a> instead.</p>
-/// <p>This API action is not supported by the AWS Command Line Interface (AWS CLI). For
+/// <p>This API action is not supported by the Command Line Interface (CLI). For
 /// information about using the Amazon EC2 CLI, which is deprecated, see <a href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#importing-your-volumes-into-amazon-ebs">Importing Disks to Amazon EBS</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
 /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]

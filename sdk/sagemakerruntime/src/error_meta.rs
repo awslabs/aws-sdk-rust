@@ -19,8 +19,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::InvokeEndpointError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::InvokeEndpointError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::InvokeEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::InvokeEndpointError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::InvokeEndpointErrorKind::InternalFailure(inner) => {
@@ -41,8 +44,11 @@ impl From<smithy_http::result::SdkError<crate::error::InvokeEndpointError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::InvokeEndpointAsyncError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::InvokeEndpointAsyncError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::InvokeEndpointAsyncError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::InvokeEndpointAsyncError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::InvokeEndpointAsyncErrorKind::InternalFailure(inner) => {

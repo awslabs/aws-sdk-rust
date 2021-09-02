@@ -6,7 +6,7 @@ pub fn parse_associate_member_account_error(
     crate::output::AssociateMemberAccountOutput,
     crate::error::AssociateMemberAccountError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateMemberAccountError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -108,7 +108,7 @@ pub fn parse_associate_s3_resources_error(
     crate::output::AssociateS3ResourcesOutput,
     crate::error::AssociateS3ResourcesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateS3ResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -232,7 +232,7 @@ pub fn parse_disassociate_member_account_error(
     crate::output::DisassociateMemberAccountOutput,
     crate::error::DisassociateMemberAccountError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateMemberAccountError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -313,7 +313,7 @@ pub fn parse_disassociate_s3_resources_error(
     crate::output::DisassociateS3ResourcesOutput,
     crate::error::DisassociateS3ResourcesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateS3ResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -420,7 +420,7 @@ pub fn parse_list_member_accounts_error(
     crate::output::ListMemberAccountsOutput,
     crate::error::ListMemberAccountsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListMemberAccountsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -499,7 +499,7 @@ pub fn parse_list_member_accounts_response(
 pub fn parse_list_s3_resources_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListS3ResourcesOutput, crate::error::ListS3ResourcesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListS3ResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -595,7 +595,7 @@ pub fn parse_update_s3_resources_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateS3ResourcesOutput, crate::error::UpdateS3ResourcesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateS3ResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

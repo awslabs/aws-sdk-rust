@@ -6,7 +6,7 @@ pub fn parse_add_role_to_db_cluster_error(
     crate::output::AddRoleToDbClusterOutput,
     crate::error::AddRoleToDBClusterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddRoleToDBClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -118,7 +118,7 @@ pub fn parse_add_role_to_db_instance_error(
     crate::output::AddRoleToDbInstanceOutput,
     crate::error::AddRoleToDBInstanceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddRoleToDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -230,7 +230,7 @@ pub fn parse_add_source_identifier_to_subscription_error(
     crate::output::AddSourceIdentifierToSubscriptionOutput,
     crate::error::AddSourceIdentifierToSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddSourceIdentifierToSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -313,7 +313,7 @@ pub fn parse_add_tags_to_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddTagsToResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -448,7 +448,7 @@ pub fn parse_apply_pending_maintenance_action_error(
     crate::output::ApplyPendingMaintenanceActionOutput,
     crate::error::ApplyPendingMaintenanceActionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ApplyPendingMaintenanceActionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -553,7 +553,7 @@ pub fn parse_authorize_db_security_group_ingress_error(
     crate::output::AuthorizeDbSecurityGroupIngressOutput,
     crate::error::AuthorizeDBSecurityGroupIngressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AuthorizeDBSecurityGroupIngressError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -650,7 +650,7 @@ pub fn parse_backtrack_db_cluster_error(
     crate::output::BacktrackDbClusterOutput,
     crate::error::BacktrackDBClusterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::BacktrackDBClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -729,7 +729,7 @@ pub fn parse_cancel_export_task_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelExportTaskError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -806,7 +806,7 @@ pub fn parse_copy_db_cluster_parameter_group_error(
     crate::output::CopyDbClusterParameterGroupOutput,
     crate::error::CopyDBClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CopyDBClusterParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -892,7 +892,7 @@ pub fn parse_copy_db_cluster_snapshot_error(
     crate::output::CopyDbClusterSnapshotOutput,
     crate::error::CopyDBClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1051,7 +1051,7 @@ pub fn parse_copy_db_parameter_group_error(
     crate::output::CopyDbParameterGroupOutput,
     crate::error::CopyDBParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CopyDBParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1148,7 +1148,7 @@ pub fn parse_copy_db_parameter_group_response(
 pub fn parse_copy_db_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CopyDbSnapshotOutput, crate::error::CopyDBSnapshotError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CopyDBSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1301,7 +1301,7 @@ pub fn parse_copy_db_snapshot_response(
 pub fn parse_copy_option_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CopyOptionGroupOutput, crate::error::CopyOptionGroupError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CopyOptionGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1394,7 +1394,7 @@ pub fn parse_create_custom_availability_zone_error(
     crate::output::CreateCustomAvailabilityZoneOutput,
     crate::error::CreateCustomAvailabilityZoneError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCustomAvailabilityZoneError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1477,7 +1477,7 @@ pub fn parse_create_custom_availability_zone_response(
 pub fn parse_create_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDbClusterOutput, crate::error::CreateDBClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1871,7 +1871,7 @@ pub fn parse_create_db_cluster_endpoint_error(
     crate::output::CreateDbClusterEndpointOutput,
     crate::error::CreateDBClusterEndpointError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2037,7 +2037,7 @@ pub fn parse_create_db_cluster_parameter_group_error(
     crate::output::CreateDbClusterParameterGroupOutput,
     crate::error::CreateDBClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBClusterParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2110,7 +2110,7 @@ pub fn parse_create_db_cluster_snapshot_error(
     crate::output::CreateDbClusterSnapshotOutput,
     crate::error::CreateDBClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2251,7 +2251,7 @@ pub fn parse_create_db_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDbInstanceOutput, crate::error::CreateDBInstanceError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2668,7 +2668,7 @@ pub fn parse_create_db_instance_read_replica_error(
     crate::output::CreateDbInstanceReadReplicaOutput,
     crate::error::CreateDBInstanceReadReplicaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBInstanceReadReplicaError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2978,7 +2978,7 @@ pub fn parse_create_db_parameter_group_error(
     crate::output::CreateDbParameterGroupOutput,
     crate::error::CreateDBParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3061,7 +3061,7 @@ pub fn parse_create_db_parameter_group_response(
 pub fn parse_create_db_proxy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDbProxyOutput, crate::error::CreateDBProxyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBProxyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3157,7 +3157,7 @@ pub fn parse_create_db_proxy_endpoint_error(
     crate::output::CreateDbProxyEndpointOutput,
     crate::error::CreateDBProxyEndpointError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBProxyEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3303,7 +3303,7 @@ pub fn parse_create_db_security_group_error(
     crate::output::CreateDbSecurityGroupOutput,
     crate::error::CreateDBSecurityGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBSecurityGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3401,7 +3401,7 @@ pub fn parse_create_db_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDbSnapshotOutput, crate::error::CreateDBSnapshotError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3518,7 +3518,7 @@ pub fn parse_create_db_subnet_group_error(
     crate::output::CreateDbSubnetGroupOutput,
     crate::error::CreateDBSubnetGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3654,7 +3654,7 @@ pub fn parse_create_event_subscription_error(
     crate::output::CreateEventSubscriptionOutput,
     crate::error::CreateEventSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3842,7 +3842,7 @@ pub fn parse_create_global_cluster_error(
     crate::output::CreateGlobalClusterOutput,
     crate::error::CreateGlobalClusterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateGlobalClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3957,7 +3957,7 @@ pub fn parse_create_option_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateOptionGroupOutput, crate::error::CreateOptionGroupError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateOptionGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4029,7 +4029,7 @@ pub fn parse_delete_custom_availability_zone_error(
     crate::output::DeleteCustomAvailabilityZoneOutput,
     crate::error::DeleteCustomAvailabilityZoneError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteCustomAvailabilityZoneError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4098,7 +4098,7 @@ pub fn parse_delete_custom_availability_zone_response(
 pub fn parse_delete_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDbClusterOutput, crate::error::DeleteDBClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4230,7 +4230,7 @@ pub fn parse_delete_db_cluster_endpoint_error(
     crate::output::DeleteDbClusterEndpointOutput,
     crate::error::DeleteDBClusterEndpointError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBClusterEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4331,7 +4331,7 @@ pub fn parse_delete_db_cluster_parameter_group_error(
     crate::output::DeleteDbClusterParameterGroupOutput,
     crate::error::DeleteDBClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBClusterParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4399,7 +4399,7 @@ pub fn parse_delete_db_cluster_snapshot_error(
     crate::output::DeleteDbClusterSnapshotOutput,
     crate::error::DeleteDBClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4478,7 +4478,7 @@ pub fn parse_delete_db_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDbInstanceOutput, crate::error::DeleteDBInstanceError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4634,7 +4634,7 @@ pub fn parse_delete_db_instance_automated_backup_error(
     crate::output::DeleteDbInstanceAutomatedBackupOutput,
     crate::error::DeleteDBInstanceAutomatedBackupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBInstanceAutomatedBackupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4703,7 +4703,7 @@ pub fn parse_delete_db_parameter_group_error(
     crate::output::DeleteDbParameterGroupOutput,
     crate::error::DeleteDBParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4778,7 +4778,7 @@ pub fn parse_delete_db_parameter_group_response(
 pub fn parse_delete_db_proxy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDbProxyOutput, crate::error::DeleteDBProxyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBProxyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4856,7 +4856,7 @@ pub fn parse_delete_db_proxy_endpoint_error(
     crate::output::DeleteDbProxyEndpointOutput,
     crate::error::DeleteDBProxyEndpointError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBProxyEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4932,7 +4932,7 @@ pub fn parse_delete_db_security_group_error(
     crate::output::DeleteDbSecurityGroupOutput,
     crate::error::DeleteDBSecurityGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBSecurityGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5001,7 +5001,7 @@ pub fn parse_delete_db_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDbSnapshotOutput, crate::error::DeleteDBSnapshotError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5078,7 +5078,7 @@ pub fn parse_delete_db_subnet_group_error(
     crate::output::DeleteDbSubnetGroupOutput,
     crate::error::DeleteDBSubnetGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDBSubnetGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5171,7 +5171,7 @@ pub fn parse_delete_event_subscription_error(
     crate::output::DeleteEventSubscriptionOutput,
     crate::error::DeleteEventSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5256,7 +5256,7 @@ pub fn parse_delete_global_cluster_error(
     crate::output::DeleteGlobalClusterOutput,
     crate::error::DeleteGlobalClusterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteGlobalClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5334,7 +5334,7 @@ pub fn parse_delete_installation_media_error(
     crate::output::DeleteInstallationMediaOutput,
     crate::error::DeleteInstallationMediaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteInstallationMediaError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5394,7 +5394,7 @@ pub fn parse_delete_option_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteOptionGroupOutput, crate::error::DeleteOptionGroupError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteOptionGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5469,7 +5469,7 @@ pub fn parse_deregister_db_proxy_targets_error(
     crate::output::DeregisterDbProxyTargetsOutput,
     crate::error::DeregisterDBProxyTargetsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeregisterDBProxyTargetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5593,7 +5593,7 @@ pub fn parse_describe_account_attributes_error(
     crate::output::DescribeAccountAttributesOutput,
     crate::error::DescribeAccountAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
     Err(crate::error::DescribeAccountAttributesError::generic(
         generic,
@@ -5627,7 +5627,7 @@ pub fn parse_describe_certificates_error(
     crate::output::DescribeCertificatesOutput,
     crate::error::DescribeCertificatesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCertificatesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5688,7 +5688,7 @@ pub fn parse_describe_custom_availability_zones_error(
     crate::output::DescribeCustomAvailabilityZonesOutput,
     crate::error::DescribeCustomAvailabilityZonesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCustomAvailabilityZonesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5743,7 +5743,7 @@ pub fn parse_describe_db_cluster_backtracks_error(
     crate::output::DescribeDbClusterBacktracksOutput,
     crate::error::DescribeDBClusterBacktracksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBClusterBacktracksError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5827,7 +5827,7 @@ pub fn parse_describe_db_cluster_endpoints_error(
     crate::output::DescribeDbClusterEndpointsOutput,
     crate::error::DescribeDBClusterEndpointsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBClusterEndpointsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5892,7 +5892,7 @@ pub fn parse_describe_db_cluster_parameter_groups_error(
     crate::output::DescribeDbClusterParameterGroupsOutput,
     crate::error::DescribeDBClusterParameterGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBClusterParameterGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5949,7 +5949,7 @@ pub fn parse_describe_db_cluster_parameters_error(
     crate::output::DescribeDbClusterParametersOutput,
     crate::error::DescribeDBClusterParametersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBClusterParametersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6013,7 +6013,7 @@ pub fn parse_describe_db_clusters_error(
     crate::output::DescribeDbClustersOutput,
     crate::error::DescribeDBClustersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBClustersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6074,7 +6074,7 @@ pub fn parse_describe_db_cluster_snapshot_attributes_error(
     crate::output::DescribeDbClusterSnapshotAttributesOutput,
     crate::error::DescribeDBClusterSnapshotAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBClusterSnapshotAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6131,7 +6131,7 @@ pub fn parse_describe_db_cluster_snapshots_error(
     crate::output::DescribeDbClusterSnapshotsOutput,
     crate::error::DescribeDBClusterSnapshotsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBClusterSnapshotsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6195,7 +6195,7 @@ pub fn parse_describe_db_engine_versions_error(
     crate::output::DescribeDbEngineVersionsOutput,
     crate::error::DescribeDBEngineVersionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBEngineVersionsError::unhandled)?;
     Err(crate::error::DescribeDBEngineVersionsError::generic(
         generic,
@@ -6229,7 +6229,7 @@ pub fn parse_describe_db_instance_automated_backups_error(
     crate::output::DescribeDbInstanceAutomatedBackupsOutput,
     crate::error::DescribeDBInstanceAutomatedBackupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBInstanceAutomatedBackupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6286,7 +6286,7 @@ pub fn parse_describe_db_instances_error(
     crate::output::DescribeDbInstancesOutput,
     crate::error::DescribeDBInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBInstancesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6347,7 +6347,7 @@ pub fn parse_describe_db_log_files_error(
     crate::output::DescribeDbLogFilesOutput,
     crate::error::DescribeDBLogFilesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBLogFilesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6408,7 +6408,7 @@ pub fn parse_describe_db_parameter_groups_error(
     crate::output::DescribeDbParameterGroupsOutput,
     crate::error::DescribeDBParameterGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBParameterGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6472,7 +6472,7 @@ pub fn parse_describe_db_parameters_error(
     crate::output::DescribeDbParametersOutput,
     crate::error::DescribeDBParametersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBParametersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6528,7 +6528,7 @@ pub fn parse_describe_db_proxies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeDbProxiesOutput, crate::error::DescribeDBProxiesError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBProxiesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6585,7 +6585,7 @@ pub fn parse_describe_db_proxy_endpoints_error(
     crate::output::DescribeDbProxyEndpointsOutput,
     crate::error::DescribeDBProxyEndpointsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBProxyEndpointsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6668,7 +6668,7 @@ pub fn parse_describe_db_proxy_target_groups_error(
     crate::output::DescribeDbProxyTargetGroupsOutput,
     crate::error::DescribeDBProxyTargetGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBProxyTargetGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6774,7 +6774,7 @@ pub fn parse_describe_db_proxy_targets_error(
     crate::output::DescribeDbProxyTargetsOutput,
     crate::error::DescribeDBProxyTargetsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBProxyTargetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6899,7 +6899,7 @@ pub fn parse_describe_db_security_groups_error(
     crate::output::DescribeDbSecurityGroupsOutput,
     crate::error::DescribeDBSecurityGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBSecurityGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6961,7 +6961,7 @@ pub fn parse_describe_db_snapshot_attributes_error(
     crate::output::DescribeDbSnapshotAttributesOutput,
     crate::error::DescribeDBSnapshotAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBSnapshotAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7026,7 +7026,7 @@ pub fn parse_describe_db_snapshots_error(
     crate::output::DescribeDbSnapshotsOutput,
     crate::error::DescribeDBSnapshotsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBSnapshotsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7087,7 +7087,7 @@ pub fn parse_describe_db_subnet_groups_error(
     crate::output::DescribeDbSubnetGroupsOutput,
     crate::error::DescribeDBSubnetGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDBSubnetGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7151,7 +7151,7 @@ pub fn parse_describe_engine_default_cluster_parameters_error(
     crate::output::DescribeEngineDefaultClusterParametersOutput,
     crate::error::DescribeEngineDefaultClusterParametersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEngineDefaultClusterParametersError::unhandled)?;
     Err(crate::error::DescribeEngineDefaultClusterParametersError::generic(generic))
 }
@@ -7184,7 +7184,7 @@ pub fn parse_describe_engine_default_parameters_error(
     crate::output::DescribeEngineDefaultParametersOutput,
     crate::error::DescribeEngineDefaultParametersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEngineDefaultParametersError::unhandled)?;
     Err(crate::error::DescribeEngineDefaultParametersError::generic(
         generic,
@@ -7219,7 +7219,7 @@ pub fn parse_describe_event_categories_error(
     crate::output::DescribeEventCategoriesOutput,
     crate::error::DescribeEventCategoriesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventCategoriesError::unhandled)?;
     Err(crate::error::DescribeEventCategoriesError::generic(generic))
 }
@@ -7248,7 +7248,7 @@ pub fn parse_describe_event_categories_response(
 pub fn parse_describe_events_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventsError::unhandled)?;
     Err(crate::error::DescribeEventsError::generic(generic))
 }
@@ -7275,7 +7275,7 @@ pub fn parse_describe_event_subscriptions_error(
     crate::output::DescribeEventSubscriptionsOutput,
     crate::error::DescribeEventSubscriptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventSubscriptionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7341,7 +7341,7 @@ pub fn parse_describe_export_tasks_error(
     crate::output::DescribeExportTasksOutput,
     crate::error::DescribeExportTasksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeExportTasksError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7402,7 +7402,7 @@ pub fn parse_describe_global_clusters_error(
     crate::output::DescribeGlobalClustersOutput,
     crate::error::DescribeGlobalClustersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeGlobalClustersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7466,7 +7466,7 @@ pub fn parse_describe_installation_media_error(
     crate::output::DescribeInstallationMediaOutput,
     crate::error::DescribeInstallationMediaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInstallationMediaError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7530,7 +7530,7 @@ pub fn parse_describe_option_group_options_error(
     crate::output::DescribeOptionGroupOptionsOutput,
     crate::error::DescribeOptionGroupOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeOptionGroupOptionsError::unhandled)?;
     Err(crate::error::DescribeOptionGroupOptionsError::generic(
         generic,
@@ -7564,7 +7564,7 @@ pub fn parse_describe_option_groups_error(
     crate::output::DescribeOptionGroupsOutput,
     crate::error::DescribeOptionGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeOptionGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7626,7 +7626,7 @@ pub fn parse_describe_orderable_db_instance_options_error(
     crate::output::DescribeOrderableDbInstanceOptionsOutput,
     crate::error::DescribeOrderableDBInstanceOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeOrderableDBInstanceOptionsError::unhandled)?;
     Err(crate::error::DescribeOrderableDBInstanceOptionsError::generic(generic))
 }
@@ -7659,7 +7659,7 @@ pub fn parse_describe_pending_maintenance_actions_error(
     crate::output::DescribePendingMaintenanceActionsOutput,
     crate::error::DescribePendingMaintenanceActionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePendingMaintenanceActionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7725,7 +7725,7 @@ pub fn parse_describe_reserved_db_instances_error(
     crate::output::DescribeReservedDbInstancesOutput,
     crate::error::DescribeReservedDBInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReservedDBInstancesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7788,7 +7788,7 @@ pub fn parse_describe_reserved_db_instances_offerings_error(
     crate::output::DescribeReservedDbInstancesOfferingsOutput,
     crate::error::DescribeReservedDBInstancesOfferingsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReservedDBInstancesOfferingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7845,7 +7845,7 @@ pub fn parse_describe_source_regions_error(
     crate::output::DescribeSourceRegionsOutput,
     crate::error::DescribeSourceRegionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSourceRegionsError::unhandled)?;
     Err(crate::error::DescribeSourceRegionsError::generic(generic))
 }
@@ -7877,7 +7877,7 @@ pub fn parse_describe_valid_db_instance_modifications_error(
     crate::output::DescribeValidDbInstanceModificationsOutput,
     crate::error::DescribeValidDBInstanceModificationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeValidDBInstanceModificationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7948,7 +7948,7 @@ pub fn parse_download_db_log_file_portion_error(
     crate::output::DownloadDbLogFilePortionOutput,
     crate::error::DownloadDBLogFilePortionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DownloadDBLogFilePortionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8032,7 +8032,7 @@ pub fn parse_failover_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::FailoverDbClusterOutput, crate::error::FailoverDBClusterError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::FailoverDBClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8129,7 +8129,7 @@ pub fn parse_failover_global_cluster_error(
     crate::output::FailoverGlobalClusterOutput,
     crate::error::FailoverGlobalClusterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8248,7 +8248,7 @@ pub fn parse_import_installation_media_error(
     crate::output::ImportInstallationMediaOutput,
     crate::error::ImportInstallationMediaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportInstallationMediaError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8330,7 +8330,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8472,7 +8472,7 @@ pub fn parse_modify_certificates_error(
     crate::output::ModifyCertificatesOutput,
     crate::error::ModifyCertificatesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyCertificatesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8531,7 +8531,7 @@ pub fn parse_modify_current_db_cluster_capacity_error(
     crate::output::ModifyCurrentDbClusterCapacityOutput,
     crate::error::ModifyCurrentDBClusterCapacityError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyCurrentDBClusterCapacityError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8631,7 +8631,7 @@ pub fn parse_modify_current_db_cluster_capacity_response(
 pub fn parse_modify_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyDbClusterOutput, crate::error::ModifyDBClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8906,7 +8906,7 @@ pub fn parse_modify_db_cluster_endpoint_error(
     crate::output::ModifyDbClusterEndpointOutput,
     crate::error::ModifyDBClusterEndpointError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBClusterEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9050,7 +9050,7 @@ pub fn parse_modify_db_cluster_parameter_group_error(
     crate::output::ModifyDbClusterParameterGroupOutput,
     crate::error::ModifyDBClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBClusterParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9123,7 +9123,7 @@ pub fn parse_modify_db_cluster_snapshot_attribute_error(
     crate::output::ModifyDbClusterSnapshotAttributeOutput,
     crate::error::ModifyDBClusterSnapshotAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBClusterSnapshotAttributeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9206,7 +9206,7 @@ pub fn parse_modify_db_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyDbInstanceOutput, crate::error::ModifyDBInstanceError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9620,7 +9620,7 @@ pub fn parse_modify_db_parameter_group_error(
     crate::output::ModifyDbParameterGroupOutput,
     crate::error::ModifyDBParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9700,7 +9700,7 @@ pub fn parse_modify_db_parameter_group_response(
 pub fn parse_modify_db_proxy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyDbProxyOutput, crate::error::ModifyDBProxyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBProxyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9798,7 +9798,7 @@ pub fn parse_modify_db_proxy_endpoint_error(
     crate::output::ModifyDbProxyEndpointOutput,
     crate::error::ModifyDBProxyEndpointError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBProxyEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9917,7 +9917,7 @@ pub fn parse_modify_db_proxy_target_group_error(
     crate::output::ModifyDbProxyTargetGroupOutput,
     crate::error::ModifyDBProxyTargetGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBProxyTargetGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10022,7 +10022,7 @@ pub fn parse_modify_db_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyDbSnapshotOutput, crate::error::ModifyDBSnapshotError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10079,7 +10079,7 @@ pub fn parse_modify_db_snapshot_attribute_error(
     crate::output::ModifyDbSnapshotAttributeOutput,
     crate::error::ModifyDBSnapshotAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBSnapshotAttributeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10185,7 +10185,7 @@ pub fn parse_modify_db_subnet_group_error(
     crate::output::ModifyDbSubnetGroupOutput,
     crate::error::ModifyDBSubnetGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDBSubnetGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10326,7 +10326,7 @@ pub fn parse_modify_event_subscription_error(
     crate::output::ModifyEventSubscriptionOutput,
     crate::error::ModifyEventSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10493,7 +10493,7 @@ pub fn parse_modify_global_cluster_error(
     crate::output::ModifyGlobalClusterOutput,
     crate::error::ModifyGlobalClusterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyGlobalClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10609,7 +10609,7 @@ pub fn parse_modify_option_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyOptionGroupOutput, crate::error::ModifyOptionGroupError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyOptionGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10687,7 +10687,7 @@ pub fn parse_promote_read_replica_error(
     crate::output::PromoteReadReplicaOutput,
     crate::error::PromoteReadReplicaError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PromoteReadReplicaError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10768,7 +10768,7 @@ pub fn parse_promote_read_replica_db_cluster_error(
     crate::output::PromoteReadReplicaDbClusterOutput,
     crate::error::PromoteReadReplicaDBClusterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PromoteReadReplicaDBClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10856,7 +10856,7 @@ pub fn parse_purchase_reserved_db_instances_offering_error(
     crate::output::PurchaseReservedDbInstancesOfferingOutput,
     crate::error::PurchaseReservedDBInstancesOfferingError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PurchaseReservedDBInstancesOfferingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10939,7 +10939,7 @@ pub fn parse_reboot_db_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RebootDbInstanceOutput, crate::error::RebootDBInstanceError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RebootDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11016,7 +11016,7 @@ pub fn parse_register_db_proxy_targets_error(
     crate::output::RegisterDbProxyTargetsOutput,
     crate::error::RegisterDBProxyTargetsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11241,7 +11241,7 @@ pub fn parse_remove_from_global_cluster_error(
     crate::output::RemoveFromGlobalClusterOutput,
     crate::error::RemoveFromGlobalClusterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11344,7 +11344,7 @@ pub fn parse_remove_role_from_db_cluster_error(
     crate::output::RemoveRoleFromDbClusterOutput,
     crate::error::RemoveRoleFromDBClusterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveRoleFromDBClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11444,7 +11444,7 @@ pub fn parse_remove_role_from_db_instance_error(
     crate::output::RemoveRoleFromDbInstanceOutput,
     crate::error::RemoveRoleFromDBInstanceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveRoleFromDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11548,7 +11548,7 @@ pub fn parse_remove_source_identifier_from_subscription_error(
     crate::output::RemoveSourceIdentifierFromSubscriptionOutput,
     crate::error::RemoveSourceIdentifierFromSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveSourceIdentifierFromSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11621,7 +11621,7 @@ pub fn parse_remove_tags_from_resource_error(
     crate::output::RemoveTagsFromResourceOutput,
     crate::error::RemoveTagsFromResourceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11762,7 +11762,7 @@ pub fn parse_reset_db_cluster_parameter_group_error(
     crate::output::ResetDbClusterParameterGroupOutput,
     crate::error::ResetDBClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetDBClusterParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11834,7 +11834,7 @@ pub fn parse_reset_db_parameter_group_error(
     crate::output::ResetDbParameterGroupOutput,
     crate::error::ResetDBParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetDBParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11913,7 +11913,7 @@ pub fn parse_restore_db_cluster_from_s3_error(
     crate::output::RestoreDbClusterFromS3Output,
     crate::error::RestoreDBClusterFromS3Error,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreDBClusterFromS3Error::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12153,7 +12153,7 @@ pub fn parse_restore_db_cluster_from_snapshot_error(
     crate::output::RestoreDbClusterFromSnapshotOutput,
     crate::error::RestoreDBClusterFromSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12435,7 +12435,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
     crate::output::RestoreDbClusterToPointInTimeOutput,
     crate::error::RestoreDBClusterToPointInTimeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12732,7 +12732,7 @@ pub fn parse_restore_db_instance_from_db_snapshot_error(
     crate::output::RestoreDbInstanceFromDbSnapshotOutput,
     crate::error::RestoreDBInstanceFromDBSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13053,7 +13053,7 @@ pub fn parse_restore_db_instance_from_s3_error(
     crate::output::RestoreDbInstanceFromS3Output,
     crate::error::RestoreDBInstanceFromS3Error,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13444,7 +13444,7 @@ pub fn parse_restore_db_instance_to_point_in_time_error(
     crate::output::RestoreDbInstanceToPointInTimeOutput,
     crate::error::RestoreDBInstanceToPointInTimeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreDBInstanceToPointInTimeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13793,7 +13793,7 @@ pub fn parse_revoke_db_security_group_ingress_error(
     crate::output::RevokeDbSecurityGroupIngressOutput,
     crate::error::RevokeDBSecurityGroupIngressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RevokeDBSecurityGroupIngressError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13879,7 +13879,7 @@ pub fn parse_start_activity_stream_error(
     crate::output::StartActivityStreamOutput,
     crate::error::StartActivityStreamError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartActivityStreamError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14041,7 +14041,7 @@ pub fn parse_start_activity_stream_response(
 pub fn parse_start_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartDbClusterOutput, crate::error::StartDBClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartDBClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14134,7 +14134,7 @@ pub fn parse_start_db_cluster_response(
 pub fn parse_start_db_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartDbInstanceOutput, crate::error::StartDBInstanceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14390,7 +14390,7 @@ pub fn parse_start_db_instance_automated_backups_replication_error(
     crate::output::StartDbInstanceAutomatedBackupsReplicationOutput,
     crate::error::StartDBInstanceAutomatedBackupsReplicationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartDBInstanceAutomatedBackupsReplicationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14503,7 +14503,7 @@ pub fn parse_start_db_instance_automated_backups_replication_response(
 pub fn parse_start_export_task_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartExportTaskOutput, crate::error::StartExportTaskError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartExportTaskError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14718,7 +14718,7 @@ pub fn parse_stop_activity_stream_error(
     crate::output::StopActivityStreamOutput,
     crate::error::StopActivityStreamError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopActivityStreamError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14858,7 +14858,7 @@ pub fn parse_stop_activity_stream_response(
 pub fn parse_stop_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopDbClusterOutput, crate::error::StopDBClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopDBClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14951,7 +14951,7 @@ pub fn parse_stop_db_cluster_response(
 pub fn parse_stop_db_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopDbInstanceOutput, crate::error::StopDBInstanceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -15087,7 +15087,7 @@ pub fn parse_stop_db_instance_automated_backups_replication_error(
     crate::output::StopDbInstanceAutomatedBackupsReplicationOutput,
     crate::error::StopDBInstanceAutomatedBackupsReplicationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopDBInstanceAutomatedBackupsReplicationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

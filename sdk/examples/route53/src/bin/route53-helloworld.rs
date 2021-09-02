@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use route53::{Client, Config, Region};
+use route53::{Client, Region};
 
-use aws_types::region::ProvideRegion;
+use aws_config::meta::region::RegionProviderChain;
 
 use structopt::StructOpt;
 use tracing_subscriber::fmt::format::FmtSpan;
@@ -36,15 +36,18 @@ async fn main() -> Result<(), route53::Error> {
         verbose,
     } = Opt::from_args();
 
-    let region = default_region
-        .as_ref()
-        .map(|region| Region::new(region.clone()))
-        .or_else(|| aws_types::region::default_provider().region())
-        .unwrap_or_else(|| Region::new("us-west-2"));
+    let region_provider = RegionProviderChain::first_try(default_region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
     if verbose {
         println!("Route53 client version: {}\n", route53::PKG_VERSION);
-        println!("Region:                 {:?}", &region);
+        println!(
+            "Region:                 {:?}",
+            shared_config.region().unwrap()
+        );
 
         SubscriberBuilder::default()
             .with_env_filter("info")
@@ -52,8 +55,6 @@ async fn main() -> Result<(), route53::Error> {
             .init();
     }
 
-    let conf = Config::builder().region(region).build();
-    let client = Client::from_conf(conf);
     let hosted_zone_count = client.get_hosted_zone_count().send().await?;
 
     println!(

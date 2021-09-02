@@ -10,8 +10,8 @@ use super::{
 use crate::date_fmt::{format_date, format_date_time, parse_date, parse_date_time};
 use crate::sign::sha256_hex_string;
 use chrono::{Date, DateTime, Utc};
-use http::header::{HeaderName, USER_AGENT};
-use http::{HeaderMap, HeaderValue, Method, Request};
+use http::header::{HeaderName, HOST, USER_AGENT};
+use http::{HeaderMap, HeaderValue, Method, Request, Uri};
 use percent_encoding::{AsciiSet, CONTROLS};
 use std::borrow::Cow;
 use std::cmp::Ordering;
@@ -53,6 +53,7 @@ fn percent_encode(value: &str) -> String {
 }
 
 pub struct AddedHeaders {
+    pub host: HeaderValue,
     pub x_amz_date: HeaderValue,
     pub x_amz_content_256: Option<HeaderValue>,
     pub x_amz_security_token: Option<HeaderValue>,
@@ -142,16 +143,16 @@ impl CanonicalRequest {
         // Header computation:
         // The canonical request will include headers not present in the input. We need to clone
         // the headers from the original request and add:
+        // - host
         // - x-amz-date
         // - x-amz-security-token (if provided)
         // - x-amz-content-sha256 (if requested by signing settings)
         let mut canonical_headers = req.headers().clone();
-        let x_amz_date = HeaderName::from_static(X_AMZ_DATE);
-        let date_header =
-            HeaderValue::try_from(format_date_time(&date)).expect("date is valid header value");
-        canonical_headers.insert(x_amz_date, date_header.clone());
+        let host_header = Self::insert_host_header(&mut canonical_headers, req.uri());
+        let date_header = Self::insert_date_header(&mut canonical_headers, &date);
         // to return headers to the user, record which headers we added
         let mut out = AddedHeaders {
+            host: host_header,
             x_amz_date: date_header,
             x_amz_content_256: None,
             x_amz_security_token: None,
@@ -180,6 +181,35 @@ impl CanonicalRequest {
         creq.signed_headers = SignedHeaders::new(signed_headers);
         creq.headers = canonical_headers;
         Ok((creq, out))
+    }
+
+    fn insert_host_header(
+        canonical_headers: &mut HeaderMap<HeaderValue>,
+        uri: &Uri,
+    ) -> HeaderValue {
+        match canonical_headers.get(&HOST) {
+            Some(header) => header.clone(),
+            None => {
+                let authority = uri
+                    .authority()
+                    .expect("request uri authority must be set for signing");
+                let header = HeaderValue::try_from(authority.as_str())
+                    .expect("endpoint must contain valid header characters");
+                canonical_headers.insert(HOST, header.clone());
+                header
+            }
+        }
+    }
+
+    fn insert_date_header(
+        canonical_headers: &mut HeaderMap<HeaderValue>,
+        date: &DateTime<Utc>,
+    ) -> HeaderValue {
+        let x_amz_date = HeaderName::from_static(X_AMZ_DATE);
+        let date_header =
+            HeaderValue::try_from(format_date_time(date)).expect("date is valid header value");
+        canonical_headers.insert(x_amz_date, date_header.clone());
+        date_header
     }
 }
 

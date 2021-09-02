@@ -19,8 +19,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteReportDefinitionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteReportDefinitionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteReportDefinitionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteReportDefinitionError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteReportDefinitionErrorKind::InternalErrorException(inner) => {
@@ -37,9 +42,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteReportDefinitionErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeReportDefinitionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeReportDefinitionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeReportDefinitionsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeReportDefinitionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -54,8 +63,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeReportDefinitionsE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyReportDefinitionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyReportDefinitionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyReportDefinitionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ModifyReportDefinitionError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ModifyReportDefinitionErrorKind::InternalErrorException(inner) => {
@@ -72,8 +86,11 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyReportDefinitionErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutReportDefinitionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutReportDefinitionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutReportDefinitionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutReportDefinitionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutReportDefinitionErrorKind::DuplicateReportNameException(inner) => {

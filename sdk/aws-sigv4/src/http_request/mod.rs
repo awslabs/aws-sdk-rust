@@ -190,8 +190,8 @@ mod tests {
     use crate::sign::{calculate_signature, generate_signing_key, sha256_hex_string};
     use http::{HeaderValue, Method, Request, Uri, Version};
     use pretty_assertions::assert_eq;
+    use std::convert::TryFrom;
     use std::fs;
-    use std::{convert::TryFrom, str::FromStr};
 
     macro_rules! assert_req_eq {
         ($a:tt, $b:tt) => {
@@ -572,19 +572,24 @@ mod tests {
             _ => unimplemented!(),
         };
 
-        let builder = Request::builder();
-        let builder = builder.version(version);
-        let mut builder = builder.method(method);
+        let mut builder = Request::builder();
+        builder = builder.version(version);
+        builder = builder.method(method);
+
+        let mut uri_builder = Uri::builder().scheme("https");
         if let Some(path) = req.path {
-            builder = builder.uri(Uri::from_str(path)?);
+            uri_builder = uri_builder.path_and_query(path);
         }
         for header in req.headers {
             let name = header.name.to_lowercase();
-            if !name.is_empty() {
+            if name == "host" {
+                uri_builder = uri_builder.authority(header.value);
+            } else if !name.is_empty() {
                 builder = builder.header(&name, header.value);
             }
         }
 
+        builder = builder.uri(uri_builder.build()?);
         let req = builder.body(bytes::Bytes::new())?;
         Ok(req)
     }

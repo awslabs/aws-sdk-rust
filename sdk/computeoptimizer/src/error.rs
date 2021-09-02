@@ -75,8 +75,8 @@ impl DescribeRecommendationExportJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -252,8 +252,8 @@ impl ExportAutoScalingGroupRecommendationsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -426,8 +426,8 @@ impl ExportEBSVolumeRecommendationsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -592,8 +592,8 @@ impl ExportEC2InstanceRecommendationsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -769,8 +769,8 @@ impl ExportLambdaFunctionRecommendationsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -950,8 +950,8 @@ impl GetAutoScalingGroupRecommendationsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1118,8 +1118,8 @@ impl GetEBSVolumeRecommendationsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1278,8 +1278,8 @@ impl GetEC2InstanceRecommendationsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1449,8 +1449,8 @@ impl GetEC2RecommendationProjectedMetricsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1607,8 +1607,8 @@ impl GetEnrollmentStatusError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1671,6 +1671,161 @@ impl std::error::Error for GetEnrollmentStatusError {
             GetEnrollmentStatusErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetEnrollmentStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetEnrollmentStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetEnrollmentStatusesForOrganizationError {
+    pub kind: GetEnrollmentStatusesForOrganizationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetEnrollmentStatusesForOrganizationErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetEnrollmentStatusesForOrganizationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(
+                _inner,
+            ) => _inner.fmt(f),
+            GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(_inner) => {
+                _inner.fmt(f)
+            }
+            GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetEnrollmentStatusesForOrganizationError {
+    fn code(&self) -> Option<&str> {
+        GetEnrollmentStatusesForOrganizationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetEnrollmentStatusesForOrganizationError {
+    pub fn new(
+        kind: GetEnrollmentStatusesForOrganizationErrorKind,
+        meta: smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_missing_authentication_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetEnrollmentStatusesForOrganizationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(
+                _inner,
+            ) => Some(_inner),
+            GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(_inner) => {
+                Some(_inner)
+            }
+            GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -1751,8 +1906,8 @@ impl GetLambdaFunctionRecommendationsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1913,8 +2068,8 @@ impl GetRecommendationSummariesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2052,8 +2207,8 @@ impl UpdateEnrollmentStatusError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2240,8 +2395,8 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>The request must contain either a valid (registered) AWS access key ID or
-/// X.509 certificate.</p>
+/// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
+/// or X.509 certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingAuthenticationToken {
@@ -2301,7 +2456,7 @@ impl MissingAuthenticationToken {
     }
 }
 
-/// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
+/// <p>The value supplied for the input parameter is out of range or not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
@@ -2481,7 +2636,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>The account is not opted in to AWS Compute Optimizer.</p>
+/// <p>The account is not opted in to Compute Optimizer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptInRequiredException {

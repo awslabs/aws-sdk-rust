@@ -23,9 +23,12 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateHomeRegionControlError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateHomeRegionControlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateHomeRegionControlError>,
+        err: smithy_http::result::SdkError<crate::error::CreateHomeRegionControlError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -55,9 +58,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateHomeRegionControlErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeHomeRegionControlsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeHomeRegionControlsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeHomeRegionControlsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeHomeRegionControlsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -84,8 +91,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeHomeRegionControls
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetHomeRegionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetHomeRegionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetHomeRegionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetHomeRegionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetHomeRegionErrorKind::AccessDeniedException(inner) => {

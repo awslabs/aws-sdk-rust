@@ -7,6 +7,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+aws-config = { path = "../../aws-config" }
 sagemaker = {package = "aws-sdk-sagemaker", path = "../../sagemaker"}
 aws-types = { path = "../../aws-types" }
 

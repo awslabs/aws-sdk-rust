@@ -259,6 +259,16 @@ pub fn serialize_operation_list_medical_vocabularies(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_list_tags_for_resource(
+    input: &crate::input::ListTagsForResourceInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_list_tags_for_resource_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_list_transcription_jobs(
     input: &crate::input::ListTranscriptionJobsInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -315,6 +325,26 @@ pub fn serialize_operation_start_transcription_job(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_start_transcription_job_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_tag_resource(
+    input: &crate::input::TagResourceInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_tag_resource_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_untag_resource(
+    input: &crate::input::UntagResourceInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_untag_resource_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

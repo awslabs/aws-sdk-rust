@@ -5,6 +5,7 @@ authors = ["Russell Cohen <rcoh@amazon.com>"]
 edition = "2018"
 
 [dependencies]
+aws-config = { path = "../../aws-config" }
 aws-sdk-ecr = { path = "../../ecr" }
 tokio = { version = "1", features = ["full"]}
 structopt = { version = "0.3", default-features = false }

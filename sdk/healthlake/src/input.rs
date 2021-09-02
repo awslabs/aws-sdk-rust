@@ -106,9 +106,9 @@ pub mod create_fhir_datastore_input {
     }
 }
 #[doc(hidden)]
-pub type CreateFHIRDatastoreInputOperationOutputAlias = crate::operation::CreateFHIRDatastore;
+pub type CreateFhirDatastoreInputOperationOutputAlias = crate::operation::CreateFHIRDatastore;
 #[doc(hidden)]
-pub type CreateFHIRDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`CreateFHIRDatastore`](crate::operation::CreateFHIRDatastore)>
     #[allow(clippy::let_and_return)]
@@ -126,6 +126,7 @@ impl CreateFhirDatastoreInput {
             if self.client_token.is_none() {
                 self.client_token = Some(_config.make_token.make_idempotency_token());
             }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_create_fhir_datastore(&self)
                 .map_err(|err| {
@@ -133,8 +134,10 @@ impl CreateFhirDatastoreInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -155,7 +158,7 @@ impl CreateFhirDatastoreInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -248,9 +251,9 @@ pub mod delete_fhir_datastore_input {
     }
 }
 #[doc(hidden)]
-pub type DeleteFHIRDatastoreInputOperationOutputAlias = crate::operation::DeleteFHIRDatastore;
+pub type DeleteFhirDatastoreInputOperationOutputAlias = crate::operation::DeleteFHIRDatastore;
 #[doc(hidden)]
-pub type DeleteFHIRDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFHIRDatastore`](crate::operation::DeleteFHIRDatastore)>
     #[allow(clippy::let_and_return)]
@@ -265,6 +268,7 @@ impl DeleteFhirDatastoreInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_delete_fhir_datastore(&self)
                 .map_err(|err| {
@@ -272,8 +276,10 @@ impl DeleteFhirDatastoreInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -294,7 +300,7 @@ impl DeleteFhirDatastoreInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -387,9 +393,9 @@ pub mod describe_fhir_datastore_input {
     }
 }
 #[doc(hidden)]
-pub type DescribeFHIRDatastoreInputOperationOutputAlias = crate::operation::DescribeFHIRDatastore;
+pub type DescribeFhirDatastoreInputOperationOutputAlias = crate::operation::DescribeFHIRDatastore;
 #[doc(hidden)]
-pub type DescribeFHIRDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRDatastore`](crate::operation::DescribeFHIRDatastore)>
     #[allow(clippy::let_and_return)]
@@ -404,6 +410,7 @@ impl DescribeFhirDatastoreInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_describe_fhir_datastore(&self)
                 .map_err(|err| {
@@ -411,8 +418,10 @@ impl DescribeFhirDatastoreInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -433,7 +442,7 @@ impl DescribeFhirDatastoreInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -537,9 +546,9 @@ pub mod describe_fhir_export_job_input {
     }
 }
 #[doc(hidden)]
-pub type DescribeFHIRExportJobInputOperationOutputAlias = crate::operation::DescribeFHIRExportJob;
+pub type DescribeFhirExportJobInputOperationOutputAlias = crate::operation::DescribeFHIRExportJob;
 #[doc(hidden)]
-pub type DescribeFHIRExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFhirExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeFhirExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRExportJob`](crate::operation::DescribeFHIRExportJob)>
     #[allow(clippy::let_and_return)]
@@ -554,6 +563,7 @@ impl DescribeFhirExportJobInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_describe_fhir_export_job(&self)
                 .map_err(|err| {
@@ -561,8 +571,10 @@ impl DescribeFhirExportJobInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -583,7 +595,7 @@ impl DescribeFhirExportJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -687,9 +699,9 @@ pub mod describe_fhir_import_job_input {
     }
 }
 #[doc(hidden)]
-pub type DescribeFHIRImportJobInputOperationOutputAlias = crate::operation::DescribeFHIRImportJob;
+pub type DescribeFhirImportJobInputOperationOutputAlias = crate::operation::DescribeFHIRImportJob;
 #[doc(hidden)]
-pub type DescribeFHIRImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFhirImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeFhirImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRImportJob`](crate::operation::DescribeFHIRImportJob)>
     #[allow(clippy::let_and_return)]
@@ -704,6 +716,7 @@ impl DescribeFhirImportJobInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_describe_fhir_import_job(&self)
                 .map_err(|err| {
@@ -711,8 +724,10 @@ impl DescribeFhirImportJobInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -733,7 +748,7 @@ impl DescribeFhirImportJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -852,9 +867,9 @@ pub mod list_fhir_datastores_input {
     }
 }
 #[doc(hidden)]
-pub type ListFHIRDatastoresInputOperationOutputAlias = crate::operation::ListFHIRDatastores;
+pub type ListFhirDatastoresInputOperationOutputAlias = crate::operation::ListFHIRDatastores;
 #[doc(hidden)]
-pub type ListFHIRDatastoresInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFhirDatastoresInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListFhirDatastoresInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRDatastores`](crate::operation::ListFHIRDatastores)>
     #[allow(clippy::let_and_return)]
@@ -869,6 +884,7 @@ impl ListFhirDatastoresInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_fhir_datastores(&self)
                 .map_err(|err| {
@@ -876,8 +892,10 @@ impl ListFhirDatastoresInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -898,7 +916,7 @@ impl ListFhirDatastoresInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1080,9 +1098,9 @@ pub mod list_fhir_export_jobs_input {
     }
 }
 #[doc(hidden)]
-pub type ListFHIRExportJobsInputOperationOutputAlias = crate::operation::ListFHIRExportJobs;
+pub type ListFhirExportJobsInputOperationOutputAlias = crate::operation::ListFHIRExportJobs;
 #[doc(hidden)]
-pub type ListFHIRExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFhirExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListFhirExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRExportJobs`](crate::operation::ListFHIRExportJobs)>
     #[allow(clippy::let_and_return)]
@@ -1097,6 +1115,7 @@ impl ListFhirExportJobsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_fhir_export_jobs(&self)
                 .map_err(|err| {
@@ -1104,8 +1123,10 @@ impl ListFhirExportJobsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1126,7 +1147,7 @@ impl ListFhirExportJobsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1308,9 +1329,9 @@ pub mod list_fhir_import_jobs_input {
     }
 }
 #[doc(hidden)]
-pub type ListFHIRImportJobsInputOperationOutputAlias = crate::operation::ListFHIRImportJobs;
+pub type ListFhirImportJobsInputOperationOutputAlias = crate::operation::ListFHIRImportJobs;
 #[doc(hidden)]
-pub type ListFHIRImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFhirImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListFhirImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRImportJobs`](crate::operation::ListFHIRImportJobs)>
     #[allow(clippy::let_and_return)]
@@ -1325,6 +1346,7 @@ impl ListFhirImportJobsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_fhir_import_jobs(&self)
                 .map_err(|err| {
@@ -1332,8 +1354,10 @@ impl ListFhirImportJobsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1354,7 +1378,7 @@ impl ListFhirImportJobsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1466,6 +1490,7 @@ impl ListTagsForResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
@@ -1473,8 +1498,10 @@ impl ListTagsForResourceInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1495,7 +1522,7 @@ impl ListTagsForResourceInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1638,9 +1665,9 @@ pub mod start_fhir_export_job_input {
     }
 }
 #[doc(hidden)]
-pub type StartFHIRExportJobInputOperationOutputAlias = crate::operation::StartFHIRExportJob;
+pub type StartFhirExportJobInputOperationOutputAlias = crate::operation::StartFHIRExportJob;
 #[doc(hidden)]
-pub type StartFHIRExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFhirExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StartFhirExportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartFHIRExportJob`](crate::operation::StartFHIRExportJob)>
     #[allow(clippy::let_and_return)]
@@ -1658,6 +1685,7 @@ impl StartFhirExportJobInput {
             if self.client_token.is_none() {
                 self.client_token = Some(_config.make_token.make_idempotency_token());
             }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_start_fhir_export_job(&self)
                 .map_err(|err| {
@@ -1665,8 +1693,10 @@ impl StartFhirExportJobInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1687,7 +1717,7 @@ impl StartFhirExportJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1844,9 +1874,9 @@ pub mod start_fhir_import_job_input {
     }
 }
 #[doc(hidden)]
-pub type StartFHIRImportJobInputOperationOutputAlias = crate::operation::StartFHIRImportJob;
+pub type StartFhirImportJobInputOperationOutputAlias = crate::operation::StartFHIRImportJob;
 #[doc(hidden)]
-pub type StartFHIRImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFhirImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StartFhirImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartFHIRImportJob`](crate::operation::StartFHIRImportJob)>
     #[allow(clippy::let_and_return)]
@@ -1864,6 +1894,7 @@ impl StartFhirImportJobInput {
             if self.client_token.is_none() {
                 self.client_token = Some(_config.make_token.make_idempotency_token());
             }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_start_fhir_import_job(&self)
                 .map_err(|err| {
@@ -1871,8 +1902,10 @@ impl StartFhirImportJobInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1893,7 +1926,7 @@ impl StartFhirImportJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2018,6 +2051,7 @@ impl TagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
@@ -2025,8 +2059,10 @@ impl TagResourceInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2047,7 +2083,7 @@ impl TagResourceInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2172,6 +2208,7 @@ impl UntagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
@@ -2179,8 +2216,10 @@ impl UntagResourceInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2201,7 +2240,7 @@ impl UntagResourceInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );

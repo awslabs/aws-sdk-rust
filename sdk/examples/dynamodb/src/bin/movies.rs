@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use aws_config::meta::region::RegionProviderChain;
 use aws_http::AwsErrorRetryPolicy;
 use aws_hyper::{SdkError, SdkSuccess};
 use aws_sdk_dynamodb::client::fluent_builders::Query;
@@ -15,8 +16,7 @@ use aws_sdk_dynamodb::model::{
 use aws_sdk_dynamodb::operation::DescribeTable;
 use aws_sdk_dynamodb::output::DescribeTableOutput;
 use aws_sdk_dynamodb::{Client, Config, Error, Region, PKG_VERSION};
-use aws_types::region;
-use aws_types::region::ProvideRegion;
+
 use serde_json::Value;
 use smithy_http::operation::Operation;
 use smithy_http::retry::ClassifyResponse;
@@ -57,9 +57,10 @@ async fn main() -> Result<(), Error> {
         verbose,
     } = Opt::from_args();
 
-    let region = region::ChainProvider::first_try(region.map(Region::new))
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
 
     println!();
 
@@ -67,14 +68,13 @@ async fn main() -> Result<(), Error> {
         println!("DynamoDB client version: {}", PKG_VERSION);
         println!(
             "Region:                  {}",
-            region.region().unwrap().as_ref()
+            shared_config.region().unwrap()
         );
         println!("Table:                   {}", &table);
         println!();
     }
 
-    let conf = Config::builder().region(region).build();
-    let client = Client::from_conf(conf);
+    let client = Client::new(&shared_config);
 
     let raw_client = aws_hyper::Client::https();
 

@@ -379,6 +379,21 @@ pub fn ser_payload_restore_object_input(
     ))
 }
 
+pub fn serialize_operation_select_object_content(
+    input: &crate::input::SelectObjectContentInput,
+) -> Result<smithy_http::body::SdkBody, std::string::String> {
+    let mut out = String::new();
+    {
+        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        #[allow(unused_mut)]
+        let mut root = writer
+            .start_el("SelectObjectContentRequest")
+            .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
+        crate::xml_ser::serialize_structure_select_object_content_input(&&input, root)
+    }
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn ser_payload_upload_part_input(
     payload: smithy_http::byte_stream::ByteStream,
 ) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {

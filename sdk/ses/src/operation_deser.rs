@@ -6,7 +6,7 @@ pub fn parse_clone_receipt_rule_set_error(
     crate::output::CloneReceiptRuleSetOutput,
     crate::error::CloneReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CloneReceiptRuleSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -101,7 +101,7 @@ pub fn parse_create_configuration_set_error(
     crate::output::CreateConfigurationSetOutput,
     crate::error::CreateConfigurationSetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateConfigurationSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -182,7 +182,7 @@ pub fn parse_create_configuration_set_event_destination_error(
     crate::output::CreateConfigurationSetEventDestinationOutput,
     crate::error::CreateConfigurationSetEventDestinationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -306,7 +306,7 @@ pub fn parse_create_configuration_set_tracking_options_error(
     crate::output::CreateConfigurationSetTrackingOptionsOutput,
     crate::error::CreateConfigurationSetTrackingOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateConfigurationSetTrackingOptionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -388,7 +388,7 @@ pub fn parse_create_custom_verification_email_template_error(
     crate::output::CreateCustomVerificationEmailTemplateOutput,
     crate::error::CreateCustomVerificationEmailTemplateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -484,7 +484,7 @@ pub fn parse_create_receipt_filter_error(
     crate::output::CreateReceiptFilterOutput,
     crate::error::CreateReceiptFilterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateReceiptFilterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -559,7 +559,7 @@ pub fn parse_create_receipt_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateReceiptRuleOutput, crate::error::CreateReceiptRuleError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateReceiptRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -729,7 +729,7 @@ pub fn parse_create_receipt_rule_set_error(
     crate::output::CreateReceiptRuleSetOutput,
     crate::error::CreateReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateReceiptRuleSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -803,7 +803,7 @@ pub fn parse_create_receipt_rule_set_response(
 pub fn parse_create_template_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTemplateOutput, crate::error::CreateTemplateError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -898,7 +898,7 @@ pub fn parse_delete_configuration_set_error(
     crate::output::DeleteConfigurationSetOutput,
     crate::error::DeleteConfigurationSetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteConfigurationSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -956,7 +956,7 @@ pub fn parse_delete_configuration_set_event_destination_error(
     crate::output::DeleteConfigurationSetEventDestinationOutput,
     crate::error::DeleteConfigurationSetEventDestinationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1024,7 +1024,7 @@ pub fn parse_delete_configuration_set_tracking_options_error(
     crate::output::DeleteConfigurationSetTrackingOptionsOutput,
     crate::error::DeleteConfigurationSetTrackingOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteConfigurationSetTrackingOptionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1092,7 +1092,7 @@ pub fn parse_delete_custom_verification_email_template_error(
     crate::output::DeleteCustomVerificationEmailTemplateOutput,
     crate::error::DeleteCustomVerificationEmailTemplateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteCustomVerificationEmailTemplateError::unhandled)?;
     Err(crate::error::DeleteCustomVerificationEmailTemplateError::generic(generic))
 }
@@ -1117,7 +1117,7 @@ pub fn parse_delete_custom_verification_email_template_response(
 pub fn parse_delete_identity_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteIdentityOutput, crate::error::DeleteIdentityError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteIdentityError::unhandled)?;
     Err(crate::error::DeleteIdentityError::generic(generic))
 }
@@ -1141,7 +1141,7 @@ pub fn parse_delete_identity_policy_error(
     crate::output::DeleteIdentityPolicyOutput,
     crate::error::DeleteIdentityPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteIdentityPolicyError::unhandled)?;
     Err(crate::error::DeleteIdentityPolicyError::generic(generic))
 }
@@ -1168,7 +1168,7 @@ pub fn parse_delete_receipt_filter_error(
     crate::output::DeleteReceiptFilterOutput,
     crate::error::DeleteReceiptFilterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteReceiptFilterError::unhandled)?;
     Err(crate::error::DeleteReceiptFilterError::generic(generic))
 }
@@ -1193,7 +1193,7 @@ pub fn parse_delete_receipt_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteReceiptRuleOutput, crate::error::DeleteReceiptRuleError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteReceiptRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1244,7 +1244,7 @@ pub fn parse_delete_receipt_rule_set_error(
     crate::output::DeleteReceiptRuleSetOutput,
     crate::error::DeleteReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteReceiptRuleSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1297,7 +1297,7 @@ pub fn parse_delete_receipt_rule_set_response(
 pub fn parse_delete_template_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTemplateOutput, crate::error::DeleteTemplateError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTemplateError::unhandled)?;
     Err(crate::error::DeleteTemplateError::generic(generic))
 }
@@ -1321,7 +1321,7 @@ pub fn parse_delete_verified_email_address_error(
     crate::output::DeleteVerifiedEmailAddressOutput,
     crate::error::DeleteVerifiedEmailAddressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVerifiedEmailAddressError::unhandled)?;
     Err(crate::error::DeleteVerifiedEmailAddressError::generic(
         generic,
@@ -1350,7 +1350,7 @@ pub fn parse_describe_active_receipt_rule_set_error(
     crate::output::DescribeActiveReceiptRuleSetOutput,
     crate::error::DescribeActiveReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeActiveReceiptRuleSetError::unhandled)?;
     Err(crate::error::DescribeActiveReceiptRuleSetError::generic(
         generic,
@@ -1384,7 +1384,7 @@ pub fn parse_describe_configuration_set_error(
     crate::output::DescribeConfigurationSetOutput,
     crate::error::DescribeConfigurationSetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeConfigurationSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1442,7 +1442,7 @@ pub fn parse_describe_receipt_rule_error(
     crate::output::DescribeReceiptRuleOutput,
     crate::error::DescribeReceiptRuleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReceiptRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1520,7 +1520,7 @@ pub fn parse_describe_receipt_rule_set_error(
     crate::output::DescribeReceiptRuleSetOutput,
     crate::error::DescribeReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReceiptRuleSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1582,7 +1582,7 @@ pub fn parse_get_account_sending_enabled_error(
     crate::output::GetAccountSendingEnabledOutput,
     crate::error::GetAccountSendingEnabledError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccountSendingEnabledError::unhandled)?;
     Err(crate::error::GetAccountSendingEnabledError::generic(
         generic,
@@ -1616,7 +1616,7 @@ pub fn parse_get_custom_verification_email_template_error(
     crate::output::GetCustomVerificationEmailTemplateOutput,
     crate::error::GetCustomVerificationEmailTemplateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCustomVerificationEmailTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1673,7 +1673,7 @@ pub fn parse_get_identity_dkim_attributes_error(
     crate::output::GetIdentityDkimAttributesOutput,
     crate::error::GetIdentityDkimAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetIdentityDkimAttributesError::unhandled)?;
     Err(crate::error::GetIdentityDkimAttributesError::generic(
         generic,
@@ -1707,7 +1707,7 @@ pub fn parse_get_identity_mail_from_domain_attributes_error(
     crate::output::GetIdentityMailFromDomainAttributesOutput,
     crate::error::GetIdentityMailFromDomainAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetIdentityMailFromDomainAttributesError::unhandled)?;
     Err(crate::error::GetIdentityMailFromDomainAttributesError::generic(generic))
 }
@@ -1740,7 +1740,7 @@ pub fn parse_get_identity_notification_attributes_error(
     crate::output::GetIdentityNotificationAttributesOutput,
     crate::error::GetIdentityNotificationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetIdentityNotificationAttributesError::unhandled)?;
     Err(crate::error::GetIdentityNotificationAttributesError::generic(generic))
 }
@@ -1773,7 +1773,7 @@ pub fn parse_get_identity_policies_error(
     crate::output::GetIdentityPoliciesOutput,
     crate::error::GetIdentityPoliciesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetIdentityPoliciesError::unhandled)?;
     Err(crate::error::GetIdentityPoliciesError::generic(generic))
 }
@@ -1805,7 +1805,7 @@ pub fn parse_get_identity_verification_attributes_error(
     crate::output::GetIdentityVerificationAttributesOutput,
     crate::error::GetIdentityVerificationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetIdentityVerificationAttributesError::unhandled)?;
     Err(crate::error::GetIdentityVerificationAttributesError::generic(generic))
 }
@@ -1835,7 +1835,7 @@ pub fn parse_get_identity_verification_attributes_response(
 pub fn parse_get_send_quota_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSendQuotaOutput, crate::error::GetSendQuotaError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSendQuotaError::unhandled)?;
     Err(crate::error::GetSendQuotaError::generic(generic))
 }
@@ -1859,7 +1859,7 @@ pub fn parse_get_send_statistics_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSendStatisticsOutput, crate::error::GetSendStatisticsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSendStatisticsError::unhandled)?;
     Err(crate::error::GetSendStatisticsError::generic(generic))
 }
@@ -1884,7 +1884,7 @@ pub fn parse_get_send_statistics_response(
 pub fn parse_get_template_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetTemplateOutput, crate::error::GetTemplateError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1936,7 +1936,7 @@ pub fn parse_list_configuration_sets_error(
     crate::output::ListConfigurationSetsOutput,
     crate::error::ListConfigurationSetsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListConfigurationSetsError::unhandled)?;
     Err(crate::error::ListConfigurationSetsError::generic(generic))
 }
@@ -1968,7 +1968,7 @@ pub fn parse_list_custom_verification_email_templates_error(
     crate::output::ListCustomVerificationEmailTemplatesOutput,
     crate::error::ListCustomVerificationEmailTemplatesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCustomVerificationEmailTemplatesError::unhandled)?;
     Err(crate::error::ListCustomVerificationEmailTemplatesError::generic(generic))
 }
@@ -1998,7 +1998,7 @@ pub fn parse_list_custom_verification_email_templates_response(
 pub fn parse_list_identities_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListIdentitiesOutput, crate::error::ListIdentitiesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListIdentitiesError::unhandled)?;
     Err(crate::error::ListIdentitiesError::generic(generic))
 }
@@ -2025,7 +2025,7 @@ pub fn parse_list_identity_policies_error(
     crate::output::ListIdentityPoliciesOutput,
     crate::error::ListIdentityPoliciesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListIdentityPoliciesError::unhandled)?;
     Err(crate::error::ListIdentityPoliciesError::generic(generic))
 }
@@ -2057,7 +2057,7 @@ pub fn parse_list_receipt_filters_error(
     crate::output::ListReceiptFiltersOutput,
     crate::error::ListReceiptFiltersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListReceiptFiltersError::unhandled)?;
     Err(crate::error::ListReceiptFiltersError::generic(generic))
 }
@@ -2089,7 +2089,7 @@ pub fn parse_list_receipt_rule_sets_error(
     crate::output::ListReceiptRuleSetsOutput,
     crate::error::ListReceiptRuleSetsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListReceiptRuleSetsError::unhandled)?;
     Err(crate::error::ListReceiptRuleSetsError::generic(generic))
 }
@@ -2118,7 +2118,7 @@ pub fn parse_list_receipt_rule_sets_response(
 pub fn parse_list_templates_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTemplatesOutput, crate::error::ListTemplatesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTemplatesError::unhandled)?;
     Err(crate::error::ListTemplatesError::generic(generic))
 }
@@ -2144,7 +2144,7 @@ pub fn parse_list_verified_email_addresses_error(
     crate::output::ListVerifiedEmailAddressesOutput,
     crate::error::ListVerifiedEmailAddressesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListVerifiedEmailAddressesError::unhandled)?;
     Err(crate::error::ListVerifiedEmailAddressesError::generic(
         generic,
@@ -2178,7 +2178,7 @@ pub fn parse_put_configuration_set_delivery_options_error(
     crate::output::PutConfigurationSetDeliveryOptionsOutput,
     crate::error::PutConfigurationSetDeliveryOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutConfigurationSetDeliveryOptionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2242,7 +2242,7 @@ pub fn parse_put_identity_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutIdentityPolicyOutput, crate::error::PutIdentityPolicyError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutIdentityPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2296,7 +2296,7 @@ pub fn parse_reorder_receipt_rule_set_error(
     crate::output::ReorderReceiptRuleSetOutput,
     crate::error::ReorderReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReorderReceiptRuleSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2366,7 +2366,7 @@ pub fn parse_reorder_receipt_rule_set_response(
 pub fn parse_send_bounce_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendBounceOutput, crate::error::SendBounceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendBounceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2421,7 +2421,7 @@ pub fn parse_send_bulk_templated_email_error(
     crate::output::SendBulkTemplatedEmailOutput,
     crate::error::SendBulkTemplatedEmailError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2549,7 +2549,7 @@ pub fn parse_send_custom_verification_email_error(
     crate::output::SendCustomVerificationEmailOutput,
     crate::error::SendCustomVerificationEmailError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2660,7 +2660,7 @@ pub fn parse_send_custom_verification_email_response(
 pub fn parse_send_email_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendEmailOutput, crate::error::SendEmailError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendEmailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2786,7 +2786,7 @@ pub fn parse_send_email_response(
 pub fn parse_send_raw_email_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendRawEmailOutput, crate::error::SendRawEmailError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendRawEmailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2916,7 +2916,7 @@ pub fn parse_send_templated_email_error(
     crate::output::SendTemplatedEmailOutput,
     crate::error::SendTemplatedEmailError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendTemplatedEmailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3069,7 +3069,7 @@ pub fn parse_set_active_receipt_rule_set_error(
     crate::output::SetActiveReceiptRuleSetOutput,
     crate::error::SetActiveReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetActiveReceiptRuleSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3126,7 +3126,7 @@ pub fn parse_set_identity_dkim_enabled_error(
     crate::output::SetIdentityDkimEnabledOutput,
     crate::error::SetIdentityDkimEnabledError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetIdentityDkimEnabledError::unhandled)?;
     Err(crate::error::SetIdentityDkimEnabledError::generic(generic))
 }
@@ -3153,7 +3153,7 @@ pub fn parse_set_identity_feedback_forwarding_enabled_error(
     crate::output::SetIdentityFeedbackForwardingEnabledOutput,
     crate::error::SetIdentityFeedbackForwardingEnabledError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetIdentityFeedbackForwardingEnabledError::unhandled)?;
     Err(crate::error::SetIdentityFeedbackForwardingEnabledError::generic(generic))
 }
@@ -3181,7 +3181,7 @@ pub fn parse_set_identity_headers_in_notifications_enabled_error(
     crate::output::SetIdentityHeadersInNotificationsEnabledOutput,
     crate::error::SetIdentityHeadersInNotificationsEnabledError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetIdentityHeadersInNotificationsEnabledError::unhandled)?;
     Err(crate::error::SetIdentityHeadersInNotificationsEnabledError::generic(generic))
 }
@@ -3209,7 +3209,7 @@ pub fn parse_set_identity_mail_from_domain_error(
     crate::output::SetIdentityMailFromDomainOutput,
     crate::error::SetIdentityMailFromDomainError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetIdentityMailFromDomainError::unhandled)?;
     Err(crate::error::SetIdentityMailFromDomainError::generic(
         generic,
@@ -3238,7 +3238,7 @@ pub fn parse_set_identity_notification_topic_error(
     crate::output::SetIdentityNotificationTopicOutput,
     crate::error::SetIdentityNotificationTopicError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetIdentityNotificationTopicError::unhandled)?;
     Err(crate::error::SetIdentityNotificationTopicError::generic(
         generic,
@@ -3267,7 +3267,7 @@ pub fn parse_set_receipt_rule_position_error(
     crate::output::SetReceiptRulePositionOutput,
     crate::error::SetReceiptRulePositionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetReceiptRulePositionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3344,7 +3344,7 @@ pub fn parse_test_render_template_error(
     crate::output::TestRenderTemplateOutput,
     crate::error::TestRenderTemplateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TestRenderTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3438,7 +3438,7 @@ pub fn parse_update_account_sending_enabled_error(
     crate::output::UpdateAccountSendingEnabledOutput,
     crate::error::UpdateAccountSendingEnabledError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateAccountSendingEnabledError::unhandled)?;
     Err(crate::error::UpdateAccountSendingEnabledError::generic(
         generic,
@@ -3467,7 +3467,7 @@ pub fn parse_update_configuration_set_event_destination_error(
     crate::output::UpdateConfigurationSetEventDestinationOutput,
     crate::error::UpdateConfigurationSetEventDestinationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3577,7 +3577,7 @@ pub fn parse_update_configuration_set_reputation_metrics_enabled_error(
     crate::output::UpdateConfigurationSetReputationMetricsEnabledOutput,
     crate::error::UpdateConfigurationSetReputationMetricsEnabledError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateConfigurationSetReputationMetricsEnabledError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3631,7 +3631,7 @@ pub fn parse_update_configuration_set_sending_enabled_error(
     crate::output::UpdateConfigurationSetSendingEnabledOutput,
     crate::error::UpdateConfigurationSetSendingEnabledError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateConfigurationSetSendingEnabledError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3683,7 +3683,7 @@ pub fn parse_update_configuration_set_tracking_options_error(
     crate::output::UpdateConfigurationSetTrackingOptionsOutput,
     crate::error::UpdateConfigurationSetTrackingOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateConfigurationSetTrackingOptionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3765,7 +3765,7 @@ pub fn parse_update_custom_verification_email_template_error(
     crate::output::UpdateCustomVerificationEmailTemplateOutput,
     crate::error::UpdateCustomVerificationEmailTemplateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateCustomVerificationEmailTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3845,7 +3845,7 @@ pub fn parse_update_receipt_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateReceiptRuleOutput, crate::error::UpdateReceiptRuleError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3991,7 +3991,7 @@ pub fn parse_update_receipt_rule_response(
 pub fn parse_update_template_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateTemplateOutput, crate::error::UpdateTemplateError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4060,7 +4060,7 @@ pub fn parse_verify_domain_dkim_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::VerifyDomainDkimOutput, crate::error::VerifyDomainDkimError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::VerifyDomainDkimError::unhandled)?;
     Err(crate::error::VerifyDomainDkimError::generic(generic))
 }
@@ -4088,7 +4088,7 @@ pub fn parse_verify_domain_identity_error(
     crate::output::VerifyDomainIdentityOutput,
     crate::error::VerifyDomainIdentityError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::VerifyDomainIdentityError::unhandled)?;
     Err(crate::error::VerifyDomainIdentityError::generic(generic))
 }
@@ -4120,7 +4120,7 @@ pub fn parse_verify_email_address_error(
     crate::output::VerifyEmailAddressOutput,
     crate::error::VerifyEmailAddressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::VerifyEmailAddressError::unhandled)?;
     Err(crate::error::VerifyEmailAddressError::generic(generic))
 }
@@ -4147,7 +4147,7 @@ pub fn parse_verify_email_identity_error(
     crate::output::VerifyEmailIdentityOutput,
     crate::error::VerifyEmailIdentityError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::VerifyEmailIdentityError::unhandled)?;
     Err(crate::error::VerifyEmailIdentityError::generic(generic))
 }

@@ -540,7 +540,35 @@ impl smithy_http::response::ParseStrictResponse for DescribeStudio {
     }
 }
 
-/// <p>Returns the Amazon EMR block public access configuration for your account in the
+/// <p>Returns the auto-termination policy for an Amazon EMR cluster.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetAutoTerminationPolicy {
+    _private: (),
+}
+impl GetAutoTerminationPolicy {
+    /// Creates a new builder-style object to manufacture [`GetAutoTerminationPolicyInput`](crate::input::GetAutoTerminationPolicyInput)
+    pub fn builder() -> crate::input::get_auto_termination_policy_input::Builder {
+        crate::input::get_auto_termination_policy_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetAutoTerminationPolicy {
+    type Output = std::result::Result<
+        crate::output::GetAutoTerminationPolicyOutput,
+        crate::error::GetAutoTerminationPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_auto_termination_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_auto_termination_policy_response(response)
+        }
+    }
+}
+
+/// <p>Returns the Amazon EMR block public access configuration for your Amazon Web Services account in the
 /// current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block
 /// Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
 /// Guide</i>.</p>
@@ -656,7 +684,7 @@ impl smithy_http::response::ParseStrictResponse for ListBootstrapActions {
     }
 }
 
-/// <p>Provides the status of all clusters visible to this account. Allows you to filter
+/// <p>Provides the status of all clusters visible to this Amazon Web Services account. Allows you to filter
 /// the list of clusters based on certain criteria; for example, filtering by cluster creation
 /// date and time or by status. This call returns a maximum of 50 clusters in unsorted order per call, but
 /// returns a marker to track the paging of the cluster list across multiple ListClusters
@@ -891,7 +919,7 @@ impl smithy_http::response::ParseStrictResponse for ListSteps {
     }
 }
 
-/// <p>Returns a list of all Amazon EMR Studios associated with the account. The list
+/// <p>Returns a list of all Amazon EMR Studios associated with the Amazon Web Services account. The list
 /// includes details such as ID, Studio Access URL, and creation time for each Studio.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListStudios {
@@ -1069,7 +1097,35 @@ impl smithy_http::response::ParseStrictResponse for PutAutoScalingPolicy {
     }
 }
 
-/// <p>Creates or updates an Amazon EMR block public access configuration for your account
+/// <p>Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutAutoTerminationPolicy {
+    _private: (),
+}
+impl PutAutoTerminationPolicy {
+    /// Creates a new builder-style object to manufacture [`PutAutoTerminationPolicyInput`](crate::input::PutAutoTerminationPolicyInput)
+    pub fn builder() -> crate::input::put_auto_termination_policy_input::Builder {
+        crate::input::put_auto_termination_policy_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for PutAutoTerminationPolicy {
+    type Output = std::result::Result<
+        crate::output::PutAutoTerminationPolicyOutput,
+        crate::error::PutAutoTerminationPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_auto_termination_policy_error(response)
+        } else {
+            crate::operation_deser::parse_put_auto_termination_policy_response(response)
+        }
+    }
+}
+
+/// <p>Creates or updates an Amazon EMR block public access configuration for your Amazon Web Services account
 /// in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block
 /// Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
 /// Guide</i>.</p>
@@ -1156,6 +1212,34 @@ impl smithy_http::response::ParseStrictResponse for RemoveAutoScalingPolicy {
             crate::operation_deser::parse_remove_auto_scaling_policy_error(response)
         } else {
             crate::operation_deser::parse_remove_auto_scaling_policy_response(response)
+        }
+    }
+}
+
+/// <p>Removes an auto-termination policy from an Amazon EMR cluster.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RemoveAutoTerminationPolicy {
+    _private: (),
+}
+impl RemoveAutoTerminationPolicy {
+    /// Creates a new builder-style object to manufacture [`RemoveAutoTerminationPolicyInput`](crate::input::RemoveAutoTerminationPolicyInput)
+    pub fn builder() -> crate::input::remove_auto_termination_policy_input::Builder {
+        crate::input::remove_auto_termination_policy_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for RemoveAutoTerminationPolicy {
+    type Output = std::result::Result<
+        crate::output::RemoveAutoTerminationPolicyOutput,
+        crate::error::RemoveAutoTerminationPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_remove_auto_termination_policy_error(response)
+        } else {
+            crate::operation_deser::parse_remove_auto_termination_policy_response(response)
         }
     }
 }
@@ -1308,7 +1392,7 @@ impl smithy_http::response::ParseStrictResponse for SetTerminationProtection {
 }
 
 /// <p>Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>, IAM principals in the
-/// account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p>
+/// Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p>
 /// <p>This action works on running clusters. When you create a cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a> parameter.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]

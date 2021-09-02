@@ -1,0 +1,104 @@
+{
+  "docs": "successful web identity role assumption (note: fake token)",
+  "version": "V0",
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://sts.eu-west-1.amazonaws.com/",
+            "headers": {
+              "content-type": [
+                "application/x-www-form-urlencoded"
+              ],
+              "content-length": [
+                "424"
+              ],
+              "x-amz-user-agent": [
+                "aws-sdk-rust/0.1.0 api/sts/0.0.15-alpha os/macos lang/rust/1.55.0-nightly"
+              ],
+              "user-agent": [
+                "aws-sdk-rust/0.1.0 os/macos lang/rust/1.55.0-nightly"
+              ],
+              "host": [
+                "sts.eu-west-1.amazonaws.com"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789123%3Arole%2Ftest-role&RoleSessionName=test-session&WebIdentityToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MjkxNDM3NjEsImV4cCI6MTY2MDY3OTc2MSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoicnVzdC1zZGstdGVzdEBleGFtcGxlLmNvbSIsIlJvbGUiOiJTREsgVGVzdCJ9.Cx9Ko-ssGIJ5BM798_Jgo9f--lEsSNKCAjBxv-0qQQQ"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "version": "HTTP/1.1",
+              "headers": {
+                "date": [
+                  "Mon, 16 Aug 2021 19:52:53 GMT"
+                ],
+                "content-type": [
+                  "text/xml"
+                ],
+                "content-length": [
+                  "2208"
+                ],
+                "x-amzn-requestid": [
+                  "f874b1d6-2f3b-4834-907a-6a7c4b3b2d35"
+                ],
+                "vary": [
+                  "accept-encoding"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "<AssumeRoleWithWebIdentityResponse xmlns=\"https://sts.amazonaws.com/doc/2011-06-15/\">\n  <AssumeRoleWithWebIdentityResult>\n    <Audience>my-cluster.sk1.us-west-2.eks.amazonaws.com</Audience>\n    <AssumedRoleUser>\n      <AssumedRoleId>AROARTEST:test-session</AssumedRoleId>\n      <Arn>arn:aws:sts::123456789012:assumed-role/sdk-test/test-session</Arn>\n    </AssumedRoleUser>\n    <Provider>arn:aws:iam::123456789012:oidc-provider/s3-us-west-2.amazonaws.com/oidc-test-testbucket</Provider>\n    <Credentials>\n      <AccessKeyId>AKIDTEST</AccessKeyId>\n      <SecretAccessKey>SECRETKEYTEST</SecretAccessKey>\n      <SessionToken>SESSIONTOKEN_TEST</SessionToken>\n      <Expiration>2021-08-16T20:52:53Z</Expiration>\n    </Credentials>\n    <SubjectFromWebIdentityToken>system:serviceaccount:default:default</SubjectFromWebIdentityToken>\n  </AssumeRoleWithWebIdentityResult>\n  <ResponseMetadata>\n    <RequestId>f874b1d6-2f3b-4834-907a-6a7c4b3b2d35</RequestId>\n  </ResponseMetadata>\n</AssumeRoleWithWebIdentityResponse>\n"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    }
+  ]
+}

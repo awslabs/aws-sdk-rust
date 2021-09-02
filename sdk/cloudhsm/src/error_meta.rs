@@ -17,8 +17,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AddTagsToResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AddTagsToResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AddTagsToResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::AddTagsToResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AddTagsToResourceErrorKind::CloudHsmInternalException(inner) => {
@@ -38,8 +41,11 @@ impl From<smithy_http::result::SdkError<crate::error::AddTagsToResourceError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateHapgError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateHapgError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateHapgError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateHapgError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateHapgErrorKind::CloudHsmInternalException(inner) => {
@@ -57,8 +63,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateHapgError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateHsmError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateHsmError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateHsmError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateHsmError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateHsmErrorKind::CloudHsmInternalException(inner) => {
@@ -76,8 +85,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateHsmError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateLunaClientError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateLunaClientError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateLunaClientError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateLunaClientError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateLunaClientErrorKind::CloudHsmInternalException(inner) => {
@@ -97,8 +109,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateLunaClientError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteHapgError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteHapgError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteHapgError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteHapgError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteHapgErrorKind::CloudHsmInternalException(inner) => {
@@ -116,8 +131,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteHapgError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteHsmError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteHsmError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteHsmError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteHsmError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteHsmErrorKind::CloudHsmInternalException(inner) => {
@@ -135,8 +153,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteHsmError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteLunaClientError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteLunaClientError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteLunaClientError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteLunaClientError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteLunaClientErrorKind::CloudHsmInternalException(inner) => {
@@ -156,8 +177,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteLunaClientError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeHapgError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeHapgError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeHapgError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeHapgError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeHapgErrorKind::CloudHsmInternalException(inner) => {
@@ -175,8 +199,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeHapgError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeHsmError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeHsmError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeHsmError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeHsmError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeHsmErrorKind::CloudHsmInternalException(inner) => {
@@ -194,8 +221,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeHsmError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeLunaClientError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeLunaClientError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeLunaClientError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeLunaClientError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeLunaClientErrorKind::CloudHsmInternalException(inner) => {
@@ -215,8 +245,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLunaClientError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetConfigError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetConfigError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetConfigError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetConfigError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetConfigErrorKind::CloudHsmInternalException(inner) => {
@@ -234,8 +267,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetConfigError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListAvailableZonesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListAvailableZonesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListAvailableZonesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListAvailableZonesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListAvailableZonesErrorKind::CloudHsmInternalException(inner) => {
@@ -255,8 +291,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListAvailableZonesError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListHapgsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListHapgsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListHapgsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListHapgsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListHapgsErrorKind::CloudHsmInternalException(inner) => {
@@ -274,8 +313,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListHapgsError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListHsmsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListHsmsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListHsmsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListHsmsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListHsmsErrorKind::CloudHsmInternalException(inner) => {
@@ -293,8 +335,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListHsmsError>> for Error 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListLunaClientsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListLunaClientsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListLunaClientsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListLunaClientsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListLunaClientsErrorKind::CloudHsmInternalException(inner) => {
@@ -312,8 +357,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListLunaClientsError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::CloudHsmInternalException(inner) => {
@@ -333,8 +381,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyHapgError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyHapgError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyHapgError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ModifyHapgError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ModifyHapgErrorKind::CloudHsmInternalException(inner) => {
@@ -352,8 +403,11 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyHapgError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyHsmError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyHsmError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyHsmError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ModifyHsmError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ModifyHsmErrorKind::CloudHsmInternalException(inner) => {
@@ -371,8 +425,11 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyHsmError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyLunaClientError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyLunaClientError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyLunaClientError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ModifyLunaClientError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ModifyLunaClientErrorKind::CloudHsmServiceException(inner) => {
@@ -386,8 +443,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyLunaClientError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RemoveTagsFromResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RemoveTagsFromResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RemoveTagsFromResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::RemoveTagsFromResourceError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RemoveTagsFromResourceErrorKind::CloudHsmInternalException(inner) => {

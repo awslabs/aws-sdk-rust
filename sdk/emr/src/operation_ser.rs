@@ -179,6 +179,16 @@ pub fn serialize_operation_describe_studio(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_get_auto_termination_policy(
+    input: &crate::input::GetAutoTerminationPolicyInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_get_auto_termination_policy_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_get_block_public_access_configuration(
     _input: &crate::input::GetBlockPublicAccessConfigurationInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -355,6 +365,16 @@ pub fn serialize_operation_put_auto_scaling_policy(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_put_auto_termination_policy(
+    input: &crate::input::PutAutoTerminationPolicyInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_put_auto_termination_policy_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_put_block_public_access_configuration(
     input: &crate::input::PutBlockPublicAccessConfigurationInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -384,6 +404,16 @@ pub fn serialize_operation_remove_auto_scaling_policy(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_remove_auto_scaling_policy_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_remove_auto_termination_policy(
+    input: &crate::input::RemoveAutoTerminationPolicyInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_remove_auto_termination_policy_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

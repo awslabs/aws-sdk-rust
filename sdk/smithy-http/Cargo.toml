@@ -8,7 +8,7 @@ license = "Apache-2.0"
 [features]
 bytestream-util = ["tokio/fs", "tokio-util/io"]
 event-stream = ["smithy-eventstream"]
-default = ["bytestream-util", "event-stream"]
+default = ["bytestream-util"]
 
 [dependencies]
 smithy-types = { path = "../smithy-types" }

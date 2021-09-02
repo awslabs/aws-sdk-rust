@@ -2951,7 +2951,7 @@ impl UpdateIntegrationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayResponseOutput {
-    /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
+    /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
     /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
     pub status_code: std::option::Option<std::string::String>,
@@ -2992,7 +2992,7 @@ pub mod update_gateway_response_output {
         pub(crate) default_response: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
+        /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
         pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
             self.response_type = Some(input);
             self
@@ -3100,7 +3100,7 @@ pub struct UpdateDomainNameOutput {
     pub certificate_upload_date: std::option::Option<smithy_types::Instant>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     pub regional_domain_name: std::option::Option<std::string::String>,
-    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
     pub regional_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
     pub regional_certificate_name: std::option::Option<std::string::String>,
@@ -3108,7 +3108,7 @@ pub struct UpdateDomainNameOutput {
     pub regional_certificate_arn: std::option::Option<std::string::String>,
     /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
     pub distribution_domain_name: std::option::Option<std::string::String>,
-    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
     pub distribution_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
@@ -3243,7 +3243,7 @@ pub mod update_domain_name_output {
             self.regional_domain_name = input;
             self
         }
-        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn regional_hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regional_hosted_zone_id = Some(input.into());
             self
@@ -3291,7 +3291,7 @@ pub mod update_domain_name_output {
             self.distribution_domain_name = input;
             self
         }
-        /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+        /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn distribution_hosted_zone_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -4408,7 +4408,7 @@ impl UpdateApiKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountOutput {
-    /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
+    /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
     pub cloudwatch_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the API request limits configured for the current <a>Account</a>.</p>
     pub throttle_settings: std::option::Option<crate::model::ThrottleSettings>,
@@ -4439,7 +4439,7 @@ pub mod update_account_output {
         pub(crate) api_key_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
+        /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
         pub fn cloudwatch_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloudwatch_role_arn = Some(input.into());
             self
@@ -6545,7 +6545,7 @@ impl PutIntegrationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutGatewayResponseOutput {
-    /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
+    /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
     /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
     pub status_code: std::option::Option<std::string::String>,
@@ -6586,7 +6586,7 @@ pub mod put_gateway_response_output {
         pub(crate) default_response: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
+        /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
         pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
             self.response_type = Some(input);
             self
@@ -11572,7 +11572,7 @@ impl GetGatewayResponsesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayResponseOutput {
-    /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
+    /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
     /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
     pub status_code: std::option::Option<std::string::String>,
@@ -11613,7 +11613,7 @@ pub mod get_gateway_response_output {
         pub(crate) default_response: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
+        /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
         pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
             self.response_type = Some(input);
             self
@@ -11867,7 +11867,7 @@ pub struct GetDomainNameOutput {
     pub certificate_upload_date: std::option::Option<smithy_types::Instant>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     pub regional_domain_name: std::option::Option<std::string::String>,
-    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
     pub regional_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
     pub regional_certificate_name: std::option::Option<std::string::String>,
@@ -11875,7 +11875,7 @@ pub struct GetDomainNameOutput {
     pub regional_certificate_arn: std::option::Option<std::string::String>,
     /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
     pub distribution_domain_name: std::option::Option<std::string::String>,
-    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
     pub distribution_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
@@ -12010,7 +12010,7 @@ pub mod get_domain_name_output {
             self.regional_domain_name = input;
             self
         }
-        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn regional_hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regional_hosted_zone_id = Some(input.into());
             self
@@ -12058,7 +12058,7 @@ pub mod get_domain_name_output {
             self.distribution_domain_name = input;
             self
         }
-        /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+        /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn distribution_hosted_zone_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -13676,7 +13676,7 @@ impl GetApiKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountOutput {
-    /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
+    /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
     pub cloudwatch_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the API request limits configured for the current <a>Account</a>.</p>
     pub throttle_settings: std::option::Option<crate::model::ThrottleSettings>,
@@ -13707,7 +13707,7 @@ pub mod get_account_output {
         pub(crate) api_key_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
+        /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
         pub fn cloudwatch_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloudwatch_role_arn = Some(input.into());
             self
@@ -16110,7 +16110,7 @@ pub struct CreateDomainNameOutput {
     pub certificate_upload_date: std::option::Option<smithy_types::Instant>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     pub regional_domain_name: std::option::Option<std::string::String>,
-    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
     pub regional_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
     pub regional_certificate_name: std::option::Option<std::string::String>,
@@ -16118,7 +16118,7 @@ pub struct CreateDomainNameOutput {
     pub regional_certificate_arn: std::option::Option<std::string::String>,
     /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
     pub distribution_domain_name: std::option::Option<std::string::String>,
-    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
     pub distribution_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
@@ -16253,7 +16253,7 @@ pub mod create_domain_name_output {
             self.regional_domain_name = input;
             self
         }
-        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn regional_hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regional_hosted_zone_id = Some(input.into());
             self
@@ -16301,7 +16301,7 @@ pub mod create_domain_name_output {
             self.distribution_domain_name = input;
             self
         }
-        /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
+        /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn distribution_hosted_zone_id(
             mut self,
             input: impl Into<std::string::String>,

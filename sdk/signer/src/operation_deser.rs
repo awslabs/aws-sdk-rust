@@ -6,7 +6,7 @@ pub fn parse_add_profile_permission_error(
     crate::output::AddProfilePermissionOutput,
     crate::error::AddProfilePermissionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddProfilePermissionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -187,7 +187,7 @@ pub fn parse_cancel_signing_profile_error(
     crate::output::CancelSigningProfileOutput,
     crate::error::CancelSigningProfileError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelSigningProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -303,7 +303,7 @@ pub fn parse_describe_signing_job_error(
     crate::output::DescribeSigningJobOutput,
     crate::error::DescribeSigningJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSigningJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -424,7 +424,7 @@ pub fn parse_get_signing_platform_error(
     crate::output::GetSigningPlatformOutput,
     crate::error::GetSigningPlatformError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSigningPlatformError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -543,7 +543,7 @@ pub fn parse_get_signing_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSigningProfileOutput, crate::error::GetSigningProfileError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSigningProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -662,7 +662,7 @@ pub fn parse_list_profile_permissions_error(
     crate::output::ListProfilePermissionsOutput,
     crate::error::ListProfilePermissionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListProfilePermissionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -805,7 +805,7 @@ pub fn parse_list_profile_permissions_response(
 pub fn parse_list_signing_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListSigningJobsOutput, crate::error::ListSigningJobsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSigningJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -922,7 +922,7 @@ pub fn parse_list_signing_platforms_error(
     crate::output::ListSigningPlatformsOutput,
     crate::error::ListSigningPlatformsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSigningPlatformsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1044,7 +1044,7 @@ pub fn parse_list_signing_profiles_error(
     crate::output::ListSigningProfilesOutput,
     crate::error::ListSigningProfilesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSigningProfilesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1145,7 +1145,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1265,7 +1265,7 @@ pub fn parse_put_signing_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutSigningProfileOutput, crate::error::PutSigningProfileError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutSigningProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1405,7 +1405,7 @@ pub fn parse_remove_profile_permission_error(
     crate::output::RemoveProfilePermissionOutput,
     crate::error::RemoveProfilePermissionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveProfilePermissionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1569,7 +1569,7 @@ pub fn parse_remove_profile_permission_response(
 pub fn parse_revoke_signature_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RevokeSignatureOutput, crate::error::RevokeSignatureError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RevokeSignatureError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1703,7 +1703,7 @@ pub fn parse_revoke_signing_profile_error(
     crate::output::RevokeSigningProfileOutput,
     crate::error::RevokeSigningProfileError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RevokeSigningProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1837,7 +1837,7 @@ pub fn parse_revoke_signing_profile_response(
 pub fn parse_start_signing_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartSigningJobOutput, crate::error::StartSigningJobError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartSigningJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1992,7 +1992,7 @@ pub fn parse_start_signing_job_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2103,7 +2103,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

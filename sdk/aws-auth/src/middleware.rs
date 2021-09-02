@@ -3,14 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use crate::provider::{CredentialsError, CredentialsProvider};
 use smithy_http::middleware::AsyncMapRequest;
 use smithy_http::operation::Request;
 use std::future::Future;
 use std::pin::Pin;
 
-/// Middleware stage that requests credentials from a [CredentialsProvider] and places them in
-/// the property bag of the request.
+/// Middleware stage that loads credentials from a [CredentialsProvider](aws_types::credentials::ProvideCredentials)
+/// and places them in the property bag of the request.
 ///
 /// [CredentialsStage] implements [`AsyncMapRequest`](smithy_http::middleware::AsyncMapRequest), and:
 /// 1. Retrieves a `CredentialsProvider` from the property bag.
@@ -26,7 +25,10 @@ impl CredentialsStage {
     }
 
     async fn load_creds(mut request: Request) -> Result<Request, CredentialsStageError> {
-        let provider = request.properties().get::<CredentialsProvider>().cloned();
+        let provider = request
+            .properties()
+            .get::<SharedCredentialsProvider>()
+            .cloned();
         let provider = match provider {
             Some(provider) => provider,
             None => {
@@ -51,7 +53,7 @@ impl CredentialsStage {
 }
 
 mod error {
-    use crate::provider::CredentialsError;
+    use aws_types::credentials::CredentialsError;
     use std::error::Error as StdError;
     use std::fmt;
 
@@ -86,6 +88,7 @@ mod error {
     }
 }
 
+use aws_types::credentials::{CredentialsError, ProvideCredentials, SharedCredentialsProvider};
 pub use error::*;
 
 type BoxFuture<T> = Pin<Box<dyn Future<Output = T> + Send>>;
@@ -102,12 +105,36 @@ impl AsyncMapRequest for CredentialsStage {
 #[cfg(test)]
 mod tests {
     use super::CredentialsStage;
-    use crate::provider::{async_provide_credentials_fn, set_provider, CredentialsError};
-    use crate::Credentials;
+    use crate::set_provider;
+    use aws_types::credentials::{
+        future, CredentialsError, ProvideCredentials, SharedCredentialsProvider,
+    };
+    use aws_types::Credentials;
     use smithy_http::body::SdkBody;
     use smithy_http::middleware::AsyncMapRequest;
     use smithy_http::operation;
-    use std::sync::Arc;
+
+    #[derive(Debug)]
+    struct Unhandled;
+    impl ProvideCredentials for Unhandled {
+        fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'a>
+        where
+            Self: 'a,
+        {
+            future::ProvideCredentials::ready(Err(CredentialsError::Unhandled("whoops".into())))
+        }
+    }
+
+    #[derive(Debug)]
+    struct NoCreds;
+    impl ProvideCredentials for NoCreds {
+        fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'a>
+        where
+            Self: 'a,
+        {
+            future::ProvideCredentials::ready(Err(CredentialsError::CredentialsNotLoaded))
+        }
+    }
 
     #[tokio::test]
     async fn no_cred_provider_is_ok() {
@@ -123,9 +150,7 @@ mod tests {
         let mut req = operation::Request::new(http::Request::new(SdkBody::from("some body")));
         set_provider(
             &mut req.properties_mut(),
-            Arc::new(async_provide_credentials_fn(|| async {
-                Err(CredentialsError::Unhandled("whoops".into()))
-            })),
+            SharedCredentialsProvider::new(Unhandled),
         );
         CredentialsStage::new()
             .apply(req)
@@ -138,9 +163,7 @@ mod tests {
         let mut req = operation::Request::new(http::Request::new(SdkBody::from("some body")));
         set_provider(
             &mut req.properties_mut(),
-            Arc::new(async_provide_credentials_fn(|| async {
-                Err(CredentialsError::CredentialsNotLoaded)
-            })),
+            SharedCredentialsProvider::new(NoCreds),
         );
         CredentialsStage::new()
             .apply(req)
@@ -153,7 +176,7 @@ mod tests {
         let mut req = operation::Request::new(http::Request::new(SdkBody::from("some body")));
         set_provider(
             &mut req.properties_mut(),
-            Arc::new(Credentials::from_keys("test", "test", None)),
+            SharedCredentialsProvider::new(Credentials::from_keys("test", "test", None)),
         );
         let req = CredentialsStage::new()
             .apply(req)

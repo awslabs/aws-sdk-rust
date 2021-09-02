@@ -19,16 +19,20 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::AcceptDirectConnectGatewayAssociationProposalError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::AcceptDirectConnectGatewayAssociationProposalError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -41,11 +45,13 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AllocateConnectionOnInterconnectError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::AllocateConnectionOnInterconnectError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AllocateConnectionOnInterconnectError>,
+        err: smithy_http::result::SdkError<crate::error::AllocateConnectionOnInterconnectError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -57,9 +63,13 @@ impl From<smithy_http::result::SdkError<crate::error::AllocateConnectionOnInterc
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AllocateHostedConnectionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::AllocateHostedConnectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AllocateHostedConnectionError>,
+        err: smithy_http::result::SdkError<crate::error::AllocateHostedConnectionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -83,11 +93,13 @@ impl From<smithy_http::result::SdkError<crate::error::AllocateHostedConnectionEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AllocatePrivateVirtualInterfaceError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::AllocatePrivateVirtualInterfaceError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AllocatePrivateVirtualInterfaceError>,
+        err: smithy_http::result::SdkError<crate::error::AllocatePrivateVirtualInterfaceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -101,11 +113,13 @@ impl From<smithy_http::result::SdkError<crate::error::AllocatePrivateVirtualInte
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AllocatePublicVirtualInterfaceError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::AllocatePublicVirtualInterfaceError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AllocatePublicVirtualInterfaceError>,
+        err: smithy_http::result::SdkError<crate::error::AllocatePublicVirtualInterfaceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -119,11 +133,13 @@ impl From<smithy_http::result::SdkError<crate::error::AllocatePublicVirtualInter
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AllocateTransitVirtualInterfaceError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::AllocateTransitVirtualInterfaceError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AllocateTransitVirtualInterfaceError>,
+        err: smithy_http::result::SdkError<crate::error::AllocateTransitVirtualInterfaceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -137,9 +153,13 @@ impl From<smithy_http::result::SdkError<crate::error::AllocateTransitVirtualInte
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociateConnectionWithLagError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociateConnectionWithLagError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AssociateConnectionWithLagError>,
+        err: smithy_http::result::SdkError<crate::error::AssociateConnectionWithLagError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -157,9 +177,13 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateConnectionWithLag
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociateHostedConnectionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociateHostedConnectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AssociateHostedConnectionError>,
+        err: smithy_http::result::SdkError<crate::error::AssociateHostedConnectionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -177,8 +201,11 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateHostedConnectionE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociateMacSecKeyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AssociateMacSecKeyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociateMacSecKeyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::AssociateMacSecKeyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AssociateMacSecKeyErrorKind::DirectConnectClientException(inner) => {
@@ -195,9 +222,13 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateMacSecKeyError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociateVirtualInterfaceError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociateVirtualInterfaceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AssociateVirtualInterfaceError>,
+        err: smithy_http::result::SdkError<crate::error::AssociateVirtualInterfaceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -215,8 +246,11 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateVirtualInterfaceE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ConfirmConnectionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ConfirmConnectionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ConfirmConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ConfirmConnectionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ConfirmConnectionErrorKind::DirectConnectClientException(inner) => {
@@ -233,11 +267,13 @@ impl From<smithy_http::result::SdkError<crate::error::ConfirmConnectionError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ConfirmPrivateVirtualInterfaceError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ConfirmPrivateVirtualInterfaceError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ConfirmPrivateVirtualInterfaceError>,
+        err: smithy_http::result::SdkError<crate::error::ConfirmPrivateVirtualInterfaceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -249,11 +285,13 @@ impl From<smithy_http::result::SdkError<crate::error::ConfirmPrivateVirtualInter
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ConfirmPublicVirtualInterfaceError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ConfirmPublicVirtualInterfaceError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ConfirmPublicVirtualInterfaceError>,
+        err: smithy_http::result::SdkError<crate::error::ConfirmPublicVirtualInterfaceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -265,11 +303,13 @@ impl From<smithy_http::result::SdkError<crate::error::ConfirmPublicVirtualInterf
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ConfirmTransitVirtualInterfaceError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ConfirmTransitVirtualInterfaceError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ConfirmTransitVirtualInterfaceError>,
+        err: smithy_http::result::SdkError<crate::error::ConfirmTransitVirtualInterfaceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -281,8 +321,11 @@ impl From<smithy_http::result::SdkError<crate::error::ConfirmTransitVirtualInter
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateBGPPeerError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateBGPPeerError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateBGPPeerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateBGPPeerError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateBGPPeerErrorKind::DirectConnectClientException(inner) => {
@@ -297,8 +340,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateBGPPeerError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateConnectionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateConnectionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateConnectionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateConnectionErrorKind::DirectConnectClientException(inner) => {
@@ -321,9 +367,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateConnectionError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateDirectConnectGatewayError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateDirectConnectGatewayError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateDirectConnectGatewayError>,
+        err: smithy_http::result::SdkError<crate::error::CreateDirectConnectGatewayError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -341,12 +391,16 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDirectConnectGateway
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateDirectConnectGatewayAssociationError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::CreateDirectConnectGatewayAssociationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::CreateDirectConnectGatewayAssociationError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -359,16 +413,20 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDirectConnectGateway
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::CreateDirectConnectGatewayAssociationProposalError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::CreateDirectConnectGatewayAssociationProposalError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -381,8 +439,11 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateInterconnectError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateInterconnectError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateInterconnectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateInterconnectError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateInterconnectErrorKind::DirectConnectClientException(inner) => {
@@ -405,8 +466,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateInterconnectError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateLagError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateLagError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateLagError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateLagError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateLagErrorKind::DirectConnectClientException(inner) => {
@@ -427,11 +491,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateLagError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreatePrivateVirtualInterfaceError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::CreatePrivateVirtualInterfaceError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreatePrivateVirtualInterfaceError>,
+        err: smithy_http::result::SdkError<crate::error::CreatePrivateVirtualInterfaceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -445,11 +511,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreatePrivateVirtualInterf
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreatePublicVirtualInterfaceError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::CreatePublicVirtualInterfaceError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreatePublicVirtualInterfaceError>,
+        err: smithy_http::result::SdkError<crate::error::CreatePublicVirtualInterfaceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -463,11 +531,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreatePublicVirtualInterfa
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateTransitVirtualInterfaceError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateTransitVirtualInterfaceError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateTransitVirtualInterfaceError>,
+        err: smithy_http::result::SdkError<crate::error::CreateTransitVirtualInterfaceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -481,8 +551,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateTransitVirtualInterf
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteBGPPeerError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteBGPPeerError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteBGPPeerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteBGPPeerError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteBGPPeerErrorKind::DirectConnectClientException(inner) => {
@@ -497,8 +570,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteBGPPeerError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteConnectionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteConnectionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteConnectionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteConnectionErrorKind::DirectConnectClientException(inner) => {
@@ -515,9 +591,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteConnectionError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteDirectConnectGatewayError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteDirectConnectGatewayError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteDirectConnectGatewayError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteDirectConnectGatewayError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -535,12 +615,16 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDirectConnectGateway
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteDirectConnectGatewayAssociationError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::DeleteDirectConnectGatewayAssociationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DeleteDirectConnectGatewayAssociationError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -553,16 +637,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDirectConnectGateway
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::DeleteDirectConnectGatewayAssociationProposalError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DeleteDirectConnectGatewayAssociationProposalError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -575,8 +663,11 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteInterconnectError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteInterconnectError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteInterconnectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteInterconnectError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteInterconnectErrorKind::DirectConnectClientException(inner) => {
@@ -593,8 +684,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteInterconnectError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteLagError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteLagError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteLagError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteLagError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteLagErrorKind::DirectConnectClientException(inner) => {
@@ -609,8 +703,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteLagError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteVirtualInterfaceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteVirtualInterfaceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteVirtualInterfaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteVirtualInterfaceError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteVirtualInterfaceErrorKind::DirectConnectClientException(
@@ -627,8 +726,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteVirtualInterfaceErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeConnectionLoaError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeConnectionLoaError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeConnectionLoaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeConnectionLoaError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeConnectionLoaErrorKind::DirectConnectClientException(
@@ -645,8 +749,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeConnectionLoaError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeConnectionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeConnectionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeConnectionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeConnectionsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeConnectionsErrorKind::DirectConnectClientException(inner) => {
@@ -663,11 +770,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeConnectionsError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeConnectionsOnInterconnectError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeConnectionsOnInterconnectError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeConnectionsOnInterconnectError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeConnectionsOnInterconnectError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -679,16 +788,20 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeConnectionsOnInter
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::DescribeDirectConnectGatewayAssociationProposalsError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DescribeDirectConnectGatewayAssociationProposalsError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -701,13 +814,20 @@ impl
         }
     }
 }
-impl
-    From<smithy_http::result::SdkError<crate::error::DescribeDirectConnectGatewayAssociationsError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<
+            crate::error::DescribeDirectConnectGatewayAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DescribeDirectConnectGatewayAssociationsError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -720,12 +840,20 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDirectConnectGatewayAttachmentsError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<
+            crate::error::DescribeDirectConnectGatewayAttachmentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DescribeDirectConnectGatewayAttachmentsError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -738,11 +866,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDirectConnectGatew
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDirectConnectGatewaysError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeDirectConnectGatewaysError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeDirectConnectGatewaysError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeDirectConnectGatewaysError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -754,9 +884,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDirectConnectGatew
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeHostedConnectionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeHostedConnectionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeHostedConnectionsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeHostedConnectionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -774,9 +908,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeHostedConnectionsE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeInterconnectLoaError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeInterconnectLoaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeInterconnectLoaError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeInterconnectLoaError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -794,8 +931,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeInterconnectLoaErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeInterconnectsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeInterconnectsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeInterconnectsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeInterconnectsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeInterconnectsErrorKind::DirectConnectClientException(
@@ -812,8 +954,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeInterconnectsError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeLagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeLagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeLagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeLagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeLagsErrorKind::DirectConnectClientException(inner) => {
@@ -828,8 +973,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLagsError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeLoaError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeLoaError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeLoaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeLoaError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeLoaErrorKind::DirectConnectClientException(inner) => {
@@ -844,8 +992,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLoaError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeLocationsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeLocationsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeLocationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeLocationsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeLocationsErrorKind::DirectConnectClientException(inner) => {
@@ -862,8 +1013,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLocationsError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeTagsErrorKind::DirectConnectClientException(inner) => {
@@ -878,9 +1032,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTagsError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeVirtualGatewaysError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeVirtualGatewaysError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeVirtualGatewaysError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeVirtualGatewaysError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -898,9 +1055,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeVirtualGatewaysErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeVirtualInterfacesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeVirtualInterfacesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeVirtualInterfacesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeVirtualInterfacesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -918,11 +1079,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeVirtualInterfacesE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisassociateConnectionFromLagError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DisassociateConnectionFromLagError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DisassociateConnectionFromLagError>,
+        err: smithy_http::result::SdkError<crate::error::DisassociateConnectionFromLagError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -934,8 +1097,13 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateConnectionFrom
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisassociateMacSecKeyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DisassociateMacSecKeyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DisassociateMacSecKeyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DisassociateMacSecKeyError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DisassociateMacSecKeyErrorKind::DirectConnectClientException(
@@ -952,11 +1120,13 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateMacSecKeyError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListVirtualInterfaceTestHistoryError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ListVirtualInterfaceTestHistoryError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListVirtualInterfaceTestHistoryError>,
+        err: smithy_http::result::SdkError<crate::error::ListVirtualInterfaceTestHistoryError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -968,8 +1138,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListVirtualInterfaceTestHi
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartBgpFailoverTestError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartBgpFailoverTestError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartBgpFailoverTestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::StartBgpFailoverTestError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StartBgpFailoverTestErrorKind::DirectConnectClientException(
@@ -986,8 +1161,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartBgpFailoverTestError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StopBgpFailoverTestError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StopBgpFailoverTestError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StopBgpFailoverTestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StopBgpFailoverTestError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StopBgpFailoverTestErrorKind::DirectConnectClientException(inner) => {
@@ -1004,8 +1182,11 @@ impl From<smithy_http::result::SdkError<crate::error::StopBgpFailoverTestError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::DirectConnectClientException(inner) => {
@@ -1026,8 +1207,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::DirectConnectClientException(inner) => {
@@ -1042,8 +1226,11 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateConnectionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateConnectionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateConnectionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateConnectionErrorKind::DirectConnectClientException(inner) => {
@@ -1060,12 +1247,16 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateConnectionError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateDirectConnectGatewayAssociationError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::UpdateDirectConnectGatewayAssociationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::UpdateDirectConnectGatewayAssociationError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -1078,8 +1269,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDirectConnectGateway
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateLagError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateLagError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateLagError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateLagError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateLagErrorKind::DirectConnectClientException(inner) => {
@@ -1094,11 +1288,13 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateLagError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateVirtualInterfaceAttributesError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateVirtualInterfaceAttributesError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateVirtualInterfaceAttributesError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateVirtualInterfaceAttributesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {

@@ -4,7 +4,7 @@ pub fn parse_complete_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CompleteSnapshotOutput, crate::error::CompleteSnapshotError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CompleteSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -196,7 +196,7 @@ pub fn parse_get_snapshot_block_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSnapshotBlockOutput, crate::error::GetSnapshotBlockError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSnapshotBlockError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -337,7 +337,7 @@ pub fn parse_list_changed_blocks_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListChangedBlocksOutput, crate::error::ListChangedBlocksError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListChangedBlocksError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -498,7 +498,7 @@ pub fn parse_list_snapshot_blocks_error(
     crate::output::ListSnapshotBlocksOutput,
     crate::error::ListSnapshotBlocksError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -659,7 +659,7 @@ pub fn parse_put_snapshot_block_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutSnapshotBlockOutput, crate::error::PutSnapshotBlockError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutSnapshotBlockError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -826,7 +826,7 @@ pub fn parse_put_snapshot_block_response(
 pub fn parse_start_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartSnapshotOutput, crate::error::StartSnapshotError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

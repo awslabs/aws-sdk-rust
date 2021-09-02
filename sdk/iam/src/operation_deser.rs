@@ -6,7 +6,7 @@ pub fn parse_add_client_id_to_open_id_connect_provider_error(
     crate::output::AddClientIdToOpenIdConnectProviderOutput,
     crate::error::AddClientIDToOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddClientIDToOpenIDConnectProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -137,7 +137,7 @@ pub fn parse_add_role_to_instance_profile_error(
     crate::output::AddRoleToInstanceProfileOutput,
     crate::error::AddRoleToInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddRoleToInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -280,7 +280,7 @@ pub fn parse_add_role_to_instance_profile_response(
 pub fn parse_add_user_to_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddUserToGroupOutput, crate::error::AddUserToGroupError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddUserToGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -373,7 +373,7 @@ pub fn parse_attach_group_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachGroupPolicyOutput, crate::error::AttachGroupPolicyError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AttachGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -508,7 +508,7 @@ pub fn parse_attach_role_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachRolePolicyOutput, crate::error::AttachRolePolicyError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AttachRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -663,7 +663,7 @@ pub fn parse_attach_user_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachUserPolicyOutput, crate::error::AttachUserPolicyError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AttachUserPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -797,7 +797,7 @@ pub fn parse_attach_user_policy_response(
 pub fn parse_change_password_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ChangePasswordOutput, crate::error::ChangePasswordError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ChangePasswordError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -946,7 +946,7 @@ pub fn parse_change_password_response(
 pub fn parse_create_access_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAccessKeyOutput, crate::error::CreateAccessKeyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAccessKeyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1044,7 +1044,7 @@ pub fn parse_create_account_alias_error(
     crate::output::CreateAccountAliasOutput,
     crate::error::CreateAccountAliasError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAccountAliasError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1138,7 +1138,7 @@ pub fn parse_create_account_alias_response(
 pub fn parse_create_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1255,7 +1255,7 @@ pub fn parse_create_instance_profile_error(
     crate::output::CreateInstanceProfileOutput,
     crate::error::CreateInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1396,7 +1396,7 @@ pub fn parse_create_login_profile_error(
     crate::output::CreateLoginProfileOutput,
     crate::error::CreateLoginProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLoginProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1537,7 +1537,7 @@ pub fn parse_create_open_id_connect_provider_error(
     crate::output::CreateOpenIdConnectProviderOutput,
     crate::error::CreateOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateOpenIDConnectProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1682,7 +1682,7 @@ pub fn parse_create_open_id_connect_provider_response(
 pub fn parse_create_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreatePolicyOutput, crate::error::CreatePolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1835,7 +1835,7 @@ pub fn parse_create_policy_version_error(
     crate::output::CreatePolicyVersionOutput,
     crate::error::CreatePolicyVersionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePolicyVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1974,7 +1974,7 @@ pub fn parse_create_policy_version_response(
 pub fn parse_create_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateRoleOutput, crate::error::CreateRoleError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2127,7 +2127,7 @@ pub fn parse_create_saml_provider_error(
     crate::output::CreateSamlProviderOutput,
     crate::error::CreateSAMLProviderError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2268,7 +2268,7 @@ pub fn parse_create_service_linked_role_error(
     crate::output::CreateServiceLinkedRoleOutput,
     crate::error::CreateServiceLinkedRoleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateServiceLinkedRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2396,7 +2396,7 @@ pub fn parse_create_service_specific_credential_error(
     crate::output::CreateServiceSpecificCredentialOutput,
     crate::error::CreateServiceSpecificCredentialError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateServiceSpecificCredentialError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2497,7 +2497,7 @@ pub fn parse_create_service_specific_credential_response(
 pub fn parse_create_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2653,7 +2653,7 @@ pub fn parse_create_virtual_mfa_device_error(
     crate::output::CreateVirtualMfaDeviceOutput,
     crate::error::CreateVirtualMFADeviceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVirtualMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2800,7 +2800,7 @@ pub fn parse_deactivate_mfa_device_error(
     crate::output::DeactivateMfaDeviceOutput,
     crate::error::DeactivateMFADeviceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeactivateMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2914,7 +2914,7 @@ pub fn parse_deactivate_mfa_device_response(
 pub fn parse_delete_access_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAccessKeyOutput, crate::error::DeleteAccessKeyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAccessKeyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3009,7 +3009,7 @@ pub fn parse_delete_account_alias_error(
     crate::output::DeleteAccountAliasOutput,
     crate::error::DeleteAccountAliasError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAccountAliasError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3107,7 +3107,7 @@ pub fn parse_delete_account_password_policy_error(
     crate::output::DeleteAccountPasswordPolicyOutput,
     crate::error::DeleteAccountPasswordPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAccountPasswordPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3206,7 +3206,7 @@ pub fn parse_delete_account_password_policy_response(
 pub fn parse_delete_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3320,7 +3320,7 @@ pub fn parse_delete_group_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteGroupPolicyOutput, crate::error::DeleteGroupPolicyError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3416,7 +3416,7 @@ pub fn parse_delete_instance_profile_error(
     crate::output::DeleteInstanceProfileOutput,
     crate::error::DeleteInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3535,7 +3535,7 @@ pub fn parse_delete_login_profile_error(
     crate::output::DeleteLoginProfileOutput,
     crate::error::DeleteLoginProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLoginProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3651,7 +3651,7 @@ pub fn parse_delete_open_id_connect_provider_error(
     crate::output::DeleteOpenIdConnectProviderOutput,
     crate::error::DeleteOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteOpenIDConnectProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3750,7 +3750,7 @@ pub fn parse_delete_open_id_connect_provider_response(
 pub fn parse_delete_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeletePolicyOutput, crate::error::DeletePolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3887,7 +3887,7 @@ pub fn parse_delete_policy_version_error(
     crate::output::DeletePolicyVersionOutput,
     crate::error::DeletePolicyVersionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePolicyVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4024,7 +4024,7 @@ pub fn parse_delete_policy_version_response(
 pub fn parse_delete_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRoleOutput, crate::error::DeleteRoleError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4178,7 +4178,7 @@ pub fn parse_delete_role_permissions_boundary_error(
     crate::output::DeleteRolePermissionsBoundaryOutput,
     crate::error::DeleteRolePermissionsBoundaryError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRolePermissionsBoundaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4277,7 +4277,7 @@ pub fn parse_delete_role_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRolePolicyOutput, crate::error::DeleteRolePolicyError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4393,7 +4393,7 @@ pub fn parse_delete_saml_provider_error(
     crate::output::DeleteSamlProviderOutput,
     crate::error::DeleteSAMLProviderError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4512,7 +4512,7 @@ pub fn parse_delete_server_certificate_error(
     crate::output::DeleteServerCertificateOutput,
     crate::error::DeleteServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4635,7 +4635,7 @@ pub fn parse_delete_service_linked_role_error(
     crate::output::DeleteServiceLinkedRoleOutput,
     crate::error::DeleteServiceLinkedRoleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteServiceLinkedRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4742,7 +4742,7 @@ pub fn parse_delete_service_specific_credential_error(
     crate::output::DeleteServiceSpecificCredentialOutput,
     crate::error::DeleteServiceSpecificCredentialError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteServiceSpecificCredentialError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4799,7 +4799,7 @@ pub fn parse_delete_signing_certificate_error(
     crate::output::DeleteSigningCertificateOutput,
     crate::error::DeleteSigningCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSigningCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4901,7 +4901,7 @@ pub fn parse_delete_ssh_public_key_error(
     crate::output::DeleteSshPublicKeyOutput,
     crate::error::DeleteSSHPublicKeyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSSHPublicKeyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4954,7 +4954,7 @@ pub fn parse_delete_ssh_public_key_response(
 pub fn parse_delete_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5088,7 +5088,7 @@ pub fn parse_delete_user_permissions_boundary_error(
     crate::output::DeleteUserPermissionsBoundaryOutput,
     crate::error::DeleteUserPermissionsBoundaryError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteUserPermissionsBoundaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5167,7 +5167,7 @@ pub fn parse_delete_user_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteUserPolicyOutput, crate::error::DeleteUserPolicyError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteUserPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5263,7 +5263,7 @@ pub fn parse_delete_virtual_mfa_device_error(
     crate::output::DeleteVirtualMfaDeviceOutput,
     crate::error::DeleteVirtualMFADeviceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVirtualMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5384,7 +5384,7 @@ pub fn parse_detach_group_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachGroupPolicyOutput, crate::error::DetachGroupPolicyError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetachGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5499,7 +5499,7 @@ pub fn parse_detach_role_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachRolePolicyOutput, crate::error::DetachRolePolicyError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetachRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5634,7 +5634,7 @@ pub fn parse_detach_user_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachUserPolicyOutput, crate::error::DetachUserPolicyError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetachUserPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5748,7 +5748,7 @@ pub fn parse_detach_user_policy_response(
 pub fn parse_enable_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::EnableMfaDeviceOutput, crate::error::EnableMFADeviceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5899,7 +5899,7 @@ pub fn parse_generate_credential_report_error(
     crate::output::GenerateCredentialReportOutput,
     crate::error::GenerateCredentialReportError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GenerateCredentialReportError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5985,7 +5985,7 @@ pub fn parse_generate_organizations_access_report_error(
     crate::output::GenerateOrganizationsAccessReportOutput,
     crate::error::GenerateOrganizationsAccessReportError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GenerateOrganizationsAccessReportError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6042,7 +6042,7 @@ pub fn parse_generate_service_last_accessed_details_error(
     crate::output::GenerateServiceLastAccessedDetailsOutput,
     crate::error::GenerateServiceLastAccessedDetailsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GenerateServiceLastAccessedDetailsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6131,7 +6131,7 @@ pub fn parse_get_access_key_last_used_error(
     crate::output::GetAccessKeyLastUsedOutput,
     crate::error::GetAccessKeyLastUsedError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccessKeyLastUsedError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6192,7 +6192,7 @@ pub fn parse_get_account_authorization_details_error(
     crate::output::GetAccountAuthorizationDetailsOutput,
     crate::error::GetAccountAuthorizationDetailsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccountAuthorizationDetailsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6254,7 +6254,7 @@ pub fn parse_get_account_password_policy_error(
     crate::output::GetAccountPasswordPolicyOutput,
     crate::error::GetAccountPasswordPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccountPasswordPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6338,7 +6338,7 @@ pub fn parse_get_account_summary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAccountSummaryOutput, crate::error::GetAccountSummaryError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccountSummaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6395,7 +6395,7 @@ pub fn parse_get_context_keys_for_custom_policy_error(
     crate::output::GetContextKeysForCustomPolicyOutput,
     crate::error::GetContextKeysForCustomPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetContextKeysForCustomPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6461,7 +6461,7 @@ pub fn parse_get_context_keys_for_principal_policy_error(
     crate::output::GetContextKeysForPrincipalPolicyOutput,
     crate::error::GetContextKeysForPrincipalPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetContextKeysForPrincipalPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6546,7 +6546,7 @@ pub fn parse_get_credential_report_error(
     crate::output::GetCredentialReportOutput,
     crate::error::GetCredentialReportError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCredentialReportError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6661,7 +6661,7 @@ pub fn parse_get_credential_report_response(
 pub fn parse_get_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetGroupOutput, crate::error::GetGroupError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6734,7 +6734,7 @@ pub fn parse_get_group_response(
 pub fn parse_get_group_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetGroupPolicyOutput, crate::error::GetGroupPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6811,7 +6811,7 @@ pub fn parse_get_instance_profile_error(
     crate::output::GetInstanceProfileOutput,
     crate::error::GetInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6890,7 +6890,7 @@ pub fn parse_get_instance_profile_response(
 pub fn parse_get_login_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetLoginProfileOutput, crate::error::GetLoginProfileError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetLoginProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6967,7 +6967,7 @@ pub fn parse_get_open_id_connect_provider_error(
     crate::output::GetOpenIdConnectProviderOutput,
     crate::error::GetOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetOpenIDConnectProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7074,7 +7074,7 @@ pub fn parse_get_organizations_access_report_error(
     crate::output::GetOrganizationsAccessReportOutput,
     crate::error::GetOrganizationsAccessReportError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetOrganizationsAccessReportError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7136,7 +7136,7 @@ pub fn parse_get_organizations_access_report_response(
 pub fn parse_get_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7231,7 +7231,7 @@ pub fn parse_get_policy_version_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetPolicyVersionOutput, crate::error::GetPolicyVersionError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPolicyVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7327,7 +7327,7 @@ pub fn parse_get_policy_version_response(
 pub fn parse_get_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRoleOutput, crate::error::GetRoleError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7400,7 +7400,7 @@ pub fn parse_get_role_response(
 pub fn parse_get_role_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRolePolicyOutput, crate::error::GetRolePolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7474,7 +7474,7 @@ pub fn parse_get_role_policy_response(
 pub fn parse_get_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSamlProviderOutput, crate::error::GetSAMLProviderError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7572,7 +7572,7 @@ pub fn parse_get_server_certificate_error(
     crate::output::GetServerCertificateOutput,
     crate::error::GetServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7654,7 +7654,7 @@ pub fn parse_get_service_last_accessed_details_error(
     crate::output::GetServiceLastAccessedDetailsOutput,
     crate::error::GetServiceLastAccessedDetailsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetServiceLastAccessedDetailsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7741,7 +7741,7 @@ pub fn parse_get_service_last_accessed_details_with_entities_error(
     crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput,
     crate::error::GetServiceLastAccessedDetailsWithEntitiesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetServiceLastAccessedDetailsWithEntitiesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7815,7 +7815,7 @@ pub fn parse_get_service_linked_role_deletion_status_error(
     crate::output::GetServiceLinkedRoleDeletionStatusOutput,
     crate::error::GetServiceLinkedRoleDeletionStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetServiceLinkedRoleDeletionStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7922,7 +7922,7 @@ pub fn parse_get_service_linked_role_deletion_status_response(
 pub fn parse_get_ssh_public_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSshPublicKeyOutput, crate::error::GetSSHPublicKeyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSSHPublicKeyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7994,7 +7994,7 @@ pub fn parse_get_ssh_public_key_response(
 pub fn parse_get_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetUserOutput, crate::error::GetUserError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8067,7 +8067,7 @@ pub fn parse_get_user_response(
 pub fn parse_get_user_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetUserPolicyOutput, crate::error::GetUserPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetUserPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8141,7 +8141,7 @@ pub fn parse_get_user_policy_response(
 pub fn parse_list_access_keys_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAccessKeysOutput, crate::error::ListAccessKeysError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAccessKeysError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8218,7 +8218,7 @@ pub fn parse_list_account_aliases_error(
     crate::output::ListAccountAliasesOutput,
     crate::error::ListAccountAliasesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAccountAliasesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8279,7 +8279,7 @@ pub fn parse_list_attached_group_policies_error(
     crate::output::ListAttachedGroupPoliciesOutput,
     crate::error::ListAttachedGroupPoliciesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAttachedGroupPoliciesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8386,7 +8386,7 @@ pub fn parse_list_attached_role_policies_error(
     crate::output::ListAttachedRolePoliciesOutput,
     crate::error::ListAttachedRolePoliciesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAttachedRolePoliciesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8493,7 +8493,7 @@ pub fn parse_list_attached_user_policies_error(
     crate::output::ListAttachedUserPoliciesOutput,
     crate::error::ListAttachedUserPoliciesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAttachedUserPoliciesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8600,7 +8600,7 @@ pub fn parse_list_entities_for_policy_error(
     crate::output::ListEntitiesForPolicyOutput,
     crate::error::ListEntitiesForPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListEntitiesForPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8701,7 +8701,7 @@ pub fn parse_list_group_policies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGroupPoliciesOutput, crate::error::ListGroupPoliciesError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListGroupPoliciesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8776,7 +8776,7 @@ pub fn parse_list_group_policies_response(
 pub fn parse_list_groups_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8829,7 +8829,7 @@ pub fn parse_list_groups_for_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGroupsForUserOutput, crate::error::ListGroupsForUserError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListGroupsForUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8909,7 +8909,7 @@ pub fn parse_list_instance_profiles_error(
     crate::output::ListInstanceProfilesOutput,
     crate::error::ListInstanceProfilesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListInstanceProfilesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8970,7 +8970,7 @@ pub fn parse_list_instance_profiles_for_role_error(
     crate::output::ListInstanceProfilesForRoleOutput,
     crate::error::ListInstanceProfilesForRoleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListInstanceProfilesForRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9056,7 +9056,7 @@ pub fn parse_list_instance_profile_tags_error(
     crate::output::ListInstanceProfileTagsOutput,
     crate::error::ListInstanceProfileTagsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListInstanceProfileTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9139,7 +9139,7 @@ pub fn parse_list_instance_profile_tags_response(
 pub fn parse_list_mfa_devices_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListMfaDevicesOutput, crate::error::ListMFADevicesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListMFADevicesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9214,7 +9214,7 @@ pub fn parse_list_mfa_device_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListMfaDeviceTagsOutput, crate::error::ListMFADeviceTagsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListMFADeviceTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9315,7 +9315,7 @@ pub fn parse_list_open_id_connect_providers_error(
     crate::output::ListOpenIdConnectProvidersOutput,
     crate::error::ListOpenIDConnectProvidersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListOpenIDConnectProvidersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9380,7 +9380,7 @@ pub fn parse_list_open_id_connect_provider_tags_error(
     crate::output::ListOpenIdConnectProviderTagsOutput,
     crate::error::ListOpenIDConnectProviderTagsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListOpenIDConnectProviderTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9485,7 +9485,7 @@ pub fn parse_list_open_id_connect_provider_tags_response(
 pub fn parse_list_policies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPoliciesOutput, crate::error::ListPoliciesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPoliciesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9540,7 +9540,7 @@ pub fn parse_list_policies_granting_service_access_error(
     crate::output::ListPoliciesGrantingServiceAccessOutput,
     crate::error::ListPoliciesGrantingServiceAccessError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPoliciesGrantingServiceAccessError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9626,7 +9626,7 @@ pub fn parse_list_policies_granting_service_access_response(
 pub fn parse_list_policy_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPolicyTagsOutput, crate::error::ListPolicyTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPolicyTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9724,7 +9724,7 @@ pub fn parse_list_policy_versions_error(
     crate::output::ListPolicyVersionsOutput,
     crate::error::ListPolicyVersionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPolicyVersionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9825,7 +9825,7 @@ pub fn parse_list_role_policies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListRolePoliciesOutput, crate::error::ListRolePoliciesError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRolePoliciesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9900,7 +9900,7 @@ pub fn parse_list_role_policies_response(
 pub fn parse_list_roles_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListRolesOutput, crate::error::ListRolesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRolesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9952,7 +9952,7 @@ pub fn parse_list_roles_response(
 pub fn parse_list_role_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListRoleTagsOutput, crate::error::ListRoleTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRoleTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10026,7 +10026,7 @@ pub fn parse_list_saml_providers_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListSamlProvidersOutput, crate::error::ListSAMLProvidersError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSAMLProvidersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10083,7 +10083,7 @@ pub fn parse_list_saml_provider_tags_error(
     crate::output::ListSamlProviderTagsOutput,
     crate::error::ListSAMLProviderTagsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10186,7 +10186,7 @@ pub fn parse_list_server_certificates_error(
     crate::output::ListServerCertificatesOutput,
     crate::error::ListServerCertificatesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListServerCertificatesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10251,7 +10251,7 @@ pub fn parse_list_server_certificate_tags_error(
     crate::output::ListServerCertificateTagsOutput,
     crate::error::ListServerCertificateTagsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListServerCertificateTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10337,7 +10337,7 @@ pub fn parse_list_service_specific_credentials_error(
     crate::output::ListServiceSpecificCredentialsOutput,
     crate::error::ListServiceSpecificCredentialsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListServiceSpecificCredentialsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10420,7 +10420,7 @@ pub fn parse_list_signing_certificates_error(
     crate::output::ListSigningCertificatesOutput,
     crate::error::ListSigningCertificatesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSigningCertificatesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10504,7 +10504,7 @@ pub fn parse_list_ssh_public_keys_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListSshPublicKeysOutput, crate::error::ListSSHPublicKeysError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSSHPublicKeysError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10561,7 +10561,7 @@ pub fn parse_list_user_policies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListUserPoliciesOutput, crate::error::ListUserPoliciesError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListUserPoliciesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10636,7 +10636,7 @@ pub fn parse_list_user_policies_response(
 pub fn parse_list_users_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListUsersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10688,7 +10688,7 @@ pub fn parse_list_users_response(
 pub fn parse_list_user_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListUserTagsOutput, crate::error::ListUserTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListUserTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10764,7 +10764,7 @@ pub fn parse_list_virtual_mfa_devices_error(
     crate::output::ListVirtualMfaDevicesOutput,
     crate::error::ListVirtualMFADevicesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListVirtualMFADevicesError::unhandled)?;
     Err(crate::error::ListVirtualMFADevicesError::generic(generic))
 }
@@ -10793,7 +10793,7 @@ pub fn parse_list_virtual_mfa_devices_response(
 pub fn parse_put_group_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutGroupPolicyOutput, crate::error::PutGroupPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10906,7 +10906,7 @@ pub fn parse_put_role_permissions_boundary_error(
     crate::output::PutRolePermissionsBoundaryOutput,
     crate::error::PutRolePermissionsBoundaryError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutRolePermissionsBoundaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11048,7 +11048,7 @@ pub fn parse_put_role_permissions_boundary_response(
 pub fn parse_put_role_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutRolePolicyOutput, crate::error::PutRolePolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11181,7 +11181,7 @@ pub fn parse_put_user_permissions_boundary_error(
     crate::output::PutUserPermissionsBoundaryOutput,
     crate::error::PutUserPermissionsBoundaryError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutUserPermissionsBoundaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11300,7 +11300,7 @@ pub fn parse_put_user_permissions_boundary_response(
 pub fn parse_put_user_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutUserPolicyOutput, crate::error::PutUserPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutUserPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11413,7 +11413,7 @@ pub fn parse_remove_client_id_from_open_id_connect_provider_error(
     crate::output::RemoveClientIdFromOpenIdConnectProviderOutput,
     crate::error::RemoveClientIDFromOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11496,7 +11496,7 @@ pub fn parse_remove_role_from_instance_profile_error(
     crate::output::RemoveRoleFromInstanceProfileOutput,
     crate::error::RemoveRoleFromInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveRoleFromInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11619,7 +11619,7 @@ pub fn parse_remove_user_from_group_error(
     crate::output::RemoveUserFromGroupOutput,
     crate::error::RemoveUserFromGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveUserFromGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11717,7 +11717,7 @@ pub fn parse_reset_service_specific_credential_error(
     crate::output::ResetServiceSpecificCredentialOutput,
     crate::error::ResetServiceSpecificCredentialError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetServiceSpecificCredentialError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11776,7 +11776,7 @@ pub fn parse_reset_service_specific_credential_response(
 pub fn parse_resync_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ResyncMfaDeviceOutput, crate::error::ResyncMFADeviceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResyncMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11889,7 +11889,7 @@ pub fn parse_set_default_policy_version_error(
     crate::output::SetDefaultPolicyVersionOutput,
     crate::error::SetDefaultPolicyVersionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetDefaultPolicyVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12012,7 +12012,7 @@ pub fn parse_set_security_token_service_preferences_error(
     crate::output::SetSecurityTokenServicePreferencesOutput,
     crate::error::SetSecurityTokenServicePreferencesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetSecurityTokenServicePreferencesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12071,7 +12071,7 @@ pub fn parse_simulate_custom_policy_error(
     crate::output::SimulateCustomPolicyOutput,
     crate::error::SimulateCustomPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SimulateCustomPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12153,7 +12153,7 @@ pub fn parse_simulate_principal_policy_error(
     crate::output::SimulatePrincipalPolicyOutput,
     crate::error::SimulatePrincipalPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SimulatePrincipalPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12260,7 +12260,7 @@ pub fn parse_tag_instance_profile_error(
     crate::output::TagInstanceProfileOutput,
     crate::error::TagInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12394,7 +12394,7 @@ pub fn parse_tag_instance_profile_response(
 pub fn parse_tag_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagMfaDeviceOutput, crate::error::TagMFADeviceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12528,7 +12528,7 @@ pub fn parse_tag_open_id_connect_provider_error(
     crate::output::TagOpenIdConnectProviderOutput,
     crate::error::TagOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagOpenIDConnectProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12668,7 +12668,7 @@ pub fn parse_tag_open_id_connect_provider_response(
 pub fn parse_tag_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagPolicyOutput, crate::error::TagPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12799,7 +12799,7 @@ pub fn parse_tag_policy_response(
 pub fn parse_tag_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagRoleOutput, crate::error::TagRoleError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12930,7 +12930,7 @@ pub fn parse_tag_role_response(
 pub fn parse_tag_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagSamlProviderOutput, crate::error::TagSAMLProviderError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13064,7 +13064,7 @@ pub fn parse_tag_server_certificate_error(
     crate::output::TagServerCertificateOutput,
     crate::error::TagServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13198,7 +13198,7 @@ pub fn parse_tag_server_certificate_response(
 pub fn parse_tag_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagUserOutput, crate::error::TagUserError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13332,7 +13332,7 @@ pub fn parse_untag_instance_profile_error(
     crate::output::UntagInstanceProfileOutput,
     crate::error::UntagInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13445,7 +13445,7 @@ pub fn parse_untag_instance_profile_response(
 pub fn parse_untag_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagMfaDeviceOutput, crate::error::UntagMFADeviceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13558,7 +13558,7 @@ pub fn parse_untag_open_id_connect_provider_error(
     crate::output::UntagOpenIdConnectProviderOutput,
     crate::error::UntagOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagOpenIDConnectProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13678,7 +13678,7 @@ pub fn parse_untag_open_id_connect_provider_response(
 pub fn parse_untag_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagPolicyOutput, crate::error::UntagPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13788,7 +13788,7 @@ pub fn parse_untag_policy_response(
 pub fn parse_untag_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagRoleOutput, crate::error::UntagRoleError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13878,7 +13878,7 @@ pub fn parse_untag_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagSamlProviderOutput, crate::error::UntagSAMLProviderError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -13992,7 +13992,7 @@ pub fn parse_untag_server_certificate_error(
     crate::output::UntagServerCertificateOutput,
     crate::error::UntagServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14109,7 +14109,7 @@ pub fn parse_untag_server_certificate_response(
 pub fn parse_untag_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagUserOutput, crate::error::UntagUserError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14198,7 +14198,7 @@ pub fn parse_untag_user_response(
 pub fn parse_update_access_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateAccessKeyOutput, crate::error::UpdateAccessKeyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateAccessKeyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14293,7 +14293,7 @@ pub fn parse_update_account_password_policy_error(
     crate::output::UpdateAccountPasswordPolicyOutput,
     crate::error::UpdateAccountPasswordPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateAccountPasswordPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14417,7 +14417,7 @@ pub fn parse_update_assume_role_policy_error(
     crate::output::UpdateAssumeRolePolicyOutput,
     crate::error::UpdateAssumeRolePolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateAssumeRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14556,7 +14556,7 @@ pub fn parse_update_assume_role_policy_response(
 pub fn parse_update_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14671,7 +14671,7 @@ pub fn parse_update_login_profile_error(
     crate::output::UpdateLoginProfileOutput,
     crate::error::UpdateLoginProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateLoginProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14805,7 +14805,7 @@ pub fn parse_update_open_id_connect_provider_thumbprint_error(
     crate::output::UpdateOpenIdConnectProviderThumbprintOutput,
     crate::error::UpdateOpenIDConnectProviderThumbprintError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateOpenIDConnectProviderThumbprintError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14884,7 +14884,7 @@ pub fn parse_update_open_id_connect_provider_thumbprint_response(
 pub fn parse_update_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateRoleOutput, crate::error::UpdateRoleError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -14978,7 +14978,7 @@ pub fn parse_update_role_description_error(
     crate::output::UpdateRoleDescriptionOutput,
     crate::error::UpdateRoleDescriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -15080,7 +15080,7 @@ pub fn parse_update_saml_provider_error(
     crate::output::UpdateSamlProviderOutput,
     crate::error::UpdateSAMLProviderError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -15204,7 +15204,7 @@ pub fn parse_update_server_certificate_error(
     crate::output::UpdateServerCertificateOutput,
     crate::error::UpdateServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -15328,7 +15328,7 @@ pub fn parse_update_service_specific_credential_error(
     crate::output::UpdateServiceSpecificCredentialOutput,
     crate::error::UpdateServiceSpecificCredentialError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateServiceSpecificCredentialError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -15385,7 +15385,7 @@ pub fn parse_update_signing_certificate_error(
     crate::output::UpdateSigningCertificateOutput,
     crate::error::UpdateSigningCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateSigningCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -15487,7 +15487,7 @@ pub fn parse_update_ssh_public_key_error(
     crate::output::UpdateSshPublicKeyOutput,
     crate::error::UpdateSSHPublicKeyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateSSHPublicKeyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -15540,7 +15540,7 @@ pub fn parse_update_ssh_public_key_response(
 pub fn parse_update_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -15691,7 +15691,7 @@ pub fn parse_upload_server_certificate_error(
     crate::output::UploadServerCertificateOutput,
     crate::error::UploadServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UploadServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -15883,7 +15883,7 @@ pub fn parse_upload_signing_certificate_error(
     crate::output::UploadSigningCertificateOutput,
     crate::error::UploadSigningCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UploadSigningCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -16080,7 +16080,7 @@ pub fn parse_upload_ssh_public_key_error(
     crate::output::UploadSshPublicKeyOutput,
     crate::error::UploadSSHPublicKeyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

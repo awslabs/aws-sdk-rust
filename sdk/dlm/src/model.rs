@@ -6,7 +6,7 @@ pub struct PolicyDetails {
     /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code>
     /// to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code>
     /// to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code>
-    /// to create an event-based policy that performs specific actions when a defined event occurs in your AWS account.</p>
+    /// to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
     pub policy_type: std::option::Option<crate::model::PolicyTypeValues>,
     /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to
@@ -14,8 +14,8 @@ pub struct PolicyDetails {
     /// snapshots from the volumes for an instance.</p>
     /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
     pub resource_types: std::option::Option<std::vec::Vec<crate::model::ResourceTypeValues>>,
-    /// <p>The location of the resources to backup. If the source resources are located in an AWS Region, specify
-    /// <code>CLOUD</code>. If the source resources are located on an AWS Outpost
+    /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region,
+    /// specify <code>CLOUD</code>. If the source resources are located on an Outpost
     /// in your account, specify <code>OUTPOST</code>. </p>
     /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources
     /// of the specified type with matching target tags across all of the Outposts in your account.</p>
@@ -74,7 +74,7 @@ pub mod policy_details {
         /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code>
         /// to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code>
         /// to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code>
-        /// to create an event-based policy that performs specific actions when a defined event occurs in your AWS account.</p>
+        /// to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
         /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
         pub fn policy_type(mut self, input: crate::model::PolicyTypeValues) -> Self {
             self.policy_type = Some(input);
@@ -490,8 +490,8 @@ pub struct EncryptionConfiguration {
     /// encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this
     /// parameter is false or when encryption by default is not enabled.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for EBS
-    /// encryption. If this parameter is not specified, your AWS managed CMK for EBS is used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
+    /// this parameter is not specified, the default KMS key for the account is used.</p>
     pub cmk_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EncryptionConfiguration {
@@ -523,8 +523,8 @@ pub mod encryption_configuration {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for EBS
-        /// encryption. If this parameter is not specified, your AWS managed CMK for EBS is used.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
+        /// this parameter is not specified, the default KMS key for the account is used.</p>
         pub fn cmk_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cmk_arn = Some(input.into());
             self
@@ -553,7 +553,7 @@ impl EncryptionConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSource {
-    /// <p>The source of the event. Currently only managed AWS CloudWatch Events rules are supported.</p>
+    /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
     pub r#type: std::option::Option<crate::model::EventSourceValues>,
     /// <p>Information about the event.</p>
     pub parameters: std::option::Option<crate::model::EventParameters>,
@@ -576,7 +576,7 @@ pub mod event_source {
         pub(crate) parameters: std::option::Option<crate::model::EventParameters>,
     }
     impl Builder {
-        /// <p>The source of the event. Currently only managed AWS CloudWatch Events rules are supported.</p>
+        /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
         pub fn r#type(mut self, input: crate::model::EventSourceValues) -> Self {
             self.r#type = Some(input);
             self
@@ -622,8 +622,8 @@ impl EventSource {
 pub struct EventParameters {
     /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
     pub event_type: std::option::Option<crate::model::EventTypeValues>,
-    /// <p>The IDs of the AWS accounts that can trigger policy by sharing snapshots with your account. The
-    /// policy only runs if one of the specified AWS accounts shares a snapshot with your account.</p>
+    /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account.
+    /// The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
     pub snapshot_owner: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using
     /// a regular expression. The policy runs only if a snapshot with a description that matches the
@@ -888,7 +888,7 @@ pub struct Schedule {
     /// this policy.</p>
     pub copy_tags: bool,
     /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition
-    /// to the AWS-added lifecycle tags.</p>
+    /// to the Amazon Web Services-added lifecycle tags.</p>
     pub tags_to_add: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A collection of key/value pairs with values determined dynamically when the policy is
     /// executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two
@@ -908,8 +908,10 @@ pub struct Schedule {
     /// Regions or Outposts.</p>
     pub cross_region_copy_rules:
         std::option::Option<std::vec::Vec<crate::model::CrossRegionCopyRule>>,
-    /// <p>The rule for sharing snapshots with other AWS accounts.</p>
+    /// <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
     pub share_rules: std::option::Option<std::vec::Vec<crate::model::ShareRule>>,
+    /// <p>The AMI deprecation rule for the schedule.</p>
+    pub deprecate_rule: std::option::Option<crate::model::DeprecateRule>,
 }
 impl std::fmt::Debug for Schedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -923,6 +925,7 @@ impl std::fmt::Debug for Schedule {
         formatter.field("fast_restore_rule", &self.fast_restore_rule);
         formatter.field("cross_region_copy_rules", &self.cross_region_copy_rules);
         formatter.field("share_rules", &self.share_rules);
+        formatter.field("deprecate_rule", &self.deprecate_rule);
         formatter.finish()
     }
 }
@@ -942,6 +945,7 @@ pub mod schedule {
         pub(crate) cross_region_copy_rules:
             std::option::Option<std::vec::Vec<crate::model::CrossRegionCopyRule>>,
         pub(crate) share_rules: std::option::Option<std::vec::Vec<crate::model::ShareRule>>,
+        pub(crate) deprecate_rule: std::option::Option<crate::model::DeprecateRule>,
     }
     impl Builder {
         /// <p>The name of the schedule.</p>
@@ -1054,6 +1058,18 @@ pub mod schedule {
             self.share_rules = input;
             self
         }
+        /// <p>The AMI deprecation rule for the schedule.</p>
+        pub fn deprecate_rule(mut self, input: crate::model::DeprecateRule) -> Self {
+            self.deprecate_rule = Some(input);
+            self
+        }
+        pub fn set_deprecate_rule(
+            mut self,
+            input: std::option::Option<crate::model::DeprecateRule>,
+        ) -> Self {
+            self.deprecate_rule = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Schedule`](crate::model::Schedule)
         pub fn build(self) -> crate::model::Schedule {
             crate::model::Schedule {
@@ -1066,6 +1082,7 @@ pub mod schedule {
                 fast_restore_rule: self.fast_restore_rule,
                 cross_region_copy_rules: self.cross_region_copy_rules,
                 share_rules: self.share_rules,
+                deprecate_rule: self.deprecate_rule,
             }
         }
     }
@@ -1077,13 +1094,101 @@ impl Schedule {
     }
 }
 
-/// <p>Specifies a rule for sharing snapshots across AWS accounts.</p>
+/// <p>Specifies an AMI deprecation rule for a schedule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeprecateRule {
+    /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest
+    /// AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it
+    /// can't be greater than 1000.</p>
+    pub count: i32,
+    /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which
+    /// to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's
+    /// retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520
+    /// weeks, or 3650 days.</p>
+    pub interval: i32,
+    /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
+    pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
+}
+impl std::fmt::Debug for DeprecateRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeprecateRule");
+        formatter.field("count", &self.count);
+        formatter.field("interval", &self.interval);
+        formatter.field("interval_unit", &self.interval_unit);
+        formatter.finish()
+    }
+}
+/// See [`DeprecateRule`](crate::model::DeprecateRule)
+pub mod deprecate_rule {
+    /// A builder for [`DeprecateRule`](crate::model::DeprecateRule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) count: std::option::Option<i32>,
+        pub(crate) interval: std::option::Option<i32>,
+        pub(crate) interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
+    }
+    impl Builder {
+        /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest
+        /// AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it
+        /// can't be greater than 1000.</p>
+        pub fn count(mut self, input: i32) -> Self {
+            self.count = Some(input);
+            self
+        }
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.count = input;
+            self
+        }
+        /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which
+        /// to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's
+        /// retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520
+        /// weeks, or 3650 days.</p>
+        pub fn interval(mut self, input: i32) -> Self {
+            self.interval = Some(input);
+            self
+        }
+        pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.interval = input;
+            self
+        }
+        /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
+        pub fn interval_unit(mut self, input: crate::model::RetentionIntervalUnitValues) -> Self {
+            self.interval_unit = Some(input);
+            self
+        }
+        pub fn set_interval_unit(
+            mut self,
+            input: std::option::Option<crate::model::RetentionIntervalUnitValues>,
+        ) -> Self {
+            self.interval_unit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeprecateRule`](crate::model::DeprecateRule)
+        pub fn build(self) -> crate::model::DeprecateRule {
+            crate::model::DeprecateRule {
+                count: self.count.unwrap_or_default(),
+                interval: self.interval.unwrap_or_default(),
+                interval_unit: self.interval_unit,
+            }
+        }
+    }
+}
+impl DeprecateRule {
+    /// Creates a new builder-style object to manufacture [`DeprecateRule`](crate::model::DeprecateRule)
+    pub fn builder() -> crate::model::deprecate_rule::Builder {
+        crate::model::deprecate_rule::Builder::default()
+    }
+}
+
+/// <p>Specifies a rule for sharing snapshots across Amazon Web Services accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareRule {
-    /// <p>The IDs of the AWS accounts with which to share the snapshots.</p>
+    /// <p>The IDs of the Amazon Web Services accounts with which to share the snapshots.</p>
     pub target_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The period after which snapshots that are shared with other AWS accounts are automatically unshared.</p>
+    /// <p>The period after which snapshots that are shared with other Amazon Web Services accounts are automatically unshared.</p>
     pub unshare_interval: i32,
     /// <p>The unit of time for the automatic unsharing interval.</p>
     pub unshare_interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -1122,7 +1227,7 @@ pub mod share_rule {
             self.target_accounts = input;
             self
         }
-        /// <p>The period after which snapshots that are shared with other AWS accounts are automatically unshared.</p>
+        /// <p>The period after which snapshots that are shared with other Amazon Web Services accounts are automatically unshared.</p>
         pub fn unshare_interval(mut self, input: i32) -> Self {
             self.unshare_interval = Some(input);
             self
@@ -1167,26 +1272,31 @@ impl ShareRule {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrossRegionCopyRule {
-    /// <p>The target Region for the snapshot copies.</p>
-    /// <p>If you specify a target Region, you must omit <b>Target</b>. You cannot
-    /// specify a target Region and a target Outpost in the same rule.</p>
+    /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b>
+    /// to specify a target Region or a target Outpost for snapshot copies.</p>
+    /// <p>For policies created before the <b>Target</b> parameter
+    /// was introduced, this parameter indicates the target Region for snapshot copies.</p>
     pub target_region: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot copies.</p>
-    /// <p>If you specify an ARN, you must omit <b>TargetRegion</b>. You cannot
-    /// specify a target Region and a target Outpost in the same rule.</p>
+    /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+    /// snapshot copies.</p>
+    /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not
+    /// specify both.</p>
     pub target: std::option::Option<std::string::String>,
     /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled,
     /// enable encryption using this parameter. Copies of encrypted snapshots are encrypted,
     /// even if this parameter is false or if encryption by default is not enabled.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for EBS
-    /// encryption. If this parameter is not specified, your AWS managed CMK for EBS is
-    /// used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this
+    /// parameter is not specified, the default KMS key for the account is used.</p>
     pub cmk_arn: std::option::Option<std::string::String>,
-    /// <p>Copy all user-defined tags from the source snapshot to the copied snapshot.</p>
+    /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region
+    /// snapshot copy.</p>
     pub copy_tags: std::option::Option<bool>,
-    /// <p>The retention rule.</p>
+    /// <p>The retention rule that indicates how long snapshot copies are to be retained in the
+    /// destination Region.</p>
     pub retain_rule: std::option::Option<crate::model::CrossRegionCopyRetainRule>,
+    /// <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+    pub deprecate_rule: std::option::Option<crate::model::CrossRegionCopyDeprecateRule>,
 }
 impl std::fmt::Debug for CrossRegionCopyRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1197,6 +1307,7 @@ impl std::fmt::Debug for CrossRegionCopyRule {
         formatter.field("cmk_arn", &self.cmk_arn);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("retain_rule", &self.retain_rule);
+        formatter.field("deprecate_rule", &self.deprecate_rule);
         formatter.finish()
     }
 }
@@ -1212,11 +1323,13 @@ pub mod cross_region_copy_rule {
         pub(crate) cmk_arn: std::option::Option<std::string::String>,
         pub(crate) copy_tags: std::option::Option<bool>,
         pub(crate) retain_rule: std::option::Option<crate::model::CrossRegionCopyRetainRule>,
+        pub(crate) deprecate_rule: std::option::Option<crate::model::CrossRegionCopyDeprecateRule>,
     }
     impl Builder {
-        /// <p>The target Region for the snapshot copies.</p>
-        /// <p>If you specify a target Region, you must omit <b>Target</b>. You cannot
-        /// specify a target Region and a target Outpost in the same rule.</p>
+        /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b>
+        /// to specify a target Region or a target Outpost for snapshot copies.</p>
+        /// <p>For policies created before the <b>Target</b> parameter
+        /// was introduced, this parameter indicates the target Region for snapshot copies.</p>
         pub fn target_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_region = Some(input.into());
             self
@@ -1228,9 +1341,10 @@ pub mod cross_region_copy_rule {
             self.target_region = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot copies.</p>
-        /// <p>If you specify an ARN, you must omit <b>TargetRegion</b>. You cannot
-        /// specify a target Region and a target Outpost in the same rule.</p>
+        /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+        /// snapshot copies.</p>
+        /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not
+        /// specify both.</p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
             self.target = Some(input.into());
             self
@@ -1250,9 +1364,8 @@ pub mod cross_region_copy_rule {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for EBS
-        /// encryption. If this parameter is not specified, your AWS managed CMK for EBS is
-        /// used.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this
+        /// parameter is not specified, the default KMS key for the account is used.</p>
         pub fn cmk_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cmk_arn = Some(input.into());
             self
@@ -1261,7 +1374,8 @@ pub mod cross_region_copy_rule {
             self.cmk_arn = input;
             self
         }
-        /// <p>Copy all user-defined tags from the source snapshot to the copied snapshot.</p>
+        /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region
+        /// snapshot copy.</p>
         pub fn copy_tags(mut self, input: bool) -> Self {
             self.copy_tags = Some(input);
             self
@@ -1270,7 +1384,8 @@ pub mod cross_region_copy_rule {
             self.copy_tags = input;
             self
         }
-        /// <p>The retention rule.</p>
+        /// <p>The retention rule that indicates how long snapshot copies are to be retained in the
+        /// destination Region.</p>
         pub fn retain_rule(mut self, input: crate::model::CrossRegionCopyRetainRule) -> Self {
             self.retain_rule = Some(input);
             self
@@ -1282,6 +1397,18 @@ pub mod cross_region_copy_rule {
             self.retain_rule = input;
             self
         }
+        /// <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+        pub fn deprecate_rule(mut self, input: crate::model::CrossRegionCopyDeprecateRule) -> Self {
+            self.deprecate_rule = Some(input);
+            self
+        }
+        pub fn set_deprecate_rule(
+            mut self,
+            input: std::option::Option<crate::model::CrossRegionCopyDeprecateRule>,
+        ) -> Self {
+            self.deprecate_rule = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CrossRegionCopyRule`](crate::model::CrossRegionCopyRule)
         pub fn build(self) -> crate::model::CrossRegionCopyRule {
             crate::model::CrossRegionCopyRule {
@@ -1291,6 +1418,7 @@ pub mod cross_region_copy_rule {
                 cmk_arn: self.cmk_arn,
                 copy_tags: self.copy_tags,
                 retain_rule: self.retain_rule,
+                deprecate_rule: self.deprecate_rule,
             }
         }
     }
@@ -1299,6 +1427,74 @@ impl CrossRegionCopyRule {
     /// Creates a new builder-style object to manufacture [`CrossRegionCopyRule`](crate::model::CrossRegionCopyRule)
     pub fn builder() -> crate::model::cross_region_copy_rule::Builder {
         crate::model::cross_region_copy_rule::Builder::default()
+    }
+}
+
+/// <p>Specifies an AMI deprecation rule for cross-Region AMI copies created by a cross-Region copy rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CrossRegionCopyDeprecateRule {
+    /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or
+    /// equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is
+    /// equivalent to 120 months, 520 weeks, or 3650 days.</p>
+    pub interval: i32,
+    /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
+    pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
+}
+impl std::fmt::Debug for CrossRegionCopyDeprecateRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CrossRegionCopyDeprecateRule");
+        formatter.field("interval", &self.interval);
+        formatter.field("interval_unit", &self.interval_unit);
+        formatter.finish()
+    }
+}
+/// See [`CrossRegionCopyDeprecateRule`](crate::model::CrossRegionCopyDeprecateRule)
+pub mod cross_region_copy_deprecate_rule {
+    /// A builder for [`CrossRegionCopyDeprecateRule`](crate::model::CrossRegionCopyDeprecateRule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) interval: std::option::Option<i32>,
+        pub(crate) interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
+    }
+    impl Builder {
+        /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or
+        /// equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is
+        /// equivalent to 120 months, 520 weeks, or 3650 days.</p>
+        pub fn interval(mut self, input: i32) -> Self {
+            self.interval = Some(input);
+            self
+        }
+        pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.interval = input;
+            self
+        }
+        /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
+        pub fn interval_unit(mut self, input: crate::model::RetentionIntervalUnitValues) -> Self {
+            self.interval_unit = Some(input);
+            self
+        }
+        pub fn set_interval_unit(
+            mut self,
+            input: std::option::Option<crate::model::RetentionIntervalUnitValues>,
+        ) -> Self {
+            self.interval_unit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CrossRegionCopyDeprecateRule`](crate::model::CrossRegionCopyDeprecateRule)
+        pub fn build(self) -> crate::model::CrossRegionCopyDeprecateRule {
+            crate::model::CrossRegionCopyDeprecateRule {
+                interval: self.interval.unwrap_or_default(),
+                interval_unit: self.interval_unit,
+            }
+        }
+    }
+}
+impl CrossRegionCopyDeprecateRule {
+    /// Creates a new builder-style object to manufacture [`CrossRegionCopyDeprecateRule`](crate::model::CrossRegionCopyDeprecateRule)
+    pub fn builder() -> crate::model::cross_region_copy_deprecate_rule::Builder {
+        crate::model::cross_region_copy_deprecate_rule::Builder::default()
     }
 }
 
@@ -1492,8 +1688,8 @@ pub struct CreateRule {
     /// Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
     /// Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
     /// parameter, <code>CLOUD</code> is used by default.</p>
-    /// <p>If the policy targets resources in an AWS Region, then you must create snapshots in the same
-    /// Region as the source resource. </p>
+    /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same
+    /// Region as the source resource.</p>
     /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost
     /// as the source resource, or in the Region of that Outpost.</p>
     pub location: std::option::Option<crate::model::LocationValues>,
@@ -1539,8 +1735,8 @@ pub mod create_rule {
         /// Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
         /// Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
         /// parameter, <code>CLOUD</code> is used by default.</p>
-        /// <p>If the policy targets resources in an AWS Region, then you must create snapshots in the same
-        /// Region as the source resource. </p>
+        /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same
+        /// Region as the source resource.</p>
         /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost
         /// as the source resource, or in the Region of that Outpost.</p>
         pub fn location(mut self, input: crate::model::LocationValues) -> Self {

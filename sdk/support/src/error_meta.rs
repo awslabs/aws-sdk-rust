@@ -29,8 +29,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AddAttachmentsToSetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AddAttachmentsToSetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AddAttachmentsToSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::AddAttachmentsToSetError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AddAttachmentsToSetErrorKind::AttachmentLimitExceeded(inner) => {
@@ -56,8 +59,13 @@ impl From<smithy_http::result::SdkError<crate::error::AddAttachmentsToSetError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AddCommunicationToCaseError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AddCommunicationToCaseError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AddCommunicationToCaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::AddCommunicationToCaseError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AddCommunicationToCaseErrorKind::AttachmentSetExpired(inner) => {
@@ -80,8 +88,11 @@ impl From<smithy_http::result::SdkError<crate::error::AddCommunicationToCaseErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateCaseError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateCaseError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateCaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateCaseError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateCaseErrorKind::AttachmentSetExpired(inner) => {
@@ -102,8 +113,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateCaseError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeAttachmentError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeAttachmentError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeAttachmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeAttachmentError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeAttachmentErrorKind::AttachmentIdNotFound(inner) => {
@@ -123,8 +137,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeAttachmentError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeCasesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeCasesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeCasesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeCasesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeCasesErrorKind::CaseIdNotFound(inner) => {
@@ -139,8 +156,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeCasesError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeCommunicationsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeCommunicationsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeCommunicationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeCommunicationsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeCommunicationsErrorKind::CaseIdNotFound(inner) => {
@@ -157,8 +179,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeCommunicationsErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeServicesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeServicesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeServicesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeServicesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeServicesErrorKind::InternalServerError(inner) => {
@@ -172,8 +197,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeServicesError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeSeverityLevelsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeSeverityLevelsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeSeverityLevelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeSeverityLevelsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeSeverityLevelsErrorKind::InternalServerError(inner) => {
@@ -187,16 +217,20 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeSeverityLevelsErro
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -208,11 +242,13 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorCheckResultError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorCheckResultError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorCheckResultError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorCheckResultError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -227,11 +263,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorChec
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorChecksError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorChecksError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorChecksError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorChecksError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -246,11 +284,17 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorChec
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorCheckSummariesError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorCheckSummariesError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorCheckSummariesError>,
+        err: smithy_http::result::SdkError<
+            crate::error::DescribeTrustedAdvisorCheckSummariesError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -261,9 +305,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTrustedAdvisorChec
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RefreshTrustedAdvisorCheckError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::RefreshTrustedAdvisorCheckError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RefreshTrustedAdvisorCheckError>,
+        err: smithy_http::result::SdkError<crate::error::RefreshTrustedAdvisorCheckError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -278,8 +326,11 @@ impl From<smithy_http::result::SdkError<crate::error::RefreshTrustedAdvisorCheck
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ResolveCaseError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ResolveCaseError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ResolveCaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ResolveCaseError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ResolveCaseErrorKind::CaseIdNotFound(inner) => {

@@ -6,7 +6,7 @@ pub fn parse_get_ice_server_config_error(
     crate::output::GetIceServerConfigOutput,
     crate::error::GetIceServerConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetIceServerConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -170,7 +170,7 @@ pub fn parse_send_alexa_offer_to_master_error(
     crate::output::SendAlexaOfferToMasterOutput,
     crate::error::SendAlexaOfferToMasterError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendAlexaOfferToMasterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

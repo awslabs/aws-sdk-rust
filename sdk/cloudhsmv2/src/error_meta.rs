@@ -23,8 +23,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CopyBackupToRegionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CopyBackupToRegionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CopyBackupToRegionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CopyBackupToRegionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -53,8 +56,11 @@ impl From<smithy_http::result::SdkError<crate::error::CopyBackupToRegionError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateClusterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateClusterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateClusterError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -81,8 +87,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateClusterError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateHsmError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateHsmError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateHsmError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateHsmError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateHsmErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -106,8 +115,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateHsmError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteBackupError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteBackupError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteBackupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteBackupError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteBackupErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -131,8 +143,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteBackupError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteClusterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteClusterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteClusterError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -159,8 +174,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteClusterError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteHsmError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteHsmError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteHsmError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteHsmError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteHsmErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -184,8 +202,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteHsmError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeBackupsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeBackupsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeBackupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeBackupsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeBackupsErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -212,8 +233,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeBackupsError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeClustersError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeClustersError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeClustersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeClustersError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeClustersErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -239,8 +263,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeClustersError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::InitializeClusterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::InitializeClusterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::InitializeClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::InitializeClusterError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::InitializeClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -266,8 +293,11 @@ impl From<smithy_http::result::SdkError<crate::error::InitializeClusterError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -294,8 +324,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsError>> for Error 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyBackupAttributesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyBackupAttributesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyBackupAttributesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ModifyBackupAttributesError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException(inner) => Error::CloudHsmAccessDeniedException(inner),
@@ -309,8 +344,11 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyBackupAttributesErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyClusterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyClusterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ModifyClusterError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ModifyClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -334,8 +372,11 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyClusterError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RestoreBackupError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RestoreBackupError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RestoreBackupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RestoreBackupError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RestoreBackupErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -359,8 +400,11 @@ impl From<smithy_http::result::SdkError<crate::error::RestoreBackupError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::CloudHsmAccessDeniedException(inner) => {
@@ -387,8 +431,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::CloudHsmAccessDeniedException(inner) => {

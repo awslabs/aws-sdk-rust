@@ -5,7 +5,7 @@
 /// inconsistent with the source files. However, if you start a new task execution on the same
 /// task and you allow the task execution to complete, file content on the destination is complete
 /// and consistent. This applies to other unexpected failures that interrupt a task execution. In
-/// all of these cases, AWS DataSync successfully complete the transfer when you start the next
+/// all of these cases, DataSync successfully complete the transfer when you start the next
 /// task execution.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CancelTaskExecution {
@@ -34,17 +34,17 @@ impl smithy_http::response::ParseStrictResponse for CancelTaskExecution {
     }
 }
 
-/// <p>Activates an AWS DataSync agent that you have deployed on your host. The activation
+/// <p>Activates an DataSync agent that you have deployed on your host. The activation
 /// process associates your agent with your account. In the activation process, you specify
-/// information such as the AWS Region that you want to activate the agent in. You activate the
-/// agent in the AWS Region where your target locations (in Amazon S3 or Amazon EFS) reside. Your
-/// tasks are created in this AWS Region.</p>
+/// information such as the Amazon Web Services Region that you want to activate the agent in. You activate the
+/// agent in the Amazon Web Services Region where your target locations (in Amazon S3 or Amazon EFS) reside. Your
+/// tasks are created in this Amazon Web Services Region.</p>
 /// <p>You can activate the agent in a VPC (virtual private cloud) or provide the agent access to
 /// a VPC endpoint so you can run tasks without going over the public internet.</p>
 /// <p>You can use an agent for more than one location. If a task uses multiple agents, all of
 /// them need to have status AVAILABLE for the task to run. If you use multiple agents for a
 /// source location, the status of all the agents must be AVAILABLE for the task to run. </p>
-/// <p>Agents are automatically updated by AWS on a regular basis, using a mechanism that
+/// <p>Agents are automatically updated by Amazon Web Services on a regular basis, using a mechanism that
 /// ensures minimal interruption to your tasks.</p>
 /// <p></p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -189,8 +189,8 @@ impl smithy_http::response::ParseStrictResponse for CreateLocationObjectStorage 
 /// <p>Creates an endpoint for an Amazon S3 bucket.</p>
 /// <p>For
 /// more information, see
-/// https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
-/// in the <i>AWS DataSync User Guide</i>.</p>
+/// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create an Amazon S3 location</a>
+/// in the <i>DataSync User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLocationS3 {
     _private: (),
@@ -253,13 +253,13 @@ impl smithy_http::response::ParseStrictResponse for CreateLocationSmb {
 /// location to the destination location. The configuration specifies options such as
 /// task scheduling, bandwidth limits, etc. A task is the complete definition of a data
 /// transfer.</p>
-/// <p>When you create a task that transfers data between AWS services in different AWS Regions,
+/// <p>When you create a task that transfers data between Amazon Web Services services in different Amazon Web Services Regions,
 /// one of the two locations that you specify must reside in the Region where DataSync is being
 /// used. The other location must be specified in a different Region.</p>
-/// <p>You can transfer data between commercial AWS Regions except for China, or between AWS
-/// GovCloud (US-East and US-West) Regions.</p>
+/// <p>You can transfer data between commercial Amazon Web Services Regions except for China, or between
+/// Amazon Web Services GovCloud (US) Regions.</p>
 /// <important>
-/// <p>When you use DataSync to copy files or objects between AWS Regions,
+/// <p>When you use DataSync to copy files or objects between Amazon Web Services Regions,
 /// you pay for data transfer between Regions. This is billed as data transfer OUT
 /// from your source Region to your destination Region. For more information,
 /// see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer pricing</a>.
@@ -291,7 +291,7 @@ impl smithy_http::response::ParseStrictResponse for CreateTask {
 }
 
 /// <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN)
-/// of the agent in your request. The operation disassociates the agent from your AWS account.
+/// of the agent in your request. The operation disassociates the agent from your Amazon Web Services account.
 /// However, it doesn't delete the agent virtual machine (VM) from your on-premises
 /// environment.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -319,7 +319,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteAgent {
     }
 }
 
-/// <p>Deletes the configuration of a location used by AWS DataSync. </p>
+/// <p>Deletes the configuration of a location used by DataSync. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLocation {
     _private: (),
@@ -623,7 +623,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeTaskExecution {
     }
 }
 
-/// <p>Returns a list of agents owned by an AWS account in the AWS Region specified in the
+/// <p>Returns a list of agents owned by an Amazon Web Services account in the Amazon Web Services Region specified in the
 /// request. The returned list is ordered by agent Amazon Resource Name (ARN).</p>
 /// <p>By default, this operation returns a maximum of 100 agents. This operation supports
 /// pagination that enables you to optionally reduce the number of agents returned in a
@@ -773,7 +773,7 @@ impl smithy_http::response::ParseStrictResponse for ListTasks {
 /// <code>TaskExecution</code> has the following transition phases: INITIALIZING |
 /// PREPARING | TRANSFERRING | VERIFYING | SUCCESS/FAILURE. </p>
 /// <p>For detailed information, see the Task Execution section in the Components and
-/// Terminology topic in the <i>AWS DataSync User Guide</i>.</p>
+/// Terminology topic in the <i>DataSync User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartTaskExecution {
     _private: (),
@@ -801,7 +801,7 @@ impl smithy_http::response::ParseStrictResponse for StartTaskExecution {
     }
 }
 
-/// <p>Applies a key-value pair to an AWS resource.</p>
+/// <p>Applies a key-value pair to an Amazon Web Services resource.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -827,7 +827,7 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
     }
 }
 
-/// <p>Removes a tag from an AWS resource.</p>
+/// <p>Removes a tag from an Amazon Web Services resource.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),

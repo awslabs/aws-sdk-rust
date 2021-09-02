@@ -6,7 +6,7 @@ pub fn parse_associate_aws_account_with_partner_account_error(
     crate::output::AssociateAwsAccountWithPartnerAccountOutput,
     crate::error::AssociateAwsAccountWithPartnerAccountError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateAwsAccountWithPartnerAccountError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -135,7 +135,7 @@ pub fn parse_associate_wireless_device_with_thing_error(
     crate::output::AssociateWirelessDeviceWithThingOutput,
     crate::error::AssociateWirelessDeviceWithThingError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateWirelessDeviceWithThingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -301,7 +301,7 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
     crate::output::AssociateWirelessGatewayWithCertificateOutput,
     crate::error::AssociateWirelessGatewayWithCertificateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateWirelessGatewayWithCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -430,7 +430,7 @@ pub fn parse_associate_wireless_gateway_with_thing_error(
     crate::output::AssociateWirelessGatewayWithThingOutput,
     crate::error::AssociateWirelessGatewayWithThingError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateWirelessGatewayWithThingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -600,7 +600,7 @@ pub fn parse_create_destination_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDestinationOutput, crate::error::CreateDestinationError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDestinationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -761,7 +761,7 @@ pub fn parse_create_device_profile_error(
     crate::output::CreateDeviceProfileOutput,
     crate::error::CreateDeviceProfileError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDeviceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -906,7 +906,7 @@ pub fn parse_create_service_profile_error(
     crate::output::CreateServiceProfileOutput,
     crate::error::CreateServiceProfileError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateServiceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1051,7 +1051,7 @@ pub fn parse_create_wireless_device_error(
     crate::output::CreateWirelessDeviceOutput,
     crate::error::CreateWirelessDeviceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateWirelessDeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1216,7 +1216,7 @@ pub fn parse_create_wireless_gateway_error(
     crate::output::CreateWirelessGatewayOutput,
     crate::error::CreateWirelessGatewayError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateWirelessGatewayError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1361,7 +1361,7 @@ pub fn parse_create_wireless_gateway_task_error(
     crate::output::CreateWirelessGatewayTaskOutput,
     crate::error::CreateWirelessGatewayTaskError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateWirelessGatewayTaskError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1532,7 +1532,7 @@ pub fn parse_create_wireless_gateway_task_definition_error(
     crate::output::CreateWirelessGatewayTaskDefinitionOutput,
     crate::error::CreateWirelessGatewayTaskDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateWirelessGatewayTaskDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1657,7 +1657,7 @@ pub fn parse_delete_destination_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDestinationOutput, crate::error::DeleteDestinationError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDestinationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1815,7 +1815,7 @@ pub fn parse_delete_device_profile_error(
     crate::output::DeleteDeviceProfileOutput,
     crate::error::DeleteDeviceProfileError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDeviceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1975,7 +1975,7 @@ pub fn parse_delete_service_profile_error(
     crate::output::DeleteServiceProfileOutput,
     crate::error::DeleteServiceProfileError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteServiceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2135,7 +2135,7 @@ pub fn parse_delete_wireless_device_error(
     crate::output::DeleteWirelessDeviceOutput,
     crate::error::DeleteWirelessDeviceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteWirelessDeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2274,7 +2274,7 @@ pub fn parse_delete_wireless_gateway_error(
     crate::output::DeleteWirelessGatewayOutput,
     crate::error::DeleteWirelessGatewayError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteWirelessGatewayError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2413,7 +2413,7 @@ pub fn parse_delete_wireless_gateway_task_error(
     crate::output::DeleteWirelessGatewayTaskOutput,
     crate::error::DeleteWirelessGatewayTaskError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteWirelessGatewayTaskError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2558,7 +2558,7 @@ pub fn parse_delete_wireless_gateway_task_definition_error(
     crate::output::DeleteWirelessGatewayTaskDefinitionOutput,
     crate::error::DeleteWirelessGatewayTaskDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteWirelessGatewayTaskDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2666,7 +2666,7 @@ pub fn parse_disassociate_aws_account_from_partner_account_error(
     crate::output::DisassociateAwsAccountFromPartnerAccountOutput,
     crate::error::DisassociateAwsAccountFromPartnerAccountError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateAwsAccountFromPartnerAccountError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2762,7 +2762,7 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
     crate::output::DisassociateWirelessDeviceFromThingOutput,
     crate::error::DisassociateWirelessDeviceFromThingError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateWirelessDeviceFromThingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2884,7 +2884,7 @@ pub fn parse_disassociate_wireless_gateway_from_certificate_error(
     crate::output::DisassociateWirelessGatewayFromCertificateOutput,
     crate::error::DisassociateWirelessGatewayFromCertificateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateWirelessGatewayFromCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2995,7 +2995,7 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
     crate::output::DisassociateWirelessGatewayFromThingOutput,
     crate::error::DisassociateWirelessGatewayFromThingError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateWirelessGatewayFromThingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3114,7 +3114,7 @@ pub fn parse_disassociate_wireless_gateway_from_thing_response(
 pub fn parse_get_destination_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetDestinationOutput, crate::error::GetDestinationError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDestinationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3251,7 +3251,7 @@ pub fn parse_get_device_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetDeviceProfileOutput, crate::error::GetDeviceProfileError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDeviceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3391,7 +3391,7 @@ pub fn parse_get_log_levels_by_resource_types_error(
     crate::output::GetLogLevelsByResourceTypesOutput,
     crate::error::GetLogLevelsByResourceTypesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetLogLevelsByResourceTypesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3539,7 +3539,7 @@ pub fn parse_get_partner_account_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetPartnerAccountOutput, crate::error::GetPartnerAccountError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPartnerAccountError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3660,7 +3660,7 @@ pub fn parse_get_resource_log_level_error(
     crate::output::GetResourceLogLevelOutput,
     crate::error::GetResourceLogLevelError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResourceLogLevelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3804,7 +3804,7 @@ pub fn parse_get_service_endpoint_error(
     crate::output::GetServiceEndpointOutput,
     crate::error::GetServiceEndpointError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetServiceEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3926,7 +3926,7 @@ pub fn parse_get_service_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetServiceProfileOutput, crate::error::GetServiceProfileError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetServiceProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4066,7 +4066,7 @@ pub fn parse_get_wireless_device_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetWirelessDeviceOutput, crate::error::GetWirelessDeviceError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetWirelessDeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4208,7 +4208,7 @@ pub fn parse_get_wireless_device_statistics_error(
     crate::output::GetWirelessDeviceStatisticsOutput,
     crate::error::GetWirelessDeviceStatisticsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetWirelessDeviceStatisticsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4358,7 +4358,7 @@ pub fn parse_get_wireless_gateway_error(
     crate::output::GetWirelessGatewayOutput,
     crate::error::GetWirelessGatewayError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetWirelessGatewayError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4502,7 +4502,7 @@ pub fn parse_get_wireless_gateway_certificate_error(
     crate::output::GetWirelessGatewayCertificateOutput,
     crate::error::GetWirelessGatewayCertificateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetWirelessGatewayCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4650,7 +4650,7 @@ pub fn parse_get_wireless_gateway_firmware_information_error(
     crate::output::GetWirelessGatewayFirmwareInformationOutput,
     crate::error::GetWirelessGatewayFirmwareInformationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetWirelessGatewayFirmwareInformationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4765,7 +4765,7 @@ pub fn parse_get_wireless_gateway_statistics_error(
     crate::output::GetWirelessGatewayStatisticsOutput,
     crate::error::GetWirelessGatewayStatisticsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetWirelessGatewayStatisticsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4915,7 +4915,7 @@ pub fn parse_get_wireless_gateway_task_error(
     crate::output::GetWirelessGatewayTaskOutput,
     crate::error::GetWirelessGatewayTaskError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetWirelessGatewayTaskError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5063,7 +5063,7 @@ pub fn parse_get_wireless_gateway_task_definition_error(
     crate::output::GetWirelessGatewayTaskDefinitionOutput,
     crate::error::GetWirelessGatewayTaskDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetWirelessGatewayTaskDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5211,7 +5211,7 @@ pub fn parse_list_destinations_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListDestinationsOutput, crate::error::ListDestinationsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDestinationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5331,7 +5331,7 @@ pub fn parse_list_device_profiles_error(
     crate::output::ListDeviceProfilesOutput,
     crate::error::ListDeviceProfilesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDeviceProfilesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5455,7 +5455,7 @@ pub fn parse_list_partner_accounts_error(
     crate::output::ListPartnerAccountsOutput,
     crate::error::ListPartnerAccountsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPartnerAccountsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5578,7 +5578,7 @@ pub fn parse_list_service_profiles_error(
     crate::output::ListServiceProfilesOutput,
     crate::error::ListServiceProfilesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListServiceProfilesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5702,7 +5702,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5846,7 +5846,7 @@ pub fn parse_list_wireless_devices_error(
     crate::output::ListWirelessDevicesOutput,
     crate::error::ListWirelessDevicesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListWirelessDevicesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5970,7 +5970,7 @@ pub fn parse_list_wireless_gateways_error(
     crate::output::ListWirelessGatewaysOutput,
     crate::error::ListWirelessGatewaysError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListWirelessGatewaysError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6094,7 +6094,7 @@ pub fn parse_list_wireless_gateway_task_definitions_error(
     crate::output::ListWirelessGatewayTaskDefinitionsOutput,
     crate::error::ListWirelessGatewayTaskDefinitionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListWirelessGatewayTaskDefinitionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6223,7 +6223,7 @@ pub fn parse_put_resource_log_level_error(
     crate::output::PutResourceLogLevelOutput,
     crate::error::PutResourceLogLevelError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutResourceLogLevelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6362,7 +6362,7 @@ pub fn parse_reset_all_resource_log_levels_error(
     crate::output::ResetAllResourceLogLevelsOutput,
     crate::error::ResetAllResourceLogLevelsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetAllResourceLogLevelsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6507,7 +6507,7 @@ pub fn parse_reset_resource_log_level_error(
     crate::output::ResetResourceLogLevelOutput,
     crate::error::ResetResourceLogLevelError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetResourceLogLevelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6646,7 +6646,7 @@ pub fn parse_send_data_to_wireless_device_error(
     crate::output::SendDataToWirelessDeviceOutput,
     crate::error::SendDataToWirelessDeviceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendDataToWirelessDeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6770,7 +6770,7 @@ pub fn parse_send_data_to_wireless_device_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6927,7 +6927,7 @@ pub fn parse_test_wireless_device_error(
     crate::output::TestWirelessDeviceOutput,
     crate::error::TestWirelessDeviceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TestWirelessDeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7047,7 +7047,7 @@ pub fn parse_test_wireless_device_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7181,7 +7181,7 @@ pub fn parse_update_destination_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateDestinationOutput, crate::error::UpdateDestinationError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateDestinationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7318,7 +7318,7 @@ pub fn parse_update_log_levels_by_resource_types_error(
     crate::output::UpdateLogLevelsByResourceTypesOutput,
     crate::error::UpdateLogLevelsByResourceTypesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateLogLevelsByResourceTypesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7479,7 +7479,7 @@ pub fn parse_update_partner_account_error(
     crate::output::UpdatePartnerAccountOutput,
     crate::error::UpdatePartnerAccountError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdatePartnerAccountError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7597,7 +7597,7 @@ pub fn parse_update_wireless_device_error(
     crate::output::UpdateWirelessDeviceOutput,
     crate::error::UpdateWirelessDeviceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateWirelessDeviceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7736,7 +7736,7 @@ pub fn parse_update_wireless_gateway_error(
     crate::output::UpdateWirelessGatewayOutput,
     crate::error::UpdateWirelessGatewayError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateWirelessGatewayError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

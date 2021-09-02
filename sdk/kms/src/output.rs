@@ -2,7 +2,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK that was used to verify the signature.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether the signature was verified. A value of
     /// <code>True</code> indicates that the <code>Signature</code> was produced by signing the
@@ -33,7 +33,7 @@ pub mod verify_output {
         pub(crate) signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK that was used to verify the signature.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -261,7 +261,7 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK that was used to sign the message.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The cryptographic signature that was generated for the message. </p>
     /// <ul>
@@ -278,7 +278,7 @@ pub struct SignOutput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub signature: std::option::Option<smithy_types::Blob>,
     /// <p>The signing algorithm that was used to sign the message.</p>
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
@@ -303,7 +303,7 @@ pub mod sign_output {
         pub(crate) signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK that was used to sign the message.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -327,7 +327,7 @@ pub mod sign_output {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn signature(mut self, input: smithy_types::Blob) -> Self {
             self.signature = Some(input);
             self
@@ -368,19 +368,19 @@ impl SignOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleKeyDeletionOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK whose deletion is scheduled.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The date and time after which AWS KMS deletes the customer master key (CMK).</p>
-    /// <p>If the CMK is a multi-Region primary key with replica keys, this field does not appear.
+    /// <p>The date and time after which KMS deletes the KMS key.</p>
+    /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear.
     /// The deletion date for the primary key isn't known until its last replica key is
     /// deleted.</p>
     pub deletion_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The current status of the CMK.</p>
-    /// <p>For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a>
-    /// in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>The current status of the KMS key.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>
+    /// in the <i>Key Management Service Developer Guide</i>.</p>
     pub key_state: std::option::Option<crate::model::KeyState>,
-    /// <p>The waiting period before the CMK is deleted. </p>
-    /// <p>If the CMK is a multi-Region primary key with replicas, the waiting period begins when the
+    /// <p>The waiting period before the KMS key is deleted. </p>
+    /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the
     /// last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     pub pending_window_in_days: std::option::Option<i32>,
 }
@@ -406,7 +406,7 @@ pub mod schedule_key_deletion_output {
         pub(crate) pending_window_in_days: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK whose deletion is scheduled.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -415,8 +415,8 @@ pub mod schedule_key_deletion_output {
             self.key_id = input;
             self
         }
-        /// <p>The date and time after which AWS KMS deletes the customer master key (CMK).</p>
-        /// <p>If the CMK is a multi-Region primary key with replica keys, this field does not appear.
+        /// <p>The date and time after which KMS deletes the KMS key.</p>
+        /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear.
         /// The deletion date for the primary key isn't known until its last replica key is
         /// deleted.</p>
         pub fn deletion_date(mut self, input: smithy_types::Instant) -> Self {
@@ -430,9 +430,9 @@ pub mod schedule_key_deletion_output {
             self.deletion_date = input;
             self
         }
-        /// <p>The current status of the CMK.</p>
-        /// <p>For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a>
-        /// in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// <p>The current status of the KMS key.</p>
+        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>
+        /// in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn key_state(mut self, input: crate::model::KeyState) -> Self {
             self.key_state = Some(input);
             self
@@ -441,8 +441,8 @@ pub mod schedule_key_deletion_output {
             self.key_state = input;
             self
         }
-        /// <p>The waiting period before the CMK is deleted. </p>
-        /// <p>If the CMK is a multi-Region primary key with replicas, the waiting period begins when the
+        /// <p>The waiting period before the KMS key is deleted. </p>
+        /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the
         /// last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
         pub fn pending_window_in_days(mut self, input: i32) -> Self {
             self.pending_window_in_days = Some(input);
@@ -531,8 +531,8 @@ impl RetireGrantOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicateKeyOutput {
-    /// <p>Displays details about the new replica CMK, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-    /// ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and AWS Region of its primary key and other
+    /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+    /// ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other
     /// replica keys.</p>
     pub replica_key_metadata: std::option::Option<crate::model::KeyMetadata>,
     /// <p>The key policy of the new replica key. The value is a key policy document in JSON
@@ -562,8 +562,8 @@ pub mod replicate_key_output {
         pub(crate) replica_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Displays details about the new replica CMK, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-        /// ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and AWS Region of its primary key and other
+        /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other
         /// replica keys.</p>
         pub fn replica_key_metadata(mut self, input: crate::model::KeyMetadata) -> Self {
             self.replica_key_metadata = Some(input);
@@ -622,11 +622,11 @@ impl ReplicateKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReEncryptOutput {
-    /// <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub ciphertext_blob: std::option::Option<smithy_types::Blob>,
-    /// <p>Unique identifier of the CMK used to originally encrypt the data.</p>
+    /// <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
     pub source_key_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that was used to reencrypt the data.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to reencrypt the data.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was
     /// reencrypted.</p>
@@ -667,7 +667,7 @@ pub mod re_encrypt_output {
             std::option::Option<crate::model::EncryptionAlgorithmSpec>,
     }
     impl Builder {
-        /// <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
             self.ciphertext_blob = Some(input);
             self
@@ -679,7 +679,7 @@ pub mod re_encrypt_output {
             self.ciphertext_blob = input;
             self
         }
-        /// <p>Unique identifier of the CMK used to originally encrypt the data.</p>
+        /// <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
         pub fn source_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_key_id = Some(input.into());
             self
@@ -691,7 +691,7 @@ pub mod re_encrypt_output {
             self.source_key_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that was used to reencrypt the data.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to reencrypt the data.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -870,8 +870,7 @@ impl ListRetirableGrantsOutput {
 pub struct ListResourceTagsOutput {
     /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
     /// <note>
-    /// <p>Tagging or untagging a CMK can allow or deny permission to the
-    /// CMK. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -960,7 +959,7 @@ impl ListResourceTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeysOutput {
-    /// <p>A list of customer master keys (CMKs).</p>
+    /// <p>A list of KMS keys.</p>
     pub keys: std::option::Option<std::vec::Vec<crate::model::KeyListEntry>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the
     /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
@@ -1333,28 +1332,31 @@ impl ImportKeyMaterialOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK from which the public key was downloaded.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The exported public key. </p>
     /// <p>The value is a DER-encoded X.509 public key, also known as
-    /// <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p></p>
     pub public_key: std::option::Option<smithy_types::Blob>,
-    /// <p>The type of the of the public key that was downloaded.</p>
+    /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>    
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
+    /// <p>The type of the of the public key that was downloaded.</p>
+    pub key_spec: std::option::Option<crate::model::KeySpec>,
     /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or
     /// <code>SIGN_VERIFY</code>. </p>
     /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage
-    /// encrypts data outside of AWS KMS, the ciphertext cannot be decrypted. </p>
+    /// encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
     pub key_usage: std::option::Option<crate::model::KeyUsageType>,
-    /// <p>The encryption algorithms that AWS KMS supports for this key. </p>
-    /// <p>This information is critical. If a public key encrypts data outside of AWS KMS by using an
+    /// <p>The encryption algorithms that KMS supports for this key. </p>
+    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an
     /// unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
     /// is <code>ENCRYPT_DECRYPT</code>.</p>
     pub encryption_algorithms:
         std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
-    /// <p>The signing algorithms that AWS KMS supports for this key.</p>
+    /// <p>The signing algorithms that KMS supports for this key.</p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
     /// is <code>SIGN_VERIFY</code>.</p>
     pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
@@ -1365,6 +1367,7 @@ impl std::fmt::Debug for GetPublicKeyOutput {
         formatter.field("key_id", &self.key_id);
         formatter.field("public_key", &self.public_key);
         formatter.field("customer_master_key_spec", &self.customer_master_key_spec);
+        formatter.field("key_spec", &self.key_spec);
         formatter.field("key_usage", &self.key_usage);
         formatter.field("encryption_algorithms", &self.encryption_algorithms);
         formatter.field("signing_algorithms", &self.signing_algorithms);
@@ -1381,6 +1384,7 @@ pub mod get_public_key_output {
         pub(crate) public_key: std::option::Option<smithy_types::Blob>,
         pub(crate) customer_master_key_spec:
             std::option::Option<crate::model::CustomerMasterKeySpec>,
+        pub(crate) key_spec: std::option::Option<crate::model::KeySpec>,
         pub(crate) key_usage: std::option::Option<crate::model::KeyUsageType>,
         pub(crate) encryption_algorithms:
             std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
@@ -1388,7 +1392,7 @@ pub mod get_public_key_output {
             std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK from which the public key was downloaded.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -1399,7 +1403,7 @@ pub mod get_public_key_output {
         }
         /// <p>The exported public key. </p>
         /// <p>The value is a DER-encoded X.509 public key, also known as
-        /// <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         /// <p></p>
         pub fn public_key(mut self, input: smithy_types::Blob) -> Self {
             self.public_key = Some(input);
@@ -1409,7 +1413,8 @@ pub mod get_public_key_output {
             self.public_key = input;
             self
         }
-        /// <p>The type of the of the public key that was downloaded.</p>
+        /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>    
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
         pub fn customer_master_key_spec(
             mut self,
             input: crate::model::CustomerMasterKeySpec,
@@ -1424,10 +1429,19 @@ pub mod get_public_key_output {
             self.customer_master_key_spec = input;
             self
         }
+        /// <p>The type of the of the public key that was downloaded.</p>
+        pub fn key_spec(mut self, input: crate::model::KeySpec) -> Self {
+            self.key_spec = Some(input);
+            self
+        }
+        pub fn set_key_spec(mut self, input: std::option::Option<crate::model::KeySpec>) -> Self {
+            self.key_spec = input;
+            self
+        }
         /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or
         /// <code>SIGN_VERIFY</code>. </p>
         /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage
-        /// encrypts data outside of AWS KMS, the ciphertext cannot be decrypted. </p>
+        /// encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
         pub fn key_usage(mut self, input: crate::model::KeyUsageType) -> Self {
             self.key_usage = Some(input);
             self
@@ -1477,6 +1491,7 @@ pub mod get_public_key_output {
                 key_id: self.key_id,
                 public_key: self.public_key,
                 customer_master_key_spec: self.customer_master_key_spec,
+                key_spec: self.key_spec,
                 key_usage: self.key_usage,
                 encryption_algorithms: self.encryption_algorithms,
                 signing_algorithms: self.signing_algorithms,
@@ -1494,8 +1509,8 @@ impl GetPublicKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParametersForImportOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK to use in a subsequent <a>ImportKeyMaterial</a>
-    /// request. This is the same CMK specified in the <code>GetParametersForImport</code>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a>
+    /// request. This is the same KMS key specified in the <code>GetParametersForImport</code>
     /// request.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The import token to send in a subsequent <a>ImportKeyMaterial</a>
@@ -1530,8 +1545,8 @@ pub mod get_parameters_for_import_output {
         pub(crate) parameters_valid_to: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK to use in a subsequent <a>ImportKeyMaterial</a>
-        /// request. This is the same CMK specified in the <code>GetParametersForImport</code>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a>
+        /// request. This is the same KMS key specified in the <code>GetParametersForImport</code>
         /// request.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
@@ -1687,7 +1702,7 @@ impl GetKeyPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateRandomOutput {
-    /// <p>The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The random byte string. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub plaintext: std::option::Option<smithy_types::Blob>,
 }
 impl std::fmt::Debug for GenerateRandomOutput {
@@ -1706,7 +1721,7 @@ pub mod generate_random_output {
         pub(crate) plaintext: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>The random byte string. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn plaintext(mut self, input: smithy_types::Blob) -> Self {
             self.plaintext = Some(input);
             self
@@ -1733,9 +1748,9 @@ impl GenerateRandomOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyWithoutPlaintextOutput {
-    /// <p>The encrypted data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub ciphertext_blob: std::option::Option<smithy_types::Blob>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that encrypted the data key.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GenerateDataKeyWithoutPlaintextOutput {
@@ -1756,7 +1771,7 @@ pub mod generate_data_key_without_plaintext_output {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The encrypted data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
             self.ciphertext_blob = Some(input);
             self
@@ -1768,7 +1783,7 @@ pub mod generate_data_key_without_plaintext_output {
             self.ciphertext_blob = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that encrypted the data key.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -1796,11 +1811,11 @@ impl GenerateDataKeyWithoutPlaintextOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyPairWithoutPlaintextOutput {
-    /// <p>The encrypted copy of the private key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub private_key_ciphertext_blob: std::option::Option<smithy_types::Blob>,
     /// <p>The public key (in plaintext).</p>
     pub public_key: std::option::Option<smithy_types::Blob>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that encrypted the private key.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The type of data key pair that was generated.</p>
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
@@ -1830,7 +1845,7 @@ pub mod generate_data_key_pair_without_plaintext_output {
         pub(crate) key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
     }
     impl Builder {
-        /// <p>The encrypted copy of the private key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn private_key_ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
             self.private_key_ciphertext_blob = Some(input);
             self
@@ -1851,7 +1866,7 @@ pub mod generate_data_key_pair_without_plaintext_output {
             self.public_key = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that encrypted the private key.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -1893,13 +1908,13 @@ impl GenerateDataKeyPairWithoutPlaintextOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyPairOutput {
-    /// <p>The encrypted copy of the private key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub private_key_ciphertext_blob: std::option::Option<smithy_types::Blob>,
-    /// <p>The plaintext copy of the private key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub private_key_plaintext: std::option::Option<smithy_types::Blob>,
     /// <p>The public key (in plaintext).</p>
     pub public_key: std::option::Option<smithy_types::Blob>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that encrypted the private key.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The type of data key pair that was generated.</p>
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
@@ -1931,7 +1946,7 @@ pub mod generate_data_key_pair_output {
         pub(crate) key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
     }
     impl Builder {
-        /// <p>The encrypted copy of the private key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn private_key_ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
             self.private_key_ciphertext_blob = Some(input);
             self
@@ -1943,7 +1958,7 @@ pub mod generate_data_key_pair_output {
             self.private_key_ciphertext_blob = input;
             self
         }
-        /// <p>The plaintext copy of the private key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn private_key_plaintext(mut self, input: smithy_types::Blob) -> Self {
             self.private_key_plaintext = Some(input);
             self
@@ -1964,7 +1979,7 @@ pub mod generate_data_key_pair_output {
             self.public_key = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that encrypted the private key.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -2007,12 +2022,12 @@ impl GenerateDataKeyPairOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyOutput {
-    /// <p>The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub ciphertext_blob: std::option::Option<smithy_types::Blob>,
-    /// <p>The plaintext data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of
+    /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of
     /// KMS. Then, remove it from memory as soon as possible.</p>
     pub plaintext: std::option::Option<smithy_types::Blob>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that encrypted the data key.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GenerateDataKeyOutput {
@@ -2035,7 +2050,7 @@ pub mod generate_data_key_output {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
             self.ciphertext_blob = Some(input);
             self
@@ -2047,7 +2062,7 @@ pub mod generate_data_key_output {
             self.ciphertext_blob = input;
             self
         }
-        /// <p>The plaintext data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of
+        /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of
         /// KMS. Then, remove it from memory as soon as possible.</p>
         pub fn plaintext(mut self, input: smithy_types::Blob) -> Self {
             self.plaintext = Some(input);
@@ -2057,7 +2072,7 @@ pub mod generate_data_key_output {
             self.plaintext = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that encrypted the data key.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -2086,9 +2101,9 @@ impl GenerateDataKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptOutput {
-    /// <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub ciphertext_blob: std::option::Option<smithy_types::Blob>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
@@ -2113,7 +2128,7 @@ pub mod encrypt_output {
         pub(crate) encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
     }
     impl Builder {
-        /// <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
             self.ciphertext_blob = Some(input);
             self
@@ -2125,7 +2140,7 @@ pub mod encrypt_output {
             self.ciphertext_blob = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -2541,9 +2556,9 @@ impl DeleteAliasOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecryptOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub plaintext: std::option::Option<smithy_types::Blob>,
     /// <p>The encryption algorithm that was used to decrypt the ciphertext.</p>
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
@@ -2568,7 +2583,7 @@ pub mod decrypt_output {
         pub(crate) encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -2577,7 +2592,7 @@ pub mod decrypt_output {
             self.key_id = input;
             self
         }
-        /// <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn plaintext(mut self, input: smithy_types::Blob) -> Self {
             self.plaintext = Some(input);
             self
@@ -2621,7 +2636,7 @@ impl DecryptOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyOutput {
-    /// <p>Metadata associated with the CMK.</p>
+    /// <p>Metadata associated with the KMS key.</p>
     pub key_metadata: std::option::Option<crate::model::KeyMetadata>,
 }
 impl std::fmt::Debug for CreateKeyOutput {
@@ -2640,7 +2655,7 @@ pub mod create_key_output {
         pub(crate) key_metadata: std::option::Option<crate::model::KeyMetadata>,
     }
     impl Builder {
-        /// <p>Metadata associated with the CMK.</p>
+        /// <p>Metadata associated with the KMS key.</p>
         pub fn key_metadata(mut self, input: crate::model::KeyMetadata) -> Self {
             self.key_metadata = Some(input);
             self
@@ -2671,8 +2686,8 @@ impl CreateKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrantOutput {
     /// <p>The grant token.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the grant.</p>
     /// <p>You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.</p>
@@ -2697,8 +2712,8 @@ pub mod create_grant_output {
     }
     impl Builder {
         /// <p>The grant token.</p>
-        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-        /// <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_token = Some(input.into());
             self
@@ -2843,7 +2858,7 @@ impl ConnectCustomKeyStoreOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelKeyDeletionOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK whose deletion is canceled.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is canceled.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CancelKeyDeletionOutput {
@@ -2862,7 +2877,7 @@ pub mod cancel_key_deletion_output {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK whose deletion is canceled.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is canceled.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self

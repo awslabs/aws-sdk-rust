@@ -31,6 +31,14 @@ pub fn deser_header_create_authorizer_too_many_requests_exception_retry_after_se
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_create_base_path_mapping_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_create_base_path_mapping_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
@@ -88,6 +96,14 @@ pub fn deser_header_create_documentation_version_limit_exceeded_exception_retry_
 }
 
 pub fn deser_header_create_documentation_version_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_create_domain_name_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -199,7 +215,23 @@ pub fn deser_header_create_usage_plan_too_many_requests_exception_retry_after_se
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_create_usage_plan_key_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_create_usage_plan_key_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_create_vpc_link_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -240,6 +272,14 @@ pub fn deser_header_delete_base_path_mapping_too_many_requests_exception_retry_a
 }
 
 pub fn deser_header_delete_client_certificate_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_delete_deployment_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -351,6 +391,14 @@ pub fn deser_header_delete_rest_api_too_many_requests_exception_retry_after_seco
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_delete_stage_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_delete_stage_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
@@ -383,7 +431,23 @@ pub fn deser_header_delete_vpc_link_too_many_requests_exception_retry_after_seco
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_flush_stage_authorizers_cache_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_flush_stage_authorizers_cache_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_flush_stage_cache_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -551,14 +615,6 @@ pub fn deser_header_get_documentation_versions_too_many_requests_exception_retry
     smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_domain_name_service_unavailable_exception_retry_after_seconds(
-    header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
-    let headers = header_map.get_all("Retry-After").iter();
-    smithy_http::header::one_or_none(headers)
-}
-
 pub fn deser_header_get_domain_name_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
@@ -568,6 +624,14 @@ pub fn deser_header_get_domain_name_too_many_requests_exception_retry_after_seco
 }
 
 pub fn deser_header_get_domain_names_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_get_export_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -727,6 +791,14 @@ pub fn deser_header_get_rest_apis_too_many_requests_exception_retry_after_second
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_get_sdk_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_get_sdk_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
@@ -775,6 +847,14 @@ pub fn deser_header_get_sdk_types_too_many_requests_exception_retry_after_second
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_get_stage_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_get_stage_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
@@ -783,7 +863,7 @@ pub fn deser_header_get_stage_too_many_requests_exception_retry_after_seconds(
     smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_stages_too_many_requests_exception_retry_after_seconds(
+pub fn deser_header_get_stages_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -791,7 +871,7 @@ pub fn deser_header_get_stages_too_many_requests_exception_retry_after_seconds(
     smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_tags_limit_exceeded_exception_retry_after_seconds(
+pub fn deser_header_get_stages_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -927,6 +1007,14 @@ pub fn deser_header_put_gateway_response_too_many_requests_exception_retry_after
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_put_integration_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_put_integration_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
@@ -1031,7 +1119,23 @@ pub fn deser_header_test_invoke_method_too_many_requests_exception_retry_after_s
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_untag_resource_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_untag_resource_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_update_account_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -1047,7 +1151,23 @@ pub fn deser_header_update_account_too_many_requests_exception_retry_after_secon
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_update_api_key_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_update_api_key_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_update_authorizer_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -1063,6 +1183,14 @@ pub fn deser_header_update_authorizer_too_many_requests_exception_retry_after_se
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_update_base_path_mapping_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_update_base_path_mapping_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
@@ -1071,7 +1199,23 @@ pub fn deser_header_update_base_path_mapping_too_many_requests_exception_retry_a
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_update_client_certificate_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_update_client_certificate_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_update_deployment_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -1111,7 +1255,23 @@ pub fn deser_header_update_documentation_part_too_many_requests_exception_retry_
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_update_documentation_version_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_update_documentation_version_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_update_domain_name_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -1127,6 +1287,14 @@ pub fn deser_header_update_domain_name_too_many_requests_exception_retry_after_s
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_update_gateway_response_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_update_gateway_response_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
@@ -1135,7 +1303,23 @@ pub fn deser_header_update_gateway_response_too_many_requests_exception_retry_af
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_update_integration_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_update_integration_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_update_integration_response_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -1175,7 +1359,23 @@ pub fn deser_header_update_method_response_too_many_requests_exception_retry_aft
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_update_model_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_update_model_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_update_request_validator_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -1199,7 +1399,23 @@ pub fn deser_header_update_resource_too_many_requests_exception_retry_after_seco
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_update_rest_api_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_update_rest_api_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_update_stage_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {
@@ -1215,6 +1431,14 @@ pub fn deser_header_update_stage_too_many_requests_exception_retry_after_seconds
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_update_usage_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_update_usage_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
@@ -1223,7 +1447,23 @@ pub fn deser_header_update_usage_too_many_requests_exception_retry_after_seconds
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_update_usage_plan_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_update_usage_plan_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_update_vpc_link_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {

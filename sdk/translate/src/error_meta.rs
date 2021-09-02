@@ -37,8 +37,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateParallelDataError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateParallelDataError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateParallelDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateParallelDataError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateParallelDataErrorKind::ConflictException(inner) => {
@@ -67,8 +70,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateParallelDataError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteParallelDataError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteParallelDataError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteParallelDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteParallelDataError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteParallelDataErrorKind::ConcurrentModificationException(
@@ -91,8 +97,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteParallelDataError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteTerminologyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTerminologyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteTerminologyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTerminologyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteTerminologyErrorKind::InternalServerException(inner) => {
@@ -115,9 +124,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteTerminologyError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTextTranslationJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeTextTranslationJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeTextTranslationJobError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeTextTranslationJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -138,8 +151,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTextTranslationJob
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetParallelDataError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetParallelDataError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetParallelDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetParallelDataError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetParallelDataErrorKind::InternalServerException(inner) => {
@@ -160,8 +176,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetParallelDataError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetTerminologyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetTerminologyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetTerminologyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetTerminologyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetTerminologyErrorKind::InternalServerException(inner) => {
@@ -182,8 +201,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetTerminologyError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ImportTerminologyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ImportTerminologyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ImportTerminologyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ImportTerminologyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ImportTerminologyErrorKind::InternalServerException(inner) => {
@@ -206,8 +228,11 @@ impl From<smithy_http::result::SdkError<crate::error::ImportTerminologyError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListParallelDataError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListParallelDataError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListParallelDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListParallelDataError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListParallelDataErrorKind::InternalServerException(inner) => {
@@ -227,8 +252,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListParallelDataError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTerminologiesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTerminologiesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTerminologiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTerminologiesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTerminologiesErrorKind::InternalServerException(inner) => {
@@ -248,9 +276,12 @@ impl From<smithy_http::result::SdkError<crate::error::ListTerminologiesError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTextTranslationJobsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTextTranslationJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListTextTranslationJobsError>,
+        err: smithy_http::result::SdkError<crate::error::ListTextTranslationJobsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -274,9 +305,12 @@ impl From<smithy_http::result::SdkError<crate::error::ListTextTranslationJobsErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartTextTranslationJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartTextTranslationJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StartTextTranslationJobError>,
+        err: smithy_http::result::SdkError<crate::error::StartTextTranslationJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -291,8 +325,13 @@ impl From<smithy_http::result::SdkError<crate::error::StartTextTranslationJobErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StopTextTranslationJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StopTextTranslationJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StopTextTranslationJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::StopTextTranslationJobError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StopTextTranslationJobErrorKind::InternalServerException(inner) => {
@@ -312,8 +351,11 @@ impl From<smithy_http::result::SdkError<crate::error::StopTextTranslationJobErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TranslateTextError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TranslateTextError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TranslateTextError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TranslateTextError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TranslateTextErrorKind::DetectedLanguageLowConfidenceException(
@@ -346,8 +388,11 @@ impl From<smithy_http::result::SdkError<crate::error::TranslateTextError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateParallelDataError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateParallelDataError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateParallelDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateParallelDataError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateParallelDataErrorKind::ConcurrentModificationException(

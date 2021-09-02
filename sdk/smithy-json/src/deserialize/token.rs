@@ -296,30 +296,38 @@ where
 pub fn skip_value<'a>(
     tokens: &mut impl Iterator<Item = Result<Token<'a>, Error>>,
 ) -> Result<(), Error> {
-    skip_inner(false, tokens)
+    skip_inner(0, tokens)
+}
+
+/// Assumes a start object/array token has already been consumed and skips tokens until
+/// until its corresponding end object/array token is found.
+pub fn skip_to_end<'a>(
+    tokens: &mut impl Iterator<Item = Result<Token<'a>, Error>>,
+) -> Result<(), Error> {
+    skip_inner(1, tokens)
 }
 
 fn skip_inner<'a>(
-    inside_obj_or_array: bool,
+    depth: isize,
     tokens: &mut impl Iterator<Item = Result<Token<'a>, Error>>,
 ) -> Result<(), Error> {
     loop {
         match tokens.next().transpose()? {
             Some(Token::StartObject { .. }) | Some(Token::StartArray { .. }) => {
-                skip_inner(true, tokens)?;
-                if !inside_obj_or_array {
+                skip_inner(depth + 1, tokens)?;
+                if depth == 0 {
                     break;
                 }
             }
             Some(Token::EndObject { .. }) | Some(Token::EndArray { .. }) => {
-                debug_assert!(inside_obj_or_array);
+                debug_assert!(depth > 0);
                 break;
             }
             Some(Token::ValueNull { .. })
             | Some(Token::ValueBool { .. })
             | Some(Token::ValueNumber { .. })
             | Some(Token::ValueString { .. }) => {
-                if !inside_obj_or_array {
+                if depth == 0 {
                     break;
                 }
             }
@@ -422,6 +430,20 @@ pub mod test {
             tokens.next(),
             Some(Ok(Token::ValueBool { value: true, .. }))
         ))
+    }
+
+    #[test]
+    fn test_skip_to_end() {
+        let tokens = json_token_iter(b"{\"one\": { \"two\": [] }, \"three\":2 }");
+        let mut tokens = tokens.skip(2);
+        assert!(matches!(tokens.next(), Some(Ok(Token::StartObject { .. }))));
+        skip_to_end(&mut tokens).unwrap();
+        match tokens.next() {
+            Some(Ok(Token::ObjectKey { key, .. })) => {
+                assert_eq!("three", key.as_escaped_str());
+            }
+            _ => panic!("expected object key three"),
+        }
     }
 
     #[test]

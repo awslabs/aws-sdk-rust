@@ -19,8 +19,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetRawMessageContentError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetRawMessageContentError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetRawMessageContentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetRawMessageContentError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetRawMessageContentErrorKind::ResourceNotFoundException(inner) => {
@@ -34,8 +39,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetRawMessageContentError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutRawMessageContentError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutRawMessageContentError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutRawMessageContentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::PutRawMessageContentError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutRawMessageContentErrorKind::InvalidContentLocation(inner) => {

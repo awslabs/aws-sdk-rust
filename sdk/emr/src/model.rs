@@ -262,6 +262,53 @@ impl AsRef<str> for ExecutionEngineType {
     }
 }
 
+/// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AutoTerminationPolicy {
+    /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
+    pub idle_timeout: i64,
+}
+impl std::fmt::Debug for AutoTerminationPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AutoTerminationPolicy");
+        formatter.field("idle_timeout", &self.idle_timeout);
+        formatter.finish()
+    }
+}
+/// See [`AutoTerminationPolicy`](crate::model::AutoTerminationPolicy)
+pub mod auto_termination_policy {
+    /// A builder for [`AutoTerminationPolicy`](crate::model::AutoTerminationPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) idle_timeout: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
+        pub fn idle_timeout(mut self, input: i64) -> Self {
+            self.idle_timeout = Some(input);
+            self
+        }
+        pub fn set_idle_timeout(mut self, input: std::option::Option<i64>) -> Self {
+            self.idle_timeout = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AutoTerminationPolicy`](crate::model::AutoTerminationPolicy)
+        pub fn build(self) -> crate::model::AutoTerminationPolicy {
+            crate::model::AutoTerminationPolicy {
+                idle_timeout: self.idle_timeout.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AutoTerminationPolicy {
+    /// Creates a new builder-style object to manufacture [`AutoTerminationPolicy`](crate::model::AutoTerminationPolicy)
+    pub fn builder() -> crate::model::auto_termination_policy::Builder {
+        crate::model::auto_termination_policy::Builder::default()
+    }
+}
+
 /// <p>Placement group configuration for an Amazon EMR cluster. The configuration specifies the
 /// placement strategy that can be applied to instance roles during cluster creation.</p>
 /// <p>To use this configuration, consider attaching managed policy
@@ -11368,12 +11415,12 @@ pub struct JobFlowDetail {
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are
     /// not using third-party software to manage the job flow, this value is empty.</p>
     pub supported_products: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
+    /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated
     /// with the cluster. When <code>true</code>, IAM principals in the
-    /// account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+    /// Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>The default value is <code>true</code> if a value is not provided when creating a
     /// cluster using the EMR API <a>RunJobFlow</a> command, the CLI
-    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Management Console. IAM principals that are authorized to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are authorized to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
     pub visible_to_all_users: bool,
     /// <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the
     /// job flow assume this role.</p>
@@ -11565,12 +11612,12 @@ pub mod job_flow_detail {
             self.supported_products = input;
             self
         }
-        /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
+        /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated
         /// with the cluster. When <code>true</code>, IAM principals in the
-        /// account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+        /// Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
         /// <p>The default value is <code>true</code> if a value is not provided when creating a
         /// cluster using the EMR API <a>RunJobFlow</a> command, the CLI
-        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Management Console. IAM principals that are authorized to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are authorized to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);
             self
@@ -12788,12 +12835,12 @@ pub struct Cluster {
     /// being terminated by an API call or user intervention, or in the event of a cluster
     /// error.</p>
     pub termination_protected: bool,
-    /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
+    /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated
     /// with the cluster. When <code>true</code>, IAM principals in the
-    /// account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+    /// Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>The default value is <code>true</code> if a value is not provided when creating a
     /// cluster using the EMR API <a>RunJobFlow</a> command, the CLI
-    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Management Console. IAM principals that are
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are
     /// allowed to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
     pub visible_to_all_users: bool,
     /// <p>The applications installed on this cluster.</p>
@@ -13085,12 +13132,12 @@ pub mod cluster {
             self.termination_protected = input;
             self
         }
-        /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
+        /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated
         /// with the cluster. When <code>true</code>, IAM principals in the
-        /// account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+        /// Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
         /// <p>The default value is <code>true</code> if a value is not provided when creating a
         /// cluster using the EMR API <a>RunJobFlow</a> command, the CLI
-        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Management Console. IAM principals that are
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are
         /// allowed to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);

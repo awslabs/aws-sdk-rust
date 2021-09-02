@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_types::region::{self, ProvideRegion};
+use aws_config::meta::region::RegionProviderChain;
+use aws_types::region::Region;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -18,18 +19,19 @@ struct Opt {
 }
 
 /// Lists the Lambda ARNs and runtimes in the given AWS Region.
-async fn show_lambdas(verbose: bool, reg: String) {
-    let r = reg.clone();
-    let region = lambda::Region::new(reg);
-    let config = lambda::Config::builder().region(region).build();
-    let client = lambda::Client::from_conf(config);
+async fn show_lambdas(verbose: bool, region: &str) {
+    let shared_config = aws_config::from_env()
+        .region(Region::new(region.to_string()))
+        .load()
+        .await;
+    let client = lambda::Client::new(&shared_config);
 
     let resp = client.list_functions().send().await;
     let functions = resp.unwrap().functions.unwrap_or_default();
     let num_functions = functions.len();
 
     if num_functions > 0 || verbose {
-        println!("Found {} functions in {}:", num_functions, r);
+        println!("Found {} functions in {}:", num_functions, region);
         println!();
     }
 
@@ -52,9 +54,10 @@ async fn main() -> Result<(), lambda::Error> {
     tracing_subscriber::fmt::init();
     let Opt { region, verbose } = Opt::from_args();
 
-    let region_provider = region::ChainProvider::first_try(region.map(ec2::Region::new))
+    let region_provider = RegionProviderChain::first_try(region.map(ec2::Region::new))
         .or_default_provider()
         .or_else(ec2::Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
 
     println!();
 
@@ -63,18 +66,17 @@ async fn main() -> Result<(), lambda::Error> {
         println!("Lambda client version: {}", lambda::PKG_VERSION);
         println!(
             "Region:                {:?}",
-            region_provider.region().unwrap().as_ref()
+            shared_config.region().unwrap()
         );
         println!();
     }
 
     // Get list of available regions.
-    let config = ec2::Config::builder().region(region_provider).build();
-    let ec2_client = ec2::Client::from_conf(config);
+    let ec2_client = ec2::Client::new(&shared_config);
     let resp = ec2_client.describe_regions().send().await;
 
     for region in resp.unwrap().regions.unwrap_or_default() {
-        show_lambdas(verbose, region.region_name.unwrap()).await;
+        show_lambdas(verbose, &region.region_name.unwrap()).await;
     }
 
     Ok(())

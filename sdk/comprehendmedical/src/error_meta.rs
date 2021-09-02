@@ -27,11 +27,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeEntitiesDetectionV2JobError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeEntitiesDetectionV2JobError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeEntitiesDetectionV2JobError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeEntitiesDetectionV2JobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -45,9 +47,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeEntitiesDetectionV
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeICD10CMInferenceJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeICD10CMInferenceJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeICD10CMInferenceJobError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeICD10CMInferenceJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -71,9 +77,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeICD10CMInferenceJo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribePHIDetectionJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribePHIDetectionJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribePHIDetectionJobError>,
+        err: smithy_http::result::SdkError<crate::error::DescribePHIDetectionJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -97,9 +106,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribePHIDetectionJobErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeRxNormInferenceJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeRxNormInferenceJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeRxNormInferenceJobError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeRxNormInferenceJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -123,8 +136,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeRxNormInferenceJob
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DetectEntitiesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DetectEntitiesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DetectEntitiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DetectEntitiesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DetectEntitiesErrorKind::InternalServerException(inner) => {
@@ -151,8 +167,11 @@ impl From<smithy_http::result::SdkError<crate::error::DetectEntitiesError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DetectEntitiesV2Error>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DetectEntitiesV2Error>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DetectEntitiesV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DetectEntitiesV2Error, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DetectEntitiesV2ErrorKind::InternalServerException(inner) => {
@@ -181,8 +200,11 @@ impl From<smithy_http::result::SdkError<crate::error::DetectEntitiesV2Error>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DetectPHIError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DetectPHIError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DetectPHIError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DetectPHIError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DetectPHIErrorKind::InternalServerException(inner) => {
@@ -209,8 +231,11 @@ impl From<smithy_http::result::SdkError<crate::error::DetectPHIError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::InferICD10CMError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::InferICD10CMError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::InferICD10CMError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::InferICD10CMError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::InferICD10CMErrorKind::InternalServerException(inner) => {
@@ -237,8 +262,11 @@ impl From<smithy_http::result::SdkError<crate::error::InferICD10CMError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::InferRxNormError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::InferRxNormError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::InferRxNormError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::InferRxNormError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::InferRxNormErrorKind::InternalServerException(inner) => {
@@ -265,9 +293,13 @@ impl From<smithy_http::result::SdkError<crate::error::InferRxNormError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListEntitiesDetectionV2JobsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListEntitiesDetectionV2JobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListEntitiesDetectionV2JobsError>,
+        err: smithy_http::result::SdkError<crate::error::ListEntitiesDetectionV2JobsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -291,9 +323,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListEntitiesDetectionV2Job
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListICD10CMInferenceJobsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListICD10CMInferenceJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListICD10CMInferenceJobsError>,
+        err: smithy_http::result::SdkError<crate::error::ListICD10CMInferenceJobsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -317,8 +353,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListICD10CMInferenceJobsEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListPHIDetectionJobsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListPHIDetectionJobsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListPHIDetectionJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListPHIDetectionJobsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListPHIDetectionJobsErrorKind::InternalServerException(inner) => {
@@ -341,9 +382,12 @@ impl From<smithy_http::result::SdkError<crate::error::ListPHIDetectionJobsError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListRxNormInferenceJobsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListRxNormInferenceJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListRxNormInferenceJobsError>,
+        err: smithy_http::result::SdkError<crate::error::ListRxNormInferenceJobsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -367,9 +411,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListRxNormInferenceJobsErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartEntitiesDetectionV2JobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartEntitiesDetectionV2JobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StartEntitiesDetectionV2JobError>,
+        err: smithy_http::result::SdkError<crate::error::StartEntitiesDetectionV2JobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -393,9 +441,13 @@ impl From<smithy_http::result::SdkError<crate::error::StartEntitiesDetectionV2Jo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartICD10CMInferenceJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartICD10CMInferenceJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StartICD10CMInferenceJobError>,
+        err: smithy_http::result::SdkError<crate::error::StartICD10CMInferenceJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -419,8 +471,13 @@ impl From<smithy_http::result::SdkError<crate::error::StartICD10CMInferenceJobEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartPHIDetectionJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartPHIDetectionJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartPHIDetectionJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::StartPHIDetectionJobError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StartPHIDetectionJobErrorKind::InternalServerException(inner) => {
@@ -443,9 +500,12 @@ impl From<smithy_http::result::SdkError<crate::error::StartPHIDetectionJobError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartRxNormInferenceJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartRxNormInferenceJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StartRxNormInferenceJobError>,
+        err: smithy_http::result::SdkError<crate::error::StartRxNormInferenceJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -469,9 +529,13 @@ impl From<smithy_http::result::SdkError<crate::error::StartRxNormInferenceJobErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StopEntitiesDetectionV2JobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StopEntitiesDetectionV2JobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StopEntitiesDetectionV2JobError>,
+        err: smithy_http::result::SdkError<crate::error::StopEntitiesDetectionV2JobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -492,9 +556,12 @@ impl From<smithy_http::result::SdkError<crate::error::StopEntitiesDetectionV2Job
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StopICD10CMInferenceJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StopICD10CMInferenceJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StopICD10CMInferenceJobError>,
+        err: smithy_http::result::SdkError<crate::error::StopICD10CMInferenceJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -515,8 +582,11 @@ impl From<smithy_http::result::SdkError<crate::error::StopICD10CMInferenceJobErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StopPHIDetectionJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StopPHIDetectionJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StopPHIDetectionJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StopPHIDetectionJobError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StopPHIDetectionJobErrorKind::InternalServerException(inner) => {
@@ -536,8 +606,13 @@ impl From<smithy_http::result::SdkError<crate::error::StopPHIDetectionJobError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StopRxNormInferenceJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StopRxNormInferenceJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StopRxNormInferenceJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::StopRxNormInferenceJobError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StopRxNormInferenceJobErrorKind::InternalServerException(inner) => {

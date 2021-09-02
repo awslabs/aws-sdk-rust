@@ -530,6 +530,52 @@ impl SetStackPolicyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RollbackStackOutput {
+    /// <p>Unique identifier of the stack.</p>
+    pub stack_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RollbackStackOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RollbackStackOutput");
+        formatter.field("stack_id", &self.stack_id);
+        formatter.finish()
+    }
+}
+/// See [`RollbackStackOutput`](crate::output::RollbackStackOutput)
+pub mod rollback_stack_output {
+    /// A builder for [`RollbackStackOutput`](crate::output::RollbackStackOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stack_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Unique identifier of the stack.</p>
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
+            self
+        }
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RollbackStackOutput`](crate::output::RollbackStackOutput)
+        pub fn build(self) -> crate::output::RollbackStackOutput {
+            crate::output::RollbackStackOutput {
+                stack_id: self.stack_id,
+            }
+        }
+    }
+}
+impl RollbackStackOutput {
+    /// Creates a new builder-style object to manufacture [`RollbackStackOutput`](crate::output::RollbackStackOutput)
+    pub fn builder() -> crate::output::rollback_stack_output::Builder {
+        crate::output::rollback_stack_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTypeOutput {
     /// <p>The identifier for this registration request.</p>
     /// <p>Use this registration token when calling <code>
@@ -1373,8 +1419,7 @@ impl ListStackInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImportsOutput {
-    /// <p>A list of stack names that are importing the specified exported output value.
-    /// </p>
+    /// <p>A list of stack names that are importing the specified exported output value.</p>
     pub imports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A string that identifies the next page of exports. If there is no additional page,
     /// this value is null.</p>
@@ -1640,8 +1685,8 @@ pub struct GetTemplateSummaryOutput {
     /// <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
     /// <code>Custom::MyCustomInstance</code>.</p>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Web Services template format version, which identifies the capabilities of
-    /// the template.</p>
+    /// <p>The Amazon Web Services template format version, which identifies the capabilities of the
+    /// template.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The value that is defined for the <code>Metadata</code> property of the
     /// template.</p>
@@ -1651,7 +1696,7 @@ pub struct GetTemplateSummaryOutput {
     /// <p>A list of resource identifier summaries that describe the target resources of an import
     /// operation and the properties you can provide during the import to identify the target
     /// resources. For example, <code>BucketName</code> is a possible identifier property for an
-    /// <code>AWS::S3::Bucket</code> resource. </p>
+    /// <code>AWS::S3::Bucket</code> resource.</p>
     pub resource_identifier_summaries:
         std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
 }
@@ -1754,8 +1799,8 @@ pub mod get_template_summary_output {
             self.resource_types = input;
             self
         }
-        /// <p>The Amazon Web Services template format version, which identifies the capabilities of
-        /// the template.</p>
+        /// <p>The Amazon Web Services template format version, which identifies the capabilities of the
+        /// template.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
@@ -1836,7 +1881,8 @@ pub struct GetTemplateOutput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The stage of the template that you can retrieve. For stacks, the
     /// <code>Original</code> and <code>Processed</code> templates are always available. For
-    /// change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template
+    /// change sets, the <code>Original</code> template is always available. After
+    /// CloudFormation finishes creating the change set, the <code>Processed</code> template
     /// becomes available.</p>
     pub stages_available: std::option::Option<std::vec::Vec<crate::model::TemplateStage>>,
 }
@@ -1988,8 +2034,8 @@ impl ExecuteChangeSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EstimateTemplateCostOutput {
-    /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that
-    /// describes the resources required to run the template.</p>
+    /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources
+    /// required to run the template.</p>
     pub url: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EstimateTemplateCostOutput {
@@ -2008,8 +2054,8 @@ pub mod estimate_template_cost_output {
         pub(crate) url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that
-        /// describes the resources required to run the template.</p>
+        /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources
+        /// required to run the template.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
@@ -2139,10 +2185,10 @@ impl DetectStackResourceDriftOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectStackDriftOutput {
-    /// <p>The ID of the drift detection results of this operation. </p>
-    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
-    /// is run. However, the number of drift results CloudFormation retains for any given stack, and for how
-    /// long, may vary. </p>
+    /// <p>The ID of the drift detection results of this operation.</p>
+    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is
+    /// run. However, the number of drift results CloudFormation retains for any given stack, and for how
+    /// long, may vary.</p>
     pub stack_drift_detection_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DetectStackDriftOutput {
@@ -2161,10 +2207,10 @@ pub mod detect_stack_drift_output {
         pub(crate) stack_drift_detection_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the drift detection results of this operation. </p>
-        /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
-        /// is run. However, the number of drift results CloudFormation retains for any given stack, and for how
-        /// long, may vary. </p>
+        /// <p>The ID of the drift detection results of this operation.</p>
+        /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is
+        /// run. However, the number of drift results CloudFormation retains for any given stack, and for how
+        /// long, may vary.</p>
         pub fn stack_drift_detection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_drift_detection_id = Some(input.into());
             self
@@ -3550,12 +3596,13 @@ impl DescribeStackEventsOutput {
 pub struct DescribeStackDriftDetectionStatusOutput {
     /// <p>The ID of the stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the drift detection results of this operation. </p>
+    /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
     /// is run. However, the number of reports CloudFormation retains for any given stack, and for how long,
     /// may vary.</p>
     pub stack_drift_detection_id: std::option::Option<std::string::String>,
-    /// <p>Status of the stack's actual configuration compared to its expected configuration. </p>
+    /// <p>Status of the stack's actual configuration compared to its expected
+    /// configuration.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -3652,7 +3699,7 @@ pub mod describe_stack_drift_detection_status_output {
             self.stack_id = input;
             self
         }
-        /// <p>The ID of the drift detection results of this operation. </p>
+        /// <p>The ID of the drift detection results of this operation.</p>
         /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
         /// is run. However, the number of reports CloudFormation retains for any given stack, and for how long,
         /// may vary.</p>
@@ -3667,7 +3714,8 @@ pub mod describe_stack_drift_detection_status_output {
             self.stack_drift_detection_id = input;
             self
         }
-        /// <p>Status of the stack's actual configuration compared to its expected configuration. </p>
+        /// <p>Status of the stack's actual configuration compared to its expected
+        /// configuration.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3932,7 +3980,8 @@ pub struct DescribeChangeSetOutput {
     /// <p>If you execute the change set, the tags that will be associated with the
     /// stack.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
+    /// <p>A list of <code>Change</code> structures that describes the resources
+    /// CloudFormation changes if you execute the change set.</p>
     pub changes: std::option::Option<std::vec::Vec<crate::model::Change>>,
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If
     /// there is no additional page, this value is null.</p>
@@ -4266,8 +4315,8 @@ impl DescribeChangeSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsOutput {
-    /// <p>An account limit structure that contain a list of CloudFormation account
-    /// limits and their values.</p>
+    /// <p>An account limit structure that contain a list of CloudFormation account limits
+    /// and their values.</p>
     pub account_limits: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>,
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits.
     /// If no additional page exists, this value is null.</p>

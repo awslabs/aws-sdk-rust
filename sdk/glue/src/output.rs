@@ -684,6 +684,50 @@ impl UpdateClassifierOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateBlueprintOutput {
+    /// <p>Returns the name of the blueprint that was updated.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateBlueprintOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateBlueprintOutput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`UpdateBlueprintOutput`](crate::output::UpdateBlueprintOutput)
+pub mod update_blueprint_output {
+    /// A builder for [`UpdateBlueprintOutput`](crate::output::UpdateBlueprintOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns the name of the blueprint that was updated.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateBlueprintOutput`](crate::output::UpdateBlueprintOutput)
+        pub fn build(self) -> crate::output::UpdateBlueprintOutput {
+            crate::output::UpdateBlueprintOutput { name: self.name }
+        }
+    }
+}
+impl UpdateBlueprintOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBlueprintOutput`](crate::output::UpdateBlueprintOutput)
+    pub fn builder() -> crate::output::update_blueprint_output::Builder {
+        crate::output::update_blueprint_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1246,6 +1290,52 @@ impl StartCrawlerOutput {
     /// Creates a new builder-style object to manufacture [`StartCrawlerOutput`](crate::output::StartCrawlerOutput)
     pub fn builder() -> crate::output::start_crawler_output::Builder {
         crate::output::start_crawler_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartBlueprintRunOutput {
+    /// <p>The run ID for this blueprint run.</p>
+    pub run_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for StartBlueprintRunOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartBlueprintRunOutput");
+        formatter.field("run_id", &self.run_id);
+        formatter.finish()
+    }
+}
+/// See [`StartBlueprintRunOutput`](crate::output::StartBlueprintRunOutput)
+pub mod start_blueprint_run_output {
+    /// A builder for [`StartBlueprintRunOutput`](crate::output::StartBlueprintRunOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The run ID for this blueprint run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartBlueprintRunOutput`](crate::output::StartBlueprintRunOutput)
+        pub fn build(self) -> crate::output::StartBlueprintRunOutput {
+            crate::output::StartBlueprintRunOutput {
+                run_id: self.run_id,
+            }
+        }
+    }
+}
+impl StartBlueprintRunOutput {
+    /// Creates a new builder-style object to manufacture [`StartBlueprintRunOutput`](crate::output::StartBlueprintRunOutput)
+    pub fn builder() -> crate::output::start_blueprint_run_output::Builder {
+        crate::output::start_blueprint_run_output::Builder::default()
     }
 }
 
@@ -2596,6 +2686,70 @@ impl ListCrawlersOutput {
     /// Creates a new builder-style object to manufacture [`ListCrawlersOutput`](crate::output::ListCrawlersOutput)
     pub fn builder() -> crate::output::list_crawlers_output::Builder {
         crate::output::list_crawlers_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListBlueprintsOutput {
+    /// <p>List of names of blueprints in the account.</p>
+    pub blueprints: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A continuation token, if not all blueprint names have been returned.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListBlueprintsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListBlueprintsOutput");
+        formatter.field("blueprints", &self.blueprints);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListBlueprintsOutput`](crate::output::ListBlueprintsOutput)
+pub mod list_blueprints_output {
+    /// A builder for [`ListBlueprintsOutput`](crate::output::ListBlueprintsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blueprints: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn blueprints(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.blueprints.unwrap_or_default();
+            v.push(input.into());
+            self.blueprints = Some(v);
+            self
+        }
+        pub fn set_blueprints(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.blueprints = input;
+            self
+        }
+        /// <p>A continuation token, if not all blueprint names have been returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListBlueprintsOutput`](crate::output::ListBlueprintsOutput)
+        pub fn build(self) -> crate::output::ListBlueprintsOutput {
+            crate::output::ListBlueprintsOutput {
+                blueprints: self.blueprints,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListBlueprintsOutput {
+    /// Creates a new builder-style object to manufacture [`ListBlueprintsOutput`](crate::output::ListBlueprintsOutput)
+    pub fn builder() -> crate::output::list_blueprints_output::Builder {
+        crate::output::list_blueprints_output::Builder::default()
     }
 }
 
@@ -6494,6 +6648,168 @@ impl GetCatalogImportStatusOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBlueprintRunsOutput {
+    /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
+    pub blueprint_runs: std::option::Option<std::vec::Vec<crate::model::BlueprintRun>>,
+    /// <p>A continuation token, if not all blueprint runs have been returned.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetBlueprintRunsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBlueprintRunsOutput");
+        formatter.field("blueprint_runs", &self.blueprint_runs);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetBlueprintRunsOutput`](crate::output::GetBlueprintRunsOutput)
+pub mod get_blueprint_runs_output {
+    /// A builder for [`GetBlueprintRunsOutput`](crate::output::GetBlueprintRunsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blueprint_runs: std::option::Option<std::vec::Vec<crate::model::BlueprintRun>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn blueprint_runs(mut self, input: impl Into<crate::model::BlueprintRun>) -> Self {
+            let mut v = self.blueprint_runs.unwrap_or_default();
+            v.push(input.into());
+            self.blueprint_runs = Some(v);
+            self
+        }
+        pub fn set_blueprint_runs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BlueprintRun>>,
+        ) -> Self {
+            self.blueprint_runs = input;
+            self
+        }
+        /// <p>A continuation token, if not all blueprint runs have been returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBlueprintRunsOutput`](crate::output::GetBlueprintRunsOutput)
+        pub fn build(self) -> crate::output::GetBlueprintRunsOutput {
+            crate::output::GetBlueprintRunsOutput {
+                blueprint_runs: self.blueprint_runs,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetBlueprintRunsOutput {
+    /// Creates a new builder-style object to manufacture [`GetBlueprintRunsOutput`](crate::output::GetBlueprintRunsOutput)
+    pub fn builder() -> crate::output::get_blueprint_runs_output::Builder {
+        crate::output::get_blueprint_runs_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBlueprintRunOutput {
+    /// <p>Returns a <code>BlueprintRun</code> object.</p>
+    pub blueprint_run: std::option::Option<crate::model::BlueprintRun>,
+}
+impl std::fmt::Debug for GetBlueprintRunOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBlueprintRunOutput");
+        formatter.field("blueprint_run", &self.blueprint_run);
+        formatter.finish()
+    }
+}
+/// See [`GetBlueprintRunOutput`](crate::output::GetBlueprintRunOutput)
+pub mod get_blueprint_run_output {
+    /// A builder for [`GetBlueprintRunOutput`](crate::output::GetBlueprintRunOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blueprint_run: std::option::Option<crate::model::BlueprintRun>,
+    }
+    impl Builder {
+        /// <p>Returns a <code>BlueprintRun</code> object.</p>
+        pub fn blueprint_run(mut self, input: crate::model::BlueprintRun) -> Self {
+            self.blueprint_run = Some(input);
+            self
+        }
+        pub fn set_blueprint_run(
+            mut self,
+            input: std::option::Option<crate::model::BlueprintRun>,
+        ) -> Self {
+            self.blueprint_run = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBlueprintRunOutput`](crate::output::GetBlueprintRunOutput)
+        pub fn build(self) -> crate::output::GetBlueprintRunOutput {
+            crate::output::GetBlueprintRunOutput {
+                blueprint_run: self.blueprint_run,
+            }
+        }
+    }
+}
+impl GetBlueprintRunOutput {
+    /// Creates a new builder-style object to manufacture [`GetBlueprintRunOutput`](crate::output::GetBlueprintRunOutput)
+    pub fn builder() -> crate::output::get_blueprint_run_output::Builder {
+        crate::output::get_blueprint_run_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBlueprintOutput {
+    /// <p>Returns a <code>Blueprint</code> object.</p>
+    pub blueprint: std::option::Option<crate::model::Blueprint>,
+}
+impl std::fmt::Debug for GetBlueprintOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBlueprintOutput");
+        formatter.field("blueprint", &self.blueprint);
+        formatter.finish()
+    }
+}
+/// See [`GetBlueprintOutput`](crate::output::GetBlueprintOutput)
+pub mod get_blueprint_output {
+    /// A builder for [`GetBlueprintOutput`](crate::output::GetBlueprintOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blueprint: std::option::Option<crate::model::Blueprint>,
+    }
+    impl Builder {
+        /// <p>Returns a <code>Blueprint</code> object.</p>
+        pub fn blueprint(mut self, input: crate::model::Blueprint) -> Self {
+            self.blueprint = Some(input);
+            self
+        }
+        pub fn set_blueprint(
+            mut self,
+            input: std::option::Option<crate::model::Blueprint>,
+        ) -> Self {
+            self.blueprint = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBlueprintOutput`](crate::output::GetBlueprintOutput)
+        pub fn build(self) -> crate::output::GetBlueprintOutput {
+            crate::output::GetBlueprintOutput {
+                blueprint: self.blueprint,
+            }
+        }
+    }
+}
+impl GetBlueprintOutput {
+    /// Creates a new builder-style object to manufacture [`GetBlueprintOutput`](crate::output::GetBlueprintOutput)
+    pub fn builder() -> crate::output::get_blueprint_output::Builder {
+        crate::output::get_blueprint_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkflowOutput {
     /// <p>Name of the workflow specified in input.</p>
     pub name: std::option::Option<std::string::String>,
@@ -7287,6 +7603,50 @@ impl DeleteClassifierOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClassifierOutput`](crate::output::DeleteClassifierOutput)
     pub fn builder() -> crate::output::delete_classifier_output::Builder {
         crate::output::delete_classifier_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteBlueprintOutput {
+    /// <p>Returns the name of the blueprint that was deleted.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteBlueprintOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteBlueprintOutput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`DeleteBlueprintOutput`](crate::output::DeleteBlueprintOutput)
+pub mod delete_blueprint_output {
+    /// A builder for [`DeleteBlueprintOutput`](crate::output::DeleteBlueprintOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns the name of the blueprint that was deleted.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteBlueprintOutput`](crate::output::DeleteBlueprintOutput)
+        pub fn build(self) -> crate::output::DeleteBlueprintOutput {
+            crate::output::DeleteBlueprintOutput { name: self.name }
+        }
+    }
+}
+impl DeleteBlueprintOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBlueprintOutput`](crate::output::DeleteBlueprintOutput)
+    pub fn builder() -> crate::output::delete_blueprint_output::Builder {
+        crate::output::delete_blueprint_output::Builder::default()
     }
 }
 
@@ -8560,6 +8920,50 @@ impl CreateClassifierOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateBlueprintOutput {
+    /// <p>Returns the name of the blueprint that was registered.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateBlueprintOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBlueprintOutput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`CreateBlueprintOutput`](crate::output::CreateBlueprintOutput)
+pub mod create_blueprint_output {
+    /// A builder for [`CreateBlueprintOutput`](crate::output::CreateBlueprintOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns the name of the blueprint that was registered.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateBlueprintOutput`](crate::output::CreateBlueprintOutput)
+        pub fn build(self) -> crate::output::CreateBlueprintOutput {
+            crate::output::CreateBlueprintOutput { name: self.name }
+        }
+    }
+}
+impl CreateBlueprintOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBlueprintOutput`](crate::output::CreateBlueprintOutput)
+    pub fn builder() -> crate::output::create_blueprint_output::Builder {
+        crate::output::create_blueprint_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckSchemaVersionValidityOutput {
     /// <p>Return true, if the schema is valid and false otherwise.</p>
     pub valid: bool,
@@ -9238,6 +9642,74 @@ impl BatchGetCrawlersOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetCrawlersOutput`](crate::output::BatchGetCrawlersOutput)
     pub fn builder() -> crate::output::batch_get_crawlers_output::Builder {
         crate::output::batch_get_crawlers_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetBlueprintsOutput {
+    /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
+    pub blueprints: std::option::Option<std::vec::Vec<crate::model::Blueprint>>,
+    /// <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
+    pub missing_blueprints: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for BatchGetBlueprintsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetBlueprintsOutput");
+        formatter.field("blueprints", &self.blueprints);
+        formatter.field("missing_blueprints", &self.missing_blueprints);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetBlueprintsOutput`](crate::output::BatchGetBlueprintsOutput)
+pub mod batch_get_blueprints_output {
+    /// A builder for [`BatchGetBlueprintsOutput`](crate::output::BatchGetBlueprintsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blueprints: std::option::Option<std::vec::Vec<crate::model::Blueprint>>,
+        pub(crate) missing_blueprints: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        pub fn blueprints(mut self, input: impl Into<crate::model::Blueprint>) -> Self {
+            let mut v = self.blueprints.unwrap_or_default();
+            v.push(input.into());
+            self.blueprints = Some(v);
+            self
+        }
+        pub fn set_blueprints(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Blueprint>>,
+        ) -> Self {
+            self.blueprints = input;
+            self
+        }
+        pub fn missing_blueprints(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.missing_blueprints.unwrap_or_default();
+            v.push(input.into());
+            self.missing_blueprints = Some(v);
+            self
+        }
+        pub fn set_missing_blueprints(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.missing_blueprints = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetBlueprintsOutput`](crate::output::BatchGetBlueprintsOutput)
+        pub fn build(self) -> crate::output::BatchGetBlueprintsOutput {
+            crate::output::BatchGetBlueprintsOutput {
+                blueprints: self.blueprints,
+                missing_blueprints: self.missing_blueprints,
+            }
+        }
+    }
+}
+impl BatchGetBlueprintsOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetBlueprintsOutput`](crate::output::BatchGetBlueprintsOutput)
+    pub fn builder() -> crate::output::batch_get_blueprints_output::Builder {
+        crate::output::batch_get_blueprints_output::Builder::default()
     }
 }
 

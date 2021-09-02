@@ -3,7 +3,7 @@
 pub fn parse_put_events_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutEventsOutput, crate::error::PutEventsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutEventsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -53,7 +53,7 @@ pub fn parse_put_events_response(
 pub fn parse_put_items_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutItemsOutput, crate::error::PutItemsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutItemsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -144,7 +144,7 @@ pub fn parse_put_items_response(
 pub fn parse_put_users_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutUsersOutput, crate::error::PutUsersError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutUsersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

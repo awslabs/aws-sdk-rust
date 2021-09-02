@@ -8,6 +8,7 @@
 
 use std::future::Future;
 use std::pin::Pin;
+use std::sync::Arc;
 use std::task::{Context, Poll};
 use std::time::Duration;
 
@@ -29,7 +30,7 @@ where
 
 /// Returns a default sleep implementation based on the features enabled, or `None` if
 /// there isn't one available from this crate.
-pub fn default_async_sleep() -> Option<Box<dyn AsyncSleep>> {
+pub fn default_async_sleep() -> Option<Arc<dyn AsyncSleep>> {
     sleep_tokio()
 }
 
@@ -38,7 +39,7 @@ pub fn default_async_sleep() -> Option<Box<dyn AsyncSleep>> {
 pub struct Sleep(Pin<Box<dyn Future<Output = ()> + Send + 'static>>);
 
 impl Sleep {
-    fn new(future: impl Future<Output = ()> + Send + 'static) -> Sleep {
+    pub fn new(future: impl Future<Output = ()> + Send + 'static) -> Sleep {
         Sleep(Box::pin(future))
     }
 }
@@ -72,11 +73,11 @@ impl AsyncSleep for TokioSleep {
 }
 
 #[cfg(feature = "rt-tokio")]
-fn sleep_tokio() -> Option<Box<dyn AsyncSleep>> {
-    Some(Box::new(TokioSleep::new()))
+fn sleep_tokio() -> Option<Arc<dyn AsyncSleep>> {
+    Some(Arc::new(TokioSleep::new()))
 }
 
 #[cfg(not(feature = "rt-tokio"))]
-fn sleep_tokio() -> Option<Box<dyn AsyncSleep>> {
+fn sleep_tokio() -> Option<Arc<dyn AsyncSleep>> {
     None
 }

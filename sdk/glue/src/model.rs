@@ -11413,6 +11413,8 @@ pub struct Workflow {
     pub graph: std::option::Option<crate::model::WorkflowGraph>,
     /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
     pub max_concurrent_runs: std::option::Option<i32>,
+    /// <p>This structure indicates the details of the blueprint that this particular workflow is created from.</p>
+    pub blueprint_details: std::option::Option<crate::model::BlueprintDetails>,
 }
 impl std::fmt::Debug for Workflow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11425,6 +11427,7 @@ impl std::fmt::Debug for Workflow {
         formatter.field("last_run", &self.last_run);
         formatter.field("graph", &self.graph);
         formatter.field("max_concurrent_runs", &self.max_concurrent_runs);
+        formatter.field("blueprint_details", &self.blueprint_details);
         formatter.finish()
     }
 }
@@ -11444,6 +11447,7 @@ pub mod workflow {
         pub(crate) last_run: std::option::Option<crate::model::WorkflowRun>,
         pub(crate) graph: std::option::Option<crate::model::WorkflowGraph>,
         pub(crate) max_concurrent_runs: std::option::Option<i32>,
+        pub(crate) blueprint_details: std::option::Option<crate::model::BlueprintDetails>,
     }
     impl Builder {
         /// <p>The name of the workflow.</p>
@@ -11538,6 +11542,18 @@ pub mod workflow {
             self.max_concurrent_runs = input;
             self
         }
+        /// <p>This structure indicates the details of the blueprint that this particular workflow is created from.</p>
+        pub fn blueprint_details(mut self, input: crate::model::BlueprintDetails) -> Self {
+            self.blueprint_details = Some(input);
+            self
+        }
+        pub fn set_blueprint_details(
+            mut self,
+            input: std::option::Option<crate::model::BlueprintDetails>,
+        ) -> Self {
+            self.blueprint_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Workflow`](crate::model::Workflow)
         pub fn build(self) -> crate::model::Workflow {
             crate::model::Workflow {
@@ -11549,6 +11565,7 @@ pub mod workflow {
                 last_run: self.last_run,
                 graph: self.graph,
                 max_concurrent_runs: self.max_concurrent_runs,
+                blueprint_details: self.blueprint_details,
             }
         }
     }
@@ -11557,6 +11574,70 @@ impl Workflow {
     /// Creates a new builder-style object to manufacture [`Workflow`](crate::model::Workflow)
     pub fn builder() -> crate::model::workflow::Builder {
         crate::model::workflow::Builder::default()
+    }
+}
+
+/// <p>The details of a blueprint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BlueprintDetails {
+    /// <p>The name of the blueprint.</p>
+    pub blueprint_name: std::option::Option<std::string::String>,
+    /// <p>The run ID for this blueprint.</p>
+    pub run_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for BlueprintDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BlueprintDetails");
+        formatter.field("blueprint_name", &self.blueprint_name);
+        formatter.field("run_id", &self.run_id);
+        formatter.finish()
+    }
+}
+/// See [`BlueprintDetails`](crate::model::BlueprintDetails)
+pub mod blueprint_details {
+    /// A builder for [`BlueprintDetails`](crate::model::BlueprintDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blueprint_name: std::option::Option<std::string::String>,
+        pub(crate) run_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the blueprint.</p>
+        pub fn blueprint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.blueprint_name = Some(input.into());
+            self
+        }
+        pub fn set_blueprint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blueprint_name = input;
+            self
+        }
+        /// <p>The run ID for this blueprint.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BlueprintDetails`](crate::model::BlueprintDetails)
+        pub fn build(self) -> crate::model::BlueprintDetails {
+            crate::model::BlueprintDetails {
+                blueprint_name: self.blueprint_name,
+                run_id: self.run_id,
+            }
+        }
+    }
+}
+impl BlueprintDetails {
+    /// Creates a new builder-style object to manufacture [`BlueprintDetails`](crate::model::BlueprintDetails)
+    pub fn builder() -> crate::model::blueprint_details::Builder {
+        crate::model::blueprint_details::Builder::default()
     }
 }
 
@@ -19128,6 +19209,680 @@ impl CatalogImportStatus {
     /// Creates a new builder-style object to manufacture [`CatalogImportStatus`](crate::model::CatalogImportStatus)
     pub fn builder() -> crate::model::catalog_import_status::Builder {
         crate::model::catalog_import_status::Builder::default()
+    }
+}
+
+/// <p>The details of a blueprint run.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BlueprintRun {
+    /// <p>The name of the blueprint.</p>
+    pub blueprint_name: std::option::Option<std::string::String>,
+    /// <p>The run ID for this blueprint run.</p>
+    pub run_id: std::option::Option<std::string::String>,
+    /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
+    pub workflow_name: std::option::Option<std::string::String>,
+    /// <p>The state of the blueprint run. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Running — The blueprint run is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>Succeeded — The blueprint run completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed — The blueprint run failed and rollback is complete.</p>
+    /// </li>
+    /// <li>
+    /// <p>Rolling Back — The blueprint run failed and rollback is in progress.</p>
+    /// </li>
+    /// </ul>
+    pub state: std::option::Option<crate::model::BlueprintRunState>,
+    /// <p>The date and time that the blueprint run started.</p>
+    pub started_on: std::option::Option<smithy_types::Instant>,
+    /// <p>The date and time that the blueprint run completed.</p>
+    pub completed_on: std::option::Option<smithy_types::Instant>,
+    /// <p>Indicates any errors that are seen while running the blueprint.</p>
+    pub error_message: std::option::Option<std::string::String>,
+    /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
+    pub rollback_error_message: std::option::Option<std::string::String>,
+    /// <p>The blueprint parameters as a string. You will have to provide a value for each key that is required from the parameter spec that is defined in the <code>Blueprint$ParameterSpec</code>.</p>
+    pub parameters: std::option::Option<std::string::String>,
+    /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for BlueprintRun {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BlueprintRun");
+        formatter.field("blueprint_name", &self.blueprint_name);
+        formatter.field("run_id", &self.run_id);
+        formatter.field("workflow_name", &self.workflow_name);
+        formatter.field("state", &self.state);
+        formatter.field("started_on", &self.started_on);
+        formatter.field("completed_on", &self.completed_on);
+        formatter.field("error_message", &self.error_message);
+        formatter.field("rollback_error_message", &self.rollback_error_message);
+        formatter.field("parameters", &self.parameters);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.finish()
+    }
+}
+/// See [`BlueprintRun`](crate::model::BlueprintRun)
+pub mod blueprint_run {
+    /// A builder for [`BlueprintRun`](crate::model::BlueprintRun)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) blueprint_name: std::option::Option<std::string::String>,
+        pub(crate) run_id: std::option::Option<std::string::String>,
+        pub(crate) workflow_name: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::BlueprintRunState>,
+        pub(crate) started_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) completed_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) rollback_error_message: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the blueprint.</p>
+        pub fn blueprint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.blueprint_name = Some(input.into());
+            self
+        }
+        pub fn set_blueprint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blueprint_name = input;
+            self
+        }
+        /// <p>The run ID for this blueprint run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
+        pub fn workflow_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_name = Some(input.into());
+            self
+        }
+        pub fn set_workflow_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workflow_name = input;
+            self
+        }
+        /// <p>The state of the blueprint run. Possible values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running — The blueprint run is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>Succeeded — The blueprint run completed successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>Failed — The blueprint run failed and rollback is complete.</p>
+        /// </li>
+        /// <li>
+        /// <p>Rolling Back — The blueprint run failed and rollback is in progress.</p>
+        /// </li>
+        /// </ul>
+        pub fn state(mut self, input: crate::model::BlueprintRunState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::BlueprintRunState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The date and time that the blueprint run started.</p>
+        pub fn started_on(mut self, input: smithy_types::Instant) -> Self {
+            self.started_on = Some(input);
+            self
+        }
+        pub fn set_started_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.started_on = input;
+            self
+        }
+        /// <p>The date and time that the blueprint run completed.</p>
+        pub fn completed_on(mut self, input: smithy_types::Instant) -> Self {
+            self.completed_on = Some(input);
+            self
+        }
+        pub fn set_completed_on(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.completed_on = input;
+            self
+        }
+        /// <p>Indicates any errors that are seen while running the blueprint.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
+        pub fn rollback_error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rollback_error_message = Some(input.into());
+            self
+        }
+        pub fn set_rollback_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rollback_error_message = input;
+            self
+        }
+        /// <p>The blueprint parameters as a string. You will have to provide a value for each key that is required from the parameter spec that is defined in the <code>Blueprint$ParameterSpec</code>.</p>
+        pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameters = Some(input.into());
+            self
+        }
+        pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BlueprintRun`](crate::model::BlueprintRun)
+        pub fn build(self) -> crate::model::BlueprintRun {
+            crate::model::BlueprintRun {
+                blueprint_name: self.blueprint_name,
+                run_id: self.run_id,
+                workflow_name: self.workflow_name,
+                state: self.state,
+                started_on: self.started_on,
+                completed_on: self.completed_on,
+                error_message: self.error_message,
+                rollback_error_message: self.rollback_error_message,
+                parameters: self.parameters,
+                role_arn: self.role_arn,
+            }
+        }
+    }
+}
+impl BlueprintRun {
+    /// Creates a new builder-style object to manufacture [`BlueprintRun`](crate::model::BlueprintRun)
+    pub fn builder() -> crate::model::blueprint_run::Builder {
+        crate::model::blueprint_run::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BlueprintRunState {
+    Failed,
+    RollingBack,
+    Running,
+    Succeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BlueprintRunState {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => BlueprintRunState::Failed,
+            "ROLLING_BACK" => BlueprintRunState::RollingBack,
+            "RUNNING" => BlueprintRunState::Running,
+            "SUCCEEDED" => BlueprintRunState::Succeeded,
+            other => BlueprintRunState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BlueprintRunState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BlueprintRunState::from(s))
+    }
+}
+impl BlueprintRunState {
+    pub fn as_str(&self) -> &str {
+        match self {
+            BlueprintRunState::Failed => "FAILED",
+            BlueprintRunState::RollingBack => "ROLLING_BACK",
+            BlueprintRunState::Running => "RUNNING",
+            BlueprintRunState::Succeeded => "SUCCEEDED",
+            BlueprintRunState::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "ROLLING_BACK", "RUNNING", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for BlueprintRunState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The details of a blueprint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Blueprint {
+    /// <p>The name of the blueprint.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the blueprint.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The date and time the blueprint was registered.</p>
+    pub created_on: std::option::Option<smithy_types::Instant>,
+    /// <p>The date and time the blueprint was last modified.</p>
+    pub last_modified_on: std::option::Option<smithy_types::Instant>,
+    /// <p>A JSON string that indicates the list of parameter specifications for the blueprint.</p>
+    pub parameter_spec: std::option::Option<std::string::String>,
+    /// <p>Specifies the path in Amazon S3 where the blueprint is published.</p>
+    pub blueprint_location: std::option::Option<std::string::String>,
+    /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you call <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in Glue.</p>
+    pub blueprint_service_location: std::option::Option<std::string::String>,
+    /// <p>The status of the blueprint registration.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Creating — The blueprint registration is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>Active — The blueprint has been successfully registered.</p>
+    /// </li>
+    /// <li>
+    /// <p>Updating — An update to the blueprint registration is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed — The blueprint registration failed.</p>
+    /// </li>
+    /// </ul>
+    pub status: std::option::Option<crate::model::BlueprintStatus>,
+    /// <p>An error message.</p>
+    pub error_message: std::option::Option<std::string::String>,
+    /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
+    pub last_active_definition: std::option::Option<crate::model::LastActiveDefinition>,
+}
+impl std::fmt::Debug for Blueprint {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Blueprint");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("created_on", &self.created_on);
+        formatter.field("last_modified_on", &self.last_modified_on);
+        formatter.field("parameter_spec", &self.parameter_spec);
+        formatter.field("blueprint_location", &self.blueprint_location);
+        formatter.field(
+            "blueprint_service_location",
+            &self.blueprint_service_location,
+        );
+        formatter.field("status", &self.status);
+        formatter.field("error_message", &self.error_message);
+        formatter.field("last_active_definition", &self.last_active_definition);
+        formatter.finish()
+    }
+}
+/// See [`Blueprint`](crate::model::Blueprint)
+pub mod blueprint {
+    /// A builder for [`Blueprint`](crate::model::Blueprint)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) parameter_spec: std::option::Option<std::string::String>,
+        pub(crate) blueprint_location: std::option::Option<std::string::String>,
+        pub(crate) blueprint_service_location: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::BlueprintStatus>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) last_active_definition: std::option::Option<crate::model::LastActiveDefinition>,
+    }
+    impl Builder {
+        /// <p>The name of the blueprint.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the blueprint.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The date and time the blueprint was registered.</p>
+        pub fn created_on(mut self, input: smithy_types::Instant) -> Self {
+            self.created_on = Some(input);
+            self
+        }
+        pub fn set_created_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_on = input;
+            self
+        }
+        /// <p>The date and time the blueprint was last modified.</p>
+        pub fn last_modified_on(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_on = Some(input);
+            self
+        }
+        pub fn set_last_modified_on(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_modified_on = input;
+            self
+        }
+        /// <p>A JSON string that indicates the list of parameter specifications for the blueprint.</p>
+        pub fn parameter_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_spec = Some(input.into());
+            self
+        }
+        pub fn set_parameter_spec(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parameter_spec = input;
+            self
+        }
+        /// <p>Specifies the path in Amazon S3 where the blueprint is published.</p>
+        pub fn blueprint_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.blueprint_location = Some(input.into());
+            self
+        }
+        pub fn set_blueprint_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blueprint_location = input;
+            self
+        }
+        /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you call <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in Glue.</p>
+        pub fn blueprint_service_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.blueprint_service_location = Some(input.into());
+            self
+        }
+        pub fn set_blueprint_service_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blueprint_service_location = input;
+            self
+        }
+        /// <p>The status of the blueprint registration.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Creating — The blueprint registration is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>Active — The blueprint has been successfully registered.</p>
+        /// </li>
+        /// <li>
+        /// <p>Updating — An update to the blueprint registration is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>Failed — The blueprint registration failed.</p>
+        /// </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::BlueprintStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::BlueprintStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>An error message.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
+        pub fn last_active_definition(mut self, input: crate::model::LastActiveDefinition) -> Self {
+            self.last_active_definition = Some(input);
+            self
+        }
+        pub fn set_last_active_definition(
+            mut self,
+            input: std::option::Option<crate::model::LastActiveDefinition>,
+        ) -> Self {
+            self.last_active_definition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Blueprint`](crate::model::Blueprint)
+        pub fn build(self) -> crate::model::Blueprint {
+            crate::model::Blueprint {
+                name: self.name,
+                description: self.description,
+                created_on: self.created_on,
+                last_modified_on: self.last_modified_on,
+                parameter_spec: self.parameter_spec,
+                blueprint_location: self.blueprint_location,
+                blueprint_service_location: self.blueprint_service_location,
+                status: self.status,
+                error_message: self.error_message,
+                last_active_definition: self.last_active_definition,
+            }
+        }
+    }
+}
+impl Blueprint {
+    /// Creates a new builder-style object to manufacture [`Blueprint`](crate::model::Blueprint)
+    pub fn builder() -> crate::model::blueprint::Builder {
+        crate::model::blueprint::Builder::default()
+    }
+}
+
+/// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LastActiveDefinition {
+    /// <p>The description of the blueprint.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The date and time the blueprint was last modified.</p>
+    pub last_modified_on: std::option::Option<smithy_types::Instant>,
+    /// <p>A JSON string specifying the parameters for the blueprint.</p>
+    pub parameter_spec: std::option::Option<std::string::String>,
+    /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
+    pub blueprint_location: std::option::Option<std::string::String>,
+    /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
+    pub blueprint_service_location: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LastActiveDefinition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LastActiveDefinition");
+        formatter.field("description", &self.description);
+        formatter.field("last_modified_on", &self.last_modified_on);
+        formatter.field("parameter_spec", &self.parameter_spec);
+        formatter.field("blueprint_location", &self.blueprint_location);
+        formatter.field(
+            "blueprint_service_location",
+            &self.blueprint_service_location,
+        );
+        formatter.finish()
+    }
+}
+/// See [`LastActiveDefinition`](crate::model::LastActiveDefinition)
+pub mod last_active_definition {
+    /// A builder for [`LastActiveDefinition`](crate::model::LastActiveDefinition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) last_modified_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) parameter_spec: std::option::Option<std::string::String>,
+        pub(crate) blueprint_location: std::option::Option<std::string::String>,
+        pub(crate) blueprint_service_location: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The description of the blueprint.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The date and time the blueprint was last modified.</p>
+        pub fn last_modified_on(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_on = Some(input);
+            self
+        }
+        pub fn set_last_modified_on(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_modified_on = input;
+            self
+        }
+        /// <p>A JSON string specifying the parameters for the blueprint.</p>
+        pub fn parameter_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_spec = Some(input.into());
+            self
+        }
+        pub fn set_parameter_spec(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parameter_spec = input;
+            self
+        }
+        /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
+        pub fn blueprint_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.blueprint_location = Some(input.into());
+            self
+        }
+        pub fn set_blueprint_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blueprint_location = input;
+            self
+        }
+        /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
+        pub fn blueprint_service_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.blueprint_service_location = Some(input.into());
+            self
+        }
+        pub fn set_blueprint_service_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.blueprint_service_location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LastActiveDefinition`](crate::model::LastActiveDefinition)
+        pub fn build(self) -> crate::model::LastActiveDefinition {
+            crate::model::LastActiveDefinition {
+                description: self.description,
+                last_modified_on: self.last_modified_on,
+                parameter_spec: self.parameter_spec,
+                blueprint_location: self.blueprint_location,
+                blueprint_service_location: self.blueprint_service_location,
+            }
+        }
+    }
+}
+impl LastActiveDefinition {
+    /// Creates a new builder-style object to manufacture [`LastActiveDefinition`](crate::model::LastActiveDefinition)
+    pub fn builder() -> crate::model::last_active_definition::Builder {
+        crate::model::last_active_definition::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BlueprintStatus {
+    Active,
+    Creating,
+    Failed,
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BlueprintStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => BlueprintStatus::Active,
+            "CREATING" => BlueprintStatus::Creating,
+            "FAILED" => BlueprintStatus::Failed,
+            "UPDATING" => BlueprintStatus::Updating,
+            other => BlueprintStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BlueprintStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BlueprintStatus::from(s))
+    }
+}
+impl BlueprintStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            BlueprintStatus::Active => "ACTIVE",
+            BlueprintStatus::Creating => "CREATING",
+            BlueprintStatus::Failed => "FAILED",
+            BlueprintStatus::Updating => "UPDATING",
+            BlueprintStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CREATING", "FAILED", "UPDATING"]
+    }
+}
+impl AsRef<str> for BlueprintStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

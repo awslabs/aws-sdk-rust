@@ -3,7 +3,7 @@
 pub fn parse_describe_stream_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeStreamOutput, crate::error::DescribeStreamError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStreamError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -76,7 +76,7 @@ pub fn parse_describe_stream_response(
 pub fn parse_get_records_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRecordsOutput, crate::error::GetRecordsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRecordsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -211,7 +211,7 @@ pub fn parse_get_shard_iterator_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetShardIteratorOutput, crate::error::GetShardIteratorError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetShardIteratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -305,7 +305,7 @@ pub fn parse_get_shard_iterator_response(
 pub fn parse_list_streams_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListStreamsOutput, crate::error::ListStreamsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListStreamsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

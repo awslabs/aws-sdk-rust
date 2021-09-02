@@ -45,8 +45,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CancelImageCreationError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CancelImageCreationError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CancelImageCreationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CancelImageCreationError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CancelImageCreationErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
@@ -63,8 +66,11 @@ impl From<smithy_http::result::SdkError<crate::error::CancelImageCreationError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateComponentError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateComponentError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateComponentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateComponentError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateComponentErrorKind::CallRateLimitExceededException(inner) => {
@@ -106,8 +112,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateComponentError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateContainerRecipeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateContainerRecipeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateContainerRecipeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateContainerRecipeError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateContainerRecipeErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
@@ -127,11 +138,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateContainerRecipeError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateDistributionConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateDistributionConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateDistributionConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::CreateDistributionConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -152,8 +165,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDistributionConfigur
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateImageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateImageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateImageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateImageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateImageErrorKind::CallRateLimitExceededException(inner) => {
@@ -189,8 +205,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateImageError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateImagePipelineError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateImagePipelineError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateImagePipelineError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateImagePipelineError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateImagePipelineErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
@@ -209,8 +228,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateImagePipelineError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateImageRecipeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateImageRecipeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateImageRecipeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateImageRecipeError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateImageRecipeErrorKind::CallRateLimitExceededException(inner) => {
@@ -254,11 +276,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateImageRecipeError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateInfrastructureConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateInfrastructureConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateInfrastructureConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::CreateInfrastructureConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -278,8 +302,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateInfrastructureConfig
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteComponentError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteComponentError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteComponentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteComponentError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteComponentErrorKind::CallRateLimitExceededException(inner) => {
@@ -309,8 +336,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteComponentError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteContainerRecipeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteContainerRecipeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteContainerRecipeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteContainerRecipeError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteContainerRecipeErrorKind::CallRateLimitExceededException(
@@ -342,11 +374,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteContainerRecipeError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteDistributionConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteDistributionConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteDistributionConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteDistributionConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -363,8 +397,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDistributionConfigur
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteImageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteImageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteImageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteImageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteImageErrorKind::CallRateLimitExceededException(inner) => {
@@ -394,8 +431,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteImageError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteImagePipelineError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteImagePipelineError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteImagePipelineError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteImagePipelineError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteImagePipelineErrorKind::CallRateLimitExceededException(
@@ -427,8 +467,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteImagePipelineError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteImageRecipeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteImageRecipeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteImageRecipeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteImageRecipeError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteImageRecipeErrorKind::CallRateLimitExceededException(inner) => {
@@ -460,11 +503,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteImageRecipeError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteInfrastructureConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteInfrastructureConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteInfrastructureConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteInfrastructureConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -481,8 +526,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteInfrastructureConfig
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetComponentError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetComponentError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetComponentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetComponentError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetComponentErrorKind::CallRateLimitExceededException(inner) => {
@@ -509,8 +557,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetComponentError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetComponentPolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetComponentPolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetComponentPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetComponentPolicyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetComponentPolicyErrorKind::CallRateLimitExceededException(
@@ -539,8 +590,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetComponentPolicyError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetContainerRecipeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetContainerRecipeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetContainerRecipeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetContainerRecipeError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetContainerRecipeErrorKind::CallRateLimitExceededException(
@@ -569,9 +623,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetContainerRecipeError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetContainerRecipePolicyError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetContainerRecipePolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetContainerRecipePolicyError>,
+        err: smithy_http::result::SdkError<crate::error::GetContainerRecipePolicyError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -601,11 +659,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetContainerRecipePolicyEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetDistributionConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDistributionConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetDistributionConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::GetDistributionConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -621,8 +681,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetDistributionConfigurati
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetImageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetImageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetImageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetImageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetImageErrorKind::CallRateLimitExceededException(inner) => {
@@ -649,8 +712,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetImageError>> for Error 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetImagePipelineError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetImagePipelineError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetImagePipelineError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetImagePipelineError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetImagePipelineErrorKind::CallRateLimitExceededException(inner) => {
@@ -679,8 +745,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetImagePipelineError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetImagePolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetImagePolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetImagePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetImagePolicyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetImagePolicyErrorKind::CallRateLimitExceededException(inner) => {
@@ -707,8 +776,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetImagePolicyError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetImageRecipeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetImageRecipeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetImageRecipeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetImageRecipeError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetImageRecipeErrorKind::CallRateLimitExceededException(inner) => {
@@ -735,8 +807,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetImageRecipeError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetImageRecipePolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetImageRecipePolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetImageRecipePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetImageRecipePolicyError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetImageRecipePolicyErrorKind::CallRateLimitExceededException(
@@ -765,11 +842,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetImageRecipePolicyError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetInfrastructureConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetInfrastructureConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetInfrastructureConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::GetInfrastructureConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -785,8 +864,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetInfrastructureConfigura
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ImportComponentError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ImportComponentError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ImportComponentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ImportComponentError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ImportComponentErrorKind::CallRateLimitExceededException(inner) => {
@@ -825,9 +907,13 @@ impl From<smithy_http::result::SdkError<crate::error::ImportComponentError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListComponentBuildVersionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListComponentBuildVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListComponentBuildVersionsError>,
+        err: smithy_http::result::SdkError<crate::error::ListComponentBuildVersionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -844,8 +930,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListComponentBuildVersions
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListComponentsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListComponentsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListComponentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListComponentsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListComponentsErrorKind::CallRateLimitExceededException(inner) => {
@@ -875,8 +964,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListComponentsError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListContainerRecipesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListContainerRecipesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListContainerRecipesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListContainerRecipesError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListContainerRecipesErrorKind::CallRateLimitExceededException(
@@ -908,11 +1002,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListContainerRecipesError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListDistributionConfigurationsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDistributionConfigurationsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListDistributionConfigurationsError>,
+        err: smithy_http::result::SdkError<crate::error::ListDistributionConfigurationsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -929,8 +1025,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListDistributionConfigurat
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListImageBuildVersionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListImageBuildVersionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListImageBuildVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListImageBuildVersionsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListImageBuildVersionsErrorKind::CallRateLimitExceededException(
@@ -962,8 +1063,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListImageBuildVersionsErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListImagePackagesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListImagePackagesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListImagePackagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListImagePackagesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListImagePackagesErrorKind::CallRateLimitExceededException(inner) => {
@@ -998,9 +1102,12 @@ impl From<smithy_http::result::SdkError<crate::error::ListImagePackagesError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListImagePipelineImagesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListImagePipelineImagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListImagePipelineImagesError>,
+        err: smithy_http::result::SdkError<crate::error::ListImagePipelineImagesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1036,8 +1143,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListImagePipelineImagesErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListImagePipelinesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListImagePipelinesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListImagePipelinesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListImagePipelinesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListImagePipelinesErrorKind::CallRateLimitExceededException(
@@ -1069,8 +1179,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListImagePipelinesError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListImageRecipesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListImageRecipesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListImageRecipesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListImageRecipesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListImageRecipesErrorKind::CallRateLimitExceededException(inner) => {
@@ -1102,8 +1215,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListImageRecipesError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListImagesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListImagesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListImagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListImagesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListImagesErrorKind::CallRateLimitExceededException(inner) => {
@@ -1133,11 +1249,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListImagesError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListInfrastructureConfigurationsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ListInfrastructureConfigurationsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListInfrastructureConfigurationsError>,
+        err: smithy_http::result::SdkError<crate::error::ListInfrastructureConfigurationsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1154,8 +1272,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListInfrastructureConfigur
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::InvalidParameterException(inner) => {
@@ -1175,8 +1296,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutComponentPolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutComponentPolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutComponentPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutComponentPolicyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutComponentPolicyErrorKind::CallRateLimitExceededException(
@@ -1211,9 +1335,13 @@ impl From<smithy_http::result::SdkError<crate::error::PutComponentPolicyError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutContainerRecipePolicyError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutContainerRecipePolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::PutContainerRecipePolicyError>,
+        err: smithy_http::result::SdkError<crate::error::PutContainerRecipePolicyError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1249,8 +1377,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutContainerRecipePolicyEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutImagePolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutImagePolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutImagePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutImagePolicyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutImagePolicyErrorKind::CallRateLimitExceededException(inner) => {
@@ -1283,8 +1414,13 @@ impl From<smithy_http::result::SdkError<crate::error::PutImagePolicyError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutImageRecipePolicyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutImageRecipePolicyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutImageRecipePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::PutImageRecipePolicyError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutImageRecipePolicyErrorKind::CallRateLimitExceededException(
@@ -1319,9 +1455,13 @@ impl From<smithy_http::result::SdkError<crate::error::PutImageRecipePolicyError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartImagePipelineExecutionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartImagePipelineExecutionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::StartImagePipelineExecutionError>,
+        err: smithy_http::result::SdkError<crate::error::StartImagePipelineExecutionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1340,8 +1480,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartImagePipelineExecutio
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
@@ -1359,8 +1502,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
@@ -1378,11 +1524,13 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateDistributionConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateDistributionConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateDistributionConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateDistributionConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1401,8 +1549,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDistributionConfigur
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateImagePipelineError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateImagePipelineError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateImagePipelineError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateImagePipelineError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateImagePipelineErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
@@ -1419,11 +1570,13 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateImagePipelineError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateInfrastructureConfigurationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateInfrastructureConfigurationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateInfrastructureConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateInfrastructureConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {

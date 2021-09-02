@@ -29,8 +29,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CancelQuantumTaskError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CancelQuantumTaskError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CancelQuantumTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CancelQuantumTaskError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CancelQuantumTaskErrorKind::AccessDeniedException(inner) => {
@@ -59,8 +62,11 @@ impl From<smithy_http::result::SdkError<crate::error::CancelQuantumTaskError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateQuantumTaskError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateQuantumTaskError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateQuantumTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateQuantumTaskError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateQuantumTaskErrorKind::AccessDeniedException(inner) => {
@@ -89,8 +95,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateQuantumTaskError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetDeviceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetDeviceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDeviceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetDeviceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetDeviceErrorKind::AccessDeniedException(inner) => {
@@ -120,8 +129,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetDeviceError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetQuantumTaskError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetQuantumTaskError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetQuantumTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetQuantumTaskError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetQuantumTaskErrorKind::AccessDeniedException(inner) => {
@@ -145,8 +157,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetQuantumTaskError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::InternalServiceException(inner) => {
@@ -166,8 +181,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SearchDevicesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::SearchDevicesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::SearchDevicesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::SearchDevicesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SearchDevicesErrorKind::AccessDeniedException(inner) => {
@@ -188,8 +206,11 @@ impl From<smithy_http::result::SdkError<crate::error::SearchDevicesError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SearchQuantumTasksError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::SearchQuantumTasksError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::SearchQuantumTasksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::SearchQuantumTasksError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SearchQuantumTasksErrorKind::AccessDeniedException(inner) => {
@@ -212,8 +233,11 @@ impl From<smithy_http::result::SdkError<crate::error::SearchQuantumTasksError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::InternalServiceException(inner) => {
@@ -231,8 +255,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::InternalServiceException(inner) => {
