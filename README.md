@@ -1,4 +1,4 @@
-# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.0.16--alpha-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.52.1-red)
+# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.0.17--alpha-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.52.1-red)
 
 This repo contains the new AWS SDK for Rust (the SDK) and its [public roadmap](https://github.com/awslabs/aws-sdk-rust/projects/1)
 
@@ -15,24 +15,16 @@ The SDK provides one crate per AWS service. You must add [Tokio](https://crates.
 
 ```toml
 [dependencies]
-aws-sdk-dynamodb = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.16-alpha", package = "aws-sdk-dynamodb" }
+aws-config = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.17-alpha", package = "aws-config" }
+aws-sdk-dynamodb = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.17-alpha", package = "aws-sdk-dynamodb" }
 tokio = { version = "1", features = ["full"] }
 ```
-3. Provide your AWS credentials as environment variables:
-  > **Note:** The alpha version of the SDK only supports credentials through environment variables at this time. 
 
-**Linux/MacOS**
-```bash
-export AWS_ACCESS_KEY_ID=...
-export AWS_SECRET_ACCESS_KEY=...
-export AWS_REGION=... # eg. us-east-1
-```
-**Windows**
-```cmd
-set AWS_ACCESS_KEY_ID=...
-set AWS_SECRET_ACCESS_KEY=...
-set AWS_REGION=... # eg. us-east-1
-```
+3. Provide your AWS credentials with the default credential provider chain, which currently looks in:
+   - Environment variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`
+   - Web Identity Token credentials from the environment or container
+   - The default credentials files located in `~/.aws/config` and `~/.aws/credentials` (location can vary per platform)
+**Note:** SSO, ECS, IMDS, and EKS credential sources are not supported yet.
 
 4. Make a request using DynamoDB
 
@@ -41,7 +33,8 @@ use aws_sdk_dynamodb::{Client, Error};
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
-    let client = Client::from_env();
+    let shared_config = aws_config::load_from_env().await;
+    let client = Client::new(&shared_config);
     let req = client.list_tables().limit(10);
     let resp = req.send().await?;
     println!("Current DynamoDB tables: {:?}", resp.table_names);
