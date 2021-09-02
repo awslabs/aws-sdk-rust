@@ -178,6 +178,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Mediastore
 - [x] Amazon Mediastore-Data
 - [x] Amazon Mediatailor
+- [x] Amazon MemoryDB
 - [x] Amazon Meteringmarketplace
 - [x] Amazon Migrationhub-Config
 - [x] Amazon Mobile
@@ -235,6 +236,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Synthetics
 - [x] Amazon Textract
 - [x] Amazon Transcribe
+- [x] Amazon Transcribe-Streaming
 - [x] Amazon Transfer
 - [x] Amazon Translate
 - [x] Amazon Waf
@@ -252,4 +254,3 @@ We're working on it! Please file or upvote on the relevant issue to help us prio
 - [ ] Amazon Glacier
 - [ ] Amazon Timestream-Query
 - [ ] Amazon Timestream-Write
-- [ ] Amazon Transcribe-Streaming
