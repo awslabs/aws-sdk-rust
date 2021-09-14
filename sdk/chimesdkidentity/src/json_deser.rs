@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_bad_request_exceptionjson_err(
+pub fn deser_structure_crate_error_bad_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::bad_request_exception::Builder,
 ) -> Result<crate::error::bad_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -54,7 +54,7 @@ pub fn deser_structure_bad_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -103,7 +103,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_forbidden_exceptionjson_err(
+pub fn deser_structure_crate_error_forbidden_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::forbidden_exception::Builder,
 ) -> Result<crate::error::forbidden_exception::Builder, smithy_json::deserialize::Error> {
@@ -152,7 +152,7 @@ pub fn deser_structure_forbidden_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::resource_limit_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -202,7 +202,7 @@ pub fn deser_structure_resource_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_failure_exceptionjson_err(
+pub fn deser_structure_crate_error_service_failure_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_failure_exception::Builder,
 ) -> Result<crate::error::service_failure_exception::Builder, smithy_json::deserialize::Error> {
@@ -251,7 +251,7 @@ pub fn deser_structure_service_failure_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_service_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable_exception::Builder,
 ) -> Result<crate::error::service_unavailable_exception::Builder, smithy_json::deserialize::Error> {
@@ -300,7 +300,7 @@ pub fn deser_structure_service_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttled_client_exceptionjson_err(
+pub fn deser_structure_crate_error_throttled_client_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttled_client_exception::Builder,
 ) -> Result<crate::error::throttled_client_exception::Builder, smithy_json::deserialize::Error> {
@@ -349,7 +349,7 @@ pub fn deser_structure_throttled_client_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unauthorized_client_exceptionjson_err(
+pub fn deser_structure_crate_error_unauthorized_client_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unauthorized_client_exception::Builder,
 ) -> Result<crate::error::unauthorized_client_exception::Builder, smithy_json::deserialize::Error> {
@@ -398,7 +398,7 @@ pub fn deser_structure_unauthorized_client_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_app_instance(
+pub fn deser_operation_crate_operation_create_app_instance(
     input: &[u8],
     mut builder: crate::output::create_app_instance_output::Builder,
 ) -> Result<crate::output::create_app_instance_output::Builder, smithy_json::deserialize::Error> {
@@ -437,7 +437,7 @@ pub fn deser_operation_create_app_instance(
     Ok(builder)
 }
 
-pub fn deser_operation_create_app_instance_admin(
+pub fn deser_operation_crate_operation_create_app_instance_admin(
     input: &[u8],
     mut builder: crate::output::create_app_instance_admin_output::Builder,
 ) -> Result<crate::output::create_app_instance_admin_output::Builder, smithy_json::deserialize::Error>
@@ -454,7 +454,7 @@ pub fn deser_operation_create_app_instance_admin(
                 match key.to_unescaped()?.as_ref() {
                     "AppInstanceAdmin" => {
                         builder = builder.set_app_instance_admin(
-                            crate::json_deser::deser_structure_identity(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_identity(tokens)?,
                         );
                     }
                     "AppInstanceArn" => {
@@ -482,7 +482,7 @@ pub fn deser_operation_create_app_instance_admin(
     Ok(builder)
 }
 
-pub fn deser_operation_create_app_instance_user(
+pub fn deser_operation_crate_operation_create_app_instance_user(
     input: &[u8],
     mut builder: crate::output::create_app_instance_user_output::Builder,
 ) -> Result<crate::output::create_app_instance_user_output::Builder, smithy_json::deserialize::Error>
@@ -522,7 +522,7 @@ pub fn deser_operation_create_app_instance_user(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_app_instance(
+pub fn deser_operation_crate_operation_describe_app_instance(
     input: &[u8],
     mut builder: crate::output::describe_app_instance_output::Builder,
 ) -> Result<crate::output::describe_app_instance_output::Builder, smithy_json::deserialize::Error> {
@@ -538,7 +538,7 @@ pub fn deser_operation_describe_app_instance(
                 match key.to_unescaped()?.as_ref() {
                     "AppInstance" => {
                         builder = builder.set_app_instance(
-                            crate::json_deser::deser_structure_app_instance(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_app_instance(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -559,7 +559,7 @@ pub fn deser_operation_describe_app_instance(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_app_instance_admin(
+pub fn deser_operation_crate_operation_describe_app_instance_admin(
     input: &[u8],
     mut builder: crate::output::describe_app_instance_admin_output::Builder,
 ) -> Result<
@@ -578,7 +578,9 @@ pub fn deser_operation_describe_app_instance_admin(
                 match key.to_unescaped()?.as_ref() {
                     "AppInstanceAdmin" => {
                         builder = builder.set_app_instance_admin(
-                            crate::json_deser::deser_structure_app_instance_admin(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_app_instance_admin(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -599,7 +601,7 @@ pub fn deser_operation_describe_app_instance_admin(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_app_instance_user(
+pub fn deser_operation_crate_operation_describe_app_instance_user(
     input: &[u8],
     mut builder: crate::output::describe_app_instance_user_output::Builder,
 ) -> Result<
@@ -618,7 +620,9 @@ pub fn deser_operation_describe_app_instance_user(
                 match key.to_unescaped()?.as_ref() {
                     "AppInstanceUser" => {
                         builder = builder.set_app_instance_user(
-                            crate::json_deser::deser_structure_app_instance_user(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_app_instance_user(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -639,7 +643,7 @@ pub fn deser_operation_describe_app_instance_user(
     Ok(builder)
 }
 
-pub fn deser_operation_get_app_instance_retention_settings(
+pub fn deser_operation_crate_operation_get_app_instance_retention_settings(
     input: &[u8],
     mut builder: crate::output::get_app_instance_retention_settings_output::Builder,
 ) -> Result<
@@ -658,9 +662,7 @@ pub fn deser_operation_get_app_instance_retention_settings(
                 match key.to_unescaped()?.as_ref() {
                     "AppInstanceRetentionSettings" => {
                         builder = builder.set_app_instance_retention_settings(
-                            crate::json_deser::deser_structure_app_instance_retention_settings(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_app_instance_retention_settings(tokens)?
                         );
                     }
                     "InitiateDeletionTimestamp" => {
@@ -689,7 +691,7 @@ pub fn deser_operation_get_app_instance_retention_settings(
     Ok(builder)
 }
 
-pub fn deser_operation_list_app_instance_admins(
+pub fn deser_operation_crate_operation_list_app_instance_admins(
     input: &[u8],
     mut builder: crate::output::list_app_instance_admins_output::Builder,
 ) -> Result<crate::output::list_app_instance_admins_output::Builder, smithy_json::deserialize::Error>
@@ -706,7 +708,7 @@ pub fn deser_operation_list_app_instance_admins(
                 match key.to_unescaped()?.as_ref() {
                     "AppInstanceAdmins" => {
                         builder = builder.set_app_instance_admins(
-                            crate::json_deser::deser_list_app_instance_admin_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_chimesdkidentity_app_instance_admin_list(tokens)?
                         );
                     }
                     "AppInstanceArn" => {
@@ -741,7 +743,7 @@ pub fn deser_operation_list_app_instance_admins(
     Ok(builder)
 }
 
-pub fn deser_operation_list_app_instances(
+pub fn deser_operation_crate_operation_list_app_instances(
     input: &[u8],
     mut builder: crate::output::list_app_instances_output::Builder,
 ) -> Result<crate::output::list_app_instances_output::Builder, smithy_json::deserialize::Error> {
@@ -757,7 +759,7 @@ pub fn deser_operation_list_app_instances(
                 match key.to_unescaped()?.as_ref() {
                     "AppInstances" => {
                         builder = builder.set_app_instances(
-                            crate::json_deser::deser_list_app_instance_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_chimesdkidentity_app_instance_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -785,7 +787,7 @@ pub fn deser_operation_list_app_instances(
     Ok(builder)
 }
 
-pub fn deser_operation_list_app_instance_users(
+pub fn deser_operation_crate_operation_list_app_instance_users(
     input: &[u8],
     mut builder: crate::output::list_app_instance_users_output::Builder,
 ) -> Result<crate::output::list_app_instance_users_output::Builder, smithy_json::deserialize::Error>
@@ -809,7 +811,7 @@ pub fn deser_operation_list_app_instance_users(
                     }
                     "AppInstanceUsers" => {
                         builder = builder.set_app_instance_users(
-                            crate::json_deser::deser_list_app_instance_user_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_chimesdkidentity_app_instance_user_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -837,7 +839,7 @@ pub fn deser_operation_list_app_instance_users(
     Ok(builder)
 }
 
-pub fn deser_operation_put_app_instance_retention_settings(
+pub fn deser_operation_crate_operation_put_app_instance_retention_settings(
     input: &[u8],
     mut builder: crate::output::put_app_instance_retention_settings_output::Builder,
 ) -> Result<
@@ -856,9 +858,7 @@ pub fn deser_operation_put_app_instance_retention_settings(
                 match key.to_unescaped()?.as_ref() {
                     "AppInstanceRetentionSettings" => {
                         builder = builder.set_app_instance_retention_settings(
-                            crate::json_deser::deser_structure_app_instance_retention_settings(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_app_instance_retention_settings(tokens)?
                         );
                     }
                     "InitiateDeletionTimestamp" => {
@@ -887,7 +887,7 @@ pub fn deser_operation_put_app_instance_retention_settings(
     Ok(builder)
 }
 
-pub fn deser_operation_update_app_instance(
+pub fn deser_operation_crate_operation_update_app_instance(
     input: &[u8],
     mut builder: crate::output::update_app_instance_output::Builder,
 ) -> Result<crate::output::update_app_instance_output::Builder, smithy_json::deserialize::Error> {
@@ -926,7 +926,7 @@ pub fn deser_operation_update_app_instance(
     Ok(builder)
 }
 
-pub fn deser_operation_update_app_instance_user(
+pub fn deser_operation_crate_operation_update_app_instance_user(
     input: &[u8],
     mut builder: crate::output::update_app_instance_user_output::Builder,
 ) -> Result<crate::output::update_app_instance_user_output::Builder, smithy_json::deserialize::Error>
@@ -974,7 +974,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_identity<'a, I>(
+pub fn deser_structure_crate_model_identity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Identity>, smithy_json::deserialize::Error>
 where
@@ -1028,7 +1028,7 @@ where
     }
 }
 
-pub fn deser_structure_app_instance<'a, I>(
+pub fn deser_structure_crate_model_app_instance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AppInstance>, smithy_json::deserialize::Error>
 where
@@ -1107,7 +1107,7 @@ where
     }
 }
 
-pub fn deser_structure_app_instance_admin<'a, I>(
+pub fn deser_structure_crate_model_app_instance_admin<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AppInstanceAdmin>, smithy_json::deserialize::Error>
 where
@@ -1127,7 +1127,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Admin" => {
                                 builder = builder.set_admin(
-                                    crate::json_deser::deser_structure_identity(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_identity(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "AppInstanceArn" => {
@@ -1165,7 +1167,7 @@ where
     }
 }
 
-pub fn deser_structure_app_instance_user<'a, I>(
+pub fn deser_structure_crate_model_app_instance_user<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AppInstanceUser>, smithy_json::deserialize::Error>
 where
@@ -1244,7 +1246,7 @@ where
     }
 }
 
-pub fn deser_structure_app_instance_retention_settings<'a, I>(
+pub fn deser_structure_crate_model_app_instance_retention_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AppInstanceRetentionSettings>, smithy_json::deserialize::Error>
 where
@@ -1264,9 +1266,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "ChannelRetentionSettings" => {
                                 builder = builder.set_channel_retention_settings(
-                                    crate::json_deser::deser_structure_channel_retention_settings(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_channel_retention_settings(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1288,7 +1288,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_app_instance_admin_list<'a, I>(
+pub fn deser_list_com_amazonaws_chimesdkidentity_app_instance_admin_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AppInstanceAdminSummary>>,
@@ -1311,7 +1311,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_app_instance_admin_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_app_instance_admin_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1327,7 +1328,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_app_instance_list<'a, I>(
+pub fn deser_list_com_amazonaws_chimesdkidentity_app_instance_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AppInstanceSummary>>, smithy_json::deserialize::Error>
 where
@@ -1347,7 +1348,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_app_instance_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_app_instance_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1363,7 +1366,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_app_instance_user_list<'a, I>(
+pub fn deser_list_com_amazonaws_chimesdkidentity_app_instance_user_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AppInstanceUserSummary>>,
@@ -1386,7 +1389,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_app_instance_user_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_app_instance_user_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1401,7 +1405,7 @@ where
     }
 }
 
-pub fn deser_structure_channel_retention_settings<'a, I>(
+pub fn deser_structure_crate_model_channel_retention_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ChannelRetentionSettings>, smithy_json::deserialize::Error>
 where
@@ -1445,7 +1449,7 @@ where
     }
 }
 
-pub fn deser_structure_app_instance_admin_summary<'a, I>(
+pub fn deser_structure_crate_model_app_instance_admin_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AppInstanceAdminSummary>, smithy_json::deserialize::Error>
 where
@@ -1465,7 +1469,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Admin" => {
                                 builder = builder.set_admin(
-                                    crate::json_deser::deser_structure_identity(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_identity(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1486,7 +1492,7 @@ where
     }
 }
 
-pub fn deser_structure_app_instance_summary<'a, I>(
+pub fn deser_structure_crate_model_app_instance_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AppInstanceSummary>, smithy_json::deserialize::Error>
 where
@@ -1549,7 +1555,7 @@ where
     }
 }
 
-pub fn deser_structure_app_instance_user_summary<'a, I>(
+pub fn deser_structure_crate_model_app_instance_user_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AppInstanceUserSummary>, smithy_json::deserialize::Error>
 where

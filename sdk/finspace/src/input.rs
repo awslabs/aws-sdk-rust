@@ -134,10 +134,11 @@ impl CreateEnvironmentInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_environment(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -198,8 +199,11 @@ impl CreateEnvironmentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -207,7 +211,11 @@ impl CreateEnvironmentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -351,8 +359,11 @@ impl DeleteEnvironmentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -360,7 +371,11 @@ impl DeleteEnvironmentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -504,8 +519,11 @@ impl GetEnvironmentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -513,7 +531,11 @@ impl GetEnvironmentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -661,8 +683,11 @@ impl ListEnvironmentsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -670,7 +695,11 @@ impl ListEnvironmentsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -807,8 +836,11 @@ impl ListTagsForResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -816,7 +848,11 @@ impl ListTagsForResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -899,9 +935,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -977,8 +1014,11 @@ impl TagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -986,7 +1026,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1146,8 +1190,11 @@ impl UntagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1155,7 +1202,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1279,10 +1330,11 @@ impl UpdateEnvironmentInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_environment(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1362,8 +1414,11 @@ impl UpdateEnvironmentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1371,7 +1426,11 @@ impl UpdateEnvironmentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }

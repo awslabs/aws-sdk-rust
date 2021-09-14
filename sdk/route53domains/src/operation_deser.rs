@@ -24,7 +24,7 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::domain_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_domain_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_domain_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -38,7 +38,7 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -52,7 +52,7 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -78,12 +78,7 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_response(
             crate::output::accept_domain_transfer_from_another_aws_account_output::Builder::default(
             );
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_accept_domain_transfer_from_another_aws_account(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_accept_domain_transfer_from_another_aws_account(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
         output.build()
     })
 }
@@ -113,7 +108,7 @@ pub fn parse_cancel_domain_transfer_to_another_aws_account_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(response.body().as_ref(), output).map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(response.body().as_ref(), output).map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -127,7 +122,7 @@ pub fn parse_cancel_domain_transfer_to_another_aws_account_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -152,11 +147,7 @@ pub fn parse_cancel_domain_transfer_to_another_aws_account_response(
         let mut output =
             crate::output::cancel_domain_transfer_to_another_aws_account_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_cancel_domain_transfer_to_another_aws_account(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_cancel_domain_transfer_to_another_aws_account(response.body().as_ref(), output).map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
         output.build()
     })
 }
@@ -189,7 +180,7 @@ pub fn parse_check_domain_availability_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -210,11 +201,12 @@ pub fn parse_check_domain_availability_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CheckDomainAvailabilityError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::CheckDomainAvailabilityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -238,7 +230,7 @@ pub fn parse_check_domain_availability_response(
         #[allow(unused_mut)]
         let mut output = crate::output::check_domain_availability_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_check_domain_availability(
+        output = crate::json_deser::deser_operation_crate_operation_check_domain_availability(
             response.body().as_ref(),
             output,
         )
@@ -275,7 +267,7 @@ pub fn parse_check_domain_transferability_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -296,11 +288,12 @@ pub fn parse_check_domain_transferability_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CheckDomainTransferabilityError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::CheckDomainTransferabilityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -324,7 +317,7 @@ pub fn parse_check_domain_transferability_response(
         #[allow(unused_mut)]
         let mut output = crate::output::check_domain_transferability_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_check_domain_transferability(
+        output = crate::json_deser::deser_operation_crate_operation_check_domain_transferability(
             response.body().as_ref(),
             output,
         )
@@ -357,7 +350,7 @@ pub fn parse_delete_tags_for_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -378,11 +371,7 @@ pub fn parse_delete_tags_for_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteTagsForDomainError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsForDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -399,11 +388,12 @@ pub fn parse_delete_tags_for_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteTagsForDomainError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DeleteTagsForDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -459,7 +449,7 @@ pub fn parse_disable_domain_auto_renew_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -480,11 +470,12 @@ pub fn parse_disable_domain_auto_renew_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DisableDomainAutoRenewError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DisableDomainAutoRenewError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -532,27 +523,25 @@ pub fn parse_disable_domain_transfer_lock_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::DisableDomainTransferLockError {
-            meta: generic,
-            kind: crate::error::DisableDomainTransferLockErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::DisableDomainTransferLockError {
+                meta: generic,
+                kind: crate::error::DisableDomainTransferLockErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::DisableDomainTransferLockError {
             meta: generic,
             kind: crate::error::DisableDomainTransferLockErrorKind::InvalidInput({
@@ -561,7 +550,7 @@ pub fn parse_disable_domain_transfer_lock_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -582,11 +571,7 @@ pub fn parse_disable_domain_transfer_lock_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -595,27 +580,25 @@ pub fn parse_disable_domain_transfer_lock_error(
                 tmp
             }),
         },
-        "TLDRulesViolation" => crate::error::DisableDomainTransferLockError {
-            meta: generic,
-            kind: crate::error::DisableDomainTransferLockErrorKind::TldRulesViolation({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TLDRulesViolation" => {
+            crate::error::DisableDomainTransferLockError {
+                meta: generic,
+                kind: crate::error::DisableDomainTransferLockErrorKind::TldRulesViolation({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tld_rules_violation::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_tld_rules_violationjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::tld_rules_violation::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_tld_rules_violationjson_err(response.body().as_ref(), output).map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "UnsupportedTLD" => crate::error::DisableDomainTransferLockError {
             meta: generic,
             kind: crate::error::DisableDomainTransferLockErrorKind::UnsupportedTld({
@@ -624,11 +607,12 @@ pub fn parse_disable_domain_transfer_lock_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -652,7 +636,7 @@ pub fn parse_disable_domain_transfer_lock_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disable_domain_transfer_lock_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_disable_domain_transfer_lock(
+        output = crate::json_deser::deser_operation_crate_operation_disable_domain_transfer_lock(
             response.body().as_ref(),
             output,
         )
@@ -685,7 +669,7 @@ pub fn parse_enable_domain_auto_renew_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -698,27 +682,25 @@ pub fn parse_enable_domain_auto_renew_error(
                 tmp
             }),
         },
-        "TLDRulesViolation" => crate::error::EnableDomainAutoRenewError {
-            meta: generic,
-            kind: crate::error::EnableDomainAutoRenewErrorKind::TldRulesViolation({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TLDRulesViolation" => {
+            crate::error::EnableDomainAutoRenewError {
+                meta: generic,
+                kind: crate::error::EnableDomainAutoRenewErrorKind::TldRulesViolation({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tld_rules_violation::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_tld_rules_violationjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EnableDomainAutoRenewError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::tld_rules_violation::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_tld_rules_violationjson_err(response.body().as_ref(), output).map_err(crate::error::EnableDomainAutoRenewError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "UnsupportedTLD" => crate::error::EnableDomainAutoRenewError {
             meta: generic,
             kind: crate::error::EnableDomainAutoRenewErrorKind::UnsupportedTld({
@@ -727,11 +709,12 @@ pub fn parse_enable_domain_auto_renew_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EnableDomainAutoRenewError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::EnableDomainAutoRenewError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -779,27 +762,25 @@ pub fn parse_enable_domain_transfer_lock_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::EnableDomainTransferLockError {
-            meta: generic,
-            kind: crate::error::EnableDomainTransferLockErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::EnableDomainTransferLockError {
+                meta: generic,
+                kind: crate::error::EnableDomainTransferLockErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::EnableDomainTransferLockError {
             meta: generic,
             kind: crate::error::EnableDomainTransferLockErrorKind::InvalidInput({
@@ -808,7 +789,7 @@ pub fn parse_enable_domain_transfer_lock_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -829,11 +810,7 @@ pub fn parse_enable_domain_transfer_lock_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -842,27 +819,25 @@ pub fn parse_enable_domain_transfer_lock_error(
                 tmp
             }),
         },
-        "TLDRulesViolation" => crate::error::EnableDomainTransferLockError {
-            meta: generic,
-            kind: crate::error::EnableDomainTransferLockErrorKind::TldRulesViolation({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TLDRulesViolation" => {
+            crate::error::EnableDomainTransferLockError {
+                meta: generic,
+                kind: crate::error::EnableDomainTransferLockErrorKind::TldRulesViolation({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tld_rules_violation::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_tld_rules_violationjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::tld_rules_violation::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_tld_rules_violationjson_err(response.body().as_ref(), output).map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "UnsupportedTLD" => crate::error::EnableDomainTransferLockError {
             meta: generic,
             kind: crate::error::EnableDomainTransferLockErrorKind::UnsupportedTld({
@@ -871,11 +846,12 @@ pub fn parse_enable_domain_transfer_lock_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -899,7 +875,7 @@ pub fn parse_enable_domain_transfer_lock_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_domain_transfer_lock_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_enable_domain_transfer_lock(
+        output = crate::json_deser::deser_operation_crate_operation_enable_domain_transfer_lock(
             response.body().as_ref(),
             output,
         )
@@ -936,7 +912,7 @@ pub fn parse_get_contact_reachability_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -957,11 +933,7 @@ pub fn parse_get_contact_reachability_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetContactReachabilityStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::GetContactReachabilityStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -978,11 +950,12 @@ pub fn parse_get_contact_reachability_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetContactReachabilityStatusError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::GetContactReachabilityStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1006,11 +979,12 @@ pub fn parse_get_contact_reachability_status_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_contact_reachability_status_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_contact_reachability_status(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetContactReachabilityStatusError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_get_contact_reachability_status(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetContactReachabilityStatusError::unhandled)?;
         output.build()
     })
 }
@@ -1036,7 +1010,7 @@ pub fn parse_get_domain_detail_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1057,11 +1031,12 @@ pub fn parse_get_domain_detail_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetDomainDetailError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::GetDomainDetailError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1082,9 +1057,11 @@ pub fn parse_get_domain_detail_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_domain_detail_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_get_domain_detail(response.body().as_ref(), output)
-                .map_err(crate::error::GetDomainDetailError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_get_domain_detail(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetDomainDetailError::unhandled)?;
         output.build()
     })
 }
@@ -1113,7 +1090,7 @@ pub fn parse_get_domain_suggestions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1134,11 +1111,12 @@ pub fn parse_get_domain_suggestions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetDomainSuggestionsError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::GetDomainSuggestionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1162,7 +1140,7 @@ pub fn parse_get_domain_suggestions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_domain_suggestions_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_domain_suggestions(
+        output = crate::json_deser::deser_operation_crate_operation_get_domain_suggestions(
             response.body().as_ref(),
             output,
         )
@@ -1195,7 +1173,7 @@ pub fn parse_get_operation_detail_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1223,7 +1201,7 @@ pub fn parse_get_operation_detail_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_operation_detail_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_operation_detail(
+        output = crate::json_deser::deser_operation_crate_operation_get_operation_detail(
             response.body().as_ref(),
             output,
         )
@@ -1253,7 +1231,7 @@ pub fn parse_list_domains_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1278,8 +1256,11 @@ pub fn parse_list_domains_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_domains_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_domains(response.body().as_ref(), output)
-            .map_err(crate::error::ListDomainsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_domains(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListDomainsError::unhandled)?;
         output.build()
     })
 }
@@ -1305,7 +1286,7 @@ pub fn parse_list_operations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1330,9 +1311,11 @@ pub fn parse_list_operations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_operations_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_operations(response.body().as_ref(), output)
-                .map_err(crate::error::ListOperationsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_operations(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListOperationsError::unhandled)?;
         output.build()
     })
 }
@@ -1359,7 +1342,7 @@ pub fn parse_list_tags_for_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1380,11 +1363,7 @@ pub fn parse_list_tags_for_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForDomainError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1401,11 +1380,12 @@ pub fn parse_list_tags_for_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForDomainError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::ListTagsForDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1427,7 +1407,7 @@ pub fn parse_list_tags_for_domain_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_domain_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_tags_for_domain(
+        output = crate::json_deser::deser_operation_crate_operation_list_tags_for_domain(
             response.body().as_ref(),
             output,
         )
@@ -1457,11 +1437,7 @@ pub fn parse_register_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::domain_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_domain_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterDomainError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_domain_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1470,27 +1446,25 @@ pub fn parse_register_domain_error(
                 tmp
             }),
         },
-        "DuplicateRequest" => crate::error::RegisterDomainError {
-            meta: generic,
-            kind: crate::error::RegisterDomainErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::RegisterDomainError {
+                meta: generic,
+                kind: crate::error::RegisterDomainErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterDomainError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::RegisterDomainError {
             meta: generic,
             kind: crate::error::RegisterDomainErrorKind::InvalidInput({
@@ -1499,7 +1473,7 @@ pub fn parse_register_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1520,11 +1494,7 @@ pub fn parse_register_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterDomainError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1533,27 +1503,25 @@ pub fn parse_register_domain_error(
                 tmp
             }),
         },
-        "TLDRulesViolation" => crate::error::RegisterDomainError {
-            meta: generic,
-            kind: crate::error::RegisterDomainErrorKind::TldRulesViolation({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TLDRulesViolation" => {
+            crate::error::RegisterDomainError {
+                meta: generic,
+                kind: crate::error::RegisterDomainErrorKind::TldRulesViolation({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tld_rules_violation::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_tld_rules_violationjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterDomainError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::tld_rules_violation::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_tld_rules_violationjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "UnsupportedTLD" => crate::error::RegisterDomainError {
             meta: generic,
             kind: crate::error::RegisterDomainErrorKind::UnsupportedTld({
@@ -1562,11 +1530,12 @@ pub fn parse_register_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterDomainError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::RegisterDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1587,9 +1556,11 @@ pub fn parse_register_domain_response(
         #[allow(unused_mut)]
         let mut output = crate::output::register_domain_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_register_domain(response.body().as_ref(), output)
-                .map_err(crate::error::RegisterDomainError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_register_domain(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RegisterDomainError::unhandled)?;
         output.build()
     })
 }
@@ -1619,7 +1590,7 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(response.body().as_ref(), output).map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(response.body().as_ref(), output).map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1633,7 +1604,7 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1659,12 +1630,7 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_response(
             crate::output::reject_domain_transfer_from_another_aws_account_output::Builder::default(
             );
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_reject_domain_transfer_from_another_aws_account(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_reject_domain_transfer_from_another_aws_account(response.body().as_ref(), output).map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
         output.build()
     })
 }
@@ -1682,27 +1648,25 @@ pub fn parse_renew_domain_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::RenewDomainError {
-            meta: generic,
-            kind: crate::error::RenewDomainErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::RenewDomainError {
+                meta: generic,
+                kind: crate::error::RenewDomainErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RenewDomainError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::RenewDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::RenewDomainError {
             meta: generic,
             kind: crate::error::RenewDomainErrorKind::InvalidInput({
@@ -1711,7 +1675,7 @@ pub fn parse_renew_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1732,11 +1696,7 @@ pub fn parse_renew_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RenewDomainError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::RenewDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1745,27 +1705,25 @@ pub fn parse_renew_domain_error(
                 tmp
             }),
         },
-        "TLDRulesViolation" => crate::error::RenewDomainError {
-            meta: generic,
-            kind: crate::error::RenewDomainErrorKind::TldRulesViolation({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TLDRulesViolation" => {
+            crate::error::RenewDomainError {
+                meta: generic,
+                kind: crate::error::RenewDomainErrorKind::TldRulesViolation({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tld_rules_violation::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_tld_rules_violationjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RenewDomainError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::tld_rules_violation::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_tld_rules_violationjson_err(response.body().as_ref(), output).map_err(crate::error::RenewDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "UnsupportedTLD" => crate::error::RenewDomainError {
             meta: generic,
             kind: crate::error::RenewDomainErrorKind::UnsupportedTld({
@@ -1774,11 +1732,12 @@ pub fn parse_renew_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RenewDomainError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::RenewDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1799,8 +1758,11 @@ pub fn parse_renew_domain_response(
         #[allow(unused_mut)]
         let mut output = crate::output::renew_domain_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_renew_domain(response.body().as_ref(), output)
-            .map_err(crate::error::RenewDomainError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_renew_domain(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RenewDomainError::unhandled)?;
         output.build()
     })
 }
@@ -1829,7 +1791,7 @@ pub fn parse_resend_contact_reachability_email_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1850,11 +1812,7 @@ pub fn parse_resend_contact_reachability_email_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ResendContactReachabilityEmailError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::ResendContactReachabilityEmailError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1871,11 +1829,12 @@ pub fn parse_resend_contact_reachability_email_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ResendContactReachabilityEmailError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::ResendContactReachabilityEmailError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1900,11 +1859,12 @@ pub fn parse_resend_contact_reachability_email_response(
         let mut output =
             crate::output::resend_contact_reachability_email_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_resend_contact_reachability_email(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ResendContactReachabilityEmailError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_resend_contact_reachability_email(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ResendContactReachabilityEmailError::unhandled)?;
         output.build()
     })
 }
@@ -1937,7 +1897,7 @@ pub fn parse_retrieve_domain_auth_code_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1958,11 +1918,12 @@ pub fn parse_retrieve_domain_auth_code_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RetrieveDomainAuthCodeError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::RetrieveDomainAuthCodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1986,7 +1947,7 @@ pub fn parse_retrieve_domain_auth_code_response(
         #[allow(unused_mut)]
         let mut output = crate::output::retrieve_domain_auth_code_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_retrieve_domain_auth_code(
+        output = crate::json_deser::deser_operation_crate_operation_retrieve_domain_auth_code(
             response.body().as_ref(),
             output,
         )
@@ -2016,11 +1977,7 @@ pub fn parse_transfer_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::domain_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_domain_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TransferDomainError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_domain_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2029,27 +1986,25 @@ pub fn parse_transfer_domain_error(
                 tmp
             }),
         },
-        "DuplicateRequest" => crate::error::TransferDomainError {
-            meta: generic,
-            kind: crate::error::TransferDomainErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::TransferDomainError {
+                meta: generic,
+                kind: crate::error::TransferDomainErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TransferDomainError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::TransferDomainError {
             meta: generic,
             kind: crate::error::TransferDomainErrorKind::InvalidInput({
@@ -2058,7 +2013,7 @@ pub fn parse_transfer_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2079,11 +2034,7 @@ pub fn parse_transfer_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TransferDomainError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2092,27 +2043,25 @@ pub fn parse_transfer_domain_error(
                 tmp
             }),
         },
-        "TLDRulesViolation" => crate::error::TransferDomainError {
-            meta: generic,
-            kind: crate::error::TransferDomainErrorKind::TldRulesViolation({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TLDRulesViolation" => {
+            crate::error::TransferDomainError {
+                meta: generic,
+                kind: crate::error::TransferDomainErrorKind::TldRulesViolation({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tld_rules_violation::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_tld_rules_violationjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TransferDomainError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::tld_rules_violation::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_tld_rules_violationjson_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "UnsupportedTLD" => crate::error::TransferDomainError {
             meta: generic,
             kind: crate::error::TransferDomainErrorKind::UnsupportedTld({
@@ -2121,11 +2070,12 @@ pub fn parse_transfer_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TransferDomainError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::TransferDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2146,9 +2096,11 @@ pub fn parse_transfer_domain_response(
         #[allow(unused_mut)]
         let mut output = crate::output::transfer_domain_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_transfer_domain(response.body().as_ref(), output)
-                .map_err(crate::error::TransferDomainError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_transfer_domain(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::TransferDomainError::unhandled)?;
         output.build()
     })
 }
@@ -2171,27 +2123,25 @@ pub fn parse_transfer_domain_to_another_aws_account_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::TransferDomainToAnotherAwsAccountError {
-            meta: generic,
-            kind: crate::error::TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::TransferDomainToAnotherAwsAccountError {
+                meta: generic,
+                kind: crate::error::TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::TransferDomainToAnotherAwsAccountError {
             meta: generic,
             kind: crate::error::TransferDomainToAnotherAwsAccountErrorKind::InvalidInput({
@@ -2200,7 +2150,7 @@ pub fn parse_transfer_domain_to_another_aws_account_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2213,29 +2163,25 @@ pub fn parse_transfer_domain_to_another_aws_account_error(
                 tmp
             }),
         },
-        "OperationLimitExceeded" => {
-            crate::error::TransferDomainToAnotherAwsAccountError {
-                meta: generic,
-                kind:
-                    crate::error::TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]
-                                let mut output =
-                                    crate::error::operation_limit_exceeded::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
-                                output.build()
-                            };
-                            if (&tmp.message).is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "OperationLimitExceeded" => crate::error::TransferDomainToAnotherAwsAccountError {
+            meta: generic,
+            kind: crate::error::TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::operation_limit_exceeded::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         _ => crate::error::TransferDomainToAnotherAwsAccountError::generic(generic),
     })
 }
@@ -2252,11 +2198,7 @@ pub fn parse_transfer_domain_to_another_aws_account_response(
         let mut output =
             crate::output::transfer_domain_to_another_aws_account_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_transfer_domain_to_another_aws_account(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_transfer_domain_to_another_aws_account(response.body().as_ref(), output).map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
         output.build()
     })
 }
@@ -2277,27 +2219,25 @@ pub fn parse_update_domain_contact_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::UpdateDomainContactError {
-            meta: generic,
-            kind: crate::error::UpdateDomainContactErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::UpdateDomainContactError {
+                meta: generic,
+                kind: crate::error::UpdateDomainContactErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainContactError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::UpdateDomainContactError {
             meta: generic,
             kind: crate::error::UpdateDomainContactErrorKind::InvalidInput({
@@ -2306,7 +2246,7 @@ pub fn parse_update_domain_contact_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2327,11 +2267,7 @@ pub fn parse_update_domain_contact_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainContactError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2340,27 +2276,25 @@ pub fn parse_update_domain_contact_error(
                 tmp
             }),
         },
-        "TLDRulesViolation" => crate::error::UpdateDomainContactError {
-            meta: generic,
-            kind: crate::error::UpdateDomainContactErrorKind::TldRulesViolation({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TLDRulesViolation" => {
+            crate::error::UpdateDomainContactError {
+                meta: generic,
+                kind: crate::error::UpdateDomainContactErrorKind::TldRulesViolation({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tld_rules_violation::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_tld_rules_violationjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainContactError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::tld_rules_violation::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_tld_rules_violationjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "UnsupportedTLD" => crate::error::UpdateDomainContactError {
             meta: generic,
             kind: crate::error::UpdateDomainContactErrorKind::UnsupportedTld({
@@ -2369,11 +2303,12 @@ pub fn parse_update_domain_contact_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainContactError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UpdateDomainContactError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2397,7 +2332,7 @@ pub fn parse_update_domain_contact_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_domain_contact_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_domain_contact(
+        output = crate::json_deser::deser_operation_crate_operation_update_domain_contact(
             response.body().as_ref(),
             output,
         )
@@ -2426,27 +2361,25 @@ pub fn parse_update_domain_contact_privacy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::UpdateDomainContactPrivacyError {
-            meta: generic,
-            kind: crate::error::UpdateDomainContactPrivacyErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::UpdateDomainContactPrivacyError {
+                meta: generic,
+                kind: crate::error::UpdateDomainContactPrivacyErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::UpdateDomainContactPrivacyError {
             meta: generic,
             kind: crate::error::UpdateDomainContactPrivacyErrorKind::InvalidInput({
@@ -2455,7 +2388,7 @@ pub fn parse_update_domain_contact_privacy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2476,11 +2409,7 @@ pub fn parse_update_domain_contact_privacy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2489,27 +2418,25 @@ pub fn parse_update_domain_contact_privacy_error(
                 tmp
             }),
         },
-        "TLDRulesViolation" => crate::error::UpdateDomainContactPrivacyError {
-            meta: generic,
-            kind: crate::error::UpdateDomainContactPrivacyErrorKind::TldRulesViolation({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TLDRulesViolation" => {
+            crate::error::UpdateDomainContactPrivacyError {
+                meta: generic,
+                kind: crate::error::UpdateDomainContactPrivacyErrorKind::TldRulesViolation({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tld_rules_violation::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_tld_rules_violationjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::tld_rules_violation::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_tld_rules_violationjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "UnsupportedTLD" => crate::error::UpdateDomainContactPrivacyError {
             meta: generic,
             kind: crate::error::UpdateDomainContactPrivacyErrorKind::UnsupportedTld({
@@ -2518,11 +2445,12 @@ pub fn parse_update_domain_contact_privacy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2546,7 +2474,7 @@ pub fn parse_update_domain_contact_privacy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_domain_contact_privacy_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_domain_contact_privacy(
+        output = crate::json_deser::deser_operation_crate_operation_update_domain_contact_privacy(
             response.body().as_ref(),
             output,
         )
@@ -2575,27 +2503,25 @@ pub fn parse_update_domain_nameservers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::UpdateDomainNameserversError {
-            meta: generic,
-            kind: crate::error::UpdateDomainNameserversErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::UpdateDomainNameserversError {
+                meta: generic,
+                kind: crate::error::UpdateDomainNameserversErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::UpdateDomainNameserversError {
             meta: generic,
             kind: crate::error::UpdateDomainNameserversErrorKind::InvalidInput({
@@ -2604,7 +2530,7 @@ pub fn parse_update_domain_nameservers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2625,11 +2551,7 @@ pub fn parse_update_domain_nameservers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2638,27 +2560,25 @@ pub fn parse_update_domain_nameservers_error(
                 tmp
             }),
         },
-        "TLDRulesViolation" => crate::error::UpdateDomainNameserversError {
-            meta: generic,
-            kind: crate::error::UpdateDomainNameserversErrorKind::TldRulesViolation({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TLDRulesViolation" => {
+            crate::error::UpdateDomainNameserversError {
+                meta: generic,
+                kind: crate::error::UpdateDomainNameserversErrorKind::TldRulesViolation({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tld_rules_violation::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_tld_rules_violationjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::tld_rules_violation::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_tld_rules_violationjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "UnsupportedTLD" => crate::error::UpdateDomainNameserversError {
             meta: generic,
             kind: crate::error::UpdateDomainNameserversErrorKind::UnsupportedTld({
@@ -2667,11 +2587,12 @@ pub fn parse_update_domain_nameservers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2695,7 +2616,7 @@ pub fn parse_update_domain_nameservers_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_domain_nameservers_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_domain_nameservers(
+        output = crate::json_deser::deser_operation_crate_operation_update_domain_nameservers(
             response.body().as_ref(),
             output,
         )
@@ -2728,7 +2649,7 @@ pub fn parse_update_tags_for_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2749,11 +2670,7 @@ pub fn parse_update_tags_for_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_operation_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateTagsForDomainError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2770,11 +2687,12 @@ pub fn parse_update_tags_for_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_tldjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateTagsForDomainError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_tldjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UpdateTagsForDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2823,7 +2741,7 @@ pub fn parse_view_billing_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2848,8 +2766,11 @@ pub fn parse_view_billing_response(
         #[allow(unused_mut)]
         let mut output = crate::output::view_billing_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_view_billing(response.body().as_ref(), output)
-            .map_err(crate::error::ViewBillingError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_view_billing(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ViewBillingError::unhandled)?;
         output.build()
     })
 }

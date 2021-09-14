@@ -61,11 +61,11 @@ pub mod associate_repository_input {
         /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
         /// <ul>
         /// <li>
-        /// <p>The encryption option for this repository association. It is either owned by AWS
+        /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
         /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
         /// </li>
         /// <li>
-        /// <p>The ID of the AWS KMS key that
+        /// <p>The ID of the Amazon Web Services KMS key that
         /// is associated with this respository association.</p>
         /// </li>
         /// </ul>
@@ -119,7 +119,10 @@ impl AssociateRepositoryInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_associate_repository(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_associate_repository(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -183,8 +186,11 @@ impl AssociateRepositoryInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -192,7 +198,11 @@ impl AssociateRepositoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -215,7 +225,7 @@ pub mod create_code_review_input {
     }
     impl Builder {
         /// <p>
-        /// The name of the code review. The name of each code review in your AWS account must be unique.
+        /// The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
         /// </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -322,10 +332,11 @@ impl CreateCodeReviewInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_code_review(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_code_review(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -386,8 +397,11 @@ impl CreateCodeReviewInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -395,7 +409,11 @@ impl CreateCodeReviewInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -542,8 +560,11 @@ impl DescribeCodeReviewInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -551,7 +572,11 @@ impl DescribeCodeReviewInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -605,9 +630,9 @@ pub mod describe_recommendation_feedback_input {
         /// Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.
         /// </p>
         /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name (ARN). For
+        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
         /// </p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -746,8 +771,11 @@ impl DescribeRecommendationFeedbackInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -755,7 +783,11 @@ impl DescribeRecommendationFeedbackInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -909,8 +941,11 @@ impl DescribeRepositoryAssociationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -918,7 +953,11 @@ impl DescribeRepositoryAssociationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1071,8 +1110,11 @@ impl DisassociateRepositoryInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1080,7 +1122,11 @@ impl DisassociateRepositoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1310,8 +1356,11 @@ impl ListCodeReviewsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1319,7 +1368,11 @@ impl ListCodeReviewsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1551,8 +1604,11 @@ impl ListRecommendationFeedbackInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1560,7 +1616,11 @@ impl ListRecommendationFeedbackInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1747,8 +1807,11 @@ impl ListRecommendationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1756,7 +1819,11 @@ impl ListRecommendationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2002,8 +2069,11 @@ impl ListRepositoryAssociationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2011,7 +2081,11 @@ impl ListRepositoryAssociationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2158,8 +2232,11 @@ impl ListTagsForResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2167,7 +2244,11 @@ impl ListTagsForResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2266,10 +2347,9 @@ impl PutRecommendationFeedbackInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_recommendation_feedback(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_recommendation_feedback(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2330,8 +2410,11 @@ impl PutRecommendationFeedbackInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2339,7 +2422,11 @@ impl PutRecommendationFeedbackInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2431,9 +2518,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2510,8 +2598,11 @@ impl TagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2519,7 +2610,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2688,8 +2783,11 @@ impl UntagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2697,7 +2795,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2889,7 +2991,7 @@ pub struct ListRepositoryAssociationsInput {
     /// <p>List of repository names to use as a filter.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of owners to use as a filter.
-    /// For AWS CodeCommit, it is the name of the CodeCommit account that was
+    /// For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was
     /// used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account
     /// that was used to associate the repository. </p>
     pub owners: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2971,12 +3073,12 @@ pub struct ListRecommendationFeedbackInput {
     /// </p>
     pub code_review_arn: std::option::Option<std::string::String>,
     /// <p>
-    /// An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
+    /// An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
     /// </p>
     /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name (ARN). For
+    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
     /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
     /// </p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>
@@ -3123,9 +3225,9 @@ pub struct DescribeRecommendationFeedbackInput {
     /// Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.
     /// </p>
     /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name (ARN). For
+    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
     /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
     /// </p>
     pub user_id: std::option::Option<std::string::String>,
 }
@@ -3160,7 +3262,7 @@ impl std::fmt::Debug for DescribeCodeReviewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCodeReviewInput {
     /// <p>
-    /// The name of the code review. The name of each code review in your AWS account must be unique.
+    /// The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
     /// </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>
@@ -3235,11 +3337,11 @@ pub struct AssociateRepositoryInput {
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
     /// <li>
-    /// <p>The encryption option for this repository association. It is either owned by AWS
+    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
     /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
     /// </li>
     /// <li>
-    /// <p>The ID of the AWS KMS key that
+    /// <p>The ID of the Amazon Web Services KMS key that
     /// is associated with this respository association.</p>
     /// </li>
     /// </ul>

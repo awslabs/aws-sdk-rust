@@ -318,8 +318,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group.
-        /// For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-        /// resources</a> in the <i>AWS General Reference</i>.</p>
+        /// For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+        /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -339,7 +339,7 @@ pub mod fluent_builders {
         /// <p>Tag keys and values are case sensitive.</p>
         /// </li>
         /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS
+        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
         /// use.</p>
         /// </li>
         /// </ul>
@@ -415,8 +415,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling
-        /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-        /// resources</a> in the <i>AWS General Reference</i>.</p>
+        /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+        /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -436,7 +436,7 @@ pub mod fluent_builders {
         /// <p>Tag keys and values are case sensitive.</p>
         /// </li>
         /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS
+        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
         /// use.</p>
         /// </li>
         /// </ul>
@@ -1746,7 +1746,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>An AWS KMS customer master key (CMK) in one of the following formats:</p>
+        /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1756,7 +1756,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <b>Key ID</b> - The KMS key ID of the key. For example,
-        /// <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS X-Ray does not support asymmetric CMKs.</p>
+        /// <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1997,8 +1997,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or
-        /// sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>
-        /// in the <i>AWS General Reference</i>.</p>
+        /// sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+        /// in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -2018,7 +2018,7 @@ pub mod fluent_builders {
         /// <p>Tag keys and values are case sensitive.</p>
         /// </li>
         /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You
+        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You
         /// cannot edit or delete system tags.</p>
         /// </li>
         /// </ul>

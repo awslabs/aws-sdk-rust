@@ -320,7 +320,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.
         /// When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>.
+        /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>.
         /// </p>
         pub fn target_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_bucket(inp);
@@ -525,10 +525,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The number of shards the cluster will contain.</p>
-        /// <p>Clusters can have up to 500 shards, with your data partitioned across the shards. For example, you can choose to configure a 500 node cluster that ranges between
-        /// 83 shards (one primary and 5 replicas per shard) and 500 shards (single primary and no replicas). Make sure there are enough available IP addresses to accommodate the increase.
-        /// Common pitfalls include the subnets in the subnet group have too small a CIDR range or the subnets are shared and heavily used by other clusters. </p>
+        /// <p>The number of shards the cluster will contain. The default value is 1. </p>
         pub fn num_shards(mut self, inp: i32) -> Self {
             self.inner = self.inner.num_shards(inp);
             self
@@ -537,7 +534,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_num_shards(input);
             self
         }
-        /// <p>The number of replicas to apply to each shard. The limit is 5.</p>
+        /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
         pub fn num_replicas_per_shard(mut self, inp: i32) -> Self {
             self.inner = self.inner.num_replicas_per_shard(inp);
             self

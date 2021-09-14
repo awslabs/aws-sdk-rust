@@ -8,6 +8,9 @@ pub mod create_workspace_input {
     pub struct Builder {
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
@@ -28,6 +31,25 @@ pub mod create_workspace_input {
             self.client_token = input;
             self
         }
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput)
         pub fn build(
             self,
@@ -38,6 +60,7 @@ pub mod create_workspace_input {
             Ok(crate::input::CreateWorkspaceInput {
                 alias: self.alias,
                 client_token: self.client_token,
+                tags: self.tags,
             })
         }
     }
@@ -65,9 +88,11 @@ impl CreateWorkspaceInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_workspace(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_workspace(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -128,8 +153,11 @@ impl CreateWorkspaceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -137,7 +165,11 @@ impl CreateWorkspaceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -299,8 +331,11 @@ impl DeleteWorkspaceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -308,7 +343,11 @@ impl DeleteWorkspaceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -449,8 +488,11 @@ impl DescribeWorkspaceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -458,13 +500,170 @@ impl DescribeWorkspaceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceInput`](crate::input::DescribeWorkspaceInput)
     pub fn builder() -> crate::input::describe_workspace_input::Builder {
         crate::input::describe_workspace_input::Builder::default()
+    }
+}
+
+/// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+pub mod list_tags_for_resource_input {
+    /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// The ARN of the resource.
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourceInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListTagsForResourceInput {
+    /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListTagsForResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListTagsForResource",
+                "amp",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_4 = &self.resource_arn;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let resource_arn = smithy_http::label::fmt_string(input_4, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("GET").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
     }
 }
 
@@ -590,16 +789,16 @@ impl ListWorkspacesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_4) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_5) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_5));
         }
-        if let Some(inner_5) = &self.alias {
-            query.push_kv("alias", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_6) = &self.alias {
+            query.push_kv("alias", &smithy_http::query::fmt_string(&inner_6));
         }
-        if let Some(inner_6) = &self.max_results {
+        if let Some(inner_7) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_6).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_7).encode(),
             );
         }
     }
@@ -618,8 +817,11 @@ impl ListWorkspacesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -627,13 +829,367 @@ impl ListWorkspacesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListWorkspacesInput`](crate::input::ListWorkspacesInput)
     pub fn builder() -> crate::input::list_workspaces_input::Builder {
         crate::input::list_workspaces_input::Builder::default()
+    }
+}
+
+/// See [`TagResourceInput`](crate::input::TagResourceInput)
+pub mod tag_resource_input {
+    /// A builder for [`TagResourceInput`](crate::input::TagResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// The ARN of the resource.
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
+#[doc(hidden)]
+pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl TagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::TagResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("TagResource", "amp"));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_8 = &self.resource_arn;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let resource_arn = smithy_http::label::fmt_string(input_8, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UntagResourceInput`](crate::input::UntagResourceInput)
+pub mod untag_resource_input {
+    /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// The ARN of the resource.
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tag_keys.unwrap_or_default();
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
+        }
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
+#[doc(hidden)]
+pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UntagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UntagResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UntagResource",
+                "amp",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_9 = &self.resource_arn;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let resource_arn = smithy_http::label::fmt_string(input_9, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
+    }
+    fn uri_query(&self, mut output: &mut String) {
+        let mut query = smithy_http::query::Writer::new(&mut output);
+        if let Some(inner_10) = &self.tag_keys {
+            for inner_11 in inner_10 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_11));
+            }
+        }
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        self.uri_query(&mut uri);
+        Ok(builder.method("DELETE").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
     }
 }
 
@@ -713,7 +1269,10 @@ impl UpdateWorkspaceAliasInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_workspace_alias(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_workspace_alias(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -760,14 +1319,15 @@ impl UpdateWorkspaceAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_7 = &self.workspace_id;
-        let input_7 = input_7
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "workspace_id",
-                details: "cannot be empty or unset",
-            })?;
-        let workspace_id = smithy_http::label::fmt_string(input_7, false);
+        let input_12 = &self.workspace_id;
+        let input_12 =
+            input_12
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "workspace_id",
+                    details: "cannot be empty or unset",
+                })?;
+        let workspace_id = smithy_http::label::fmt_string(input_12, false);
         if workspace_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "workspace_id",
@@ -796,8 +1356,11 @@ impl UpdateWorkspaceAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -805,7 +1368,11 @@ impl UpdateWorkspaceAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -844,12 +1411,16 @@ pub struct CreateWorkspaceInput {
     pub alias: std::option::Option<std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
+    /// Optional, user-provided tags for this workspace.
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl std::fmt::Debug for CreateWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkspaceInput");
         formatter.field("alias", &self.alias);
         formatter.field("client_token", &self.client_token);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -904,6 +1475,55 @@ impl std::fmt::Debug for DescribeWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceInput");
         formatter.field("workspace_id", &self.workspace_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
+    /// The ARN of the resource.
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// One or more tag keys
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for UntagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tag_keys", &self.tag_keys);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
+    /// The ARN of the resource.
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// The list of tags assigned to the resource.
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for TagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
+    /// The ARN of the resource.
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListTagsForResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
         formatter.finish()
     }
 }

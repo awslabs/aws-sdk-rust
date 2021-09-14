@@ -6,7 +6,7 @@ pub fn parse_http_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_expired_token_exception_xml_err(
+pub fn deser_structure_crate_error_expired_token_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::expired_token_exception::Builder,
 ) -> Result<crate::error::expired_token_exception::Builder, smithy_xml::decode::XmlError> {
@@ -39,7 +39,7 @@ pub fn deser_structure_expired_token_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_malformed_policy_document_exception_xml_err(
+pub fn deser_structure_crate_error_malformed_policy_document_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::malformed_policy_document_exception::Builder,
 ) -> Result<crate::error::malformed_policy_document_exception::Builder, smithy_xml::decode::XmlError>
@@ -73,7 +73,7 @@ pub fn deser_structure_malformed_policy_document_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_packed_policy_too_large_exception_xml_err(
+pub fn deser_structure_crate_error_packed_policy_too_large_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::packed_policy_too_large_exception::Builder,
 ) -> Result<crate::error::packed_policy_too_large_exception::Builder, smithy_xml::decode::XmlError>
@@ -107,7 +107,7 @@ pub fn deser_structure_packed_policy_too_large_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_region_disabled_exception_xml_err(
+pub fn deser_structure_crate_error_region_disabled_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::region_disabled_exception::Builder,
 ) -> Result<crate::error::region_disabled_exception::Builder, smithy_xml::decode::XmlError> {
@@ -140,7 +140,7 @@ pub fn deser_structure_region_disabled_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_assume_role(
+pub fn deser_operation_crate_operation_assume_role(
     inp: &[u8],
     mut builder: crate::output::assume_role_output::Builder,
 ) -> Result<crate::output::assume_role_output::Builder, smithy_xml::decode::XmlError> {
@@ -166,27 +166,27 @@ pub fn deser_operation_assume_role(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Credentials") /* Credentials com.amazonaws.sts#AssumeRoleOutput$Credentials */ =>  {
+            s if s.matches("Credentials") /* Credentials com.amazonaws.sts.synthetic#AssumeRoleOutput$Credentials */ =>  {
                 let var_5 =
                     Some(
-                        crate::xml_deser::deser_structure_credentials(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_credentials(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_credentials(var_5);
             }
             ,
-            s if s.matches("AssumedRoleUser") /* AssumedRoleUser com.amazonaws.sts#AssumeRoleOutput$AssumedRoleUser */ =>  {
+            s if s.matches("AssumedRoleUser") /* AssumedRoleUser com.amazonaws.sts.synthetic#AssumeRoleOutput$AssumedRoleUser */ =>  {
                 let var_6 =
                     Some(
-                        crate::xml_deser::deser_structure_assumed_role_user(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_assumed_role_user(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_assumed_role_user(var_6);
             }
             ,
-            s if s.matches("PackedPolicySize") /* PackedPolicySize com.amazonaws.sts#AssumeRoleOutput$PackedPolicySize */ =>  {
+            s if s.matches("PackedPolicySize") /* PackedPolicySize com.amazonaws.sts.synthetic#AssumeRoleOutput$PackedPolicySize */ =>  {
                 let var_7 =
                     Some(
                          {
@@ -201,7 +201,7 @@ pub fn deser_operation_assume_role(
                 builder = builder.set_packed_policy_size(var_7);
             }
             ,
-            s if s.matches("SourceIdentity") /* SourceIdentity com.amazonaws.sts#AssumeRoleOutput$SourceIdentity */ =>  {
+            s if s.matches("SourceIdentity") /* SourceIdentity com.amazonaws.sts.synthetic#AssumeRoleOutput$SourceIdentity */ =>  {
                 let var_8 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -226,7 +226,7 @@ pub fn deser_operation_assume_role(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_idp_rejected_claim_exception_xml_err(
+pub fn deser_structure_crate_error_idp_rejected_claim_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::idp_rejected_claim_exception::Builder,
 ) -> Result<crate::error::idp_rejected_claim_exception::Builder, smithy_xml::decode::XmlError> {
@@ -259,7 +259,7 @@ pub fn deser_structure_idp_rejected_claim_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_identity_token_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_identity_token_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_identity_token_exception::Builder,
 ) -> Result<crate::error::invalid_identity_token_exception::Builder, smithy_xml::decode::XmlError> {
@@ -292,7 +292,7 @@ pub fn deser_structure_invalid_identity_token_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_assume_role_with_saml(
+pub fn deser_operation_crate_operation_assume_role_with_saml(
     inp: &[u8],
     mut builder: crate::output::assume_role_with_saml_output::Builder,
 ) -> Result<crate::output::assume_role_with_saml_output::Builder, smithy_xml::decode::XmlError> {
@@ -318,27 +318,27 @@ pub fn deser_operation_assume_role_with_saml(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Credentials") /* Credentials com.amazonaws.sts#AssumeRoleWithSAMLOutput$Credentials */ =>  {
+            s if s.matches("Credentials") /* Credentials com.amazonaws.sts.synthetic#AssumeRoleWithSAMLOutput$Credentials */ =>  {
                 let var_11 =
                     Some(
-                        crate::xml_deser::deser_structure_credentials(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_credentials(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_credentials(var_11);
             }
             ,
-            s if s.matches("AssumedRoleUser") /* AssumedRoleUser com.amazonaws.sts#AssumeRoleWithSAMLOutput$AssumedRoleUser */ =>  {
+            s if s.matches("AssumedRoleUser") /* AssumedRoleUser com.amazonaws.sts.synthetic#AssumeRoleWithSAMLOutput$AssumedRoleUser */ =>  {
                 let var_12 =
                     Some(
-                        crate::xml_deser::deser_structure_assumed_role_user(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_assumed_role_user(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_assumed_role_user(var_12);
             }
             ,
-            s if s.matches("PackedPolicySize") /* PackedPolicySize com.amazonaws.sts#AssumeRoleWithSAMLOutput$PackedPolicySize */ =>  {
+            s if s.matches("PackedPolicySize") /* PackedPolicySize com.amazonaws.sts.synthetic#AssumeRoleWithSAMLOutput$PackedPolicySize */ =>  {
                 let var_13 =
                     Some(
                          {
@@ -353,7 +353,7 @@ pub fn deser_operation_assume_role_with_saml(
                 builder = builder.set_packed_policy_size(var_13);
             }
             ,
-            s if s.matches("Subject") /* Subject com.amazonaws.sts#AssumeRoleWithSAMLOutput$Subject */ =>  {
+            s if s.matches("Subject") /* Subject com.amazonaws.sts.synthetic#AssumeRoleWithSAMLOutput$Subject */ =>  {
                 let var_14 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -366,7 +366,7 @@ pub fn deser_operation_assume_role_with_saml(
                 builder = builder.set_subject(var_14);
             }
             ,
-            s if s.matches("SubjectType") /* SubjectType com.amazonaws.sts#AssumeRoleWithSAMLOutput$SubjectType */ =>  {
+            s if s.matches("SubjectType") /* SubjectType com.amazonaws.sts.synthetic#AssumeRoleWithSAMLOutput$SubjectType */ =>  {
                 let var_15 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -379,7 +379,7 @@ pub fn deser_operation_assume_role_with_saml(
                 builder = builder.set_subject_type(var_15);
             }
             ,
-            s if s.matches("Issuer") /* Issuer com.amazonaws.sts#AssumeRoleWithSAMLOutput$Issuer */ =>  {
+            s if s.matches("Issuer") /* Issuer com.amazonaws.sts.synthetic#AssumeRoleWithSAMLOutput$Issuer */ =>  {
                 let var_16 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -392,7 +392,7 @@ pub fn deser_operation_assume_role_with_saml(
                 builder = builder.set_issuer(var_16);
             }
             ,
-            s if s.matches("Audience") /* Audience com.amazonaws.sts#AssumeRoleWithSAMLOutput$Audience */ =>  {
+            s if s.matches("Audience") /* Audience com.amazonaws.sts.synthetic#AssumeRoleWithSAMLOutput$Audience */ =>  {
                 let var_17 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -405,7 +405,7 @@ pub fn deser_operation_assume_role_with_saml(
                 builder = builder.set_audience(var_17);
             }
             ,
-            s if s.matches("NameQualifier") /* NameQualifier com.amazonaws.sts#AssumeRoleWithSAMLOutput$NameQualifier */ =>  {
+            s if s.matches("NameQualifier") /* NameQualifier com.amazonaws.sts.synthetic#AssumeRoleWithSAMLOutput$NameQualifier */ =>  {
                 let var_18 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -418,7 +418,7 @@ pub fn deser_operation_assume_role_with_saml(
                 builder = builder.set_name_qualifier(var_18);
             }
             ,
-            s if s.matches("SourceIdentity") /* SourceIdentity com.amazonaws.sts#AssumeRoleWithSAMLOutput$SourceIdentity */ =>  {
+            s if s.matches("SourceIdentity") /* SourceIdentity com.amazonaws.sts.synthetic#AssumeRoleWithSAMLOutput$SourceIdentity */ =>  {
                 let var_19 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -443,7 +443,7 @@ pub fn deser_operation_assume_role_with_saml(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_idp_communication_error_exception_xml_err(
+pub fn deser_structure_crate_error_idp_communication_error_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::idp_communication_error_exception::Builder,
 ) -> Result<crate::error::idp_communication_error_exception::Builder, smithy_xml::decode::XmlError>
@@ -477,7 +477,7 @@ pub fn deser_structure_idp_communication_error_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_assume_role_with_web_identity(
+pub fn deser_operation_crate_operation_assume_role_with_web_identity(
     inp: &[u8],
     mut builder: crate::output::assume_role_with_web_identity_output::Builder,
 ) -> Result<
@@ -506,17 +506,17 @@ pub fn deser_operation_assume_role_with_web_identity(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Credentials") /* Credentials com.amazonaws.sts#AssumeRoleWithWebIdentityOutput$Credentials */ =>  {
+            s if s.matches("Credentials") /* Credentials com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$Credentials */ =>  {
                 let var_21 =
                     Some(
-                        crate::xml_deser::deser_structure_credentials(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_credentials(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_credentials(var_21);
             }
             ,
-            s if s.matches("SubjectFromWebIdentityToken") /* SubjectFromWebIdentityToken com.amazonaws.sts#AssumeRoleWithWebIdentityOutput$SubjectFromWebIdentityToken */ =>  {
+            s if s.matches("SubjectFromWebIdentityToken") /* SubjectFromWebIdentityToken com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$SubjectFromWebIdentityToken */ =>  {
                 let var_22 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -529,17 +529,17 @@ pub fn deser_operation_assume_role_with_web_identity(
                 builder = builder.set_subject_from_web_identity_token(var_22);
             }
             ,
-            s if s.matches("AssumedRoleUser") /* AssumedRoleUser com.amazonaws.sts#AssumeRoleWithWebIdentityOutput$AssumedRoleUser */ =>  {
+            s if s.matches("AssumedRoleUser") /* AssumedRoleUser com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$AssumedRoleUser */ =>  {
                 let var_23 =
                     Some(
-                        crate::xml_deser::deser_structure_assumed_role_user(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_assumed_role_user(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_assumed_role_user(var_23);
             }
             ,
-            s if s.matches("PackedPolicySize") /* PackedPolicySize com.amazonaws.sts#AssumeRoleWithWebIdentityOutput$PackedPolicySize */ =>  {
+            s if s.matches("PackedPolicySize") /* PackedPolicySize com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$PackedPolicySize */ =>  {
                 let var_24 =
                     Some(
                          {
@@ -554,7 +554,7 @@ pub fn deser_operation_assume_role_with_web_identity(
                 builder = builder.set_packed_policy_size(var_24);
             }
             ,
-            s if s.matches("Provider") /* Provider com.amazonaws.sts#AssumeRoleWithWebIdentityOutput$Provider */ =>  {
+            s if s.matches("Provider") /* Provider com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$Provider */ =>  {
                 let var_25 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -567,7 +567,7 @@ pub fn deser_operation_assume_role_with_web_identity(
                 builder = builder.set_provider(var_25);
             }
             ,
-            s if s.matches("Audience") /* Audience com.amazonaws.sts#AssumeRoleWithWebIdentityOutput$Audience */ =>  {
+            s if s.matches("Audience") /* Audience com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$Audience */ =>  {
                 let var_26 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -580,7 +580,7 @@ pub fn deser_operation_assume_role_with_web_identity(
                 builder = builder.set_audience(var_26);
             }
             ,
-            s if s.matches("SourceIdentity") /* SourceIdentity com.amazonaws.sts#AssumeRoleWithWebIdentityOutput$SourceIdentity */ =>  {
+            s if s.matches("SourceIdentity") /* SourceIdentity com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$SourceIdentity */ =>  {
                 let var_27 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -605,7 +605,7 @@ pub fn deser_operation_assume_role_with_web_identity(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_authorization_message_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_authorization_message_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_authorization_message_exception::Builder,
 ) -> Result<
@@ -641,7 +641,7 @@ pub fn deser_structure_invalid_authorization_message_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_decode_authorization_message(
+pub fn deser_operation_crate_operation_decode_authorization_message(
     inp: &[u8],
     mut builder: crate::output::decode_authorization_message_output::Builder,
 ) -> Result<crate::output::decode_authorization_message_output::Builder, smithy_xml::decode::XmlError>
@@ -668,7 +668,7 @@ pub fn deser_operation_decode_authorization_message(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DecodedMessage") /* DecodedMessage com.amazonaws.sts#DecodeAuthorizationMessageOutput$DecodedMessage */ =>  {
+            s if s.matches("DecodedMessage") /* DecodedMessage com.amazonaws.sts.synthetic#DecodeAuthorizationMessageOutput$DecodedMessage */ =>  {
                 let var_29 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -693,7 +693,7 @@ pub fn deser_operation_decode_authorization_message(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_get_access_key_info(
+pub fn deser_operation_crate_operation_get_access_key_info(
     inp: &[u8],
     mut builder: crate::output::get_access_key_info_output::Builder,
 ) -> Result<crate::output::get_access_key_info_output::Builder, smithy_xml::decode::XmlError> {
@@ -719,7 +719,7 @@ pub fn deser_operation_get_access_key_info(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Account") /* Account com.amazonaws.sts#GetAccessKeyInfoOutput$Account */ =>  {
+            s if s.matches("Account") /* Account com.amazonaws.sts.synthetic#GetAccessKeyInfoOutput$Account */ =>  {
                 let var_30 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -744,7 +744,7 @@ pub fn deser_operation_get_access_key_info(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_get_caller_identity(
+pub fn deser_operation_crate_operation_get_caller_identity(
     inp: &[u8],
     mut builder: crate::output::get_caller_identity_output::Builder,
 ) -> Result<crate::output::get_caller_identity_output::Builder, smithy_xml::decode::XmlError> {
@@ -770,7 +770,7 @@ pub fn deser_operation_get_caller_identity(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("UserId") /* UserId com.amazonaws.sts#GetCallerIdentityOutput$UserId */ =>  {
+            s if s.matches("UserId") /* UserId com.amazonaws.sts.synthetic#GetCallerIdentityOutput$UserId */ =>  {
                 let var_31 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -783,7 +783,7 @@ pub fn deser_operation_get_caller_identity(
                 builder = builder.set_user_id(var_31);
             }
             ,
-            s if s.matches("Account") /* Account com.amazonaws.sts#GetCallerIdentityOutput$Account */ =>  {
+            s if s.matches("Account") /* Account com.amazonaws.sts.synthetic#GetCallerIdentityOutput$Account */ =>  {
                 let var_32 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -796,7 +796,7 @@ pub fn deser_operation_get_caller_identity(
                 builder = builder.set_account(var_32);
             }
             ,
-            s if s.matches("Arn") /* Arn com.amazonaws.sts#GetCallerIdentityOutput$Arn */ =>  {
+            s if s.matches("Arn") /* Arn com.amazonaws.sts.synthetic#GetCallerIdentityOutput$Arn */ =>  {
                 let var_33 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -821,7 +821,7 @@ pub fn deser_operation_get_caller_identity(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_get_federation_token(
+pub fn deser_operation_crate_operation_get_federation_token(
     inp: &[u8],
     mut builder: crate::output::get_federation_token_output::Builder,
 ) -> Result<crate::output::get_federation_token_output::Builder, smithy_xml::decode::XmlError> {
@@ -847,27 +847,27 @@ pub fn deser_operation_get_federation_token(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Credentials") /* Credentials com.amazonaws.sts#GetFederationTokenOutput$Credentials */ =>  {
+            s if s.matches("Credentials") /* Credentials com.amazonaws.sts.synthetic#GetFederationTokenOutput$Credentials */ =>  {
                 let var_34 =
                     Some(
-                        crate::xml_deser::deser_structure_credentials(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_credentials(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_credentials(var_34);
             }
             ,
-            s if s.matches("FederatedUser") /* FederatedUser com.amazonaws.sts#GetFederationTokenOutput$FederatedUser */ =>  {
+            s if s.matches("FederatedUser") /* FederatedUser com.amazonaws.sts.synthetic#GetFederationTokenOutput$FederatedUser */ =>  {
                 let var_35 =
                     Some(
-                        crate::xml_deser::deser_structure_federated_user(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_federated_user(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_federated_user(var_35);
             }
             ,
-            s if s.matches("PackedPolicySize") /* PackedPolicySize com.amazonaws.sts#GetFederationTokenOutput$PackedPolicySize */ =>  {
+            s if s.matches("PackedPolicySize") /* PackedPolicySize com.amazonaws.sts.synthetic#GetFederationTokenOutput$PackedPolicySize */ =>  {
                 let var_36 =
                     Some(
                          {
@@ -894,7 +894,7 @@ pub fn deser_operation_get_federation_token(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_get_session_token(
+pub fn deser_operation_crate_operation_get_session_token(
     inp: &[u8],
     mut builder: crate::output::get_session_token_output::Builder,
 ) -> Result<crate::output::get_session_token_output::Builder, smithy_xml::decode::XmlError> {
@@ -920,10 +920,10 @@ pub fn deser_operation_get_session_token(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Credentials") /* Credentials com.amazonaws.sts#GetSessionTokenOutput$Credentials */ =>  {
+            s if s.matches("Credentials") /* Credentials com.amazonaws.sts.synthetic#GetSessionTokenOutput$Credentials */ =>  {
                 let var_37 =
                     Some(
-                        crate::xml_deser::deser_structure_credentials(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_credentials(&mut tag)
                         ?
                     )
                 ;
@@ -941,7 +941,7 @@ pub fn deser_operation_get_session_token(
     Ok(builder)
 }
 
-pub fn deser_structure_credentials(
+pub fn deser_structure_crate_model_credentials(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Credentials, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -1007,7 +1007,7 @@ pub fn deser_structure_credentials(
     Ok(builder.build())
 }
 
-pub fn deser_structure_assumed_role_user(
+pub fn deser_structure_crate_model_assumed_role_user(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AssumedRoleUser, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -1046,7 +1046,7 @@ pub fn deser_structure_assumed_role_user(
     Ok(builder.build())
 }
 
-pub fn deser_structure_federated_user(
+pub fn deser_structure_crate_model_federated_user(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FederatedUser, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]

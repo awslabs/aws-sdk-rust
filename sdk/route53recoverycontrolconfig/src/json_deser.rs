@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -201,7 +201,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -240,7 +240,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -279,7 +279,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_cluster(
+pub fn deser_operation_crate_operation_create_cluster(
     input: &[u8],
     mut builder: crate::output::create_cluster_output::Builder,
 ) -> Result<crate::output::create_cluster_output::Builder, smithy_json::deserialize::Error> {
@@ -294,44 +294,8 @@ pub fn deser_operation_create_cluster(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Cluster" => {
-                        builder = builder
-                            .set_cluster(crate::json_deser::deser_structure_cluster(tokens)?);
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_create_control_panel(
-    input: &[u8],
-    mut builder: crate::output::create_control_panel_output::Builder,
-) -> Result<crate::output::create_control_panel_output::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "ControlPanel" => {
-                        builder = builder.set_control_panel(
-                            crate::json_deser::deser_structure_control_panel(tokens)?,
+                        builder = builder.set_cluster(
+                            crate::json_deser::deser_structure_crate_model_cluster(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -352,7 +316,44 @@ pub fn deser_operation_create_control_panel(
     Ok(builder)
 }
 
-pub fn deser_operation_create_routing_control(
+pub fn deser_operation_crate_operation_create_control_panel(
+    input: &[u8],
+    mut builder: crate::output::create_control_panel_output::Builder,
+) -> Result<crate::output::create_control_panel_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ControlPanel" => {
+                        builder = builder.set_control_panel(
+                            crate::json_deser::deser_structure_crate_model_control_panel(tokens)?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_create_routing_control(
     input: &[u8],
     mut builder: crate::output::create_routing_control_output::Builder,
 ) -> Result<crate::output::create_routing_control_output::Builder, smithy_json::deserialize::Error>
@@ -369,7 +370,7 @@ pub fn deser_operation_create_routing_control(
                 match key.to_unescaped()?.as_ref() {
                     "RoutingControl" => {
                         builder = builder.set_routing_control(
-                            crate::json_deser::deser_structure_routing_control(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_routing_control(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -390,7 +391,7 @@ pub fn deser_operation_create_routing_control(
     Ok(builder)
 }
 
-pub fn deser_operation_create_safety_rule(
+pub fn deser_operation_crate_operation_create_safety_rule(
     input: &[u8],
     mut builder: crate::output::create_safety_rule_output::Builder,
 ) -> Result<crate::output::create_safety_rule_output::Builder, smithy_json::deserialize::Error> {
@@ -406,12 +407,12 @@ pub fn deser_operation_create_safety_rule(
                 match key.to_unescaped()?.as_ref() {
                     "AssertionRule" => {
                         builder = builder.set_assertion_rule(
-                            crate::json_deser::deser_structure_assertion_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_assertion_rule(tokens)?,
                         );
                     }
                     "GatingRule" => {
                         builder = builder.set_gating_rule(
-                            crate::json_deser::deser_structure_gating_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_gating_rule(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -432,7 +433,7 @@ pub fn deser_operation_create_safety_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_cluster(
+pub fn deser_operation_crate_operation_describe_cluster(
     input: &[u8],
     mut builder: crate::output::describe_cluster_output::Builder,
 ) -> Result<crate::output::describe_cluster_output::Builder, smithy_json::deserialize::Error> {
@@ -447,8 +448,9 @@ pub fn deser_operation_describe_cluster(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Cluster" => {
-                        builder = builder
-                            .set_cluster(crate::json_deser::deser_structure_cluster(tokens)?);
+                        builder = builder.set_cluster(
+                            crate::json_deser::deser_structure_crate_model_cluster(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -468,7 +470,7 @@ pub fn deser_operation_describe_cluster(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_control_panel(
+pub fn deser_operation_crate_operation_describe_control_panel(
     input: &[u8],
     mut builder: crate::output::describe_control_panel_output::Builder,
 ) -> Result<crate::output::describe_control_panel_output::Builder, smithy_json::deserialize::Error>
@@ -485,7 +487,7 @@ pub fn deser_operation_describe_control_panel(
                 match key.to_unescaped()?.as_ref() {
                     "ControlPanel" => {
                         builder = builder.set_control_panel(
-                            crate::json_deser::deser_structure_control_panel(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_control_panel(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -506,7 +508,7 @@ pub fn deser_operation_describe_control_panel(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_routing_control(
+pub fn deser_operation_crate_operation_describe_routing_control(
     input: &[u8],
     mut builder: crate::output::describe_routing_control_output::Builder,
 ) -> Result<crate::output::describe_routing_control_output::Builder, smithy_json::deserialize::Error>
@@ -523,7 +525,7 @@ pub fn deser_operation_describe_routing_control(
                 match key.to_unescaped()?.as_ref() {
                     "RoutingControl" => {
                         builder = builder.set_routing_control(
-                            crate::json_deser::deser_structure_routing_control(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_routing_control(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -544,7 +546,7 @@ pub fn deser_operation_describe_routing_control(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_safety_rule(
+pub fn deser_operation_crate_operation_describe_safety_rule(
     input: &[u8],
     mut builder: crate::output::describe_safety_rule_output::Builder,
 ) -> Result<crate::output::describe_safety_rule_output::Builder, smithy_json::deserialize::Error> {
@@ -560,12 +562,12 @@ pub fn deser_operation_describe_safety_rule(
                 match key.to_unescaped()?.as_ref() {
                     "AssertionRule" => {
                         builder = builder.set_assertion_rule(
-                            crate::json_deser::deser_structure_assertion_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_assertion_rule(tokens)?,
                         );
                     }
                     "GatingRule" => {
                         builder = builder.set_gating_rule(
-                            crate::json_deser::deser_structure_gating_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_gating_rule(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -586,7 +588,7 @@ pub fn deser_operation_describe_safety_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_list_associated_route53_health_checks(
+pub fn deser_operation_crate_operation_list_associated_route53_health_checks(
     input: &[u8],
     mut builder: crate::output::list_associated_route53_health_checks_output::Builder,
 ) -> Result<
@@ -605,7 +607,7 @@ pub fn deser_operation_list_associated_route53_health_checks(
                 match key.to_unescaped()?.as_ref() {
                     "HealthCheckIds" => {
                         builder = builder.set_health_check_ids(
-                            crate::json_deser::deser_list___list_of__string(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -633,7 +635,7 @@ pub fn deser_operation_list_associated_route53_health_checks(
     Ok(builder)
 }
 
-pub fn deser_operation_list_clusters(
+pub fn deser_operation_crate_operation_list_clusters(
     input: &[u8],
     mut builder: crate::output::list_clusters_output::Builder,
 ) -> Result<crate::output::list_clusters_output::Builder, smithy_json::deserialize::Error> {
@@ -648,8 +650,9 @@ pub fn deser_operation_list_clusters(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Clusters" => {
-                        builder = builder
-                            .set_clusters(crate::json_deser::deser_list___list_of_cluster(tokens)?);
+                        builder = builder.set_clusters(
+                            crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_cluster(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -676,7 +679,7 @@ pub fn deser_operation_list_clusters(
     Ok(builder)
 }
 
-pub fn deser_operation_list_control_panels(
+pub fn deser_operation_crate_operation_list_control_panels(
     input: &[u8],
     mut builder: crate::output::list_control_panels_output::Builder,
 ) -> Result<crate::output::list_control_panels_output::Builder, smithy_json::deserialize::Error> {
@@ -692,7 +695,7 @@ pub fn deser_operation_list_control_panels(
                 match key.to_unescaped()?.as_ref() {
                     "ControlPanels" => {
                         builder = builder.set_control_panels(
-                            crate::json_deser::deser_list___list_of_control_panel(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_control_panel(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -720,7 +723,7 @@ pub fn deser_operation_list_control_panels(
     Ok(builder)
 }
 
-pub fn deser_operation_list_routing_controls(
+pub fn deser_operation_crate_operation_list_routing_controls(
     input: &[u8],
     mut builder: crate::output::list_routing_controls_output::Builder,
 ) -> Result<crate::output::list_routing_controls_output::Builder, smithy_json::deserialize::Error> {
@@ -743,7 +746,7 @@ pub fn deser_operation_list_routing_controls(
                     }
                     "RoutingControls" => {
                         builder = builder.set_routing_controls(
-                            crate::json_deser::deser_list___list_of_routing_control(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_routing_control(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -764,7 +767,7 @@ pub fn deser_operation_list_routing_controls(
     Ok(builder)
 }
 
-pub fn deser_operation_list_safety_rules(
+pub fn deser_operation_crate_operation_list_safety_rules(
     input: &[u8],
     mut builder: crate::output::list_safety_rules_output::Builder,
 ) -> Result<crate::output::list_safety_rules_output::Builder, smithy_json::deserialize::Error> {
@@ -787,7 +790,7 @@ pub fn deser_operation_list_safety_rules(
                     }
                     "SafetyRules" => {
                         builder = builder.set_safety_rules(
-                            crate::json_deser::deser_list___list_of_rule(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_rule(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -808,7 +811,7 @@ pub fn deser_operation_list_safety_rules(
     Ok(builder)
 }
 
-pub fn deser_operation_update_control_panel(
+pub fn deser_operation_crate_operation_update_control_panel(
     input: &[u8],
     mut builder: crate::output::update_control_panel_output::Builder,
 ) -> Result<crate::output::update_control_panel_output::Builder, smithy_json::deserialize::Error> {
@@ -824,7 +827,7 @@ pub fn deser_operation_update_control_panel(
                 match key.to_unescaped()?.as_ref() {
                     "ControlPanel" => {
                         builder = builder.set_control_panel(
-                            crate::json_deser::deser_structure_control_panel(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_control_panel(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -845,7 +848,7 @@ pub fn deser_operation_update_control_panel(
     Ok(builder)
 }
 
-pub fn deser_operation_update_routing_control(
+pub fn deser_operation_crate_operation_update_routing_control(
     input: &[u8],
     mut builder: crate::output::update_routing_control_output::Builder,
 ) -> Result<crate::output::update_routing_control_output::Builder, smithy_json::deserialize::Error>
@@ -862,7 +865,7 @@ pub fn deser_operation_update_routing_control(
                 match key.to_unescaped()?.as_ref() {
                     "RoutingControl" => {
                         builder = builder.set_routing_control(
-                            crate::json_deser::deser_structure_routing_control(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_routing_control(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -883,7 +886,7 @@ pub fn deser_operation_update_routing_control(
     Ok(builder)
 }
 
-pub fn deser_operation_update_safety_rule(
+pub fn deser_operation_crate_operation_update_safety_rule(
     input: &[u8],
     mut builder: crate::output::update_safety_rule_output::Builder,
 ) -> Result<crate::output::update_safety_rule_output::Builder, smithy_json::deserialize::Error> {
@@ -899,12 +902,12 @@ pub fn deser_operation_update_safety_rule(
                 match key.to_unescaped()?.as_ref() {
                     "AssertionRule" => {
                         builder = builder.set_assertion_rule(
-                            crate::json_deser::deser_structure_assertion_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_assertion_rule(tokens)?,
                         );
                     }
                     "GatingRule" => {
                         builder = builder.set_gating_rule(
-                            crate::json_deser::deser_structure_gating_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_gating_rule(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -933,7 +936,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_cluster<'a, I>(
+pub fn deser_structure_crate_model_cluster<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Cluster>, smithy_json::deserialize::Error>
 where
@@ -962,9 +965,7 @@ where
                             }
                             "ClusterEndpoints" => {
                                 builder = builder.set_cluster_endpoints(
-                                    crate::json_deser::deser_list___list_of_cluster_endpoint(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_cluster_endpoint(tokens)?
                                 );
                             }
                             "Name" => {
@@ -1006,7 +1007,7 @@ where
     }
 }
 
-pub fn deser_structure_control_panel<'a, I>(
+pub fn deser_structure_crate_model_control_panel<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ControlPanel>, smithy_json::deserialize::Error>
 where
@@ -1096,7 +1097,7 @@ where
     }
 }
 
-pub fn deser_structure_routing_control<'a, I>(
+pub fn deser_structure_crate_model_routing_control<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RoutingControl>, smithy_json::deserialize::Error>
 where
@@ -1171,7 +1172,7 @@ where
     }
 }
 
-pub fn deser_structure_assertion_rule<'a, I>(
+pub fn deser_structure_crate_model_assertion_rule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AssertionRule>, smithy_json::deserialize::Error>
 where
@@ -1191,7 +1192,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "AssertedControls" => {
                                 builder = builder.set_asserted_controls(
-                                    crate::json_deser::deser_list___list_of__string(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string(tokens)?
                                 );
                             }
                             "ControlPanelArn" => {
@@ -1214,7 +1215,9 @@ where
                             }
                             "RuleConfig" => {
                                 builder = builder.set_rule_config(
-                                    crate::json_deser::deser_structure_rule_config(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_rule_config(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "SafetyRuleArn" => {
@@ -1264,7 +1267,7 @@ where
     }
 }
 
-pub fn deser_structure_gating_rule<'a, I>(
+pub fn deser_structure_crate_model_gating_rule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GatingRule>, smithy_json::deserialize::Error>
 where
@@ -1293,7 +1296,7 @@ where
                             }
                             "GatingControls" => {
                                 builder = builder.set_gating_controls(
-                                    crate::json_deser::deser_list___list_of__string(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string(tokens)?
                                 );
                             }
                             "Name" => {
@@ -1307,7 +1310,9 @@ where
                             }
                             "RuleConfig" => {
                                 builder = builder.set_rule_config(
-                                    crate::json_deser::deser_structure_rule_config(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_rule_config(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "SafetyRuleArn" => {
@@ -1333,7 +1338,7 @@ where
                             }
                             "TargetControls" => {
                                 builder = builder.set_target_controls(
-                                    crate::json_deser::deser_list___list_of__string(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string(tokens)?
                                 );
                             }
                             "WaitPeriodMs" => {
@@ -1363,7 +1368,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of__string<'a, I>(
+pub fn deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1401,7 +1406,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_cluster<'a, I>(
+pub fn deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_cluster<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Cluster>>, smithy_json::deserialize::Error>
 where
@@ -1420,7 +1425,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_cluster(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_cluster(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1436,7 +1441,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_control_panel<'a, I>(
+pub fn deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_control_panel<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ControlPanel>>, smithy_json::deserialize::Error>
 where
@@ -1455,7 +1460,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_control_panel(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_control_panel(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1471,7 +1477,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_routing_control<'a, I>(
+pub fn deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_routing_control<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::RoutingControl>>, smithy_json::deserialize::Error>
 where
@@ -1490,7 +1496,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_routing_control(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_routing_control(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1506,7 +1513,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_rule<'a, I>(
+pub fn deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_rule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Rule>>, smithy_json::deserialize::Error>
 where
@@ -1525,7 +1532,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_rule(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_rule(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1541,7 +1548,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_cluster_endpoint<'a, I>(
+pub fn deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_cluster_endpoint<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ClusterEndpoint>>, smithy_json::deserialize::Error>
 where
@@ -1560,7 +1567,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_cluster_endpoint(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_cluster_endpoint(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1575,7 +1585,7 @@ where
     }
 }
 
-pub fn deser_structure_rule_config<'a, I>(
+pub fn deser_structure_crate_model_rule_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RuleConfig>, smithy_json::deserialize::Error>
 where
@@ -1638,7 +1648,7 @@ where
     }
 }
 
-pub fn deser_structure_rule<'a, I>(
+pub fn deser_structure_crate_model_rule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Rule>, smithy_json::deserialize::Error>
 where
@@ -1658,12 +1668,16 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "ASSERTION" => {
                                 builder = builder.set_assertion(
-                                    crate::json_deser::deser_structure_assertion_rule(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_assertion_rule(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "GATING" => {
                                 builder = builder.set_gating(
-                                    crate::json_deser::deser_structure_gating_rule(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_gating_rule(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1684,7 +1698,7 @@ where
     }
 }
 
-pub fn deser_structure_cluster_endpoint<'a, I>(
+pub fn deser_structure_crate_model_cluster_endpoint<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ClusterEndpoint>, smithy_json::deserialize::Error>
 where

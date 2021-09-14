@@ -6071,9 +6071,9 @@ impl smithy_http::response::ParseStrictResponse for PutObject {
 #[allow(unreachable_code, unused_variables)]
 mod put_object_request_test {
     /// This test validates that if a content-type is specified, that only one content-type header is sent
-    /// Test ID: DontSendMultipleContentTypeHeaders
+    /// Test ID: DontSendDuplicateContentType
     #[tokio::test]
-    async fn dont_send_multiple_content_type_headers_request() {
+    async fn dont_send_duplicate_content_type_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::PutObjectInput::builder()
             .set_bucket(Some("test-bucket".to_string()))
@@ -6087,6 +6087,31 @@ mod put_object_request_test {
         assert_eq!(http_request.method(), "PUT");
         assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
         let expected_headers = &[("content-type", "text/html")];
+        protocol_test_helpers::assert_ok(protocol_test_helpers::validate_headers(
+            &http_request,
+            expected_headers,
+        ));
+    }
+    /// This test validates that if a content-length is specified, that only one content-length header is sent
+    /// Test ID: DontSendDuplicateContentLength
+    #[tokio::test]
+    async fn dont_send_duplicate_content_length_request() {
+        let config = crate::config::Config::builder().build();
+        let input = crate::input::PutObjectInput::builder()
+            .set_bucket(Some("test-bucket".to_string()))
+            .set_key(Some("test-key".to_string()))
+            .set_content_length(Some(2))
+            .set_body(Some(smithy_http::byte_stream::ByteStream::from_static(
+                b"ab",
+            )))
+            .build()
+            .unwrap()
+            .make_operation(&config)
+            .expect("operation failed to build");
+        let (http_request, parts) = input.into_request_response().0.into_parts();
+        assert_eq!(http_request.method(), "PUT");
+        assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
+        let expected_headers = &[("content-length", "2")];
         protocol_test_helpers::assert_ok(protocol_test_helpers::validate_headers(
             &http_request,
             expected_headers,

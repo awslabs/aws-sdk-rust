@@ -99,9 +99,11 @@ impl AddAssociationInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_add_association(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_add_association(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -164,12 +166,12 @@ impl AddAssociationInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.AddAssociation",
         );
         Ok(builder)
@@ -179,7 +181,11 @@ impl AddAssociationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -250,8 +256,8 @@ impl AddTagsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_add_tags(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -314,11 +320,14 @@ impl AddTagsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "x-amz-target", "SageMaker.AddTags");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "SageMaker.AddTags",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -326,7 +335,11 @@ impl AddTagsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -402,10 +415,9 @@ impl AssociateTrialComponentInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_associate_trial_component(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_associate_trial_component(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -468,12 +480,12 @@ impl AssociateTrialComponentInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.AssociateTrialComponent",
         );
         Ok(builder)
@@ -483,7 +495,11 @@ impl AssociateTrialComponentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -645,9 +661,10 @@ impl CreateActionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_action(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_action(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -710,12 +727,12 @@ impl CreateActionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateAction",
         );
         Ok(builder)
@@ -725,7 +742,11 @@ impl CreateActionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -927,9 +948,11 @@ impl CreateAlgorithmInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_algorithm(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_algorithm(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -992,12 +1015,12 @@ impl CreateAlgorithmInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateAlgorithm",
         );
         Ok(builder)
@@ -1007,7 +1030,11 @@ impl CreateAlgorithmInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1132,8 +1159,8 @@ impl CreateAppInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_create_app(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_create_app(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -1196,12 +1223,12 @@ impl CreateAppInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateApp",
         );
         Ok(builder)
@@ -1211,7 +1238,11 @@ impl CreateAppInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1308,7 +1339,10 @@ impl CreateAppImageConfigInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_app_image_config(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_app_image_config(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1374,12 +1408,12 @@ impl CreateAppImageConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateAppImageConfig",
         );
         Ok(builder)
@@ -1389,7 +1423,11 @@ impl CreateAppImageConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1533,9 +1571,11 @@ impl CreateArtifactInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_artifact(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_artifact(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1598,12 +1638,12 @@ impl CreateArtifactInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateArtifact",
         );
         Ok(builder)
@@ -1613,7 +1653,11 @@ impl CreateArtifactInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1815,10 +1859,11 @@ impl CreateAutoMlJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_auto_ml_job(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_auto_ml_job(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1881,12 +1926,12 @@ impl CreateAutoMlJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateAutoMLJob",
         );
         Ok(builder)
@@ -1896,7 +1941,11 @@ impl CreateAutoMlJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1991,7 +2040,10 @@ impl CreateCodeRepositoryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_code_repository(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_code_repository(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2057,12 +2109,12 @@ impl CreateCodeRepositoryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateCodeRepository",
         );
         Ok(builder)
@@ -2072,7 +2124,11 @@ impl CreateCodeRepositoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2247,7 +2303,10 @@ impl CreateCompilationJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_compilation_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_compilation_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2313,12 +2372,12 @@ impl CreateCompilationJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateCompilationJob",
         );
         Ok(builder)
@@ -2328,7 +2387,11 @@ impl CreateCompilationJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2462,9 +2525,10 @@ impl CreateContextInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_context(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_context(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2527,12 +2591,12 @@ impl CreateContextInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateContext",
         );
         Ok(builder)
@@ -2542,7 +2606,11 @@ impl CreateContextInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2750,10 +2818,8 @@ impl CreateDataQualityJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_data_quality_job_definition(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_data_quality_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2816,12 +2882,12 @@ impl CreateDataQualityJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateDataQualityJobDefinition",
         );
         Ok(builder)
@@ -2831,7 +2897,11 @@ impl CreateDataQualityJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2961,7 +3031,10 @@ impl CreateDeviceFleetInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_device_fleet(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_device_fleet(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3027,12 +3100,12 @@ impl CreateDeviceFleetInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateDeviceFleet",
         );
         Ok(builder)
@@ -3042,7 +3115,11 @@ impl CreateDeviceFleetInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3231,9 +3308,10 @@ impl CreateDomainInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_domain(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3296,12 +3374,12 @@ impl CreateDomainInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateDomain",
         );
         Ok(builder)
@@ -3311,7 +3389,11 @@ impl CreateDomainInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3465,10 +3547,9 @@ impl CreateEdgePackagingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_edge_packaging_job(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_edge_packaging_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3531,12 +3612,12 @@ impl CreateEdgePackagingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateEdgePackagingJob",
         );
         Ok(builder)
@@ -3546,7 +3627,11 @@ impl CreateEdgePackagingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3641,9 +3726,11 @@ impl CreateEndpointInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_endpoint(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3706,12 +3793,12 @@ impl CreateEndpointInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateEndpoint",
         );
         Ok(builder)
@@ -3721,7 +3808,11 @@ impl CreateEndpointInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3902,7 +3993,10 @@ impl CreateEndpointConfigInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_endpoint_config(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_endpoint_config(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3968,12 +4062,12 @@ impl CreateEndpointConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateEndpointConfig",
         );
         Ok(builder)
@@ -3983,7 +4077,11 @@ impl CreateEndpointConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4087,9 +4185,11 @@ impl CreateExperimentInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_experiment(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_experiment(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4152,12 +4252,12 @@ impl CreateExperimentInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateExperiment",
         );
         Ok(builder)
@@ -4167,7 +4267,11 @@ impl CreateExperimentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4415,7 +4519,10 @@ impl CreateFeatureGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_feature_group(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_feature_group(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4481,12 +4588,12 @@ impl CreateFeatureGroupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateFeatureGroup",
         );
         Ok(builder)
@@ -4496,7 +4603,11 @@ impl CreateFeatureGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4651,7 +4762,10 @@ impl CreateFlowDefinitionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_flow_definition(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_flow_definition(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4717,12 +4831,12 @@ impl CreateFlowDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateFlowDefinition",
         );
         Ok(builder)
@@ -4732,7 +4846,11 @@ impl CreateFlowDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4825,7 +4943,10 @@ impl CreateHumanTaskUiInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_human_task_ui(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_human_task_ui(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4891,12 +5012,12 @@ impl CreateHumanTaskUiInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateHumanTaskUi",
         );
         Ok(builder)
@@ -4906,7 +5027,11 @@ impl CreateHumanTaskUiInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5090,10 +5215,8 @@ impl CreateHyperParameterTuningJobInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_hyper_parameter_tuning_job(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_hyper_parameter_tuning_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5156,12 +5279,12 @@ impl CreateHyperParameterTuningJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateHyperParameterTuningJob",
         );
         Ok(builder)
@@ -5171,7 +5294,11 @@ impl CreateHyperParameterTuningJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5279,9 +5406,10 @@ impl CreateImageInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_image(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_image(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5344,12 +5472,12 @@ impl CreateImageInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateImage",
         );
         Ok(builder)
@@ -5359,7 +5487,11 @@ impl CreateImageInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5450,7 +5582,10 @@ impl CreateImageVersionInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_image_version(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_image_version(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -5516,12 +5651,12 @@ impl CreateImageVersionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateImageVersion",
         );
         Ok(builder)
@@ -5531,7 +5666,11 @@ impl CreateImageVersionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5862,7 +6001,10 @@ impl CreateLabelingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_labeling_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_labeling_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -5928,12 +6070,12 @@ impl CreateLabelingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateLabelingJob",
         );
         Ok(builder)
@@ -5943,7 +6085,11 @@ impl CreateLabelingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6120,9 +6266,10 @@ impl CreateModelInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_model(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_model(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6185,12 +6332,12 @@ impl CreateModelInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateModel",
         );
         Ok(builder)
@@ -6200,7 +6347,11 @@ impl CreateModelInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6408,10 +6559,8 @@ impl CreateModelBiasJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_model_bias_job_definition(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_model_bias_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6474,12 +6623,12 @@ impl CreateModelBiasJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateModelBiasJobDefinition",
         );
         Ok(builder)
@@ -6489,7 +6638,11 @@ impl CreateModelBiasJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6703,7 +6856,7 @@ impl CreateModelExplainabilityJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_model_explainability_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_create_model_explainability_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -6767,12 +6920,12 @@ impl CreateModelExplainabilityJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateModelExplainabilityJobDefinition",
         );
         Ok(builder)
@@ -6782,7 +6935,11 @@ impl CreateModelExplainabilityJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7037,7 +7194,10 @@ impl CreateModelPackageInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_model_package(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_model_package(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -7103,12 +7263,12 @@ impl CreateModelPackageInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateModelPackage",
         );
         Ok(builder)
@@ -7118,7 +7278,11 @@ impl CreateModelPackageInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7215,10 +7379,9 @@ impl CreateModelPackageGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_model_package_group(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_model_package_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -7281,12 +7444,12 @@ impl CreateModelPackageGroupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateModelPackageGroup",
         );
         Ok(builder)
@@ -7296,7 +7459,11 @@ impl CreateModelPackageGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7506,12 +7673,8 @@ impl CreateModelQualityJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_model_quality_job_definition(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_model_quality_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -7574,12 +7737,12 @@ impl CreateModelQualityJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateModelQualityJobDefinition",
         );
         Ok(builder)
@@ -7589,7 +7752,11 @@ impl CreateModelQualityJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7689,10 +7856,9 @@ impl CreateMonitoringScheduleInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_monitoring_schedule(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_monitoring_schedule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -7755,12 +7921,12 @@ impl CreateMonitoringScheduleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateMonitoringSchedule",
         );
         Ok(builder)
@@ -7770,7 +7936,11 @@ impl CreateMonitoringScheduleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8065,7 +8235,10 @@ impl CreateNotebookInstanceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_notebook_instance(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_notebook_instance(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -8131,12 +8304,12 @@ impl CreateNotebookInstanceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateNotebookInstance",
         );
         Ok(builder)
@@ -8146,7 +8319,11 @@ impl CreateNotebookInstanceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8256,7 +8433,7 @@ impl CreateNotebookInstanceLifecycleConfigInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_notebook_instance_lifecycle_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_create_notebook_instance_lifecycle_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -8320,12 +8497,12 @@ impl CreateNotebookInstanceLifecycleConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateNotebookInstanceLifecycleConfig",
         );
         Ok(builder)
@@ -8335,7 +8512,11 @@ impl CreateNotebookInstanceLifecycleConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8485,9 +8666,11 @@ impl CreatePipelineInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_pipeline(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8550,12 +8733,12 @@ impl CreatePipelineInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreatePipeline",
         );
         Ok(builder)
@@ -8565,7 +8748,11 @@ impl CreatePipelineInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8667,10 +8854,9 @@ impl CreatePresignedDomainUrlInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_presigned_domain_url(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_presigned_domain_url(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8733,12 +8919,12 @@ impl CreatePresignedDomainUrlInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreatePresignedDomainUrl",
         );
         Ok(builder)
@@ -8748,7 +8934,11 @@ impl CreatePresignedDomainUrlInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8828,12 +9018,8 @@ impl CreatePresignedNotebookInstanceUrlInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_presigned_notebook_instance_url(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_presigned_notebook_instance_url(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8896,12 +9082,12 @@ impl CreatePresignedNotebookInstanceUrlInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreatePresignedNotebookInstanceUrl",
         );
         Ok(builder)
@@ -8911,7 +9097,11 @@ impl CreatePresignedNotebookInstanceUrlInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9158,7 +9348,10 @@ impl CreateProcessingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_processing_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_processing_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -9224,12 +9417,12 @@ impl CreateProcessingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateProcessingJob",
         );
         Ok(builder)
@@ -9239,7 +9432,11 @@ impl CreateProcessingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9348,9 +9545,10 @@ impl CreateProjectInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_project(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -9413,12 +9611,12 @@ impl CreateProjectInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateProject",
         );
         Ok(builder)
@@ -9428,13 +9626,219 @@ impl CreateProjectInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::input::CreateProjectInput)
     pub fn builder() -> crate::input::create_project_input::Builder {
         crate::input::create_project_input::Builder::default()
+    }
+}
+
+/// See [`CreateStudioLifecycleConfigInput`](crate::input::CreateStudioLifecycleConfigInput)
+pub mod create_studio_lifecycle_config_input {
+    /// A builder for [`CreateStudioLifecycleConfigInput`](crate::input::CreateStudioLifecycleConfigInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio_lifecycle_config_name: std::option::Option<std::string::String>,
+        pub(crate) studio_lifecycle_config_content: std::option::Option<std::string::String>,
+        pub(crate) studio_lifecycle_config_app_type:
+            std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the Studio Lifecycle Configuration to create.</p>
+        pub fn studio_lifecycle_config_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_name = Some(input.into());
+            self
+        }
+        pub fn set_studio_lifecycle_config_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_name = input;
+            self
+        }
+        /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+        pub fn studio_lifecycle_config_content(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_content = Some(input.into());
+            self
+        }
+        pub fn set_studio_lifecycle_config_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_content = input;
+            self
+        }
+        /// <p>The App type that the Lifecycle Configuration is attached to.</p>
+        pub fn studio_lifecycle_config_app_type(
+            mut self,
+            input: crate::model::StudioLifecycleConfigAppType,
+        ) -> Self {
+            self.studio_lifecycle_config_app_type = Some(input);
+            self
+        }
+        pub fn set_studio_lifecycle_config_app_type(
+            mut self,
+            input: std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+        ) -> Self {
+            self.studio_lifecycle_config_app_type = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateStudioLifecycleConfigInput`](crate::input::CreateStudioLifecycleConfigInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateStudioLifecycleConfigInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateStudioLifecycleConfigInput {
+                studio_lifecycle_config_name: self.studio_lifecycle_config_name,
+                studio_lifecycle_config_content: self.studio_lifecycle_config_content,
+                studio_lifecycle_config_app_type: self.studio_lifecycle_config_app_type,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateStudioLifecycleConfigInputOperationOutputAlias =
+    crate::operation::CreateStudioLifecycleConfig;
+#[doc(hidden)]
+pub type CreateStudioLifecycleConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateStudioLifecycleConfigInput {
+    /// Consumes the builder and constructs an Operation<[`CreateStudioLifecycleConfig`](crate::operation::CreateStudioLifecycleConfig)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateStudioLifecycleConfig,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_studio_lifecycle_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateStudioLifecycleConfig::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateStudioLifecycleConfig",
+                "sagemaker",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "SageMaker.CreateStudioLifecycleConfig",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateStudioLifecycleConfigInput`](crate::input::CreateStudioLifecycleConfigInput)
+    pub fn builder() -> crate::input::create_studio_lifecycle_config_input::Builder {
+        crate::input::create_studio_lifecycle_config_input::Builder::default()
     }
 }
 
@@ -9890,7 +10294,10 @@ impl CreateTrainingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_training_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_training_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -9956,12 +10363,12 @@ impl CreateTrainingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateTrainingJob",
         );
         Ok(builder)
@@ -9971,7 +10378,11 @@ impl CreateTrainingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10264,7 +10675,10 @@ impl CreateTransformJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_transform_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_transform_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -10330,12 +10744,12 @@ impl CreateTransformJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateTransformJob",
         );
         Ok(builder)
@@ -10345,7 +10759,11 @@ impl CreateTransformJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10461,9 +10879,10 @@ impl CreateTrialInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_trial(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_trial(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -10526,12 +10945,12 @@ impl CreateTrialInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateTrial",
         );
         Ok(builder)
@@ -10541,7 +10960,11 @@ impl CreateTrialInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10776,7 +11199,10 @@ impl CreateTrialComponentInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_trial_component(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_trial_component(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -10842,12 +11268,12 @@ impl CreateTrialComponentInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateTrialComponent",
         );
         Ok(builder)
@@ -10857,7 +11283,11 @@ impl CreateTrialComponentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10996,7 +11426,10 @@ impl CreateUserProfileInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_user_profile(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_user_profile(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -11062,12 +11495,12 @@ impl CreateUserProfileInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateUserProfile",
         );
         Ok(builder)
@@ -11077,7 +11510,11 @@ impl CreateUserProfileInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11207,9 +11644,11 @@ impl CreateWorkforceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_workforce(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_workforce(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -11272,12 +11711,12 @@ impl CreateWorkforceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateWorkforce",
         );
         Ok(builder)
@@ -11287,7 +11726,11 @@ impl CreateWorkforceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11428,9 +11871,11 @@ impl CreateWorkteamInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_workteam(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_workteam(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -11493,12 +11938,12 @@ impl CreateWorkteamInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.CreateWorkteam",
         );
         Ok(builder)
@@ -11508,7 +11953,11 @@ impl CreateWorkteamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11568,9 +12017,10 @@ impl DeleteActionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_action(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_action(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -11633,12 +12083,12 @@ impl DeleteActionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteAction",
         );
         Ok(builder)
@@ -11648,7 +12098,11 @@ impl DeleteActionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11712,9 +12166,11 @@ impl DeleteAlgorithmInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_algorithm(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_algorithm(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -11777,12 +12233,12 @@ impl DeleteAlgorithmInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteAlgorithm",
         );
         Ok(builder)
@@ -11792,7 +12248,11 @@ impl DeleteAlgorithmInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11887,8 +12347,8 @@ impl DeleteAppInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_delete_app(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_delete_app(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -11951,12 +12411,12 @@ impl DeleteAppInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteApp",
         );
         Ok(builder)
@@ -11966,7 +12426,11 @@ impl DeleteAppInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12030,7 +12494,10 @@ impl DeleteAppImageConfigInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_app_image_config(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_app_image_config(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -12096,12 +12563,12 @@ impl DeleteAppImageConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteAppImageConfig",
         );
         Ok(builder)
@@ -12111,7 +12578,11 @@ impl DeleteAppImageConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12186,9 +12657,11 @@ impl DeleteArtifactInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_artifact(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_artifact(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -12251,12 +12724,12 @@ impl DeleteArtifactInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteArtifact",
         );
         Ok(builder)
@@ -12266,7 +12739,11 @@ impl DeleteArtifactInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12341,10 +12818,11 @@ impl DeleteAssociationInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_association(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_association(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -12407,12 +12885,12 @@ impl DeleteAssociationInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteAssociation",
         );
         Ok(builder)
@@ -12422,7 +12900,11 @@ impl DeleteAssociationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12486,7 +12968,10 @@ impl DeleteCodeRepositoryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_code_repository(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_code_repository(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -12552,12 +13037,12 @@ impl DeleteCodeRepositoryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteCodeRepository",
         );
         Ok(builder)
@@ -12567,7 +13052,11 @@ impl DeleteCodeRepositoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12627,9 +13116,10 @@ impl DeleteContextInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_context(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_context(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -12692,12 +13182,12 @@ impl DeleteContextInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteContext",
         );
         Ok(builder)
@@ -12707,7 +13197,11 @@ impl DeleteContextInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12773,10 +13267,8 @@ impl DeleteDataQualityJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_data_quality_job_definition(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_data_quality_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -12839,12 +13331,12 @@ impl DeleteDataQualityJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteDataQualityJobDefinition",
         );
         Ok(builder)
@@ -12854,7 +13346,11 @@ impl DeleteDataQualityJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12918,7 +13414,10 @@ impl DeleteDeviceFleetInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_device_fleet(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_device_fleet(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -12984,12 +13483,12 @@ impl DeleteDeviceFleetInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteDeviceFleet",
         );
         Ok(builder)
@@ -12999,7 +13498,11 @@ impl DeleteDeviceFleetInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13075,9 +13578,10 @@ impl DeleteDomainInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_domain(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_domain(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -13140,12 +13644,12 @@ impl DeleteDomainInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteDomain",
         );
         Ok(builder)
@@ -13155,7 +13659,11 @@ impl DeleteDomainInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13219,9 +13727,11 @@ impl DeleteEndpointInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_endpoint(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -13284,12 +13794,12 @@ impl DeleteEndpointInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteEndpoint",
         );
         Ok(builder)
@@ -13299,7 +13809,11 @@ impl DeleteEndpointInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13363,7 +13877,10 @@ impl DeleteEndpointConfigInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_endpoint_config(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_endpoint_config(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -13429,12 +13946,12 @@ impl DeleteEndpointConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteEndpointConfig",
         );
         Ok(builder)
@@ -13444,7 +13961,11 @@ impl DeleteEndpointConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13508,9 +14029,11 @@ impl DeleteExperimentInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_experiment(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_experiment(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -13573,12 +14096,12 @@ impl DeleteExperimentInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteExperiment",
         );
         Ok(builder)
@@ -13588,7 +14111,11 @@ impl DeleteExperimentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13653,7 +14180,10 @@ impl DeleteFeatureGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_feature_group(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_feature_group(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -13719,12 +14249,12 @@ impl DeleteFeatureGroupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteFeatureGroup",
         );
         Ok(builder)
@@ -13734,7 +14264,11 @@ impl DeleteFeatureGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13798,7 +14332,10 @@ impl DeleteFlowDefinitionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_flow_definition(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_flow_definition(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -13864,12 +14401,12 @@ impl DeleteFlowDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteFlowDefinition",
         );
         Ok(builder)
@@ -13879,7 +14416,11 @@ impl DeleteFlowDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13943,7 +14484,10 @@ impl DeleteHumanTaskUiInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_human_task_ui(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_human_task_ui(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -14009,12 +14553,12 @@ impl DeleteHumanTaskUiInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteHumanTaskUi",
         );
         Ok(builder)
@@ -14024,7 +14568,11 @@ impl DeleteHumanTaskUiInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14084,9 +14632,10 @@ impl DeleteImageInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_image(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_image(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -14149,12 +14698,12 @@ impl DeleteImageInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteImage",
         );
         Ok(builder)
@@ -14164,7 +14713,11 @@ impl DeleteImageInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14236,7 +14789,10 @@ impl DeleteImageVersionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_image_version(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_image_version(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -14302,12 +14858,12 @@ impl DeleteImageVersionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteImageVersion",
         );
         Ok(builder)
@@ -14317,7 +14873,11 @@ impl DeleteImageVersionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14377,9 +14937,10 @@ impl DeleteModelInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_model(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_model(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -14442,12 +15003,12 @@ impl DeleteModelInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteModel",
         );
         Ok(builder)
@@ -14457,7 +15018,11 @@ impl DeleteModelInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14523,10 +15088,8 @@ impl DeleteModelBiasJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_model_bias_job_definition(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_model_bias_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -14589,12 +15152,12 @@ impl DeleteModelBiasJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteModelBiasJobDefinition",
         );
         Ok(builder)
@@ -14604,7 +15167,11 @@ impl DeleteModelBiasJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14671,7 +15238,7 @@ impl DeleteModelExplainabilityJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_model_explainability_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_delete_model_explainability_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -14735,12 +15302,12 @@ impl DeleteModelExplainabilityJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteModelExplainabilityJobDefinition",
         );
         Ok(builder)
@@ -14750,7 +15317,11 @@ impl DeleteModelExplainabilityJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14816,7 +15387,10 @@ impl DeleteModelPackageInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_model_package(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_model_package(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -14882,12 +15456,12 @@ impl DeleteModelPackageInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteModelPackage",
         );
         Ok(builder)
@@ -14897,7 +15471,11 @@ impl DeleteModelPackageInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14962,10 +15540,9 @@ impl DeleteModelPackageGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_model_package_group(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_model_package_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -15028,12 +15605,12 @@ impl DeleteModelPackageGroupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteModelPackageGroup",
         );
         Ok(builder)
@@ -15043,7 +15620,11 @@ impl DeleteModelPackageGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15109,10 +15690,8 @@ impl DeleteModelPackageGroupPolicyInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_model_package_group_policy(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_model_package_group_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -15175,12 +15754,12 @@ impl DeleteModelPackageGroupPolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteModelPackageGroupPolicy",
         );
         Ok(builder)
@@ -15190,7 +15769,11 @@ impl DeleteModelPackageGroupPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15256,12 +15839,8 @@ impl DeleteModelQualityJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_model_quality_job_definition(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_model_quality_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -15324,12 +15903,12 @@ impl DeleteModelQualityJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteModelQualityJobDefinition",
         );
         Ok(builder)
@@ -15339,7 +15918,11 @@ impl DeleteModelQualityJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15404,10 +15987,9 @@ impl DeleteMonitoringScheduleInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_monitoring_schedule(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_monitoring_schedule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -15470,12 +16052,12 @@ impl DeleteMonitoringScheduleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteMonitoringSchedule",
         );
         Ok(builder)
@@ -15485,7 +16067,11 @@ impl DeleteMonitoringScheduleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15549,7 +16135,10 @@ impl DeleteNotebookInstanceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_notebook_instance(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_notebook_instance(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -15615,12 +16204,12 @@ impl DeleteNotebookInstanceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteNotebookInstance",
         );
         Ok(builder)
@@ -15630,7 +16219,11 @@ impl DeleteNotebookInstanceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15702,7 +16295,7 @@ impl DeleteNotebookInstanceLifecycleConfigInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_notebook_instance_lifecycle_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_delete_notebook_instance_lifecycle_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -15766,12 +16359,12 @@ impl DeleteNotebookInstanceLifecycleConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteNotebookInstanceLifecycleConfig",
         );
         Ok(builder)
@@ -15781,7 +16374,11 @@ impl DeleteNotebookInstanceLifecycleConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15863,9 +16460,11 @@ impl DeletePipelineInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_pipeline(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_pipeline(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -15928,12 +16527,12 @@ impl DeletePipelineInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeletePipeline",
         );
         Ok(builder)
@@ -15943,7 +16542,11 @@ impl DeletePipelineInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16003,9 +16606,10 @@ impl DeleteProjectInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_project(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -16068,12 +16672,12 @@ impl DeleteProjectInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteProject",
         );
         Ok(builder)
@@ -16083,13 +16687,169 @@ impl DeleteProjectInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput)
     pub fn builder() -> crate::input::delete_project_input::Builder {
         crate::input::delete_project_input::Builder::default()
+    }
+}
+
+/// See [`DeleteStudioLifecycleConfigInput`](crate::input::DeleteStudioLifecycleConfigInput)
+pub mod delete_studio_lifecycle_config_input {
+    /// A builder for [`DeleteStudioLifecycleConfigInput`](crate::input::DeleteStudioLifecycleConfigInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio_lifecycle_config_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
+        pub fn studio_lifecycle_config_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_name = Some(input.into());
+            self
+        }
+        pub fn set_studio_lifecycle_config_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteStudioLifecycleConfigInput`](crate::input::DeleteStudioLifecycleConfigInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteStudioLifecycleConfigInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteStudioLifecycleConfigInput {
+                studio_lifecycle_config_name: self.studio_lifecycle_config_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteStudioLifecycleConfigInputOperationOutputAlias =
+    crate::operation::DeleteStudioLifecycleConfig;
+#[doc(hidden)]
+pub type DeleteStudioLifecycleConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteStudioLifecycleConfigInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteStudioLifecycleConfig`](crate::operation::DeleteStudioLifecycleConfig)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteStudioLifecycleConfig,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_studio_lifecycle_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteStudioLifecycleConfig::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteStudioLifecycleConfig",
+                "sagemaker",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "SageMaker.DeleteStudioLifecycleConfig",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteStudioLifecycleConfigInput`](crate::input::DeleteStudioLifecycleConfigInput)
+    pub fn builder() -> crate::input::delete_studio_lifecycle_config_input::Builder {
+        crate::input::delete_studio_lifecycle_config_input::Builder::default()
     }
 }
 
@@ -16158,8 +16918,8 @@ impl DeleteTagsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_delete_tags(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -16224,12 +16984,12 @@ impl DeleteTagsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteTags",
         );
         Ok(builder)
@@ -16239,7 +16999,11 @@ impl DeleteTagsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16299,9 +17063,10 @@ impl DeleteTrialInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_trial(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_trial(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -16364,12 +17129,12 @@ impl DeleteTrialInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteTrial",
         );
         Ok(builder)
@@ -16379,7 +17144,11 @@ impl DeleteTrialInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16443,7 +17212,10 @@ impl DeleteTrialComponentInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_trial_component(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_trial_component(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -16509,12 +17281,12 @@ impl DeleteTrialComponentInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteTrialComponent",
         );
         Ok(builder)
@@ -16524,7 +17296,11 @@ impl DeleteTrialComponentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16599,7 +17375,10 @@ impl DeleteUserProfileInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_user_profile(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_user_profile(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -16665,12 +17444,12 @@ impl DeleteUserProfileInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteUserProfile",
         );
         Ok(builder)
@@ -16680,7 +17459,11 @@ impl DeleteUserProfileInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16744,9 +17527,11 @@ impl DeleteWorkforceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_workforce(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_workforce(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -16809,12 +17594,12 @@ impl DeleteWorkforceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteWorkforce",
         );
         Ok(builder)
@@ -16824,7 +17609,11 @@ impl DeleteWorkforceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16888,9 +17677,11 @@ impl DeleteWorkteamInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_workteam(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_workteam(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -16953,12 +17744,12 @@ impl DeleteWorkteamInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeleteWorkteam",
         );
         Ok(builder)
@@ -16968,7 +17759,11 @@ impl DeleteWorkteamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17047,10 +17842,11 @@ impl DeregisterDevicesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_deregister_devices(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_deregister_devices(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -17113,12 +17909,12 @@ impl DeregisterDevicesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DeregisterDevices",
         );
         Ok(builder)
@@ -17128,7 +17924,11 @@ impl DeregisterDevicesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17189,9 +17989,11 @@ impl DescribeActionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_action(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_action(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -17254,12 +18056,12 @@ impl DescribeActionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeAction",
         );
         Ok(builder)
@@ -17269,7 +18071,11 @@ impl DescribeActionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17333,10 +18139,11 @@ impl DescribeAlgorithmInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_algorithm(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_algorithm(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -17399,12 +18206,12 @@ impl DescribeAlgorithmInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeAlgorithm",
         );
         Ok(builder)
@@ -17414,7 +18221,11 @@ impl DescribeAlgorithmInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17510,9 +18321,10 @@ impl DescribeAppInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_app(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_app(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -17575,12 +18387,12 @@ impl DescribeAppInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeApp",
         );
         Ok(builder)
@@ -17590,7 +18402,11 @@ impl DescribeAppInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17654,10 +18470,9 @@ impl DescribeAppImageConfigInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_app_image_config(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_app_image_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -17720,12 +18535,12 @@ impl DescribeAppImageConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeAppImageConfig",
         );
         Ok(builder)
@@ -17735,7 +18550,11 @@ impl DescribeAppImageConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17796,9 +18615,11 @@ impl DescribeArtifactInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_artifact(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_artifact(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -17861,12 +18682,12 @@ impl DescribeArtifactInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeArtifact",
         );
         Ok(builder)
@@ -17876,7 +18697,11 @@ impl DescribeArtifactInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17940,7 +18765,10 @@ impl DescribeAutoMlJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_auto_ml_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_auto_ml_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -18006,12 +18834,12 @@ impl DescribeAutoMlJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeAutoMLJob",
         );
         Ok(builder)
@@ -18021,7 +18849,11 @@ impl DescribeAutoMlJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18085,7 +18917,10 @@ impl DescribeCodeRepositoryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_code_repository(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_code_repository(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -18151,12 +18986,12 @@ impl DescribeCodeRepositoryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeCodeRepository",
         );
         Ok(builder)
@@ -18166,7 +19001,11 @@ impl DescribeCodeRepositoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18230,7 +19069,10 @@ impl DescribeCompilationJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_compilation_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_compilation_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -18296,12 +19138,12 @@ impl DescribeCompilationJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeCompilationJob",
         );
         Ok(builder)
@@ -18311,7 +19153,11 @@ impl DescribeCompilationJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18372,9 +19218,11 @@ impl DescribeContextInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_context(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_context(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -18437,12 +19285,12 @@ impl DescribeContextInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeContext",
         );
         Ok(builder)
@@ -18452,7 +19300,11 @@ impl DescribeContextInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18518,12 +19370,8 @@ impl DescribeDataQualityJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_data_quality_job_definition(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_data_quality_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -18586,12 +19434,12 @@ impl DescribeDataQualityJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeDataQualityJobDefinition",
         );
         Ok(builder)
@@ -18601,7 +19449,11 @@ impl DescribeDataQualityJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18687,9 +19539,11 @@ impl DescribeDeviceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_device(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_device(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -18752,12 +19606,12 @@ impl DescribeDeviceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeDevice",
         );
         Ok(builder)
@@ -18767,7 +19621,11 @@ impl DescribeDeviceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18831,7 +19689,10 @@ impl DescribeDeviceFleetInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_device_fleet(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_device_fleet(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -18897,12 +19758,12 @@ impl DescribeDeviceFleetInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeDeviceFleet",
         );
         Ok(builder)
@@ -18912,7 +19773,11 @@ impl DescribeDeviceFleetInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18973,9 +19838,11 @@ impl DescribeDomainInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_domain(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -19038,12 +19905,12 @@ impl DescribeDomainInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeDomain",
         );
         Ok(builder)
@@ -19053,7 +19920,11 @@ impl DescribeDomainInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19118,10 +19989,9 @@ impl DescribeEdgePackagingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_edge_packaging_job(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_edge_packaging_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -19184,12 +20054,12 @@ impl DescribeEdgePackagingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeEdgePackagingJob",
         );
         Ok(builder)
@@ -19199,7 +20069,11 @@ impl DescribeEdgePackagingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19263,9 +20137,11 @@ impl DescribeEndpointInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_endpoint(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_endpoint(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -19328,12 +20204,12 @@ impl DescribeEndpointInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeEndpoint",
         );
         Ok(builder)
@@ -19343,7 +20219,11 @@ impl DescribeEndpointInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19407,7 +20287,10 @@ impl DescribeEndpointConfigInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_endpoint_config(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_endpoint_config(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -19473,12 +20356,12 @@ impl DescribeEndpointConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeEndpointConfig",
         );
         Ok(builder)
@@ -19488,7 +20371,11 @@ impl DescribeEndpointConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19552,7 +20439,10 @@ impl DescribeExperimentInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_experiment(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_experiment(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -19618,12 +20508,12 @@ impl DescribeExperimentInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeExperiment",
         );
         Ok(builder)
@@ -19633,7 +20523,11 @@ impl DescribeExperimentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19710,7 +20604,10 @@ impl DescribeFeatureGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_feature_group(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_feature_group(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -19776,12 +20673,12 @@ impl DescribeFeatureGroupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeFeatureGroup",
         );
         Ok(builder)
@@ -19791,7 +20688,11 @@ impl DescribeFeatureGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19855,7 +20756,10 @@ impl DescribeFlowDefinitionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_flow_definition(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_flow_definition(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -19921,12 +20825,12 @@ impl DescribeFlowDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeFlowDefinition",
         );
         Ok(builder)
@@ -19936,7 +20840,11 @@ impl DescribeFlowDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20001,7 +20909,10 @@ impl DescribeHumanTaskUiInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_human_task_ui(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_human_task_ui(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -20067,12 +20978,12 @@ impl DescribeHumanTaskUiInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeHumanTaskUi",
         );
         Ok(builder)
@@ -20082,7 +20993,11 @@ impl DescribeHumanTaskUiInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20151,12 +21066,8 @@ impl DescribeHyperParameterTuningJobInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_hyper_parameter_tuning_job(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_hyper_parameter_tuning_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -20219,12 +21130,12 @@ impl DescribeHyperParameterTuningJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeHyperParameterTuningJob",
         );
         Ok(builder)
@@ -20234,7 +21145,11 @@ impl DescribeHyperParameterTuningJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20294,9 +21209,10 @@ impl DescribeImageInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_image(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_image(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -20359,12 +21275,12 @@ impl DescribeImageInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeImage",
         );
         Ok(builder)
@@ -20374,7 +21290,11 @@ impl DescribeImageInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20446,7 +21366,10 @@ impl DescribeImageVersionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_image_version(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_image_version(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -20512,12 +21435,12 @@ impl DescribeImageVersionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeImageVersion",
         );
         Ok(builder)
@@ -20527,7 +21450,11 @@ impl DescribeImageVersionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20591,7 +21518,10 @@ impl DescribeLabelingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_labeling_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_labeling_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -20657,12 +21587,12 @@ impl DescribeLabelingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeLabelingJob",
         );
         Ok(builder)
@@ -20672,7 +21602,11 @@ impl DescribeLabelingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20732,9 +21666,10 @@ impl DescribeModelInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_model(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_model(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -20797,12 +21732,12 @@ impl DescribeModelInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeModel",
         );
         Ok(builder)
@@ -20812,7 +21747,11 @@ impl DescribeModelInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20879,10 +21818,8 @@ impl DescribeModelBiasJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_model_bias_job_definition(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_model_bias_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -20945,12 +21882,12 @@ impl DescribeModelBiasJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeModelBiasJobDefinition",
         );
         Ok(builder)
@@ -20960,7 +21897,11 @@ impl DescribeModelBiasJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21030,7 +21971,7 @@ impl DescribeModelExplainabilityJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_model_explainability_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_describe_model_explainability_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -21094,12 +22035,12 @@ impl DescribeModelExplainabilityJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeModelExplainabilityJobDefinition",
         );
         Ok(builder)
@@ -21109,7 +22050,11 @@ impl DescribeModelExplainabilityJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21175,7 +22120,10 @@ impl DescribeModelPackageInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_model_package(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_model_package(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -21241,12 +22189,12 @@ impl DescribeModelPackageInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeModelPackage",
         );
         Ok(builder)
@@ -21256,7 +22204,11 @@ impl DescribeModelPackageInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21322,10 +22274,8 @@ impl DescribeModelPackageGroupInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_model_package_group(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_model_package_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -21388,12 +22338,12 @@ impl DescribeModelPackageGroupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeModelPackageGroup",
         );
         Ok(builder)
@@ -21403,7 +22353,11 @@ impl DescribeModelPackageGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21470,12 +22424,8 @@ impl DescribeModelQualityJobDefinitionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_model_quality_job_definition(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_model_quality_job_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -21538,12 +22488,12 @@ impl DescribeModelQualityJobDefinitionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeModelQualityJobDefinition",
         );
         Ok(builder)
@@ -21553,7 +22503,11 @@ impl DescribeModelQualityJobDefinitionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21619,10 +22573,8 @@ impl DescribeMonitoringScheduleInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_monitoring_schedule(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_monitoring_schedule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -21685,12 +22637,12 @@ impl DescribeMonitoringScheduleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeMonitoringSchedule",
         );
         Ok(builder)
@@ -21700,7 +22652,11 @@ impl DescribeMonitoringScheduleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21765,10 +22721,9 @@ impl DescribeNotebookInstanceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_notebook_instance(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_notebook_instance(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -21831,12 +22786,12 @@ impl DescribeNotebookInstanceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeNotebookInstance",
         );
         Ok(builder)
@@ -21846,7 +22801,11 @@ impl DescribeNotebookInstanceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21918,7 +22877,7 @@ impl DescribeNotebookInstanceLifecycleConfigInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_notebook_instance_lifecycle_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_describe_notebook_instance_lifecycle_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -21982,12 +22941,12 @@ impl DescribeNotebookInstanceLifecycleConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeNotebookInstanceLifecycleConfig",
         );
         Ok(builder)
@@ -21997,7 +22956,11 @@ impl DescribeNotebookInstanceLifecycleConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22061,9 +23024,11 @@ impl DescribePipelineInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_pipeline(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_pipeline(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -22126,12 +23091,12 @@ impl DescribePipelineInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribePipeline",
         );
         Ok(builder)
@@ -22141,7 +23106,11 @@ impl DescribePipelineInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22208,7 +23177,7 @@ impl DescribePipelineDefinitionForExecutionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_pipeline_definition_for_execution(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_describe_pipeline_definition_for_execution(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -22272,12 +23241,12 @@ impl DescribePipelineDefinitionForExecutionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribePipelineDefinitionForExecution",
         );
         Ok(builder)
@@ -22287,7 +23256,11 @@ impl DescribePipelineDefinitionForExecutionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22352,10 +23325,9 @@ impl DescribePipelineExecutionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_pipeline_execution(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_pipeline_execution(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -22418,12 +23390,12 @@ impl DescribePipelineExecutionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribePipelineExecution",
         );
         Ok(builder)
@@ -22433,7 +23405,11 @@ impl DescribePipelineExecutionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22498,7 +23474,10 @@ impl DescribeProcessingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_processing_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_processing_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -22564,12 +23543,12 @@ impl DescribeProcessingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeProcessingJob",
         );
         Ok(builder)
@@ -22579,7 +23558,11 @@ impl DescribeProcessingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22640,9 +23623,11 @@ impl DescribeProjectInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_project(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_project(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -22705,12 +23690,12 @@ impl DescribeProjectInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeProject",
         );
         Ok(builder)
@@ -22720,13 +23705,169 @@ impl DescribeProjectInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeProjectInput`](crate::input::DescribeProjectInput)
     pub fn builder() -> crate::input::describe_project_input::Builder {
         crate::input::describe_project_input::Builder::default()
+    }
+}
+
+/// See [`DescribeStudioLifecycleConfigInput`](crate::input::DescribeStudioLifecycleConfigInput)
+pub mod describe_studio_lifecycle_config_input {
+    /// A builder for [`DescribeStudioLifecycleConfigInput`](crate::input::DescribeStudioLifecycleConfigInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio_lifecycle_config_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+        pub fn studio_lifecycle_config_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_name = Some(input.into());
+            self
+        }
+        pub fn set_studio_lifecycle_config_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeStudioLifecycleConfigInput`](crate::input::DescribeStudioLifecycleConfigInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeStudioLifecycleConfigInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeStudioLifecycleConfigInput {
+                studio_lifecycle_config_name: self.studio_lifecycle_config_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeStudioLifecycleConfigInputOperationOutputAlias =
+    crate::operation::DescribeStudioLifecycleConfig;
+#[doc(hidden)]
+pub type DescribeStudioLifecycleConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeStudioLifecycleConfigInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeStudioLifecycleConfig`](crate::operation::DescribeStudioLifecycleConfig)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeStudioLifecycleConfig,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_studio_lifecycle_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeStudioLifecycleConfig::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeStudioLifecycleConfig",
+                "sagemaker",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "SageMaker.DescribeStudioLifecycleConfig",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeStudioLifecycleConfigInput`](crate::input::DescribeStudioLifecycleConfigInput)
+    pub fn builder() -> crate::input::describe_studio_lifecycle_config_input::Builder {
+        crate::input::describe_studio_lifecycle_config_input::Builder::default()
     }
 }
 
@@ -22783,10 +23924,8 @@ impl DescribeSubscribedWorkteamInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_subscribed_workteam(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_subscribed_workteam(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -22849,12 +23988,12 @@ impl DescribeSubscribedWorkteamInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeSubscribedWorkteam",
         );
         Ok(builder)
@@ -22864,7 +24003,11 @@ impl DescribeSubscribedWorkteamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22928,7 +24071,10 @@ impl DescribeTrainingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_training_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_training_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -22994,12 +24140,12 @@ impl DescribeTrainingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeTrainingJob",
         );
         Ok(builder)
@@ -23009,7 +24155,11 @@ impl DescribeTrainingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23073,7 +24223,10 @@ impl DescribeTransformJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_transform_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_transform_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -23139,12 +24292,12 @@ impl DescribeTransformJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeTransformJob",
         );
         Ok(builder)
@@ -23154,7 +24307,11 @@ impl DescribeTransformJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23214,9 +24371,10 @@ impl DescribeTrialInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_trial(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_trial(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -23279,12 +24437,12 @@ impl DescribeTrialInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeTrial",
         );
         Ok(builder)
@@ -23294,7 +24452,11 @@ impl DescribeTrialInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23358,7 +24520,10 @@ impl DescribeTrialComponentInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_trial_component(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_trial_component(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -23424,12 +24589,12 @@ impl DescribeTrialComponentInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeTrialComponent",
         );
         Ok(builder)
@@ -23439,7 +24604,11 @@ impl DescribeTrialComponentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23514,7 +24683,10 @@ impl DescribeUserProfileInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_user_profile(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_user_profile(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -23580,12 +24752,12 @@ impl DescribeUserProfileInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeUserProfile",
         );
         Ok(builder)
@@ -23595,7 +24767,11 @@ impl DescribeUserProfileInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23661,10 +24837,11 @@ impl DescribeWorkforceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_workforce(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_workforce(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -23727,12 +24904,12 @@ impl DescribeWorkforceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeWorkforce",
         );
         Ok(builder)
@@ -23742,7 +24919,11 @@ impl DescribeWorkforceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23806,9 +24987,11 @@ impl DescribeWorkteamInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_workteam(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_workteam(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -23871,12 +25054,12 @@ impl DescribeWorkteamInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DescribeWorkteam",
         );
         Ok(builder)
@@ -23886,7 +25069,11 @@ impl DescribeWorkteamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23937,7 +25124,7 @@ impl DisableSagemakerServicecatalogPortfolioInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_disable_sagemaker_servicecatalog_portfolio(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_disable_sagemaker_servicecatalog_portfolio(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -24001,12 +25188,12 @@ impl DisableSagemakerServicecatalogPortfolioInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DisableSagemakerServicecatalogPortfolio",
         );
         Ok(builder)
@@ -24016,7 +25203,11 @@ impl DisableSagemakerServicecatalogPortfolioInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24093,10 +25284,8 @@ impl DisassociateTrialComponentInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_disassociate_trial_component(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_disassociate_trial_component(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -24159,12 +25348,12 @@ impl DisassociateTrialComponentInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.DisassociateTrialComponent",
         );
         Ok(builder)
@@ -24174,7 +25363,11 @@ impl DisassociateTrialComponentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24225,7 +25418,7 @@ impl EnableSagemakerServicecatalogPortfolioInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_enable_sagemaker_servicecatalog_portfolio(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_enable_sagemaker_servicecatalog_portfolio(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -24289,12 +25482,12 @@ impl EnableSagemakerServicecatalogPortfolioInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.EnableSagemakerServicecatalogPortfolio",
         );
         Ok(builder)
@@ -24304,7 +25497,11 @@ impl EnableSagemakerServicecatalogPortfolioInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24368,7 +25565,10 @@ impl GetDeviceFleetReportInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_device_fleet_report(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_device_fleet_report(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -24434,12 +25634,12 @@ impl GetDeviceFleetReportInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.GetDeviceFleetReport",
         );
         Ok(builder)
@@ -24449,7 +25649,11 @@ impl GetDeviceFleetReportInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24515,10 +25719,8 @@ impl GetModelPackageGroupPolicyInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_model_package_group_policy(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_model_package_group_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -24581,12 +25783,12 @@ impl GetModelPackageGroupPolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.GetModelPackageGroupPolicy",
         );
         Ok(builder)
@@ -24596,7 +25798,11 @@ impl GetModelPackageGroupPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24647,7 +25853,7 @@ impl GetSagemakerServicecatalogPortfolioStatusInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_sagemaker_servicecatalog_portfolio_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_get_sagemaker_servicecatalog_portfolio_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -24711,12 +25917,12 @@ impl GetSagemakerServicecatalogPortfolioStatusInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.GetSagemakerServicecatalogPortfolioStatus",
         );
         Ok(builder)
@@ -24726,7 +25932,11 @@ impl GetSagemakerServicecatalogPortfolioStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24804,7 +26014,10 @@ impl GetSearchSuggestionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_search_suggestions(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_search_suggestions(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -24870,12 +26083,12 @@ impl GetSearchSuggestionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.GetSearchSuggestions",
         );
         Ok(builder)
@@ -24885,7 +26098,11 @@ impl GetSearchSuggestionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -25035,9 +26252,10 @@ impl ListActionsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_actions(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_actions(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -25100,12 +26318,12 @@ impl ListActionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListActions",
         );
         Ok(builder)
@@ -25115,7 +26333,11 @@ impl ListActionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -25263,9 +26485,11 @@ impl ListAlgorithmsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_algorithms(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_algorithms(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -25328,12 +26552,12 @@ impl ListAlgorithmsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListAlgorithms",
         );
         Ok(builder)
@@ -25343,7 +26567,11 @@ impl ListAlgorithmsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -25515,7 +26743,10 @@ impl ListAppImageConfigsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_app_image_configs(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_app_image_configs(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -25581,12 +26812,12 @@ impl ListAppImageConfigsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListAppImageConfigs",
         );
         Ok(builder)
@@ -25596,7 +26827,11 @@ impl ListAppImageConfigsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -25720,10 +26955,10 @@ impl ListAppsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_apps(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body = crate::operation_ser::serialize_operation_crate_operation_list_apps(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -25784,12 +27019,12 @@ impl ListAppsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListApps",
         );
         Ok(builder)
@@ -25799,7 +27034,11 @@ impl ListAppsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -25952,9 +27191,10 @@ impl ListArtifactsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_artifacts(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_artifacts(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -26017,12 +27257,12 @@ impl ListArtifactsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListArtifacts",
         );
         Ok(builder)
@@ -26032,7 +27272,11 @@ impl ListArtifactsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -26225,9 +27469,11 @@ impl ListAssociationsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_associations(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_associations(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -26290,12 +27536,12 @@ impl ListAssociationsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListAssociations",
         );
         Ok(builder)
@@ -26305,7 +27551,11 @@ impl ListAssociationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -26490,9 +27740,11 @@ impl ListAutoMlJobsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_auto_ml_jobs(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_auto_ml_jobs(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -26555,12 +27807,12 @@ impl ListAutoMlJobsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListAutoMLJobs",
         );
         Ok(builder)
@@ -26570,7 +27822,11 @@ impl ListAutoMlJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -26716,10 +27972,8 @@ impl ListCandidatesForAutoMlJobInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_candidates_for_auto_ml_job(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_candidates_for_auto_ml_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -26782,12 +28036,12 @@ impl ListCandidatesForAutoMlJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListCandidatesForAutoMLJob",
         );
         Ok(builder)
@@ -26797,7 +28051,11 @@ impl ListCandidatesForAutoMlJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -26974,7 +28232,10 @@ impl ListCodeRepositoriesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_code_repositories(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_code_repositories(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -27040,12 +28301,12 @@ impl ListCodeRepositoriesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListCodeRepositories",
         );
         Ok(builder)
@@ -27055,7 +28316,11 @@ impl ListCodeRepositoriesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -27246,7 +28511,10 @@ impl ListCompilationJobsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_compilation_jobs(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_compilation_jobs(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -27312,12 +28580,12 @@ impl ListCompilationJobsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListCompilationJobs",
         );
         Ok(builder)
@@ -27327,7 +28595,11 @@ impl ListCompilationJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -27477,9 +28749,10 @@ impl ListContextsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_contexts(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_contexts(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -27542,12 +28815,12 @@ impl ListContextsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListContexts",
         );
         Ok(builder)
@@ -27557,7 +28830,11 @@ impl ListContextsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -27722,10 +28999,8 @@ impl ListDataQualityJobDefinitionsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_data_quality_job_definitions(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_data_quality_job_definitions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -27788,12 +29063,12 @@ impl ListDataQualityJobDefinitionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListDataQualityJobDefinitions",
         );
         Ok(builder)
@@ -27803,7 +29078,11 @@ impl ListDataQualityJobDefinitionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -27973,10 +29252,11 @@ impl ListDeviceFleetsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_device_fleets(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_device_fleets(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -28039,12 +29319,12 @@ impl ListDeviceFleetsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListDeviceFleets",
         );
         Ok(builder)
@@ -28054,7 +29334,11 @@ impl ListDeviceFleetsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -28164,9 +29448,10 @@ impl ListDevicesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_devices(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_devices(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -28229,12 +29514,12 @@ impl ListDevicesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListDevices",
         );
         Ok(builder)
@@ -28244,7 +29529,11 @@ impl ListDevicesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -28316,9 +29605,10 @@ impl ListDomainsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_domains(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -28381,12 +29671,12 @@ impl ListDomainsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListDomains",
         );
         Ok(builder)
@@ -28396,7 +29686,11 @@ impl ListDomainsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -28594,7 +29888,10 @@ impl ListEdgePackagingJobsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_edge_packaging_jobs(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_edge_packaging_jobs(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -28660,12 +29957,12 @@ impl ListEdgePackagingJobsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListEdgePackagingJobs",
         );
         Ok(builder)
@@ -28675,7 +29972,11 @@ impl ListEdgePackagingJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -28822,7 +30123,10 @@ impl ListEndpointConfigsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_endpoint_configs(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_endpoint_configs(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -28888,12 +30192,12 @@ impl ListEndpointConfigsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListEndpointConfigs",
         );
         Ok(builder)
@@ -28903,7 +30207,11 @@ impl ListEndpointConfigsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -29094,9 +30402,10 @@ impl ListEndpointsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_endpoints(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_endpoints(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -29159,12 +30468,12 @@ impl ListEndpointsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListEndpoints",
         );
         Ok(builder)
@@ -29174,7 +30483,11 @@ impl ListEndpointsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -29304,9 +30617,11 @@ impl ListExperimentsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_experiments(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_experiments(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -29369,12 +30684,12 @@ impl ListExperimentsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListExperiments",
         );
         Ok(builder)
@@ -29384,7 +30699,11 @@ impl ListExperimentsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -29565,7 +30884,10 @@ impl ListFeatureGroupsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_feature_groups(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_feature_groups(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -29631,12 +30953,12 @@ impl ListFeatureGroupsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListFeatureGroups",
         );
         Ok(builder)
@@ -29646,7 +30968,11 @@ impl ListFeatureGroupsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -29760,7 +31086,10 @@ impl ListFlowDefinitionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_flow_definitions(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_flow_definitions(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -29826,12 +31155,12 @@ impl ListFlowDefinitionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListFlowDefinitions",
         );
         Ok(builder)
@@ -29841,7 +31170,11 @@ impl ListFlowDefinitionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -29955,7 +31288,10 @@ impl ListHumanTaskUisInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_human_task_uis(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_human_task_uis(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -30021,12 +31357,12 @@ impl ListHumanTaskUisInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListHumanTaskUis",
         );
         Ok(builder)
@@ -30036,7 +31372,11 @@ impl ListHumanTaskUisInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -30242,10 +31582,8 @@ impl ListHyperParameterTuningJobsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_hyper_parameter_tuning_jobs(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_hyper_parameter_tuning_jobs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -30308,12 +31646,12 @@ impl ListHyperParameterTuningJobsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListHyperParameterTuningJobs",
         );
         Ok(builder)
@@ -30323,7 +31661,11 @@ impl ListHyperParameterTuningJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -30492,8 +31834,8 @@ impl ListImagesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_images(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_list_images(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -30558,12 +31900,12 @@ impl ListImagesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListImages",
         );
         Ok(builder)
@@ -30573,7 +31915,11 @@ impl ListImagesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -30741,7 +32087,10 @@ impl ListImageVersionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_image_versions(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_image_versions(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -30807,12 +32156,12 @@ impl ListImageVersionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListImageVersions",
         );
         Ok(builder)
@@ -30822,7 +32171,11 @@ impl ListImageVersionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -31010,10 +32363,11 @@ impl ListLabelingJobsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_labeling_jobs(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_labeling_jobs(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -31076,12 +32430,12 @@ impl ListLabelingJobsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListLabelingJobs",
         );
         Ok(builder)
@@ -31091,7 +32445,11 @@ impl ListLabelingJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -31259,10 +32617,8 @@ impl ListLabelingJobsForWorkteamInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_labeling_jobs_for_workteam(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_labeling_jobs_for_workteam(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -31325,12 +32681,12 @@ impl ListLabelingJobsForWorkteamInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListLabelingJobsForWorkteam",
         );
         Ok(builder)
@@ -31340,7 +32696,11 @@ impl ListLabelingJobsForWorkteamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -31502,10 +32862,8 @@ impl ListModelBiasJobDefinitionsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_model_bias_job_definitions(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_model_bias_job_definitions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -31568,12 +32926,12 @@ impl ListModelBiasJobDefinitionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListModelBiasJobDefinitions",
         );
         Ok(builder)
@@ -31583,7 +32941,11 @@ impl ListModelBiasJobDefinitionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -31747,7 +33109,7 @@ impl ListModelExplainabilityJobDefinitionsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_model_explainability_job_definitions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_list_model_explainability_job_definitions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -31811,12 +33173,12 @@ impl ListModelExplainabilityJobDefinitionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListModelExplainabilityJobDefinitions",
         );
         Ok(builder)
@@ -31826,7 +33188,11 @@ impl ListModelExplainabilityJobDefinitionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -31971,10 +33337,9 @@ impl ListModelPackageGroupsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_model_package_groups(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_model_package_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -32037,12 +33402,12 @@ impl ListModelPackageGroupsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListModelPackageGroups",
         );
         Ok(builder)
@@ -32052,7 +33417,11 @@ impl ListModelPackageGroupsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -32258,7 +33627,10 @@ impl ListModelPackagesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_model_packages(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_model_packages(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -32324,12 +33696,12 @@ impl ListModelPackagesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListModelPackages",
         );
         Ok(builder)
@@ -32339,7 +33711,11 @@ impl ListModelPackagesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -32504,10 +33880,8 @@ impl ListModelQualityJobDefinitionsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_model_quality_job_definitions(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_model_quality_job_definitions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -32570,12 +33944,12 @@ impl ListModelQualityJobDefinitionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListModelQualityJobDefinitions",
         );
         Ok(builder)
@@ -32585,7 +33959,11 @@ impl ListModelQualityJobDefinitionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -32730,8 +34108,8 @@ impl ListModelsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_models(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_list_models(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -32796,12 +34174,12 @@ impl ListModelsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListModels",
         );
         Ok(builder)
@@ -32811,7 +34189,11 @@ impl ListModelsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -33074,10 +34456,9 @@ impl ListMonitoringExecutionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_monitoring_executions(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_monitoring_executions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -33140,12 +34521,12 @@ impl ListMonitoringExecutionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListMonitoringExecutions",
         );
         Ok(builder)
@@ -33155,7 +34536,11 @@ impl ListMonitoringExecutionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -33390,10 +34775,9 @@ impl ListMonitoringSchedulesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_monitoring_schedules(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_monitoring_schedules(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -33456,12 +34840,12 @@ impl ListMonitoringSchedulesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListMonitoringSchedules",
         );
         Ok(builder)
@@ -33471,7 +34855,11 @@ impl ListMonitoringSchedulesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -33659,12 +35047,8 @@ impl ListNotebookInstanceLifecycleConfigsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_notebook_instance_lifecycle_configs(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_notebook_instance_lifecycle_configs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -33727,12 +35111,12 @@ impl ListNotebookInstanceLifecycleConfigsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListNotebookInstanceLifecycleConfigs",
         );
         Ok(builder)
@@ -33742,7 +35126,11 @@ impl ListNotebookInstanceLifecycleConfigsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -33997,7 +35385,10 @@ impl ListNotebookInstancesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_notebook_instances(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_notebook_instances(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -34063,12 +35454,12 @@ impl ListNotebookInstancesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListNotebookInstances",
         );
         Ok(builder)
@@ -34078,7 +35469,11 @@ impl ListNotebookInstancesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -34223,7 +35618,10 @@ impl ListPipelineExecutionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_pipeline_executions(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_pipeline_executions(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -34289,12 +35687,12 @@ impl ListPipelineExecutionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListPipelineExecutions",
         );
         Ok(builder)
@@ -34304,7 +35702,11 @@ impl ListPipelineExecutionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -34407,10 +35809,8 @@ impl ListPipelineExecutionStepsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_pipeline_execution_steps(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_pipeline_execution_steps(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -34473,12 +35873,12 @@ impl ListPipelineExecutionStepsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListPipelineExecutionSteps",
         );
         Ok(builder)
@@ -34488,7 +35888,11 @@ impl ListPipelineExecutionStepsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -34577,12 +35981,8 @@ impl ListPipelineParametersForExecutionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_pipeline_parameters_for_execution(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_pipeline_parameters_for_execution(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -34645,12 +36045,12 @@ impl ListPipelineParametersForExecutionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListPipelineParametersForExecution",
         );
         Ok(builder)
@@ -34660,7 +36060,11 @@ impl ListPipelineParametersForExecutionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -34804,9 +36208,10 @@ impl ListPipelinesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_pipelines(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_pipelines(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -34869,12 +36274,12 @@ impl ListPipelinesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListPipelines",
         );
         Ok(builder)
@@ -34884,7 +36289,11 @@ impl ListPipelinesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -35068,7 +36477,10 @@ impl ListProcessingJobsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_processing_jobs(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_processing_jobs(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -35134,12 +36546,12 @@ impl ListProcessingJobsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListProcessingJobs",
         );
         Ok(builder)
@@ -35149,7 +36561,11 @@ impl ListProcessingJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -35294,9 +36710,10 @@ impl ListProjectsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_projects(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -35359,12 +36776,12 @@ impl ListProjectsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListProjects",
         );
         Ok(builder)
@@ -35374,13 +36791,289 @@ impl ListProjectsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListProjectsInput`](crate::input::ListProjectsInput)
     pub fn builder() -> crate::input::list_projects_input::Builder {
         crate::input::list_projects_input::Builder::default()
+    }
+}
+
+/// See [`ListStudioLifecycleConfigsInput`](crate::input::ListStudioLifecycleConfigsInput)
+pub mod list_studio_lifecycle_configs_input {
+    /// A builder for [`ListStudioLifecycleConfigsInput`](crate::input::ListStudioLifecycleConfigsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) name_contains: std::option::Option<std::string::String>,
+        pub(crate) app_type_equals: std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+        pub(crate) creation_time_before: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) modified_time_before: std::option::Option<smithy_types::Instant>,
+        pub(crate) modified_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) sort_by: std::option::Option<crate::model::StudioLifecycleConfigSortKey>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+    }
+    impl Builder {
+        /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_contains = Some(input.into());
+            self
+        }
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_contains = input;
+            self
+        }
+        /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
+        pub fn app_type_equals(
+            mut self,
+            input: crate::model::StudioLifecycleConfigAppType,
+        ) -> Self {
+            self.app_type_equals = Some(input);
+            self
+        }
+        pub fn set_app_type_equals(
+            mut self,
+            input: std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+        ) -> Self {
+            self.app_type_equals = input;
+            self
+        }
+        /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time_before = Some(input);
+            self
+        }
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.creation_time_before = input;
+            self
+        }
+        /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time_after = Some(input);
+            self
+        }
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.creation_time_after = input;
+            self
+        }
+        /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
+        pub fn modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.modified_time_before = Some(input);
+            self
+        }
+        pub fn set_modified_time_before(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.modified_time_before = input;
+            self
+        }
+        /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
+        pub fn modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.modified_time_after = Some(input);
+            self
+        }
+        pub fn set_modified_time_after(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.modified_time_after = input;
+            self
+        }
+        /// <p>The property used to sort results. The default value is CreationTime.</p>
+        pub fn sort_by(mut self, input: crate::model::StudioLifecycleConfigSortKey) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::StudioLifecycleConfigSortKey>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>The sort order. The default value is Descending.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListStudioLifecycleConfigsInput`](crate::input::ListStudioLifecycleConfigsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListStudioLifecycleConfigsInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListStudioLifecycleConfigsInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+                name_contains: self.name_contains,
+                app_type_equals: self.app_type_equals,
+                creation_time_before: self.creation_time_before,
+                creation_time_after: self.creation_time_after,
+                modified_time_before: self.modified_time_before,
+                modified_time_after: self.modified_time_after,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListStudioLifecycleConfigsInputOperationOutputAlias =
+    crate::operation::ListStudioLifecycleConfigs;
+#[doc(hidden)]
+pub type ListStudioLifecycleConfigsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListStudioLifecycleConfigsInput {
+    /// Consumes the builder and constructs an Operation<[`ListStudioLifecycleConfigs`](crate::operation::ListStudioLifecycleConfigs)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListStudioLifecycleConfigs,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_studio_lifecycle_configs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListStudioLifecycleConfigs::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListStudioLifecycleConfigs",
+                "sagemaker",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "SageMaker.ListStudioLifecycleConfigs",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListStudioLifecycleConfigsInput`](crate::input::ListStudioLifecycleConfigsInput)
+    pub fn builder() -> crate::input::list_studio_lifecycle_configs_input::Builder {
+        crate::input::list_studio_lifecycle_configs_input::Builder::default()
     }
 }
 
@@ -35464,10 +37157,9 @@ impl ListSubscribedWorkteamsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_subscribed_workteams(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_subscribed_workteams(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -35530,12 +37222,12 @@ impl ListSubscribedWorkteamsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListSubscribedWorkteams",
         );
         Ok(builder)
@@ -35545,7 +37237,11 @@ impl ListSubscribedWorkteamsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -35629,10 +37325,10 @@ impl ListTagsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_tags(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -35693,12 +37389,12 @@ impl ListTagsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListTags",
         );
         Ok(builder)
@@ -35708,7 +37404,11 @@ impl ListTagsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -35896,10 +37596,11 @@ impl ListTrainingJobsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_training_jobs(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_training_jobs(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -35962,12 +37663,12 @@ impl ListTrainingJobsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListTrainingJobs",
         );
         Ok(builder)
@@ -35977,7 +37678,11 @@ impl ListTrainingJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -36123,7 +37828,7 @@ impl ListTrainingJobsForHyperParameterTuningJobInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_training_jobs_for_hyper_parameter_tuning_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_list_training_jobs_for_hyper_parameter_tuning_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -36187,12 +37892,12 @@ impl ListTrainingJobsForHyperParameterTuningJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListTrainingJobsForHyperParameterTuningJob",
         );
         Ok(builder)
@@ -36202,7 +37907,11 @@ impl ListTrainingJobsForHyperParameterTuningJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -36387,7 +38096,10 @@ impl ListTransformJobsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_transform_jobs(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_transform_jobs(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -36453,12 +38165,12 @@ impl ListTransformJobsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListTransformJobs",
         );
         Ok(builder)
@@ -36468,7 +38180,11 @@ impl ListTransformJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -36640,7 +38356,10 @@ impl ListTrialComponentsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_trial_components(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_trial_components(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -36706,12 +38425,12 @@ impl ListTrialComponentsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListTrialComponents",
         );
         Ok(builder)
@@ -36721,7 +38440,11 @@ impl ListTrialComponentsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -36877,8 +38600,8 @@ impl ListTrialsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_trials(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_list_trials(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -36943,12 +38666,12 @@ impl ListTrialsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListTrials",
         );
         Ok(builder)
@@ -36958,7 +38681,11 @@ impl ListTrialsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -37087,10 +38814,11 @@ impl ListUserProfilesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_user_profiles(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_user_profiles(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -37153,12 +38881,12 @@ impl ListUserProfilesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListUserProfiles",
         );
         Ok(builder)
@@ -37168,7 +38896,11 @@ impl ListUserProfilesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -37282,9 +39014,11 @@ impl ListWorkforcesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_workforces(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_workforces(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -37347,12 +39081,12 @@ impl ListWorkforcesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListWorkforces",
         );
         Ok(builder)
@@ -37362,7 +39096,11 @@ impl ListWorkforcesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -37478,9 +39216,10 @@ impl ListWorkteamsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_workteams(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_workteams(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -37543,12 +39282,12 @@ impl ListWorkteamsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.ListWorkteams",
         );
         Ok(builder)
@@ -37558,7 +39297,11 @@ impl ListWorkteamsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -37638,10 +39381,8 @@ impl PutModelPackageGroupPolicyInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_model_package_group_policy(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_put_model_package_group_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -37704,12 +39445,12 @@ impl PutModelPackageGroupPolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.PutModelPackageGroupPolicy",
         );
         Ok(builder)
@@ -37719,7 +39460,11 @@ impl PutModelPackageGroupPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -37813,9 +39558,11 @@ impl RegisterDevicesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_register_devices(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_register_devices(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -37878,12 +39625,12 @@ impl RegisterDevicesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.RegisterDevices",
         );
         Ok(builder)
@@ -37893,7 +39640,11 @@ impl RegisterDevicesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -38001,10 +39752,11 @@ impl RenderUiTemplateInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_render_ui_template(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_render_ui_template(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -38067,12 +39819,12 @@ impl RenderUiTemplateInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.RenderUiTemplate",
         );
         Ok(builder)
@@ -38082,7 +39834,11 @@ impl RenderUiTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -38211,9 +39967,10 @@ impl SearchInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_search(&self).map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body = crate::operation_ser::serialize_operation_crate_operation_search(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -38271,11 +40028,14 @@ impl SearchInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "x-amz-target", "SageMaker.Search");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "SageMaker.Search",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38283,7 +40043,11 @@ impl SearchInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -38381,12 +40145,8 @@ impl SendPipelineExecutionStepFailureInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_send_pipeline_execution_step_failure(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_send_pipeline_execution_step_failure(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -38449,12 +40209,12 @@ impl SendPipelineExecutionStepFailureInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.SendPipelineExecutionStepFailure",
         );
         Ok(builder)
@@ -38464,7 +40224,11 @@ impl SendPipelineExecutionStepFailureInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -38567,12 +40331,8 @@ impl SendPipelineExecutionStepSuccessInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_send_pipeline_execution_step_success(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_send_pipeline_execution_step_success(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -38635,12 +40395,12 @@ impl SendPipelineExecutionStepSuccessInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.SendPipelineExecutionStepSuccess",
         );
         Ok(builder)
@@ -38650,7 +40410,11 @@ impl SendPipelineExecutionStepSuccessInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -38715,10 +40479,9 @@ impl StartMonitoringScheduleInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_start_monitoring_schedule(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_start_monitoring_schedule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -38781,12 +40544,12 @@ impl StartMonitoringScheduleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StartMonitoringSchedule",
         );
         Ok(builder)
@@ -38796,7 +40559,11 @@ impl StartMonitoringScheduleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -38860,7 +40627,10 @@ impl StartNotebookInstanceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_start_notebook_instance(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_start_notebook_instance(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -38926,12 +40696,12 @@ impl StartNotebookInstanceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StartNotebookInstance",
         );
         Ok(builder)
@@ -38941,7 +40711,11 @@ impl StartNotebookInstanceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -39072,7 +40846,10 @@ impl StartPipelineExecutionInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_start_pipeline_execution(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_start_pipeline_execution(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -39138,12 +40915,12 @@ impl StartPipelineExecutionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StartPipelineExecution",
         );
         Ok(builder)
@@ -39153,7 +40930,11 @@ impl StartPipelineExecutionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -39215,9 +40996,11 @@ impl StopAutoMlJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_auto_ml_job(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_auto_ml_job(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -39280,12 +41063,12 @@ impl StopAutoMlJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StopAutoMLJob",
         );
         Ok(builder)
@@ -39295,7 +41078,11 @@ impl StopAutoMlJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -39359,7 +41146,10 @@ impl StopCompilationJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_compilation_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_compilation_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -39425,12 +41215,12 @@ impl StopCompilationJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StopCompilationJob",
         );
         Ok(builder)
@@ -39440,7 +41230,11 @@ impl StopCompilationJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -39504,7 +41298,10 @@ impl StopEdgePackagingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_edge_packaging_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_edge_packaging_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -39570,12 +41367,12 @@ impl StopEdgePackagingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StopEdgePackagingJob",
         );
         Ok(builder)
@@ -39585,7 +41382,11 @@ impl StopEdgePackagingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -39654,10 +41455,8 @@ impl StopHyperParameterTuningJobInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_stop_hyper_parameter_tuning_job(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_stop_hyper_parameter_tuning_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -39720,12 +41519,12 @@ impl StopHyperParameterTuningJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StopHyperParameterTuningJob",
         );
         Ok(builder)
@@ -39735,7 +41534,11 @@ impl StopHyperParameterTuningJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -39799,9 +41602,11 @@ impl StopLabelingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_labeling_job(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_labeling_job(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -39864,12 +41669,12 @@ impl StopLabelingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StopLabelingJob",
         );
         Ok(builder)
@@ -39879,7 +41684,11 @@ impl StopLabelingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -39943,7 +41752,10 @@ impl StopMonitoringScheduleInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_monitoring_schedule(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_monitoring_schedule(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -40009,12 +41821,12 @@ impl StopMonitoringScheduleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StopMonitoringSchedule",
         );
         Ok(builder)
@@ -40024,7 +41836,11 @@ impl StopMonitoringScheduleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -40088,7 +41904,10 @@ impl StopNotebookInstanceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_notebook_instance(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_notebook_instance(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -40154,12 +41973,12 @@ impl StopNotebookInstanceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StopNotebookInstance",
         );
         Ok(builder)
@@ -40169,7 +41988,11 @@ impl StopNotebookInstanceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -40251,7 +42074,10 @@ impl StopPipelineExecutionInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_pipeline_execution(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_pipeline_execution(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -40317,12 +42143,12 @@ impl StopPipelineExecutionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StopPipelineExecution",
         );
         Ok(builder)
@@ -40332,7 +42158,11 @@ impl StopPipelineExecutionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -40396,7 +42226,10 @@ impl StopProcessingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_processing_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_processing_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -40462,12 +42295,12 @@ impl StopProcessingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StopProcessingJob",
         );
         Ok(builder)
@@ -40477,7 +42310,11 @@ impl StopProcessingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -40541,9 +42378,11 @@ impl StopTrainingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_training_job(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_training_job(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -40606,12 +42445,12 @@ impl StopTrainingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StopTrainingJob",
         );
         Ok(builder)
@@ -40621,7 +42460,11 @@ impl StopTrainingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -40685,10 +42528,11 @@ impl StopTransformJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_transform_job(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_transform_job(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -40751,12 +42595,12 @@ impl StopTransformJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.StopTransformJob",
         );
         Ok(builder)
@@ -40766,7 +42610,11 @@ impl StopTransformJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -40889,9 +42737,10 @@ impl UpdateActionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_action(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_action(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -40954,12 +42803,12 @@ impl UpdateActionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateAction",
         );
         Ok(builder)
@@ -40969,7 +42818,11 @@ impl UpdateActionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -41051,7 +42904,10 @@ impl UpdateAppImageConfigInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_app_image_config(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_app_image_config(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -41117,12 +42973,12 @@ impl UpdateAppImageConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateAppImageConfig",
         );
         Ok(builder)
@@ -41132,7 +42988,11 @@ impl UpdateAppImageConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -41245,9 +43105,11 @@ impl UpdateArtifactInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_artifact(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_artifact(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -41310,12 +43172,12 @@ impl UpdateArtifactInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateArtifact",
         );
         Ok(builder)
@@ -41325,7 +43187,11 @@ impl UpdateArtifactInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -41410,7 +43276,10 @@ impl UpdateCodeRepositoryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_code_repository(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_code_repository(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -41476,12 +43345,12 @@ impl UpdateCodeRepositoryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateCodeRepository",
         );
         Ok(builder)
@@ -41491,7 +43360,11 @@ impl UpdateCodeRepositoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -41600,9 +43473,10 @@ impl UpdateContextInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_context(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_context(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -41665,12 +43539,12 @@ impl UpdateContextInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateContext",
         );
         Ok(builder)
@@ -41680,7 +43554,11 @@ impl UpdateContextInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -41795,7 +43673,10 @@ impl UpdateDeviceFleetInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_device_fleet(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_device_fleet(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -41861,12 +43742,12 @@ impl UpdateDeviceFleetInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateDeviceFleet",
         );
         Ok(builder)
@@ -41876,7 +43757,11 @@ impl UpdateDeviceFleetInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -41954,9 +43839,10 @@ impl UpdateDevicesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_devices(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_devices(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -42019,12 +43905,12 @@ impl UpdateDevicesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateDevices",
         );
         Ok(builder)
@@ -42034,7 +43920,11 @@ impl UpdateDevicesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -42108,9 +43998,10 @@ impl UpdateDomainInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_domain(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_domain(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -42173,12 +44064,12 @@ impl UpdateDomainInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateDomain",
         );
         Ok(builder)
@@ -42188,7 +44079,11 @@ impl UpdateDomainInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -42320,9 +44215,11 @@ impl UpdateEndpointInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_endpoint(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_endpoint(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -42385,12 +44282,12 @@ impl UpdateEndpointInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateEndpoint",
         );
         Ok(builder)
@@ -42400,7 +44297,11 @@ impl UpdateEndpointInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -42485,12 +44386,8 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_endpoint_weights_and_capacities(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_endpoint_weights_and_capacities(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -42553,12 +44450,12 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateEndpointWeightsAndCapacities",
         );
         Ok(builder)
@@ -42568,7 +44465,11 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -42655,9 +44556,11 @@ impl UpdateExperimentInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_experiment(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_experiment(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -42720,12 +44623,12 @@ impl UpdateExperimentInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateExperiment",
         );
         Ok(builder)
@@ -42735,7 +44638,11 @@ impl UpdateExperimentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -42843,9 +44750,10 @@ impl UpdateImageInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_image(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_image(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -42908,12 +44816,12 @@ impl UpdateImageInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateImage",
         );
         Ok(builder)
@@ -42923,7 +44831,11 @@ impl UpdateImageInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -43015,7 +44927,10 @@ impl UpdateModelPackageInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_model_package(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_model_package(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -43081,12 +44996,12 @@ impl UpdateModelPackageInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateModelPackage",
         );
         Ok(builder)
@@ -43096,7 +45011,11 @@ impl UpdateModelPackageInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -43181,10 +45100,9 @@ impl UpdateMonitoringScheduleInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_monitoring_schedule(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_monitoring_schedule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -43247,12 +45165,12 @@ impl UpdateMonitoringScheduleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateMonitoringSchedule",
         );
         Ok(builder)
@@ -43262,7 +45180,11 @@ impl UpdateMonitoringScheduleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -43542,7 +45464,10 @@ impl UpdateNotebookInstanceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_notebook_instance(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_notebook_instance(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -43608,12 +45533,12 @@ impl UpdateNotebookInstanceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateNotebookInstance",
         );
         Ok(builder)
@@ -43623,7 +45548,11 @@ impl UpdateNotebookInstanceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -43733,7 +45662,7 @@ impl UpdateNotebookInstanceLifecycleConfigInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_notebook_instance_lifecycle_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_update_notebook_instance_lifecycle_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -43797,12 +45726,12 @@ impl UpdateNotebookInstanceLifecycleConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateNotebookInstanceLifecycleConfig",
         );
         Ok(builder)
@@ -43812,7 +45741,11 @@ impl UpdateNotebookInstanceLifecycleConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -43929,9 +45862,11 @@ impl UpdatePipelineInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_pipeline(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_pipeline(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -43994,12 +45929,12 @@ impl UpdatePipelineInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdatePipeline",
         );
         Ok(builder)
@@ -44009,7 +45944,11 @@ impl UpdatePipelineInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -44108,10 +46047,9 @@ impl UpdatePipelineExecutionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_pipeline_execution(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_pipeline_execution(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -44174,12 +46112,12 @@ impl UpdatePipelineExecutionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdatePipelineExecution",
         );
         Ok(builder)
@@ -44189,7 +46127,11 @@ impl UpdatePipelineExecutionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -44287,7 +46229,10 @@ impl UpdateTrainingJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_training_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_training_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -44353,12 +46298,12 @@ impl UpdateTrainingJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateTrainingJob",
         );
         Ok(builder)
@@ -44368,7 +46313,11 @@ impl UpdateTrainingJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -44440,9 +46389,10 @@ impl UpdateTrialInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_trial(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_trial(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -44505,12 +46455,12 @@ impl UpdateTrialInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateTrial",
         );
         Ok(builder)
@@ -44520,7 +46470,11 @@ impl UpdateTrialInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -44761,7 +46715,10 @@ impl UpdateTrialComponentInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_trial_component(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_trial_component(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -44827,12 +46784,12 @@ impl UpdateTrialComponentInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateTrialComponent",
         );
         Ok(builder)
@@ -44842,7 +46799,11 @@ impl UpdateTrialComponentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -44931,7 +46892,10 @@ impl UpdateUserProfileInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_user_profile(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_user_profile(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -44997,12 +46961,12 @@ impl UpdateUserProfileInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateUserProfile",
         );
         Ok(builder)
@@ -45012,7 +46976,11 @@ impl UpdateUserProfileInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -45108,9 +47076,11 @@ impl UpdateWorkforceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_workforce(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_workforce(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -45173,12 +47143,12 @@ impl UpdateWorkforceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateWorkforce",
         );
         Ok(builder)
@@ -45188,7 +47158,11 @@ impl UpdateWorkforceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -45300,9 +47274,11 @@ impl UpdateWorkteamInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_workteam(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_workteam(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -45365,12 +47341,12 @@ impl UpdateWorkteamInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "SageMaker.UpdateWorkteam",
         );
         Ok(builder)
@@ -45380,7 +47356,11 @@ impl UpdateWorkteamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -46815,6 +48795,47 @@ impl std::fmt::Debug for ListSubscribedWorkteamsInput {
         formatter.field("name_contains", &self.name_contains);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListStudioLifecycleConfigsInput {
+    /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
+    pub name_contains: std::option::Option<std::string::String>,
+    /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
+    pub app_type_equals: std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+    /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
+    pub creation_time_before: std::option::Option<smithy_types::Instant>,
+    /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
+    pub creation_time_after: std::option::Option<smithy_types::Instant>,
+    /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
+    pub modified_time_before: std::option::Option<smithy_types::Instant>,
+    /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
+    pub modified_time_after: std::option::Option<smithy_types::Instant>,
+    /// <p>The property used to sort results. The default value is CreationTime.</p>
+    pub sort_by: std::option::Option<crate::model::StudioLifecycleConfigSortKey>,
+    /// <p>The sort order. The default value is Descending.</p>
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+}
+impl std::fmt::Debug for ListStudioLifecycleConfigsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListStudioLifecycleConfigsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("name_contains", &self.name_contains);
+        formatter.field("app_type_equals", &self.app_type_equals);
+        formatter.field("creation_time_before", &self.creation_time_before);
+        formatter.field("creation_time_after", &self.creation_time_after);
+        formatter.field("modified_time_before", &self.modified_time_before);
+        formatter.field("modified_time_after", &self.modified_time_after);
+        formatter.field("sort_by", &self.sort_by);
+        formatter.field("sort_order", &self.sort_order);
         formatter.finish()
     }
 }
@@ -48767,6 +50788,23 @@ impl std::fmt::Debug for DescribeSubscribedWorkteamInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeStudioLifecycleConfigInput {
+    /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+    pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeStudioLifecycleConfigInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeStudioLifecycleConfigInput");
+        formatter.field(
+            "studio_lifecycle_config_name",
+            &self.studio_lifecycle_config_name,
+        );
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectInput {
     /// <p>The name of the project to describe.</p>
     pub project_name: std::option::Option<std::string::String>,
@@ -49437,6 +51475,23 @@ impl std::fmt::Debug for DeleteTagsInput {
         let mut formatter = f.debug_struct("DeleteTagsInput");
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("tag_keys", &self.tag_keys);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStudioLifecycleConfigInput {
+    /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
+    pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteStudioLifecycleConfigInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStudioLifecycleConfigInput");
+        formatter.field(
+            "studio_lifecycle_config_name",
+            &self.studio_lifecycle_config_name,
+        );
         formatter.finish()
     }
 }
@@ -50426,6 +52481,39 @@ impl std::fmt::Debug for CreateTrainingJobInput {
         );
         formatter.field("environment", &self.environment);
         formatter.field("retry_strategy", &self.retry_strategy);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateStudioLifecycleConfigInput {
+    /// <p>The name of the Studio Lifecycle Configuration to create.</p>
+    pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
+    /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+    pub studio_lifecycle_config_content: std::option::Option<std::string::String>,
+    /// <p>The App type that the Lifecycle Configuration is attached to.</p>
+    pub studio_lifecycle_config_app_type:
+        std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+    /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for CreateStudioLifecycleConfigInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateStudioLifecycleConfigInput");
+        formatter.field(
+            "studio_lifecycle_config_name",
+            &self.studio_lifecycle_config_name,
+        );
+        formatter.field(
+            "studio_lifecycle_config_content",
+            &self.studio_lifecycle_config_content,
+        );
+        formatter.field(
+            "studio_lifecycle_config_app_type",
+            &self.studio_lifecycle_config_app_type,
+        );
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

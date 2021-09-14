@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_lexicon_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_lexicon_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::lexicon_not_found_exception::Builder,
 ) -> Result<crate::error::lexicon_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_lexicon_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_failure_exceptionjson_err(
+pub fn deser_structure_crate_error_service_failure_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_failure_exception::Builder,
 ) -> Result<crate::error::service_failure_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_service_failure_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_next_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_next_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_next_token_exception::Builder,
 ) -> Result<crate::error::invalid_next_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_invalid_next_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_voices(
+pub fn deser_operation_crate_operation_describe_voices(
     input: &[u8],
     mut builder: crate::output::describe_voices_output::Builder,
 ) -> Result<crate::output::describe_voices_output::Builder, smithy_json::deserialize::Error> {
@@ -144,48 +144,8 @@ pub fn deser_operation_describe_voices(
                         );
                     }
                     "Voices" => {
-                        builder =
-                            builder.set_voices(crate::json_deser::deser_list_voice_list(tokens)?);
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_get_lexicon(
-    input: &[u8],
-    mut builder: crate::output::get_lexicon_output::Builder,
-) -> Result<crate::output::get_lexicon_output::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "Lexicon" => {
-                        builder = builder
-                            .set_lexicon(crate::json_deser::deser_structure_lexicon(tokens)?);
-                    }
-                    "LexiconAttributes" => {
-                        builder = builder.set_lexicon_attributes(
-                            crate::json_deser::deser_structure_lexicon_attributes(tokens)?,
+                        builder = builder.set_voices(
+                            crate::json_deser::deser_list_com_amazonaws_polly_voice_list(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -206,7 +166,51 @@ pub fn deser_operation_get_lexicon(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_task_id_exceptionjson_err(
+pub fn deser_operation_crate_operation_get_lexicon(
+    input: &[u8],
+    mut builder: crate::output::get_lexicon_output::Builder,
+) -> Result<crate::output::get_lexicon_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Lexicon" => {
+                        builder = builder.set_lexicon(
+                            crate::json_deser::deser_structure_crate_model_lexicon(tokens)?,
+                        );
+                    }
+                    "LexiconAttributes" => {
+                        builder = builder.set_lexicon_attributes(
+                            crate::json_deser::deser_structure_crate_model_lexicon_attributes(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_structure_crate_error_invalid_task_id_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_task_id_exception::Builder,
 ) -> Result<crate::error::invalid_task_id_exception::Builder, smithy_json::deserialize::Error> {
@@ -245,7 +249,7 @@ pub fn deser_structure_invalid_task_id_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_synthesis_task_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_synthesis_task_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::synthesis_task_not_found_exception::Builder,
 ) -> Result<
@@ -287,7 +291,7 @@ pub fn deser_structure_synthesis_task_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_speech_synthesis_task(
+pub fn deser_operation_crate_operation_get_speech_synthesis_task(
     input: &[u8],
     mut builder: crate::output::get_speech_synthesis_task_output::Builder,
 ) -> Result<crate::output::get_speech_synthesis_task_output::Builder, smithy_json::deserialize::Error>
@@ -304,7 +308,7 @@ pub fn deser_operation_get_speech_synthesis_task(
                 match key.to_unescaped()?.as_ref() {
                     "SynthesisTask" => {
                         builder = builder.set_synthesis_task(
-                            crate::json_deser::deser_structure_synthesis_task(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_synthesis_task(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -325,7 +329,7 @@ pub fn deser_operation_get_speech_synthesis_task(
     Ok(builder)
 }
 
-pub fn deser_operation_list_lexicons(
+pub fn deser_operation_crate_operation_list_lexicons(
     input: &[u8],
     mut builder: crate::output::list_lexicons_output::Builder,
 ) -> Result<crate::output::list_lexicons_output::Builder, smithy_json::deserialize::Error> {
@@ -341,7 +345,7 @@ pub fn deser_operation_list_lexicons(
                 match key.to_unescaped()?.as_ref() {
                     "Lexicons" => {
                         builder = builder.set_lexicons(
-                            crate::json_deser::deser_list_lexicon_description_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_polly_lexicon_description_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -369,7 +373,7 @@ pub fn deser_operation_list_lexicons(
     Ok(builder)
 }
 
-pub fn deser_operation_list_speech_synthesis_tasks(
+pub fn deser_operation_crate_operation_list_speech_synthesis_tasks(
     input: &[u8],
     mut builder: crate::output::list_speech_synthesis_tasks_output::Builder,
 ) -> Result<
@@ -395,7 +399,9 @@ pub fn deser_operation_list_speech_synthesis_tasks(
                     }
                     "SynthesisTasks" => {
                         builder = builder.set_synthesis_tasks(
-                            crate::json_deser::deser_list_synthesis_tasks(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_polly_synthesis_tasks(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -416,7 +422,7 @@ pub fn deser_operation_list_speech_synthesis_tasks(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_lexicon_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_lexicon_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_lexicon_exception::Builder,
 ) -> Result<crate::error::invalid_lexicon_exception::Builder, smithy_json::deserialize::Error> {
@@ -455,7 +461,7 @@ pub fn deser_structure_invalid_lexicon_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_lexicon_size_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_lexicon_size_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::lexicon_size_exceeded_exception::Builder,
 ) -> Result<crate::error::lexicon_size_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -495,7 +501,7 @@ pub fn deser_structure_lexicon_size_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_max_lexeme_length_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_max_lexeme_length_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::max_lexeme_length_exceeded_exception::Builder,
 ) -> Result<
@@ -537,7 +543,7 @@ pub fn deser_structure_max_lexeme_length_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_max_lexicons_number_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_max_lexicons_number_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::max_lexicons_number_exceeded_exception::Builder,
 ) -> Result<
@@ -579,7 +585,7 @@ pub fn deser_structure_max_lexicons_number_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_pls_alphabet_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_pls_alphabet_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_pls_alphabet_exception::Builder,
 ) -> Result<
@@ -621,7 +627,7 @@ pub fn deser_structure_unsupported_pls_alphabet_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_pls_language_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_pls_language_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_pls_language_exception::Builder,
 ) -> Result<
@@ -663,7 +669,7 @@ pub fn deser_structure_unsupported_pls_language_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_engine_not_supported_exceptionjson_err(
+pub fn deser_structure_crate_error_engine_not_supported_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::engine_not_supported_exception::Builder,
 ) -> Result<crate::error::engine_not_supported_exception::Builder, smithy_json::deserialize::Error>
@@ -703,7 +709,7 @@ pub fn deser_structure_engine_not_supported_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_s3_bucket_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_s3_bucket_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_s3_bucket_exception::Builder,
 ) -> Result<crate::error::invalid_s3_bucket_exception::Builder, smithy_json::deserialize::Error> {
@@ -742,7 +748,7 @@ pub fn deser_structure_invalid_s3_bucket_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_s3_key_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_s3_key_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_s3_key_exception::Builder,
 ) -> Result<crate::error::invalid_s3_key_exception::Builder, smithy_json::deserialize::Error> {
@@ -781,7 +787,7 @@ pub fn deser_structure_invalid_s3_key_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_sample_rate_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_sample_rate_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_sample_rate_exception::Builder,
 ) -> Result<crate::error::invalid_sample_rate_exception::Builder, smithy_json::deserialize::Error> {
@@ -820,7 +826,7 @@ pub fn deser_structure_invalid_sample_rate_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_sns_topic_arn_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_sns_topic_arn_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_sns_topic_arn_exception::Builder,
 ) -> Result<crate::error::invalid_sns_topic_arn_exception::Builder, smithy_json::deserialize::Error>
@@ -860,7 +866,7 @@ pub fn deser_structure_invalid_sns_topic_arn_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_ssml_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_ssml_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_ssml_exception::Builder,
 ) -> Result<crate::error::invalid_ssml_exception::Builder, smithy_json::deserialize::Error> {
@@ -899,7 +905,7 @@ pub fn deser_structure_invalid_ssml_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_language_not_supported_exceptionjson_err(
+pub fn deser_structure_crate_error_language_not_supported_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::language_not_supported_exception::Builder,
 ) -> Result<crate::error::language_not_supported_exception::Builder, smithy_json::deserialize::Error>
@@ -939,7 +945,7 @@ pub fn deser_structure_language_not_supported_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_marks_not_supported_for_format_exceptionjson_err(
+pub fn deser_structure_crate_error_marks_not_supported_for_format_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::marks_not_supported_for_format_exception::Builder,
 ) -> Result<
@@ -981,7 +987,7 @@ pub fn deser_structure_marks_not_supported_for_format_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_ssml_marks_not_supported_for_text_type_exceptionjson_err(
+pub fn deser_structure_crate_error_ssml_marks_not_supported_for_text_type_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::ssml_marks_not_supported_for_text_type_exception::Builder,
 ) -> Result<
@@ -1023,7 +1029,7 @@ pub fn deser_structure_ssml_marks_not_supported_for_text_type_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_text_length_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_text_length_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::text_length_exceeded_exception::Builder,
 ) -> Result<crate::error::text_length_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -1063,7 +1069,7 @@ pub fn deser_structure_text_length_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_start_speech_synthesis_task(
+pub fn deser_operation_crate_operation_start_speech_synthesis_task(
     input: &[u8],
     mut builder: crate::output::start_speech_synthesis_task_output::Builder,
 ) -> Result<
@@ -1082,7 +1088,7 @@ pub fn deser_operation_start_speech_synthesis_task(
                 match key.to_unescaped()?.as_ref() {
                     "SynthesisTask" => {
                         builder = builder.set_synthesis_task(
-                            crate::json_deser::deser_structure_synthesis_task(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_synthesis_task(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1112,7 +1118,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_voice_list<'a, I>(
+pub fn deser_list_com_amazonaws_polly_voice_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Voice>>, smithy_json::deserialize::Error>
 where
@@ -1131,7 +1137,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_voice(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_voice(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1146,7 +1152,7 @@ where
     }
 }
 
-pub fn deser_structure_lexicon<'a, I>(
+pub fn deser_structure_crate_model_lexicon<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Lexicon>, smithy_json::deserialize::Error>
 where
@@ -1200,7 +1206,7 @@ where
     }
 }
 
-pub fn deser_structure_lexicon_attributes<'a, I>(
+pub fn deser_structure_crate_model_lexicon_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LexiconAttributes>, smithy_json::deserialize::Error>
 where
@@ -1290,7 +1296,7 @@ where
     }
 }
 
-pub fn deser_structure_synthesis_task<'a, I>(
+pub fn deser_structure_crate_model_synthesis_task<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SynthesisTask>, smithy_json::deserialize::Error>
 where
@@ -1386,7 +1392,7 @@ where
                             }
                             "LexiconNames" => {
                                 builder = builder.set_lexicon_names(
-                                    crate::json_deser::deser_list_lexicon_name_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_polly_lexicon_name_list(tokens)?
                                 );
                             }
                             "OutputFormat" => {
@@ -1412,7 +1418,7 @@ where
                             }
                             "SpeechMarkTypes" => {
                                 builder = builder.set_speech_mark_types(
-                                    crate::json_deser::deser_list_speech_mark_type_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_polly_speech_mark_type_list(tokens)?
                                 );
                             }
                             "TextType" => {
@@ -1470,7 +1476,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_lexicon_description_list<'a, I>(
+pub fn deser_list_com_amazonaws_polly_lexicon_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::LexiconDescription>>, smithy_json::deserialize::Error>
 where
@@ -1489,7 +1495,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_lexicon_description(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_lexicon_description(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1505,7 +1514,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_synthesis_tasks<'a, I>(
+pub fn deser_list_com_amazonaws_polly_synthesis_tasks<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SynthesisTask>>, smithy_json::deserialize::Error>
 where
@@ -1524,7 +1533,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_synthesis_task(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_synthesis_task(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1539,7 +1549,7 @@ where
     }
 }
 
-pub fn deser_structure_voice<'a, I>(
+pub fn deser_structure_crate_model_voice<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Voice>, smithy_json::deserialize::Error>
 where
@@ -1613,12 +1623,14 @@ where
                             }
                             "AdditionalLanguageCodes" => {
                                 builder = builder.set_additional_language_codes(
-                                    crate::json_deser::deser_list_language_code_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_polly_language_code_list(tokens)?
                                 );
                             }
                             "SupportedEngines" => {
                                 builder = builder.set_supported_engines(
-                                    crate::json_deser::deser_list_engine_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_polly_engine_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1640,7 +1652,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_lexicon_name_list<'a, I>(
+pub fn deser_list_com_amazonaws_polly_lexicon_name_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1678,7 +1690,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_speech_mark_type_list<'a, I>(
+pub fn deser_list_com_amazonaws_polly_speech_mark_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SpeechMarkType>>, smithy_json::deserialize::Error>
 where
@@ -1718,7 +1730,7 @@ where
     }
 }
 
-pub fn deser_structure_lexicon_description<'a, I>(
+pub fn deser_structure_crate_model_lexicon_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LexiconDescription>, smithy_json::deserialize::Error>
 where
@@ -1747,7 +1759,7 @@ where
                             }
                             "Attributes" => {
                                 builder = builder.set_attributes(
-                                    crate::json_deser::deser_structure_lexicon_attributes(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_lexicon_attributes(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1769,7 +1781,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_language_code_list<'a, I>(
+pub fn deser_list_com_amazonaws_polly_language_code_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::LanguageCode>>, smithy_json::deserialize::Error>
 where
@@ -1810,7 +1822,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_engine_list<'a, I>(
+pub fn deser_list_com_amazonaws_polly_engine_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Engine>>, smithy_json::deserialize::Error>
 where

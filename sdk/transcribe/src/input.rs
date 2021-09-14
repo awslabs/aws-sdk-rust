@@ -71,10 +71,8 @@ impl CreateCallAnalyticsCategoryInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_call_analytics_category(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_call_analytics_category(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -137,12 +135,12 @@ impl CreateCallAnalyticsCategoryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.CreateCallAnalyticsCategory",
         );
         Ok(builder)
@@ -152,7 +150,11 @@ impl CreateCallAnalyticsCategoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -276,7 +278,10 @@ impl CreateLanguageModelInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_language_model(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_language_model(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -342,12 +347,12 @@ impl CreateLanguageModelInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.CreateLanguageModel",
         );
         Ok(builder)
@@ -357,7 +362,11 @@ impl CreateLanguageModelInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -483,10 +492,9 @@ impl CreateMedicalVocabularyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_medical_vocabulary(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_medical_vocabulary(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -549,12 +557,12 @@ impl CreateMedicalVocabularyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.CreateMedicalVocabulary",
         );
         Ok(builder)
@@ -564,7 +572,11 @@ impl CreateMedicalVocabularyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -693,9 +705,11 @@ impl CreateVocabularyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_vocabulary(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_vocabulary(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -758,12 +772,12 @@ impl CreateVocabularyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.CreateVocabulary",
         );
         Ok(builder)
@@ -773,7 +787,11 @@ impl CreateVocabularyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -902,7 +920,10 @@ impl CreateVocabularyFilterInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_vocabulary_filter(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_vocabulary_filter(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -968,12 +989,12 @@ impl CreateVocabularyFilterInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.CreateVocabularyFilter",
         );
         Ok(builder)
@@ -983,7 +1004,11 @@ impl CreateVocabularyFilterInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1050,10 +1075,8 @@ impl DeleteCallAnalyticsCategoryInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_call_analytics_category(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_call_analytics_category(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1116,12 +1139,12 @@ impl DeleteCallAnalyticsCategoryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.DeleteCallAnalyticsCategory",
         );
         Ok(builder)
@@ -1131,7 +1154,11 @@ impl DeleteCallAnalyticsCategoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1195,10 +1222,9 @@ impl DeleteCallAnalyticsJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_call_analytics_job(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_call_analytics_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1261,12 +1287,12 @@ impl DeleteCallAnalyticsJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.DeleteCallAnalyticsJob",
         );
         Ok(builder)
@@ -1276,7 +1302,11 @@ impl DeleteCallAnalyticsJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1337,7 +1367,10 @@ impl DeleteLanguageModelInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_language_model(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_language_model(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1403,12 +1436,12 @@ impl DeleteLanguageModelInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.DeleteLanguageModel",
         );
         Ok(builder)
@@ -1418,7 +1451,11 @@ impl DeleteLanguageModelInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1488,10 +1525,8 @@ impl DeleteMedicalTranscriptionJobInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_medical_transcription_job(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_medical_transcription_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1554,12 +1589,12 @@ impl DeleteMedicalTranscriptionJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.DeleteMedicalTranscriptionJob",
         );
         Ok(builder)
@@ -1569,7 +1604,11 @@ impl DeleteMedicalTranscriptionJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1634,10 +1673,9 @@ impl DeleteMedicalVocabularyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_medical_vocabulary(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_medical_vocabulary(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1700,12 +1738,12 @@ impl DeleteMedicalVocabularyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.DeleteMedicalVocabulary",
         );
         Ok(builder)
@@ -1715,7 +1753,11 @@ impl DeleteMedicalVocabularyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1779,7 +1821,10 @@ impl DeleteTranscriptionJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_transcription_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_transcription_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1845,12 +1890,12 @@ impl DeleteTranscriptionJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.DeleteTranscriptionJob",
         );
         Ok(builder)
@@ -1860,7 +1905,11 @@ impl DeleteTranscriptionJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1924,9 +1973,11 @@ impl DeleteVocabularyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_vocabulary(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_vocabulary(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1989,12 +2040,12 @@ impl DeleteVocabularyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.DeleteVocabulary",
         );
         Ok(builder)
@@ -2004,7 +2055,11 @@ impl DeleteVocabularyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2068,7 +2123,10 @@ impl DeleteVocabularyFilterInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_vocabulary_filter(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_vocabulary_filter(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2134,12 +2192,12 @@ impl DeleteVocabularyFilterInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.DeleteVocabularyFilter",
         );
         Ok(builder)
@@ -2149,7 +2207,11 @@ impl DeleteVocabularyFilterInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2210,7 +2272,10 @@ impl DescribeLanguageModelInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_language_model(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_language_model(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2276,12 +2341,12 @@ impl DescribeLanguageModelInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.DescribeLanguageModel",
         );
         Ok(builder)
@@ -2291,7 +2356,11 @@ impl DescribeLanguageModelInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2356,10 +2425,9 @@ impl GetCallAnalyticsCategoryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_call_analytics_category(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_call_analytics_category(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2422,12 +2490,12 @@ impl GetCallAnalyticsCategoryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.GetCallAnalyticsCategory",
         );
         Ok(builder)
@@ -2437,7 +2505,11 @@ impl GetCallAnalyticsCategoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2502,7 +2574,10 @@ impl GetCallAnalyticsJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_call_analytics_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_call_analytics_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2568,12 +2643,12 @@ impl GetCallAnalyticsJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.GetCallAnalyticsJob",
         );
         Ok(builder)
@@ -2583,7 +2658,11 @@ impl GetCallAnalyticsJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2652,10 +2731,8 @@ impl GetMedicalTranscriptionJobInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_medical_transcription_job(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_medical_transcription_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2718,12 +2795,12 @@ impl GetMedicalTranscriptionJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.GetMedicalTranscriptionJob",
         );
         Ok(builder)
@@ -2733,7 +2810,11 @@ impl GetMedicalTranscriptionJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2797,7 +2878,10 @@ impl GetMedicalVocabularyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_medical_vocabulary(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_medical_vocabulary(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2863,12 +2947,12 @@ impl GetMedicalVocabularyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.GetMedicalVocabulary",
         );
         Ok(builder)
@@ -2878,7 +2962,11 @@ impl GetMedicalVocabularyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2942,7 +3030,10 @@ impl GetTranscriptionJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_transcription_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_transcription_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3008,12 +3099,12 @@ impl GetTranscriptionJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.GetTranscriptionJob",
         );
         Ok(builder)
@@ -3023,7 +3114,11 @@ impl GetTranscriptionJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3087,9 +3182,10 @@ impl GetVocabularyInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_vocabulary(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_vocabulary(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3152,12 +3248,12 @@ impl GetVocabularyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.GetVocabulary",
         );
         Ok(builder)
@@ -3167,7 +3263,11 @@ impl GetVocabularyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3231,7 +3331,10 @@ impl GetVocabularyFilterInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_vocabulary_filter(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_vocabulary_filter(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3297,12 +3400,12 @@ impl GetVocabularyFilterInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.GetVocabularyFilter",
         );
         Ok(builder)
@@ -3312,7 +3415,11 @@ impl GetVocabularyFilterInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3389,10 +3496,8 @@ impl ListCallAnalyticsCategoriesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_call_analytics_categories(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_call_analytics_categories(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3468,12 +3573,12 @@ impl ListCallAnalyticsCategoriesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.ListCallAnalyticsCategories",
         );
         Ok(builder)
@@ -3483,7 +3588,11 @@ impl ListCallAnalyticsCategoriesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3590,7 +3699,10 @@ impl ListCallAnalyticsJobsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_call_analytics_jobs(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_call_analytics_jobs(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3675,12 +3787,12 @@ impl ListCallAnalyticsJobsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.ListCallAnalyticsJobs",
         );
         Ok(builder)
@@ -3690,7 +3802,11 @@ impl ListCallAnalyticsJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3793,7 +3909,10 @@ impl ListLanguageModelsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_language_models(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_language_models(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3881,12 +4000,12 @@ impl ListLanguageModelsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.ListLanguageModels",
         );
         Ok(builder)
@@ -3896,7 +4015,11 @@ impl ListLanguageModelsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4003,10 +4126,8 @@ impl ListMedicalTranscriptionJobsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_medical_transcription_jobs(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_medical_transcription_jobs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4091,12 +4212,12 @@ impl ListMedicalTranscriptionJobsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.ListMedicalTranscriptionJobs",
         );
         Ok(builder)
@@ -4106,7 +4227,11 @@ impl ListMedicalTranscriptionJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4212,10 +4337,9 @@ impl ListMedicalVocabulariesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_medical_vocabularies(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_medical_vocabularies(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4297,12 +4421,12 @@ impl ListMedicalVocabulariesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.ListMedicalVocabularies",
         );
         Ok(builder)
@@ -4312,7 +4436,11 @@ impl ListMedicalVocabulariesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4373,7 +4501,10 @@ impl ListTagsForResourceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_tags_for_resource(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4439,12 +4570,12 @@ impl ListTagsForResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.ListTagsForResource",
         );
         Ok(builder)
@@ -4454,7 +4585,11 @@ impl ListTagsForResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4558,7 +4693,10 @@ impl ListTranscriptionJobsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_transcription_jobs(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_transcription_jobs(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4646,12 +4784,12 @@ impl ListTranscriptionJobsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.ListTranscriptionJobs",
         );
         Ok(builder)
@@ -4661,7 +4799,11 @@ impl ListTranscriptionJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4766,9 +4908,11 @@ impl ListVocabulariesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_vocabularies(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_vocabularies(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4850,12 +4994,12 @@ impl ListVocabulariesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.ListVocabularies",
         );
         Ok(builder)
@@ -4865,7 +5009,11 @@ impl ListVocabulariesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4953,7 +5101,10 @@ impl ListVocabularyFiltersInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_vocabulary_filters(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_vocabulary_filters(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -5035,12 +5186,12 @@ impl ListVocabularyFiltersInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.ListVocabularyFilters",
         );
         Ok(builder)
@@ -5050,7 +5201,11 @@ impl ListVocabularyFiltersInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5255,7 +5410,10 @@ impl StartCallAnalyticsJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_start_call_analytics_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_start_call_analytics_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -5321,12 +5479,12 @@ impl StartCallAnalyticsJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.StartCallAnalyticsJob",
         );
         Ok(builder)
@@ -5336,7 +5494,11 @@ impl StartCallAnalyticsJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5360,6 +5522,9 @@ pub mod start_medical_transcription_job_input {
         pub(crate) output_bucket_name: std::option::Option<std::string::String>,
         pub(crate) output_key: std::option::Option<std::string::String>,
         pub(crate) output_encryption_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) kms_encryption_context: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) settings: std::option::Option<crate::model::MedicalTranscriptionSetting>,
         pub(crate) content_identification_type:
             std::option::Option<crate::model::MedicalContentIdentificationType>,
@@ -5511,6 +5676,25 @@ pub mod start_medical_transcription_job_input {
             self.output_encryption_kms_key_id = input;
             self
         }
+        pub fn kms_encryption_context(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.kms_encryption_context.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.kms_encryption_context = Some(hash_map);
+            self
+        }
+        pub fn set_kms_encryption_context(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.kms_encryption_context = input;
+            self
+        }
         /// <p>Optional settings for the medical transcription job.</p>
         pub fn settings(mut self, input: crate::model::MedicalTranscriptionSetting) -> Self {
             self.settings = Some(input);
@@ -5591,6 +5775,7 @@ pub mod start_medical_transcription_job_input {
                 output_bucket_name: self.output_bucket_name,
                 output_key: self.output_key,
                 output_encryption_kms_key_id: self.output_encryption_kms_key_id,
+                kms_encryption_context: self.kms_encryption_context,
                 settings: self.settings,
                 content_identification_type: self.content_identification_type,
                 specialty: self.specialty,
@@ -5622,10 +5807,8 @@ impl StartMedicalTranscriptionJobInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_start_medical_transcription_job(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_start_medical_transcription_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5688,12 +5871,12 @@ impl StartMedicalTranscriptionJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.StartMedicalTranscriptionJob",
         );
         Ok(builder)
@@ -5703,7 +5886,11 @@ impl StartMedicalTranscriptionJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5727,6 +5914,9 @@ pub mod start_transcription_job_input {
         pub(crate) output_bucket_name: std::option::Option<std::string::String>,
         pub(crate) output_key: std::option::Option<std::string::String>,
         pub(crate) output_encryption_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) kms_encryption_context: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) settings: std::option::Option<crate::model::Settings>,
         pub(crate) model_settings: std::option::Option<crate::model::ModelSettings>,
         pub(crate) job_execution_settings: std::option::Option<crate::model::JobExecutionSettings>,
@@ -5880,6 +6070,25 @@ pub mod start_transcription_job_input {
             self.output_encryption_kms_key_id = input;
             self
         }
+        pub fn kms_encryption_context(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.kms_encryption_context.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.kms_encryption_context = Some(hash_map);
+            self
+        }
+        pub fn set_kms_encryption_context(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.kms_encryption_context = input;
+            self
+        }
         /// <p>A <code>Settings</code> object that provides optional settings for a transcription job.</p>
         pub fn settings(mut self, input: crate::model::Settings) -> Self {
             self.settings = Some(input);
@@ -5980,6 +6189,7 @@ pub mod start_transcription_job_input {
                 output_bucket_name: self.output_bucket_name,
                 output_key: self.output_key,
                 output_encryption_kms_key_id: self.output_encryption_kms_key_id,
+                kms_encryption_context: self.kms_encryption_context,
                 settings: self.settings,
                 model_settings: self.model_settings,
                 job_execution_settings: self.job_execution_settings,
@@ -6011,7 +6221,10 @@ impl StartTranscriptionJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_start_transcription_job(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_start_transcription_job(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -6077,12 +6290,12 @@ impl StartTranscriptionJobInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.StartTranscriptionJob",
         );
         Ok(builder)
@@ -6092,7 +6305,11 @@ impl StartTranscriptionJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6167,9 +6384,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6232,12 +6450,12 @@ impl TagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.TagResource",
         );
         Ok(builder)
@@ -6247,7 +6465,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6322,9 +6544,10 @@ impl UntagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6387,12 +6610,12 @@ impl UntagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.UntagResource",
         );
         Ok(builder)
@@ -6402,7 +6625,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6484,10 +6711,8 @@ impl UpdateCallAnalyticsCategoryInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_call_analytics_category(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_call_analytics_category(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6550,12 +6775,12 @@ impl UpdateCallAnalyticsCategoryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.UpdateCallAnalyticsCategory",
         );
         Ok(builder)
@@ -6565,7 +6790,11 @@ impl UpdateCallAnalyticsCategoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6673,10 +6902,9 @@ impl UpdateMedicalVocabularyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_medical_vocabulary(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_medical_vocabulary(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6739,12 +6967,12 @@ impl UpdateMedicalVocabularyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.UpdateMedicalVocabulary",
         );
         Ok(builder)
@@ -6754,7 +6982,11 @@ impl UpdateMedicalVocabularyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6868,9 +7100,11 @@ impl UpdateVocabularyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_vocabulary(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_vocabulary(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6933,12 +7167,12 @@ impl UpdateVocabularyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.UpdateVocabulary",
         );
         Ok(builder)
@@ -6948,7 +7182,11 @@ impl UpdateVocabularyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7047,7 +7285,10 @@ impl UpdateVocabularyFilterInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_vocabulary_filter(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_vocabulary_filter(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -7113,12 +7354,12 @@ impl UpdateVocabularyFilterInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "Transcribe.UpdateVocabularyFilter",
         );
         Ok(builder)
@@ -7128,7 +7369,11 @@ impl UpdateVocabularyFilterInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7361,6 +7606,10 @@ pub struct StartTranscriptionJobInput {
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the
     /// <code>OutputBucketName</code> parameter.</p>
     pub output_encryption_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added
+    /// layer of security for your data.</p>
+    pub kms_encryption_context:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A <code>Settings</code> object that provides optional settings for a transcription job.</p>
     pub settings: std::option::Option<crate::model::Settings>,
     /// <p>Choose the custom language model you use for your transcription job in this parameter.</p>
@@ -7397,6 +7646,7 @@ impl std::fmt::Debug for StartTranscriptionJobInput {
             "output_encryption_kms_key_id",
             &self.output_encryption_kms_key_id,
         );
+        formatter.field("kms_encryption_context", &self.kms_encryption_context);
         formatter.field("settings", &self.settings);
         formatter.field("model_settings", &self.model_settings);
         formatter.field("job_execution_settings", &self.job_execution_settings);
@@ -7477,6 +7727,10 @@ pub struct StartMedicalTranscriptionJobInput {
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the
     /// <code>OutputBucketName</code> parameter.</p>
     pub output_encryption_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added
+    /// layer of security for your data.</p>
+    pub kms_encryption_context:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Optional settings for the medical transcription job.</p>
     pub settings: std::option::Option<crate::model::MedicalTranscriptionSetting>,
     /// <p>You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify <code>PHI</code>,
@@ -7509,6 +7763,7 @@ impl std::fmt::Debug for StartMedicalTranscriptionJobInput {
             "output_encryption_kms_key_id",
             &self.output_encryption_kms_key_id,
         );
+        formatter.field("kms_encryption_context", &self.kms_encryption_context);
         formatter.field("settings", &self.settings);
         formatter.field(
             "content_identification_type",

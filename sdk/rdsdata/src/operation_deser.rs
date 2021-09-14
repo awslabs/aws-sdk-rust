@@ -23,11 +23,7 @@ pub fn parse_batch_execute_statement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchExecuteStatementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchExecuteStatementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -36,38 +32,16 @@ pub fn parse_batch_execute_statement_error(
                 tmp
             }),
         },
-        "ForbiddenException" => crate::error::BatchExecuteStatementError {
-            meta: generic,
-            kind: crate::error::BatchExecuteStatementErrorKind::ForbiddenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::forbidden_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchExecuteStatementError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerErrorException" => {
+        "ForbiddenException" => {
             crate::error::BatchExecuteStatementError {
                 meta: generic,
-                kind: crate::error::BatchExecuteStatementErrorKind::InternalServerErrorException({
+                kind: crate::error::BatchExecuteStatementErrorKind::ForbiddenException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_server_error_exception::Builder::default();
+                        let mut output = crate::error::forbidden_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchExecuteStatementError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchExecuteStatementError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -77,6 +51,24 @@ pub fn parse_batch_execute_statement_error(
                 }),
             }
         }
+        "InternalServerErrorException" => crate::error::BatchExecuteStatementError {
+            meta: generic,
+            kind: crate::error::BatchExecuteStatementErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchExecuteStatementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceUnavailableError" => crate::error::BatchExecuteStatementError {
             meta: generic,
             kind: crate::error::BatchExecuteStatementErrorKind::ServiceUnavailableError({
@@ -85,11 +77,7 @@ pub fn parse_batch_execute_statement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_unavailable_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_unavailable_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchExecuteStatementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_errorjson_err(response.body().as_ref(), output).map_err(crate::error::BatchExecuteStatementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -106,12 +94,7 @@ pub fn parse_batch_execute_statement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::statement_timeout_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_statement_timeout_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::BatchExecuteStatementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_statement_timeout_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchExecuteStatementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -135,7 +118,7 @@ pub fn parse_batch_execute_statement_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_execute_statement_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_batch_execute_statement(
+        output = crate::json_deser::deser_operation_crate_operation_batch_execute_statement(
             response.body().as_ref(),
             output,
         )
@@ -166,11 +149,7 @@ pub fn parse_begin_transaction_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BeginTransactionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BeginTransactionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -179,38 +158,16 @@ pub fn parse_begin_transaction_error(
                 tmp
             }),
         },
-        "ForbiddenException" => crate::error::BeginTransactionError {
-            meta: generic,
-            kind: crate::error::BeginTransactionErrorKind::ForbiddenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::forbidden_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BeginTransactionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerErrorException" => {
+        "ForbiddenException" => {
             crate::error::BeginTransactionError {
                 meta: generic,
-                kind: crate::error::BeginTransactionErrorKind::InternalServerErrorException({
+                kind: crate::error::BeginTransactionErrorKind::ForbiddenException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_server_error_exception::Builder::default();
+                        let mut output = crate::error::forbidden_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BeginTransactionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BeginTransactionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -220,6 +177,24 @@ pub fn parse_begin_transaction_error(
                 }),
             }
         }
+        "InternalServerErrorException" => crate::error::BeginTransactionError {
+            meta: generic,
+            kind: crate::error::BeginTransactionErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BeginTransactionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceUnavailableError" => crate::error::BeginTransactionError {
             meta: generic,
             kind: crate::error::BeginTransactionErrorKind::ServiceUnavailableError({
@@ -228,11 +203,7 @@ pub fn parse_begin_transaction_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_unavailable_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_unavailable_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BeginTransactionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_errorjson_err(response.body().as_ref(), output).map_err(crate::error::BeginTransactionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -249,12 +220,7 @@ pub fn parse_begin_transaction_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::statement_timeout_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_statement_timeout_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::BeginTransactionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_statement_timeout_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BeginTransactionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -276,9 +242,11 @@ pub fn parse_begin_transaction_response(
         #[allow(unused_mut)]
         let mut output = crate::output::begin_transaction_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_begin_transaction(response.body().as_ref(), output)
-                .map_err(crate::error::BeginTransactionError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_begin_transaction(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BeginTransactionError::unhandled)?;
         output.build()
     })
 }
@@ -305,11 +273,7 @@ pub fn parse_commit_transaction_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CommitTransactionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CommitTransactionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -318,38 +282,16 @@ pub fn parse_commit_transaction_error(
                 tmp
             }),
         },
-        "ForbiddenException" => crate::error::CommitTransactionError {
-            meta: generic,
-            kind: crate::error::CommitTransactionErrorKind::ForbiddenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::forbidden_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CommitTransactionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerErrorException" => {
+        "ForbiddenException" => {
             crate::error::CommitTransactionError {
                 meta: generic,
-                kind: crate::error::CommitTransactionErrorKind::InternalServerErrorException({
+                kind: crate::error::CommitTransactionErrorKind::ForbiddenException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_server_error_exception::Builder::default();
+                        let mut output = crate::error::forbidden_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CommitTransactionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CommitTransactionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -359,19 +301,16 @@ pub fn parse_commit_transaction_error(
                 }),
             }
         }
-        "NotFoundException" => crate::error::CommitTransactionError {
+        "InternalServerErrorException" => crate::error::CommitTransactionError {
             meta: generic,
-            kind: crate::error::CommitTransactionErrorKind::NotFoundException({
+            kind: crate::error::CommitTransactionErrorKind::InternalServerErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CommitTransactionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CommitTransactionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -380,6 +319,25 @@ pub fn parse_commit_transaction_error(
                 tmp
             }),
         },
+        "NotFoundException" => {
+            crate::error::CommitTransactionError {
+                meta: generic,
+                kind: crate::error::CommitTransactionErrorKind::NotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CommitTransactionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ServiceUnavailableError" => crate::error::CommitTransactionError {
             meta: generic,
             kind: crate::error::CommitTransactionErrorKind::ServiceUnavailableError({
@@ -388,11 +346,7 @@ pub fn parse_commit_transaction_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_unavailable_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_unavailable_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CommitTransactionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CommitTransactionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -409,12 +363,7 @@ pub fn parse_commit_transaction_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::statement_timeout_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_statement_timeout_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::CommitTransactionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_statement_timeout_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CommitTransactionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -436,9 +385,11 @@ pub fn parse_commit_transaction_response(
         #[allow(unused_mut)]
         let mut output = crate::output::commit_transaction_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_commit_transaction(response.body().as_ref(), output)
-                .map_err(crate::error::CommitTransactionError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_commit_transaction(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CommitTransactionError::unhandled)?;
         output.build()
     })
 }
@@ -464,11 +415,7 @@ pub fn parse_execute_sql_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ExecuteSqlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExecuteSqlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -477,38 +424,16 @@ pub fn parse_execute_sql_error(
                 tmp
             }),
         },
-        "ForbiddenException" => crate::error::ExecuteSqlError {
-            meta: generic,
-            kind: crate::error::ExecuteSqlErrorKind::ForbiddenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::forbidden_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ExecuteSqlError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerErrorException" => {
+        "ForbiddenException" => {
             crate::error::ExecuteSqlError {
                 meta: generic,
-                kind: crate::error::ExecuteSqlErrorKind::InternalServerErrorException({
+                kind: crate::error::ExecuteSqlErrorKind::ForbiddenException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_server_error_exception::Builder::default();
+                        let mut output = crate::error::forbidden_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExecuteSqlError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExecuteSqlError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -518,6 +443,24 @@ pub fn parse_execute_sql_error(
                 }),
             }
         }
+        "InternalServerErrorException" => crate::error::ExecuteSqlError {
+            meta: generic,
+            kind: crate::error::ExecuteSqlErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExecuteSqlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceUnavailableError" => crate::error::ExecuteSqlError {
             meta: generic,
             kind: crate::error::ExecuteSqlErrorKind::ServiceUnavailableError({
@@ -526,11 +469,7 @@ pub fn parse_execute_sql_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_unavailable_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_unavailable_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ExecuteSqlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ExecuteSqlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -551,8 +490,11 @@ pub fn parse_execute_sql_response(
         #[allow(unused_mut)]
         let mut output = crate::output::execute_sql_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_execute_sql(response.body().as_ref(), output)
-            .map_err(crate::error::ExecuteSqlError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_execute_sql(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ExecuteSqlError::unhandled)?;
         output.build()
     })
 }
@@ -579,11 +521,7 @@ pub fn parse_execute_statement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ExecuteStatementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExecuteStatementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -592,38 +530,16 @@ pub fn parse_execute_statement_error(
                 tmp
             }),
         },
-        "ForbiddenException" => crate::error::ExecuteStatementError {
-            meta: generic,
-            kind: crate::error::ExecuteStatementErrorKind::ForbiddenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::forbidden_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ExecuteStatementError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerErrorException" => {
+        "ForbiddenException" => {
             crate::error::ExecuteStatementError {
                 meta: generic,
-                kind: crate::error::ExecuteStatementErrorKind::InternalServerErrorException({
+                kind: crate::error::ExecuteStatementErrorKind::ForbiddenException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_server_error_exception::Builder::default();
+                        let mut output = crate::error::forbidden_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExecuteStatementError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExecuteStatementError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -633,6 +549,24 @@ pub fn parse_execute_statement_error(
                 }),
             }
         }
+        "InternalServerErrorException" => crate::error::ExecuteStatementError {
+            meta: generic,
+            kind: crate::error::ExecuteStatementErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExecuteStatementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceUnavailableError" => crate::error::ExecuteStatementError {
             meta: generic,
             kind: crate::error::ExecuteStatementErrorKind::ServiceUnavailableError({
@@ -641,11 +575,7 @@ pub fn parse_execute_statement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_unavailable_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_unavailable_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ExecuteStatementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ExecuteStatementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -662,12 +592,7 @@ pub fn parse_execute_statement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::statement_timeout_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_statement_timeout_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::ExecuteStatementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_statement_timeout_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExecuteStatementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -689,9 +614,11 @@ pub fn parse_execute_statement_response(
         #[allow(unused_mut)]
         let mut output = crate::output::execute_statement_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_execute_statement(response.body().as_ref(), output)
-                .map_err(crate::error::ExecuteStatementError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_execute_statement(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ExecuteStatementError::unhandled)?;
         output.build()
     })
 }
@@ -720,11 +647,7 @@ pub fn parse_rollback_transaction_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RollbackTransactionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RollbackTransactionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -733,38 +656,16 @@ pub fn parse_rollback_transaction_error(
                 tmp
             }),
         },
-        "ForbiddenException" => crate::error::RollbackTransactionError {
-            meta: generic,
-            kind: crate::error::RollbackTransactionErrorKind::ForbiddenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::forbidden_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RollbackTransactionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerErrorException" => {
+        "ForbiddenException" => {
             crate::error::RollbackTransactionError {
                 meta: generic,
-                kind: crate::error::RollbackTransactionErrorKind::InternalServerErrorException({
+                kind: crate::error::RollbackTransactionErrorKind::ForbiddenException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_server_error_exception::Builder::default();
+                        let mut output = crate::error::forbidden_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RollbackTransactionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RollbackTransactionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -774,19 +675,16 @@ pub fn parse_rollback_transaction_error(
                 }),
             }
         }
-        "NotFoundException" => crate::error::RollbackTransactionError {
+        "InternalServerErrorException" => crate::error::RollbackTransactionError {
             meta: generic,
-            kind: crate::error::RollbackTransactionErrorKind::NotFoundException({
+            kind: crate::error::RollbackTransactionErrorKind::InternalServerErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RollbackTransactionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RollbackTransactionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -795,6 +693,25 @@ pub fn parse_rollback_transaction_error(
                 tmp
             }),
         },
+        "NotFoundException" => {
+            crate::error::RollbackTransactionError {
+                meta: generic,
+                kind: crate::error::RollbackTransactionErrorKind::NotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RollbackTransactionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ServiceUnavailableError" => crate::error::RollbackTransactionError {
             meta: generic,
             kind: crate::error::RollbackTransactionErrorKind::ServiceUnavailableError({
@@ -803,11 +720,7 @@ pub fn parse_rollback_transaction_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_unavailable_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_unavailable_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RollbackTransactionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_errorjson_err(response.body().as_ref(), output).map_err(crate::error::RollbackTransactionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -824,12 +737,7 @@ pub fn parse_rollback_transaction_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::statement_timeout_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_statement_timeout_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::RollbackTransactionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_statement_timeout_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RollbackTransactionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -853,7 +761,7 @@ pub fn parse_rollback_transaction_response(
         #[allow(unused_mut)]
         let mut output = crate::output::rollback_transaction_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_rollback_transaction(
+        output = crate::json_deser::deser_operation_crate_operation_rollback_transaction(
             response.body().as_ref(),
             output,
         )

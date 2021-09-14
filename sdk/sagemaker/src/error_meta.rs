@@ -819,6 +819,27 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateStudioLifecycleConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateStudioLifecycleConfigError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateStudioLifecycleConfigErrorKind::ResourceInUse(inner) => {
+                    Error::ResourceInUse(inner)
+                }
+                crate::error::CreateStudioLifecycleConfigErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::CreateTrainingJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1523,6 +1544,30 @@ where
                     Error::ConflictException(inner)
                 }
                 crate::error::DeleteProjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteStudioLifecycleConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteStudioLifecycleConfigError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteStudioLifecycleConfigErrorKind::ResourceInUse(inner) => {
+                    Error::ResourceInUse(inner)
+                }
+                crate::error::DeleteStudioLifecycleConfigErrorKind::ResourceNotFound(inner) => {
+                    Error::ResourceNotFound(inner)
+                }
+                crate::error::DeleteStudioLifecycleConfigErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -2346,6 +2391,27 @@ where
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeProjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeStudioLifecycleConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeStudioLifecycleConfigError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeStudioLifecycleConfigErrorKind::ResourceNotFound(inner) => {
+                    Error::ResourceNotFound(inner)
+                }
+                crate::error::DescribeStudioLifecycleConfigErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -3338,6 +3404,27 @@ where
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListProjectsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListStudioLifecycleConfigsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListStudioLifecycleConfigsError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListStudioLifecycleConfigsErrorKind::ResourceInUse(inner) => {
+                    Error::ResourceInUse(inner)
+                }
+                crate::error::ListStudioLifecycleConfigsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

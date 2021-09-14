@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_already_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_already_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::already_exists_exception::Builder,
 ) -> Result<crate::error::already_exists_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_already_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_bad_request_exceptionjson_err(
+pub fn deser_structure_crate_error_bad_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::bad_request_exception::Builder,
 ) -> Result<crate::error::bad_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_bad_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_service_error_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_service_error_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_error_exception::Builder,
 ) -> Result<crate::error::internal_service_error_exception::Builder, smithy_json::deserialize::Error>
@@ -123,7 +123,7 @@ pub fn deser_structure_internal_service_error_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -162,7 +162,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_requests_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_requests_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_requests_exception::Builder,
 ) -> Result<crate::error::too_many_requests_exception::Builder, smithy_json::deserialize::Error> {
@@ -201,7 +201,7 @@ pub fn deser_structure_too_many_requests_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::not_found_exception::Builder,
 ) -> Result<crate::error::not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -240,7 +240,7 @@ pub fn deser_structure_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_configuration_set_event_destinations(
+pub fn deser_operation_crate_operation_get_configuration_set_event_destinations(
     input: &[u8],
     mut builder: crate::output::get_configuration_set_event_destinations_output::Builder,
 ) -> Result<
@@ -259,7 +259,7 @@ pub fn deser_operation_get_configuration_set_event_destinations(
                 match key.to_unescaped()?.as_ref() {
                     "EventDestinations" => {
                         builder = builder.set_event_destinations(
-                            crate::json_deser::deser_list_event_destinations(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_pinpointsmsvoice_event_destinations(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -280,7 +280,7 @@ pub fn deser_operation_get_configuration_set_event_destinations(
     Ok(builder)
 }
 
-pub fn deser_operation_list_configuration_sets(
+pub fn deser_operation_crate_operation_list_configuration_sets(
     input: &[u8],
     mut builder: crate::output::list_configuration_sets_output::Builder,
 ) -> Result<crate::output::list_configuration_sets_output::Builder, smithy_json::deserialize::Error>
@@ -297,7 +297,7 @@ pub fn deser_operation_list_configuration_sets(
                 match key.to_unescaped()?.as_ref() {
                     "ConfigurationSets" => {
                         builder = builder.set_configuration_sets(
-                            crate::json_deser::deser_list_configuration_sets(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_pinpointsmsvoice_configuration_sets(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -325,7 +325,7 @@ pub fn deser_operation_list_configuration_sets(
     Ok(builder)
 }
 
-pub fn deser_operation_send_voice_message(
+pub fn deser_operation_crate_operation_send_voice_message(
     input: &[u8],
     mut builder: crate::output::send_voice_message_output::Builder,
 ) -> Result<crate::output::send_voice_message_output::Builder, smithy_json::deserialize::Error> {
@@ -373,7 +373,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_event_destinations<'a, I>(
+pub fn deser_list_com_amazonaws_pinpointsmsvoice_event_destinations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EventDestination>>, smithy_json::deserialize::Error>
 where
@@ -392,7 +392,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_event_destination(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_event_destination(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -408,7 +411,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_configuration_sets<'a, I>(
+pub fn deser_list_com_amazonaws_pinpointsmsvoice_configuration_sets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -445,7 +448,7 @@ where
     }
 }
 
-pub fn deser_structure_event_destination<'a, I>(
+pub fn deser_structure_crate_model_event_destination<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventDestination>, smithy_json::deserialize::Error>
 where
@@ -465,7 +468,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "CloudWatchLogsDestination" => {
                                 builder = builder.set_cloud_watch_logs_destination(
-                                    crate::json_deser::deser_structure_cloud_watch_logs_destination(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_cloud_watch_logs_destination(tokens)?
                                 );
                             }
                             "Enabled" => {
@@ -477,12 +480,12 @@ where
                             }
                             "KinesisFirehoseDestination" => {
                                 builder = builder.set_kinesis_firehose_destination(
-                                    crate::json_deser::deser_structure_kinesis_firehose_destination(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_kinesis_firehose_destination(tokens)?
                                 );
                             }
                             "MatchingEventTypes" => {
                                 builder = builder.set_matching_event_types(
-                                    crate::json_deser::deser_list_event_types(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_pinpointsmsvoice_event_types(tokens)?
                                 );
                             }
                             "Name" => {
@@ -496,7 +499,9 @@ where
                             }
                             "SnsDestination" => {
                                 builder = builder.set_sns_destination(
-                                    crate::json_deser::deser_structure_sns_destination(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_sns_destination(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -517,7 +522,7 @@ where
     }
 }
 
-pub fn deser_structure_cloud_watch_logs_destination<'a, I>(
+pub fn deser_structure_crate_model_cloud_watch_logs_destination<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CloudWatchLogsDestination>, smithy_json::deserialize::Error>
 where
@@ -571,7 +576,7 @@ where
     }
 }
 
-pub fn deser_structure_kinesis_firehose_destination<'a, I>(
+pub fn deser_structure_crate_model_kinesis_firehose_destination<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::KinesisFirehoseDestination>, smithy_json::deserialize::Error>
 where
@@ -626,7 +631,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_event_types<'a, I>(
+pub fn deser_list_com_amazonaws_pinpointsmsvoice_event_types<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EventType>>, smithy_json::deserialize::Error>
 where
@@ -666,7 +671,7 @@ where
     }
 }
 
-pub fn deser_structure_sns_destination<'a, I>(
+pub fn deser_structure_crate_model_sns_destination<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SnsDestination>, smithy_json::deserialize::Error>
 where

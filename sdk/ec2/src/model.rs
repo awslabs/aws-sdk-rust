@@ -3873,25 +3873,27 @@ impl AsRef<str> for AnalysisStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagSpecification {
-    /// <p>The type of resource to tag. Currently, the resource types that support tagging on
-    /// creation are: <code>capacity-reservation</code> | <code>carrier-gateway</code> |
-    /// <code>client-vpn-endpoint</code> |  <code>customer-gateway</code> |
-    /// <code>dedicated-host</code> | <code>dhcp-options</code> | <code>egress-only-internet-gateway</code> | <code>elastic-ip</code> | <code>elastic-gpu</code> |
-    /// <code>export-image-task</code>
-    /// | <code>export-instance-task</code> | <code>fleet</code> | <code>fpga-image</code> |
-    /// <code>host-reservation</code> | <code>image</code>| <code>import-image-task</code> |
+    /// <p>The type of resource to tag on creation. The possible values are:
+    /// <code>capacity-reservation</code> | <code>carrier-gateway</code> |
+    /// <code>client-vpn-endpoint</code> | <code>customer-gateway</code> |
+    /// <code>dedicated-host</code> | <code>dhcp-options</code> |
+    /// <code>egress-only-internet-gateway</code> | <code>elastic-gpu</code> |
+    /// <code>elastic-ip</code> | <code>export-image-task</code> |
+    /// <code>export-instance-task</code> | <code>fleet</code> | <code>fpga-image</code> |
+    /// <code>host-reservation</code> | <code>image</code> | <code>import-image-task</code> |
     /// <code>import-snapshot-task</code> | <code>instance</code> | <code>instance-event-window</code> |
     /// <code>internet-gateway</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
-    /// <code>key-pair</code> | <code>launch-template</code> | <code>local-gateway-route-table-vpc-association</code> | <code>placement-group</code> |
-    /// <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-    /// <code>reserved-instances</code> |<code>route-table</code> | <code>security-group</code>| <code>snapshot</code> | <code>spot-fleet-request</code>
-    /// | <code>spot-instances-request</code> | <code>snapshot</code> | <code>subnet</code> |
-    /// <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-    /// <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
-    /// <code>transit-gateway-attachment</code> | <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> |
-    /// <code>volume</code> |<code>vpc</code> | <code> vpc-peering-connection</code> |
-    /// <code>vpc-endpoint</code> (for interface and gateway endpoints) |
-    /// <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code> |
+    /// <code>key-pair</code> | <code>launch-template</code> | <code>local-gateway-route-table-vpc-association</code> |
+    /// <code>natgateway</code> | <code>network-acl</code> | <code>network-insights-analysis</code> |
+    /// <code>network-insights-path</code> | <code>network-interface</code> |
+    /// <code>placement-group</code> | <code>prefix-list</code> | <code>reserved-instances</code> |
+    /// <code>route-table</code> | <code>security-group</code> | <code>security-group-rule</code> |
+    /// <code>snapshot</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> | <code>subnet</code> |
+    /// <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+    /// <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
+    /// <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> |
+    /// <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> |
+    /// <code>vpc-flow-log</code> | <code>vpc-peering-connection</code> |
     /// <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -3916,25 +3918,27 @@ pub mod tag_specification {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The type of resource to tag. Currently, the resource types that support tagging on
-        /// creation are: <code>capacity-reservation</code> | <code>carrier-gateway</code> |
-        /// <code>client-vpn-endpoint</code> |  <code>customer-gateway</code> |
-        /// <code>dedicated-host</code> | <code>dhcp-options</code> | <code>egress-only-internet-gateway</code> | <code>elastic-ip</code> | <code>elastic-gpu</code> |
-        /// <code>export-image-task</code>
-        /// | <code>export-instance-task</code> | <code>fleet</code> | <code>fpga-image</code> |
-        /// <code>host-reservation</code> | <code>image</code>| <code>import-image-task</code> |
+        /// <p>The type of resource to tag on creation. The possible values are:
+        /// <code>capacity-reservation</code> | <code>carrier-gateway</code> |
+        /// <code>client-vpn-endpoint</code> | <code>customer-gateway</code> |
+        /// <code>dedicated-host</code> | <code>dhcp-options</code> |
+        /// <code>egress-only-internet-gateway</code> | <code>elastic-gpu</code> |
+        /// <code>elastic-ip</code> | <code>export-image-task</code> |
+        /// <code>export-instance-task</code> | <code>fleet</code> | <code>fpga-image</code> |
+        /// <code>host-reservation</code> | <code>image</code> | <code>import-image-task</code> |
         /// <code>import-snapshot-task</code> | <code>instance</code> | <code>instance-event-window</code> |
         /// <code>internet-gateway</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
-        /// <code>key-pair</code> | <code>launch-template</code> | <code>local-gateway-route-table-vpc-association</code> | <code>placement-group</code> |
-        /// <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-        /// <code>reserved-instances</code> |<code>route-table</code> | <code>security-group</code>| <code>snapshot</code> | <code>spot-fleet-request</code>
-        /// | <code>spot-instances-request</code> | <code>snapshot</code> | <code>subnet</code> |
-        /// <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-        /// <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
-        /// <code>transit-gateway-attachment</code> | <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> |
-        /// <code>volume</code> |<code>vpc</code> | <code> vpc-peering-connection</code> |
-        /// <code>vpc-endpoint</code> (for interface and gateway endpoints) |
-        /// <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code> |
+        /// <code>key-pair</code> | <code>launch-template</code> | <code>local-gateway-route-table-vpc-association</code> |
+        /// <code>natgateway</code> | <code>network-acl</code> | <code>network-insights-analysis</code> |
+        /// <code>network-insights-path</code> | <code>network-interface</code> |
+        /// <code>placement-group</code> | <code>prefix-list</code> | <code>reserved-instances</code> |
+        /// <code>route-table</code> | <code>security-group</code> | <code>security-group-rule</code> |
+        /// <code>snapshot</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> | <code>subnet</code> |
+        /// <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+        /// <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
+        /// <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> |
+        /// <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> |
+        /// <code>vpc-flow-log</code> | <code>vpc-peering-connection</code> |
         /// <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
         /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -3988,6 +3992,8 @@ impl TagSpecification {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    CapacityReservation,
+    CarrierGateway,
     ClientVpnEndpoint,
     CustomerGateway,
     DedicatedHost,
@@ -4006,15 +4012,24 @@ pub enum ResourceType {
     Instance,
     InstanceEventWindow,
     InternetGateway,
+    Ipv4poolEc2,
+    Ipv6poolEc2,
     KeyPair,
     LaunchTemplate,
+    LocalGateway,
+    LocalGatewayRouteTable,
+    LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
     LocalGatewayRouteTableVpcAssociation,
+    LocalGatewayVirtualInterface,
+    LocalGatewayVirtualInterfaceGroup,
     Natgateway,
     NetworkAcl,
     NetworkInsightsAnalysis,
     NetworkInsightsPath,
     NetworkInterface,
     PlacementGroup,
+    PrefixList,
+    ReplaceRootVolumeTask,
     ReservedInstances,
     RouteTable,
     SecurityGroup,
@@ -4033,6 +4048,8 @@ pub enum ResourceType {
     TransitGatewayRouteTable,
     Volume,
     Vpc,
+    VpcEndpoint,
+    VpcEndpointService,
     VpcFlowLog,
     VpcPeeringConnection,
     VpnConnection,
@@ -4043,6 +4060,8 @@ pub enum ResourceType {
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "capacity-reservation" => ResourceType::CapacityReservation,
+            "carrier-gateway" => ResourceType::CarrierGateway,
             "client-vpn-endpoint" => ResourceType::ClientVpnEndpoint,
             "customer-gateway" => ResourceType::CustomerGateway,
             "dedicated-host" => ResourceType::DedicatedHost,
@@ -4061,10 +4080,21 @@ impl std::convert::From<&str> for ResourceType {
             "instance" => ResourceType::Instance,
             "instance-event-window" => ResourceType::InstanceEventWindow,
             "internet-gateway" => ResourceType::InternetGateway,
+            "ipv4pool-ec2" => ResourceType::Ipv4poolEc2,
+            "ipv6pool-ec2" => ResourceType::Ipv6poolEc2,
             "key-pair" => ResourceType::KeyPair,
             "launch-template" => ResourceType::LaunchTemplate,
+            "local-gateway" => ResourceType::LocalGateway,
+            "local-gateway-route-table" => ResourceType::LocalGatewayRouteTable,
+            "local-gateway-route-table-virtual-interface-group-association" => {
+                ResourceType::LocalGatewayRouteTableVirtualInterfaceGroupAssociation
+            }
             "local-gateway-route-table-vpc-association" => {
                 ResourceType::LocalGatewayRouteTableVpcAssociation
+            }
+            "local-gateway-virtual-interface" => ResourceType::LocalGatewayVirtualInterface,
+            "local-gateway-virtual-interface-group" => {
+                ResourceType::LocalGatewayVirtualInterfaceGroup
             }
             "natgateway" => ResourceType::Natgateway,
             "network-acl" => ResourceType::NetworkAcl,
@@ -4072,6 +4102,8 @@ impl std::convert::From<&str> for ResourceType {
             "network-insights-path" => ResourceType::NetworkInsightsPath,
             "network-interface" => ResourceType::NetworkInterface,
             "placement-group" => ResourceType::PlacementGroup,
+            "prefix-list" => ResourceType::PrefixList,
+            "replace-root-volume-task" => ResourceType::ReplaceRootVolumeTask,
             "reserved-instances" => ResourceType::ReservedInstances,
             "route-table" => ResourceType::RouteTable,
             "security-group" => ResourceType::SecurityGroup,
@@ -4090,6 +4122,8 @@ impl std::convert::From<&str> for ResourceType {
             "transit-gateway-route-table" => ResourceType::TransitGatewayRouteTable,
             "volume" => ResourceType::Volume,
             "vpc" => ResourceType::Vpc,
+            "vpc-endpoint" => ResourceType::VpcEndpoint,
+            "vpc-endpoint-service" => ResourceType::VpcEndpointService,
             "vpc-flow-log" => ResourceType::VpcFlowLog,
             "vpc-peering-connection" => ResourceType::VpcPeeringConnection,
             "vpn-connection" => ResourceType::VpnConnection,
@@ -4108,6 +4142,8 @@ impl std::str::FromStr for ResourceType {
 impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceType::CapacityReservation => "capacity-reservation",
+            ResourceType::CarrierGateway => "carrier-gateway",
             ResourceType::ClientVpnEndpoint => "client-vpn-endpoint",
             ResourceType::CustomerGateway => "customer-gateway",
             ResourceType::DedicatedHost => "dedicated-host",
@@ -4126,10 +4162,21 @@ impl ResourceType {
             ResourceType::Instance => "instance",
             ResourceType::InstanceEventWindow => "instance-event-window",
             ResourceType::InternetGateway => "internet-gateway",
+            ResourceType::Ipv4poolEc2 => "ipv4pool-ec2",
+            ResourceType::Ipv6poolEc2 => "ipv6pool-ec2",
             ResourceType::KeyPair => "key-pair",
             ResourceType::LaunchTemplate => "launch-template",
+            ResourceType::LocalGateway => "local-gateway",
+            ResourceType::LocalGatewayRouteTable => "local-gateway-route-table",
+            ResourceType::LocalGatewayRouteTableVirtualInterfaceGroupAssociation => {
+                "local-gateway-route-table-virtual-interface-group-association"
+            }
             ResourceType::LocalGatewayRouteTableVpcAssociation => {
                 "local-gateway-route-table-vpc-association"
+            }
+            ResourceType::LocalGatewayVirtualInterface => "local-gateway-virtual-interface",
+            ResourceType::LocalGatewayVirtualInterfaceGroup => {
+                "local-gateway-virtual-interface-group"
             }
             ResourceType::Natgateway => "natgateway",
             ResourceType::NetworkAcl => "network-acl",
@@ -4137,6 +4184,8 @@ impl ResourceType {
             ResourceType::NetworkInsightsPath => "network-insights-path",
             ResourceType::NetworkInterface => "network-interface",
             ResourceType::PlacementGroup => "placement-group",
+            ResourceType::PrefixList => "prefix-list",
+            ResourceType::ReplaceRootVolumeTask => "replace-root-volume-task",
             ResourceType::ReservedInstances => "reserved-instances",
             ResourceType::RouteTable => "route-table",
             ResourceType::SecurityGroup => "security-group",
@@ -4155,6 +4204,8 @@ impl ResourceType {
             ResourceType::TransitGatewayRouteTable => "transit-gateway-route-table",
             ResourceType::Volume => "volume",
             ResourceType::Vpc => "vpc",
+            ResourceType::VpcEndpoint => "vpc-endpoint",
+            ResourceType::VpcEndpointService => "vpc-endpoint-service",
             ResourceType::VpcFlowLog => "vpc-flow-log",
             ResourceType::VpcPeeringConnection => "vpc-peering-connection",
             ResourceType::VpnConnection => "vpn-connection",
@@ -4164,6 +4215,8 @@ impl ResourceType {
     }
     pub fn values() -> &'static [&'static str] {
         &[
+            "capacity-reservation",
+            "carrier-gateway",
             "client-vpn-endpoint",
             "customer-gateway",
             "dedicated-host",
@@ -4182,15 +4235,24 @@ impl ResourceType {
             "instance",
             "instance-event-window",
             "internet-gateway",
+            "ipv4pool-ec2",
+            "ipv6pool-ec2",
             "key-pair",
             "launch-template",
+            "local-gateway",
+            "local-gateway-route-table",
+            "local-gateway-route-table-virtual-interface-group-association",
             "local-gateway-route-table-vpc-association",
+            "local-gateway-virtual-interface",
+            "local-gateway-virtual-interface-group",
             "natgateway",
             "network-acl",
             "network-insights-analysis",
             "network-insights-path",
             "network-interface",
             "placement-group",
+            "prefix-list",
+            "replace-root-volume-task",
             "reserved-instances",
             "route-table",
             "security-group",
@@ -4209,6 +4271,8 @@ impl ResourceType {
             "transit-gateway-route-table",
             "volume",
             "vpc",
+            "vpc-endpoint",
+            "vpc-endpoint-service",
             "vpc-flow-log",
             "vpc-peering-connection",
             "vpn-connection",
@@ -9971,6 +10035,7 @@ pub enum ArchitectureValues {
     Arm64,
     I386,
     X8664,
+    X8664Mac,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -9980,6 +10045,7 @@ impl std::convert::From<&str> for ArchitectureValues {
             "arm64" => ArchitectureValues::Arm64,
             "i386" => ArchitectureValues::I386,
             "x86_64" => ArchitectureValues::X8664,
+            "x86_64_mac" => ArchitectureValues::X8664Mac,
             other => ArchitectureValues::Unknown(other.to_owned()),
         }
     }
@@ -9997,11 +10063,12 @@ impl ArchitectureValues {
             ArchitectureValues::Arm64 => "arm64",
             ArchitectureValues::I386 => "i386",
             ArchitectureValues::X8664 => "x86_64",
+            ArchitectureValues::X8664Mac => "x86_64_mac",
             ArchitectureValues::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["arm64", "i386", "x86_64"]
+        &["arm64", "i386", "x86_64", "x86_64_mac"]
     }
 }
 impl AsRef<str> for ArchitectureValues {
@@ -10201,6 +10268,7 @@ pub struct Placement {
     /// tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code>
     /// tenancy is not supported for the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.</p>
     /// <p>This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
+    /// <p>T3 instances that use the <code>unlimited</code> CPU credit option do not support <code>host</code> tenancy.</p>
     pub tenancy: std::option::Option<crate::model::Tenancy>,
     /// <p>Reserved for future use.</p>
     /// <p>This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
@@ -10302,6 +10370,7 @@ pub mod placement {
         /// tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code>
         /// tenancy is not supported for the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.</p>
         /// <p>This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
+        /// <p>T3 instances that use the <code>unlimited</code> CPU credit option do not support <code>host</code> tenancy.</p>
         pub fn tenancy(mut self, input: crate::model::Tenancy) -> Self {
             self.tenancy = Some(input);
             self
@@ -14652,7 +14721,7 @@ pub struct ManagedPrefixList {
     pub prefix_list_id: std::option::Option<std::string::String>,
     /// <p>The IP address version.</p>
     pub address_family: std::option::Option<std::string::String>,
-    /// <p>The state of the prefix list.</p>
+    /// <p>The current state of the prefix list.</p>
     pub state: std::option::Option<crate::model::PrefixListState>,
     /// <p>The state message.</p>
     pub state_message: std::option::Option<std::string::String>,
@@ -14727,7 +14796,7 @@ pub mod managed_prefix_list {
             self.address_family = input;
             self
         }
-        /// <p>The state of the prefix list.</p>
+        /// <p>The current state of the prefix list.</p>
         pub fn state(mut self, input: crate::model::PrefixListState) -> Self {
             self.state = Some(input);
             self
@@ -29386,6 +29455,8 @@ pub struct InstanceCreditSpecificationRequest {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The credit option for CPU usage of the instance. Valid values are
     /// <code>standard</code> and <code>unlimited</code>.</p>
+    /// <p>T3 instances with <code>host</code> tenancy do not support the <code>unlimited</code>
+    /// CPU credit option.</p>
     pub cpu_credits: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceCreditSpecificationRequest {
@@ -29417,6 +29488,8 @@ pub mod instance_credit_specification_request {
         }
         /// <p>The credit option for CPU usage of the instance. Valid values are
         /// <code>standard</code> and <code>unlimited</code>.</p>
+        /// <p>T3 instances with <code>host</code> tenancy do not support the <code>unlimited</code>
+        /// CPU credit option.</p>
         pub fn cpu_credits(mut self, input: impl Into<std::string::String>) -> Self {
             self.cpu_credits = Some(input.into());
             self
@@ -29643,9 +29716,9 @@ impl EbsInstanceBlockDeviceSpecification {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchPermissionModifications {
-    /// <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
+    /// <p>The Amazon Web Services account ID to add to the list of launch permissions for the AMI.</p>
     pub add: std::option::Option<std::vec::Vec<crate::model::LaunchPermission>>,
-    /// <p>The AWS account ID to remove from the list of launch permissions for the AMI.</p>
+    /// <p>The Amazon Web Services account ID to remove from the list of launch permissions for the AMI.</p>
     pub remove: std::option::Option<std::vec::Vec<crate::model::LaunchPermission>>,
 }
 impl std::fmt::Debug for LaunchPermissionModifications {
@@ -29714,7 +29787,7 @@ impl LaunchPermissionModifications {
 pub struct LaunchPermission {
     /// <p>The name of the group.</p>
     pub group: std::option::Option<crate::model::PermissionGroup>,
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     /// <p>Constraints: Up to 10 000 account IDs can be specified in a single request.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
@@ -29748,7 +29821,7 @@ pub mod launch_permission {
             self.group = input;
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         /// <p>Constraints: Up to 10 000 account IDs can be specified in a single request.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -34474,7 +34547,7 @@ impl ReservedInstanceReservationValue {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetConfigurationRequest {
-    /// <p>The number of instances the Covertible Reserved Instance offering can be applied to. This parameter is reserved and cannot
+    /// <p>The number of instances the Convertible Reserved Instance offering can be applied to. This parameter is reserved and cannot
     /// be specified in a request</p>
     pub instance_count: std::option::Option<i32>,
     /// <p>The Convertible Reserved Instance offering ID.</p>
@@ -34498,7 +34571,7 @@ pub mod target_configuration_request {
         pub(crate) offering_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The number of instances the Covertible Reserved Instance offering can be applied to. This parameter is reserved and cannot
+        /// <p>The number of instances the Convertible Reserved Instance offering can be applied to. This parameter is reserved and cannot
         /// be specified in a request</p>
         pub fn instance_count(mut self, input: i32) -> Self {
             self.instance_count = Some(input);
@@ -35315,6 +35388,11 @@ pub struct LaunchTemplateInstanceMetadataOptions {
     /// </note>
     pub http_endpoint:
         std::option::Option<crate::model::LaunchTemplateInstanceMetadataEndpointState>,
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Default: <code>disabled</code>
+    /// </p>
+    pub http_protocol_ipv6:
+        std::option::Option<crate::model::LaunchTemplateInstanceMetadataProtocolIpv6>,
 }
 impl std::fmt::Debug for LaunchTemplateInstanceMetadataOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35326,6 +35404,7 @@ impl std::fmt::Debug for LaunchTemplateInstanceMetadataOptions {
             &self.http_put_response_hop_limit,
         );
         formatter.field("http_endpoint", &self.http_endpoint);
+        formatter.field("http_protocol_ipv6", &self.http_protocol_ipv6);
         formatter.finish()
     }
 }
@@ -35341,6 +35420,8 @@ pub mod launch_template_instance_metadata_options {
         pub(crate) http_put_response_hop_limit: std::option::Option<i32>,
         pub(crate) http_endpoint:
             std::option::Option<crate::model::LaunchTemplateInstanceMetadataEndpointState>,
+        pub(crate) http_protocol_ipv6:
+            std::option::Option<crate::model::LaunchTemplateInstanceMetadataProtocolIpv6>,
     }
     impl Builder {
         /// <p>The state of the metadata option changes.</p>
@@ -35406,6 +35487,23 @@ pub mod launch_template_instance_metadata_options {
             self.http_endpoint = input;
             self
         }
+        /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+        /// <p>Default: <code>disabled</code>
+        /// </p>
+        pub fn http_protocol_ipv6(
+            mut self,
+            input: crate::model::LaunchTemplateInstanceMetadataProtocolIpv6,
+        ) -> Self {
+            self.http_protocol_ipv6 = Some(input);
+            self
+        }
+        pub fn set_http_protocol_ipv6(
+            mut self,
+            input: std::option::Option<crate::model::LaunchTemplateInstanceMetadataProtocolIpv6>,
+        ) -> Self {
+            self.http_protocol_ipv6 = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LaunchTemplateInstanceMetadataOptions`](crate::model::LaunchTemplateInstanceMetadataOptions)
         pub fn build(self) -> crate::model::LaunchTemplateInstanceMetadataOptions {
             crate::model::LaunchTemplateInstanceMetadataOptions {
@@ -35413,6 +35511,7 @@ pub mod launch_template_instance_metadata_options {
                 http_tokens: self.http_tokens,
                 http_put_response_hop_limit: self.http_put_response_hop_limit,
                 http_endpoint: self.http_endpoint,
+                http_protocol_ipv6: self.http_protocol_ipv6,
             }
         }
     }
@@ -35421,6 +35520,56 @@ impl LaunchTemplateInstanceMetadataOptions {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateInstanceMetadataOptions`](crate::model::LaunchTemplateInstanceMetadataOptions)
     pub fn builder() -> crate::model::launch_template_instance_metadata_options::Builder {
         crate::model::launch_template_instance_metadata_options::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LaunchTemplateInstanceMetadataProtocolIpv6 {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LaunchTemplateInstanceMetadataProtocolIpv6 {
+    fn from(s: &str) -> Self {
+        match s {
+            "disabled" => LaunchTemplateInstanceMetadataProtocolIpv6::Disabled,
+            "enabled" => LaunchTemplateInstanceMetadataProtocolIpv6::Enabled,
+            other => LaunchTemplateInstanceMetadataProtocolIpv6::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LaunchTemplateInstanceMetadataProtocolIpv6 {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LaunchTemplateInstanceMetadataProtocolIpv6::from(s))
+    }
+}
+impl LaunchTemplateInstanceMetadataProtocolIpv6 {
+    pub fn as_str(&self) -> &str {
+        match self {
+            LaunchTemplateInstanceMetadataProtocolIpv6::Disabled => "disabled",
+            LaunchTemplateInstanceMetadataProtocolIpv6::Enabled => "enabled",
+            LaunchTemplateInstanceMetadataProtocolIpv6::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["disabled", "enabled"]
+    }
+}
+impl AsRef<str> for LaunchTemplateInstanceMetadataProtocolIpv6 {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -36514,16 +36663,16 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecification {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The index of the network card.</p>
     pub network_card_index: std::option::Option<i32>,
-    /// <p>One or more IPv4 delegated prefixes assigned to the network interface.</p>
+    /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
     pub ipv4_prefixes:
         std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecificationResponse>>,
-    /// <p>The number of IPv4 delegated prefixes that AWS automatically assigned to the
+    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigned to the
     /// network interface.</p>
     pub ipv4_prefix_count: std::option::Option<i32>,
-    /// <p>One or more IPv6 delegated prefixes assigned to the network interface.</p>
+    /// <p>One or more IPv6 prefixes assigned to the network interface.</p>
     pub ipv6_prefixes:
         std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecificationResponse>>,
-    /// <p>The number of IPv6 delegated prefixes that AWS automatically assigned to the network
+    /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigned to the network
     /// interface.</p>
     pub ipv6_prefix_count: std::option::Option<i32>,
 }
@@ -36782,7 +36931,7 @@ pub mod launch_template_instance_network_interface_specification {
             self.ipv4_prefixes = input;
             self
         }
-        /// <p>The number of IPv4 delegated prefixes that AWS automatically assigned to the
+        /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigned to the
         /// network interface.</p>
         pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
             self.ipv4_prefix_count = Some(input);
@@ -36810,7 +36959,7 @@ pub mod launch_template_instance_network_interface_specification {
             self.ipv6_prefixes = input;
             self
         }
-        /// <p>The number of IPv6 delegated prefixes that AWS automatically assigned to the network
+        /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigned to the network
         /// interface.</p>
         pub fn ipv6_prefix_count(mut self, input: i32) -> Self {
             self.ipv6_prefix_count = Some(input);
@@ -47383,7 +47532,7 @@ pub struct StoreImageTaskResult {
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The time the task started.</p>
     pub task_start_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The name of the S3 bucket that contains the stored AMI object.</p>
+    /// <p>The name of the Amazon S3 bucket that contains the stored AMI object.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name of the stored AMI object in the bucket.</p>
     pub s3object_key: std::option::Option<std::string::String>,
@@ -47445,7 +47594,7 @@ pub mod store_image_task_result {
             self.task_start_time = input;
             self
         }
-        /// <p>The name of the S3 bucket that contains the stored AMI object.</p>
+        /// <p>The name of the Amazon S3 bucket that contains the stored AMI object.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
@@ -48440,11 +48589,6 @@ pub struct EventInformation {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>price_update</code> - The price for a launch configuration was adjusted
-    /// because it was too high. This change is permanent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
     /// <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon EC2
     /// is preparing to launch the target number of Spot Instances.</p>
     /// </li>
@@ -48576,11 +48720,6 @@ pub mod event_information {
         /// <li>
         /// <p>
         /// <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was modified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>price_update</code> - The price for a launch configuration was adjusted
-        /// because it was too high. This change is permanent.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -62284,18 +62423,21 @@ pub struct Image {
     pub public: std::option::Option<bool>,
     /// <p>The kernel associated with the image, if any. Only applicable for machine images.</p>
     pub kernel_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the image owner.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the image.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.</p>
     pub platform: std::option::Option<crate::model::PlatformValues>,
     /// <p>The platform details associated with the billing code of the AMI. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-    /// Billing Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
+    /// AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub platform_details: std::option::Option<std::string::String>,
     /// <p>The operation of the Amazon EC2 instance and the billing code that is associated with the AMI.
-    /// <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a> column on your AWS Cost and Usage Report and in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS Price
-    /// List API</a>. For the list of <code>UsageOperation</code> codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform Details and Usage Operation Billing Codes</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a> column on your Amazon Web Services Cost and Usage Report and in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon Web Services Price
+    /// List API</a>. You can view these fields on the <b>Instances</b> or
+    /// <b>AMIs</b> pages in the Amazon EC2 console, or in the responses that are
+    /// returned by the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+    /// command in the Amazon EC2 API, or the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a>
+    /// command in the CLI.</p>
     pub usage_operation: std::option::Option<std::string::String>,
     /// <p>Any product codes associated with the AMI.</p>
     pub product_codes: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
@@ -62311,14 +62453,14 @@ pub struct Image {
     pub ena_support: std::option::Option<bool>,
     /// <p>The hypervisor type of the image.</p>
     pub hypervisor: std::option::Option<crate::model::HypervisorType>,
-    /// <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>) or
-    /// the AWS account ID of the AMI owner.</p>
+    /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or
+    /// the Amazon Web Services account ID of the AMI owner.</p>
     pub image_owner_alias: std::option::Option<std::string::String>,
     /// <p>The name of the AMI that was provided during image creation.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub root_device_name: std::option::Option<std::string::String>,
-    /// <p>The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.</p>
+    /// <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume or an instance store volume.</p>
     pub root_device_type: std::option::Option<crate::model::DeviceType>,
     /// <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub sriov_net_support: std::option::Option<std::string::String>,
@@ -62485,7 +62627,7 @@ pub mod image {
             self.kernel_id = input;
             self
         }
-        /// <p>The AWS account ID of the image owner.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the image.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -62507,8 +62649,8 @@ pub mod image {
             self
         }
         /// <p>The platform details associated with the billing code of the AMI. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-        /// Billing Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
+        /// AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn platform_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_details = Some(input.into());
             self
@@ -62521,9 +62663,12 @@ pub mod image {
             self
         }
         /// <p>The operation of the Amazon EC2 instance and the billing code that is associated with the AMI.
-        /// <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a> column on your AWS Cost and Usage Report and in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS Price
-        /// List API</a>. For the list of <code>UsageOperation</code> codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform Details and Usage Operation Billing Codes</a> in the
-        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a> column on your Amazon Web Services Cost and Usage Report and in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon Web Services Price
+        /// List API</a>. You can view these fields on the <b>Instances</b> or
+        /// <b>AMIs</b> pages in the Amazon EC2 console, or in the responses that are
+        /// returned by the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+        /// command in the Amazon EC2 API, or the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a>
+        /// command in the CLI.</p>
         pub fn usage_operation(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_operation = Some(input.into());
             self
@@ -62612,8 +62757,8 @@ pub mod image {
             self.hypervisor = input;
             self
         }
-        /// <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>) or
-        /// the AWS account ID of the AMI owner.</p>
+        /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or
+        /// the Amazon Web Services account ID of the AMI owner.</p>
         pub fn image_owner_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_owner_alias = Some(input.into());
             self
@@ -62646,7 +62791,7 @@ pub mod image {
             self.root_device_name = input;
             self
         }
-        /// <p>The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.</p>
+        /// <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume or an instance store volume.</p>
         pub fn root_device_type(mut self, input: crate::model::DeviceType) -> Self {
             self.root_device_type = Some(input);
             self
@@ -72626,12 +72771,12 @@ impl Storage {
     }
 }
 
-/// <p>Describes the storage parameters for S3 and S3 buckets for an instance store-backed AMI.</p>
+/// <p>Describes the storage parameters for Amazon S3 and Amazon S3 buckets for an instance store-backed AMI.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Storage {
     /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance  
-    /// in <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for Managing AWS Access Keys</a>.</p>
+    /// in <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for Managing Amazon Web Services Access Keys</a>.</p>
     pub aws_access_key_id: std::option::Option<std::string::String>,
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
     pub bucket: std::option::Option<std::string::String>,
@@ -72667,7 +72812,7 @@ pub mod s3_storage {
     }
     impl Builder {
         /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance  
-        /// in <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for Managing AWS Access Keys</a>.</p>
+        /// in <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for Managing Amazon Web Services Access Keys</a>.</p>
         pub fn aws_access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_access_key_id = Some(input.into());
             self
@@ -76159,7 +76304,7 @@ impl TransitGatewayRequestOptions {
     }
 }
 
-/// <p>The tags to apply to the AMI object that will be stored in the S3 bucket. For more
+/// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. For more
 /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html">Categorizing your storage using
 /// tags</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
@@ -76849,9 +76994,13 @@ pub struct RequestLaunchTemplateData {
     /// <p>Default: <code>stop</code>
     /// </p>
     pub instance_initiated_shutdown_behavior: std::option::Option<crate::model::ShutdownBehavior>,
-    /// <p>The Base64-encoded user data to make available to the instance. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
-    /// at Launch</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding User Data</a> (Windows).</p>
+    /// <p>The user data to make available to the instance. You must provide base64-encoded text.
+    /// User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
+    /// at Launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding User Data</a> (Windows).</p>
+    /// <p>If you are creating the launch template for use with Batch, the user data
+    /// must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
+    /// MIME multi-part archive format</a>.  For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in
+    /// launch templates</a> in the <i>Batch User Guide</i>.</p>
     pub user_data: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the resources during launch. You can only tag instances and
     /// volumes on launch. The specified tags are applied to all instances or volumes that are
@@ -77196,9 +77345,13 @@ pub mod request_launch_template_data {
             self.instance_initiated_shutdown_behavior = input;
             self
         }
-        /// <p>The Base64-encoded user data to make available to the instance. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
-        /// at Launch</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding User Data</a> (Windows).</p>
+        /// <p>The user data to make available to the instance. You must provide base64-encoded text.
+        /// User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
+        /// at Launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding User Data</a> (Windows).</p>
+        /// <p>If you are creating the launch template for use with Batch, the user data
+        /// must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
+        /// MIME multi-part archive format</a>.  For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in
+        /// launch templates</a> in the <i>Batch User Guide</i>.</p>
         pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_data = Some(input.into());
             self
@@ -77530,6 +77683,11 @@ pub struct LaunchTemplateInstanceMetadataOptionsRequest {
     /// </note>
     pub http_endpoint:
         std::option::Option<crate::model::LaunchTemplateInstanceMetadataEndpointState>,
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Default: <code>disabled</code>
+    /// </p>
+    pub http_protocol_ipv6:
+        std::option::Option<crate::model::LaunchTemplateInstanceMetadataProtocolIpv6>,
 }
 impl std::fmt::Debug for LaunchTemplateInstanceMetadataOptionsRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -77540,6 +77698,7 @@ impl std::fmt::Debug for LaunchTemplateInstanceMetadataOptionsRequest {
             &self.http_put_response_hop_limit,
         );
         formatter.field("http_endpoint", &self.http_endpoint);
+        formatter.field("http_protocol_ipv6", &self.http_protocol_ipv6);
         formatter.finish()
     }
 }
@@ -77553,6 +77712,8 @@ pub mod launch_template_instance_metadata_options_request {
         pub(crate) http_put_response_hop_limit: std::option::Option<i32>,
         pub(crate) http_endpoint:
             std::option::Option<crate::model::LaunchTemplateInstanceMetadataEndpointState>,
+        pub(crate) http_protocol_ipv6:
+            std::option::Option<crate::model::LaunchTemplateInstanceMetadataProtocolIpv6>,
     }
     impl Builder {
         /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
@@ -77599,12 +77760,30 @@ pub mod launch_template_instance_metadata_options_request {
             self.http_endpoint = input;
             self
         }
+        /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+        /// <p>Default: <code>disabled</code>
+        /// </p>
+        pub fn http_protocol_ipv6(
+            mut self,
+            input: crate::model::LaunchTemplateInstanceMetadataProtocolIpv6,
+        ) -> Self {
+            self.http_protocol_ipv6 = Some(input);
+            self
+        }
+        pub fn set_http_protocol_ipv6(
+            mut self,
+            input: std::option::Option<crate::model::LaunchTemplateInstanceMetadataProtocolIpv6>,
+        ) -> Self {
+            self.http_protocol_ipv6 = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LaunchTemplateInstanceMetadataOptionsRequest`](crate::model::LaunchTemplateInstanceMetadataOptionsRequest)
         pub fn build(self) -> crate::model::LaunchTemplateInstanceMetadataOptionsRequest {
             crate::model::LaunchTemplateInstanceMetadataOptionsRequest {
                 http_tokens: self.http_tokens,
                 http_put_response_hop_limit: self.http_put_response_hop_limit,
                 http_endpoint: self.http_endpoint,
+                http_protocol_ipv6: self.http_protocol_ipv6,
             }
         }
     }
@@ -78490,18 +78669,18 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     /// The primary network interface must be assigned to network card index 0.
     /// The default is network card index 0.</p>
     pub network_card_index: std::option::Option<i32>,
-    /// <p>One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot use
+    /// <p>One or more IPv4 prefixes to be assigned to the network interface. You cannot use
     /// this option if you use the <code>Ipv4PrefixCount</code> option.</p>
     pub ipv4_prefixes:
         std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecificationRequest>>,
-    /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+    /// <p>The number of IPv4 prefixes to be automatically assigned to the
     /// network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
     pub ipv4_prefix_count: std::option::Option<i32>,
-    /// <p>One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot
+    /// <p>One or more IPv6 prefixes to be assigned to the network interface. You cannot
     /// use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     pub ipv6_prefixes:
         std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecificationRequest>>,
-    /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network
+    /// <p>The number of IPv6 prefixes to be automatically assigned to the network
     /// interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
     pub ipv6_prefix_count: std::option::Option<i32>,
 }
@@ -78766,7 +78945,7 @@ pub mod launch_template_instance_network_interface_specification_request {
             self.ipv4_prefixes = input;
             self
         }
-        /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+        /// <p>The number of IPv4 prefixes to be automatically assigned to the
         /// network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
         pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
             self.ipv4_prefix_count = Some(input);
@@ -78792,7 +78971,7 @@ pub mod launch_template_instance_network_interface_specification_request {
             self.ipv6_prefixes = input;
             self
         }
-        /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network
+        /// <p>The number of IPv6 prefixes to be automatically assigned to the network
         /// interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
         pub fn ipv6_prefix_count(mut self, input: i32) -> Self {
             self.ipv6_prefix_count = Some(input);

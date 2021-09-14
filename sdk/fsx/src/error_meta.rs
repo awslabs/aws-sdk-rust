@@ -23,12 +23,15 @@ pub enum Error {
     InvalidRegion(crate::error::InvalidRegion),
     InvalidSourceKmsKey(crate::error::InvalidSourceKmsKey),
     MissingFileSystemConfiguration(crate::error::MissingFileSystemConfiguration),
+    MissingVolumeConfiguration(crate::error::MissingVolumeConfiguration),
     NotServiceResourceError(crate::error::NotServiceResourceError),
     ResourceDoesNotSupportTagging(crate::error::ResourceDoesNotSupportTagging),
     ResourceNotFound(crate::error::ResourceNotFound),
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     SourceBackupUnavailable(crate::error::SourceBackupUnavailable),
+    StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
     UnsupportedOperation(crate::error::UnsupportedOperation),
+    VolumeNotFound(crate::error::VolumeNotFound),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
@@ -55,12 +58,15 @@ impl std::fmt::Display for Error {
             Error::InvalidRegion(inner) => inner.fmt(f),
             Error::InvalidSourceKmsKey(inner) => inner.fmt(f),
             Error::MissingFileSystemConfiguration(inner) => inner.fmt(f),
+            Error::MissingVolumeConfiguration(inner) => inner.fmt(f),
             Error::NotServiceResourceError(inner) => inner.fmt(f),
             Error::ResourceDoesNotSupportTagging(inner) => inner.fmt(f),
             Error::ResourceNotFound(inner) => inner.fmt(f),
             Error::ServiceLimitExceeded(inner) => inner.fmt(f),
             Error::SourceBackupUnavailable(inner) => inner.fmt(f),
+            Error::StorageVirtualMachineNotFound(inner) => inner.fmt(f),
             Error::UnsupportedOperation(inner) => inner.fmt(f),
+            Error::VolumeNotFound(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -195,6 +201,9 @@ where
                 crate::error::CreateBackupErrorKind::UnsupportedOperation(inner) => {
                     Error::UnsupportedOperation(inner)
                 }
+                crate::error::CreateBackupErrorKind::VolumeNotFound(inner) => {
+                    Error::VolumeNotFound(inner)
+                }
                 crate::error::CreateBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -310,6 +319,121 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateStorageVirtualMachineError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateStorageVirtualMachineError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateStorageVirtualMachineErrorKind::ActiveDirectoryError(inner) => {
+                    Error::ActiveDirectoryError(inner)
+                }
+                crate::error::CreateStorageVirtualMachineErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::CreateStorageVirtualMachineErrorKind::FileSystemNotFound(inner) => {
+                    Error::FileSystemNotFound(inner)
+                }
+                crate::error::CreateStorageVirtualMachineErrorKind::IncompatibleParameterError(
+                    inner,
+                ) => Error::IncompatibleParameterError(inner),
+                crate::error::CreateStorageVirtualMachineErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::CreateStorageVirtualMachineErrorKind::ServiceLimitExceeded(inner) => {
+                    Error::ServiceLimitExceeded(inner)
+                }
+                crate::error::CreateStorageVirtualMachineErrorKind::UnsupportedOperation(inner) => {
+                    Error::UnsupportedOperation(inner)
+                }
+                crate::error::CreateStorageVirtualMachineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateVolumeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateVolumeError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateVolumeErrorKind::BadRequest(inner) => Error::BadRequest(inner),
+                crate::error::CreateVolumeErrorKind::FileSystemNotFound(inner) => {
+                    Error::FileSystemNotFound(inner)
+                }
+                crate::error::CreateVolumeErrorKind::IncompatibleParameterError(inner) => {
+                    Error::IncompatibleParameterError(inner)
+                }
+                crate::error::CreateVolumeErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::CreateVolumeErrorKind::MissingVolumeConfiguration(inner) => {
+                    Error::MissingVolumeConfiguration(inner)
+                }
+                crate::error::CreateVolumeErrorKind::ServiceLimitExceeded(inner) => {
+                    Error::ServiceLimitExceeded(inner)
+                }
+                crate::error::CreateVolumeErrorKind::StorageVirtualMachineNotFound(inner) => {
+                    Error::StorageVirtualMachineNotFound(inner)
+                }
+                crate::error::CreateVolumeErrorKind::UnsupportedOperation(inner) => {
+                    Error::UnsupportedOperation(inner)
+                }
+                crate::error::CreateVolumeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateVolumeFromBackupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateVolumeFromBackupError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateVolumeFromBackupErrorKind::BackupNotFound(inner) => {
+                    Error::BackupNotFound(inner)
+                }
+                crate::error::CreateVolumeFromBackupErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::CreateVolumeFromBackupErrorKind::FileSystemNotFound(inner) => {
+                    Error::FileSystemNotFound(inner)
+                }
+                crate::error::CreateVolumeFromBackupErrorKind::IncompatibleParameterError(
+                    inner,
+                ) => Error::IncompatibleParameterError(inner),
+                crate::error::CreateVolumeFromBackupErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::CreateVolumeFromBackupErrorKind::MissingVolumeConfiguration(
+                    inner,
+                ) => Error::MissingVolumeConfiguration(inner),
+                crate::error::CreateVolumeFromBackupErrorKind::ServiceLimitExceeded(inner) => {
+                    Error::ServiceLimitExceeded(inner)
+                }
+                crate::error::CreateVolumeFromBackupErrorKind::StorageVirtualMachineNotFound(
+                    inner,
+                ) => Error::StorageVirtualMachineNotFound(inner),
+                crate::error::CreateVolumeFromBackupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::DeleteBackupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -372,6 +496,49 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteStorageVirtualMachineError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteStorageVirtualMachineError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteStorageVirtualMachineErrorKind::BadRequest(inner) => Error::BadRequest(inner),
+                crate::error::DeleteStorageVirtualMachineErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
+                crate::error::DeleteStorageVirtualMachineErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::DeleteStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound(inner) => Error::StorageVirtualMachineNotFound(inner),
+                crate::error::DeleteStorageVirtualMachineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteVolumeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteVolumeError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteVolumeErrorKind::BadRequest(inner) => Error::BadRequest(inner),
+                crate::error::DeleteVolumeErrorKind::IncompatibleParameterError(inner) => {
+                    Error::IncompatibleParameterError(inner)
+                }
+                crate::error::DeleteVolumeErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::DeleteVolumeErrorKind::VolumeNotFound(inner) => {
+                    Error::VolumeNotFound(inner)
+                }
+                crate::error::DeleteVolumeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::DescribeBackupsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -390,6 +557,9 @@ where
                 }
                 crate::error::DescribeBackupsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
+                }
+                crate::error::DescribeBackupsErrorKind::VolumeNotFound(inner) => {
+                    Error::VolumeNotFound(inner)
                 }
                 crate::error::DescribeBackupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -473,6 +643,47 @@ where
                 crate::error::DescribeFileSystemsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeStorageVirtualMachinesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeStorageVirtualMachinesError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeStorageVirtualMachinesErrorKind::BadRequest(inner) => Error::BadRequest(inner),
+                crate::error::DescribeStorageVirtualMachinesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::DescribeStorageVirtualMachinesErrorKind::StorageVirtualMachineNotFound(inner) => Error::StorageVirtualMachineNotFound(inner),
+                crate::error::DescribeStorageVirtualMachinesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeVolumesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeVolumesError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeVolumesErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::DescribeVolumesErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::DescribeVolumesErrorKind::VolumeNotFound(inner) => {
+                    Error::VolumeNotFound(inner)
+                }
+                crate::error::DescribeVolumesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -618,6 +829,53 @@ where
                 crate::error::UpdateFileSystemErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateStorageVirtualMachineError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateStorageVirtualMachineError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateStorageVirtualMachineErrorKind::BadRequest(inner) => Error::BadRequest(inner),
+                crate::error::UpdateStorageVirtualMachineErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
+                crate::error::UpdateStorageVirtualMachineErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::UpdateStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound(inner) => Error::StorageVirtualMachineNotFound(inner),
+                crate::error::UpdateStorageVirtualMachineErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+                crate::error::UpdateStorageVirtualMachineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateVolumeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateVolumeError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateVolumeErrorKind::BadRequest(inner) => Error::BadRequest(inner),
+                crate::error::UpdateVolumeErrorKind::IncompatibleParameterError(inner) => {
+                    Error::IncompatibleParameterError(inner)
+                }
+                crate::error::UpdateVolumeErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::UpdateVolumeErrorKind::MissingVolumeConfiguration(inner) => {
+                    Error::MissingVolumeConfiguration(inner)
+                }
+                crate::error::UpdateVolumeErrorKind::VolumeNotFound(inner) => {
+                    Error::VolumeNotFound(inner)
+                }
+                crate::error::UpdateVolumeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

@@ -132,7 +132,7 @@ impl InferenceS3OutputConfiguration {
     }
 }
 
-/// <p>> Specifies configuration information for the input data for the inference, including S3
+/// <p>Specifies configuration information for the input data for the inference, including S3
 /// location of input data.. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -142,7 +142,7 @@ pub struct InferenceInputConfiguration {
     pub s3_input_configuration: std::option::Option<crate::model::InferenceS3InputConfiguration>,
     /// <p>Indicates the difference between your time zone and Greenwich Mean Time (GMT). </p>
     pub input_time_zone_offset: std::option::Option<std::string::String>,
-    /// <p>> Specifies configuration information for the input data for the inference, including
+    /// <p>Specifies configuration information for the input data for the inference, including
     /// timestamp format and delimiter. </p>
     pub inference_input_name_configuration:
         std::option::Option<crate::model::InferenceInputNameConfiguration>,
@@ -200,7 +200,7 @@ pub mod inference_input_configuration {
             self.input_time_zone_offset = input;
             self
         }
-        /// <p>> Specifies configuration information for the input data for the inference, including
+        /// <p>Specifies configuration information for the input data for the inference, including
         /// timestamp format and delimiter. </p>
         pub fn inference_input_name_configuration(
             mut self,
@@ -233,7 +233,7 @@ impl InferenceInputConfiguration {
     }
 }
 
-/// <p>>> Specifies configuration information for the input data for the inference, including
+/// <p>Specifies configuration information for the input data for the inference, including
 /// timestamp format and delimiter. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -907,7 +907,7 @@ pub struct InferenceSchedulerSummary {
     pub inference_scheduler_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the inference scheduler. </p>
     pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
-    /// <p>> A period of time (in minutes) by which inference on the data is delayed after the data
+    /// <p>A period of time (in minutes) by which inference on the data is delayed after the data
     /// starts. For instance, if an offset delay time of five minutes was selected, inference will
     /// not begin on the data until the first data measurement after the five minute mark. For example, if
     /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
@@ -1007,7 +1007,7 @@ pub mod inference_scheduler_summary {
             self.status = input;
             self
         }
-        /// <p>> A period of time (in minutes) by which inference on the data is delayed after the data
+        /// <p>A period of time (in minutes) by which inference on the data is delayed after the data
         /// starts. For instance, if an offset delay time of five minutes was selected, inference will
         /// not begin on the data until the first data measurement after the five minute mark. For example, if
         /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the

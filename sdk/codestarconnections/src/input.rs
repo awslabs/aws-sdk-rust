@@ -96,9 +96,11 @@ impl CreateConnectionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_connection(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -161,12 +163,12 @@ impl CreateConnectionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.CreateConnection",
         );
         Ok(builder)
@@ -176,7 +178,11 @@ impl CreateConnectionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -297,8 +303,8 @@ impl CreateHostInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_create_host(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_create_host(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -363,12 +369,12 @@ impl CreateHostInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.CreateHost",
         );
         Ok(builder)
@@ -378,7 +384,11 @@ impl CreateHostInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -445,9 +455,11 @@ impl DeleteConnectionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_connection(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -510,12 +522,12 @@ impl DeleteConnectionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.DeleteConnection",
         );
         Ok(builder)
@@ -525,7 +537,11 @@ impl DeleteConnectionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -584,8 +600,8 @@ impl DeleteHostInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_delete_host(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_delete_host(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -650,12 +666,12 @@ impl DeleteHostInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.DeleteHost",
         );
         Ok(builder)
@@ -665,7 +681,11 @@ impl DeleteHostInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -728,9 +748,10 @@ impl GetConnectionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_connection(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_connection(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -793,12 +814,12 @@ impl GetConnectionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.GetConnection",
         );
         Ok(builder)
@@ -808,7 +829,11 @@ impl GetConnectionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -864,8 +889,8 @@ impl GetHostInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_get_host(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_get_host(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -928,12 +953,12 @@ impl GetHostInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.GetHost",
         );
         Ok(builder)
@@ -943,7 +968,11 @@ impl GetHostInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1046,9 +1075,11 @@ impl ListConnectionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_connections(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_connections(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1111,12 +1142,12 @@ impl ListConnectionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.ListConnections",
         );
         Ok(builder)
@@ -1126,7 +1157,11 @@ impl ListConnectionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1198,8 +1233,8 @@ impl ListHostsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_hosts(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_list_hosts(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -1262,12 +1297,12 @@ impl ListHostsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.ListHosts",
         );
         Ok(builder)
@@ -1277,7 +1312,11 @@ impl ListHostsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1338,7 +1377,10 @@ impl ListTagsForResourceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_tags_for_resource(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1404,12 +1446,12 @@ impl ListTagsForResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.ListTagsForResource",
         );
         Ok(builder)
@@ -1419,7 +1461,11 @@ impl ListTagsForResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1494,9 +1540,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1559,12 +1606,12 @@ impl TagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.TagResource",
         );
         Ok(builder)
@@ -1574,7 +1621,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1649,9 +1700,10 @@ impl UntagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1714,12 +1766,12 @@ impl UntagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.UntagResource",
         );
         Ok(builder)
@@ -1729,7 +1781,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1817,8 +1873,8 @@ impl UpdateHostInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_update_host(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_update_host(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -1883,12 +1939,12 @@ impl UpdateHostInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.0",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeStar_connections_20191201.UpdateHost",
         );
         Ok(builder)
@@ -1898,7 +1954,11 @@ impl UpdateHostInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }

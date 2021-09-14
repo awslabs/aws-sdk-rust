@@ -236,6 +236,67 @@ impl smithy_http::response::ParseStrictResponse for CreateJob {
     }
 }
 
+/// <p>Creates a Multi-Region Access Point and associates it with the specified buckets. For more information about creating Multi-Region Access Points, see
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html">Creating
+/// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>This action will always be routed to the US West (Oregon) Region. For more
+/// information about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+/// Multi-Region Access Points</a> in the
+/// <i>Amazon S3 User Guide</i>.</p>
+/// <p>This request is asynchronous, meaning that you might receive a response before the
+/// command has completed. When this request provides a response, it provides a token that
+/// you can use to monitor the status of the request with
+/// <code>DescribeMultiRegionAccessPointOperation</code>.</p>
+/// <p>The following actions are related to <code>CreateMultiRegionAccessPoint</code>:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+/// </p>
+/// </li>
+/// </ul>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateMultiRegionAccessPoint {
+    _private: (),
+}
+impl CreateMultiRegionAccessPoint {
+    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointInput`](crate::input::CreateMultiRegionAccessPointInput)
+    pub fn builder() -> crate::input::create_multi_region_access_point_input::Builder {
+        crate::input::create_multi_region_access_point_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateMultiRegionAccessPoint {
+    type Output = std::result::Result<
+        crate::output::CreateMultiRegionAccessPointOutput,
+        crate::error::CreateMultiRegionAccessPointError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_multi_region_access_point_error(response)
+        } else {
+            crate::operation_deser::parse_create_multi_region_access_point_response(response)
+        }
+    }
+}
+
 /// <p>Deletes the specified access point.</p>
 /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html#API_control_DeleteAccessPoint_Examples">Examples</a> section.</p>
 /// <p>The following actions are related to <code>DeleteAccessPoint</code>:</p>
@@ -533,7 +594,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketLifecycleConfigu
 /// </note>
 /// <p>This implementation of the DELETE action uses the policy subresource to delete the
 /// policy of a specified Amazon S3 on Outposts bucket. If you are using an identity other than the
-/// root user of the account that owns the bucket, the calling identity must have the
+/// root user of the Amazon Web Services account that owns the bucket, the calling identity must have the
 /// <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified Outposts bucket
 /// and belong to the bucket owner's account to use this action. For more information, see
 /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
@@ -543,7 +604,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketLifecycleConfigu
 /// not using an identity that belongs to the bucket owner's account, Amazon S3 returns a
 /// <code>405 Method Not Allowed</code> error. </p>
 /// <important>
-/// <p>As a security precaution, the root user of the account that owns a bucket can always use this action,
+/// <p>As a security precaution, the root user of the Amazon Web Services account that owns a bucket can always use this action,
 /// even if the policy explicitly denies the root user the ability to perform this action.</p>
 /// </important>      
 /// <p>For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User Policies</a>. </p>
@@ -689,7 +750,67 @@ impl smithy_http::response::ParseStrictResponse for DeleteJobTagging {
     }
 }
 
-/// <p>Removes the <code>PublicAccessBlock</code> configuration for an account. For more
+/// <p>Deletes a Multi-Region Access Point. This action does not delete the buckets associated with the Multi-Region Access Point,
+/// only the Multi-Region Access Point itself.</p>
+/// <p>This action will always be routed to the US West (Oregon) Region. For more
+/// information about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+/// Multi-Region Access Points</a> in the
+/// <i>Amazon S3 User Guide</i>.</p>
+/// <p>This request is asynchronous, meaning that you might receive a response before the
+/// command has completed. When this request provides a response, it provides a token that
+/// you can use to monitor the status of the request with
+/// <code>DescribeMultiRegionAccessPointOperation</code>.</p>
+/// <p>The following actions are related to <code>DeleteMultiRegionAccessPoint</code>:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+/// </p>
+/// </li>
+/// </ul>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteMultiRegionAccessPoint {
+    _private: (),
+}
+impl DeleteMultiRegionAccessPoint {
+    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointInput`](crate::input::DeleteMultiRegionAccessPointInput)
+    pub fn builder() -> crate::input::delete_multi_region_access_point_input::Builder {
+        crate::input::delete_multi_region_access_point_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteMultiRegionAccessPoint {
+    type Output = std::result::Result<
+        crate::output::DeleteMultiRegionAccessPointOutput,
+        crate::error::DeleteMultiRegionAccessPointError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_multi_region_access_point_error(response)
+        } else {
+            crate::operation_deser::parse_delete_multi_region_access_point_response(response)
+        }
+    }
+}
+
+/// <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For more
 /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3 block
 /// public access</a>.</p>
 /// <p>Related actions include:</p>
@@ -856,6 +977,64 @@ impl smithy_http::response::ParseStrictResponse for DescribeJob {
             crate::operation_deser::parse_describe_job_error(response)
         } else {
             crate::operation_deser::parse_describe_job_response(response)
+        }
+    }
+}
+
+/// <p>Retrieves the status of an asynchronous request to manage a Multi-Region Access Point. For more information
+/// about managing Multi-Region Access Points and how asynchronous requests work, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+/// Multi-Region Access Points</a> in the
+/// <i>Amazon S3 User Guide</i>.</p>
+/// <p>The following actions are related to <code>GetMultiRegionAccessPoint</code>:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+/// </p>
+/// </li>
+/// </ul>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeMultiRegionAccessPointOperation {
+    _private: (),
+}
+impl DescribeMultiRegionAccessPointOperation {
+    /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationInput`](crate::input::DescribeMultiRegionAccessPointOperationInput)
+    pub fn builder() -> crate::input::describe_multi_region_access_point_operation_input::Builder {
+        crate::input::describe_multi_region_access_point_operation_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeMultiRegionAccessPointOperation {
+    type Output = std::result::Result<
+        crate::output::DescribeMultiRegionAccessPointOperationOutput,
+        crate::error::DescribeMultiRegionAccessPointOperationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_multi_region_access_point_operation_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_describe_multi_region_access_point_operation_response(
+                response,
+            )
         }
     }
 }
@@ -1140,7 +1319,7 @@ impl smithy_http::response::ParseStrictResponse for GetAccessPointPolicyStatusFo
 
 /// <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
 /// Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-/// <p>If you are using an identity other than the root user of the account
+/// <p>If you are using an identity other than the root user of the Amazon Web Services account
 /// that owns the Outposts bucket, the calling identity must have the
 /// <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket and
 /// belong to the Outposts bucket owner's account in order to use this action. Only
@@ -1273,13 +1452,13 @@ impl smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfigurat
 /// </note>
 /// <p>Returns the policy of a specified Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
 /// <i>Amazon S3 User Guide</i>.</p>
-/// <p>If you are using an identity other than the root user of the account that owns the bucket, the calling identity
+/// <p>If you are using an identity other than the root user of the Amazon Web Services account that owns the bucket, the calling identity
 /// must have the <code>GetBucketPolicy</code> permissions on the specified bucket and belong to the bucket owner's account in order to use this action.</p>
 /// <p>Only users from Outposts bucket owner account with the right permissions can perform actions on an Outposts bucket.
 /// If you don't have <code>s3-outposts:GetBucketPolicy</code> permissions or you're not using an identity that belongs to the bucket owner's
 /// account, Amazon S3 returns a <code>403 Access Denied</code> error.</p>
 /// <important>
-/// <p>As a security precaution, the root user of the account that owns a bucket can always use this action, even if the policy
+/// <p>As a security precaution, the root user of the Amazon Web Services account that owns a bucket can always use this action, even if the policy
 /// explicitly denies the root user the ability to perform this action.</p>
 /// </important>
 /// <p>For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User Policies</a>.</p>
@@ -1442,7 +1621,157 @@ impl smithy_http::response::ParseStrictResponse for GetJobTagging {
     }
 }
 
-/// <p>Retrieves the <code>PublicAccessBlock</code> configuration for an account. For more
+/// <p>Returns configuration information about the specified Multi-Region Access Point.</p>
+/// <p>This action will always be routed to the US West (Oregon) Region. For more
+/// information about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+/// Multi-Region Access Points</a> in the
+/// <i>Amazon S3 User Guide</i>.</p>
+/// <p>The following actions are related to <code>GetMultiRegionAccessPoint</code>:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+/// </p>
+/// </li>
+/// </ul>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMultiRegionAccessPoint {
+    _private: (),
+}
+impl GetMultiRegionAccessPoint {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointInput`](crate::input::GetMultiRegionAccessPointInput)
+    pub fn builder() -> crate::input::get_multi_region_access_point_input::Builder {
+        crate::input::get_multi_region_access_point_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoint {
+    type Output = std::result::Result<
+        crate::output::GetMultiRegionAccessPointOutput,
+        crate::error::GetMultiRegionAccessPointError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_multi_region_access_point_error(response)
+        } else {
+            crate::operation_deser::parse_get_multi_region_access_point_response(response)
+        }
+    }
+}
+
+/// <p>Returns the access control policy of the specified Multi-Region Access Point.</p>
+/// <p>This action will always be routed to the US West (Oregon) Region. For more
+/// information about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+/// Multi-Region Access Points</a> in the
+/// <i>Amazon S3 User Guide</i>.</p>
+/// <p>The following actions are related to <code>GetMultiRegionAccessPointPolicy</code>:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
+/// </p>
+/// </li>
+/// </ul>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMultiRegionAccessPointPolicy {
+    _private: (),
+}
+impl GetMultiRegionAccessPointPolicy {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyInput`](crate::input::GetMultiRegionAccessPointPolicyInput)
+    pub fn builder() -> crate::input::get_multi_region_access_point_policy_input::Builder {
+        crate::input::get_multi_region_access_point_policy_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPointPolicy {
+    type Output = std::result::Result<
+        crate::output::GetMultiRegionAccessPointPolicyOutput,
+        crate::error::GetMultiRegionAccessPointPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_multi_region_access_point_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_multi_region_access_point_policy_response(response)
+        }
+    }
+}
+
+/// <p>Indicates whether the specified Multi-Region Access Point has an access control policy that allows public
+/// access.</p>
+/// <p>This action will always be routed to the US West (Oregon) Region. For more
+/// information about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+/// Multi-Region Access Points</a> in the
+/// <i>Amazon S3 User Guide</i>.</p>
+/// <p>The following actions are related to <code>GetMultiRegionAccessPointPolicyStatus</code>:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
+/// </p>
+/// </li>
+/// </ul>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMultiRegionAccessPointPolicyStatus {
+    _private: (),
+}
+impl GetMultiRegionAccessPointPolicyStatus {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusInput`](crate::input::GetMultiRegionAccessPointPolicyStatusInput)
+    pub fn builder() -> crate::input::get_multi_region_access_point_policy_status_input::Builder {
+        crate::input::get_multi_region_access_point_policy_status_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPointPolicyStatus {
+    type Output = std::result::Result<
+        crate::output::GetMultiRegionAccessPointPolicyStatusOutput,
+        crate::error::GetMultiRegionAccessPointPolicyStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_multi_region_access_point_policy_status_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_get_multi_region_access_point_policy_status_response(
+                response,
+            )
+        }
+    }
+}
+
+/// <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For more
 /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3 block
 /// public access</a>.</p>
 /// <p>Related actions include:</p>
@@ -1659,7 +1988,7 @@ impl smithy_http::response::ParseStrictResponse for ListAccessPointsForObjectLam
 }
 
 /// <p>Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for
-/// the account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
+/// the Amazon Web Services account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
 /// <i>Amazon S3 User Guide</i>.</p>
 /// <p>Related actions include:</p>
 /// <p></p>
@@ -1705,6 +2034,63 @@ impl smithy_http::response::ParseStrictResponse for ListJobs {
             crate::operation_deser::parse_list_jobs_error(response)
         } else {
             crate::operation_deser::parse_list_jobs_response(response)
+        }
+    }
+}
+
+/// <p>Returns a list of the Multi-Region Access Points currently associated with the specified Amazon Web Services account. Each
+/// call can return up to 100 Multi-Region Access Points, the maximum number of Multi-Region Access Points that can be associated with
+/// a single account.</p>
+/// <p>This action will always be routed to the US West (Oregon) Region. For more
+/// information about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+/// Multi-Region Access Points</a> in the
+/// <i>Amazon S3 User Guide</i>.</p>
+/// <p>The following actions are related to <code>ListMultiRegionAccessPoint</code>:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+/// </p>
+/// </li>
+/// </ul>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMultiRegionAccessPoints {
+    _private: (),
+}
+impl ListMultiRegionAccessPoints {
+    /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsInput`](crate::input::ListMultiRegionAccessPointsInput)
+    pub fn builder() -> crate::input::list_multi_region_access_points_input::Builder {
+        crate::input::list_multi_region_access_points_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListMultiRegionAccessPoints {
+    type Output = std::result::Result<
+        crate::output::ListMultiRegionAccessPointsOutput,
+        crate::error::ListMultiRegionAccessPointsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_multi_region_access_points_error(response)
+        } else {
+            crate::operation_deser::parse_list_multi_region_access_points_response(response)
         }
     }
 }
@@ -1964,14 +2350,14 @@ impl smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfigurat
 /// </note>
 /// <p>Applies an Amazon S3 bucket policy to an Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
 /// <i>Amazon S3 User Guide</i>.</p>
-/// <p>If you are using an identity other than the root user of the account that owns the
+/// <p>If you are using an identity other than the root user of the Amazon Web Services account that owns the
 /// Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code>
 /// permissions on the specified Outposts bucket and belong to the bucket owner's account in
 /// order to use this action.</p>
 /// <p>If you don't have <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access Denied</code> error. If you have the correct permissions,
 /// but you're not using an identity that belongs to the bucket owner's account, Amazon S3 returns a <code>405 Method Not Allowed</code> error.</p>
 /// <important>
-/// <p> As a security precaution, the root user of the account that owns a bucket can always use this action, even if the policy
+/// <p> As a security precaution, the root user of the Amazon Web Services account that owns a bucket can always use this action, even if the policy
 /// explicitly denies the root user the ability to perform this action.
 /// </p>
 /// </important>
@@ -2024,7 +2410,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketPolicy {
 /// <p>Sets the tags for an S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
 /// <i>Amazon S3 User Guide</i>.</p>
 /// <p>Use tags to organize your Amazon Web Services bill to reflect your own cost structure. To do this, sign up to get your
-/// account bill with tag key values included. Then, to see the cost of combined resources, organize your
+/// Amazon Web Services account bill with tag key values included. Then, to see the cost of combined resources, organize your
 /// billing information according to resources with the same tag key values. For example, you can tag several
 /// resources with a specific application name, and then organize your billing information to see the total cost
 /// of that application across several services. For more information, see
@@ -2213,7 +2599,54 @@ impl smithy_http::response::ParseStrictResponse for PutJobTagging {
     }
 }
 
-/// <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an account. For
+/// <p>Associates an access control policy with the specified Multi-Region Access Point. Each Multi-Region Access Point can have only
+/// one policy, so a request made to this action replaces any existing policy that is
+/// associated with the specified Multi-Region Access Point.</p>
+/// <p>This action will always be routed to the US West (Oregon) Region. For more
+/// information about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+/// Multi-Region Access Points</a> in the
+/// <i>Amazon S3 User Guide</i>.</p>
+/// <p>The following actions are related to <code>PutMultiRegionAccessPointPolicy</code>:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
+/// </p>
+/// </li>
+/// </ul>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutMultiRegionAccessPointPolicy {
+    _private: (),
+}
+impl PutMultiRegionAccessPointPolicy {
+    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyInput`](crate::input::PutMultiRegionAccessPointPolicyInput)
+    pub fn builder() -> crate::input::put_multi_region_access_point_policy_input::Builder {
+        crate::input::put_multi_region_access_point_policy_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for PutMultiRegionAccessPointPolicy {
+    type Output = std::result::Result<
+        crate::output::PutMultiRegionAccessPointPolicyOutput,
+        crate::error::PutMultiRegionAccessPointPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_multi_region_access_point_policy_error(response)
+        } else {
+            crate::operation_deser::parse_put_multi_region_access_point_policy_response(response)
+        }
+    }
+}
+
+/// <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For
 /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3 block
 /// public access</a>.</p>
 /// <p>Related actions include:</p>

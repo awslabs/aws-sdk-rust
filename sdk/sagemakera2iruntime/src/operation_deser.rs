@@ -20,11 +20,7 @@ pub fn parse_delete_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -33,26 +29,23 @@ pub fn parse_delete_human_loop_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DeleteHumanLoopError {
-                meta: generic,
-                kind: crate::error::DeleteHumanLoopErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DeleteHumanLoopError {
+            meta: generic,
+            kind: crate::error::DeleteHumanLoopErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteHumanLoopError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteHumanLoopError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DeleteHumanLoopError {
             meta: generic,
             kind: crate::error::DeleteHumanLoopErrorKind::ThrottlingException({
@@ -61,11 +54,7 @@ pub fn parse_delete_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -82,11 +71,7 @@ pub fn parse_delete_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -133,11 +118,7 @@ pub fn parse_describe_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -146,26 +127,23 @@ pub fn parse_describe_human_loop_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeHumanLoopError {
-                meta: generic,
-                kind: crate::error::DescribeHumanLoopErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeHumanLoopError {
+            meta: generic,
+            kind: crate::error::DescribeHumanLoopErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHumanLoopError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHumanLoopError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DescribeHumanLoopError {
             meta: generic,
             kind: crate::error::DescribeHumanLoopErrorKind::ThrottlingException({
@@ -174,11 +152,7 @@ pub fn parse_describe_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -195,11 +169,7 @@ pub fn parse_describe_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -221,7 +191,7 @@ pub fn parse_describe_human_loop_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_human_loop_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_human_loop(
+        output = crate::json_deser::deser_operation_crate_operation_describe_human_loop(
             response.body().as_ref(),
             output,
         )
@@ -251,11 +221,7 @@ pub fn parse_list_human_loops_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListHumanLoopsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListHumanLoopsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -264,26 +230,23 @@ pub fn parse_list_human_loops_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListHumanLoopsError {
-                meta: generic,
-                kind: crate::error::ListHumanLoopsErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListHumanLoopsError {
+            meta: generic,
+            kind: crate::error::ListHumanLoopsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListHumanLoopsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListHumanLoopsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::ListHumanLoopsError {
             meta: generic,
             kind: crate::error::ListHumanLoopsErrorKind::ThrottlingException({
@@ -292,11 +255,7 @@ pub fn parse_list_human_loops_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListHumanLoopsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListHumanLoopsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -313,11 +272,7 @@ pub fn parse_list_human_loops_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListHumanLoopsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListHumanLoopsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -338,9 +293,11 @@ pub fn parse_list_human_loops_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_human_loops_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_human_loops(response.body().as_ref(), output)
-                .map_err(crate::error::ListHumanLoopsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_human_loops(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListHumanLoopsError::unhandled)?;
         output.build()
     })
 }
@@ -358,27 +315,25 @@ pub fn parse_start_human_loop_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::StartHumanLoopError {
-            meta: generic,
-            kind: crate::error::StartHumanLoopErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => {
+            crate::error::StartHumanLoopError {
+                meta: generic,
+                kind: crate::error::StartHumanLoopErrorKind::ConflictException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartHumanLoopError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartHumanLoopError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::StartHumanLoopError {
             meta: generic,
             kind: crate::error::StartHumanLoopErrorKind::InternalServerException({
@@ -387,11 +342,7 @@ pub fn parse_start_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -409,7 +360,7 @@ pub fn parse_start_human_loop_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -426,11 +377,7 @@ pub fn parse_start_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -447,11 +394,7 @@ pub fn parse_start_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -472,9 +415,11 @@ pub fn parse_start_human_loop_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_human_loop_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_start_human_loop(response.body().as_ref(), output)
-                .map_err(crate::error::StartHumanLoopError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_start_human_loop(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartHumanLoopError::unhandled)?;
         output.build()
     })
 }
@@ -500,11 +445,7 @@ pub fn parse_stop_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StopHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -513,26 +454,23 @@ pub fn parse_stop_human_loop_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::StopHumanLoopError {
-                meta: generic,
-                kind: crate::error::StopHumanLoopErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::StopHumanLoopError {
+            meta: generic,
+            kind: crate::error::StopHumanLoopErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopHumanLoopError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopHumanLoopError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::StopHumanLoopError {
             meta: generic,
             kind: crate::error::StopHumanLoopErrorKind::ThrottlingException({
@@ -541,11 +479,7 @@ pub fn parse_stop_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StopHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -562,11 +496,7 @@ pub fn parse_stop_human_loop_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StopHumanLoopError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopHumanLoopError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

@@ -53,7 +53,10 @@ impl BatchDeleteBuildsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_batch_delete_builds(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_batch_delete_builds(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -119,12 +122,12 @@ impl BatchDeleteBuildsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.BatchDeleteBuilds",
         );
         Ok(builder)
@@ -134,7 +137,11 @@ impl BatchDeleteBuildsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -197,7 +204,10 @@ impl BatchGetBuildBatchesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_batch_get_build_batches(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_batch_get_build_batches(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -263,12 +273,12 @@ impl BatchGetBuildBatchesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.BatchGetBuildBatches",
         );
         Ok(builder)
@@ -278,7 +288,11 @@ impl BatchGetBuildBatchesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -341,9 +355,11 @@ impl BatchGetBuildsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_batch_get_builds(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_batch_get_builds(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -406,12 +422,12 @@ impl BatchGetBuildsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.BatchGetBuilds",
         );
         Ok(builder)
@@ -421,7 +437,11 @@ impl BatchGetBuildsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -484,10 +504,11 @@ impl BatchGetProjectsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_batch_get_projects(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_batch_get_projects(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -550,12 +571,12 @@ impl BatchGetProjectsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.BatchGetProjects",
         );
         Ok(builder)
@@ -565,7 +586,11 @@ impl BatchGetProjectsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -630,7 +655,10 @@ impl BatchGetReportGroupsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_batch_get_report_groups(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_batch_get_report_groups(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -696,12 +724,12 @@ impl BatchGetReportGroupsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.BatchGetReportGroups",
         );
         Ok(builder)
@@ -711,7 +739,11 @@ impl BatchGetReportGroupsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -776,9 +808,11 @@ impl BatchGetReportsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_batch_get_reports(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_batch_get_reports(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -841,12 +875,12 @@ impl BatchGetReportsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.BatchGetReports",
         );
         Ok(builder)
@@ -856,7 +890,11 @@ impl BatchGetReportsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1239,9 +1277,10 @@ impl CreateProjectInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_project(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1304,12 +1343,12 @@ impl CreateProjectInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.CreateProject",
         );
         Ok(builder)
@@ -1319,7 +1358,11 @@ impl CreateProjectInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1426,7 +1469,10 @@ impl CreateReportGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_report_group(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_report_group(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1492,12 +1538,12 @@ impl CreateReportGroupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.CreateReportGroup",
         );
         Ok(builder)
@@ -1507,7 +1553,11 @@ impl CreateReportGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1620,9 +1670,10 @@ impl CreateWebhookInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_webhook(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_webhook(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1685,12 +1736,12 @@ impl CreateWebhookInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.CreateWebhook",
         );
         Ok(builder)
@@ -1700,7 +1751,11 @@ impl CreateWebhookInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1759,10 +1814,11 @@ impl DeleteBuildBatchInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_build_batch(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_build_batch(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1825,12 +1881,12 @@ impl DeleteBuildBatchInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.DeleteBuildBatch",
         );
         Ok(builder)
@@ -1840,7 +1896,11 @@ impl DeleteBuildBatchInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1898,9 +1958,10 @@ impl DeleteProjectInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_project(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1963,12 +2024,12 @@ impl DeleteProjectInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.DeleteProject",
         );
         Ok(builder)
@@ -1978,7 +2039,11 @@ impl DeleteProjectInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2038,9 +2103,10 @@ impl DeleteReportInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_report(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_report(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2103,12 +2169,12 @@ impl DeleteReportInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.DeleteReport",
         );
         Ok(builder)
@@ -2118,7 +2184,11 @@ impl DeleteReportInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2194,7 +2264,10 @@ impl DeleteReportGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_report_group(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_report_group(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2260,12 +2333,12 @@ impl DeleteReportGroupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.DeleteReportGroup",
         );
         Ok(builder)
@@ -2275,7 +2348,11 @@ impl DeleteReportGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2336,7 +2413,10 @@ impl DeleteResourcePolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_resource_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2402,12 +2482,12 @@ impl DeleteResourcePolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.DeleteResourcePolicy",
         );
         Ok(builder)
@@ -2417,7 +2497,11 @@ impl DeleteResourcePolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2477,10 +2561,9 @@ impl DeleteSourceCredentialsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_source_credentials(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_source_credentials(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2543,12 +2626,12 @@ impl DeleteSourceCredentialsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.DeleteSourceCredentials",
         );
         Ok(builder)
@@ -2558,7 +2641,11 @@ impl DeleteSourceCredentialsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2618,9 +2705,10 @@ impl DeleteWebhookInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_webhook(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_webhook(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2683,12 +2771,12 @@ impl DeleteWebhookInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.DeleteWebhook",
         );
         Ok(builder)
@@ -2698,7 +2786,11 @@ impl DeleteWebhookInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2845,7 +2937,10 @@ impl DescribeCodeCoveragesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_code_coverages(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_code_coverages(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2911,12 +3006,12 @@ impl DescribeCodeCoveragesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.DescribeCodeCoverages",
         );
         Ok(builder)
@@ -2926,7 +3021,11 @@ impl DescribeCodeCoveragesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3036,7 +3135,10 @@ impl DescribeTestCasesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_test_cases(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_test_cases(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3102,12 +3204,12 @@ impl DescribeTestCasesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.DescribeTestCases",
         );
         Ok(builder)
@@ -3117,7 +3219,11 @@ impl DescribeTestCasesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3267,7 +3373,10 @@ impl GetReportGroupTrendInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_report_group_trend(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_report_group_trend(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3333,12 +3442,12 @@ impl GetReportGroupTrendInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.GetReportGroupTrend",
         );
         Ok(builder)
@@ -3348,7 +3457,11 @@ impl GetReportGroupTrendInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3409,7 +3522,10 @@ impl GetResourcePolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_resource_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_resource_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3475,12 +3591,12 @@ impl GetResourcePolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.GetResourcePolicy",
         );
         Ok(builder)
@@ -3490,7 +3606,11 @@ impl GetResourcePolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3605,10 +3725,9 @@ impl ImportSourceCredentialsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_import_source_credentials(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_import_source_credentials(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3671,12 +3790,12 @@ impl ImportSourceCredentialsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ImportSourceCredentials",
         );
         Ok(builder)
@@ -3686,7 +3805,11 @@ impl ImportSourceCredentialsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3747,7 +3870,10 @@ impl InvalidateProjectCacheInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_invalidate_project_cache(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_invalidate_project_cache(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3813,12 +3939,12 @@ impl InvalidateProjectCacheInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.InvalidateProjectCache",
         );
         Ok(builder)
@@ -3828,7 +3954,11 @@ impl InvalidateProjectCacheInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3940,10 +4070,11 @@ impl ListBuildBatchesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_build_batches(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_build_batches(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4006,12 +4137,12 @@ impl ListBuildBatchesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListBuildBatches",
         );
         Ok(builder)
@@ -4021,7 +4152,11 @@ impl ListBuildBatchesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4148,10 +4283,8 @@ impl ListBuildBatchesForProjectInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_build_batches_for_project(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_build_batches_for_project(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4214,12 +4347,12 @@ impl ListBuildBatchesForProjectInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListBuildBatchesForProject",
         );
         Ok(builder)
@@ -4229,7 +4362,11 @@ impl ListBuildBatchesForProjectInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4319,8 +4456,8 @@ impl ListBuildsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_builds(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_list_builds(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -4385,12 +4522,12 @@ impl ListBuildsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListBuilds",
         );
         Ok(builder)
@@ -4400,7 +4537,11 @@ impl ListBuildsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4507,7 +4648,10 @@ impl ListBuildsForProjectInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_builds_for_project(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_builds_for_project(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4573,12 +4717,12 @@ impl ListBuildsForProjectInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListBuildsForProject",
         );
         Ok(builder)
@@ -4588,7 +4732,11 @@ impl ListBuildsForProjectInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4638,10 +4786,8 @@ impl ListCuratedEnvironmentImagesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_curated_environment_images(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_curated_environment_images(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4704,12 +4850,12 @@ impl ListCuratedEnvironmentImagesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListCuratedEnvironmentImages",
         );
         Ok(builder)
@@ -4719,7 +4865,11 @@ impl ListCuratedEnvironmentImagesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4842,9 +4992,10 @@ impl ListProjectsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_projects(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4907,12 +5058,12 @@ impl ListProjectsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListProjects",
         );
         Ok(builder)
@@ -4922,7 +5073,11 @@ impl ListProjectsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5051,10 +5206,11 @@ impl ListReportGroupsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_report_groups(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_report_groups(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5117,12 +5273,12 @@ impl ListReportGroupsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListReportGroups",
         );
         Ok(builder)
@@ -5132,7 +5288,11 @@ impl ListReportGroupsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5256,9 +5416,10 @@ impl ListReportsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_reports(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_reports(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5321,12 +5482,12 @@ impl ListReportsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListReports",
         );
         Ok(builder)
@@ -5336,7 +5497,11 @@ impl ListReportsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5467,10 +5632,8 @@ impl ListReportsForReportGroupInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_reports_for_report_group(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_reports_for_report_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5533,12 +5696,12 @@ impl ListReportsForReportGroupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListReportsForReportGroup",
         );
         Ok(builder)
@@ -5548,7 +5711,11 @@ impl ListReportsForReportGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5677,7 +5844,10 @@ impl ListSharedProjectsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_shared_projects(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_shared_projects(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -5743,12 +5913,12 @@ impl ListSharedProjectsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListSharedProjects",
         );
         Ok(builder)
@@ -5758,7 +5928,11 @@ impl ListSharedProjectsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5887,10 +6061,9 @@ impl ListSharedReportGroupsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_shared_report_groups(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_shared_report_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5953,12 +6126,12 @@ impl ListSharedReportGroupsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListSharedReportGroups",
         );
         Ok(builder)
@@ -5968,7 +6141,11 @@ impl ListSharedReportGroupsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6016,7 +6193,10 @@ impl ListSourceCredentialsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_source_credentials(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_source_credentials(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -6082,12 +6262,12 @@ impl ListSourceCredentialsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.ListSourceCredentials",
         );
         Ok(builder)
@@ -6097,7 +6277,11 @@ impl ListSourceCredentialsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6172,7 +6356,10 @@ impl PutResourcePolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_resource_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -6238,12 +6425,12 @@ impl PutResourcePolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.PutResourcePolicy",
         );
         Ok(builder)
@@ -6253,7 +6440,11 @@ impl PutResourcePolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6330,8 +6521,8 @@ impl RetryBuildInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_retry_build(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_retry_build(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -6396,12 +6587,12 @@ impl RetryBuildInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.RetryBuild",
         );
         Ok(builder)
@@ -6411,7 +6602,11 @@ impl RetryBuildInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6504,9 +6699,11 @@ impl RetryBuildBatchInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_retry_build_batch(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_retry_build_batch(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6569,12 +6766,12 @@ impl RetryBuildBatchInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.RetryBuildBatch",
         );
         Ok(builder)
@@ -6584,7 +6781,11 @@ impl RetryBuildBatchInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7181,8 +7382,8 @@ impl StartBuildInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_start_build(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_start_build(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -7247,12 +7448,12 @@ impl StartBuildInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.StartBuild",
         );
         Ok(builder)
@@ -7262,7 +7463,11 @@ impl StartBuildInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7860,9 +8065,11 @@ impl StartBuildBatchInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_start_build_batch(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_start_build_batch(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -7925,12 +8132,12 @@ impl StartBuildBatchInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.StartBuildBatch",
         );
         Ok(builder)
@@ -7940,7 +8147,11 @@ impl StartBuildBatchInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7997,8 +8208,8 @@ impl StopBuildInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_stop_build(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_stop_build(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -8061,12 +8272,12 @@ impl StopBuildInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.StopBuild",
         );
         Ok(builder)
@@ -8076,7 +8287,11 @@ impl StopBuildInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8135,9 +8350,11 @@ impl StopBuildBatchInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_build_batch(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_build_batch(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8200,12 +8417,12 @@ impl StopBuildBatchInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.StopBuildBatch",
         );
         Ok(builder)
@@ -8215,7 +8432,11 @@ impl StopBuildBatchInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8602,9 +8823,10 @@ impl UpdateProjectInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_project(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8667,12 +8889,12 @@ impl UpdateProjectInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.UpdateProject",
         );
         Ok(builder)
@@ -8682,7 +8904,11 @@ impl UpdateProjectInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8783,10 +9009,9 @@ impl UpdateProjectVisibilityInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_project_visibility(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_project_visibility(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8849,12 +9074,12 @@ impl UpdateProjectVisibilityInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.UpdateProjectVisibility",
         );
         Ok(builder)
@@ -8864,7 +9089,11 @@ impl UpdateProjectVisibilityInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8970,7 +9199,10 @@ impl UpdateReportGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_report_group(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_report_group(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -9036,12 +9268,12 @@ impl UpdateReportGroupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.UpdateReportGroup",
         );
         Ok(builder)
@@ -9051,7 +9283,11 @@ impl UpdateReportGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9177,9 +9413,10 @@ impl UpdateWebhookInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_webhook(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_webhook(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -9242,12 +9479,12 @@ impl UpdateWebhookInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CodeBuild_20161006.UpdateWebhook",
         );
         Ok(builder)
@@ -9257,7 +9494,11 @@ impl UpdateWebhookInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }

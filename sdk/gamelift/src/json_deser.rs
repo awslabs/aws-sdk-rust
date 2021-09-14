@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_service_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_service_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_exception::Builder,
 ) -> Result<crate::error::internal_service_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_service_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_request_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_invalid_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::not_found_exception::Builder,
 ) -> Result<crate::error::not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_region_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_region_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_region_exception::Builder,
 ) -> Result<crate::error::unsupported_region_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_unsupported_region_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_out_of_capacity_exceptionjson_err(
+pub fn deser_structure_crate_error_out_of_capacity_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::out_of_capacity_exception::Builder,
 ) -> Result<crate::error::out_of_capacity_exception::Builder, smithy_json::deserialize::Error> {
@@ -239,7 +239,7 @@ pub fn deser_structure_out_of_capacity_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unauthorized_exceptionjson_err(
+pub fn deser_structure_crate_error_unauthorized_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unauthorized_exception::Builder,
 ) -> Result<crate::error::unauthorized_exception::Builder, smithy_json::deserialize::Error> {
@@ -278,7 +278,7 @@ pub fn deser_structure_unauthorized_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_claim_game_server(
+pub fn deser_operation_crate_operation_claim_game_server(
     input: &[u8],
     mut builder: crate::output::claim_game_server_output::Builder,
 ) -> Result<crate::output::claim_game_server_output::Builder, smithy_json::deserialize::Error> {
@@ -294,7 +294,7 @@ pub fn deser_operation_claim_game_server(
                 match key.to_unescaped()?.as_ref() {
                     "GameServer" => {
                         builder = builder.set_game_server(
-                            crate::json_deser::deser_structure_game_server(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_server(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -315,7 +315,7 @@ pub fn deser_operation_claim_game_server(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -354,7 +354,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_tagging_failed_exceptionjson_err(
+pub fn deser_structure_crate_error_tagging_failed_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::tagging_failed_exception::Builder,
 ) -> Result<crate::error::tagging_failed_exception::Builder, smithy_json::deserialize::Error> {
@@ -393,7 +393,7 @@ pub fn deser_structure_tagging_failed_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_alias(
+pub fn deser_operation_crate_operation_create_alias(
     input: &[u8],
     mut builder: crate::output::create_alias_output::Builder,
 ) -> Result<crate::output::create_alias_output::Builder, smithy_json::deserialize::Error> {
@@ -408,8 +408,9 @@ pub fn deser_operation_create_alias(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Alias" => {
-                        builder =
-                            builder.set_alias(crate::json_deser::deser_structure_alias(tokens)?);
+                        builder = builder.set_alias(
+                            crate::json_deser::deser_structure_crate_model_alias(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -429,7 +430,7 @@ pub fn deser_operation_create_alias(
     Ok(builder)
 }
 
-pub fn deser_operation_create_build(
+pub fn deser_operation_crate_operation_create_build(
     input: &[u8],
     mut builder: crate::output::create_build_output::Builder,
 ) -> Result<crate::output::create_build_output::Builder, smithy_json::deserialize::Error> {
@@ -444,17 +445,18 @@ pub fn deser_operation_create_build(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Build" => {
-                        builder =
-                            builder.set_build(crate::json_deser::deser_structure_build(tokens)?);
+                        builder = builder.set_build(
+                            crate::json_deser::deser_structure_crate_model_build(tokens)?,
+                        );
                     }
                     "UploadCredentials" => {
                         builder = builder.set_upload_credentials(
-                            crate::json_deser::deser_structure_aws_credentials(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_aws_credentials(tokens)?,
                         );
                     }
                     "StorageLocation" => {
                         builder = builder.set_storage_location(
-                            crate::json_deser::deser_structure_s3_location(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_s3_location(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -475,7 +477,7 @@ pub fn deser_operation_create_build(
     Ok(builder)
 }
 
-pub fn deser_operation_create_fleet(
+pub fn deser_operation_crate_operation_create_fleet(
     input: &[u8],
     mut builder: crate::output::create_fleet_output::Builder,
 ) -> Result<crate::output::create_fleet_output::Builder, smithy_json::deserialize::Error> {
@@ -491,12 +493,14 @@ pub fn deser_operation_create_fleet(
                 match key.to_unescaped()?.as_ref() {
                     "FleetAttributes" => {
                         builder = builder.set_fleet_attributes(
-                            crate::json_deser::deser_structure_fleet_attributes(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_fleet_attributes(
+                                tokens,
+                            )?,
                         );
                     }
                     "LocationStates" => {
                         builder = builder.set_location_states(
-                            crate::json_deser::deser_list_location_state_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_location_state_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -517,7 +521,7 @@ pub fn deser_operation_create_fleet(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_fleet_status_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_fleet_status_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_fleet_status_exception::Builder,
 ) -> Result<crate::error::invalid_fleet_status_exception::Builder, smithy_json::deserialize::Error>
@@ -557,7 +561,7 @@ pub fn deser_structure_invalid_fleet_status_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_fleet_locations(
+pub fn deser_operation_crate_operation_create_fleet_locations(
     input: &[u8],
     mut builder: crate::output::create_fleet_locations_output::Builder,
 ) -> Result<crate::output::create_fleet_locations_output::Builder, smithy_json::deserialize::Error>
@@ -588,7 +592,7 @@ pub fn deser_operation_create_fleet_locations(
                     }
                     "LocationStates" => {
                         builder = builder.set_location_states(
-                            crate::json_deser::deser_list_location_state_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_location_state_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -609,7 +613,7 @@ pub fn deser_operation_create_fleet_locations(
     Ok(builder)
 }
 
-pub fn deser_operation_create_game_server_group(
+pub fn deser_operation_crate_operation_create_game_server_group(
     input: &[u8],
     mut builder: crate::output::create_game_server_group_output::Builder,
 ) -> Result<crate::output::create_game_server_group_output::Builder, smithy_json::deserialize::Error>
@@ -626,7 +630,9 @@ pub fn deser_operation_create_game_server_group(
                 match key.to_unescaped()?.as_ref() {
                     "GameServerGroup" => {
                         builder = builder.set_game_server_group(
-                            crate::json_deser::deser_structure_game_server_group(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_server_group(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -647,7 +653,7 @@ pub fn deser_operation_create_game_server_group(
     Ok(builder)
 }
 
-pub fn deser_structure_fleet_capacity_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_fleet_capacity_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::fleet_capacity_exceeded_exception::Builder,
 ) -> Result<crate::error::fleet_capacity_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -687,7 +693,7 @@ pub fn deser_structure_fleet_capacity_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_idempotent_parameter_mismatch_exceptionjson_err(
+pub fn deser_structure_crate_error_idempotent_parameter_mismatch_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::idempotent_parameter_mismatch_exception::Builder,
 ) -> Result<
@@ -729,7 +735,7 @@ pub fn deser_structure_idempotent_parameter_mismatch_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_terminal_routing_strategy_exceptionjson_err(
+pub fn deser_structure_crate_error_terminal_routing_strategy_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::terminal_routing_strategy_exception::Builder,
 ) -> Result<
@@ -771,7 +777,7 @@ pub fn deser_structure_terminal_routing_strategy_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_game_session(
+pub fn deser_operation_crate_operation_create_game_session(
     input: &[u8],
     mut builder: crate::output::create_game_session_output::Builder,
 ) -> Result<crate::output::create_game_session_output::Builder, smithy_json::deserialize::Error> {
@@ -787,7 +793,7 @@ pub fn deser_operation_create_game_session(
                 match key.to_unescaped()?.as_ref() {
                     "GameSession" => {
                         builder = builder.set_game_session(
-                            crate::json_deser::deser_structure_game_session(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_session(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -808,7 +814,7 @@ pub fn deser_operation_create_game_session(
     Ok(builder)
 }
 
-pub fn deser_operation_create_game_session_queue(
+pub fn deser_operation_crate_operation_create_game_session_queue(
     input: &[u8],
     mut builder: crate::output::create_game_session_queue_output::Builder,
 ) -> Result<crate::output::create_game_session_queue_output::Builder, smithy_json::deserialize::Error>
@@ -825,7 +831,9 @@ pub fn deser_operation_create_game_session_queue(
                 match key.to_unescaped()?.as_ref() {
                     "GameSessionQueue" => {
                         builder = builder.set_game_session_queue(
-                            crate::json_deser::deser_structure_game_session_queue(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_session_queue(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -846,7 +854,7 @@ pub fn deser_operation_create_game_session_queue(
     Ok(builder)
 }
 
-pub fn deser_operation_create_matchmaking_configuration(
+pub fn deser_operation_crate_operation_create_matchmaking_configuration(
     input: &[u8],
     mut builder: crate::output::create_matchmaking_configuration_output::Builder,
 ) -> Result<
@@ -865,7 +873,7 @@ pub fn deser_operation_create_matchmaking_configuration(
                 match key.to_unescaped()?.as_ref() {
                     "Configuration" => {
                         builder = builder.set_configuration(
-                            crate::json_deser::deser_structure_matchmaking_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_matchmaking_configuration(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -886,7 +894,7 @@ pub fn deser_operation_create_matchmaking_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_create_matchmaking_rule_set(
+pub fn deser_operation_crate_operation_create_matchmaking_rule_set(
     input: &[u8],
     mut builder: crate::output::create_matchmaking_rule_set_output::Builder,
 ) -> Result<
@@ -905,7 +913,9 @@ pub fn deser_operation_create_matchmaking_rule_set(
                 match key.to_unescaped()?.as_ref() {
                     "RuleSet" => {
                         builder = builder.set_rule_set(
-                            crate::json_deser::deser_structure_matchmaking_rule_set(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_matchmaking_rule_set(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -926,7 +936,7 @@ pub fn deser_operation_create_matchmaking_rule_set(
     Ok(builder)
 }
 
-pub fn deser_structure_game_session_full_exceptionjson_err(
+pub fn deser_structure_crate_error_game_session_full_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::game_session_full_exception::Builder,
 ) -> Result<crate::error::game_session_full_exception::Builder, smithy_json::deserialize::Error> {
@@ -965,7 +975,7 @@ pub fn deser_structure_game_session_full_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_game_session_status_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_game_session_status_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_game_session_status_exception::Builder,
 ) -> Result<
@@ -1007,7 +1017,7 @@ pub fn deser_structure_invalid_game_session_status_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_player_session(
+pub fn deser_operation_crate_operation_create_player_session(
     input: &[u8],
     mut builder: crate::output::create_player_session_output::Builder,
 ) -> Result<crate::output::create_player_session_output::Builder, smithy_json::deserialize::Error> {
@@ -1023,7 +1033,7 @@ pub fn deser_operation_create_player_session(
                 match key.to_unescaped()?.as_ref() {
                     "PlayerSession" => {
                         builder = builder.set_player_session(
-                            crate::json_deser::deser_structure_player_session(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_player_session(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1044,7 +1054,7 @@ pub fn deser_operation_create_player_session(
     Ok(builder)
 }
 
-pub fn deser_operation_create_player_sessions(
+pub fn deser_operation_crate_operation_create_player_sessions(
     input: &[u8],
     mut builder: crate::output::create_player_sessions_output::Builder,
 ) -> Result<crate::output::create_player_sessions_output::Builder, smithy_json::deserialize::Error>
@@ -1061,7 +1071,7 @@ pub fn deser_operation_create_player_sessions(
                 match key.to_unescaped()?.as_ref() {
                     "PlayerSessions" => {
                         builder = builder.set_player_sessions(
-                            crate::json_deser::deser_list_player_session_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_player_session_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1082,7 +1092,7 @@ pub fn deser_operation_create_player_sessions(
     Ok(builder)
 }
 
-pub fn deser_operation_create_script(
+pub fn deser_operation_crate_operation_create_script(
     input: &[u8],
     mut builder: crate::output::create_script_output::Builder,
 ) -> Result<crate::output::create_script_output::Builder, smithy_json::deserialize::Error> {
@@ -1097,8 +1107,9 @@ pub fn deser_operation_create_script(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Script" => {
-                        builder =
-                            builder.set_script(crate::json_deser::deser_structure_script(tokens)?);
+                        builder = builder.set_script(
+                            crate::json_deser::deser_structure_crate_model_script(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1118,7 +1129,7 @@ pub fn deser_operation_create_script(
     Ok(builder)
 }
 
-pub fn deser_operation_create_vpc_peering_authorization(
+pub fn deser_operation_crate_operation_create_vpc_peering_authorization(
     input: &[u8],
     mut builder: crate::output::create_vpc_peering_authorization_output::Builder,
 ) -> Result<
@@ -1137,7 +1148,7 @@ pub fn deser_operation_create_vpc_peering_authorization(
                 match key.to_unescaped()?.as_ref() {
                     "VpcPeeringAuthorization" => {
                         builder = builder.set_vpc_peering_authorization(
-                            crate::json_deser::deser_structure_vpc_peering_authorization(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_vpc_peering_authorization(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1158,7 +1169,7 @@ pub fn deser_operation_create_vpc_peering_authorization(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_fleet_locations(
+pub fn deser_operation_crate_operation_delete_fleet_locations(
     input: &[u8],
     mut builder: crate::output::delete_fleet_locations_output::Builder,
 ) -> Result<crate::output::delete_fleet_locations_output::Builder, smithy_json::deserialize::Error>
@@ -1189,7 +1200,7 @@ pub fn deser_operation_delete_fleet_locations(
                     }
                     "LocationStates" => {
                         builder = builder.set_location_states(
-                            crate::json_deser::deser_list_location_state_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_location_state_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1210,7 +1221,7 @@ pub fn deser_operation_delete_fleet_locations(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_game_server_group(
+pub fn deser_operation_crate_operation_delete_game_server_group(
     input: &[u8],
     mut builder: crate::output::delete_game_server_group_output::Builder,
 ) -> Result<crate::output::delete_game_server_group_output::Builder, smithy_json::deserialize::Error>
@@ -1227,7 +1238,9 @@ pub fn deser_operation_delete_game_server_group(
                 match key.to_unescaped()?.as_ref() {
                     "GameServerGroup" => {
                         builder = builder.set_game_server_group(
-                            crate::json_deser::deser_structure_game_server_group(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_server_group(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1248,7 +1261,7 @@ pub fn deser_operation_delete_game_server_group(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_alias(
+pub fn deser_operation_crate_operation_describe_alias(
     input: &[u8],
     mut builder: crate::output::describe_alias_output::Builder,
 ) -> Result<crate::output::describe_alias_output::Builder, smithy_json::deserialize::Error> {
@@ -1263,8 +1276,9 @@ pub fn deser_operation_describe_alias(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Alias" => {
-                        builder =
-                            builder.set_alias(crate::json_deser::deser_structure_alias(tokens)?);
+                        builder = builder.set_alias(
+                            crate::json_deser::deser_structure_crate_model_alias(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1284,7 +1298,7 @@ pub fn deser_operation_describe_alias(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_build(
+pub fn deser_operation_crate_operation_describe_build(
     input: &[u8],
     mut builder: crate::output::describe_build_output::Builder,
 ) -> Result<crate::output::describe_build_output::Builder, smithy_json::deserialize::Error> {
@@ -1299,8 +1313,9 @@ pub fn deser_operation_describe_build(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Build" => {
-                        builder =
-                            builder.set_build(crate::json_deser::deser_structure_build(tokens)?);
+                        builder = builder.set_build(
+                            crate::json_deser::deser_structure_crate_model_build(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1320,7 +1335,7 @@ pub fn deser_operation_describe_build(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_ec2_instance_limits(
+pub fn deser_operation_crate_operation_describe_ec2_instance_limits(
     input: &[u8],
     mut builder: crate::output::describe_ec2_instance_limits_output::Builder,
 ) -> Result<
@@ -1339,7 +1354,7 @@ pub fn deser_operation_describe_ec2_instance_limits(
                 match key.to_unescaped()?.as_ref() {
                     "EC2InstanceLimits" => {
                         builder = builder.set_ec2_instance_limits(
-                            crate::json_deser::deser_list_ec2_instance_limit_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_ec2_instance_limit_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1360,7 +1375,7 @@ pub fn deser_operation_describe_ec2_instance_limits(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_fleet_attributes(
+pub fn deser_operation_crate_operation_describe_fleet_attributes(
     input: &[u8],
     mut builder: crate::output::describe_fleet_attributes_output::Builder,
 ) -> Result<crate::output::describe_fleet_attributes_output::Builder, smithy_json::deserialize::Error>
@@ -1377,7 +1392,7 @@ pub fn deser_operation_describe_fleet_attributes(
                 match key.to_unescaped()?.as_ref() {
                     "FleetAttributes" => {
                         builder = builder.set_fleet_attributes(
-                            crate::json_deser::deser_list_fleet_attributes_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_fleet_attributes_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1405,7 +1420,7 @@ pub fn deser_operation_describe_fleet_attributes(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_fleet_capacity(
+pub fn deser_operation_crate_operation_describe_fleet_capacity(
     input: &[u8],
     mut builder: crate::output::describe_fleet_capacity_output::Builder,
 ) -> Result<crate::output::describe_fleet_capacity_output::Builder, smithy_json::deserialize::Error>
@@ -1422,7 +1437,7 @@ pub fn deser_operation_describe_fleet_capacity(
                 match key.to_unescaped()?.as_ref() {
                     "FleetCapacity" => {
                         builder = builder.set_fleet_capacity(
-                            crate::json_deser::deser_list_fleet_capacity_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_fleet_capacity_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1450,7 +1465,7 @@ pub fn deser_operation_describe_fleet_capacity(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_fleet_events(
+pub fn deser_operation_crate_operation_describe_fleet_events(
     input: &[u8],
     mut builder: crate::output::describe_fleet_events_output::Builder,
 ) -> Result<crate::output::describe_fleet_events_output::Builder, smithy_json::deserialize::Error> {
@@ -1465,8 +1480,11 @@ pub fn deser_operation_describe_fleet_events(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Events" => {
-                        builder =
-                            builder.set_events(crate::json_deser::deser_list_event_list(tokens)?);
+                        builder = builder.set_events(
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_event_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -1493,7 +1511,7 @@ pub fn deser_operation_describe_fleet_events(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_fleet_location_attributes(
+pub fn deser_operation_crate_operation_describe_fleet_location_attributes(
     input: &[u8],
     mut builder: crate::output::describe_fleet_location_attributes_output::Builder,
 ) -> Result<
@@ -1526,7 +1544,7 @@ pub fn deser_operation_describe_fleet_location_attributes(
                     }
                     "LocationAttributes" => {
                         builder = builder.set_location_attributes(
-                            crate::json_deser::deser_list_location_attributes_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_location_attributes_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1554,7 +1572,7 @@ pub fn deser_operation_describe_fleet_location_attributes(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_fleet_location_capacity(
+pub fn deser_operation_crate_operation_describe_fleet_location_capacity(
     input: &[u8],
     mut builder: crate::output::describe_fleet_location_capacity_output::Builder,
 ) -> Result<
@@ -1573,7 +1591,7 @@ pub fn deser_operation_describe_fleet_location_capacity(
                 match key.to_unescaped()?.as_ref() {
                     "FleetCapacity" => {
                         builder = builder.set_fleet_capacity(
-                            crate::json_deser::deser_structure_fleet_capacity(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_fleet_capacity(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1594,7 +1612,7 @@ pub fn deser_operation_describe_fleet_location_capacity(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_fleet_location_utilization(
+pub fn deser_operation_crate_operation_describe_fleet_location_utilization(
     input: &[u8],
     mut builder: crate::output::describe_fleet_location_utilization_output::Builder,
 ) -> Result<
@@ -1613,7 +1631,9 @@ pub fn deser_operation_describe_fleet_location_utilization(
                 match key.to_unescaped()?.as_ref() {
                     "FleetUtilization" => {
                         builder = builder.set_fleet_utilization(
-                            crate::json_deser::deser_structure_fleet_utilization(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_fleet_utilization(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1634,7 +1654,7 @@ pub fn deser_operation_describe_fleet_location_utilization(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_fleet_port_settings(
+pub fn deser_operation_crate_operation_describe_fleet_port_settings(
     input: &[u8],
     mut builder: crate::output::describe_fleet_port_settings_output::Builder,
 ) -> Result<
@@ -1667,7 +1687,7 @@ pub fn deser_operation_describe_fleet_port_settings(
                     }
                     "InboundPermissions" => {
                         builder = builder.set_inbound_permissions(
-                            crate::json_deser::deser_list_ip_permissions_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_ip_permissions_list(tokens)?
                         );
                     }
                     "UpdateStatus" => {
@@ -1706,7 +1726,7 @@ pub fn deser_operation_describe_fleet_port_settings(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_fleet_utilization(
+pub fn deser_operation_crate_operation_describe_fleet_utilization(
     input: &[u8],
     mut builder: crate::output::describe_fleet_utilization_output::Builder,
 ) -> Result<
@@ -1725,7 +1745,7 @@ pub fn deser_operation_describe_fleet_utilization(
                 match key.to_unescaped()?.as_ref() {
                     "FleetUtilization" => {
                         builder = builder.set_fleet_utilization(
-                            crate::json_deser::deser_list_fleet_utilization_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_fleet_utilization_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1753,7 +1773,7 @@ pub fn deser_operation_describe_fleet_utilization(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_game_server(
+pub fn deser_operation_crate_operation_describe_game_server(
     input: &[u8],
     mut builder: crate::output::describe_game_server_output::Builder,
 ) -> Result<crate::output::describe_game_server_output::Builder, smithy_json::deserialize::Error> {
@@ -1769,7 +1789,7 @@ pub fn deser_operation_describe_game_server(
                 match key.to_unescaped()?.as_ref() {
                     "GameServer" => {
                         builder = builder.set_game_server(
-                            crate::json_deser::deser_structure_game_server(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_server(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1790,7 +1810,7 @@ pub fn deser_operation_describe_game_server(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_game_server_group(
+pub fn deser_operation_crate_operation_describe_game_server_group(
     input: &[u8],
     mut builder: crate::output::describe_game_server_group_output::Builder,
 ) -> Result<
@@ -1809,7 +1829,9 @@ pub fn deser_operation_describe_game_server_group(
                 match key.to_unescaped()?.as_ref() {
                     "GameServerGroup" => {
                         builder = builder.set_game_server_group(
-                            crate::json_deser::deser_structure_game_server_group(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_server_group(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1830,7 +1852,7 @@ pub fn deser_operation_describe_game_server_group(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_game_server_instances(
+pub fn deser_operation_crate_operation_describe_game_server_instances(
     input: &[u8],
     mut builder: crate::output::describe_game_server_instances_output::Builder,
 ) -> Result<
@@ -1849,7 +1871,7 @@ pub fn deser_operation_describe_game_server_instances(
                 match key.to_unescaped()?.as_ref() {
                     "GameServerInstances" => {
                         builder = builder.set_game_server_instances(
-                            crate::json_deser::deser_list_game_server_instances(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_game_server_instances(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1877,7 +1899,7 @@ pub fn deser_operation_describe_game_server_instances(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_game_session_details(
+pub fn deser_operation_crate_operation_describe_game_session_details(
     input: &[u8],
     mut builder: crate::output::describe_game_session_details_output::Builder,
 ) -> Result<
@@ -1896,7 +1918,7 @@ pub fn deser_operation_describe_game_session_details(
                 match key.to_unescaped()?.as_ref() {
                     "GameSessionDetails" => {
                         builder = builder.set_game_session_details(
-                            crate::json_deser::deser_list_game_session_detail_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_game_session_detail_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1924,7 +1946,7 @@ pub fn deser_operation_describe_game_session_details(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_game_session_placement(
+pub fn deser_operation_crate_operation_describe_game_session_placement(
     input: &[u8],
     mut builder: crate::output::describe_game_session_placement_output::Builder,
 ) -> Result<
@@ -1943,7 +1965,9 @@ pub fn deser_operation_describe_game_session_placement(
                 match key.to_unescaped()?.as_ref() {
                     "GameSessionPlacement" => {
                         builder = builder.set_game_session_placement(
-                            crate::json_deser::deser_structure_game_session_placement(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_session_placement(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1964,7 +1988,7 @@ pub fn deser_operation_describe_game_session_placement(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_game_session_queues(
+pub fn deser_operation_crate_operation_describe_game_session_queues(
     input: &[u8],
     mut builder: crate::output::describe_game_session_queues_output::Builder,
 ) -> Result<
@@ -1983,7 +2007,7 @@ pub fn deser_operation_describe_game_session_queues(
                 match key.to_unescaped()?.as_ref() {
                     "GameSessionQueues" => {
                         builder = builder.set_game_session_queues(
-                            crate::json_deser::deser_list_game_session_queue_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_game_session_queue_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -2011,7 +2035,7 @@ pub fn deser_operation_describe_game_session_queues(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_game_sessions(
+pub fn deser_operation_crate_operation_describe_game_sessions(
     input: &[u8],
     mut builder: crate::output::describe_game_sessions_output::Builder,
 ) -> Result<crate::output::describe_game_sessions_output::Builder, smithy_json::deserialize::Error>
@@ -2028,7 +2052,9 @@ pub fn deser_operation_describe_game_sessions(
                 match key.to_unescaped()?.as_ref() {
                     "GameSessions" => {
                         builder = builder.set_game_sessions(
-                            crate::json_deser::deser_list_game_session_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_game_session_list(
+                                tokens,
+                            )?,
                         );
                     }
                     "NextToken" => {
@@ -2056,7 +2082,7 @@ pub fn deser_operation_describe_game_sessions(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_instances(
+pub fn deser_operation_crate_operation_describe_instances(
     input: &[u8],
     mut builder: crate::output::describe_instances_output::Builder,
 ) -> Result<crate::output::describe_instances_output::Builder, smithy_json::deserialize::Error> {
@@ -2071,8 +2097,11 @@ pub fn deser_operation_describe_instances(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Instances" => {
-                        builder = builder
-                            .set_instances(crate::json_deser::deser_list_instance_list(tokens)?);
+                        builder = builder.set_instances(
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_instance_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2099,7 +2128,7 @@ pub fn deser_operation_describe_instances(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_matchmaking(
+pub fn deser_operation_crate_operation_describe_matchmaking(
     input: &[u8],
     mut builder: crate::output::describe_matchmaking_output::Builder,
 ) -> Result<crate::output::describe_matchmaking_output::Builder, smithy_json::deserialize::Error> {
@@ -2115,7 +2144,7 @@ pub fn deser_operation_describe_matchmaking(
                 match key.to_unescaped()?.as_ref() {
                     "TicketList" => {
                         builder = builder.set_ticket_list(
-                            crate::json_deser::deser_list_matchmaking_ticket_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_matchmaking_ticket_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2136,7 +2165,7 @@ pub fn deser_operation_describe_matchmaking(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_matchmaking_configurations(
+pub fn deser_operation_crate_operation_describe_matchmaking_configurations(
     input: &[u8],
     mut builder: crate::output::describe_matchmaking_configurations_output::Builder,
 ) -> Result<
@@ -2155,7 +2184,7 @@ pub fn deser_operation_describe_matchmaking_configurations(
                 match key.to_unescaped()?.as_ref() {
                     "Configurations" => {
                         builder = builder.set_configurations(
-                            crate::json_deser::deser_list_matchmaking_configuration_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_matchmaking_configuration_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -2183,7 +2212,7 @@ pub fn deser_operation_describe_matchmaking_configurations(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_matchmaking_rule_sets(
+pub fn deser_operation_crate_operation_describe_matchmaking_rule_sets(
     input: &[u8],
     mut builder: crate::output::describe_matchmaking_rule_sets_output::Builder,
 ) -> Result<
@@ -2202,7 +2231,7 @@ pub fn deser_operation_describe_matchmaking_rule_sets(
                 match key.to_unescaped()?.as_ref() {
                     "RuleSets" => {
                         builder = builder.set_rule_sets(
-                            crate::json_deser::deser_list_matchmaking_rule_set_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_matchmaking_rule_set_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -2230,7 +2259,7 @@ pub fn deser_operation_describe_matchmaking_rule_sets(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_player_sessions(
+pub fn deser_operation_crate_operation_describe_player_sessions(
     input: &[u8],
     mut builder: crate::output::describe_player_sessions_output::Builder,
 ) -> Result<crate::output::describe_player_sessions_output::Builder, smithy_json::deserialize::Error>
@@ -2247,7 +2276,7 @@ pub fn deser_operation_describe_player_sessions(
                 match key.to_unescaped()?.as_ref() {
                     "PlayerSessions" => {
                         builder = builder.set_player_sessions(
-                            crate::json_deser::deser_list_player_session_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_player_session_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -2275,7 +2304,7 @@ pub fn deser_operation_describe_player_sessions(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_runtime_configuration(
+pub fn deser_operation_crate_operation_describe_runtime_configuration(
     input: &[u8],
     mut builder: crate::output::describe_runtime_configuration_output::Builder,
 ) -> Result<
@@ -2294,7 +2323,9 @@ pub fn deser_operation_describe_runtime_configuration(
                 match key.to_unescaped()?.as_ref() {
                     "RuntimeConfiguration" => {
                         builder = builder.set_runtime_configuration(
-                            crate::json_deser::deser_structure_runtime_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_runtime_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2315,7 +2346,7 @@ pub fn deser_operation_describe_runtime_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_scaling_policies(
+pub fn deser_operation_crate_operation_describe_scaling_policies(
     input: &[u8],
     mut builder: crate::output::describe_scaling_policies_output::Builder,
 ) -> Result<crate::output::describe_scaling_policies_output::Builder, smithy_json::deserialize::Error>
@@ -2332,7 +2363,7 @@ pub fn deser_operation_describe_scaling_policies(
                 match key.to_unescaped()?.as_ref() {
                     "ScalingPolicies" => {
                         builder = builder.set_scaling_policies(
-                            crate::json_deser::deser_list_scaling_policy_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_scaling_policy_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -2360,7 +2391,7 @@ pub fn deser_operation_describe_scaling_policies(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_script(
+pub fn deser_operation_crate_operation_describe_script(
     input: &[u8],
     mut builder: crate::output::describe_script_output::Builder,
 ) -> Result<crate::output::describe_script_output::Builder, smithy_json::deserialize::Error> {
@@ -2375,8 +2406,9 @@ pub fn deser_operation_describe_script(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Script" => {
-                        builder =
-                            builder.set_script(crate::json_deser::deser_structure_script(tokens)?);
+                        builder = builder.set_script(
+                            crate::json_deser::deser_structure_crate_model_script(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -2396,7 +2428,7 @@ pub fn deser_operation_describe_script(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_vpc_peering_authorizations(
+pub fn deser_operation_crate_operation_describe_vpc_peering_authorizations(
     input: &[u8],
     mut builder: crate::output::describe_vpc_peering_authorizations_output::Builder,
 ) -> Result<
@@ -2415,7 +2447,7 @@ pub fn deser_operation_describe_vpc_peering_authorizations(
                 match key.to_unescaped()?.as_ref() {
                     "VpcPeeringAuthorizations" => {
                         builder = builder.set_vpc_peering_authorizations(
-                            crate::json_deser::deser_list_vpc_peering_authorization_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_vpc_peering_authorization_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2436,7 +2468,7 @@ pub fn deser_operation_describe_vpc_peering_authorizations(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_vpc_peering_connections(
+pub fn deser_operation_crate_operation_describe_vpc_peering_connections(
     input: &[u8],
     mut builder: crate::output::describe_vpc_peering_connections_output::Builder,
 ) -> Result<
@@ -2455,7 +2487,7 @@ pub fn deser_operation_describe_vpc_peering_connections(
                 match key.to_unescaped()?.as_ref() {
                     "VpcPeeringConnections" => {
                         builder = builder.set_vpc_peering_connections(
-                            crate::json_deser::deser_list_vpc_peering_connection_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_vpc_peering_connection_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2476,7 +2508,7 @@ pub fn deser_operation_describe_vpc_peering_connections(
     Ok(builder)
 }
 
-pub fn deser_operation_get_game_session_log_url(
+pub fn deser_operation_crate_operation_get_game_session_log_url(
     input: &[u8],
     mut builder: crate::output::get_game_session_log_url_output::Builder,
 ) -> Result<crate::output::get_game_session_log_url_output::Builder, smithy_json::deserialize::Error>
@@ -2516,7 +2548,7 @@ pub fn deser_operation_get_game_session_log_url(
     Ok(builder)
 }
 
-pub fn deser_operation_get_instance_access(
+pub fn deser_operation_crate_operation_get_instance_access(
     input: &[u8],
     mut builder: crate::output::get_instance_access_output::Builder,
 ) -> Result<crate::output::get_instance_access_output::Builder, smithy_json::deserialize::Error> {
@@ -2532,7 +2564,7 @@ pub fn deser_operation_get_instance_access(
                 match key.to_unescaped()?.as_ref() {
                     "InstanceAccess" => {
                         builder = builder.set_instance_access(
-                            crate::json_deser::deser_structure_instance_access(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_instance_access(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2553,7 +2585,7 @@ pub fn deser_operation_get_instance_access(
     Ok(builder)
 }
 
-pub fn deser_operation_list_aliases(
+pub fn deser_operation_crate_operation_list_aliases(
     input: &[u8],
     mut builder: crate::output::list_aliases_output::Builder,
 ) -> Result<crate::output::list_aliases_output::Builder, smithy_json::deserialize::Error> {
@@ -2568,8 +2600,11 @@ pub fn deser_operation_list_aliases(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Aliases" => {
-                        builder =
-                            builder.set_aliases(crate::json_deser::deser_list_alias_list(tokens)?);
+                        builder = builder.set_aliases(
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_alias_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2596,7 +2631,7 @@ pub fn deser_operation_list_aliases(
     Ok(builder)
 }
 
-pub fn deser_operation_list_builds(
+pub fn deser_operation_crate_operation_list_builds(
     input: &[u8],
     mut builder: crate::output::list_builds_output::Builder,
 ) -> Result<crate::output::list_builds_output::Builder, smithy_json::deserialize::Error> {
@@ -2611,8 +2646,11 @@ pub fn deser_operation_list_builds(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Builds" => {
-                        builder =
-                            builder.set_builds(crate::json_deser::deser_list_build_list(tokens)?);
+                        builder = builder.set_builds(
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_build_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2639,7 +2677,7 @@ pub fn deser_operation_list_builds(
     Ok(builder)
 }
 
-pub fn deser_operation_list_fleets(
+pub fn deser_operation_crate_operation_list_fleets(
     input: &[u8],
     mut builder: crate::output::list_fleets_output::Builder,
 ) -> Result<crate::output::list_fleets_output::Builder, smithy_json::deserialize::Error> {
@@ -2654,8 +2692,11 @@ pub fn deser_operation_list_fleets(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "FleetIds" => {
-                        builder = builder
-                            .set_fleet_ids(crate::json_deser::deser_list_fleet_id_list(tokens)?);
+                        builder = builder.set_fleet_ids(
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_fleet_id_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2682,7 +2723,7 @@ pub fn deser_operation_list_fleets(
     Ok(builder)
 }
 
-pub fn deser_operation_list_game_server_groups(
+pub fn deser_operation_crate_operation_list_game_server_groups(
     input: &[u8],
     mut builder: crate::output::list_game_server_groups_output::Builder,
 ) -> Result<crate::output::list_game_server_groups_output::Builder, smithy_json::deserialize::Error>
@@ -2699,7 +2740,7 @@ pub fn deser_operation_list_game_server_groups(
                 match key.to_unescaped()?.as_ref() {
                     "GameServerGroups" => {
                         builder = builder.set_game_server_groups(
-                            crate::json_deser::deser_list_game_server_groups(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_game_server_groups(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -2727,7 +2768,7 @@ pub fn deser_operation_list_game_server_groups(
     Ok(builder)
 }
 
-pub fn deser_operation_list_game_servers(
+pub fn deser_operation_crate_operation_list_game_servers(
     input: &[u8],
     mut builder: crate::output::list_game_servers_output::Builder,
 ) -> Result<crate::output::list_game_servers_output::Builder, smithy_json::deserialize::Error> {
@@ -2742,8 +2783,11 @@ pub fn deser_operation_list_game_servers(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "GameServers" => {
-                        builder = builder
-                            .set_game_servers(crate::json_deser::deser_list_game_servers(tokens)?);
+                        builder = builder.set_game_servers(
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_game_servers(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2770,7 +2814,7 @@ pub fn deser_operation_list_game_servers(
     Ok(builder)
 }
 
-pub fn deser_operation_list_scripts(
+pub fn deser_operation_crate_operation_list_scripts(
     input: &[u8],
     mut builder: crate::output::list_scripts_output::Builder,
 ) -> Result<crate::output::list_scripts_output::Builder, smithy_json::deserialize::Error> {
@@ -2785,8 +2829,11 @@ pub fn deser_operation_list_scripts(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Scripts" => {
-                        builder =
-                            builder.set_scripts(crate::json_deser::deser_list_script_list(tokens)?);
+                        builder = builder.set_scripts(
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_script_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2813,7 +2860,7 @@ pub fn deser_operation_list_scripts(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -2829,7 +2876,9 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_tag_list(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -2849,7 +2898,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_put_scaling_policy(
+pub fn deser_operation_crate_operation_put_scaling_policy(
     input: &[u8],
     mut builder: crate::output::put_scaling_policy_output::Builder,
 ) -> Result<crate::output::put_scaling_policy_output::Builder, smithy_json::deserialize::Error> {
@@ -2888,7 +2937,7 @@ pub fn deser_operation_put_scaling_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_register_game_server(
+pub fn deser_operation_crate_operation_register_game_server(
     input: &[u8],
     mut builder: crate::output::register_game_server_output::Builder,
 ) -> Result<crate::output::register_game_server_output::Builder, smithy_json::deserialize::Error> {
@@ -2904,7 +2953,7 @@ pub fn deser_operation_register_game_server(
                 match key.to_unescaped()?.as_ref() {
                     "GameServer" => {
                         builder = builder.set_game_server(
-                            crate::json_deser::deser_structure_game_server(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_server(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2925,7 +2974,7 @@ pub fn deser_operation_register_game_server(
     Ok(builder)
 }
 
-pub fn deser_operation_request_upload_credentials(
+pub fn deser_operation_crate_operation_request_upload_credentials(
     input: &[u8],
     mut builder: crate::output::request_upload_credentials_output::Builder,
 ) -> Result<
@@ -2944,12 +2993,12 @@ pub fn deser_operation_request_upload_credentials(
                 match key.to_unescaped()?.as_ref() {
                     "UploadCredentials" => {
                         builder = builder.set_upload_credentials(
-                            crate::json_deser::deser_structure_aws_credentials(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_aws_credentials(tokens)?,
                         );
                     }
                     "StorageLocation" => {
                         builder = builder.set_storage_location(
-                            crate::json_deser::deser_structure_s3_location(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_s3_location(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2970,7 +3019,7 @@ pub fn deser_operation_request_upload_credentials(
     Ok(builder)
 }
 
-pub fn deser_operation_resolve_alias(
+pub fn deser_operation_crate_operation_resolve_alias(
     input: &[u8],
     mut builder: crate::output::resolve_alias_output::Builder,
 ) -> Result<crate::output::resolve_alias_output::Builder, smithy_json::deserialize::Error> {
@@ -3016,7 +3065,7 @@ pub fn deser_operation_resolve_alias(
     Ok(builder)
 }
 
-pub fn deser_operation_resume_game_server_group(
+pub fn deser_operation_crate_operation_resume_game_server_group(
     input: &[u8],
     mut builder: crate::output::resume_game_server_group_output::Builder,
 ) -> Result<crate::output::resume_game_server_group_output::Builder, smithy_json::deserialize::Error>
@@ -3033,7 +3082,9 @@ pub fn deser_operation_resume_game_server_group(
                 match key.to_unescaped()?.as_ref() {
                     "GameServerGroup" => {
                         builder = builder.set_game_server_group(
-                            crate::json_deser::deser_structure_game_server_group(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_server_group(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3054,7 +3105,7 @@ pub fn deser_operation_resume_game_server_group(
     Ok(builder)
 }
 
-pub fn deser_operation_search_game_sessions(
+pub fn deser_operation_crate_operation_search_game_sessions(
     input: &[u8],
     mut builder: crate::output::search_game_sessions_output::Builder,
 ) -> Result<crate::output::search_game_sessions_output::Builder, smithy_json::deserialize::Error> {
@@ -3070,7 +3121,9 @@ pub fn deser_operation_search_game_sessions(
                 match key.to_unescaped()?.as_ref() {
                     "GameSessions" => {
                         builder = builder.set_game_sessions(
-                            crate::json_deser::deser_list_game_session_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_gamelift_game_session_list(
+                                tokens,
+                            )?,
                         );
                     }
                     "NextToken" => {
@@ -3098,7 +3151,7 @@ pub fn deser_operation_search_game_sessions(
     Ok(builder)
 }
 
-pub fn deser_operation_start_fleet_actions(
+pub fn deser_operation_crate_operation_start_fleet_actions(
     input: &[u8],
     mut builder: crate::output::start_fleet_actions_output::Builder,
 ) -> Result<crate::output::start_fleet_actions_output::Builder, smithy_json::deserialize::Error> {
@@ -3144,7 +3197,7 @@ pub fn deser_operation_start_fleet_actions(
     Ok(builder)
 }
 
-pub fn deser_operation_start_game_session_placement(
+pub fn deser_operation_crate_operation_start_game_session_placement(
     input: &[u8],
     mut builder: crate::output::start_game_session_placement_output::Builder,
 ) -> Result<
@@ -3163,7 +3216,9 @@ pub fn deser_operation_start_game_session_placement(
                 match key.to_unescaped()?.as_ref() {
                     "GameSessionPlacement" => {
                         builder = builder.set_game_session_placement(
-                            crate::json_deser::deser_structure_game_session_placement(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_session_placement(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3184,7 +3239,7 @@ pub fn deser_operation_start_game_session_placement(
     Ok(builder)
 }
 
-pub fn deser_operation_start_match_backfill(
+pub fn deser_operation_crate_operation_start_match_backfill(
     input: &[u8],
     mut builder: crate::output::start_match_backfill_output::Builder,
 ) -> Result<crate::output::start_match_backfill_output::Builder, smithy_json::deserialize::Error> {
@@ -3200,7 +3255,9 @@ pub fn deser_operation_start_match_backfill(
                 match key.to_unescaped()?.as_ref() {
                     "MatchmakingTicket" => {
                         builder = builder.set_matchmaking_ticket(
-                            crate::json_deser::deser_structure_matchmaking_ticket(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_matchmaking_ticket(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3221,7 +3278,7 @@ pub fn deser_operation_start_match_backfill(
     Ok(builder)
 }
 
-pub fn deser_operation_start_matchmaking(
+pub fn deser_operation_crate_operation_start_matchmaking(
     input: &[u8],
     mut builder: crate::output::start_matchmaking_output::Builder,
 ) -> Result<crate::output::start_matchmaking_output::Builder, smithy_json::deserialize::Error> {
@@ -3237,7 +3294,9 @@ pub fn deser_operation_start_matchmaking(
                 match key.to_unescaped()?.as_ref() {
                     "MatchmakingTicket" => {
                         builder = builder.set_matchmaking_ticket(
-                            crate::json_deser::deser_structure_matchmaking_ticket(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_matchmaking_ticket(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3258,7 +3317,7 @@ pub fn deser_operation_start_matchmaking(
     Ok(builder)
 }
 
-pub fn deser_operation_stop_fleet_actions(
+pub fn deser_operation_crate_operation_stop_fleet_actions(
     input: &[u8],
     mut builder: crate::output::stop_fleet_actions_output::Builder,
 ) -> Result<crate::output::stop_fleet_actions_output::Builder, smithy_json::deserialize::Error> {
@@ -3304,7 +3363,7 @@ pub fn deser_operation_stop_fleet_actions(
     Ok(builder)
 }
 
-pub fn deser_operation_stop_game_session_placement(
+pub fn deser_operation_crate_operation_stop_game_session_placement(
     input: &[u8],
     mut builder: crate::output::stop_game_session_placement_output::Builder,
 ) -> Result<
@@ -3323,7 +3382,9 @@ pub fn deser_operation_stop_game_session_placement(
                 match key.to_unescaped()?.as_ref() {
                     "GameSessionPlacement" => {
                         builder = builder.set_game_session_placement(
-                            crate::json_deser::deser_structure_game_session_placement(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_session_placement(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3344,7 +3405,7 @@ pub fn deser_operation_stop_game_session_placement(
     Ok(builder)
 }
 
-pub fn deser_operation_suspend_game_server_group(
+pub fn deser_operation_crate_operation_suspend_game_server_group(
     input: &[u8],
     mut builder: crate::output::suspend_game_server_group_output::Builder,
 ) -> Result<crate::output::suspend_game_server_group_output::Builder, smithy_json::deserialize::Error>
@@ -3361,7 +3422,9 @@ pub fn deser_operation_suspend_game_server_group(
                 match key.to_unescaped()?.as_ref() {
                     "GameServerGroup" => {
                         builder = builder.set_game_server_group(
-                            crate::json_deser::deser_structure_game_server_group(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_server_group(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3382,7 +3445,7 @@ pub fn deser_operation_suspend_game_server_group(
     Ok(builder)
 }
 
-pub fn deser_operation_update_alias(
+pub fn deser_operation_crate_operation_update_alias(
     input: &[u8],
     mut builder: crate::output::update_alias_output::Builder,
 ) -> Result<crate::output::update_alias_output::Builder, smithy_json::deserialize::Error> {
@@ -3397,8 +3460,9 @@ pub fn deser_operation_update_alias(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Alias" => {
-                        builder =
-                            builder.set_alias(crate::json_deser::deser_structure_alias(tokens)?);
+                        builder = builder.set_alias(
+                            crate::json_deser::deser_structure_crate_model_alias(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -3418,7 +3482,7 @@ pub fn deser_operation_update_alias(
     Ok(builder)
 }
 
-pub fn deser_operation_update_build(
+pub fn deser_operation_crate_operation_update_build(
     input: &[u8],
     mut builder: crate::output::update_build_output::Builder,
 ) -> Result<crate::output::update_build_output::Builder, smithy_json::deserialize::Error> {
@@ -3433,8 +3497,9 @@ pub fn deser_operation_update_build(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Build" => {
-                        builder =
-                            builder.set_build(crate::json_deser::deser_structure_build(tokens)?);
+                        builder = builder.set_build(
+                            crate::json_deser::deser_structure_crate_model_build(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -3454,7 +3519,7 @@ pub fn deser_operation_update_build(
     Ok(builder)
 }
 
-pub fn deser_operation_update_fleet_attributes(
+pub fn deser_operation_crate_operation_update_fleet_attributes(
     input: &[u8],
     mut builder: crate::output::update_fleet_attributes_output::Builder,
 ) -> Result<crate::output::update_fleet_attributes_output::Builder, smithy_json::deserialize::Error>
@@ -3494,7 +3559,7 @@ pub fn deser_operation_update_fleet_attributes(
     Ok(builder)
 }
 
-pub fn deser_operation_update_fleet_capacity(
+pub fn deser_operation_crate_operation_update_fleet_capacity(
     input: &[u8],
     mut builder: crate::output::update_fleet_capacity_output::Builder,
 ) -> Result<crate::output::update_fleet_capacity_output::Builder, smithy_json::deserialize::Error> {
@@ -3547,7 +3612,7 @@ pub fn deser_operation_update_fleet_capacity(
     Ok(builder)
 }
 
-pub fn deser_operation_update_fleet_port_settings(
+pub fn deser_operation_crate_operation_update_fleet_port_settings(
     input: &[u8],
     mut builder: crate::output::update_fleet_port_settings_output::Builder,
 ) -> Result<
@@ -3589,7 +3654,7 @@ pub fn deser_operation_update_fleet_port_settings(
     Ok(builder)
 }
 
-pub fn deser_operation_update_game_server(
+pub fn deser_operation_crate_operation_update_game_server(
     input: &[u8],
     mut builder: crate::output::update_game_server_output::Builder,
 ) -> Result<crate::output::update_game_server_output::Builder, smithy_json::deserialize::Error> {
@@ -3605,7 +3670,7 @@ pub fn deser_operation_update_game_server(
                 match key.to_unescaped()?.as_ref() {
                     "GameServer" => {
                         builder = builder.set_game_server(
-                            crate::json_deser::deser_structure_game_server(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_server(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3626,7 +3691,7 @@ pub fn deser_operation_update_game_server(
     Ok(builder)
 }
 
-pub fn deser_operation_update_game_server_group(
+pub fn deser_operation_crate_operation_update_game_server_group(
     input: &[u8],
     mut builder: crate::output::update_game_server_group_output::Builder,
 ) -> Result<crate::output::update_game_server_group_output::Builder, smithy_json::deserialize::Error>
@@ -3643,7 +3708,9 @@ pub fn deser_operation_update_game_server_group(
                 match key.to_unescaped()?.as_ref() {
                     "GameServerGroup" => {
                         builder = builder.set_game_server_group(
-                            crate::json_deser::deser_structure_game_server_group(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_server_group(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3664,7 +3731,7 @@ pub fn deser_operation_update_game_server_group(
     Ok(builder)
 }
 
-pub fn deser_operation_update_game_session(
+pub fn deser_operation_crate_operation_update_game_session(
     input: &[u8],
     mut builder: crate::output::update_game_session_output::Builder,
 ) -> Result<crate::output::update_game_session_output::Builder, smithy_json::deserialize::Error> {
@@ -3680,7 +3747,7 @@ pub fn deser_operation_update_game_session(
                 match key.to_unescaped()?.as_ref() {
                     "GameSession" => {
                         builder = builder.set_game_session(
-                            crate::json_deser::deser_structure_game_session(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_session(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3701,7 +3768,7 @@ pub fn deser_operation_update_game_session(
     Ok(builder)
 }
 
-pub fn deser_operation_update_game_session_queue(
+pub fn deser_operation_crate_operation_update_game_session_queue(
     input: &[u8],
     mut builder: crate::output::update_game_session_queue_output::Builder,
 ) -> Result<crate::output::update_game_session_queue_output::Builder, smithy_json::deserialize::Error>
@@ -3718,7 +3785,9 @@ pub fn deser_operation_update_game_session_queue(
                 match key.to_unescaped()?.as_ref() {
                     "GameSessionQueue" => {
                         builder = builder.set_game_session_queue(
-                            crate::json_deser::deser_structure_game_session_queue(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_game_session_queue(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3739,7 +3808,7 @@ pub fn deser_operation_update_game_session_queue(
     Ok(builder)
 }
 
-pub fn deser_operation_update_matchmaking_configuration(
+pub fn deser_operation_crate_operation_update_matchmaking_configuration(
     input: &[u8],
     mut builder: crate::output::update_matchmaking_configuration_output::Builder,
 ) -> Result<
@@ -3758,7 +3827,7 @@ pub fn deser_operation_update_matchmaking_configuration(
                 match key.to_unescaped()?.as_ref() {
                     "Configuration" => {
                         builder = builder.set_configuration(
-                            crate::json_deser::deser_structure_matchmaking_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_matchmaking_configuration(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3779,7 +3848,7 @@ pub fn deser_operation_update_matchmaking_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_update_runtime_configuration(
+pub fn deser_operation_crate_operation_update_runtime_configuration(
     input: &[u8],
     mut builder: crate::output::update_runtime_configuration_output::Builder,
 ) -> Result<
@@ -3798,7 +3867,9 @@ pub fn deser_operation_update_runtime_configuration(
                 match key.to_unescaped()?.as_ref() {
                     "RuntimeConfiguration" => {
                         builder = builder.set_runtime_configuration(
-                            crate::json_deser::deser_structure_runtime_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_runtime_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3819,7 +3890,7 @@ pub fn deser_operation_update_runtime_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_update_script(
+pub fn deser_operation_crate_operation_update_script(
     input: &[u8],
     mut builder: crate::output::update_script_output::Builder,
 ) -> Result<crate::output::update_script_output::Builder, smithy_json::deserialize::Error> {
@@ -3834,8 +3905,9 @@ pub fn deser_operation_update_script(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Script" => {
-                        builder =
-                            builder.set_script(crate::json_deser::deser_structure_script(tokens)?);
+                        builder = builder.set_script(
+                            crate::json_deser::deser_structure_crate_model_script(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -3855,7 +3927,7 @@ pub fn deser_operation_update_script(
     Ok(builder)
 }
 
-pub fn deser_operation_validate_matchmaking_rule_set(
+pub fn deser_operation_crate_operation_validate_matchmaking_rule_set(
     input: &[u8],
     mut builder: crate::output::validate_matchmaking_rule_set_output::Builder,
 ) -> Result<
@@ -3903,7 +3975,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_game_server<'a, I>(
+pub fn deser_structure_crate_model_game_server<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GameServer>, smithy_json::deserialize::Error>
 where
@@ -4045,7 +4117,7 @@ where
     }
 }
 
-pub fn deser_structure_alias<'a, I>(
+pub fn deser_structure_crate_model_alias<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Alias>, smithy_json::deserialize::Error>
 where
@@ -4101,7 +4173,7 @@ where
                             }
                             "RoutingStrategy" => {
                                 builder = builder.set_routing_strategy(
-                                    crate::json_deser::deser_structure_routing_strategy(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_routing_strategy(tokens)?
                                 );
                             }
                             "CreationTime" => {
@@ -4138,7 +4210,7 @@ where
     }
 }
 
-pub fn deser_structure_build<'a, I>(
+pub fn deser_structure_crate_model_build<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Build>, smithy_json::deserialize::Error>
 where
@@ -4251,7 +4323,7 @@ where
     }
 }
 
-pub fn deser_structure_aws_credentials<'a, I>(
+pub fn deser_structure_crate_model_aws_credentials<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AwsCredentials>, smithy_json::deserialize::Error>
 where
@@ -4314,7 +4386,7 @@ where
     }
 }
 
-pub fn deser_structure_s3_location<'a, I>(
+pub fn deser_structure_crate_model_s3_location<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3Location>, smithy_json::deserialize::Error>
 where
@@ -4386,7 +4458,7 @@ where
     }
 }
 
-pub fn deser_structure_fleet_attributes<'a, I>(
+pub fn deser_structure_crate_model_fleet_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FleetAttributes>, smithy_json::deserialize::Error>
 where
@@ -4549,7 +4621,7 @@ where
                             }
                             "LogPaths" => {
                                 builder = builder.set_log_paths(
-                                    crate::json_deser::deser_list_string_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_string_list(tokens)?
                                 );
                             }
                             "NewGameSessionProtectionPolicy" => {
@@ -4580,17 +4652,17 @@ where
                             }
                             "ResourceCreationLimitPolicy" => {
                                 builder = builder.set_resource_creation_limit_policy(
-                                    crate::json_deser::deser_structure_resource_creation_limit_policy(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_resource_creation_limit_policy(tokens)?
                                 );
                             }
                             "MetricGroups" => {
                                 builder = builder.set_metric_groups(
-                                    crate::json_deser::deser_list_metric_group_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_metric_group_list(tokens)?
                                 );
                             }
                             "StoppedActions" => {
                                 builder = builder.set_stopped_actions(
-                                    crate::json_deser::deser_list_fleet_action_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_fleet_action_list(tokens)?
                                 );
                             }
                             "InstanceRoleArn" => {
@@ -4604,9 +4676,7 @@ where
                             }
                             "CertificateConfiguration" => {
                                 builder = builder.set_certificate_configuration(
-                                    crate::json_deser::deser_structure_certificate_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_certificate_configuration(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4628,7 +4698,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_location_state_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_location_state_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::LocationState>>, smithy_json::deserialize::Error>
 where
@@ -4647,7 +4717,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_location_state(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_location_state(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4662,7 +4733,7 @@ where
     }
 }
 
-pub fn deser_structure_game_server_group<'a, I>(
+pub fn deser_structure_crate_model_game_server_group<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GameServerGroup>, smithy_json::deserialize::Error>
 where
@@ -4709,7 +4780,7 @@ where
                             }
                             "InstanceDefinitions" => {
                                 builder = builder.set_instance_definitions(
-                                    crate::json_deser::deser_list_instance_definitions(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_instance_definitions(tokens)?
                                 );
                             }
                             "BalancingStrategy" => {
@@ -4773,9 +4844,7 @@ where
                             }
                             "SuspendedActions" => {
                                 builder = builder.set_suspended_actions(
-                                    crate::json_deser::deser_list_game_server_group_actions(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_game_server_group_actions(tokens)?
                                 );
                             }
                             "CreationTime" => {
@@ -4812,7 +4881,7 @@ where
     }
 }
 
-pub fn deser_structure_game_session<'a, I>(
+pub fn deser_structure_crate_model_game_session<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GameSession>, smithy_json::deserialize::Error>
 where
@@ -4926,7 +4995,7 @@ where
                             }
                             "GameProperties" => {
                                 builder = builder.set_game_properties(
-                                    crate::json_deser::deser_list_game_property_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_game_property_list(tokens)?
                                 );
                             }
                             "IpAddress" => {
@@ -5024,7 +5093,7 @@ where
     }
 }
 
-pub fn deser_structure_game_session_queue<'a, I>(
+pub fn deser_structure_crate_model_game_session_queue<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GameSessionQueue>, smithy_json::deserialize::Error>
 where
@@ -5070,28 +5139,22 @@ where
                             }
                             "PlayerLatencyPolicies" => {
                                 builder = builder.set_player_latency_policies(
-                                    crate::json_deser::deser_list_player_latency_policy_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_player_latency_policy_list(tokens)?
                                 );
                             }
                             "Destinations" => {
                                 builder = builder.set_destinations(
-                                    crate::json_deser::deser_list_game_session_queue_destination_list(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_game_session_queue_destination_list(tokens)?
                                 );
                             }
                             "FilterConfiguration" => {
                                 builder = builder.set_filter_configuration(
-                                    crate::json_deser::deser_structure_filter_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_filter_configuration(tokens)?
                                 );
                             }
                             "PriorityConfiguration" => {
                                 builder = builder.set_priority_configuration(
-                                    crate::json_deser::deser_structure_priority_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_priority_configuration(tokens)?
                                 );
                             }
                             "CustomEventData" => {
@@ -5130,7 +5193,7 @@ where
     }
 }
 
-pub fn deser_structure_matchmaking_configuration<'a, I>(
+pub fn deser_structure_crate_model_matchmaking_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MatchmakingConfiguration>, smithy_json::deserialize::Error>
 where
@@ -5177,7 +5240,7 @@ where
                             }
                             "GameSessionQueueArns" => {
                                 builder = builder.set_game_session_queue_arns(
-                                    crate::json_deser::deser_list_queue_arns_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_queue_arns_list(tokens)?
                                 );
                             }
                             "RequestTimeoutSeconds" => {
@@ -5257,7 +5320,7 @@ where
                             }
                             "GameProperties" => {
                                 builder = builder.set_game_properties(
-                                    crate::json_deser::deser_list_game_property_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_game_property_list(tokens)?
                                 );
                             }
                             "GameSessionData" => {
@@ -5311,7 +5374,7 @@ where
     }
 }
 
-pub fn deser_structure_matchmaking_rule_set<'a, I>(
+pub fn deser_structure_crate_model_matchmaking_rule_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MatchmakingRuleSet>, smithy_json::deserialize::Error>
 where
@@ -5382,7 +5445,7 @@ where
     }
 }
 
-pub fn deser_structure_player_session<'a, I>(
+pub fn deser_structure_crate_model_player_session<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PlayerSession>, smithy_json::deserialize::Error>
 where
@@ -5528,7 +5591,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_player_session_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_player_session_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PlayerSession>>, smithy_json::deserialize::Error>
 where
@@ -5547,7 +5610,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_player_session(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_player_session(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5562,7 +5626,7 @@ where
     }
 }
 
-pub fn deser_structure_script<'a, I>(
+pub fn deser_structure_crate_model_script<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Script>, smithy_json::deserialize::Error>
 where
@@ -5634,7 +5698,9 @@ where
                             }
                             "StorageLocation" => {
                                 builder = builder.set_storage_location(
-                                    crate::json_deser::deser_structure_s3_location(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_s3_location(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5655,7 +5721,7 @@ where
     }
 }
 
-pub fn deser_structure_vpc_peering_authorization<'a, I>(
+pub fn deser_structure_crate_model_vpc_peering_authorization<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::VpcPeeringAuthorization>, smithy_json::deserialize::Error>
 where
@@ -5735,7 +5801,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_ec2_instance_limit_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_ec2_instance_limit_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>, smithy_json::deserialize::Error>
 where
@@ -5754,7 +5820,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_ec2_instance_limit(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_ec2_instance_limit(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5770,7 +5839,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_fleet_attributes_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_fleet_attributes_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::FleetAttributes>>, smithy_json::deserialize::Error>
 where
@@ -5789,7 +5858,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_fleet_attributes(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_fleet_attributes(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5805,7 +5877,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_fleet_capacity_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_fleet_capacity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::FleetCapacity>>, smithy_json::deserialize::Error>
 where
@@ -5824,7 +5896,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_fleet_capacity(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_fleet_capacity(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5840,7 +5913,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_event_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Event>>, smithy_json::deserialize::Error>
 where
@@ -5859,7 +5932,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_event(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_event(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5875,7 +5948,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_location_attributes_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_location_attributes_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::LocationAttributes>>, smithy_json::deserialize::Error>
 where
@@ -5894,7 +5967,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_location_attributes(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_location_attributes(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5909,7 +5985,7 @@ where
     }
 }
 
-pub fn deser_structure_fleet_capacity<'a, I>(
+pub fn deser_structure_crate_model_fleet_capacity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FleetCapacity>, smithy_json::deserialize::Error>
 where
@@ -5960,7 +6036,7 @@ where
                             }
                             "InstanceCounts" => {
                                 builder = builder.set_instance_counts(
-                                    crate::json_deser::deser_structure_ec2_instance_counts(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_ec2_instance_counts(tokens)?
                                 );
                             }
                             "Location" => {
@@ -5990,7 +6066,7 @@ where
     }
 }
 
-pub fn deser_structure_fleet_utilization<'a, I>(
+pub fn deser_structure_crate_model_fleet_utilization<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FleetUtilization>, smithy_json::deserialize::Error>
 where
@@ -6086,7 +6162,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_ip_permissions_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_ip_permissions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::IpPermission>>, smithy_json::deserialize::Error>
 where
@@ -6105,7 +6181,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_ip_permission(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_ip_permission(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6121,7 +6198,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_fleet_utilization_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_fleet_utilization_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::FleetUtilization>>, smithy_json::deserialize::Error>
 where
@@ -6140,7 +6217,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_fleet_utilization(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_fleet_utilization(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6156,7 +6236,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_game_server_instances<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_game_server_instances<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GameServerInstance>>, smithy_json::deserialize::Error>
 where
@@ -6176,7 +6256,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_game_server_instance(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_game_server_instance(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6192,7 +6274,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_game_session_detail_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_game_session_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GameSessionDetail>>, smithy_json::deserialize::Error>
 where
@@ -6211,7 +6293,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_game_session_detail(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_game_session_detail(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6226,7 +6311,7 @@ where
     }
 }
 
-pub fn deser_structure_game_session_placement<'a, I>(
+pub fn deser_structure_crate_model_game_session_placement<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GameSessionPlacement>, smithy_json::deserialize::Error>
 where
@@ -6279,7 +6364,7 @@ where
                             }
                             "GameProperties" => {
                                 builder = builder.set_game_properties(
-                                    crate::json_deser::deser_list_game_property_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_game_property_list(tokens)?
                                 );
                             }
                             "MaximumPlayerSessionCount" => {
@@ -6328,7 +6413,7 @@ where
                             }
                             "PlayerLatencies" => {
                                 builder = builder.set_player_latencies(
-                                    crate::json_deser::deser_list_player_latency_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_player_latency_list(tokens)?
                                 );
                             }
                             "StartTime" => {
@@ -6375,9 +6460,7 @@ where
                             }
                             "PlacedPlayerSessions" => {
                                 builder = builder.set_placed_player_sessions(
-                                    crate::json_deser::deser_list_placed_player_session_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_placed_player_session_list(tokens)?
                                 );
                             }
                             "GameSessionData" => {
@@ -6417,7 +6500,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_game_session_queue_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_game_session_queue_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GameSessionQueue>>, smithy_json::deserialize::Error>
 where
@@ -6436,7 +6519,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_game_session_queue(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_game_session_queue(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6452,7 +6538,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_game_session_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_game_session_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GameSession>>, smithy_json::deserialize::Error>
 where
@@ -6471,7 +6557,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_game_session(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_game_session(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6487,7 +6574,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_instance_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_instance_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Instance>>, smithy_json::deserialize::Error>
 where
@@ -6506,7 +6593,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_instance(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_instance(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6522,7 +6610,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_matchmaking_ticket_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_matchmaking_ticket_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MatchmakingTicket>>, smithy_json::deserialize::Error>
 where
@@ -6541,7 +6629,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_matchmaking_ticket(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_matchmaking_ticket(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6557,7 +6648,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_matchmaking_configuration_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_matchmaking_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::MatchmakingConfiguration>>,
@@ -6580,7 +6671,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_matchmaking_configuration(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_matchmaking_configuration(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6596,7 +6688,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_matchmaking_rule_set_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_matchmaking_rule_set_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MatchmakingRuleSet>>, smithy_json::deserialize::Error>
 where
@@ -6616,7 +6708,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_matchmaking_rule_set(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_matchmaking_rule_set(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6631,7 +6725,7 @@ where
     }
 }
 
-pub fn deser_structure_runtime_configuration<'a, I>(
+pub fn deser_structure_crate_model_runtime_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RuntimeConfiguration>, smithy_json::deserialize::Error>
 where
@@ -6651,7 +6745,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "ServerProcesses" => {
                                 builder = builder.set_server_processes(
-                                    crate::json_deser::deser_list_server_process_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_server_process_list(tokens)?
                                 );
                             }
                             "MaxConcurrentGameSessionActivations" => {
@@ -6689,7 +6783,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_scaling_policy_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_scaling_policy_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ScalingPolicy>>, smithy_json::deserialize::Error>
 where
@@ -6708,7 +6802,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_scaling_policy(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_scaling_policy(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6724,7 +6819,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_vpc_peering_authorization_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_vpc_peering_authorization_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
@@ -6747,7 +6842,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_vpc_peering_authorization(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_vpc_peering_authorization(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6763,7 +6859,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_vpc_peering_connection_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_vpc_peering_connection_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
@@ -6786,7 +6882,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_vpc_peering_connection(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_vpc_peering_connection(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6801,7 +6899,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_access<'a, I>(
+pub fn deser_structure_crate_model_instance_access<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceAccess>, smithy_json::deserialize::Error>
 where
@@ -6861,9 +6959,7 @@ where
                             }
                             "Credentials" => {
                                 builder = builder.set_credentials(
-                                    crate::json_deser::deser_structure_instance_credentials(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_instance_credentials(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -6885,7 +6981,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_alias_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_alias_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Alias>>, smithy_json::deserialize::Error>
 where
@@ -6904,7 +7000,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_alias(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_alias(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6920,7 +7016,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_build_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_build_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Build>>, smithy_json::deserialize::Error>
 where
@@ -6939,7 +7035,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_build(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_build(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6955,7 +7051,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_fleet_id_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_fleet_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -6993,7 +7089,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_game_server_groups<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_game_server_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GameServerGroup>>, smithy_json::deserialize::Error>
 where
@@ -7012,7 +7108,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_game_server_group(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_game_server_group(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -7028,7 +7127,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_game_servers<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_game_servers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GameServer>>, smithy_json::deserialize::Error>
 where
@@ -7047,7 +7146,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_game_server(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_game_server(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -7063,7 +7163,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_script_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_script_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Script>>, smithy_json::deserialize::Error>
 where
@@ -7082,7 +7182,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_script(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_script(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -7098,7 +7198,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -7117,7 +7217,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -7132,7 +7232,7 @@ where
     }
 }
 
-pub fn deser_structure_matchmaking_ticket<'a, I>(
+pub fn deser_structure_crate_model_matchmaking_ticket<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MatchmakingTicket>, smithy_json::deserialize::Error>
 where
@@ -7228,12 +7328,12 @@ where
                             }
                             "Players" => {
                                 builder = builder.set_players(
-                                    crate::json_deser::deser_list_player_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_player_list(tokens)?
                                 );
                             }
                             "GameSessionConnectionInfo" => {
                                 builder = builder.set_game_session_connection_info(
-                                    crate::json_deser::deser_structure_game_session_connection_info(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_game_session_connection_info(tokens)?
                                 );
                             }
                             "EstimatedWaitTime" => {
@@ -7262,7 +7362,7 @@ where
     }
 }
 
-pub fn deser_structure_routing_strategy<'a, I>(
+pub fn deser_structure_crate_model_routing_strategy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RoutingStrategy>, smithy_json::deserialize::Error>
 where
@@ -7330,7 +7430,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_string_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_string_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7367,7 +7467,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_creation_limit_policy<'a, I>(
+pub fn deser_structure_crate_model_resource_creation_limit_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceCreationLimitPolicy>, smithy_json::deserialize::Error>
 where
@@ -7420,7 +7520,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_metric_group_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_metric_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7458,7 +7558,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_fleet_action_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_fleet_action_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::FleetAction>>, smithy_json::deserialize::Error>
 where
@@ -7498,7 +7598,7 @@ where
     }
 }
 
-pub fn deser_structure_certificate_configuration<'a, I>(
+pub fn deser_structure_crate_model_certificate_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CertificateConfiguration>, smithy_json::deserialize::Error>
 where
@@ -7547,7 +7647,7 @@ where
     }
 }
 
-pub fn deser_structure_location_state<'a, I>(
+pub fn deser_structure_crate_model_location_state<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LocationState>, smithy_json::deserialize::Error>
 where
@@ -7605,7 +7705,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_instance_definitions<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_instance_definitions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::InstanceDefinition>>, smithy_json::deserialize::Error>
 where
@@ -7624,7 +7724,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_instance_definition(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_instance_definition(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -7640,7 +7743,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_game_server_group_actions<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_game_server_group_actions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::GameServerGroupAction>>,
@@ -7685,7 +7788,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_game_property_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_game_property_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GameProperty>>, smithy_json::deserialize::Error>
 where
@@ -7704,7 +7807,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_game_property(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_game_property(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -7720,7 +7824,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_player_latency_policy_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_player_latency_policy_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PlayerLatencyPolicy>>, smithy_json::deserialize::Error>
 where
@@ -7740,7 +7844,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_player_latency_policy(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_player_latency_policy(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -7756,7 +7862,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_game_session_queue_destination_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_game_session_queue_destination_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::GameSessionQueueDestination>>,
@@ -7779,9 +7885,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_game_session_queue_destination(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_game_session_queue_destination(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -7796,7 +7901,7 @@ where
     }
 }
 
-pub fn deser_structure_filter_configuration<'a, I>(
+pub fn deser_structure_crate_model_filter_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FilterConfiguration>, smithy_json::deserialize::Error>
 where
@@ -7816,7 +7921,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "AllowedLocations" => {
                                 builder = builder.set_allowed_locations(
-                                    crate::json_deser::deser_list_location_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_location_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -7837,7 +7942,7 @@ where
     }
 }
 
-pub fn deser_structure_priority_configuration<'a, I>(
+pub fn deser_structure_crate_model_priority_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PriorityConfiguration>, smithy_json::deserialize::Error>
 where
@@ -7857,12 +7962,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "PriorityOrder" => {
                                 builder = builder.set_priority_order(
-                                    crate::json_deser::deser_list_priority_type_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_priority_type_list(tokens)?
                                 );
                             }
                             "LocationOrder" => {
                                 builder = builder.set_location_order(
-                                    crate::json_deser::deser_list_location_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_location_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -7884,7 +7989,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_queue_arns_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_queue_arns_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7921,7 +8026,7 @@ where
     }
 }
 
-pub fn deser_structure_ec2_instance_limit<'a, I>(
+pub fn deser_structure_crate_model_ec2_instance_limit<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Ec2InstanceLimit>, smithy_json::deserialize::Error>
 where
@@ -7995,7 +8100,7 @@ where
     }
 }
 
-pub fn deser_structure_event<'a, I>(
+pub fn deser_structure_crate_model_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Event>, smithy_json::deserialize::Error>
 where
@@ -8087,7 +8192,7 @@ where
     }
 }
 
-pub fn deser_structure_location_attributes<'a, I>(
+pub fn deser_structure_crate_model_location_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LocationAttributes>, smithy_json::deserialize::Error>
 where
@@ -8107,12 +8212,14 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "LocationState" => {
                                 builder = builder.set_location_state(
-                                    crate::json_deser::deser_structure_location_state(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_location_state(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "StoppedActions" => {
                                 builder = builder.set_stopped_actions(
-                                    crate::json_deser::deser_list_fleet_action_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_fleet_action_list(tokens)?
                                 );
                             }
                             "UpdateStatus" => {
@@ -8146,7 +8253,7 @@ where
     }
 }
 
-pub fn deser_structure_ec2_instance_counts<'a, I>(
+pub fn deser_structure_crate_model_ec2_instance_counts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Ec2InstanceCounts>, smithy_json::deserialize::Error>
 where
@@ -8238,7 +8345,7 @@ where
     }
 }
 
-pub fn deser_structure_ip_permission<'a, I>(
+pub fn deser_structure_crate_model_ip_permission<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::IpPermission>, smithy_json::deserialize::Error>
 where
@@ -8311,7 +8418,7 @@ where
     }
 }
 
-pub fn deser_structure_game_server_instance<'a, I>(
+pub fn deser_structure_crate_model_game_server_instance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GameServerInstance>, smithy_json::deserialize::Error>
 where
@@ -8387,7 +8494,7 @@ where
     }
 }
 
-pub fn deser_structure_game_session_detail<'a, I>(
+pub fn deser_structure_crate_model_game_session_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GameSessionDetail>, smithy_json::deserialize::Error>
 where
@@ -8407,7 +8514,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "GameSession" => {
                                 builder = builder.set_game_session(
-                                    crate::json_deser::deser_structure_game_session(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_game_session(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ProtectionPolicy" => {
@@ -8442,7 +8551,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_player_latency_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_player_latency_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PlayerLatency>>, smithy_json::deserialize::Error>
 where
@@ -8461,7 +8570,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_player_latency(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_player_latency(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -8477,7 +8587,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_placed_player_session_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_placed_player_session_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PlacedPlayerSession>>, smithy_json::deserialize::Error>
 where
@@ -8497,7 +8607,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_placed_player_session(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_placed_player_session(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -8512,7 +8624,7 @@ where
     }
 }
 
-pub fn deser_structure_instance<'a, I>(
+pub fn deser_structure_crate_model_instance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Instance>, smithy_json::deserialize::Error>
 where
@@ -8649,7 +8761,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_server_process_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_server_process_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ServerProcess>>, smithy_json::deserialize::Error>
 where
@@ -8668,7 +8780,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_server_process(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_server_process(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -8683,7 +8796,7 @@ where
     }
 }
 
-pub fn deser_structure_scaling_policy<'a, I>(
+pub fn deser_structure_crate_model_scaling_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ScalingPolicy>, smithy_json::deserialize::Error>
 where
@@ -8817,9 +8930,7 @@ where
                             }
                             "TargetConfiguration" => {
                                 builder = builder.set_target_configuration(
-                                    crate::json_deser::deser_structure_target_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_target_configuration(tokens)?
                                 );
                             }
                             "UpdateStatus" => {
@@ -8862,7 +8973,7 @@ where
     }
 }
 
-pub fn deser_structure_vpc_peering_connection<'a, I>(
+pub fn deser_structure_crate_model_vpc_peering_connection<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::VpcPeeringConnection>, smithy_json::deserialize::Error>
 where
@@ -8918,7 +9029,7 @@ where
                             }
                             "Status" => {
                                 builder = builder.set_status(
-                                    crate::json_deser::deser_structure_vpc_peering_connection_status(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_vpc_peering_connection_status(tokens)?
                                 );
                             }
                             "PeerVpcId" => {
@@ -8957,7 +9068,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_credentials<'a, I>(
+pub fn deser_structure_crate_model_instance_credentials<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceCredentials>, smithy_json::deserialize::Error>
 where
@@ -9011,7 +9122,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -9066,7 +9177,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_player_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_player_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Player>>, smithy_json::deserialize::Error>
 where
@@ -9085,7 +9196,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_player(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_player(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -9100,7 +9211,7 @@ where
     }
 }
 
-pub fn deser_structure_game_session_connection_info<'a, I>(
+pub fn deser_structure_crate_model_game_session_connection_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GameSessionConnectionInfo>, smithy_json::deserialize::Error>
 where
@@ -9155,9 +9266,7 @@ where
                             }
                             "MatchedPlayerSessions" => {
                                 builder = builder.set_matched_player_sessions(
-                                    crate::json_deser::deser_list_matched_player_session_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_matched_player_session_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -9178,7 +9287,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_definition<'a, I>(
+pub fn deser_structure_crate_model_instance_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceDefinition>, smithy_json::deserialize::Error>
 where
@@ -9238,7 +9347,7 @@ where
     }
 }
 
-pub fn deser_structure_game_property<'a, I>(
+pub fn deser_structure_crate_model_game_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GameProperty>, smithy_json::deserialize::Error>
 where
@@ -9292,7 +9401,7 @@ where
     }
 }
 
-pub fn deser_structure_player_latency_policy<'a, I>(
+pub fn deser_structure_crate_model_player_latency_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PlayerLatencyPolicy>, smithy_json::deserialize::Error>
 where
@@ -9345,7 +9454,7 @@ where
     }
 }
 
-pub fn deser_structure_game_session_queue_destination<'a, I>(
+pub fn deser_structure_crate_model_game_session_queue_destination<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GameSessionQueueDestination>, smithy_json::deserialize::Error>
 where
@@ -9391,7 +9500,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_location_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_location_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -9429,7 +9538,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_priority_type_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_priority_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PriorityType>>, smithy_json::deserialize::Error>
 where
@@ -9469,7 +9578,7 @@ where
     }
 }
 
-pub fn deser_structure_player_latency<'a, I>(
+pub fn deser_structure_crate_model_player_latency<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PlayerLatency>, smithy_json::deserialize::Error>
 where
@@ -9531,7 +9640,7 @@ where
     }
 }
 
-pub fn deser_structure_placed_player_session<'a, I>(
+pub fn deser_structure_crate_model_placed_player_session<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PlacedPlayerSession>, smithy_json::deserialize::Error>
 where
@@ -9585,7 +9694,7 @@ where
     }
 }
 
-pub fn deser_structure_server_process<'a, I>(
+pub fn deser_structure_crate_model_server_process<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServerProcess>, smithy_json::deserialize::Error>
 where
@@ -9647,7 +9756,7 @@ where
     }
 }
 
-pub fn deser_structure_target_configuration<'a, I>(
+pub fn deser_structure_crate_model_target_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TargetConfiguration>, smithy_json::deserialize::Error>
 where
@@ -9691,7 +9800,7 @@ where
     }
 }
 
-pub fn deser_structure_vpc_peering_connection_status<'a, I>(
+pub fn deser_structure_crate_model_vpc_peering_connection_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::VpcPeeringConnectionStatus>, smithy_json::deserialize::Error>
 where
@@ -9745,7 +9854,7 @@ where
     }
 }
 
-pub fn deser_structure_player<'a, I>(
+pub fn deser_structure_crate_model_player<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Player>, smithy_json::deserialize::Error>
 where
@@ -9774,7 +9883,7 @@ where
                             }
                             "PlayerAttributes" => {
                                 builder = builder.set_player_attributes(
-                                    crate::json_deser::deser_map_player_attribute_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_gamelift_player_attribute_map(tokens)?
                                 );
                             }
                             "Team" => {
@@ -9788,7 +9897,7 @@ where
                             }
                             "LatencyInMs" => {
                                 builder = builder.set_latency_in_ms(
-                                    crate::json_deser::deser_map_latency_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_gamelift_latency_map(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -9810,7 +9919,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_matched_player_session_list<'a, I>(
+pub fn deser_list_com_amazonaws_gamelift_matched_player_session_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::MatchedPlayerSession>>,
@@ -9833,7 +9942,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_matched_player_session(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_matched_player_session(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -9849,7 +9960,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_player_attribute_map<'a, I>(
+pub fn deser_map_com_amazonaws_gamelift_player_attribute_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -9869,7 +9980,8 @@ where
                     Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
-                        let value = crate::json_deser::deser_structure_attribute_value(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_attribute_value(tokens)?;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
@@ -9890,7 +10002,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_latency_map<'a, I>(
+pub fn deser_map_com_amazonaws_gamelift_latency_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, i32>>,
@@ -9932,7 +10044,7 @@ where
     }
 }
 
-pub fn deser_structure_matched_player_session<'a, I>(
+pub fn deser_structure_crate_model_matched_player_session<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MatchedPlayerSession>, smithy_json::deserialize::Error>
 where
@@ -9986,7 +10098,7 @@ where
     }
 }
 
-pub fn deser_structure_attribute_value<'a, I>(
+pub fn deser_structure_crate_model_attribute_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AttributeValue>, smithy_json::deserialize::Error>
 where
@@ -10022,12 +10134,13 @@ where
                                 );
                             }
                             "SL" => {
-                                builder = builder
-                                    .set_sl(crate::json_deser::deser_list_string_list(tokens)?);
+                                builder = builder.set_sl(
+                                    crate::json_deser::deser_list_com_amazonaws_gamelift_string_list(tokens)?
+                                );
                             }
                             "SDM" => {
                                 builder = builder.set_sdm(
-                                    crate::json_deser::deser_map_string_double_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_gamelift_string_double_map(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -10049,7 +10162,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_string_double_map<'a, I>(
+pub fn deser_map_com_amazonaws_gamelift_string_double_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, f64>>,

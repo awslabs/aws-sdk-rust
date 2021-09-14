@@ -589,7 +589,7 @@ pub struct ListRulesOutput {
     /// A token that can be used to resume pagination from the end of the collection.
     pub next_token: std::option::Option<std::string::String>,
     /// A list of rules
-    pub rules: std::option::Option<std::vec::Vec<crate::output::ListRulesOutput>>,
+    pub rules: std::option::Option<std::vec::Vec<crate::model::ListRulesOutput>>,
 }
 impl std::fmt::Debug for ListRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -606,7 +606,7 @@ pub mod list_rules_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) rules: std::option::Option<std::vec::Vec<crate::output::ListRulesOutput>>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::ListRulesOutput>>,
     }
     impl Builder {
         /// A token that can be used to resume pagination from the end of the collection.
@@ -618,7 +618,7 @@ pub mod list_rules_output {
             self.next_token = input;
             self
         }
-        pub fn rules(mut self, input: impl Into<crate::output::ListRulesOutput>) -> Self {
+        pub fn rules(mut self, input: impl Into<crate::model::ListRulesOutput>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
@@ -626,7 +626,7 @@ pub mod list_rules_output {
         }
         pub fn set_rules(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::output::ListRulesOutput>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ListRulesOutput>>,
         ) -> Self {
             self.rules = input;
             self

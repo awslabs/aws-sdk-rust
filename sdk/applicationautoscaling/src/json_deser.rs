@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_concurrent_update_exceptionjson_err(
+pub fn deser_structure_crate_error_concurrent_update_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::concurrent_update_exception::Builder,
 ) -> Result<crate::error::concurrent_update_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_concurrent_update_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_service_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_service_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_exception::Builder,
 ) -> Result<crate::error::internal_service_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_internal_service_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_object_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_object_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::object_not_found_exception::Builder,
 ) -> Result<crate::error::object_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_object_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_next_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_next_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_next_token_exception::Builder,
 ) -> Result<crate::error::invalid_next_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_invalid_next_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_scalable_targets(
+pub fn deser_operation_crate_operation_describe_scalable_targets(
     input: &[u8],
     mut builder: crate::output::describe_scalable_targets_output::Builder,
 ) -> Result<crate::output::describe_scalable_targets_output::Builder, smithy_json::deserialize::Error>
@@ -217,7 +217,7 @@ pub fn deser_operation_describe_scalable_targets(
                 match key.to_unescaped()?.as_ref() {
                     "ScalableTargets" => {
                         builder = builder.set_scalable_targets(
-                            crate::json_deser::deser_list_scalable_targets(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_applicationautoscaling_scalable_targets(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -245,7 +245,7 @@ pub fn deser_operation_describe_scalable_targets(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_scaling_activities(
+pub fn deser_operation_crate_operation_describe_scaling_activities(
     input: &[u8],
     mut builder: crate::output::describe_scaling_activities_output::Builder,
 ) -> Result<
@@ -264,7 +264,7 @@ pub fn deser_operation_describe_scaling_activities(
                 match key.to_unescaped()?.as_ref() {
                     "ScalingActivities" => {
                         builder = builder.set_scaling_activities(
-                            crate::json_deser::deser_list_scaling_activities(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_applicationautoscaling_scaling_activities(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -292,7 +292,7 @@ pub fn deser_operation_describe_scaling_activities(
     Ok(builder)
 }
 
-pub fn deser_structure_failed_resource_access_exceptionjson_err(
+pub fn deser_structure_crate_error_failed_resource_access_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::failed_resource_access_exception::Builder,
 ) -> Result<crate::error::failed_resource_access_exception::Builder, smithy_json::deserialize::Error>
@@ -332,7 +332,7 @@ pub fn deser_structure_failed_resource_access_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_scaling_policies(
+pub fn deser_operation_crate_operation_describe_scaling_policies(
     input: &[u8],
     mut builder: crate::output::describe_scaling_policies_output::Builder,
 ) -> Result<crate::output::describe_scaling_policies_output::Builder, smithy_json::deserialize::Error>
@@ -349,7 +349,7 @@ pub fn deser_operation_describe_scaling_policies(
                 match key.to_unescaped()?.as_ref() {
                     "ScalingPolicies" => {
                         builder = builder.set_scaling_policies(
-                            crate::json_deser::deser_list_scaling_policies(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_applicationautoscaling_scaling_policies(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -377,7 +377,7 @@ pub fn deser_operation_describe_scaling_policies(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_scheduled_actions(
+pub fn deser_operation_crate_operation_describe_scheduled_actions(
     input: &[u8],
     mut builder: crate::output::describe_scheduled_actions_output::Builder,
 ) -> Result<
@@ -396,7 +396,7 @@ pub fn deser_operation_describe_scheduled_actions(
                 match key.to_unescaped()?.as_ref() {
                     "ScheduledActions" => {
                         builder = builder.set_scheduled_actions(
-                            crate::json_deser::deser_list_scheduled_actions(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_applicationautoscaling_scheduled_actions(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -424,7 +424,7 @@ pub fn deser_operation_describe_scheduled_actions(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -463,7 +463,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_put_scaling_policy(
+pub fn deser_operation_crate_operation_put_scaling_policy(
     input: &[u8],
     mut builder: crate::output::put_scaling_policy_output::Builder,
 ) -> Result<crate::output::put_scaling_policy_output::Builder, smithy_json::deserialize::Error> {
@@ -485,7 +485,9 @@ pub fn deser_operation_put_scaling_policy(
                         );
                     }
                     "Alarms" => {
-                        builder = builder.set_alarms(crate::json_deser::deser_list_alarms(tokens)?);
+                        builder = builder.set_alarms(
+                            crate::json_deser::deser_list_com_amazonaws_applicationautoscaling_alarms(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -514,7 +516,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_scalable_targets<'a, I>(
+pub fn deser_list_com_amazonaws_applicationautoscaling_scalable_targets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ScalableTarget>>, smithy_json::deserialize::Error>
 where
@@ -533,7 +535,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_scalable_target(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_scalable_target(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -549,7 +552,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_scaling_activities<'a, I>(
+pub fn deser_list_com_amazonaws_applicationautoscaling_scaling_activities<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ScalingActivity>>, smithy_json::deserialize::Error>
 where
@@ -568,7 +571,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_scaling_activity(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_scaling_activity(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -584,7 +590,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_scaling_policies<'a, I>(
+pub fn deser_list_com_amazonaws_applicationautoscaling_scaling_policies<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ScalingPolicy>>, smithy_json::deserialize::Error>
 where
@@ -603,7 +609,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_scaling_policy(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_scaling_policy(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -619,7 +626,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_scheduled_actions<'a, I>(
+pub fn deser_list_com_amazonaws_applicationautoscaling_scheduled_actions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ScheduledAction>>, smithy_json::deserialize::Error>
 where
@@ -638,7 +645,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_scheduled_action(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_scheduled_action(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -654,7 +664,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_alarms<'a, I>(
+pub fn deser_list_com_amazonaws_applicationautoscaling_alarms<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Alarm>>, smithy_json::deserialize::Error>
 where
@@ -673,7 +683,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_alarm(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_alarm(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -688,7 +698,7 @@ where
     }
 }
 
-pub fn deser_structure_scalable_target<'a, I>(
+pub fn deser_structure_crate_model_scalable_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ScalableTarget>, smithy_json::deserialize::Error>
 where
@@ -776,7 +786,9 @@ where
                             }
                             "SuspendedState" => {
                                 builder = builder.set_suspended_state(
-                                    crate::json_deser::deser_structure_suspended_state(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_suspended_state(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -797,7 +809,7 @@ where
     }
 }
 
-pub fn deser_structure_scaling_activity<'a, I>(
+pub fn deser_structure_crate_model_scaling_activity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ScalingActivity>, smithy_json::deserialize::Error>
 where
@@ -944,7 +956,7 @@ where
     }
 }
 
-pub fn deser_structure_scaling_policy<'a, I>(
+pub fn deser_structure_crate_model_scaling_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ScalingPolicy>, smithy_json::deserialize::Error>
 where
@@ -1029,17 +1041,18 @@ where
                             }
                             "StepScalingPolicyConfiguration" => {
                                 builder = builder.set_step_scaling_policy_configuration(
-                                    crate::json_deser::deser_structure_step_scaling_policy_configuration(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_step_scaling_policy_configuration(tokens)?
                                 );
                             }
                             "TargetTrackingScalingPolicyConfiguration" => {
                                 builder = builder.set_target_tracking_scaling_policy_configuration(
-                                    crate::json_deser::deser_structure_target_tracking_scaling_policy_configuration(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_target_tracking_scaling_policy_configuration(tokens)?
                                 );
                             }
                             "Alarms" => {
-                                builder = builder
-                                    .set_alarms(crate::json_deser::deser_list_alarms(tokens)?);
+                                builder = builder.set_alarms(
+                                    crate::json_deser::deser_list_com_amazonaws_applicationautoscaling_alarms(tokens)?
+                                );
                             }
                             "CreationTime" => {
                                 builder = builder.set_creation_time(
@@ -1067,7 +1080,7 @@ where
     }
 }
 
-pub fn deser_structure_scheduled_action<'a, I>(
+pub fn deser_structure_crate_model_scheduled_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ScheduledAction>, smithy_json::deserialize::Error>
 where
@@ -1174,9 +1187,7 @@ where
                             }
                             "ScalableTargetAction" => {
                                 builder = builder.set_scalable_target_action(
-                                    crate::json_deser::deser_structure_scalable_target_action(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_scalable_target_action(tokens)?
                                 );
                             }
                             "CreationTime" => {
@@ -1205,7 +1216,7 @@ where
     }
 }
 
-pub fn deser_structure_alarm<'a, I>(
+pub fn deser_structure_crate_model_alarm<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Alarm>, smithy_json::deserialize::Error>
 where
@@ -1259,7 +1270,7 @@ where
     }
 }
 
-pub fn deser_structure_suspended_state<'a, I>(
+pub fn deser_structure_crate_model_suspended_state<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SuspendedState>, smithy_json::deserialize::Error>
 where
@@ -1316,7 +1327,7 @@ where
     }
 }
 
-pub fn deser_structure_step_scaling_policy_configuration<'a, I>(
+pub fn deser_structure_crate_model_step_scaling_policy_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StepScalingPolicyConfiguration>, smithy_json::deserialize::Error>
 where
@@ -1348,7 +1359,7 @@ where
                             }
                             "StepAdjustments" => {
                                 builder = builder.set_step_adjustments(
-                                    crate::json_deser::deser_list_step_adjustments(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_applicationautoscaling_step_adjustments(tokens)?
                                 );
                             }
                             "MinAdjustmentMagnitude" => {
@@ -1398,7 +1409,7 @@ where
     }
 }
 
-pub fn deser_structure_target_tracking_scaling_policy_configuration<'a, I>(
+pub fn deser_structure_crate_model_target_tracking_scaling_policy_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::TargetTrackingScalingPolicyConfiguration>,
@@ -1429,12 +1440,12 @@ where
                             }
                             "PredefinedMetricSpecification" => {
                                 builder = builder.set_predefined_metric_specification(
-                                    crate::json_deser::deser_structure_predefined_metric_specification(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_predefined_metric_specification(tokens)?
                                 );
                             }
                             "CustomizedMetricSpecification" => {
                                 builder = builder.set_customized_metric_specification(
-                                    crate::json_deser::deser_structure_customized_metric_specification(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_customized_metric_specification(tokens)?
                                 );
                             }
                             "ScaleOutCooldown" => {
@@ -1478,7 +1489,7 @@ where
     }
 }
 
-pub fn deser_structure_scalable_target_action<'a, I>(
+pub fn deser_structure_crate_model_scalable_target_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ScalableTargetAction>, smithy_json::deserialize::Error>
 where
@@ -1531,7 +1542,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_step_adjustments<'a, I>(
+pub fn deser_list_com_amazonaws_applicationautoscaling_step_adjustments<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::StepAdjustment>>, smithy_json::deserialize::Error>
 where
@@ -1550,7 +1561,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_step_adjustment(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_step_adjustment(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1565,7 +1577,7 @@ where
     }
 }
 
-pub fn deser_structure_predefined_metric_specification<'a, I>(
+pub fn deser_structure_crate_model_predefined_metric_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PredefinedMetricSpecification>, smithy_json::deserialize::Error>
 where
@@ -1622,7 +1634,7 @@ where
     }
 }
 
-pub fn deser_structure_customized_metric_specification<'a, I>(
+pub fn deser_structure_crate_model_customized_metric_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CustomizedMetricSpecification>, smithy_json::deserialize::Error>
 where
@@ -1660,7 +1672,7 @@ where
                             }
                             "Dimensions" => {
                                 builder = builder.set_dimensions(
-                                    crate::json_deser::deser_list_metric_dimensions(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_applicationautoscaling_metric_dimensions(tokens)?
                                 );
                             }
                             "Statistic" => {
@@ -1703,7 +1715,7 @@ where
     }
 }
 
-pub fn deser_structure_step_adjustment<'a, I>(
+pub fn deser_structure_crate_model_step_adjustment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StepAdjustment>, smithy_json::deserialize::Error>
 where
@@ -1764,7 +1776,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_metric_dimensions<'a, I>(
+pub fn deser_list_com_amazonaws_applicationautoscaling_metric_dimensions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MetricDimension>>, smithy_json::deserialize::Error>
 where
@@ -1783,7 +1795,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_metric_dimension(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_metric_dimension(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1798,7 +1813,7 @@ where
     }
 }
 
-pub fn deser_structure_metric_dimension<'a, I>(
+pub fn deser_structure_crate_model_metric_dimension<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MetricDimension>, smithy_json::deserialize::Error>
 where

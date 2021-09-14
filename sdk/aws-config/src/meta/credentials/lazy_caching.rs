@@ -125,7 +125,7 @@ mod builder {
 
     /// Builder for constructing a [`LazyCachingCredentialsProvider`].
     ///
-    /// # Example
+    /// # Examples
     ///
     /// ```
     /// use aws_types::Credentials;

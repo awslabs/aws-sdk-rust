@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_invalid_input_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_input_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_input_exception::Builder,
 ) -> Result<crate::error::invalid_input_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_invalid_input_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_personalized_ranking(
+pub fn deser_operation_crate_operation_get_personalized_ranking(
     input: &[u8],
     mut builder: crate::output::get_personalized_ranking_output::Builder,
 ) -> Result<crate::output::get_personalized_ranking_output::Builder, smithy_json::deserialize::Error>
@@ -100,7 +100,7 @@ pub fn deser_operation_get_personalized_ranking(
                 match key.to_unescaped()?.as_ref() {
                     "personalizedRanking" => {
                         builder = builder.set_personalized_ranking(
-                            crate::json_deser::deser_list_item_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_personalizeruntime_item_list(tokens)?
                         );
                     }
                     "recommendationId" => {
@@ -128,7 +128,7 @@ pub fn deser_operation_get_personalized_ranking(
     Ok(builder)
 }
 
-pub fn deser_operation_get_recommendations(
+pub fn deser_operation_crate_operation_get_recommendations(
     input: &[u8],
     mut builder: crate::output::get_recommendations_output::Builder,
 ) -> Result<crate::output::get_recommendations_output::Builder, smithy_json::deserialize::Error> {
@@ -143,8 +143,9 @@ pub fn deser_operation_get_recommendations(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "itemList" => {
-                        builder =
-                            builder.set_item_list(crate::json_deser::deser_list_item_list(tokens)?);
+                        builder = builder.set_item_list(
+                            crate::json_deser::deser_list_com_amazonaws_personalizeruntime_item_list(tokens)?
+                        );
                     }
                     "recommendationId" => {
                         builder = builder.set_recommendation_id(
@@ -180,7 +181,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_item_list<'a, I>(
+pub fn deser_list_com_amazonaws_personalizeruntime_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PredictedItem>>, smithy_json::deserialize::Error>
 where
@@ -199,7 +200,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_predicted_item(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_predicted_item(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -214,7 +216,7 @@ where
     }
 }
 
-pub fn deser_structure_predicted_item<'a, I>(
+pub fn deser_structure_crate_model_predicted_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PredictedItem>, smithy_json::deserialize::Error>
 where

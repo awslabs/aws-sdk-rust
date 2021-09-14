@@ -1421,12 +1421,16 @@ pub struct GetEventPredictionOutput {
     pub model_scores: std::option::Option<std::vec::Vec<crate::model::ModelScores>>,
     /// <p>The results from the rules.</p>
     pub rule_results: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
+    /// <p>The model scores for Amazon SageMaker models.</p>
+    pub external_model_outputs:
+        std::option::Option<std::vec::Vec<crate::model::ExternalModelOutputs>>,
 }
 impl std::fmt::Debug for GetEventPredictionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventPredictionOutput");
         formatter.field("model_scores", &self.model_scores);
         formatter.field("rule_results", &self.rule_results);
+        formatter.field("external_model_outputs", &self.external_model_outputs);
         formatter.finish()
     }
 }
@@ -1438,6 +1442,8 @@ pub mod get_event_prediction_output {
     pub struct Builder {
         pub(crate) model_scores: std::option::Option<std::vec::Vec<crate::model::ModelScores>>,
         pub(crate) rule_results: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
+        pub(crate) external_model_outputs:
+            std::option::Option<std::vec::Vec<crate::model::ExternalModelOutputs>>,
     }
     impl Builder {
         pub fn model_scores(mut self, input: impl Into<crate::model::ModelScores>) -> Self {
@@ -1466,11 +1472,28 @@ pub mod get_event_prediction_output {
             self.rule_results = input;
             self
         }
+        pub fn external_model_outputs(
+            mut self,
+            input: impl Into<crate::model::ExternalModelOutputs>,
+        ) -> Self {
+            let mut v = self.external_model_outputs.unwrap_or_default();
+            v.push(input.into());
+            self.external_model_outputs = Some(v);
+            self
+        }
+        pub fn set_external_model_outputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExternalModelOutputs>>,
+        ) -> Self {
+            self.external_model_outputs = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEventPredictionOutput`](crate::output::GetEventPredictionOutput)
         pub fn build(self) -> crate::output::GetEventPredictionOutput {
             crate::output::GetEventPredictionOutput {
                 model_scores: self.model_scores,
                 rule_results: self.rule_results,
+                external_model_outputs: self.external_model_outputs,
             }
         }
     }

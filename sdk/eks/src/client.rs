@@ -103,6 +103,9 @@ where
     pub fn delete_nodegroup(&self) -> fluent_builders::DeleteNodegroup<C, M, R> {
         fluent_builders::DeleteNodegroup::new(self.handle.clone())
     }
+    pub fn deregister_cluster(&self) -> fluent_builders::DeregisterCluster<C, M, R> {
+        fluent_builders::DeregisterCluster::new(self.handle.clone())
+    }
     pub fn describe_addon(&self) -> fluent_builders::DescribeAddon<C, M, R> {
         fluent_builders::DescribeAddon::new(self.handle.clone())
     }
@@ -153,6 +156,9 @@ where
     }
     pub fn list_updates(&self) -> fluent_builders::ListUpdates<C, M, R> {
         fluent_builders::ListUpdates::new(self.handle.clone())
+    }
+    pub fn register_cluster(&self) -> fluent_builders::RegisterCluster<C, M, R> {
+        fluent_builders::RegisterCluster::new(self.handle.clone())
     }
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
@@ -1423,6 +1429,60 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeregisterCluster<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::deregister_cluster_input::Builder,
+    }
+    impl<C, M, R> DeregisterCluster<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeregisterClusterOutput,
+            smithy_http::result::SdkError<crate::error::DeregisterClusterError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeregisterClusterInputOperationOutputAlias,
+                crate::output::DeregisterClusterOutput,
+                crate::error::DeregisterClusterError,
+                crate::input::DeregisterClusterInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the connected cluster to deregister.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DescribeAddon<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -2166,6 +2226,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
+        /// Appends an item to `include`.
+        ///
+        /// To override the contents of this collection use [`set_include`](Self::set_include).
+        /// <p>Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.</p>
+        pub fn include(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include(inp);
+            self
+        }
+        pub fn set_include(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_include(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct ListFargateProfiles<
@@ -2571,6 +2646,84 @@ pub mod fluent_builders {
         }
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct RegisterCluster<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::register_cluster_input::Builder,
+    }
+    impl<C, M, R> RegisterCluster<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RegisterClusterOutput,
+            smithy_http::result::SdkError<crate::error::RegisterClusterError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::RegisterClusterInputOperationOutputAlias,
+                crate::output::RegisterClusterOutput,
+                crate::error::RegisterClusterError,
+                crate::input::RegisterClusterInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Define a unique name for this cluster within your AWS account.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The configuration settings required to connect the Kubernetes cluster to the Amazon EKS control plane.</p>
+        pub fn connector_config(mut self, inp: crate::model::ConnectorConfigRequest) -> Self {
+            self.inner = self.inner.connector_config(inp);
+            self
+        }
+        pub fn set_connector_config(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorConfigRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_connector_config(input);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }

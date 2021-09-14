@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_entity_not_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_entity_not_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::entity_not_exists_exception::Builder,
 ) -> Result<crate::error::entity_not_exists_exception::Builder, smithy_json::deserialize::Error> {
@@ -27,8 +27,11 @@ pub fn deser_structure_entity_not_exists_exceptionjson_err(
                         );
                     }
                     "EntityIds" => {
-                        builder = builder
-                            .set_entity_ids(crate::json_deser::deser_list_entity_id_list(tokens)?);
+                        builder = builder.set_entity_ids(
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_entity_id_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -48,7 +51,7 @@ pub fn deser_structure_entity_not_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_failed_dependency_exceptionjson_err(
+pub fn deser_structure_crate_error_failed_dependency_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::failed_dependency_exception::Builder,
 ) -> Result<crate::error::failed_dependency_exception::Builder, smithy_json::deserialize::Error> {
@@ -87,7 +90,7 @@ pub fn deser_structure_failed_dependency_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_prohibited_state_exceptionjson_err(
+pub fn deser_structure_crate_error_prohibited_state_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::prohibited_state_exception::Builder,
 ) -> Result<crate::error::prohibited_state_exception::Builder, smithy_json::deserialize::Error> {
@@ -126,7 +129,7 @@ pub fn deser_structure_prohibited_state_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_service_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable_exception::Builder,
 ) -> Result<crate::error::service_unavailable_exception::Builder, smithy_json::deserialize::Error> {
@@ -165,7 +168,7 @@ pub fn deser_structure_service_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unauthorized_operation_exceptionjson_err(
+pub fn deser_structure_crate_error_unauthorized_operation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unauthorized_operation_exception::Builder,
 ) -> Result<crate::error::unauthorized_operation_exception::Builder, smithy_json::deserialize::Error>
@@ -212,7 +215,7 @@ pub fn deser_structure_unauthorized_operation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unauthorized_resource_access_exceptionjson_err(
+pub fn deser_structure_crate_error_unauthorized_resource_access_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unauthorized_resource_access_exception::Builder,
 ) -> Result<
@@ -254,7 +257,7 @@ pub fn deser_structure_unauthorized_resource_access_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_activate_user(
+pub fn deser_operation_crate_operation_activate_user(
     input: &[u8],
     mut builder: crate::output::activate_user_output::Builder,
 ) -> Result<crate::output::activate_user_output::Builder, smithy_json::deserialize::Error> {
@@ -269,8 +272,8 @@ pub fn deser_operation_activate_user(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "User" => {
-                        builder =
-                            builder.set_user(crate::json_deser::deser_structure_user(tokens)?);
+                        builder = builder
+                            .set_user(crate::json_deser::deser_structure_crate_model_user(tokens)?);
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -290,7 +293,7 @@ pub fn deser_operation_activate_user(
     Ok(builder)
 }
 
-pub fn deser_operation_add_resource_permissions(
+pub fn deser_operation_crate_operation_add_resource_permissions(
     input: &[u8],
     mut builder: crate::output::add_resource_permissions_output::Builder,
 ) -> Result<crate::output::add_resource_permissions_output::Builder, smithy_json::deserialize::Error>
@@ -307,7 +310,7 @@ pub fn deser_operation_add_resource_permissions(
                 match key.to_unescaped()?.as_ref() {
                     "ShareResults" => {
                         builder = builder.set_share_results(
-                            crate::json_deser::deser_list_share_results_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_share_results_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -328,7 +331,7 @@ pub fn deser_operation_add_resource_permissions(
     Ok(builder)
 }
 
-pub fn deser_structure_document_locked_for_comments_exceptionjson_err(
+pub fn deser_structure_crate_error_document_locked_for_comments_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::document_locked_for_comments_exception::Builder,
 ) -> Result<
@@ -370,7 +373,7 @@ pub fn deser_structure_document_locked_for_comments_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_comment_operation_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_comment_operation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_comment_operation_exception::Builder,
 ) -> Result<
@@ -412,7 +415,7 @@ pub fn deser_structure_invalid_comment_operation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_comment(
+pub fn deser_operation_crate_operation_create_comment(
     input: &[u8],
     mut builder: crate::output::create_comment_output::Builder,
 ) -> Result<crate::output::create_comment_output::Builder, smithy_json::deserialize::Error> {
@@ -427,8 +430,9 @@ pub fn deser_operation_create_comment(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Comment" => {
-                        builder = builder
-                            .set_comment(crate::json_deser::deser_structure_comment(tokens)?);
+                        builder = builder.set_comment(
+                            crate::json_deser::deser_structure_crate_model_comment(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -448,7 +452,7 @@ pub fn deser_operation_create_comment(
     Ok(builder)
 }
 
-pub fn deser_structure_custom_metadata_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_custom_metadata_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::custom_metadata_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -490,7 +494,7 @@ pub fn deser_structure_custom_metadata_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflicting_operation_exceptionjson_err(
+pub fn deser_structure_crate_error_conflicting_operation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflicting_operation_exception::Builder,
 ) -> Result<crate::error::conflicting_operation_exception::Builder, smithy_json::deserialize::Error>
@@ -530,7 +534,7 @@ pub fn deser_structure_conflicting_operation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_entity_already_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_entity_already_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::entity_already_exists_exception::Builder,
 ) -> Result<crate::error::entity_already_exists_exception::Builder, smithy_json::deserialize::Error>
@@ -570,7 +574,7 @@ pub fn deser_structure_entity_already_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -609,7 +613,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_folder(
+pub fn deser_operation_crate_operation_create_folder(
     input: &[u8],
     mut builder: crate::output::create_folder_output::Builder,
 ) -> Result<crate::output::create_folder_output::Builder, smithy_json::deserialize::Error> {
@@ -625,7 +629,7 @@ pub fn deser_operation_create_folder(
                 match key.to_unescaped()?.as_ref() {
                     "Metadata" => {
                         builder = builder.set_metadata(
-                            crate::json_deser::deser_structure_folder_metadata(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_folder_metadata(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -646,7 +650,7 @@ pub fn deser_operation_create_folder(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_labels_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_labels_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_labels_exception::Builder,
 ) -> Result<crate::error::too_many_labels_exception::Builder, smithy_json::deserialize::Error> {
@@ -685,7 +689,7 @@ pub fn deser_structure_too_many_labels_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_subscriptions_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_subscriptions_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_subscriptions_exception::Builder,
 ) -> Result<crate::error::too_many_subscriptions_exception::Builder, smithy_json::deserialize::Error>
@@ -725,7 +729,7 @@ pub fn deser_structure_too_many_subscriptions_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_notification_subscription(
+pub fn deser_operation_crate_operation_create_notification_subscription(
     input: &[u8],
     mut builder: crate::output::create_notification_subscription_output::Builder,
 ) -> Result<
@@ -744,7 +748,7 @@ pub fn deser_operation_create_notification_subscription(
                 match key.to_unescaped()?.as_ref() {
                     "Subscription" => {
                         builder = builder.set_subscription(
-                            crate::json_deser::deser_structure_subscription(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_subscription(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -765,7 +769,7 @@ pub fn deser_operation_create_notification_subscription(
     Ok(builder)
 }
 
-pub fn deser_operation_create_user(
+pub fn deser_operation_crate_operation_create_user(
     input: &[u8],
     mut builder: crate::output::create_user_output::Builder,
 ) -> Result<crate::output::create_user_output::Builder, smithy_json::deserialize::Error> {
@@ -780,8 +784,8 @@ pub fn deser_operation_create_user(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "User" => {
-                        builder =
-                            builder.set_user(crate::json_deser::deser_structure_user(tokens)?);
+                        builder = builder
+                            .set_user(crate::json_deser::deser_structure_crate_model_user(tokens)?);
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -801,7 +805,7 @@ pub fn deser_operation_create_user(
     Ok(builder)
 }
 
-pub fn deser_structure_concurrent_modification_exceptionjson_err(
+pub fn deser_structure_crate_error_concurrent_modification_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::concurrent_modification_exception::Builder,
 ) -> Result<crate::error::concurrent_modification_exception::Builder, smithy_json::deserialize::Error>
@@ -841,7 +845,7 @@ pub fn deser_structure_concurrent_modification_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_argument_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_argument_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_argument_exception::Builder,
 ) -> Result<crate::error::invalid_argument_exception::Builder, smithy_json::deserialize::Error> {
@@ -880,7 +884,7 @@ pub fn deser_structure_invalid_argument_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_activities(
+pub fn deser_operation_crate_operation_describe_activities(
     input: &[u8],
     mut builder: crate::output::describe_activities_output::Builder,
 ) -> Result<crate::output::describe_activities_output::Builder, smithy_json::deserialize::Error> {
@@ -903,7 +907,9 @@ pub fn deser_operation_describe_activities(
                     }
                     "UserActivities" => {
                         builder = builder.set_user_activities(
-                            crate::json_deser::deser_list_user_activities(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_user_activities(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -924,7 +930,7 @@ pub fn deser_operation_describe_activities(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_comments(
+pub fn deser_operation_crate_operation_describe_comments(
     input: &[u8],
     mut builder: crate::output::describe_comments_output::Builder,
 ) -> Result<crate::output::describe_comments_output::Builder, smithy_json::deserialize::Error> {
@@ -939,8 +945,11 @@ pub fn deser_operation_describe_comments(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Comments" => {
-                        builder = builder
-                            .set_comments(crate::json_deser::deser_list_comment_list(tokens)?);
+                        builder = builder.set_comments(
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_comment_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "Marker" => {
                         builder = builder.set_marker(
@@ -967,7 +976,7 @@ pub fn deser_operation_describe_comments(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_document_versions(
+pub fn deser_operation_crate_operation_describe_document_versions(
     input: &[u8],
     mut builder: crate::output::describe_document_versions_output::Builder,
 ) -> Result<
@@ -986,7 +995,7 @@ pub fn deser_operation_describe_document_versions(
                 match key.to_unescaped()?.as_ref() {
                     "DocumentVersions" => {
                         builder = builder.set_document_versions(
-                            crate::json_deser::deser_list_document_version_metadata_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_document_version_metadata_list(tokens)?
                         );
                     }
                     "Marker" => {
@@ -1014,7 +1023,7 @@ pub fn deser_operation_describe_document_versions(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_folder_contents(
+pub fn deser_operation_crate_operation_describe_folder_contents(
     input: &[u8],
     mut builder: crate::output::describe_folder_contents_output::Builder,
 ) -> Result<crate::output::describe_folder_contents_output::Builder, smithy_json::deserialize::Error>
@@ -1031,12 +1040,12 @@ pub fn deser_operation_describe_folder_contents(
                 match key.to_unescaped()?.as_ref() {
                     "Documents" => {
                         builder = builder.set_documents(
-                            crate::json_deser::deser_list_document_metadata_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_document_metadata_list(tokens)?
                         );
                     }
                     "Folders" => {
                         builder = builder.set_folders(
-                            crate::json_deser::deser_list_folder_metadata_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_folder_metadata_list(tokens)?
                         );
                     }
                     "Marker" => {
@@ -1064,7 +1073,7 @@ pub fn deser_operation_describe_folder_contents(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_groups(
+pub fn deser_operation_crate_operation_describe_groups(
     input: &[u8],
     mut builder: crate::output::describe_groups_output::Builder,
 ) -> Result<crate::output::describe_groups_output::Builder, smithy_json::deserialize::Error> {
@@ -1079,8 +1088,9 @@ pub fn deser_operation_describe_groups(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Groups" => {
-                        builder = builder
-                            .set_groups(crate::json_deser::deser_list_group_metadata_list(tokens)?);
+                        builder = builder.set_groups(
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_group_metadata_list(tokens)?
+                        );
                     }
                     "Marker" => {
                         builder = builder.set_marker(
@@ -1107,7 +1117,7 @@ pub fn deser_operation_describe_groups(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_notification_subscriptions(
+pub fn deser_operation_crate_operation_describe_notification_subscriptions(
     input: &[u8],
     mut builder: crate::output::describe_notification_subscriptions_output::Builder,
 ) -> Result<
@@ -1133,7 +1143,9 @@ pub fn deser_operation_describe_notification_subscriptions(
                     }
                     "Subscriptions" => {
                         builder = builder.set_subscriptions(
-                            crate::json_deser::deser_list_subscription_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_subscription_list(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1154,7 +1166,7 @@ pub fn deser_operation_describe_notification_subscriptions(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_resource_permissions(
+pub fn deser_operation_crate_operation_describe_resource_permissions(
     input: &[u8],
     mut builder: crate::output::describe_resource_permissions_output::Builder,
 ) -> Result<
@@ -1179,8 +1191,11 @@ pub fn deser_operation_describe_resource_permissions(
                         );
                     }
                     "Principals" => {
-                        builder = builder
-                            .set_principals(crate::json_deser::deser_list_principal_list(tokens)?);
+                        builder = builder.set_principals(
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_principal_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1200,7 +1215,7 @@ pub fn deser_operation_describe_resource_permissions(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_root_folders(
+pub fn deser_operation_crate_operation_describe_root_folders(
     input: &[u8],
     mut builder: crate::output::describe_root_folders_output::Builder,
 ) -> Result<crate::output::describe_root_folders_output::Builder, smithy_json::deserialize::Error> {
@@ -1216,7 +1231,7 @@ pub fn deser_operation_describe_root_folders(
                 match key.to_unescaped()?.as_ref() {
                     "Folders" => {
                         builder = builder.set_folders(
-                            crate::json_deser::deser_list_folder_metadata_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_folder_metadata_list(tokens)?
                         );
                     }
                     "Marker" => {
@@ -1244,7 +1259,7 @@ pub fn deser_operation_describe_root_folders(
     Ok(builder)
 }
 
-pub fn deser_structure_requested_entity_too_large_exceptionjson_err(
+pub fn deser_structure_crate_error_requested_entity_too_large_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::requested_entity_too_large_exception::Builder,
 ) -> Result<
@@ -1286,7 +1301,7 @@ pub fn deser_structure_requested_entity_too_large_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_users(
+pub fn deser_operation_crate_operation_describe_users(
     input: &[u8],
     mut builder: crate::output::describe_users_output::Builder,
 ) -> Result<crate::output::describe_users_output::Builder, smithy_json::deserialize::Error> {
@@ -1315,7 +1330,7 @@ pub fn deser_operation_describe_users(
                     }
                     "Users" => {
                         builder = builder.set_users(
-                            crate::json_deser::deser_list_organization_user_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_organization_user_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1336,7 +1351,7 @@ pub fn deser_operation_describe_users(
     Ok(builder)
 }
 
-pub fn deser_operation_get_current_user(
+pub fn deser_operation_crate_operation_get_current_user(
     input: &[u8],
     mut builder: crate::output::get_current_user_output::Builder,
 ) -> Result<crate::output::get_current_user_output::Builder, smithy_json::deserialize::Error> {
@@ -1351,8 +1366,8 @@ pub fn deser_operation_get_current_user(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "User" => {
-                        builder =
-                            builder.set_user(crate::json_deser::deser_structure_user(tokens)?);
+                        builder = builder
+                            .set_user(crate::json_deser::deser_structure_crate_model_user(tokens)?);
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1372,7 +1387,7 @@ pub fn deser_operation_get_current_user(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_password_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_password_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_password_exception::Builder,
 ) -> Result<crate::error::invalid_password_exception::Builder, smithy_json::deserialize::Error> {
@@ -1411,7 +1426,7 @@ pub fn deser_structure_invalid_password_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_document(
+pub fn deser_operation_crate_operation_get_document(
     input: &[u8],
     mut builder: crate::output::get_document_output::Builder,
 ) -> Result<crate::output::get_document_output::Builder, smithy_json::deserialize::Error> {
@@ -1427,12 +1442,14 @@ pub fn deser_operation_get_document(
                 match key.to_unescaped()?.as_ref() {
                     "CustomMetadata" => {
                         builder = builder.set_custom_metadata(
-                            crate::json_deser::deser_map_custom_metadata_map(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_workdocs_custom_metadata_map(tokens)?
                         );
                     }
                     "Metadata" => {
                         builder = builder.set_metadata(
-                            crate::json_deser::deser_structure_document_metadata(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_document_metadata(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1453,7 +1470,7 @@ pub fn deser_operation_get_document(
     Ok(builder)
 }
 
-pub fn deser_operation_get_document_path(
+pub fn deser_operation_crate_operation_get_document_path(
     input: &[u8],
     mut builder: crate::output::get_document_path_output::Builder,
 ) -> Result<crate::output::get_document_path_output::Builder, smithy_json::deserialize::Error> {
@@ -1468,8 +1485,9 @@ pub fn deser_operation_get_document_path(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Path" => {
-                        builder = builder
-                            .set_path(crate::json_deser::deser_structure_resource_path(tokens)?);
+                        builder = builder.set_path(
+                            crate::json_deser::deser_structure_crate_model_resource_path(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1489,7 +1507,7 @@ pub fn deser_operation_get_document_path(
     Ok(builder)
 }
 
-pub fn deser_operation_get_document_version(
+pub fn deser_operation_crate_operation_get_document_version(
     input: &[u8],
     mut builder: crate::output::get_document_version_output::Builder,
 ) -> Result<crate::output::get_document_version_output::Builder, smithy_json::deserialize::Error> {
@@ -1505,12 +1523,12 @@ pub fn deser_operation_get_document_version(
                 match key.to_unescaped()?.as_ref() {
                     "CustomMetadata" => {
                         builder = builder.set_custom_metadata(
-                            crate::json_deser::deser_map_custom_metadata_map(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_workdocs_custom_metadata_map(tokens)?
                         );
                     }
                     "Metadata" => {
                         builder = builder.set_metadata(
-                            crate::json_deser::deser_structure_document_version_metadata(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_document_version_metadata(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1531,7 +1549,7 @@ pub fn deser_operation_get_document_version(
     Ok(builder)
 }
 
-pub fn deser_operation_get_folder(
+pub fn deser_operation_crate_operation_get_folder(
     input: &[u8],
     mut builder: crate::output::get_folder_output::Builder,
 ) -> Result<crate::output::get_folder_output::Builder, smithy_json::deserialize::Error> {
@@ -1547,12 +1565,12 @@ pub fn deser_operation_get_folder(
                 match key.to_unescaped()?.as_ref() {
                     "CustomMetadata" => {
                         builder = builder.set_custom_metadata(
-                            crate::json_deser::deser_map_custom_metadata_map(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_workdocs_custom_metadata_map(tokens)?
                         );
                     }
                     "Metadata" => {
                         builder = builder.set_metadata(
-                            crate::json_deser::deser_structure_folder_metadata(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_folder_metadata(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1573,7 +1591,7 @@ pub fn deser_operation_get_folder(
     Ok(builder)
 }
 
-pub fn deser_operation_get_folder_path(
+pub fn deser_operation_crate_operation_get_folder_path(
     input: &[u8],
     mut builder: crate::output::get_folder_path_output::Builder,
 ) -> Result<crate::output::get_folder_path_output::Builder, smithy_json::deserialize::Error> {
@@ -1588,8 +1606,9 @@ pub fn deser_operation_get_folder_path(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Path" => {
-                        builder = builder
-                            .set_path(crate::json_deser::deser_structure_resource_path(tokens)?);
+                        builder = builder.set_path(
+                            crate::json_deser::deser_structure_crate_model_resource_path(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1609,7 +1628,7 @@ pub fn deser_operation_get_folder_path(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resources(
+pub fn deser_operation_crate_operation_get_resources(
     input: &[u8],
     mut builder: crate::output::get_resources_output::Builder,
 ) -> Result<crate::output::get_resources_output::Builder, smithy_json::deserialize::Error> {
@@ -1625,12 +1644,12 @@ pub fn deser_operation_get_resources(
                 match key.to_unescaped()?.as_ref() {
                     "Documents" => {
                         builder = builder.set_documents(
-                            crate::json_deser::deser_list_document_metadata_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_document_metadata_list(tokens)?
                         );
                     }
                     "Folders" => {
                         builder = builder.set_folders(
-                            crate::json_deser::deser_list_folder_metadata_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_workdocs_folder_metadata_list(tokens)?
                         );
                     }
                     "Marker" => {
@@ -1658,7 +1677,7 @@ pub fn deser_operation_get_resources(
     Ok(builder)
 }
 
-pub fn deser_structure_draft_upload_out_of_sync_exceptionjson_err(
+pub fn deser_structure_crate_error_draft_upload_out_of_sync_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::draft_upload_out_of_sync_exception::Builder,
 ) -> Result<
@@ -1700,7 +1719,7 @@ pub fn deser_structure_draft_upload_out_of_sync_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_already_checked_out_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_already_checked_out_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_already_checked_out_exception::Builder,
 ) -> Result<
@@ -1742,7 +1761,7 @@ pub fn deser_structure_resource_already_checked_out_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_storage_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_storage_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::storage_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::storage_limit_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -1782,7 +1801,7 @@ pub fn deser_structure_storage_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_storage_limit_will_exceed_exceptionjson_err(
+pub fn deser_structure_crate_error_storage_limit_will_exceed_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::storage_limit_will_exceed_exception::Builder,
 ) -> Result<
@@ -1824,7 +1843,7 @@ pub fn deser_structure_storage_limit_will_exceed_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_initiate_document_version_upload(
+pub fn deser_operation_crate_operation_initiate_document_version_upload(
     input: &[u8],
     mut builder: crate::output::initiate_document_version_upload_output::Builder,
 ) -> Result<
@@ -1843,12 +1862,14 @@ pub fn deser_operation_initiate_document_version_upload(
                 match key.to_unescaped()?.as_ref() {
                     "Metadata" => {
                         builder = builder.set_metadata(
-                            crate::json_deser::deser_structure_document_metadata(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_document_metadata(
+                                tokens,
+                            )?,
                         );
                     }
                     "UploadMetadata" => {
                         builder = builder.set_upload_metadata(
-                            crate::json_deser::deser_structure_upload_metadata(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_upload_metadata(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1869,7 +1890,7 @@ pub fn deser_operation_initiate_document_version_upload(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_operation_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_operation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_operation_exception::Builder,
 ) -> Result<crate::error::invalid_operation_exception::Builder, smithy_json::deserialize::Error> {
@@ -1908,7 +1929,7 @@ pub fn deser_structure_invalid_operation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deactivating_last_system_user_exceptionjson_err(
+pub fn deser_structure_crate_error_deactivating_last_system_user_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deactivating_last_system_user_exception::Builder,
 ) -> Result<
@@ -1957,7 +1978,7 @@ pub fn deser_structure_deactivating_last_system_user_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_illegal_user_state_exceptionjson_err(
+pub fn deser_structure_crate_error_illegal_user_state_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::illegal_user_state_exception::Builder,
 ) -> Result<crate::error::illegal_user_state_exception::Builder, smithy_json::deserialize::Error> {
@@ -1996,7 +2017,7 @@ pub fn deser_structure_illegal_user_state_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_update_user(
+pub fn deser_operation_crate_operation_update_user(
     input: &[u8],
     mut builder: crate::output::update_user_output::Builder,
 ) -> Result<crate::output::update_user_output::Builder, smithy_json::deserialize::Error> {
@@ -2011,8 +2032,8 @@ pub fn deser_operation_update_user(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "User" => {
-                        builder =
-                            builder.set_user(crate::json_deser::deser_structure_user(tokens)?);
+                        builder = builder
+                            .set_user(crate::json_deser::deser_structure_crate_model_user(tokens)?);
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -2041,7 +2062,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_entity_id_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_entity_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -2078,7 +2099,7 @@ where
     }
 }
 
-pub fn deser_structure_user<'a, I>(
+pub fn deser_structure_crate_model_user<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::User>, smithy_json::deserialize::Error>
 where
@@ -2231,9 +2252,7 @@ where
                             }
                             "Storage" => {
                                 builder = builder.set_storage(
-                                    crate::json_deser::deser_structure_user_storage_metadata(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_user_storage_metadata(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2255,7 +2274,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_share_results_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_share_results_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ShareResult>>, smithy_json::deserialize::Error>
 where
@@ -2274,7 +2293,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_share_result(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_share_result(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2289,7 +2309,7 @@ where
     }
 }
 
-pub fn deser_structure_comment<'a, I>(
+pub fn deser_structure_crate_model_comment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Comment>, smithy_json::deserialize::Error>
 where
@@ -2345,7 +2365,7 @@ where
                             }
                             "Contributor" => {
                                 builder = builder.set_contributor(
-                                    crate::json_deser::deser_structure_user(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_user(tokens)?,
                                 );
                             }
                             "CreatedTimestamp" => {
@@ -2409,7 +2429,7 @@ where
     }
 }
 
-pub fn deser_structure_folder_metadata<'a, I>(
+pub fn deser_structure_crate_model_folder_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FolderMetadata>, smithy_json::deserialize::Error>
 where
@@ -2503,7 +2523,7 @@ where
                             }
                             "Labels" => {
                                 builder = builder.set_labels(
-                                    crate::json_deser::deser_list_shared_labels(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_workdocs_shared_labels(tokens)?
                                 );
                             }
                             "Size" => {
@@ -2540,7 +2560,7 @@ where
     }
 }
 
-pub fn deser_structure_subscription<'a, I>(
+pub fn deser_structure_crate_model_subscription<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Subscription>, smithy_json::deserialize::Error>
 where
@@ -2608,7 +2628,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_user_activities<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_user_activities<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Activity>>, smithy_json::deserialize::Error>
 where
@@ -2627,7 +2647,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_activity(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_activity(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2643,7 +2664,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_comment_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_comment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Comment>>, smithy_json::deserialize::Error>
 where
@@ -2662,7 +2683,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_comment(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_comment(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2678,7 +2699,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_document_version_metadata_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_document_version_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::DocumentVersionMetadata>>,
@@ -2701,7 +2722,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_document_version_metadata(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_document_version_metadata(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2717,7 +2739,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_document_metadata_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_document_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DocumentMetadata>>, smithy_json::deserialize::Error>
 where
@@ -2736,7 +2758,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_document_metadata(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_document_metadata(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2752,7 +2777,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_folder_metadata_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_folder_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::FolderMetadata>>, smithy_json::deserialize::Error>
 where
@@ -2771,7 +2796,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_folder_metadata(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_folder_metadata(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2787,7 +2813,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_group_metadata_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_group_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GroupMetadata>>, smithy_json::deserialize::Error>
 where
@@ -2806,7 +2832,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_group_metadata(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_group_metadata(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2822,7 +2849,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_subscription_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_subscription_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Subscription>>, smithy_json::deserialize::Error>
 where
@@ -2841,7 +2868,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_subscription(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_subscription(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2857,7 +2885,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_principal_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_principal_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Principal>>, smithy_json::deserialize::Error>
 where
@@ -2876,7 +2904,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_principal(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_principal(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2892,7 +2921,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_organization_user_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_organization_user_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::User>>, smithy_json::deserialize::Error>
 where
@@ -2911,7 +2940,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_user(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_user(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2927,7 +2956,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_custom_metadata_map<'a, I>(
+pub fn deser_map_com_amazonaws_workdocs_custom_metadata_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2970,7 +2999,7 @@ where
     }
 }
 
-pub fn deser_structure_document_metadata<'a, I>(
+pub fn deser_structure_crate_model_document_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DocumentMetadata>, smithy_json::deserialize::Error>
 where
@@ -3033,9 +3062,7 @@ where
                             }
                             "LatestVersionMetadata" => {
                                 builder = builder.set_latest_version_metadata(
-                                    crate::json_deser::deser_structure_document_version_metadata(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_document_version_metadata(tokens)?
                                 );
                             }
                             "ResourceState" => {
@@ -3053,7 +3080,7 @@ where
                             }
                             "Labels" => {
                                 builder = builder.set_labels(
-                                    crate::json_deser::deser_list_shared_labels(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_workdocs_shared_labels(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3074,7 +3101,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_path<'a, I>(
+pub fn deser_structure_crate_model_resource_path<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourcePath>, smithy_json::deserialize::Error>
 where
@@ -3094,9 +3121,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Components" => {
                                 builder = builder.set_components(
-                                    crate::json_deser::deser_list_resource_path_component_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_workdocs_resource_path_component_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3117,7 +3142,7 @@ where
     }
 }
 
-pub fn deser_structure_document_version_metadata<'a, I>(
+pub fn deser_structure_crate_model_document_version_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DocumentVersionMetadata>, smithy_json::deserialize::Error>
 where
@@ -3235,14 +3260,12 @@ where
                             }
                             "Thumbnail" => {
                                 builder = builder.set_thumbnail(
-                                    crate::json_deser::deser_map_document_thumbnail_url_map(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_map_com_amazonaws_workdocs_document_thumbnail_url_map(tokens)?
                                 );
                             }
                             "Source" => {
                                 builder = builder.set_source(
-                                    crate::json_deser::deser_map_document_source_url_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_workdocs_document_source_url_map(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3263,7 +3286,7 @@ where
     }
 }
 
-pub fn deser_structure_upload_metadata<'a, I>(
+pub fn deser_structure_crate_model_upload_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UploadMetadata>, smithy_json::deserialize::Error>
 where
@@ -3292,7 +3315,7 @@ where
                             }
                             "SignedHeaders" => {
                                 builder = builder.set_signed_headers(
-                                    crate::json_deser::deser_map_signed_header_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_workdocs_signed_header_map(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3313,7 +3336,7 @@ where
     }
 }
 
-pub fn deser_structure_user_storage_metadata<'a, I>(
+pub fn deser_structure_crate_model_user_storage_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserStorageMetadata>, smithy_json::deserialize::Error>
 where
@@ -3341,7 +3364,7 @@ where
                             }
                             "StorageRule" => {
                                 builder = builder.set_storage_rule(
-                                    crate::json_deser::deser_structure_storage_rule_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_storage_rule_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3362,7 +3385,7 @@ where
     }
 }
 
-pub fn deser_structure_share_result<'a, I>(
+pub fn deser_structure_crate_model_share_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ShareResult>, smithy_json::deserialize::Error>
 where
@@ -3460,7 +3483,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_shared_labels<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_shared_labels<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -3497,7 +3520,7 @@ where
     }
 }
 
-pub fn deser_structure_activity<'a, I>(
+pub fn deser_structure_crate_model_activity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Activity>, smithy_json::deserialize::Error>
 where
@@ -3553,27 +3576,31 @@ where
                             }
                             "Initiator" => {
                                 builder = builder.set_initiator(
-                                    crate::json_deser::deser_structure_user_metadata(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_user_metadata(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "Participants" => {
                                 builder = builder.set_participants(
-                                    crate::json_deser::deser_structure_participants(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_participants(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ResourceMetadata" => {
                                 builder = builder.set_resource_metadata(
-                                    crate::json_deser::deser_structure_resource_metadata(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_resource_metadata(tokens)?
                                 );
                             }
                             "OriginalParent" => {
                                 builder = builder.set_original_parent(
-                                    crate::json_deser::deser_structure_resource_metadata(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_resource_metadata(tokens)?
                                 );
                             }
                             "CommentMetadata" => {
                                 builder = builder.set_comment_metadata(
-                                    crate::json_deser::deser_structure_comment_metadata(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_comment_metadata(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3594,7 +3621,7 @@ where
     }
 }
 
-pub fn deser_structure_group_metadata<'a, I>(
+pub fn deser_structure_crate_model_group_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GroupMetadata>, smithy_json::deserialize::Error>
 where
@@ -3648,7 +3675,7 @@ where
     }
 }
 
-pub fn deser_structure_principal<'a, I>(
+pub fn deser_structure_crate_model_principal<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Principal>, smithy_json::deserialize::Error>
 where
@@ -3689,7 +3716,7 @@ where
                             }
                             "Roles" => {
                                 builder = builder.set_roles(
-                                    crate::json_deser::deser_list_permission_info_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_workdocs_permission_info_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3711,7 +3738,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resource_path_component_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_resource_path_component_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ResourcePathComponent>>,
@@ -3734,7 +3761,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_resource_path_component(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_resource_path_component(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3750,7 +3779,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_document_thumbnail_url_map<'a, I>(
+pub fn deser_map_com_amazonaws_workdocs_document_thumbnail_url_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>>,
@@ -3796,7 +3825,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_document_source_url_map<'a, I>(
+pub fn deser_map_com_amazonaws_workdocs_document_source_url_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>>,
@@ -3842,7 +3871,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_signed_header_map<'a, I>(
+pub fn deser_map_com_amazonaws_workdocs_signed_header_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -3885,7 +3914,7 @@ where
     }
 }
 
-pub fn deser_structure_storage_rule_type<'a, I>(
+pub fn deser_structure_crate_model_storage_rule_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StorageRuleType>, smithy_json::deserialize::Error>
 where
@@ -3941,7 +3970,7 @@ where
     }
 }
 
-pub fn deser_structure_user_metadata<'a, I>(
+pub fn deser_structure_crate_model_user_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserMetadata>, smithy_json::deserialize::Error>
 where
@@ -4022,7 +4051,7 @@ where
     }
 }
 
-pub fn deser_structure_participants<'a, I>(
+pub fn deser_structure_crate_model_participants<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Participants>, smithy_json::deserialize::Error>
 where
@@ -4042,12 +4071,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Users" => {
                                 builder = builder.set_users(
-                                    crate::json_deser::deser_list_user_metadata_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_workdocs_user_metadata_list(tokens)?
                                 );
                             }
                             "Groups" => {
                                 builder = builder.set_groups(
-                                    crate::json_deser::deser_list_group_metadata_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_workdocs_group_metadata_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4068,7 +4097,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_metadata<'a, I>(
+pub fn deser_structure_crate_model_resource_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceMetadata>, smithy_json::deserialize::Error>
 where
@@ -4136,7 +4165,9 @@ where
                             }
                             "Owner" => {
                                 builder = builder.set_owner(
-                                    crate::json_deser::deser_structure_user_metadata(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_user_metadata(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ParentId" => {
@@ -4166,7 +4197,7 @@ where
     }
 }
 
-pub fn deser_structure_comment_metadata<'a, I>(
+pub fn deser_structure_crate_model_comment_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CommentMetadata>, smithy_json::deserialize::Error>
 where
@@ -4195,7 +4226,7 @@ where
                             }
                             "Contributor" => {
                                 builder = builder.set_contributor(
-                                    crate::json_deser::deser_structure_user(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_user(tokens)?,
                                 );
                             }
                             "CreatedTimestamp" => {
@@ -4247,7 +4278,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_permission_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_permission_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PermissionInfo>>, smithy_json::deserialize::Error>
 where
@@ -4266,7 +4297,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_permission_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_permission_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4281,7 +4313,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_path_component<'a, I>(
+pub fn deser_structure_crate_model_resource_path_component<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourcePathComponent>, smithy_json::deserialize::Error>
 where
@@ -4336,7 +4368,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_user_metadata_list<'a, I>(
+pub fn deser_list_com_amazonaws_workdocs_user_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::UserMetadata>>, smithy_json::deserialize::Error>
 where
@@ -4355,7 +4387,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_user_metadata(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_user_metadata(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4370,7 +4403,7 @@ where
     }
 }
 
-pub fn deser_structure_permission_info<'a, I>(
+pub fn deser_structure_crate_model_permission_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PermissionInfo>, smithy_json::deserialize::Error>
 where

@@ -360,11 +360,13 @@ pub struct UpdateChannelOutput {
     pub channel_state: std::option::Option<crate::model::ChannelState>,
     /// <p>The timestamp of when the channel was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-    /// <p>The type of playback for this channel. The only supported value is LOOP.</p>
+    /// <p>The channel's playback mode.</p>
     pub playback_mode: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the channel.</p>
     pub tags:
@@ -377,6 +379,7 @@ impl std::fmt::Debug for UpdateChannelOutput {
         formatter.field("channel_name", &self.channel_name);
         formatter.field("channel_state", &self.channel_state);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("filler_slate", &self.filler_slate);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("outputs", &self.outputs);
         formatter.field("playback_mode", &self.playback_mode);
@@ -394,6 +397,7 @@ pub mod update_channel_output {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
         pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
         pub(crate) playback_mode: std::option::Option<std::string::String>,
@@ -444,6 +448,18 @@ pub mod update_channel_output {
             self.creation_time = input;
             self
         }
+        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
+            self.filler_slate = Some(input);
+            self
+        }
+        pub fn set_filler_slate(
+            mut self,
+            input: std::option::Option<crate::model::SlateSource>,
+        ) -> Self {
+            self.filler_slate = input;
+            self
+        }
         /// <p>The timestamp of when the channel was last modified.</p>
         pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
@@ -469,7 +485,7 @@ pub mod update_channel_output {
             self.outputs = input;
             self
         }
-        /// <p>The type of playback for this channel. The only supported value is LOOP.</p>
+        /// <p>The channel's playback mode.</p>
         pub fn playback_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.playback_mode = Some(input.into());
             self
@@ -507,6 +523,7 @@ pub mod update_channel_output {
                 channel_name: self.channel_name,
                 channel_state: self.channel_state,
                 creation_time: self.creation_time,
+                filler_slate: self.filler_slate,
                 last_modified_time: self.last_modified_time,
                 outputs: self.outputs,
                 playback_mode: self.playback_mode,
@@ -2285,6 +2302,8 @@ pub struct DescribeProgramOutput {
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The name of the program.</p>
     pub program_name: std::option::Option<std::string::String>,
+    /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+    pub scheduled_start_time: std::option::Option<smithy_types::Instant>,
     /// <p>The source location name.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name that's used to refer to a VOD source.</p>
@@ -2298,6 +2317,7 @@ impl std::fmt::Debug for DescribeProgramOutput {
         formatter.field("channel_name", &self.channel_name);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("program_name", &self.program_name);
+        formatter.field("scheduled_start_time", &self.scheduled_start_time);
         formatter.field("source_location_name", &self.source_location_name);
         formatter.field("vod_source_name", &self.vod_source_name);
         formatter.finish()
@@ -2314,6 +2334,7 @@ pub mod describe_program_output {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
         pub(crate) program_name: std::option::Option<std::string::String>,
+        pub(crate) scheduled_start_time: std::option::Option<smithy_types::Instant>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
     }
@@ -2370,6 +2391,18 @@ pub mod describe_program_output {
             self.program_name = input;
             self
         }
+        /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+        pub fn scheduled_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.scheduled_start_time = Some(input);
+            self
+        }
+        pub fn set_scheduled_start_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.scheduled_start_time = input;
+            self
+        }
         /// <p>The source location name.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
@@ -2402,6 +2435,7 @@ pub mod describe_program_output {
                 channel_name: self.channel_name,
                 creation_time: self.creation_time,
                 program_name: self.program_name,
+                scheduled_start_time: self.scheduled_start_time,
                 source_location_name: self.source_location_name,
                 vod_source_name: self.vod_source_name,
             }
@@ -2426,11 +2460,13 @@ pub struct DescribeChannelOutput {
     pub channel_state: std::option::Option<crate::model::ChannelState>,
     /// <p>The timestamp of when the channel was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-    /// <p>The type of playback for this channel. The only supported value is LOOP.</p>
+    /// <p>The channel's playback mode.</p>
     pub playback_mode: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the channel.</p>
     pub tags:
@@ -2443,6 +2479,7 @@ impl std::fmt::Debug for DescribeChannelOutput {
         formatter.field("channel_name", &self.channel_name);
         formatter.field("channel_state", &self.channel_state);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("filler_slate", &self.filler_slate);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("outputs", &self.outputs);
         formatter.field("playback_mode", &self.playback_mode);
@@ -2460,6 +2497,7 @@ pub mod describe_channel_output {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
         pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
         pub(crate) playback_mode: std::option::Option<std::string::String>,
@@ -2510,6 +2548,18 @@ pub mod describe_channel_output {
             self.creation_time = input;
             self
         }
+        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
+            self.filler_slate = Some(input);
+            self
+        }
+        pub fn set_filler_slate(
+            mut self,
+            input: std::option::Option<crate::model::SlateSource>,
+        ) -> Self {
+            self.filler_slate = input;
+            self
+        }
         /// <p>The timestamp of when the channel was last modified.</p>
         pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
@@ -2535,7 +2585,7 @@ pub mod describe_channel_output {
             self.outputs = input;
             self
         }
-        /// <p>The type of playback for this channel. The only supported value is LOOP.</p>
+        /// <p>The channel's playback mode.</p>
         pub fn playback_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.playback_mode = Some(input.into());
             self
@@ -2573,6 +2623,7 @@ pub mod describe_channel_output {
                 channel_name: self.channel_name,
                 channel_state: self.channel_state,
                 creation_time: self.creation_time,
+                filler_slate: self.filler_slate,
                 last_modified_time: self.last_modified_time,
                 outputs: self.outputs,
                 playback_mode: self.playback_mode,
@@ -3125,6 +3176,8 @@ pub struct CreateProgramOutput {
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The name of the program.</p>
     pub program_name: std::option::Option<std::string::String>,
+    /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+    pub scheduled_start_time: std::option::Option<smithy_types::Instant>,
     /// <p>The source location name.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name that's used to refer to a VOD source.</p>
@@ -3138,6 +3191,7 @@ impl std::fmt::Debug for CreateProgramOutput {
         formatter.field("channel_name", &self.channel_name);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("program_name", &self.program_name);
+        formatter.field("scheduled_start_time", &self.scheduled_start_time);
         formatter.field("source_location_name", &self.source_location_name);
         formatter.field("vod_source_name", &self.vod_source_name);
         formatter.finish()
@@ -3154,6 +3208,7 @@ pub mod create_program_output {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
         pub(crate) program_name: std::option::Option<std::string::String>,
+        pub(crate) scheduled_start_time: std::option::Option<smithy_types::Instant>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
     }
@@ -3210,6 +3265,18 @@ pub mod create_program_output {
             self.program_name = input;
             self
         }
+        /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+        pub fn scheduled_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.scheduled_start_time = Some(input);
+            self
+        }
+        pub fn set_scheduled_start_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.scheduled_start_time = input;
+            self
+        }
         /// <p>The source location name.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
@@ -3242,6 +3309,7 @@ pub mod create_program_output {
                 channel_name: self.channel_name,
                 creation_time: self.creation_time,
                 program_name: self.program_name,
+                scheduled_start_time: self.scheduled_start_time,
                 source_location_name: self.source_location_name,
                 vod_source_name: self.vod_source_name,
             }
@@ -3266,11 +3334,13 @@ pub struct CreateChannelOutput {
     pub channel_state: std::option::Option<crate::model::ChannelState>,
     /// <p>The timestamp of when the channel was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-    /// <p>The type of playback for this channel. The only supported value is LOOP.</p>
+    /// <p>The channel's playback mode.</p>
     pub playback_mode: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the channel.</p>
     pub tags:
@@ -3283,6 +3353,7 @@ impl std::fmt::Debug for CreateChannelOutput {
         formatter.field("channel_name", &self.channel_name);
         formatter.field("channel_state", &self.channel_state);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("filler_slate", &self.filler_slate);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("outputs", &self.outputs);
         formatter.field("playback_mode", &self.playback_mode);
@@ -3300,6 +3371,7 @@ pub mod create_channel_output {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_state: std::option::Option<crate::model::ChannelState>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
         pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
         pub(crate) playback_mode: std::option::Option<std::string::String>,
@@ -3350,6 +3422,18 @@ pub mod create_channel_output {
             self.creation_time = input;
             self
         }
+        /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
+            self.filler_slate = Some(input);
+            self
+        }
+        pub fn set_filler_slate(
+            mut self,
+            input: std::option::Option<crate::model::SlateSource>,
+        ) -> Self {
+            self.filler_slate = input;
+            self
+        }
         /// <p>The timestamp of when the channel was last modified.</p>
         pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
@@ -3375,7 +3459,7 @@ pub mod create_channel_output {
             self.outputs = input;
             self
         }
-        /// <p>The type of playback for this channel. The only supported value is LOOP.</p>
+        /// <p>The channel's playback mode.</p>
         pub fn playback_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.playback_mode = Some(input.into());
             self
@@ -3413,6 +3497,7 @@ pub mod create_channel_output {
                 channel_name: self.channel_name,
                 channel_state: self.channel_state,
                 creation_time: self.creation_time,
+                filler_slate: self.filler_slate,
                 last_modified_time: self.last_modified_time,
                 outputs: self.outputs,
                 playback_mode: self.playback_mode,

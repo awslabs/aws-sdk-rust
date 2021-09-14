@@ -289,6 +289,52 @@ impl TagResourceOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisterClusterOutput {
+    /// <p>An object representing an Amazon EKS cluster.</p>
+    pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl std::fmt::Debug for RegisterClusterOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisterClusterOutput");
+        formatter.field("cluster", &self.cluster);
+        formatter.finish()
+    }
+}
+/// See [`RegisterClusterOutput`](crate::output::RegisterClusterOutput)
+pub mod register_cluster_output {
+    /// A builder for [`RegisterClusterOutput`](crate::output::RegisterClusterOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+    }
+    impl Builder {
+        /// <p>An object representing an Amazon EKS cluster.</p>
+        pub fn cluster(mut self, input: crate::model::Cluster) -> Self {
+            self.cluster = Some(input);
+            self
+        }
+        pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
+            self.cluster = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisterClusterOutput`](crate::output::RegisterClusterOutput)
+        pub fn build(self) -> crate::output::RegisterClusterOutput {
+            crate::output::RegisterClusterOutput {
+                cluster: self.cluster,
+            }
+        }
+    }
+}
+impl RegisterClusterOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterClusterOutput`](crate::output::RegisterClusterOutput)
+    pub fn builder() -> crate::output::register_cluster_output::Builder {
+        crate::output::register_cluster_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUpdatesOutput {
     /// <p>A list of all the updates for the specified cluster and Region.</p>
     pub update_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1195,6 +1241,52 @@ impl DescribeAddonOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAddonOutput`](crate::output::DescribeAddonOutput)
     pub fn builder() -> crate::output::describe_addon_output::Builder {
         crate::output::describe_addon_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeregisterClusterOutput {
+    /// <p>An object representing an Amazon EKS cluster.</p>
+    pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl std::fmt::Debug for DeregisterClusterOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeregisterClusterOutput");
+        formatter.field("cluster", &self.cluster);
+        formatter.finish()
+    }
+}
+/// See [`DeregisterClusterOutput`](crate::output::DeregisterClusterOutput)
+pub mod deregister_cluster_output {
+    /// A builder for [`DeregisterClusterOutput`](crate::output::DeregisterClusterOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+    }
+    impl Builder {
+        /// <p>An object representing an Amazon EKS cluster.</p>
+        pub fn cluster(mut self, input: crate::model::Cluster) -> Self {
+            self.cluster = Some(input);
+            self
+        }
+        pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
+            self.cluster = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeregisterClusterOutput`](crate::output::DeregisterClusterOutput)
+        pub fn build(self) -> crate::output::DeregisterClusterOutput {
+            crate::output::DeregisterClusterOutput {
+                cluster: self.cluster,
+            }
+        }
+    }
+}
+impl DeregisterClusterOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterClusterOutput`](crate::output::DeregisterClusterOutput)
+    pub fn builder() -> crate::output::deregister_cluster_output::Builder {
+        crate::output::deregister_cluster_output::Builder::default()
     }
 }
 

@@ -36,7 +36,7 @@ where
 /// to create an [`ProvideCredentials`] implementation from an async block that returns
 /// a [`credentials::Result`].
 ///
-/// # Example
+/// # Examples
 ///
 /// ```
 /// use aws_types::Credentials;

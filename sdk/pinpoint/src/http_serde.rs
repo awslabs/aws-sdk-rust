@@ -7,7 +7,7 @@ pub fn deser_payload_create_app_create_app_output_application_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_application_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_application_response_payload(body)
                 .map_err(crate::error::CreateAppError::unhandled)
         })
         .transpose()
@@ -21,7 +21,7 @@ pub fn deser_payload_create_campaign_create_campaign_output_campaign_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_campaign_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_campaign_response_payload(body)
                 .map_err(crate::error::CreateCampaignError::unhandled)
         })
         .transpose()
@@ -35,8 +35,10 @@ pub fn deser_payload_create_email_template_create_email_template_output_create_t
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_create_template_message_body_payload(body)
-                .map_err(crate::error::CreateEmailTemplateError::unhandled)
+            crate::json_deser::deser_structure_crate_model_create_template_message_body_payload(
+                body,
+            )
+            .map_err(crate::error::CreateEmailTemplateError::unhandled)
         })
         .transpose()
 }
@@ -49,7 +51,7 @@ pub fn deser_payload_create_export_job_create_export_job_output_export_job_respo
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_export_job_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_export_job_response_payload(body)
                 .map_err(crate::error::CreateExportJobError::unhandled)
         })
         .transpose()
@@ -63,7 +65,7 @@ pub fn deser_payload_create_import_job_create_import_job_output_import_job_respo
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_import_job_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_import_job_response_payload(body)
                 .map_err(crate::error::CreateImportJobError::unhandled)
         })
         .transpose()
@@ -77,7 +79,7 @@ pub fn deser_payload_create_journey_create_journey_output_journey_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_journey_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_journey_response_payload(body)
                 .map_err(crate::error::CreateJourneyError::unhandled)
         })
         .transpose()
@@ -91,8 +93,10 @@ pub fn deser_payload_create_push_template_create_push_template_output_create_tem
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_create_template_message_body_payload(body)
-                .map_err(crate::error::CreatePushTemplateError::unhandled)
+            crate::json_deser::deser_structure_crate_model_create_template_message_body_payload(
+                body,
+            )
+            .map_err(crate::error::CreatePushTemplateError::unhandled)
         })
         .transpose()
 }
@@ -103,12 +107,9 @@ pub fn deser_payload_create_recommender_configuration_create_recommender_configu
     std::option::Option<crate::model::RecommenderConfigurationResponse>,
     crate::error::CreateRecommenderConfigurationError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_recommender_configuration_response_payload(body)
-                .map_err(crate::error::CreateRecommenderConfigurationError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_recommender_configuration_response_payload(body).map_err(crate::error::CreateRecommenderConfigurationError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_create_segment_create_segment_output_segment_response(
@@ -119,7 +120,7 @@ pub fn deser_payload_create_segment_create_segment_output_segment_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_segment_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_segment_response_payload(body)
                 .map_err(crate::error::CreateSegmentError::unhandled)
         })
         .transpose()
@@ -133,8 +134,10 @@ pub fn deser_payload_create_sms_template_create_sms_template_output_create_templ
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_create_template_message_body_payload(body)
-                .map_err(crate::error::CreateSmsTemplateError::unhandled)
+            crate::json_deser::deser_structure_crate_model_create_template_message_body_payload(
+                body,
+            )
+            .map_err(crate::error::CreateSmsTemplateError::unhandled)
         })
         .transpose()
 }
@@ -147,8 +150,10 @@ pub fn deser_payload_create_voice_template_create_voice_template_output_create_t
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_create_template_message_body_payload(body)
-                .map_err(crate::error::CreateVoiceTemplateError::unhandled)
+            crate::json_deser::deser_structure_crate_model_create_template_message_body_payload(
+                body,
+            )
+            .map_err(crate::error::CreateVoiceTemplateError::unhandled)
         })
         .transpose()
 }
@@ -161,7 +166,7 @@ pub fn deser_payload_delete_adm_channel_delete_adm_channel_output_adm_channel_re
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_adm_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_adm_channel_response_payload(body)
                 .map_err(crate::error::DeleteAdmChannelError::unhandled)
         })
         .transpose()
@@ -175,7 +180,7 @@ pub fn deser_payload_delete_apns_channel_delete_apns_channel_output_apns_channel
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_apns_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_apns_channel_response_payload(body)
                 .map_err(crate::error::DeleteApnsChannelError::unhandled)
         })
         .transpose()
@@ -189,8 +194,10 @@ pub fn deser_payload_delete_apns_sandbox_channel_delete_apns_sandbox_channel_out
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_apns_sandbox_channel_response_payload(body)
-                .map_err(crate::error::DeleteApnsSandboxChannelError::unhandled)
+            crate::json_deser::deser_structure_crate_model_apns_sandbox_channel_response_payload(
+                body,
+            )
+            .map_err(crate::error::DeleteApnsSandboxChannelError::unhandled)
         })
         .transpose()
 }
@@ -203,7 +210,7 @@ pub fn deser_payload_delete_apns_voip_channel_delete_apns_voip_channel_output_ap
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_apns_voip_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_apns_voip_channel_response_payload(body)
                 .map_err(crate::error::DeleteApnsVoipChannelError::unhandled)
         })
         .transpose()
@@ -215,12 +222,9 @@ pub fn deser_payload_delete_apns_voip_sandbox_channel_delete_apns_voip_sandbox_c
     std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
     crate::error::DeleteApnsVoipSandboxChannelError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_apns_voip_sandbox_channel_response_payload(body)
-                .map_err(crate::error::DeleteApnsVoipSandboxChannelError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_apns_voip_sandbox_channel_response_payload(body).map_err(crate::error::DeleteApnsVoipSandboxChannelError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_delete_app_delete_app_output_application_response(
@@ -231,7 +235,7 @@ pub fn deser_payload_delete_app_delete_app_output_application_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_application_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_application_response_payload(body)
                 .map_err(crate::error::DeleteAppError::unhandled)
         })
         .transpose()
@@ -245,7 +249,7 @@ pub fn deser_payload_delete_baidu_channel_delete_baidu_channel_output_baidu_chan
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_baidu_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_baidu_channel_response_payload(body)
                 .map_err(crate::error::DeleteBaiduChannelError::unhandled)
         })
         .transpose()
@@ -259,7 +263,7 @@ pub fn deser_payload_delete_campaign_delete_campaign_output_campaign_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_campaign_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_campaign_response_payload(body)
                 .map_err(crate::error::DeleteCampaignError::unhandled)
         })
         .transpose()
@@ -273,7 +277,7 @@ pub fn deser_payload_delete_email_channel_delete_email_channel_output_email_chan
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_email_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_email_channel_response_payload(body)
                 .map_err(crate::error::DeleteEmailChannelError::unhandled)
         })
         .transpose()
@@ -287,7 +291,7 @@ pub fn deser_payload_delete_email_template_delete_email_template_output_message_
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_body_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::DeleteEmailTemplateError::unhandled)
         })
         .transpose()
@@ -301,7 +305,7 @@ pub fn deser_payload_delete_endpoint_delete_endpoint_output_endpoint_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_endpoint_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_endpoint_response_payload(body)
                 .map_err(crate::error::DeleteEndpointError::unhandled)
         })
         .transpose()
@@ -315,7 +319,7 @@ pub fn deser_payload_delete_event_stream_delete_event_stream_output_event_stream
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_event_stream_payload(body)
+            crate::json_deser::deser_structure_crate_model_event_stream_payload(body)
                 .map_err(crate::error::DeleteEventStreamError::unhandled)
         })
         .transpose()
@@ -329,7 +333,7 @@ pub fn deser_payload_delete_gcm_channel_delete_gcm_channel_output_gcm_channel_re
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_gcm_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_gcm_channel_response_payload(body)
                 .map_err(crate::error::DeleteGcmChannelError::unhandled)
         })
         .transpose()
@@ -343,7 +347,7 @@ pub fn deser_payload_delete_journey_delete_journey_output_journey_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_journey_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_journey_response_payload(body)
                 .map_err(crate::error::DeleteJourneyError::unhandled)
         })
         .transpose()
@@ -357,7 +361,7 @@ pub fn deser_payload_delete_push_template_delete_push_template_output_message_bo
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_body_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::DeletePushTemplateError::unhandled)
         })
         .transpose()
@@ -369,12 +373,9 @@ pub fn deser_payload_delete_recommender_configuration_delete_recommender_configu
     std::option::Option<crate::model::RecommenderConfigurationResponse>,
     crate::error::DeleteRecommenderConfigurationError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_recommender_configuration_response_payload(body)
-                .map_err(crate::error::DeleteRecommenderConfigurationError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_recommender_configuration_response_payload(body).map_err(crate::error::DeleteRecommenderConfigurationError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_delete_segment_delete_segment_output_segment_response(
@@ -385,7 +386,7 @@ pub fn deser_payload_delete_segment_delete_segment_output_segment_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_segment_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_segment_response_payload(body)
                 .map_err(crate::error::DeleteSegmentError::unhandled)
         })
         .transpose()
@@ -399,7 +400,7 @@ pub fn deser_payload_delete_sms_channel_delete_sms_channel_output_sms_channel_re
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_sms_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_sms_channel_response_payload(body)
                 .map_err(crate::error::DeleteSmsChannelError::unhandled)
         })
         .transpose()
@@ -413,7 +414,7 @@ pub fn deser_payload_delete_sms_template_delete_sms_template_output_message_body
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_body_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::DeleteSmsTemplateError::unhandled)
         })
         .transpose()
@@ -427,7 +428,7 @@ pub fn deser_payload_delete_user_endpoints_delete_user_endpoints_output_endpoint
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_endpoints_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_endpoints_response_payload(body)
                 .map_err(crate::error::DeleteUserEndpointsError::unhandled)
         })
         .transpose()
@@ -441,7 +442,7 @@ pub fn deser_payload_delete_voice_channel_delete_voice_channel_output_voice_chan
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_voice_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_voice_channel_response_payload(body)
                 .map_err(crate::error::DeleteVoiceChannelError::unhandled)
         })
         .transpose()
@@ -455,7 +456,7 @@ pub fn deser_payload_delete_voice_template_delete_voice_template_output_message_
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_body_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::DeleteVoiceTemplateError::unhandled)
         })
         .transpose()
@@ -469,7 +470,7 @@ pub fn deser_payload_get_adm_channel_get_adm_channel_output_adm_channel_response
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_adm_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_adm_channel_response_payload(body)
                 .map_err(crate::error::GetAdmChannelError::unhandled)
         })
         .transpose()
@@ -483,7 +484,7 @@ pub fn deser_payload_get_apns_channel_get_apns_channel_output_apns_channel_respo
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_apns_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_apns_channel_response_payload(body)
                 .map_err(crate::error::GetApnsChannelError::unhandled)
         })
         .transpose()
@@ -497,8 +498,10 @@ pub fn deser_payload_get_apns_sandbox_channel_get_apns_sandbox_channel_output_ap
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_apns_sandbox_channel_response_payload(body)
-                .map_err(crate::error::GetApnsSandboxChannelError::unhandled)
+            crate::json_deser::deser_structure_crate_model_apns_sandbox_channel_response_payload(
+                body,
+            )
+            .map_err(crate::error::GetApnsSandboxChannelError::unhandled)
         })
         .transpose()
 }
@@ -511,7 +514,7 @@ pub fn deser_payload_get_apns_voip_channel_get_apns_voip_channel_output_apns_voi
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_apns_voip_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_apns_voip_channel_response_payload(body)
                 .map_err(crate::error::GetApnsVoipChannelError::unhandled)
         })
         .transpose()
@@ -523,12 +526,9 @@ pub fn deser_payload_get_apns_voip_sandbox_channel_get_apns_voip_sandbox_channel
     std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
     crate::error::GetApnsVoipSandboxChannelError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_apns_voip_sandbox_channel_response_payload(body)
-                .map_err(crate::error::GetApnsVoipSandboxChannelError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_apns_voip_sandbox_channel_response_payload(body).map_err(crate::error::GetApnsVoipSandboxChannelError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_app_get_app_output_application_response(
@@ -539,7 +539,7 @@ pub fn deser_payload_get_app_get_app_output_application_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_application_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_application_response_payload(body)
                 .map_err(crate::error::GetAppError::unhandled)
         })
         .transpose()
@@ -551,12 +551,9 @@ pub fn deser_payload_get_application_date_range_kpi_get_application_date_range_k
     std::option::Option<crate::model::ApplicationDateRangeKpiResponse>,
     crate::error::GetApplicationDateRangeKpiError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_application_date_range_kpi_response_payload(body)
-                .map_err(crate::error::GetApplicationDateRangeKpiError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_application_date_range_kpi_response_payload(body).map_err(crate::error::GetApplicationDateRangeKpiError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_application_settings_get_application_settings_output_application_settings_resource(
@@ -567,8 +564,10 @@ pub fn deser_payload_get_application_settings_get_application_settings_output_ap
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_application_settings_resource_payload(body)
-                .map_err(crate::error::GetApplicationSettingsError::unhandled)
+            crate::json_deser::deser_structure_crate_model_application_settings_resource_payload(
+                body,
+            )
+            .map_err(crate::error::GetApplicationSettingsError::unhandled)
         })
         .transpose()
 }
@@ -581,7 +580,7 @@ pub fn deser_payload_get_apps_get_apps_output_applications_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_applications_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_applications_response_payload(body)
                 .map_err(crate::error::GetAppsError::unhandled)
         })
         .transpose()
@@ -595,7 +594,7 @@ pub fn deser_payload_get_baidu_channel_get_baidu_channel_output_baidu_channel_re
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_baidu_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_baidu_channel_response_payload(body)
                 .map_err(crate::error::GetBaiduChannelError::unhandled)
         })
         .transpose()
@@ -609,7 +608,7 @@ pub fn deser_payload_get_campaign_get_campaign_output_campaign_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_campaign_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_campaign_response_payload(body)
                 .map_err(crate::error::GetCampaignError::unhandled)
         })
         .transpose()
@@ -623,7 +622,7 @@ pub fn deser_payload_get_campaign_activities_get_campaign_activities_output_acti
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_activities_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_activities_response_payload(body)
                 .map_err(crate::error::GetCampaignActivitiesError::unhandled)
         })
         .transpose()
@@ -637,8 +636,10 @@ pub fn deser_payload_get_campaign_date_range_kpi_get_campaign_date_range_kpi_out
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_campaign_date_range_kpi_response_payload(body)
-                .map_err(crate::error::GetCampaignDateRangeKpiError::unhandled)
+            crate::json_deser::deser_structure_crate_model_campaign_date_range_kpi_response_payload(
+                body,
+            )
+            .map_err(crate::error::GetCampaignDateRangeKpiError::unhandled)
         })
         .transpose()
 }
@@ -651,7 +652,7 @@ pub fn deser_payload_get_campaigns_get_campaigns_output_campaigns_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_campaigns_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_campaigns_response_payload(body)
                 .map_err(crate::error::GetCampaignsError::unhandled)
         })
         .transpose()
@@ -665,7 +666,7 @@ pub fn deser_payload_get_campaign_version_get_campaign_version_output_campaign_r
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_campaign_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_campaign_response_payload(body)
                 .map_err(crate::error::GetCampaignVersionError::unhandled)
         })
         .transpose()
@@ -679,7 +680,7 @@ pub fn deser_payload_get_campaign_versions_get_campaign_versions_output_campaign
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_campaigns_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_campaigns_response_payload(body)
                 .map_err(crate::error::GetCampaignVersionsError::unhandled)
         })
         .transpose()
@@ -693,7 +694,7 @@ pub fn deser_payload_get_channels_get_channels_output_channels_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_channels_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_channels_response_payload(body)
                 .map_err(crate::error::GetChannelsError::unhandled)
         })
         .transpose()
@@ -707,7 +708,7 @@ pub fn deser_payload_get_email_channel_get_email_channel_output_email_channel_re
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_email_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_email_channel_response_payload(body)
                 .map_err(crate::error::GetEmailChannelError::unhandled)
         })
         .transpose()
@@ -721,7 +722,7 @@ pub fn deser_payload_get_email_template_get_email_template_output_email_template
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_email_template_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_email_template_response_payload(body)
                 .map_err(crate::error::GetEmailTemplateError::unhandled)
         })
         .transpose()
@@ -735,7 +736,7 @@ pub fn deser_payload_get_endpoint_get_endpoint_output_endpoint_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_endpoint_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_endpoint_response_payload(body)
                 .map_err(crate::error::GetEndpointError::unhandled)
         })
         .transpose()
@@ -749,7 +750,7 @@ pub fn deser_payload_get_event_stream_get_event_stream_output_event_stream(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_event_stream_payload(body)
+            crate::json_deser::deser_structure_crate_model_event_stream_payload(body)
                 .map_err(crate::error::GetEventStreamError::unhandled)
         })
         .transpose()
@@ -763,7 +764,7 @@ pub fn deser_payload_get_export_job_get_export_job_output_export_job_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_export_job_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_export_job_response_payload(body)
                 .map_err(crate::error::GetExportJobError::unhandled)
         })
         .transpose()
@@ -777,7 +778,7 @@ pub fn deser_payload_get_export_jobs_get_export_jobs_output_export_jobs_response
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_export_jobs_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_export_jobs_response_payload(body)
                 .map_err(crate::error::GetExportJobsError::unhandled)
         })
         .transpose()
@@ -791,7 +792,7 @@ pub fn deser_payload_get_gcm_channel_get_gcm_channel_output_gcm_channel_response
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_gcm_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_gcm_channel_response_payload(body)
                 .map_err(crate::error::GetGcmChannelError::unhandled)
         })
         .transpose()
@@ -805,7 +806,7 @@ pub fn deser_payload_get_import_job_get_import_job_output_import_job_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_import_job_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_import_job_response_payload(body)
                 .map_err(crate::error::GetImportJobError::unhandled)
         })
         .transpose()
@@ -819,7 +820,7 @@ pub fn deser_payload_get_import_jobs_get_import_jobs_output_import_jobs_response
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_import_jobs_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_import_jobs_response_payload(body)
                 .map_err(crate::error::GetImportJobsError::unhandled)
         })
         .transpose()
@@ -833,7 +834,7 @@ pub fn deser_payload_get_journey_get_journey_output_journey_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_journey_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_journey_response_payload(body)
                 .map_err(crate::error::GetJourneyError::unhandled)
         })
         .transpose()
@@ -847,8 +848,10 @@ pub fn deser_payload_get_journey_date_range_kpi_get_journey_date_range_kpi_outpu
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_journey_date_range_kpi_response_payload(body)
-                .map_err(crate::error::GetJourneyDateRangeKpiError::unhandled)
+            crate::json_deser::deser_structure_crate_model_journey_date_range_kpi_response_payload(
+                body,
+            )
+            .map_err(crate::error::GetJourneyDateRangeKpiError::unhandled)
         })
         .transpose()
 }
@@ -859,14 +862,9 @@ pub fn deser_payload_get_journey_execution_activity_metrics_get_journey_executio
     std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>,
     crate::error::GetJourneyExecutionActivityMetricsError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_journey_execution_activity_metrics_response_payload(
-                body,
-            )
-            .map_err(crate::error::GetJourneyExecutionActivityMetricsError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_journey_execution_activity_metrics_response_payload(body).map_err(crate::error::GetJourneyExecutionActivityMetricsError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_journey_execution_metrics_get_journey_execution_metrics_output_journey_execution_metrics_response(
@@ -875,12 +873,9 @@ pub fn deser_payload_get_journey_execution_metrics_get_journey_execution_metrics
     std::option::Option<crate::model::JourneyExecutionMetricsResponse>,
     crate::error::GetJourneyExecutionMetricsError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_journey_execution_metrics_response_payload(body)
-                .map_err(crate::error::GetJourneyExecutionMetricsError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_journey_execution_metrics_response_payload(body).map_err(crate::error::GetJourneyExecutionMetricsError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_push_template_get_push_template_output_push_notification_template_response(
@@ -889,12 +884,9 @@ pub fn deser_payload_get_push_template_get_push_template_output_push_notificatio
     std::option::Option<crate::model::PushNotificationTemplateResponse>,
     crate::error::GetPushTemplateError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_push_notification_template_response_payload(body)
-                .map_err(crate::error::GetPushTemplateError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_push_notification_template_response_payload(body).map_err(crate::error::GetPushTemplateError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_recommender_configuration_get_recommender_configuration_output_recommender_configuration_response(
@@ -903,12 +895,9 @@ pub fn deser_payload_get_recommender_configuration_get_recommender_configuration
     std::option::Option<crate::model::RecommenderConfigurationResponse>,
     crate::error::GetRecommenderConfigurationError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_recommender_configuration_response_payload(body)
-                .map_err(crate::error::GetRecommenderConfigurationError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_recommender_configuration_response_payload(body).map_err(crate::error::GetRecommenderConfigurationError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_recommender_configurations_get_recommender_configurations_output_list_recommender_configurations_response(
@@ -917,14 +906,9 @@ pub fn deser_payload_get_recommender_configurations_get_recommender_configuratio
     std::option::Option<crate::model::ListRecommenderConfigurationsResponse>,
     crate::error::GetRecommenderConfigurationsError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_list_recommender_configurations_response_payload(
-                body,
-            )
-            .map_err(crate::error::GetRecommenderConfigurationsError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_list_recommender_configurations_response_payload(body).map_err(crate::error::GetRecommenderConfigurationsError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_segment_get_segment_output_segment_response(
@@ -935,7 +919,7 @@ pub fn deser_payload_get_segment_get_segment_output_segment_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_segment_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_segment_response_payload(body)
                 .map_err(crate::error::GetSegmentError::unhandled)
         })
         .transpose()
@@ -949,7 +933,7 @@ pub fn deser_payload_get_segment_export_jobs_get_segment_export_jobs_output_expo
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_export_jobs_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_export_jobs_response_payload(body)
                 .map_err(crate::error::GetSegmentExportJobsError::unhandled)
         })
         .transpose()
@@ -963,7 +947,7 @@ pub fn deser_payload_get_segment_import_jobs_get_segment_import_jobs_output_impo
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_import_jobs_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_import_jobs_response_payload(body)
                 .map_err(crate::error::GetSegmentImportJobsError::unhandled)
         })
         .transpose()
@@ -977,7 +961,7 @@ pub fn deser_payload_get_segments_get_segments_output_segments_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_segments_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_segments_response_payload(body)
                 .map_err(crate::error::GetSegmentsError::unhandled)
         })
         .transpose()
@@ -991,7 +975,7 @@ pub fn deser_payload_get_segment_version_get_segment_version_output_segment_resp
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_segment_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_segment_response_payload(body)
                 .map_err(crate::error::GetSegmentVersionError::unhandled)
         })
         .transpose()
@@ -1005,7 +989,7 @@ pub fn deser_payload_get_segment_versions_get_segment_versions_output_segments_r
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_segments_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_segments_response_payload(body)
                 .map_err(crate::error::GetSegmentVersionsError::unhandled)
         })
         .transpose()
@@ -1019,7 +1003,7 @@ pub fn deser_payload_get_sms_channel_get_sms_channel_output_sms_channel_response
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_sms_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_sms_channel_response_payload(body)
                 .map_err(crate::error::GetSmsChannelError::unhandled)
         })
         .transpose()
@@ -1033,7 +1017,7 @@ pub fn deser_payload_get_sms_template_get_sms_template_output_sms_template_respo
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_sms_template_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_sms_template_response_payload(body)
                 .map_err(crate::error::GetSmsTemplateError::unhandled)
         })
         .transpose()
@@ -1047,7 +1031,7 @@ pub fn deser_payload_get_user_endpoints_get_user_endpoints_output_endpoints_resp
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_endpoints_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_endpoints_response_payload(body)
                 .map_err(crate::error::GetUserEndpointsError::unhandled)
         })
         .transpose()
@@ -1061,7 +1045,7 @@ pub fn deser_payload_get_voice_channel_get_voice_channel_output_voice_channel_re
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_voice_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_voice_channel_response_payload(body)
                 .map_err(crate::error::GetVoiceChannelError::unhandled)
         })
         .transpose()
@@ -1075,7 +1059,7 @@ pub fn deser_payload_get_voice_template_get_voice_template_output_voice_template
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_voice_template_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_voice_template_response_payload(body)
                 .map_err(crate::error::GetVoiceTemplateError::unhandled)
         })
         .transpose()
@@ -1089,7 +1073,7 @@ pub fn deser_payload_list_journeys_list_journeys_output_journeys_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_journeys_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_journeys_response_payload(body)
                 .map_err(crate::error::ListJourneysError::unhandled)
         })
         .transpose()
@@ -1103,7 +1087,7 @@ pub fn deser_payload_list_tags_for_resource_list_tags_for_resource_output_tags_m
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_tags_model_payload(body)
+            crate::json_deser::deser_structure_crate_model_tags_model_payload(body)
                 .map_err(crate::error::ListTagsForResourceError::unhandled)
         })
         .transpose()
@@ -1117,7 +1101,7 @@ pub fn deser_payload_list_templates_list_templates_output_templates_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_templates_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_templates_response_payload(body)
                 .map_err(crate::error::ListTemplatesError::unhandled)
         })
         .transpose()
@@ -1131,7 +1115,7 @@ pub fn deser_payload_list_template_versions_list_template_versions_output_templa
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_template_versions_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_template_versions_response_payload(body)
                 .map_err(crate::error::ListTemplateVersionsError::unhandled)
         })
         .transpose()
@@ -1145,7 +1129,7 @@ pub fn deser_payload_phone_number_validate_phone_number_validate_output_number_v
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_number_validate_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_number_validate_response_payload(body)
                 .map_err(crate::error::PhoneNumberValidateError::unhandled)
         })
         .transpose()
@@ -1159,7 +1143,7 @@ pub fn deser_payload_put_events_put_events_output_events_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_events_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_events_response_payload(body)
                 .map_err(crate::error::PutEventsError::unhandled)
         })
         .transpose()
@@ -1173,7 +1157,7 @@ pub fn deser_payload_put_event_stream_put_event_stream_output_event_stream(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_event_stream_payload(body)
+            crate::json_deser::deser_structure_crate_model_event_stream_payload(body)
                 .map_err(crate::error::PutEventStreamError::unhandled)
         })
         .transpose()
@@ -1187,7 +1171,7 @@ pub fn deser_payload_remove_attributes_remove_attributes_output_attributes_resou
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_attributes_resource_payload(body)
+            crate::json_deser::deser_structure_crate_model_attributes_resource_payload(body)
                 .map_err(crate::error::RemoveAttributesError::unhandled)
         })
         .transpose()
@@ -1201,7 +1185,7 @@ pub fn deser_payload_send_messages_send_messages_output_message_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_response_payload(body)
                 .map_err(crate::error::SendMessagesError::unhandled)
         })
         .transpose()
@@ -1215,7 +1199,7 @@ pub fn deser_payload_send_users_messages_send_users_messages_output_send_users_m
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_send_users_message_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_send_users_message_response_payload(body)
                 .map_err(crate::error::SendUsersMessagesError::unhandled)
         })
         .transpose()
@@ -1229,7 +1213,7 @@ pub fn deser_payload_update_adm_channel_update_adm_channel_output_adm_channel_re
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_adm_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_adm_channel_response_payload(body)
                 .map_err(crate::error::UpdateAdmChannelError::unhandled)
         })
         .transpose()
@@ -1243,7 +1227,7 @@ pub fn deser_payload_update_apns_channel_update_apns_channel_output_apns_channel
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_apns_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_apns_channel_response_payload(body)
                 .map_err(crate::error::UpdateApnsChannelError::unhandled)
         })
         .transpose()
@@ -1257,8 +1241,10 @@ pub fn deser_payload_update_apns_sandbox_channel_update_apns_sandbox_channel_out
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_apns_sandbox_channel_response_payload(body)
-                .map_err(crate::error::UpdateApnsSandboxChannelError::unhandled)
+            crate::json_deser::deser_structure_crate_model_apns_sandbox_channel_response_payload(
+                body,
+            )
+            .map_err(crate::error::UpdateApnsSandboxChannelError::unhandled)
         })
         .transpose()
 }
@@ -1271,7 +1257,7 @@ pub fn deser_payload_update_apns_voip_channel_update_apns_voip_channel_output_ap
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_apns_voip_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_apns_voip_channel_response_payload(body)
                 .map_err(crate::error::UpdateApnsVoipChannelError::unhandled)
         })
         .transpose()
@@ -1283,12 +1269,9 @@ pub fn deser_payload_update_apns_voip_sandbox_channel_update_apns_voip_sandbox_c
     std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
     crate::error::UpdateApnsVoipSandboxChannelError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_apns_voip_sandbox_channel_response_payload(body)
-                .map_err(crate::error::UpdateApnsVoipSandboxChannelError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_apns_voip_sandbox_channel_response_payload(body).map_err(crate::error::UpdateApnsVoipSandboxChannelError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_update_application_settings_update_application_settings_output_application_settings_resource(
@@ -1299,8 +1282,10 @@ pub fn deser_payload_update_application_settings_update_application_settings_out
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_application_settings_resource_payload(body)
-                .map_err(crate::error::UpdateApplicationSettingsError::unhandled)
+            crate::json_deser::deser_structure_crate_model_application_settings_resource_payload(
+                body,
+            )
+            .map_err(crate::error::UpdateApplicationSettingsError::unhandled)
         })
         .transpose()
 }
@@ -1313,7 +1298,7 @@ pub fn deser_payload_update_baidu_channel_update_baidu_channel_output_baidu_chan
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_baidu_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_baidu_channel_response_payload(body)
                 .map_err(crate::error::UpdateBaiduChannelError::unhandled)
         })
         .transpose()
@@ -1327,7 +1312,7 @@ pub fn deser_payload_update_campaign_update_campaign_output_campaign_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_campaign_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_campaign_response_payload(body)
                 .map_err(crate::error::UpdateCampaignError::unhandled)
         })
         .transpose()
@@ -1341,7 +1326,7 @@ pub fn deser_payload_update_email_channel_update_email_channel_output_email_chan
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_email_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_email_channel_response_payload(body)
                 .map_err(crate::error::UpdateEmailChannelError::unhandled)
         })
         .transpose()
@@ -1355,7 +1340,7 @@ pub fn deser_payload_update_email_template_update_email_template_output_message_
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_body_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::UpdateEmailTemplateError::unhandled)
         })
         .transpose()
@@ -1369,7 +1354,7 @@ pub fn deser_payload_update_endpoint_update_endpoint_output_message_body(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_body_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::UpdateEndpointError::unhandled)
         })
         .transpose()
@@ -1383,7 +1368,7 @@ pub fn deser_payload_update_endpoints_batch_update_endpoints_batch_output_messag
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_body_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::UpdateEndpointsBatchError::unhandled)
         })
         .transpose()
@@ -1397,7 +1382,7 @@ pub fn deser_payload_update_gcm_channel_update_gcm_channel_output_gcm_channel_re
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_gcm_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_gcm_channel_response_payload(body)
                 .map_err(crate::error::UpdateGcmChannelError::unhandled)
         })
         .transpose()
@@ -1411,7 +1396,7 @@ pub fn deser_payload_update_journey_update_journey_output_journey_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_journey_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_journey_response_payload(body)
                 .map_err(crate::error::UpdateJourneyError::unhandled)
         })
         .transpose()
@@ -1425,7 +1410,7 @@ pub fn deser_payload_update_journey_state_update_journey_state_output_journey_re
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_journey_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_journey_response_payload(body)
                 .map_err(crate::error::UpdateJourneyStateError::unhandled)
         })
         .transpose()
@@ -1439,7 +1424,7 @@ pub fn deser_payload_update_push_template_update_push_template_output_message_bo
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_body_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::UpdatePushTemplateError::unhandled)
         })
         .transpose()
@@ -1451,12 +1436,9 @@ pub fn deser_payload_update_recommender_configuration_update_recommender_configu
     std::option::Option<crate::model::RecommenderConfigurationResponse>,
     crate::error::UpdateRecommenderConfigurationError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::json_deser::deser_structure_recommender_configuration_response_payload(body)
-                .map_err(crate::error::UpdateRecommenderConfigurationError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::json_deser::deser_structure_crate_model_recommender_configuration_response_payload(body).map_err(crate::error::UpdateRecommenderConfigurationError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_update_segment_update_segment_output_segment_response(
@@ -1467,7 +1449,7 @@ pub fn deser_payload_update_segment_update_segment_output_segment_response(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_segment_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_segment_response_payload(body)
                 .map_err(crate::error::UpdateSegmentError::unhandled)
         })
         .transpose()
@@ -1481,7 +1463,7 @@ pub fn deser_payload_update_sms_channel_update_sms_channel_output_sms_channel_re
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_sms_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_sms_channel_response_payload(body)
                 .map_err(crate::error::UpdateSmsChannelError::unhandled)
         })
         .transpose()
@@ -1495,7 +1477,7 @@ pub fn deser_payload_update_sms_template_update_sms_template_output_message_body
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_body_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::UpdateSmsTemplateError::unhandled)
         })
         .transpose()
@@ -1509,7 +1491,7 @@ pub fn deser_payload_update_template_active_version_update_template_active_versi
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_body_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::UpdateTemplateActiveVersionError::unhandled)
         })
         .transpose()
@@ -1523,7 +1505,7 @@ pub fn deser_payload_update_voice_channel_update_voice_channel_output_voice_chan
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_voice_channel_response_payload(body)
+            crate::json_deser::deser_structure_crate_model_voice_channel_response_payload(body)
                 .map_err(crate::error::UpdateVoiceChannelError::unhandled)
         })
         .transpose()
@@ -1537,7 +1519,7 @@ pub fn deser_payload_update_voice_template_update_voice_template_output_message_
 > {
     (!body.is_empty())
         .then(|| {
-            crate::json_deser::deser_structure_message_body_payload(body)
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::UpdateVoiceTemplateError::unhandled)
         })
         .transpose()

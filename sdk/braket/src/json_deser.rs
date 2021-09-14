@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_service_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_service_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_exception::Builder,
 ) -> Result<crate::error::internal_service_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_internal_service_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -239,7 +239,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_cancel_quantum_task(
+pub fn deser_operation_crate_operation_cancel_quantum_task(
     input: &[u8],
     mut builder: crate::output::cancel_quantum_task_output::Builder,
 ) -> Result<crate::output::cancel_quantum_task_output::Builder, smithy_json::deserialize::Error> {
@@ -288,7 +288,7 @@ pub fn deser_operation_cancel_quantum_task(
     Ok(builder)
 }
 
-pub fn deser_structure_device_offline_exceptionjson_err(
+pub fn deser_structure_crate_error_device_offline_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::device_offline_exception::Builder,
 ) -> Result<crate::error::device_offline_exception::Builder, smithy_json::deserialize::Error> {
@@ -327,7 +327,7 @@ pub fn deser_structure_device_offline_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -367,7 +367,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_quantum_task(
+pub fn deser_operation_crate_operation_create_quantum_task(
     input: &[u8],
     mut builder: crate::output::create_quantum_task_output::Builder,
 ) -> Result<crate::output::create_quantum_task_output::Builder, smithy_json::deserialize::Error> {
@@ -406,7 +406,7 @@ pub fn deser_operation_create_quantum_task(
     Ok(builder)
 }
 
-pub fn deser_structure_device_retired_exceptionjson_err(
+pub fn deser_structure_crate_error_device_retired_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::device_retired_exception::Builder,
 ) -> Result<crate::error::device_retired_exception::Builder, smithy_json::deserialize::Error> {
@@ -445,7 +445,7 @@ pub fn deser_structure_device_retired_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_device(
+pub fn deser_operation_crate_operation_get_device(
     input: &[u8],
     mut builder: crate::output::get_device_output::Builder,
 ) -> Result<crate::output::get_device_output::Builder, smithy_json::deserialize::Error> {
@@ -525,7 +525,7 @@ pub fn deser_operation_get_device(
     Ok(builder)
 }
 
-pub fn deser_operation_get_quantum_task(
+pub fn deser_operation_crate_operation_get_quantum_task(
     input: &[u8],
     mut builder: crate::output::get_quantum_task_output::Builder,
 ) -> Result<crate::output::get_quantum_task_output::Builder, smithy_json::deserialize::Error> {
@@ -614,7 +614,9 @@ pub fn deser_operation_get_quantum_task(
                         );
                     }
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tags_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_braket_tags_map(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -634,7 +636,7 @@ pub fn deser_operation_get_quantum_task(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -650,7 +652,9 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tags_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_braket_tags_map(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -670,7 +674,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_search_devices(
+pub fn deser_operation_crate_operation_search_devices(
     input: &[u8],
     mut builder: crate::output::search_devices_output::Builder,
 ) -> Result<crate::output::search_devices_output::Builder, smithy_json::deserialize::Error> {
@@ -686,7 +690,9 @@ pub fn deser_operation_search_devices(
                 match key.to_unescaped()?.as_ref() {
                     "devices" => {
                         builder = builder.set_devices(
-                            crate::json_deser::deser_list_device_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_braket_device_summary_list(
+                                tokens,
+                            )?,
                         );
                     }
                     "nextToken" => {
@@ -714,7 +720,7 @@ pub fn deser_operation_search_devices(
     Ok(builder)
 }
 
-pub fn deser_operation_search_quantum_tasks(
+pub fn deser_operation_crate_operation_search_quantum_tasks(
     input: &[u8],
     mut builder: crate::output::search_quantum_tasks_output::Builder,
 ) -> Result<crate::output::search_quantum_tasks_output::Builder, smithy_json::deserialize::Error> {
@@ -737,7 +743,7 @@ pub fn deser_operation_search_quantum_tasks(
                     }
                     "quantumTasks" => {
                         builder = builder.set_quantum_tasks(
-                            crate::json_deser::deser_list_quantum_task_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_braket_quantum_task_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -767,7 +773,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_tags_map<'a, I>(
+pub fn deser_map_com_amazonaws_braket_tags_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -811,7 +817,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_device_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_braket_device_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DeviceSummary>>, smithy_json::deserialize::Error>
 where
@@ -830,7 +836,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_device_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_device_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -846,7 +853,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_quantum_task_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_braket_quantum_task_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::QuantumTaskSummary>>, smithy_json::deserialize::Error>
 where
@@ -866,7 +873,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_quantum_task_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_quantum_task_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -881,7 +890,7 @@ where
     }
 }
 
-pub fn deser_structure_device_summary<'a, I>(
+pub fn deser_structure_crate_model_device_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeviceSummary>, smithy_json::deserialize::Error>
 where
@@ -968,7 +977,7 @@ where
     }
 }
 
-pub fn deser_structure_quantum_task_summary<'a, I>(
+pub fn deser_structure_crate_model_quantum_task_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::QuantumTaskSummary>, smithy_json::deserialize::Error>
 where
@@ -1060,8 +1069,11 @@ where
                                 );
                             }
                             "tags" => {
-                                builder = builder
-                                    .set_tags(crate::json_deser::deser_map_tags_map(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_map_com_amazonaws_braket_tags_map(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }

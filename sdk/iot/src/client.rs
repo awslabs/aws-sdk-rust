@@ -155,6 +155,9 @@ where
     pub fn create_dynamic_thing_group(&self) -> fluent_builders::CreateDynamicThingGroup<C, M, R> {
         fluent_builders::CreateDynamicThingGroup::new(self.handle.clone())
     }
+    pub fn create_fleet_metric(&self) -> fluent_builders::CreateFleetMetric<C, M, R> {
+        fluent_builders::CreateFleetMetric::new(self.handle.clone())
+    }
     pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
         fluent_builders::CreateJob::new(self.handle.clone())
     }
@@ -253,6 +256,9 @@ where
     }
     pub fn delete_dynamic_thing_group(&self) -> fluent_builders::DeleteDynamicThingGroup<C, M, R> {
         fluent_builders::DeleteDynamicThingGroup::new(self.handle.clone())
+    }
+    pub fn delete_fleet_metric(&self) -> fluent_builders::DeleteFleetMetric<C, M, R> {
+        fluent_builders::DeleteFleetMetric::new(self.handle.clone())
     }
     pub fn delete_job(&self) -> fluent_builders::DeleteJob<C, M, R> {
         fluent_builders::DeleteJob::new(self.handle.clone())
@@ -383,6 +389,9 @@ where
     ) -> fluent_builders::DescribeEventConfigurations<C, M, R> {
         fluent_builders::DescribeEventConfigurations::new(self.handle.clone())
     }
+    pub fn describe_fleet_metric(&self) -> fluent_builders::DescribeFleetMetric<C, M, R> {
+        fluent_builders::DescribeFleetMetric::new(self.handle.clone())
+    }
     pub fn describe_index(&self) -> fluent_builders::DescribeIndex<C, M, R> {
         fluent_builders::DescribeIndex::new(self.handle.clone())
     }
@@ -456,6 +465,9 @@ where
         &self,
     ) -> fluent_builders::GetBehaviorModelTrainingSummaries<C, M, R> {
         fluent_builders::GetBehaviorModelTrainingSummaries::new(self.handle.clone())
+    }
+    pub fn get_buckets_aggregation(&self) -> fluent_builders::GetBucketsAggregation<C, M, R> {
+        fluent_builders::GetBucketsAggregation::new(self.handle.clone())
     }
     pub fn get_cardinality(&self) -> fluent_builders::GetCardinality<C, M, R> {
         fluent_builders::GetCardinality::new(self.handle.clone())
@@ -557,6 +569,9 @@ where
     }
     pub fn list_domain_configurations(&self) -> fluent_builders::ListDomainConfigurations<C, M, R> {
         fluent_builders::ListDomainConfigurations::new(self.handle.clone())
+    }
+    pub fn list_fleet_metrics(&self) -> fluent_builders::ListFleetMetrics<C, M, R> {
+        fluent_builders::ListFleetMetrics::new(self.handle.clone())
     }
     pub fn list_indices(&self) -> fluent_builders::ListIndices<C, M, R> {
         fluent_builders::ListIndices::new(self.handle.clone())
@@ -810,6 +825,9 @@ where
         &self,
     ) -> fluent_builders::UpdateEventConfigurations<C, M, R> {
         fluent_builders::UpdateEventConfigurations::new(self.handle.clone())
+    }
+    pub fn update_fleet_metric(&self) -> fluent_builders::UpdateFleetMetric<C, M, R> {
+        fluent_builders::UpdateFleetMetric::new(self.handle.clone())
     }
     pub fn update_indexing_configuration(
         &self,
@@ -1193,7 +1211,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -2251,7 +2269,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Specifies whether AWS IoT validates the token signature in an authorization request.</p>
+        /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
         pub fn signing_disabled(mut self, inp: bool) -> Self {
             self.inner = self.inner.signing_disabled(inp);
             self
@@ -2518,7 +2536,7 @@ pub mod fluent_builders {
         /// metric must have a unique client request token. If you try to create a new custom metric that
         /// already exists with a different token,
         /// an exception
-        /// occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+        /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -2624,7 +2642,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
+        /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -2705,8 +2724,8 @@ pub mod fluent_builders {
         /// Appends an item to `serverCertificateArns`.
         ///
         /// To override the contents of this collection use [`set_server_certificate_arns`](Self::set_server_certificate_arns).
-        /// <p>The ARNs of the certificates that AWS IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
-        /// This value is not required for AWS-managed domains.</p>
+        /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
+        /// This value is not required for Amazon Web Services-managed domains.</p>
         pub fn server_certificate_arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_certificate_arns(inp);
             self
@@ -2719,7 +2738,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
-        /// This value is not required for AWS-managed domains.</p>
+        /// This value is not required for Amazon Web Services-managed domains.</p>
         pub fn validation_certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.validation_certificate_arn(inp);
             self
@@ -2745,7 +2764,7 @@ pub mod fluent_builders {
         }
         /// <p>The type of service delivered by the endpoint.</p>
         /// <note>
-        /// <p>AWS IoT Core currently supports only the <code>DATA</code> service type.</p>
+        /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
         /// </note>
         pub fn service_type(mut self, inp: crate::model::ServiceType) -> Self {
             self.inner = self.inner.service_type(inp);
@@ -2851,7 +2870,7 @@ pub mod fluent_builders {
         }
         /// <p>The dynamic thing group index name.</p>
         /// <note>
-        /// <p>Currently one index is supported: "AWS_Things".</p>
+        /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_name(inp);
@@ -2891,6 +2910,160 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         /// <p>Metadata which can be used to manage the dynamic thing group.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateFleetMetric<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_fleet_metric_input::Builder,
+    }
+    impl<C, M, R> CreateFleetMetric<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateFleetMetricOutput,
+            smithy_http::result::SdkError<crate::error::CreateFleetMetricError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateFleetMetricInputOperationOutputAlias,
+                crate::output::CreateFleetMetricOutput,
+                crate::error::CreateFleetMetricError,
+                crate::input::CreateFleetMetricInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the fleet metric to create.</p>
+        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(inp);
+            self
+        }
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_metric_name(input);
+            self
+        }
+        /// <p>The search query string.</p>
+        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(inp);
+            self
+        }
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_string(input);
+            self
+        }
+        /// <p>The type of the aggregation query.</p>
+        pub fn aggregation_type(mut self, inp: crate::model::AggregationType) -> Self {
+            self.inner = self.inner.aggregation_type(inp);
+            self
+        }
+        pub fn set_aggregation_type(
+            mut self,
+            input: std::option::Option<crate::model::AggregationType>,
+        ) -> Self {
+            self.inner = self.inner.set_aggregation_type(input);
+            self
+        }
+        /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+        pub fn period(mut self, inp: i32) -> Self {
+            self.inner = self.inner.period(inp);
+            self
+        }
+        pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_period(input);
+            self
+        }
+        /// <p>The field to aggregate.</p>
+        pub fn aggregation_field(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aggregation_field(inp);
+            self
+        }
+        pub fn set_aggregation_field(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aggregation_field(input);
+            self
+        }
+        /// <p>The fleet metric description.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The query version.</p>
+        pub fn query_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_version(inp);
+            self
+        }
+        pub fn set_query_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_query_version(input);
+            self
+        }
+        /// <p>The name of the index to search.</p>
+        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(inp);
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_name(input);
+            self
+        }
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
+        /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+        pub fn unit(mut self, inp: crate::model::FleetMetricUnit) -> Self {
+            self.inner = self.inner.unit(inp);
+            self
+        }
+        pub fn set_unit(
+            mut self,
+            input: std::option::Option<crate::model::FleetMetricUnit>,
+        ) -> Self {
+            self.inner = self.inner.set_unit(input);
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// <p>Metadata, which can be used to manage the fleet metric.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -2947,7 +3120,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A job identifier which must be unique for your AWS account. We recommend using a UUID. Alpha-numeric
+        /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
         /// characters, "-" and "_" are valid for use here.</p>
         pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(inp);
@@ -3095,7 +3268,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -3626,7 +3799,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_files(input);
             self
         }
-        /// <p>The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and AWS Code Signing resources
+        /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
         /// to create an OTA update job.</p>
         pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(inp);
@@ -4172,7 +4345,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>How long (in seconds) the credentials will be valid.</p>
+        /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
         pub fn credential_duration_seconds(mut self, inp: i32) -> Self {
             self.inner = self.inner.credential_duration_seconds(inp);
             self
@@ -5633,6 +5806,69 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeleteFleetMetric<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_fleet_metric_input::Builder,
+    }
+    impl<C, M, R> DeleteFleetMetric<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteFleetMetricOutput,
+            smithy_http::result::SdkError<crate::error::DeleteFleetMetricError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteFleetMetricInputOperationOutputAlias,
+                crate::output::DeleteFleetMetricOutput,
+                crate::error::DeleteFleetMetricError,
+                crate::input::DeleteFleetMetricInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the fleet metric to delete.</p>
+        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(inp);
+            self
+        }
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_metric_name(input);
+            self
+        }
+        /// <p>The expected version of the fleet metric to delete.</p>
+        pub fn expected_version(mut self, inp: i64) -> Self {
+            self.inner = self.inner.expected_version(inp);
+            self
+        }
+        pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_expected_version(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DeleteJob<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -5706,7 +5942,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -5814,7 +6050,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -6008,7 +6244,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delete_stream(input);
             self
         }
-        /// <p>When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
+        /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
         /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
         pub fn force_delete_aws_job(mut self, inp: bool) -> Self {
             self.inner = self.inner.force_delete_aws_job(inp);
@@ -7804,14 +8040,14 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API
+        /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
         /// endpoint.</p>
         /// </li>
         /// </ul>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
+        /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
         /// endpoint.</p>
         /// </li>
         /// </ul>
@@ -7872,6 +8108,60 @@ pub mod fluent_builders {
                 .make_operation(&self.handle.conf)
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeFleetMetric<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_fleet_metric_input::Builder,
+    }
+    impl<C, M, R> DescribeFleetMetric<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeFleetMetricOutput,
+            smithy_http::result::SdkError<crate::error::DescribeFleetMetricError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeFleetMetricInputOperationOutputAlias,
+                crate::output::DescribeFleetMetricOutput,
+                crate::error::DescribeFleetMetricError,
+                crate::input::DescribeFleetMetricInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the fleet metric to describe.</p>
+        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(inp);
+            self
+        }
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_metric_name(input);
+            self
         }
     }
     #[derive(std::fmt::Debug)]
@@ -9185,6 +9475,108 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetBucketsAggregation<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_buckets_aggregation_input::Builder,
+    }
+    impl<C, M, R> GetBucketsAggregation<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetBucketsAggregationOutput,
+            smithy_http::result::SdkError<crate::error::GetBucketsAggregationError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetBucketsAggregationInputOperationOutputAlias,
+                crate::output::GetBucketsAggregationOutput,
+                crate::error::GetBucketsAggregationError,
+                crate::input::GetBucketsAggregationInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the index to search.</p>
+        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(inp);
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_name(input);
+            self
+        }
+        /// <p>The search query string.</p>
+        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(inp);
+            self
+        }
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_string(input);
+            self
+        }
+        /// <p>The aggregation field.</p>
+        pub fn aggregation_field(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aggregation_field(inp);
+            self
+        }
+        pub fn set_aggregation_field(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aggregation_field(input);
+            self
+        }
+        /// <p>The version of the query.</p>
+        pub fn query_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_version(inp);
+            self
+        }
+        pub fn set_query_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_query_version(input);
+            self
+        }
+        /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+        pub fn buckets_aggregation_type(
+            mut self,
+            inp: crate::model::BucketsAggregationType,
+        ) -> Self {
+            self.inner = self.inner.buckets_aggregation_type(inp);
+            self
+        }
+        pub fn set_buckets_aggregation_type(
+            mut self,
+            input: std::option::Option<crate::model::BucketsAggregationType>,
+        ) -> Self {
+            self.inner = self.inner.set_buckets_aggregation_type(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetCardinality<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -9237,7 +9629,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_name(input);
             self
         }
-        /// <p>The search query.</p>
+        /// <p>The search query string.</p>
         pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.query_string(inp);
             self
@@ -9600,7 +9992,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_name(input);
             self
         }
-        /// <p>The query string.</p>
+        /// <p>The search query string.</p>
         pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.query_string(inp);
             self
@@ -9865,7 +10257,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The query used to search. You can specify "*" for the query string to get the count of all
-        /// indexed things in your AWS account.</p>
+        /// indexed things in your Amazon Web Services account.</p>
         pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.query_string(inp);
             self
@@ -11597,6 +11989,70 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct ListFleetMetrics<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_fleet_metrics_input::Builder,
+    }
+    impl<C, M, R> ListFleetMetrics<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListFleetMetricsOutput,
+            smithy_http::result::SdkError<crate::error::ListFleetMetricsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListFleetMetricsInputOperationOutputAlias,
+                crate::output::ListFleetMetricsOutput,
+                crate::error::ListFleetMetricsError,
+                crate::input::ListFleetMetricsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
+        /// otherwise <code>null</code> to receive the first set of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ListIndices<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -11810,7 +12266,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -11956,7 +12412,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -15618,7 +16074,7 @@ pub mod fluent_builders {
         /// Adds a key-value pair to `auditCheckToActionsMapping`.
         ///
         /// To override the contents of this collection use [`set_audit_check_to_actions_mapping`](Self::set_audit_check_to_actions_mapping).
-        /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your AWS account.</p>
+        /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
         pub fn audit_check_to_actions_mapping(
             mut self,
             k: impl Into<std::string::String>,
@@ -15778,7 +16234,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>
-        /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
+        /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
         /// </p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
@@ -16365,7 +16821,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_id(input);
             self
         }
-        /// <p>The AWS account.</p>
+        /// <p>The Amazon Web Services account.</p>
         pub fn target_aws_account(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_aws_account(inp);
             self
@@ -16508,7 +16964,7 @@ pub mod fluent_builders {
         /// (ARN)
         /// of the role that grants permission
         /// to
-        /// AWS IoT to access information about your devices, policies,
+        /// IoT to access information about your devices, policies,
         /// certificates,
         /// and other items as required when performing an audit.</p>
         pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -17054,7 +17510,7 @@ pub mod fluent_builders {
         /// <p>The new status.</p>
         /// <p>
         /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
-        /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by AWS IoT. They
+        /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
         /// are not intended for developer use.</p>
         /// <p>
         /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
@@ -17383,7 +17839,7 @@ pub mod fluent_builders {
         }
         /// <p>The dynamic thing group index to update.</p>
         /// <note>
-        /// <p>Currently one index is supported: 'AWS_Things'.</p>
+        /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_name(inp);
@@ -17482,6 +17938,154 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_event_configurations(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateFleetMetric<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_fleet_metric_input::Builder,
+    }
+    impl<C, M, R> UpdateFleetMetric<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateFleetMetricOutput,
+            smithy_http::result::SdkError<crate::error::UpdateFleetMetricError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateFleetMetricInputOperationOutputAlias,
+                crate::output::UpdateFleetMetricOutput,
+                crate::error::UpdateFleetMetricError,
+                crate::input::UpdateFleetMetricInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the fleet metric to update.</p>
+        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(inp);
+            self
+        }
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_metric_name(input);
+            self
+        }
+        /// <p>The search query string.</p>
+        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(inp);
+            self
+        }
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_string(input);
+            self
+        }
+        /// <p>The type of the aggregation query.</p>
+        pub fn aggregation_type(mut self, inp: crate::model::AggregationType) -> Self {
+            self.inner = self.inner.aggregation_type(inp);
+            self
+        }
+        pub fn set_aggregation_type(
+            mut self,
+            input: std::option::Option<crate::model::AggregationType>,
+        ) -> Self {
+            self.inner = self.inner.set_aggregation_type(input);
+            self
+        }
+        /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+        pub fn period(mut self, inp: i32) -> Self {
+            self.inner = self.inner.period(inp);
+            self
+        }
+        pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_period(input);
+            self
+        }
+        /// <p>The field to aggregate.</p>
+        pub fn aggregation_field(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aggregation_field(inp);
+            self
+        }
+        pub fn set_aggregation_field(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aggregation_field(input);
+            self
+        }
+        /// <p>The description of the fleet metric.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The version of the query.</p>
+        pub fn query_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_version(inp);
+            self
+        }
+        pub fn set_query_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_query_version(input);
+            self
+        }
+        /// <p>The name of the index to search.</p>
+        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(inp);
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_name(input);
+            self
+        }
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
+        /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+        pub fn unit(mut self, inp: crate::model::FleetMetricUnit) -> Self {
+            self.inner = self.inner.unit(inp);
+            self
+        }
+        pub fn set_unit(
+            mut self,
+            input: std::option::Option<crate::model::FleetMetricUnit>,
+        ) -> Self {
+            self.inner = self.inner.set_unit(input);
+            self
+        }
+        /// <p>The expected version of the fleet metric record in the registry.</p>
+        pub fn expected_version(mut self, inp: i64) -> Self {
+            self.inner = self.inner.expected_version(inp);
+            self
+        }
+        pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_expected_version(input);
             self
         }
     }
@@ -17675,7 +18279,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>

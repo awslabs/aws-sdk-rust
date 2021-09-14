@@ -396,7 +396,7 @@ impl GetArchiveRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidatePolicyOutput {
-    /// <p>The list of findings in a policy returned by Access Analyzer based on its suite of policy
+    /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy
     /// checks.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>,
     /// <p>A token used for pagination of results returned.</p>
@@ -1149,8 +1149,8 @@ impl GetFindingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnalyzedResourceOutput {
-    /// <p>An <code>AnalyzedResource</code> object that contains information that Access Analyzer found
-    /// when it analyzed the resource.</p>
+    /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer
+    /// found when it analyzed the resource.</p>
     pub resource: std::option::Option<crate::model::AnalyzedResource>,
 }
 impl std::fmt::Debug for GetAnalyzedResourceOutput {
@@ -1169,8 +1169,8 @@ pub mod get_analyzed_resource_output {
         pub(crate) resource: std::option::Option<crate::model::AnalyzedResource>,
     }
     impl Builder {
-        /// <p>An <code>AnalyzedResource</code> object that contains information that Access Analyzer found
-        /// when it analyzed the resource.</p>
+        /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer
+        /// found when it analyzed the resource.</p>
         pub fn resource(mut self, input: crate::model::AnalyzedResource) -> Self {
             self.resource = Some(input);
             self

@@ -337,15 +337,22 @@ impl AsRef<str> for LifeCycleState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicy {
     /// <p>
-    /// A value that describes the period of time that a file is not accessed, after which it transitions to the IA storage class. Metadata
+    /// Describes the period of time that a file is not accessed, after which it transitions to the IA storage class. Metadata
     /// operations such as listing the contents of a directory don't count as file access
     /// events.</p>
     pub transition_to_ia: std::option::Option<crate::model::TransitionToIaRules>,
+    /// <p>Describes the policy used to transition a file from infequent access storage to primary storage.</p>
+    pub transition_to_primary_storage_class:
+        std::option::Option<crate::model::TransitionToPrimaryStorageClassRules>,
 }
 impl std::fmt::Debug for LifecyclePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifecyclePolicy");
         formatter.field("transition_to_ia", &self.transition_to_ia);
+        formatter.field(
+            "transition_to_primary_storage_class",
+            &self.transition_to_primary_storage_class,
+        );
         formatter.finish()
     }
 }
@@ -356,10 +363,12 @@ pub mod lifecycle_policy {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transition_to_ia: std::option::Option<crate::model::TransitionToIaRules>,
+        pub(crate) transition_to_primary_storage_class:
+            std::option::Option<crate::model::TransitionToPrimaryStorageClassRules>,
     }
     impl Builder {
         /// <p>
-        /// A value that describes the period of time that a file is not accessed, after which it transitions to the IA storage class. Metadata
+        /// Describes the period of time that a file is not accessed, after which it transitions to the IA storage class. Metadata
         /// operations such as listing the contents of a directory don't count as file access
         /// events.</p>
         pub fn transition_to_ia(mut self, input: crate::model::TransitionToIaRules) -> Self {
@@ -373,10 +382,26 @@ pub mod lifecycle_policy {
             self.transition_to_ia = input;
             self
         }
+        /// <p>Describes the policy used to transition a file from infequent access storage to primary storage.</p>
+        pub fn transition_to_primary_storage_class(
+            mut self,
+            input: crate::model::TransitionToPrimaryStorageClassRules,
+        ) -> Self {
+            self.transition_to_primary_storage_class = Some(input);
+            self
+        }
+        pub fn set_transition_to_primary_storage_class(
+            mut self,
+            input: std::option::Option<crate::model::TransitionToPrimaryStorageClassRules>,
+        ) -> Self {
+            self.transition_to_primary_storage_class = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LifecyclePolicy`](crate::model::LifecyclePolicy)
         pub fn build(self) -> crate::model::LifecyclePolicy {
             crate::model::LifecyclePolicy {
                 transition_to_ia: self.transition_to_ia,
+                transition_to_primary_storage_class: self.transition_to_primary_storage_class,
             }
         }
     }
@@ -385,6 +410,53 @@ impl LifecyclePolicy {
     /// Creates a new builder-style object to manufacture [`LifecyclePolicy`](crate::model::LifecyclePolicy)
     pub fn builder() -> crate::model::lifecycle_policy::Builder {
         crate::model::lifecycle_policy::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TransitionToPrimaryStorageClassRules {
+    After1Access,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TransitionToPrimaryStorageClassRules {
+    fn from(s: &str) -> Self {
+        match s {
+            "AFTER_1_ACCESS" => TransitionToPrimaryStorageClassRules::After1Access,
+            other => TransitionToPrimaryStorageClassRules::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TransitionToPrimaryStorageClassRules {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TransitionToPrimaryStorageClassRules::from(s))
+    }
+}
+impl TransitionToPrimaryStorageClassRules {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TransitionToPrimaryStorageClassRules::After1Access => "AFTER_1_ACCESS",
+            TransitionToPrimaryStorageClassRules::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AFTER_1_ACCESS"]
+    }
+}
+impl AsRef<str> for TransitionToPrimaryStorageClassRules {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -609,12 +681,13 @@ impl AsRef<str> for Status {
     }
 }
 
+/// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceIdPreference {
-    /// A preference indicating a choice to use 63bit/32bit IDs for all applicable resources.
+    /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
     pub resource_id_type: std::option::Option<crate::model::ResourceIdType>,
-    /// EFS resources to which a preference applies to.
+    /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
 impl std::fmt::Debug for ResourceIdPreference {
@@ -635,7 +708,7 @@ pub mod resource_id_preference {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     }
     impl Builder {
-        /// A preference indicating a choice to use 63bit/32bit IDs for all applicable resources.
+        /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
         pub fn resource_id_type(mut self, input: crate::model::ResourceIdType) -> Self {
             self.resource_id_type = Some(input);
             self
@@ -782,7 +855,7 @@ impl AsRef<str> for ResourceIdType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MountTargetDescription {
-    /// <p>AWS account ID that owns the resource.</p>
+    /// <p>Amazon Web Services account ID that owns the resource.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>System-assigned mount target ID.</p>
     pub mount_target_id: std::option::Option<std::string::String>,
@@ -798,11 +871,11 @@ pub struct MountTargetDescription {
     /// target.</p>
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in.
-    /// For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every AWS account.</p>
+    /// For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
     pub availability_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are
-    /// independently mapped to names for each AWS account. For example, the Availability Zone
-    /// <code>us-east-1a</code> for your AWS account might not be the same location as <code>us-east-1a</code> for another AWS account.</p>
+    /// independently mapped to names for each Amazon Web Services account. For example, the Availability Zone
+    /// <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
     pub availability_zone_name: std::option::Option<std::string::String>,
     /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
     pub vpc_id: std::option::Option<std::string::String>,
@@ -841,7 +914,7 @@ pub mod mount_target_description {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>AWS account ID that owns the resource.</p>
+        /// <p>Amazon Web Services account ID that owns the resource.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -918,7 +991,7 @@ pub mod mount_target_description {
             self
         }
         /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in.
-        /// For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every AWS account.</p>
+        /// For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone_id = Some(input.into());
             self
@@ -931,8 +1004,8 @@ pub mod mount_target_description {
             self
         }
         /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are
-        /// independently mapped to names for each AWS account. For example, the Availability Zone
-        /// <code>us-east-1a</code> for your AWS account might not be the same location as <code>us-east-1a</code> for another AWS account.</p>
+        /// independently mapped to names for each Amazon Web Services account. For example, the Availability Zone
+        /// <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
         pub fn availability_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone_name = Some(input.into());
             self
@@ -981,7 +1054,7 @@ impl MountTargetDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSystemDescription {
-    /// <p>The AWS account that created the file system. If the file system was created by an IAM
+    /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM
     /// user, the parent account to which the user belongs is the owner.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The opaque string specified in the request.</p>
@@ -1019,7 +1092,7 @@ pub struct FileSystemDescription {
     pub performance_mode: std::option::Option<crate::model::PerformanceMode>,
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+    /// <p>The ID of an Key Management Service customer master key (CMK) that was
     /// used to protect the encrypted file system.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Displays the file system's throughput mode. For more information, see
@@ -1030,13 +1103,13 @@ pub struct FileSystemDescription {
     /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for
     /// file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
     pub provisioned_throughput_in_mibps: std::option::Option<f64>,
-    /// <p>Describes the AWS Availability Zone in which the file system is located, and is valid only
+    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only
     /// for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a>
     /// in the <i>Amazon EFS User Guide</i>.</p>
     pub availability_zone_name: std::option::Option<std::string::String>,
     /// <p>The unique and consistent identifier of the Availability Zone in which the file system's
     /// One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID
-    /// for the us-east-1 AWS Region, and it has the same location in every AWS account.</p>
+    /// for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
     pub availability_zone_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code>
     /// objects.</p>
@@ -1093,7 +1166,7 @@ pub mod file_system_description {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The AWS account that created the file system. If the file system was created by an IAM
+        /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM
         /// user, the parent account to which the user belongs is the owner.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
@@ -1229,7 +1302,7 @@ pub mod file_system_description {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+        /// <p>The ID of an Key Management Service customer master key (CMK) that was
         /// used to protect the encrypted file system.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -1267,7 +1340,7 @@ pub mod file_system_description {
             self.provisioned_throughput_in_mibps = input;
             self
         }
-        /// <p>Describes the AWS Availability Zone in which the file system is located, and is valid only
+        /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only
         /// for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a>
         /// in the <i>Amazon EFS User Guide</i>.</p>
         pub fn availability_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1283,7 +1356,7 @@ pub mod file_system_description {
         }
         /// <p>The unique and consistent identifier of the Availability Zone in which the file system's
         /// One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID
-        /// for the us-east-1 AWS Region, and it has the same location in every AWS account.</p>
+        /// for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone_id = Some(input.into());
             self
@@ -1360,7 +1433,7 @@ pub struct AccessPointDescription {
     pub posix_user: std::option::Option<crate::model::PosixUser>,
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
     pub root_directory: std::option::Option<crate::model::RootDirectory>,
-    /// <p>Identified the AWS account that owns the access point resource.</p>
+    /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>Identifies the lifecycle phase of the access point.</p>
     pub life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
@@ -1491,7 +1564,7 @@ pub mod access_point_description {
             self.root_directory = input;
             self
         }
-        /// <p>Identified the AWS account that owns the access point resource.</p>
+        /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self

@@ -1390,6 +1390,1958 @@ impl UpdateEncryption {
     }
 }
 
+/// The settings for an output.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Output {
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub data_transfer_subscriber_fee_percent: i32,
+    /// A description of the output.
+    pub description: std::option::Option<std::string::String>,
+    /// The address where you want to send the output.
+    pub destination: std::option::Option<std::string::String>,
+    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    pub encryption: std::option::Option<crate::model::Encryption>,
+    /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
+    pub entitlement_arn: std::option::Option<std::string::String>,
+    /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+    pub listener_address: std::option::Option<std::string::String>,
+    /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
+    pub media_live_input_arn: std::option::Option<std::string::String>,
+    /// The configuration for each media stream that is associated with the output.
+    pub media_stream_output_configurations:
+        std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
+    /// The name of the output. This value must be unique within the current flow.
+    pub name: std::option::Option<std::string::String>,
+    /// The ARN of the output.
+    pub output_arn: std::option::Option<std::string::String>,
+    /// The port to use when content is distributed to this output.
+    pub port: i32,
+    /// Attributes related to the transport stream that are used in the output.
+    pub transport: std::option::Option<crate::model::Transport>,
+    /// The name of the VPC interface attachment to use for this output.
+    pub vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
+}
+impl std::fmt::Debug for Output {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Output");
+        formatter.field(
+            "data_transfer_subscriber_fee_percent",
+            &self.data_transfer_subscriber_fee_percent,
+        );
+        formatter.field("description", &self.description);
+        formatter.field("destination", &self.destination);
+        formatter.field("encryption", &self.encryption);
+        formatter.field("entitlement_arn", &self.entitlement_arn);
+        formatter.field("listener_address", &self.listener_address);
+        formatter.field("media_live_input_arn", &self.media_live_input_arn);
+        formatter.field(
+            "media_stream_output_configurations",
+            &self.media_stream_output_configurations,
+        );
+        formatter.field("name", &self.name);
+        formatter.field("output_arn", &self.output_arn);
+        formatter.field("port", &self.port);
+        formatter.field("transport", &self.transport);
+        formatter.field("vpc_interface_attachment", &self.vpc_interface_attachment);
+        formatter.finish()
+    }
+}
+/// See [`Output`](crate::model::Output)
+pub mod output {
+    /// A builder for [`Output`](crate::model::Output)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) destination: std::option::Option<std::string::String>,
+        pub(crate) encryption: std::option::Option<crate::model::Encryption>,
+        pub(crate) entitlement_arn: std::option::Option<std::string::String>,
+        pub(crate) listener_address: std::option::Option<std::string::String>,
+        pub(crate) media_live_input_arn: std::option::Option<std::string::String>,
+        pub(crate) media_stream_output_configurations:
+            std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) output_arn: std::option::Option<std::string::String>,
+        pub(crate) port: std::option::Option<i32>,
+        pub(crate) transport: std::option::Option<crate::model::Transport>,
+        pub(crate) vpc_interface_attachment:
+            std::option::Option<crate::model::VpcInterfaceAttachment>,
+    }
+    impl Builder {
+        /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+        pub fn data_transfer_subscriber_fee_percent(mut self, input: i32) -> Self {
+            self.data_transfer_subscriber_fee_percent = Some(input);
+            self
+        }
+        pub fn set_data_transfer_subscriber_fee_percent(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.data_transfer_subscriber_fee_percent = input;
+            self
+        }
+        /// A description of the output.
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// The address where you want to send the output.
+        pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination = Some(input.into());
+            self
+        }
+        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination = input;
+            self
+        }
+        /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+        pub fn encryption(mut self, input: crate::model::Encryption) -> Self {
+            self.encryption = Some(input);
+            self
+        }
+        pub fn set_encryption(
+            mut self,
+            input: std::option::Option<crate::model::Encryption>,
+        ) -> Self {
+            self.encryption = input;
+            self
+        }
+        /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
+        pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entitlement_arn = Some(input.into());
+            self
+        }
+        pub fn set_entitlement_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.entitlement_arn = input;
+            self
+        }
+        /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+        pub fn listener_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.listener_address = Some(input.into());
+            self
+        }
+        pub fn set_listener_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.listener_address = input;
+            self
+        }
+        /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
+        pub fn media_live_input_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.media_live_input_arn = Some(input.into());
+            self
+        }
+        pub fn set_media_live_input_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_live_input_arn = input;
+            self
+        }
+        pub fn media_stream_output_configurations(
+            mut self,
+            input: impl Into<crate::model::MediaStreamOutputConfiguration>,
+        ) -> Self {
+            let mut v = self.media_stream_output_configurations.unwrap_or_default();
+            v.push(input.into());
+            self.media_stream_output_configurations = Some(v);
+            self
+        }
+        pub fn set_media_stream_output_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
+        ) -> Self {
+            self.media_stream_output_configurations = input;
+            self
+        }
+        /// The name of the output. This value must be unique within the current flow.
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// The ARN of the output.
+        pub fn output_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_arn = Some(input.into());
+            self
+        }
+        pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_arn = input;
+            self
+        }
+        /// The port to use when content is distributed to this output.
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
+        /// Attributes related to the transport stream that are used in the output.
+        pub fn transport(mut self, input: crate::model::Transport) -> Self {
+            self.transport = Some(input);
+            self
+        }
+        pub fn set_transport(
+            mut self,
+            input: std::option::Option<crate::model::Transport>,
+        ) -> Self {
+            self.transport = input;
+            self
+        }
+        /// The name of the VPC interface attachment to use for this output.
+        pub fn vpc_interface_attachment(
+            mut self,
+            input: crate::model::VpcInterfaceAttachment,
+        ) -> Self {
+            self.vpc_interface_attachment = Some(input);
+            self
+        }
+        pub fn set_vpc_interface_attachment(
+            mut self,
+            input: std::option::Option<crate::model::VpcInterfaceAttachment>,
+        ) -> Self {
+            self.vpc_interface_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Output`](crate::model::Output)
+        pub fn build(self) -> crate::model::Output {
+            crate::model::Output {
+                data_transfer_subscriber_fee_percent: self
+                    .data_transfer_subscriber_fee_percent
+                    .unwrap_or_default(),
+                description: self.description,
+                destination: self.destination,
+                encryption: self.encryption,
+                entitlement_arn: self.entitlement_arn,
+                listener_address: self.listener_address,
+                media_live_input_arn: self.media_live_input_arn,
+                media_stream_output_configurations: self.media_stream_output_configurations,
+                name: self.name,
+                output_arn: self.output_arn,
+                port: self.port.unwrap_or_default(),
+                transport: self.transport,
+                vpc_interface_attachment: self.vpc_interface_attachment,
+            }
+        }
+    }
+}
+impl Output {
+    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output)
+    pub fn builder() -> crate::model::output::Builder {
+        crate::model::output::Builder::default()
+    }
+}
+
+/// The settings for attaching a VPC interface to an output.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VpcInterfaceAttachment {
+    /// The name of the VPC interface to use for this output.
+    pub vpc_interface_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for VpcInterfaceAttachment {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VpcInterfaceAttachment");
+        formatter.field("vpc_interface_name", &self.vpc_interface_name);
+        formatter.finish()
+    }
+}
+/// See [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
+pub mod vpc_interface_attachment {
+    /// A builder for [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// The name of the VPC interface to use for this output.
+        pub fn vpc_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_interface_name = Some(input.into());
+            self
+        }
+        pub fn set_vpc_interface_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_interface_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
+        pub fn build(self) -> crate::model::VpcInterfaceAttachment {
+            crate::model::VpcInterfaceAttachment {
+                vpc_interface_name: self.vpc_interface_name,
+            }
+        }
+    }
+}
+impl VpcInterfaceAttachment {
+    /// Creates a new builder-style object to manufacture [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
+    pub fn builder() -> crate::model::vpc_interface_attachment::Builder {
+        crate::model::vpc_interface_attachment::Builder::default()
+    }
+}
+
+/// The media stream that is associated with the output, and the parameters for that association.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MediaStreamOutputConfiguration {
+    /// The transport parameters that are associated with each outbound media stream.
+    pub destination_configurations:
+        std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
+    /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    pub encoding_name: std::option::Option<crate::model::EncodingName>,
+    /// Encoding parameters
+    pub encoding_parameters: std::option::Option<crate::model::EncodingParameters>,
+    /// The name of the media stream.
+    pub media_stream_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MediaStreamOutputConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MediaStreamOutputConfiguration");
+        formatter.field(
+            "destination_configurations",
+            &self.destination_configurations,
+        );
+        formatter.field("encoding_name", &self.encoding_name);
+        formatter.field("encoding_parameters", &self.encoding_parameters);
+        formatter.field("media_stream_name", &self.media_stream_name);
+        formatter.finish()
+    }
+}
+/// See [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
+pub mod media_stream_output_configuration {
+    /// A builder for [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) destination_configurations:
+            std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
+        pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
+        pub(crate) encoding_parameters: std::option::Option<crate::model::EncodingParameters>,
+        pub(crate) media_stream_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn destination_configurations(
+            mut self,
+            input: impl Into<crate::model::DestinationConfiguration>,
+        ) -> Self {
+            let mut v = self.destination_configurations.unwrap_or_default();
+            v.push(input.into());
+            self.destination_configurations = Some(v);
+            self
+        }
+        pub fn set_destination_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
+        ) -> Self {
+            self.destination_configurations = input;
+            self
+        }
+        /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+        pub fn encoding_name(mut self, input: crate::model::EncodingName) -> Self {
+            self.encoding_name = Some(input);
+            self
+        }
+        pub fn set_encoding_name(
+            mut self,
+            input: std::option::Option<crate::model::EncodingName>,
+        ) -> Self {
+            self.encoding_name = input;
+            self
+        }
+        /// Encoding parameters
+        pub fn encoding_parameters(mut self, input: crate::model::EncodingParameters) -> Self {
+            self.encoding_parameters = Some(input);
+            self
+        }
+        pub fn set_encoding_parameters(
+            mut self,
+            input: std::option::Option<crate::model::EncodingParameters>,
+        ) -> Self {
+            self.encoding_parameters = input;
+            self
+        }
+        /// The name of the media stream.
+        pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.media_stream_name = Some(input.into());
+            self
+        }
+        pub fn set_media_stream_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_stream_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
+        pub fn build(self) -> crate::model::MediaStreamOutputConfiguration {
+            crate::model::MediaStreamOutputConfiguration {
+                destination_configurations: self.destination_configurations,
+                encoding_name: self.encoding_name,
+                encoding_parameters: self.encoding_parameters,
+                media_stream_name: self.media_stream_name,
+            }
+        }
+    }
+}
+impl MediaStreamOutputConfiguration {
+    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
+    pub fn builder() -> crate::model::media_stream_output_configuration::Builder {
+        crate::model::media_stream_output_configuration::Builder::default()
+    }
+}
+
+/// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EncodingParameters {
+    /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
+    pub compression_factor: f64,
+    /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
+    pub encoder_profile: std::option::Option<crate::model::EncoderProfile>,
+}
+impl std::fmt::Debug for EncodingParameters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EncodingParameters");
+        formatter.field("compression_factor", &self.compression_factor);
+        formatter.field("encoder_profile", &self.encoder_profile);
+        formatter.finish()
+    }
+}
+/// See [`EncodingParameters`](crate::model::EncodingParameters)
+pub mod encoding_parameters {
+    /// A builder for [`EncodingParameters`](crate::model::EncodingParameters)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) compression_factor: std::option::Option<f64>,
+        pub(crate) encoder_profile: std::option::Option<crate::model::EncoderProfile>,
+    }
+    impl Builder {
+        /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
+        pub fn compression_factor(mut self, input: f64) -> Self {
+            self.compression_factor = Some(input);
+            self
+        }
+        pub fn set_compression_factor(mut self, input: std::option::Option<f64>) -> Self {
+            self.compression_factor = input;
+            self
+        }
+        /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
+        pub fn encoder_profile(mut self, input: crate::model::EncoderProfile) -> Self {
+            self.encoder_profile = Some(input);
+            self
+        }
+        pub fn set_encoder_profile(
+            mut self,
+            input: std::option::Option<crate::model::EncoderProfile>,
+        ) -> Self {
+            self.encoder_profile = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EncodingParameters`](crate::model::EncodingParameters)
+        pub fn build(self) -> crate::model::EncodingParameters {
+            crate::model::EncodingParameters {
+                compression_factor: self.compression_factor.unwrap_or_default(),
+                encoder_profile: self.encoder_profile,
+            }
+        }
+    }
+}
+impl EncodingParameters {
+    /// Creates a new builder-style object to manufacture [`EncodingParameters`](crate::model::EncodingParameters)
+    pub fn builder() -> crate::model::encoding_parameters::Builder {
+        crate::model::encoding_parameters::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EncoderProfile {
+    High,
+    Main,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EncoderProfile {
+    fn from(s: &str) -> Self {
+        match s {
+            "high" => EncoderProfile::High,
+            "main" => EncoderProfile::Main,
+            other => EncoderProfile::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EncoderProfile {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EncoderProfile::from(s))
+    }
+}
+impl EncoderProfile {
+    pub fn as_str(&self) -> &str {
+        match self {
+            EncoderProfile::High => "high",
+            EncoderProfile::Main => "main",
+            EncoderProfile::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["high", "main"]
+    }
+}
+impl AsRef<str> for EncoderProfile {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// The transport parameters that are associated with an outbound media stream.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DestinationConfiguration {
+    /// The IP address where contents of the media stream will be sent.
+    pub destination_ip: std::option::Option<std::string::String>,
+    /// The port to use when the content of the media stream is distributed to the output.
+    pub destination_port: i32,
+    /// The VPC interface that is used for the media stream associated with the output.
+    pub interface: std::option::Option<crate::model::Interface>,
+    /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
+    pub outbound_ip: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DestinationConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DestinationConfiguration");
+        formatter.field("destination_ip", &self.destination_ip);
+        formatter.field("destination_port", &self.destination_port);
+        formatter.field("interface", &self.interface);
+        formatter.field("outbound_ip", &self.outbound_ip);
+        formatter.finish()
+    }
+}
+/// See [`DestinationConfiguration`](crate::model::DestinationConfiguration)
+pub mod destination_configuration {
+    /// A builder for [`DestinationConfiguration`](crate::model::DestinationConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) destination_ip: std::option::Option<std::string::String>,
+        pub(crate) destination_port: std::option::Option<i32>,
+        pub(crate) interface: std::option::Option<crate::model::Interface>,
+        pub(crate) outbound_ip: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// The IP address where contents of the media stream will be sent.
+        pub fn destination_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_ip = Some(input.into());
+            self
+        }
+        pub fn set_destination_ip(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_ip = input;
+            self
+        }
+        /// The port to use when the content of the media stream is distributed to the output.
+        pub fn destination_port(mut self, input: i32) -> Self {
+            self.destination_port = Some(input);
+            self
+        }
+        pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.destination_port = input;
+            self
+        }
+        /// The VPC interface that is used for the media stream associated with the output.
+        pub fn interface(mut self, input: crate::model::Interface) -> Self {
+            self.interface = Some(input);
+            self
+        }
+        pub fn set_interface(
+            mut self,
+            input: std::option::Option<crate::model::Interface>,
+        ) -> Self {
+            self.interface = input;
+            self
+        }
+        /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
+        pub fn outbound_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.outbound_ip = Some(input.into());
+            self
+        }
+        pub fn set_outbound_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.outbound_ip = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DestinationConfiguration`](crate::model::DestinationConfiguration)
+        pub fn build(self) -> crate::model::DestinationConfiguration {
+            crate::model::DestinationConfiguration {
+                destination_ip: self.destination_ip,
+                destination_port: self.destination_port.unwrap_or_default(),
+                interface: self.interface,
+                outbound_ip: self.outbound_ip,
+            }
+        }
+    }
+}
+impl DestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`DestinationConfiguration`](crate::model::DestinationConfiguration)
+    pub fn builder() -> crate::model::destination_configuration::Builder {
+        crate::model::destination_configuration::Builder::default()
+    }
+}
+
+/// The media stream that you want to associate with the output, and the parameters for that association.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MediaStreamOutputConfigurationRequest {
+    /// The transport parameters that you want to associate with the media stream.
+    pub destination_configurations:
+        std::option::Option<std::vec::Vec<crate::model::DestinationConfigurationRequest>>,
+    /// The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    pub encoding_name: std::option::Option<crate::model::EncodingName>,
+    /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
+    pub encoding_parameters: std::option::Option<crate::model::EncodingParametersRequest>,
+    /// The name of the media stream that is associated with the output.
+    pub media_stream_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MediaStreamOutputConfigurationRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MediaStreamOutputConfigurationRequest");
+        formatter.field(
+            "destination_configurations",
+            &self.destination_configurations,
+        );
+        formatter.field("encoding_name", &self.encoding_name);
+        formatter.field("encoding_parameters", &self.encoding_parameters);
+        formatter.field("media_stream_name", &self.media_stream_name);
+        formatter.finish()
+    }
+}
+/// See [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
+pub mod media_stream_output_configuration_request {
+    /// A builder for [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) destination_configurations:
+            std::option::Option<std::vec::Vec<crate::model::DestinationConfigurationRequest>>,
+        pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
+        pub(crate) encoding_parameters:
+            std::option::Option<crate::model::EncodingParametersRequest>,
+        pub(crate) media_stream_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn destination_configurations(
+            mut self,
+            input: impl Into<crate::model::DestinationConfigurationRequest>,
+        ) -> Self {
+            let mut v = self.destination_configurations.unwrap_or_default();
+            v.push(input.into());
+            self.destination_configurations = Some(v);
+            self
+        }
+        pub fn set_destination_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::DestinationConfigurationRequest>,
+            >,
+        ) -> Self {
+            self.destination_configurations = input;
+            self
+        }
+        /// The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+        pub fn encoding_name(mut self, input: crate::model::EncodingName) -> Self {
+            self.encoding_name = Some(input);
+            self
+        }
+        pub fn set_encoding_name(
+            mut self,
+            input: std::option::Option<crate::model::EncodingName>,
+        ) -> Self {
+            self.encoding_name = input;
+            self
+        }
+        /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
+        pub fn encoding_parameters(
+            mut self,
+            input: crate::model::EncodingParametersRequest,
+        ) -> Self {
+            self.encoding_parameters = Some(input);
+            self
+        }
+        pub fn set_encoding_parameters(
+            mut self,
+            input: std::option::Option<crate::model::EncodingParametersRequest>,
+        ) -> Self {
+            self.encoding_parameters = input;
+            self
+        }
+        /// The name of the media stream that is associated with the output.
+        pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.media_stream_name = Some(input.into());
+            self
+        }
+        pub fn set_media_stream_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_stream_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
+        pub fn build(self) -> crate::model::MediaStreamOutputConfigurationRequest {
+            crate::model::MediaStreamOutputConfigurationRequest {
+                destination_configurations: self.destination_configurations,
+                encoding_name: self.encoding_name,
+                encoding_parameters: self.encoding_parameters,
+                media_stream_name: self.media_stream_name,
+            }
+        }
+    }
+}
+impl MediaStreamOutputConfigurationRequest {
+    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
+    pub fn builder() -> crate::model::media_stream_output_configuration_request::Builder {
+        crate::model::media_stream_output_configuration_request::Builder::default()
+    }
+}
+
+/// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EncodingParametersRequest {
+    /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
+    pub compression_factor: f64,
+    /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
+    pub encoder_profile: std::option::Option<crate::model::EncoderProfile>,
+}
+impl std::fmt::Debug for EncodingParametersRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EncodingParametersRequest");
+        formatter.field("compression_factor", &self.compression_factor);
+        formatter.field("encoder_profile", &self.encoder_profile);
+        formatter.finish()
+    }
+}
+/// See [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
+pub mod encoding_parameters_request {
+    /// A builder for [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) compression_factor: std::option::Option<f64>,
+        pub(crate) encoder_profile: std::option::Option<crate::model::EncoderProfile>,
+    }
+    impl Builder {
+        /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
+        pub fn compression_factor(mut self, input: f64) -> Self {
+            self.compression_factor = Some(input);
+            self
+        }
+        pub fn set_compression_factor(mut self, input: std::option::Option<f64>) -> Self {
+            self.compression_factor = input;
+            self
+        }
+        /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
+        pub fn encoder_profile(mut self, input: crate::model::EncoderProfile) -> Self {
+            self.encoder_profile = Some(input);
+            self
+        }
+        pub fn set_encoder_profile(
+            mut self,
+            input: std::option::Option<crate::model::EncoderProfile>,
+        ) -> Self {
+            self.encoder_profile = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
+        pub fn build(self) -> crate::model::EncodingParametersRequest {
+            crate::model::EncodingParametersRequest {
+                compression_factor: self.compression_factor.unwrap_or_default(),
+                encoder_profile: self.encoder_profile,
+            }
+        }
+    }
+}
+impl EncodingParametersRequest {
+    /// Creates a new builder-style object to manufacture [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
+    pub fn builder() -> crate::model::encoding_parameters_request::Builder {
+        crate::model::encoding_parameters_request::Builder::default()
+    }
+}
+
+/// The transport parameters that you want to associate with an outbound media stream.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DestinationConfigurationRequest {
+    /// The IP address where you want MediaConnect to send contents of the media stream.
+    pub destination_ip: std::option::Option<std::string::String>,
+    /// The port that you want MediaConnect to use when it distributes the media stream to the output.
+    pub destination_port: i32,
+    /// The VPC interface that you want to use for the media stream associated with the output.
+    pub interface: std::option::Option<crate::model::InterfaceRequest>,
+}
+impl std::fmt::Debug for DestinationConfigurationRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DestinationConfigurationRequest");
+        formatter.field("destination_ip", &self.destination_ip);
+        formatter.field("destination_port", &self.destination_port);
+        formatter.field("interface", &self.interface);
+        formatter.finish()
+    }
+}
+/// See [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
+pub mod destination_configuration_request {
+    /// A builder for [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) destination_ip: std::option::Option<std::string::String>,
+        pub(crate) destination_port: std::option::Option<i32>,
+        pub(crate) interface: std::option::Option<crate::model::InterfaceRequest>,
+    }
+    impl Builder {
+        /// The IP address where you want MediaConnect to send contents of the media stream.
+        pub fn destination_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_ip = Some(input.into());
+            self
+        }
+        pub fn set_destination_ip(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_ip = input;
+            self
+        }
+        /// The port that you want MediaConnect to use when it distributes the media stream to the output.
+        pub fn destination_port(mut self, input: i32) -> Self {
+            self.destination_port = Some(input);
+            self
+        }
+        pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.destination_port = input;
+            self
+        }
+        /// The VPC interface that you want to use for the media stream associated with the output.
+        pub fn interface(mut self, input: crate::model::InterfaceRequest) -> Self {
+            self.interface = Some(input);
+            self
+        }
+        pub fn set_interface(
+            mut self,
+            input: std::option::Option<crate::model::InterfaceRequest>,
+        ) -> Self {
+            self.interface = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
+        pub fn build(self) -> crate::model::DestinationConfigurationRequest {
+            crate::model::DestinationConfigurationRequest {
+                destination_ip: self.destination_ip,
+                destination_port: self.destination_port.unwrap_or_default(),
+                interface: self.interface,
+            }
+        }
+    }
+}
+impl DestinationConfigurationRequest {
+    /// Creates a new builder-style object to manufacture [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
+    pub fn builder() -> crate::model::destination_configuration_request::Builder {
+        crate::model::destination_configuration_request::Builder::default()
+    }
+}
+
+/// A single track or stream of media that contains video, audio, or ancillary data. After you add a media stream to a flow, you can associate it with sources and outputs on that flow, as long as they use the CDI protocol or the ST 2110 JPEG XS protocol. Each source or output can consist of one or many media streams.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MediaStream {
+    /// Attributes that are related to the media stream.
+    pub attributes: std::option::Option<crate::model::MediaStreamAttributes>,
+    /// The sample rate for the stream. This value is measured in Hz.
+    pub clock_rate: i32,
+    /// A description that can help you quickly identify what your media stream is used for.
+    pub description: std::option::Option<std::string::String>,
+    /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
+    pub fmt: i32,
+    /// A unique identifier for the media stream.
+    pub media_stream_id: i32,
+    /// A name that helps you distinguish one media stream from another.
+    pub media_stream_name: std::option::Option<std::string::String>,
+    /// The type of media stream.
+    pub media_stream_type: std::option::Option<crate::model::MediaStreamType>,
+    /// The resolution of the video.
+    pub video_format: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MediaStream {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MediaStream");
+        formatter.field("attributes", &self.attributes);
+        formatter.field("clock_rate", &self.clock_rate);
+        formatter.field("description", &self.description);
+        formatter.field("fmt", &self.fmt);
+        formatter.field("media_stream_id", &self.media_stream_id);
+        formatter.field("media_stream_name", &self.media_stream_name);
+        formatter.field("media_stream_type", &self.media_stream_type);
+        formatter.field("video_format", &self.video_format);
+        formatter.finish()
+    }
+}
+/// See [`MediaStream`](crate::model::MediaStream)
+pub mod media_stream {
+    /// A builder for [`MediaStream`](crate::model::MediaStream)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attributes: std::option::Option<crate::model::MediaStreamAttributes>,
+        pub(crate) clock_rate: std::option::Option<i32>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) fmt: std::option::Option<i32>,
+        pub(crate) media_stream_id: std::option::Option<i32>,
+        pub(crate) media_stream_name: std::option::Option<std::string::String>,
+        pub(crate) media_stream_type: std::option::Option<crate::model::MediaStreamType>,
+        pub(crate) video_format: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Attributes that are related to the media stream.
+        pub fn attributes(mut self, input: crate::model::MediaStreamAttributes) -> Self {
+            self.attributes = Some(input);
+            self
+        }
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<crate::model::MediaStreamAttributes>,
+        ) -> Self {
+            self.attributes = input;
+            self
+        }
+        /// The sample rate for the stream. This value is measured in Hz.
+        pub fn clock_rate(mut self, input: i32) -> Self {
+            self.clock_rate = Some(input);
+            self
+        }
+        pub fn set_clock_rate(mut self, input: std::option::Option<i32>) -> Self {
+            self.clock_rate = input;
+            self
+        }
+        /// A description that can help you quickly identify what your media stream is used for.
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
+        pub fn fmt(mut self, input: i32) -> Self {
+            self.fmt = Some(input);
+            self
+        }
+        pub fn set_fmt(mut self, input: std::option::Option<i32>) -> Self {
+            self.fmt = input;
+            self
+        }
+        /// A unique identifier for the media stream.
+        pub fn media_stream_id(mut self, input: i32) -> Self {
+            self.media_stream_id = Some(input);
+            self
+        }
+        pub fn set_media_stream_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.media_stream_id = input;
+            self
+        }
+        /// A name that helps you distinguish one media stream from another.
+        pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.media_stream_name = Some(input.into());
+            self
+        }
+        pub fn set_media_stream_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_stream_name = input;
+            self
+        }
+        /// The type of media stream.
+        pub fn media_stream_type(mut self, input: crate::model::MediaStreamType) -> Self {
+            self.media_stream_type = Some(input);
+            self
+        }
+        pub fn set_media_stream_type(
+            mut self,
+            input: std::option::Option<crate::model::MediaStreamType>,
+        ) -> Self {
+            self.media_stream_type = input;
+            self
+        }
+        /// The resolution of the video.
+        pub fn video_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.video_format = Some(input.into());
+            self
+        }
+        pub fn set_video_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.video_format = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MediaStream`](crate::model::MediaStream)
+        pub fn build(self) -> crate::model::MediaStream {
+            crate::model::MediaStream {
+                attributes: self.attributes,
+                clock_rate: self.clock_rate.unwrap_or_default(),
+                description: self.description,
+                fmt: self.fmt.unwrap_or_default(),
+                media_stream_id: self.media_stream_id.unwrap_or_default(),
+                media_stream_name: self.media_stream_name,
+                media_stream_type: self.media_stream_type,
+                video_format: self.video_format,
+            }
+        }
+    }
+}
+impl MediaStream {
+    /// Creates a new builder-style object to manufacture [`MediaStream`](crate::model::MediaStream)
+    pub fn builder() -> crate::model::media_stream::Builder {
+        crate::model::media_stream::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MediaStreamType {
+    AncillaryData,
+    Audio,
+    Video,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MediaStreamType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ancillary-data" => MediaStreamType::AncillaryData,
+            "audio" => MediaStreamType::Audio,
+            "video" => MediaStreamType::Video,
+            other => MediaStreamType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MediaStreamType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MediaStreamType::from(s))
+    }
+}
+impl MediaStreamType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MediaStreamType::AncillaryData => "ancillary-data",
+            MediaStreamType::Audio => "audio",
+            MediaStreamType::Video => "video",
+            MediaStreamType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ancillary-data", "audio", "video"]
+    }
+}
+impl AsRef<str> for MediaStreamType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Attributes that are related to the media stream.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MediaStreamAttributes {
+    /// A set of parameters that define the media stream.
+    pub fmtp: std::option::Option<crate::model::Fmtp>,
+    /// The audio language, in a format that is recognized by the receiver.
+    pub lang: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MediaStreamAttributes {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MediaStreamAttributes");
+        formatter.field("fmtp", &self.fmtp);
+        formatter.field("lang", &self.lang);
+        formatter.finish()
+    }
+}
+/// See [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
+pub mod media_stream_attributes {
+    /// A builder for [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fmtp: std::option::Option<crate::model::Fmtp>,
+        pub(crate) lang: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// A set of parameters that define the media stream.
+        pub fn fmtp(mut self, input: crate::model::Fmtp) -> Self {
+            self.fmtp = Some(input);
+            self
+        }
+        pub fn set_fmtp(mut self, input: std::option::Option<crate::model::Fmtp>) -> Self {
+            self.fmtp = input;
+            self
+        }
+        /// The audio language, in a format that is recognized by the receiver.
+        pub fn lang(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lang = Some(input.into());
+            self
+        }
+        pub fn set_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lang = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
+        pub fn build(self) -> crate::model::MediaStreamAttributes {
+            crate::model::MediaStreamAttributes {
+                fmtp: self.fmtp,
+                lang: self.lang,
+            }
+        }
+    }
+}
+impl MediaStreamAttributes {
+    /// Creates a new builder-style object to manufacture [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
+    pub fn builder() -> crate::model::media_stream_attributes::Builder {
+        crate::model::media_stream_attributes::Builder::default()
+    }
+}
+
+/// FMTP
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Fmtp {
+    /// The format of the audio channel.
+    pub channel_order: std::option::Option<std::string::String>,
+    /// The format that is used for the representation of color.
+    pub colorimetry: std::option::Option<crate::model::Colorimetry>,
+    /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
+    pub exact_framerate: std::option::Option<std::string::String>,
+    /// The pixel aspect ratio (PAR) of the video.
+    pub par: std::option::Option<std::string::String>,
+    /// The encoding range of the video.
+    pub range: std::option::Option<crate::model::Range>,
+    /// The type of compression that was used to smooth the video’s appearance
+    pub scan_mode: std::option::Option<crate::model::ScanMode>,
+    /// The transfer characteristic system (TCS) that is used in the video.
+    pub tcs: std::option::Option<crate::model::Tcs>,
+}
+impl std::fmt::Debug for Fmtp {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Fmtp");
+        formatter.field("channel_order", &self.channel_order);
+        formatter.field("colorimetry", &self.colorimetry);
+        formatter.field("exact_framerate", &self.exact_framerate);
+        formatter.field("par", &self.par);
+        formatter.field("range", &self.range);
+        formatter.field("scan_mode", &self.scan_mode);
+        formatter.field("tcs", &self.tcs);
+        formatter.finish()
+    }
+}
+/// See [`Fmtp`](crate::model::Fmtp)
+pub mod fmtp {
+    /// A builder for [`Fmtp`](crate::model::Fmtp)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_order: std::option::Option<std::string::String>,
+        pub(crate) colorimetry: std::option::Option<crate::model::Colorimetry>,
+        pub(crate) exact_framerate: std::option::Option<std::string::String>,
+        pub(crate) par: std::option::Option<std::string::String>,
+        pub(crate) range: std::option::Option<crate::model::Range>,
+        pub(crate) scan_mode: std::option::Option<crate::model::ScanMode>,
+        pub(crate) tcs: std::option::Option<crate::model::Tcs>,
+    }
+    impl Builder {
+        /// The format of the audio channel.
+        pub fn channel_order(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_order = Some(input.into());
+            self
+        }
+        pub fn set_channel_order(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.channel_order = input;
+            self
+        }
+        /// The format that is used for the representation of color.
+        pub fn colorimetry(mut self, input: crate::model::Colorimetry) -> Self {
+            self.colorimetry = Some(input);
+            self
+        }
+        pub fn set_colorimetry(
+            mut self,
+            input: std::option::Option<crate::model::Colorimetry>,
+        ) -> Self {
+            self.colorimetry = input;
+            self
+        }
+        /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
+        pub fn exact_framerate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.exact_framerate = Some(input.into());
+            self
+        }
+        pub fn set_exact_framerate(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.exact_framerate = input;
+            self
+        }
+        /// The pixel aspect ratio (PAR) of the video.
+        pub fn par(mut self, input: impl Into<std::string::String>) -> Self {
+            self.par = Some(input.into());
+            self
+        }
+        pub fn set_par(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.par = input;
+            self
+        }
+        /// The encoding range of the video.
+        pub fn range(mut self, input: crate::model::Range) -> Self {
+            self.range = Some(input);
+            self
+        }
+        pub fn set_range(mut self, input: std::option::Option<crate::model::Range>) -> Self {
+            self.range = input;
+            self
+        }
+        /// The type of compression that was used to smooth the video’s appearance
+        pub fn scan_mode(mut self, input: crate::model::ScanMode) -> Self {
+            self.scan_mode = Some(input);
+            self
+        }
+        pub fn set_scan_mode(mut self, input: std::option::Option<crate::model::ScanMode>) -> Self {
+            self.scan_mode = input;
+            self
+        }
+        /// The transfer characteristic system (TCS) that is used in the video.
+        pub fn tcs(mut self, input: crate::model::Tcs) -> Self {
+            self.tcs = Some(input);
+            self
+        }
+        pub fn set_tcs(mut self, input: std::option::Option<crate::model::Tcs>) -> Self {
+            self.tcs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Fmtp`](crate::model::Fmtp)
+        pub fn build(self) -> crate::model::Fmtp {
+            crate::model::Fmtp {
+                channel_order: self.channel_order,
+                colorimetry: self.colorimetry,
+                exact_framerate: self.exact_framerate,
+                par: self.par,
+                range: self.range,
+                scan_mode: self.scan_mode,
+                tcs: self.tcs,
+            }
+        }
+    }
+}
+impl Fmtp {
+    /// Creates a new builder-style object to manufacture [`Fmtp`](crate::model::Fmtp)
+    pub fn builder() -> crate::model::fmtp::Builder {
+        crate::model::fmtp::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Tcs {
+    Bt2100Linhlg,
+    Bt2100Linpq,
+    Density,
+    Hlg,
+    Linear,
+    Pq,
+    Sdr,
+    St20651,
+    St4281,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Tcs {
+    fn from(s: &str) -> Self {
+        match s {
+            "BT2100LINHLG" => Tcs::Bt2100Linhlg,
+            "BT2100LINPQ" => Tcs::Bt2100Linpq,
+            "DENSITY" => Tcs::Density,
+            "HLG" => Tcs::Hlg,
+            "LINEAR" => Tcs::Linear,
+            "PQ" => Tcs::Pq,
+            "SDR" => Tcs::Sdr,
+            "ST2065-1" => Tcs::St20651,
+            "ST428-1" => Tcs::St4281,
+            other => Tcs::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Tcs {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Tcs::from(s))
+    }
+}
+impl Tcs {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Tcs::Bt2100Linhlg => "BT2100LINHLG",
+            Tcs::Bt2100Linpq => "BT2100LINPQ",
+            Tcs::Density => "DENSITY",
+            Tcs::Hlg => "HLG",
+            Tcs::Linear => "LINEAR",
+            Tcs::Pq => "PQ",
+            Tcs::Sdr => "SDR",
+            Tcs::St20651 => "ST2065-1",
+            Tcs::St4281 => "ST428-1",
+            Tcs::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BT2100LINHLG",
+            "BT2100LINPQ",
+            "DENSITY",
+            "HLG",
+            "LINEAR",
+            "PQ",
+            "SDR",
+            "ST2065-1",
+            "ST428-1",
+        ]
+    }
+}
+impl AsRef<str> for Tcs {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScanMode {
+    Interlace,
+    Progressive,
+    ProgressiveSegmentedFrame,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ScanMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "interlace" => ScanMode::Interlace,
+            "progressive" => ScanMode::Progressive,
+            "progressive-segmented-frame" => ScanMode::ProgressiveSegmentedFrame,
+            other => ScanMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ScanMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScanMode::from(s))
+    }
+}
+impl ScanMode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScanMode::Interlace => "interlace",
+            ScanMode::Progressive => "progressive",
+            ScanMode::ProgressiveSegmentedFrame => "progressive-segmented-frame",
+            ScanMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["interlace", "progressive", "progressive-segmented-frame"]
+    }
+}
+impl AsRef<str> for ScanMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Range {
+    Full,
+    Fullprotect,
+    Narrow,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Range {
+    fn from(s: &str) -> Self {
+        match s {
+            "FULL" => Range::Full,
+            "FULLPROTECT" => Range::Fullprotect,
+            "NARROW" => Range::Narrow,
+            other => Range::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Range {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Range::from(s))
+    }
+}
+impl Range {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Range::Full => "FULL",
+            Range::Fullprotect => "FULLPROTECT",
+            Range::Narrow => "NARROW",
+            Range::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FULL", "FULLPROTECT", "NARROW"]
+    }
+}
+impl AsRef<str> for Range {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Colorimetry {
+    Bt2020,
+    Bt2100,
+    Bt601,
+    Bt709,
+    St20651,
+    St20653,
+    Xyz,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Colorimetry {
+    fn from(s: &str) -> Self {
+        match s {
+            "BT2020" => Colorimetry::Bt2020,
+            "BT2100" => Colorimetry::Bt2100,
+            "BT601" => Colorimetry::Bt601,
+            "BT709" => Colorimetry::Bt709,
+            "ST2065-1" => Colorimetry::St20651,
+            "ST2065-3" => Colorimetry::St20653,
+            "XYZ" => Colorimetry::Xyz,
+            other => Colorimetry::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Colorimetry {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Colorimetry::from(s))
+    }
+}
+impl Colorimetry {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Colorimetry::Bt2020 => "BT2020",
+            Colorimetry::Bt2100 => "BT2100",
+            Colorimetry::Bt601 => "BT601",
+            Colorimetry::Bt709 => "BT709",
+            Colorimetry::St20651 => "ST2065-1",
+            Colorimetry::St20653 => "ST2065-3",
+            Colorimetry::Xyz => "XYZ",
+            Colorimetry::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BT2020", "BT2100", "BT601", "BT709", "ST2065-1", "ST2065-3", "XYZ",
+        ]
+    }
+}
+impl AsRef<str> for Colorimetry {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Attributes that are related to the media stream.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MediaStreamAttributesRequest {
+    /// The settings that you want to use to define the media stream.
+    pub fmtp: std::option::Option<crate::model::FmtpRequest>,
+    /// The audio language, in a format that is recognized by the receiver.
+    pub lang: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MediaStreamAttributesRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MediaStreamAttributesRequest");
+        formatter.field("fmtp", &self.fmtp);
+        formatter.field("lang", &self.lang);
+        formatter.finish()
+    }
+}
+/// See [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
+pub mod media_stream_attributes_request {
+    /// A builder for [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fmtp: std::option::Option<crate::model::FmtpRequest>,
+        pub(crate) lang: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// The settings that you want to use to define the media stream.
+        pub fn fmtp(mut self, input: crate::model::FmtpRequest) -> Self {
+            self.fmtp = Some(input);
+            self
+        }
+        pub fn set_fmtp(mut self, input: std::option::Option<crate::model::FmtpRequest>) -> Self {
+            self.fmtp = input;
+            self
+        }
+        /// The audio language, in a format that is recognized by the receiver.
+        pub fn lang(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lang = Some(input.into());
+            self
+        }
+        pub fn set_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lang = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
+        pub fn build(self) -> crate::model::MediaStreamAttributesRequest {
+            crate::model::MediaStreamAttributesRequest {
+                fmtp: self.fmtp,
+                lang: self.lang,
+            }
+        }
+    }
+}
+impl MediaStreamAttributesRequest {
+    /// Creates a new builder-style object to manufacture [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
+    pub fn builder() -> crate::model::media_stream_attributes_request::Builder {
+        crate::model::media_stream_attributes_request::Builder::default()
+    }
+}
+
+/// The settings that you want to use to define the media stream.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FmtpRequest {
+    /// The format of the audio channel.
+    pub channel_order: std::option::Option<std::string::String>,
+    /// The format that is used for the representation of color.
+    pub colorimetry: std::option::Option<crate::model::Colorimetry>,
+    /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
+    pub exact_framerate: std::option::Option<std::string::String>,
+    /// The pixel aspect ratio (PAR) of the video.
+    pub par: std::option::Option<std::string::String>,
+    /// The encoding range of the video.
+    pub range: std::option::Option<crate::model::Range>,
+    /// The type of compression that was used to smooth the video’s appearance.
+    pub scan_mode: std::option::Option<crate::model::ScanMode>,
+    /// The transfer characteristic system (TCS) that is used in the video.
+    pub tcs: std::option::Option<crate::model::Tcs>,
+}
+impl std::fmt::Debug for FmtpRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FmtpRequest");
+        formatter.field("channel_order", &self.channel_order);
+        formatter.field("colorimetry", &self.colorimetry);
+        formatter.field("exact_framerate", &self.exact_framerate);
+        formatter.field("par", &self.par);
+        formatter.field("range", &self.range);
+        formatter.field("scan_mode", &self.scan_mode);
+        formatter.field("tcs", &self.tcs);
+        formatter.finish()
+    }
+}
+/// See [`FmtpRequest`](crate::model::FmtpRequest)
+pub mod fmtp_request {
+    /// A builder for [`FmtpRequest`](crate::model::FmtpRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_order: std::option::Option<std::string::String>,
+        pub(crate) colorimetry: std::option::Option<crate::model::Colorimetry>,
+        pub(crate) exact_framerate: std::option::Option<std::string::String>,
+        pub(crate) par: std::option::Option<std::string::String>,
+        pub(crate) range: std::option::Option<crate::model::Range>,
+        pub(crate) scan_mode: std::option::Option<crate::model::ScanMode>,
+        pub(crate) tcs: std::option::Option<crate::model::Tcs>,
+    }
+    impl Builder {
+        /// The format of the audio channel.
+        pub fn channel_order(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_order = Some(input.into());
+            self
+        }
+        pub fn set_channel_order(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.channel_order = input;
+            self
+        }
+        /// The format that is used for the representation of color.
+        pub fn colorimetry(mut self, input: crate::model::Colorimetry) -> Self {
+            self.colorimetry = Some(input);
+            self
+        }
+        pub fn set_colorimetry(
+            mut self,
+            input: std::option::Option<crate::model::Colorimetry>,
+        ) -> Self {
+            self.colorimetry = input;
+            self
+        }
+        /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
+        pub fn exact_framerate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.exact_framerate = Some(input.into());
+            self
+        }
+        pub fn set_exact_framerate(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.exact_framerate = input;
+            self
+        }
+        /// The pixel aspect ratio (PAR) of the video.
+        pub fn par(mut self, input: impl Into<std::string::String>) -> Self {
+            self.par = Some(input.into());
+            self
+        }
+        pub fn set_par(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.par = input;
+            self
+        }
+        /// The encoding range of the video.
+        pub fn range(mut self, input: crate::model::Range) -> Self {
+            self.range = Some(input);
+            self
+        }
+        pub fn set_range(mut self, input: std::option::Option<crate::model::Range>) -> Self {
+            self.range = input;
+            self
+        }
+        /// The type of compression that was used to smooth the video’s appearance.
+        pub fn scan_mode(mut self, input: crate::model::ScanMode) -> Self {
+            self.scan_mode = Some(input);
+            self
+        }
+        pub fn set_scan_mode(mut self, input: std::option::Option<crate::model::ScanMode>) -> Self {
+            self.scan_mode = input;
+            self
+        }
+        /// The transfer characteristic system (TCS) that is used in the video.
+        pub fn tcs(mut self, input: crate::model::Tcs) -> Self {
+            self.tcs = Some(input);
+            self
+        }
+        pub fn set_tcs(mut self, input: std::option::Option<crate::model::Tcs>) -> Self {
+            self.tcs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FmtpRequest`](crate::model::FmtpRequest)
+        pub fn build(self) -> crate::model::FmtpRequest {
+            crate::model::FmtpRequest {
+                channel_order: self.channel_order,
+                colorimetry: self.colorimetry,
+                exact_framerate: self.exact_framerate,
+                par: self.par,
+                range: self.range,
+                scan_mode: self.scan_mode,
+                tcs: self.tcs,
+            }
+        }
+    }
+}
+impl FmtpRequest {
+    /// Creates a new builder-style object to manufacture [`FmtpRequest`](crate::model::FmtpRequest)
+    pub fn builder() -> crate::model::fmtp_request::Builder {
+        crate::model::fmtp_request::Builder::default()
+    }
+}
+
+/// The settings for a flow entitlement.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Entitlement {
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub data_transfer_subscriber_fee_percent: i32,
+    /// A description of the entitlement.
+    pub description: std::option::Option<std::string::String>,
+    /// The type of encryption that will be used on the output that is associated with this entitlement.
+    pub encryption: std::option::Option<crate::model::Encryption>,
+    /// The ARN of the entitlement.
+    pub entitlement_arn: std::option::Option<std::string::String>,
+    /// An indication of whether the entitlement is enabled.
+    pub entitlement_status: std::option::Option<crate::model::EntitlementStatus>,
+    /// The name of the entitlement.
+    pub name: std::option::Option<std::string::String>,
+    /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
+    pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for Entitlement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Entitlement");
+        formatter.field(
+            "data_transfer_subscriber_fee_percent",
+            &self.data_transfer_subscriber_fee_percent,
+        );
+        formatter.field("description", &self.description);
+        formatter.field("encryption", &self.encryption);
+        formatter.field("entitlement_arn", &self.entitlement_arn);
+        formatter.field("entitlement_status", &self.entitlement_status);
+        formatter.field("name", &self.name);
+        formatter.field("subscribers", &self.subscribers);
+        formatter.finish()
+    }
+}
+/// See [`Entitlement`](crate::model::Entitlement)
+pub mod entitlement {
+    /// A builder for [`Entitlement`](crate::model::Entitlement)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) encryption: std::option::Option<crate::model::Encryption>,
+        pub(crate) entitlement_arn: std::option::Option<std::string::String>,
+        pub(crate) entitlement_status: std::option::Option<crate::model::EntitlementStatus>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+        pub fn data_transfer_subscriber_fee_percent(mut self, input: i32) -> Self {
+            self.data_transfer_subscriber_fee_percent = Some(input);
+            self
+        }
+        pub fn set_data_transfer_subscriber_fee_percent(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.data_transfer_subscriber_fee_percent = input;
+            self
+        }
+        /// A description of the entitlement.
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// The type of encryption that will be used on the output that is associated with this entitlement.
+        pub fn encryption(mut self, input: crate::model::Encryption) -> Self {
+            self.encryption = Some(input);
+            self
+        }
+        pub fn set_encryption(
+            mut self,
+            input: std::option::Option<crate::model::Encryption>,
+        ) -> Self {
+            self.encryption = input;
+            self
+        }
+        /// The ARN of the entitlement.
+        pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entitlement_arn = Some(input.into());
+            self
+        }
+        pub fn set_entitlement_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.entitlement_arn = input;
+            self
+        }
+        /// An indication of whether the entitlement is enabled.
+        pub fn entitlement_status(mut self, input: crate::model::EntitlementStatus) -> Self {
+            self.entitlement_status = Some(input);
+            self
+        }
+        pub fn set_entitlement_status(
+            mut self,
+            input: std::option::Option<crate::model::EntitlementStatus>,
+        ) -> Self {
+            self.entitlement_status = input;
+            self
+        }
+        /// The name of the entitlement.
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subscribers.unwrap_or_default();
+            v.push(input.into());
+            self.subscribers = Some(v);
+            self
+        }
+        pub fn set_subscribers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subscribers = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Entitlement`](crate::model::Entitlement)
+        pub fn build(self) -> crate::model::Entitlement {
+            crate::model::Entitlement {
+                data_transfer_subscriber_fee_percent: self
+                    .data_transfer_subscriber_fee_percent
+                    .unwrap_or_default(),
+                description: self.description,
+                encryption: self.encryption,
+                entitlement_arn: self.entitlement_arn,
+                entitlement_status: self.entitlement_status,
+                name: self.name,
+                subscribers: self.subscribers,
+            }
+        }
+    }
+}
+impl Entitlement {
+    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement)
+    pub fn builder() -> crate::model::entitlement::Builder {
+        crate::model::entitlement::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EntitlementStatus {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EntitlementStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => EntitlementStatus::Disabled,
+            "ENABLED" => EntitlementStatus::Enabled,
+            other => EntitlementStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EntitlementStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EntitlementStatus::from(s))
+    }
+}
+impl EntitlementStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            EntitlementStatus::Disabled => "DISABLED",
+            EntitlementStatus::Enabled => "ENABLED",
+            EntitlementStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for EntitlementStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// The settings for a flow, including its source, outputs, and entitlements.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2115,1697 +4067,6 @@ impl FailoverMode {
 impl AsRef<str> for FailoverMode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-
-/// The settings for an output.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Output {
-    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    pub data_transfer_subscriber_fee_percent: i32,
-    /// A description of the output.
-    pub description: std::option::Option<std::string::String>,
-    /// The address where you want to send the output.
-    pub destination: std::option::Option<std::string::String>,
-    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-    pub encryption: std::option::Option<crate::model::Encryption>,
-    /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
-    pub entitlement_arn: std::option::Option<std::string::String>,
-    /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
-    pub listener_address: std::option::Option<std::string::String>,
-    /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
-    pub media_live_input_arn: std::option::Option<std::string::String>,
-    /// The configuration for each media stream that is associated with the output.
-    pub media_stream_output_configurations:
-        std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
-    /// The name of the output. This value must be unique within the current flow.
-    pub name: std::option::Option<std::string::String>,
-    /// The ARN of the output.
-    pub output_arn: std::option::Option<std::string::String>,
-    /// The port to use when content is distributed to this output.
-    pub port: i32,
-    /// Attributes related to the transport stream that are used in the output.
-    pub transport: std::option::Option<crate::model::Transport>,
-    /// The name of the VPC interface attachment to use for this output.
-    pub vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
-}
-impl std::fmt::Debug for Output {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Output");
-        formatter.field(
-            "data_transfer_subscriber_fee_percent",
-            &self.data_transfer_subscriber_fee_percent,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("destination", &self.destination);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("entitlement_arn", &self.entitlement_arn);
-        formatter.field("listener_address", &self.listener_address);
-        formatter.field("media_live_input_arn", &self.media_live_input_arn);
-        formatter.field(
-            "media_stream_output_configurations",
-            &self.media_stream_output_configurations,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("output_arn", &self.output_arn);
-        formatter.field("port", &self.port);
-        formatter.field("transport", &self.transport);
-        formatter.field("vpc_interface_attachment", &self.vpc_interface_attachment);
-        formatter.finish()
-    }
-}
-/// See [`Output`](crate::model::Output)
-pub mod output {
-    /// A builder for [`Output`](crate::model::Output)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
-        pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) destination: std::option::Option<std::string::String>,
-        pub(crate) encryption: std::option::Option<crate::model::Encryption>,
-        pub(crate) entitlement_arn: std::option::Option<std::string::String>,
-        pub(crate) listener_address: std::option::Option<std::string::String>,
-        pub(crate) media_live_input_arn: std::option::Option<std::string::String>,
-        pub(crate) media_stream_output_configurations:
-            std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) output_arn: std::option::Option<std::string::String>,
-        pub(crate) port: std::option::Option<i32>,
-        pub(crate) transport: std::option::Option<crate::model::Transport>,
-        pub(crate) vpc_interface_attachment:
-            std::option::Option<crate::model::VpcInterfaceAttachment>,
-    }
-    impl Builder {
-        /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-        pub fn data_transfer_subscriber_fee_percent(mut self, input: i32) -> Self {
-            self.data_transfer_subscriber_fee_percent = Some(input);
-            self
-        }
-        pub fn set_data_transfer_subscriber_fee_percent(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.data_transfer_subscriber_fee_percent = input;
-            self
-        }
-        /// A description of the output.
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.description = Some(input.into());
-            self
-        }
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
-        }
-        /// The address where you want to send the output.
-        pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
-            self.destination = Some(input.into());
-            self
-        }
-        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
-        }
-        /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-        pub fn encryption(mut self, input: crate::model::Encryption) -> Self {
-            self.encryption = Some(input);
-            self
-        }
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::Encryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
-        }
-        /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
-        pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.entitlement_arn = Some(input.into());
-            self
-        }
-        pub fn set_entitlement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entitlement_arn = input;
-            self
-        }
-        /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
-        pub fn listener_address(mut self, input: impl Into<std::string::String>) -> Self {
-            self.listener_address = Some(input.into());
-            self
-        }
-        pub fn set_listener_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.listener_address = input;
-            self
-        }
-        /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
-        pub fn media_live_input_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.media_live_input_arn = Some(input.into());
-            self
-        }
-        pub fn set_media_live_input_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_live_input_arn = input;
-            self
-        }
-        pub fn media_stream_output_configurations(
-            mut self,
-            input: impl Into<crate::model::MediaStreamOutputConfiguration>,
-        ) -> Self {
-            let mut v = self.media_stream_output_configurations.unwrap_or_default();
-            v.push(input.into());
-            self.media_stream_output_configurations = Some(v);
-            self
-        }
-        pub fn set_media_stream_output_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
-        ) -> Self {
-            self.media_stream_output_configurations = input;
-            self
-        }
-        /// The name of the output. This value must be unique within the current flow.
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// The ARN of the output.
-        pub fn output_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.output_arn = Some(input.into());
-            self
-        }
-        pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.output_arn = input;
-            self
-        }
-        /// The port to use when content is distributed to this output.
-        pub fn port(mut self, input: i32) -> Self {
-            self.port = Some(input);
-            self
-        }
-        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
-        }
-        /// Attributes related to the transport stream that are used in the output.
-        pub fn transport(mut self, input: crate::model::Transport) -> Self {
-            self.transport = Some(input);
-            self
-        }
-        pub fn set_transport(
-            mut self,
-            input: std::option::Option<crate::model::Transport>,
-        ) -> Self {
-            self.transport = input;
-            self
-        }
-        /// The name of the VPC interface attachment to use for this output.
-        pub fn vpc_interface_attachment(
-            mut self,
-            input: crate::model::VpcInterfaceAttachment,
-        ) -> Self {
-            self.vpc_interface_attachment = Some(input);
-            self
-        }
-        pub fn set_vpc_interface_attachment(
-            mut self,
-            input: std::option::Option<crate::model::VpcInterfaceAttachment>,
-        ) -> Self {
-            self.vpc_interface_attachment = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Output`](crate::model::Output)
-        pub fn build(self) -> crate::model::Output {
-            crate::model::Output {
-                data_transfer_subscriber_fee_percent: self
-                    .data_transfer_subscriber_fee_percent
-                    .unwrap_or_default(),
-                description: self.description,
-                destination: self.destination,
-                encryption: self.encryption,
-                entitlement_arn: self.entitlement_arn,
-                listener_address: self.listener_address,
-                media_live_input_arn: self.media_live_input_arn,
-                media_stream_output_configurations: self.media_stream_output_configurations,
-                name: self.name,
-                output_arn: self.output_arn,
-                port: self.port.unwrap_or_default(),
-                transport: self.transport,
-                vpc_interface_attachment: self.vpc_interface_attachment,
-            }
-        }
-    }
-}
-impl Output {
-    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output)
-    pub fn builder() -> crate::model::output::Builder {
-        crate::model::output::Builder::default()
-    }
-}
-
-/// The settings for attaching a VPC interface to an output.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VpcInterfaceAttachment {
-    /// The name of the VPC interface to use for this output.
-    pub vpc_interface_name: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for VpcInterfaceAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcInterfaceAttachment");
-        formatter.field("vpc_interface_name", &self.vpc_interface_name);
-        formatter.finish()
-    }
-}
-/// See [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
-pub mod vpc_interface_attachment {
-    /// A builder for [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// The name of the VPC interface to use for this output.
-        pub fn vpc_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpc_interface_name = Some(input.into());
-            self
-        }
-        pub fn set_vpc_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_interface_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
-        pub fn build(self) -> crate::model::VpcInterfaceAttachment {
-            crate::model::VpcInterfaceAttachment {
-                vpc_interface_name: self.vpc_interface_name,
-            }
-        }
-    }
-}
-impl VpcInterfaceAttachment {
-    /// Creates a new builder-style object to manufacture [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
-    pub fn builder() -> crate::model::vpc_interface_attachment::Builder {
-        crate::model::vpc_interface_attachment::Builder::default()
-    }
-}
-
-/// The media stream that is associated with the output, and the parameters for that association.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MediaStreamOutputConfiguration {
-    /// The transport parameters that are associated with each outbound media stream.
-    pub destination_configurations:
-        std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
-    /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-    pub encoding_name: std::option::Option<crate::model::EncodingName>,
-    /// Encoding parameters
-    pub encoding_parameters: std::option::Option<crate::model::EncodingParameters>,
-    /// The name of the media stream.
-    pub media_stream_name: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MediaStreamOutputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStreamOutputConfiguration");
-        formatter.field(
-            "destination_configurations",
-            &self.destination_configurations,
-        );
-        formatter.field("encoding_name", &self.encoding_name);
-        formatter.field("encoding_parameters", &self.encoding_parameters);
-        formatter.field("media_stream_name", &self.media_stream_name);
-        formatter.finish()
-    }
-}
-/// See [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
-pub mod media_stream_output_configuration {
-    /// A builder for [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) destination_configurations:
-            std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
-        pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
-        pub(crate) encoding_parameters: std::option::Option<crate::model::EncodingParameters>,
-        pub(crate) media_stream_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn destination_configurations(
-            mut self,
-            input: impl Into<crate::model::DestinationConfiguration>,
-        ) -> Self {
-            let mut v = self.destination_configurations.unwrap_or_default();
-            v.push(input.into());
-            self.destination_configurations = Some(v);
-            self
-        }
-        pub fn set_destination_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
-        ) -> Self {
-            self.destination_configurations = input;
-            self
-        }
-        /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-        pub fn encoding_name(mut self, input: crate::model::EncodingName) -> Self {
-            self.encoding_name = Some(input);
-            self
-        }
-        pub fn set_encoding_name(
-            mut self,
-            input: std::option::Option<crate::model::EncodingName>,
-        ) -> Self {
-            self.encoding_name = input;
-            self
-        }
-        /// Encoding parameters
-        pub fn encoding_parameters(mut self, input: crate::model::EncodingParameters) -> Self {
-            self.encoding_parameters = Some(input);
-            self
-        }
-        pub fn set_encoding_parameters(
-            mut self,
-            input: std::option::Option<crate::model::EncodingParameters>,
-        ) -> Self {
-            self.encoding_parameters = input;
-            self
-        }
-        /// The name of the media stream.
-        pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.media_stream_name = Some(input.into());
-            self
-        }
-        pub fn set_media_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_stream_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
-        pub fn build(self) -> crate::model::MediaStreamOutputConfiguration {
-            crate::model::MediaStreamOutputConfiguration {
-                destination_configurations: self.destination_configurations,
-                encoding_name: self.encoding_name,
-                encoding_parameters: self.encoding_parameters,
-                media_stream_name: self.media_stream_name,
-            }
-        }
-    }
-}
-impl MediaStreamOutputConfiguration {
-    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
-    pub fn builder() -> crate::model::media_stream_output_configuration::Builder {
-        crate::model::media_stream_output_configuration::Builder::default()
-    }
-}
-
-/// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EncodingParameters {
-    /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
-    pub compression_factor: f64,
-    /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
-    pub encoder_profile: std::option::Option<crate::model::EncoderProfile>,
-}
-impl std::fmt::Debug for EncodingParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncodingParameters");
-        formatter.field("compression_factor", &self.compression_factor);
-        formatter.field("encoder_profile", &self.encoder_profile);
-        formatter.finish()
-    }
-}
-/// See [`EncodingParameters`](crate::model::EncodingParameters)
-pub mod encoding_parameters {
-    /// A builder for [`EncodingParameters`](crate::model::EncodingParameters)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) compression_factor: std::option::Option<f64>,
-        pub(crate) encoder_profile: std::option::Option<crate::model::EncoderProfile>,
-    }
-    impl Builder {
-        /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
-        pub fn compression_factor(mut self, input: f64) -> Self {
-            self.compression_factor = Some(input);
-            self
-        }
-        pub fn set_compression_factor(mut self, input: std::option::Option<f64>) -> Self {
-            self.compression_factor = input;
-            self
-        }
-        /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
-        pub fn encoder_profile(mut self, input: crate::model::EncoderProfile) -> Self {
-            self.encoder_profile = Some(input);
-            self
-        }
-        pub fn set_encoder_profile(
-            mut self,
-            input: std::option::Option<crate::model::EncoderProfile>,
-        ) -> Self {
-            self.encoder_profile = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`EncodingParameters`](crate::model::EncodingParameters)
-        pub fn build(self) -> crate::model::EncodingParameters {
-            crate::model::EncodingParameters {
-                compression_factor: self.compression_factor.unwrap_or_default(),
-                encoder_profile: self.encoder_profile,
-            }
-        }
-    }
-}
-impl EncodingParameters {
-    /// Creates a new builder-style object to manufacture [`EncodingParameters`](crate::model::EncodingParameters)
-    pub fn builder() -> crate::model::encoding_parameters::Builder {
-        crate::model::encoding_parameters::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum EncoderProfile {
-    High,
-    Main,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for EncoderProfile {
-    fn from(s: &str) -> Self {
-        match s {
-            "high" => EncoderProfile::High,
-            "main" => EncoderProfile::Main,
-            other => EncoderProfile::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for EncoderProfile {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncoderProfile::from(s))
-    }
-}
-impl EncoderProfile {
-    pub fn as_str(&self) -> &str {
-        match self {
-            EncoderProfile::High => "high",
-            EncoderProfile::Main => "main",
-            EncoderProfile::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["high", "main"]
-    }
-}
-impl AsRef<str> for EncoderProfile {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// The transport parameters that are associated with an outbound media stream.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DestinationConfiguration {
-    /// The IP address where contents of the media stream will be sent.
-    pub destination_ip: std::option::Option<std::string::String>,
-    /// The port to use when the content of the media stream is distributed to the output.
-    pub destination_port: i32,
-    /// The VPC interface that is used for the media stream associated with the output.
-    pub interface: std::option::Option<crate::model::Interface>,
-    /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
-    pub outbound_ip: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationConfiguration");
-        formatter.field("destination_ip", &self.destination_ip);
-        formatter.field("destination_port", &self.destination_port);
-        formatter.field("interface", &self.interface);
-        formatter.field("outbound_ip", &self.outbound_ip);
-        formatter.finish()
-    }
-}
-/// See [`DestinationConfiguration`](crate::model::DestinationConfiguration)
-pub mod destination_configuration {
-    /// A builder for [`DestinationConfiguration`](crate::model::DestinationConfiguration)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) destination_ip: std::option::Option<std::string::String>,
-        pub(crate) destination_port: std::option::Option<i32>,
-        pub(crate) interface: std::option::Option<crate::model::Interface>,
-        pub(crate) outbound_ip: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// The IP address where contents of the media stream will be sent.
-        pub fn destination_ip(mut self, input: impl Into<std::string::String>) -> Self {
-            self.destination_ip = Some(input.into());
-            self
-        }
-        pub fn set_destination_ip(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_ip = input;
-            self
-        }
-        /// The port to use when the content of the media stream is distributed to the output.
-        pub fn destination_port(mut self, input: i32) -> Self {
-            self.destination_port = Some(input);
-            self
-        }
-        pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.destination_port = input;
-            self
-        }
-        /// The VPC interface that is used for the media stream associated with the output.
-        pub fn interface(mut self, input: crate::model::Interface) -> Self {
-            self.interface = Some(input);
-            self
-        }
-        pub fn set_interface(
-            mut self,
-            input: std::option::Option<crate::model::Interface>,
-        ) -> Self {
-            self.interface = input;
-            self
-        }
-        /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
-        pub fn outbound_ip(mut self, input: impl Into<std::string::String>) -> Self {
-            self.outbound_ip = Some(input.into());
-            self
-        }
-        pub fn set_outbound_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.outbound_ip = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DestinationConfiguration`](crate::model::DestinationConfiguration)
-        pub fn build(self) -> crate::model::DestinationConfiguration {
-            crate::model::DestinationConfiguration {
-                destination_ip: self.destination_ip,
-                destination_port: self.destination_port.unwrap_or_default(),
-                interface: self.interface,
-                outbound_ip: self.outbound_ip,
-            }
-        }
-    }
-}
-impl DestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`DestinationConfiguration`](crate::model::DestinationConfiguration)
-    pub fn builder() -> crate::model::destination_configuration::Builder {
-        crate::model::destination_configuration::Builder::default()
-    }
-}
-
-/// A single track or stream of media that contains video, audio, or ancillary data. After you add a media stream to a flow, you can associate it with sources and outputs on that flow, as long as they use the CDI protocol or the ST 2110 JPEG XS protocol. Each source or output can consist of one or many media streams.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MediaStream {
-    /// Attributes that are related to the media stream.
-    pub attributes: std::option::Option<crate::model::MediaStreamAttributes>,
-    /// The sample rate for the stream. This value is measured in Hz.
-    pub clock_rate: i32,
-    /// A description that can help you quickly identify what your media stream is used for.
-    pub description: std::option::Option<std::string::String>,
-    /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
-    pub fmt: i32,
-    /// A unique identifier for the media stream.
-    pub media_stream_id: i32,
-    /// A name that helps you distinguish one media stream from another.
-    pub media_stream_name: std::option::Option<std::string::String>,
-    /// The type of media stream.
-    pub media_stream_type: std::option::Option<crate::model::MediaStreamType>,
-    /// The resolution of the video.
-    pub video_format: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MediaStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStream");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("clock_rate", &self.clock_rate);
-        formatter.field("description", &self.description);
-        formatter.field("fmt", &self.fmt);
-        formatter.field("media_stream_id", &self.media_stream_id);
-        formatter.field("media_stream_name", &self.media_stream_name);
-        formatter.field("media_stream_type", &self.media_stream_type);
-        formatter.field("video_format", &self.video_format);
-        formatter.finish()
-    }
-}
-/// See [`MediaStream`](crate::model::MediaStream)
-pub mod media_stream {
-    /// A builder for [`MediaStream`](crate::model::MediaStream)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) attributes: std::option::Option<crate::model::MediaStreamAttributes>,
-        pub(crate) clock_rate: std::option::Option<i32>,
-        pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) fmt: std::option::Option<i32>,
-        pub(crate) media_stream_id: std::option::Option<i32>,
-        pub(crate) media_stream_name: std::option::Option<std::string::String>,
-        pub(crate) media_stream_type: std::option::Option<crate::model::MediaStreamType>,
-        pub(crate) video_format: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Attributes that are related to the media stream.
-        pub fn attributes(mut self, input: crate::model::MediaStreamAttributes) -> Self {
-            self.attributes = Some(input);
-            self
-        }
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<crate::model::MediaStreamAttributes>,
-        ) -> Self {
-            self.attributes = input;
-            self
-        }
-        /// The sample rate for the stream. This value is measured in Hz.
-        pub fn clock_rate(mut self, input: i32) -> Self {
-            self.clock_rate = Some(input);
-            self
-        }
-        pub fn set_clock_rate(mut self, input: std::option::Option<i32>) -> Self {
-            self.clock_rate = input;
-            self
-        }
-        /// A description that can help you quickly identify what your media stream is used for.
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.description = Some(input.into());
-            self
-        }
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
-        }
-        /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
-        pub fn fmt(mut self, input: i32) -> Self {
-            self.fmt = Some(input);
-            self
-        }
-        pub fn set_fmt(mut self, input: std::option::Option<i32>) -> Self {
-            self.fmt = input;
-            self
-        }
-        /// A unique identifier for the media stream.
-        pub fn media_stream_id(mut self, input: i32) -> Self {
-            self.media_stream_id = Some(input);
-            self
-        }
-        pub fn set_media_stream_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.media_stream_id = input;
-            self
-        }
-        /// A name that helps you distinguish one media stream from another.
-        pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.media_stream_name = Some(input.into());
-            self
-        }
-        pub fn set_media_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_stream_name = input;
-            self
-        }
-        /// The type of media stream.
-        pub fn media_stream_type(mut self, input: crate::model::MediaStreamType) -> Self {
-            self.media_stream_type = Some(input);
-            self
-        }
-        pub fn set_media_stream_type(
-            mut self,
-            input: std::option::Option<crate::model::MediaStreamType>,
-        ) -> Self {
-            self.media_stream_type = input;
-            self
-        }
-        /// The resolution of the video.
-        pub fn video_format(mut self, input: impl Into<std::string::String>) -> Self {
-            self.video_format = Some(input.into());
-            self
-        }
-        pub fn set_video_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.video_format = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`MediaStream`](crate::model::MediaStream)
-        pub fn build(self) -> crate::model::MediaStream {
-            crate::model::MediaStream {
-                attributes: self.attributes,
-                clock_rate: self.clock_rate.unwrap_or_default(),
-                description: self.description,
-                fmt: self.fmt.unwrap_or_default(),
-                media_stream_id: self.media_stream_id.unwrap_or_default(),
-                media_stream_name: self.media_stream_name,
-                media_stream_type: self.media_stream_type,
-                video_format: self.video_format,
-            }
-        }
-    }
-}
-impl MediaStream {
-    /// Creates a new builder-style object to manufacture [`MediaStream`](crate::model::MediaStream)
-    pub fn builder() -> crate::model::media_stream::Builder {
-        crate::model::media_stream::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum MediaStreamType {
-    AncillaryData,
-    Audio,
-    Video,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for MediaStreamType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ancillary-data" => MediaStreamType::AncillaryData,
-            "audio" => MediaStreamType::Audio,
-            "video" => MediaStreamType::Video,
-            other => MediaStreamType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for MediaStreamType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MediaStreamType::from(s))
-    }
-}
-impl MediaStreamType {
-    pub fn as_str(&self) -> &str {
-        match self {
-            MediaStreamType::AncillaryData => "ancillary-data",
-            MediaStreamType::Audio => "audio",
-            MediaStreamType::Video => "video",
-            MediaStreamType::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["ancillary-data", "audio", "video"]
-    }
-}
-impl AsRef<str> for MediaStreamType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// Attributes that are related to the media stream.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MediaStreamAttributes {
-    /// A set of parameters that define the media stream.
-    pub fmtp: std::option::Option<crate::model::Fmtp>,
-    /// The audio language, in a format that is recognized by the receiver.
-    pub lang: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MediaStreamAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStreamAttributes");
-        formatter.field("fmtp", &self.fmtp);
-        formatter.field("lang", &self.lang);
-        formatter.finish()
-    }
-}
-/// See [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
-pub mod media_stream_attributes {
-    /// A builder for [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) fmtp: std::option::Option<crate::model::Fmtp>,
-        pub(crate) lang: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// A set of parameters that define the media stream.
-        pub fn fmtp(mut self, input: crate::model::Fmtp) -> Self {
-            self.fmtp = Some(input);
-            self
-        }
-        pub fn set_fmtp(mut self, input: std::option::Option<crate::model::Fmtp>) -> Self {
-            self.fmtp = input;
-            self
-        }
-        /// The audio language, in a format that is recognized by the receiver.
-        pub fn lang(mut self, input: impl Into<std::string::String>) -> Self {
-            self.lang = Some(input.into());
-            self
-        }
-        pub fn set_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lang = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
-        pub fn build(self) -> crate::model::MediaStreamAttributes {
-            crate::model::MediaStreamAttributes {
-                fmtp: self.fmtp,
-                lang: self.lang,
-            }
-        }
-    }
-}
-impl MediaStreamAttributes {
-    /// Creates a new builder-style object to manufacture [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
-    pub fn builder() -> crate::model::media_stream_attributes::Builder {
-        crate::model::media_stream_attributes::Builder::default()
-    }
-}
-
-/// FMTP
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Fmtp {
-    /// The format of the audio channel.
-    pub channel_order: std::option::Option<std::string::String>,
-    /// The format that is used for the representation of color.
-    pub colorimetry: std::option::Option<crate::model::Colorimetry>,
-    /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-    pub exact_framerate: std::option::Option<std::string::String>,
-    /// The pixel aspect ratio (PAR) of the video.
-    pub par: std::option::Option<std::string::String>,
-    /// The encoding range of the video.
-    pub range: std::option::Option<crate::model::Range>,
-    /// The type of compression that was used to smooth the video’s appearance
-    pub scan_mode: std::option::Option<crate::model::ScanMode>,
-    /// The transfer characteristic system (TCS) that is used in the video.
-    pub tcs: std::option::Option<crate::model::Tcs>,
-}
-impl std::fmt::Debug for Fmtp {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Fmtp");
-        formatter.field("channel_order", &self.channel_order);
-        formatter.field("colorimetry", &self.colorimetry);
-        formatter.field("exact_framerate", &self.exact_framerate);
-        formatter.field("par", &self.par);
-        formatter.field("range", &self.range);
-        formatter.field("scan_mode", &self.scan_mode);
-        formatter.field("tcs", &self.tcs);
-        formatter.finish()
-    }
-}
-/// See [`Fmtp`](crate::model::Fmtp)
-pub mod fmtp {
-    /// A builder for [`Fmtp`](crate::model::Fmtp)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) channel_order: std::option::Option<std::string::String>,
-        pub(crate) colorimetry: std::option::Option<crate::model::Colorimetry>,
-        pub(crate) exact_framerate: std::option::Option<std::string::String>,
-        pub(crate) par: std::option::Option<std::string::String>,
-        pub(crate) range: std::option::Option<crate::model::Range>,
-        pub(crate) scan_mode: std::option::Option<crate::model::ScanMode>,
-        pub(crate) tcs: std::option::Option<crate::model::Tcs>,
-    }
-    impl Builder {
-        /// The format of the audio channel.
-        pub fn channel_order(mut self, input: impl Into<std::string::String>) -> Self {
-            self.channel_order = Some(input.into());
-            self
-        }
-        pub fn set_channel_order(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.channel_order = input;
-            self
-        }
-        /// The format that is used for the representation of color.
-        pub fn colorimetry(mut self, input: crate::model::Colorimetry) -> Self {
-            self.colorimetry = Some(input);
-            self
-        }
-        pub fn set_colorimetry(
-            mut self,
-            input: std::option::Option<crate::model::Colorimetry>,
-        ) -> Self {
-            self.colorimetry = input;
-            self
-        }
-        /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-        pub fn exact_framerate(mut self, input: impl Into<std::string::String>) -> Self {
-            self.exact_framerate = Some(input.into());
-            self
-        }
-        pub fn set_exact_framerate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.exact_framerate = input;
-            self
-        }
-        /// The pixel aspect ratio (PAR) of the video.
-        pub fn par(mut self, input: impl Into<std::string::String>) -> Self {
-            self.par = Some(input.into());
-            self
-        }
-        pub fn set_par(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.par = input;
-            self
-        }
-        /// The encoding range of the video.
-        pub fn range(mut self, input: crate::model::Range) -> Self {
-            self.range = Some(input);
-            self
-        }
-        pub fn set_range(mut self, input: std::option::Option<crate::model::Range>) -> Self {
-            self.range = input;
-            self
-        }
-        /// The type of compression that was used to smooth the video’s appearance
-        pub fn scan_mode(mut self, input: crate::model::ScanMode) -> Self {
-            self.scan_mode = Some(input);
-            self
-        }
-        pub fn set_scan_mode(mut self, input: std::option::Option<crate::model::ScanMode>) -> Self {
-            self.scan_mode = input;
-            self
-        }
-        /// The transfer characteristic system (TCS) that is used in the video.
-        pub fn tcs(mut self, input: crate::model::Tcs) -> Self {
-            self.tcs = Some(input);
-            self
-        }
-        pub fn set_tcs(mut self, input: std::option::Option<crate::model::Tcs>) -> Self {
-            self.tcs = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Fmtp`](crate::model::Fmtp)
-        pub fn build(self) -> crate::model::Fmtp {
-            crate::model::Fmtp {
-                channel_order: self.channel_order,
-                colorimetry: self.colorimetry,
-                exact_framerate: self.exact_framerate,
-                par: self.par,
-                range: self.range,
-                scan_mode: self.scan_mode,
-                tcs: self.tcs,
-            }
-        }
-    }
-}
-impl Fmtp {
-    /// Creates a new builder-style object to manufacture [`Fmtp`](crate::model::Fmtp)
-    pub fn builder() -> crate::model::fmtp::Builder {
-        crate::model::fmtp::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum Tcs {
-    Bt2100Linhlg,
-    Bt2100Linpq,
-    Density,
-    Hlg,
-    Linear,
-    Pq,
-    Sdr,
-    St20651,
-    St4281,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for Tcs {
-    fn from(s: &str) -> Self {
-        match s {
-            "BT2100LINHLG" => Tcs::Bt2100Linhlg,
-            "BT2100LINPQ" => Tcs::Bt2100Linpq,
-            "DENSITY" => Tcs::Density,
-            "HLG" => Tcs::Hlg,
-            "LINEAR" => Tcs::Linear,
-            "PQ" => Tcs::Pq,
-            "SDR" => Tcs::Sdr,
-            "ST2065-1" => Tcs::St20651,
-            "ST428-1" => Tcs::St4281,
-            other => Tcs::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for Tcs {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Tcs::from(s))
-    }
-}
-impl Tcs {
-    pub fn as_str(&self) -> &str {
-        match self {
-            Tcs::Bt2100Linhlg => "BT2100LINHLG",
-            Tcs::Bt2100Linpq => "BT2100LINPQ",
-            Tcs::Density => "DENSITY",
-            Tcs::Hlg => "HLG",
-            Tcs::Linear => "LINEAR",
-            Tcs::Pq => "PQ",
-            Tcs::Sdr => "SDR",
-            Tcs::St20651 => "ST2065-1",
-            Tcs::St4281 => "ST428-1",
-            Tcs::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "BT2100LINHLG",
-            "BT2100LINPQ",
-            "DENSITY",
-            "HLG",
-            "LINEAR",
-            "PQ",
-            "SDR",
-            "ST2065-1",
-            "ST428-1",
-        ]
-    }
-}
-impl AsRef<str> for Tcs {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ScanMode {
-    Interlace,
-    Progressive,
-    ProgressiveSegmentedFrame,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ScanMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "interlace" => ScanMode::Interlace,
-            "progressive" => ScanMode::Progressive,
-            "progressive-segmented-frame" => ScanMode::ProgressiveSegmentedFrame,
-            other => ScanMode::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ScanMode {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScanMode::from(s))
-    }
-}
-impl ScanMode {
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScanMode::Interlace => "interlace",
-            ScanMode::Progressive => "progressive",
-            ScanMode::ProgressiveSegmentedFrame => "progressive-segmented-frame",
-            ScanMode::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["interlace", "progressive", "progressive-segmented-frame"]
-    }
-}
-impl AsRef<str> for ScanMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum Range {
-    Full,
-    Fullprotect,
-    Narrow,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for Range {
-    fn from(s: &str) -> Self {
-        match s {
-            "FULL" => Range::Full,
-            "FULLPROTECT" => Range::Fullprotect,
-            "NARROW" => Range::Narrow,
-            other => Range::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for Range {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Range::from(s))
-    }
-}
-impl Range {
-    pub fn as_str(&self) -> &str {
-        match self {
-            Range::Full => "FULL",
-            Range::Fullprotect => "FULLPROTECT",
-            Range::Narrow => "NARROW",
-            Range::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["FULL", "FULLPROTECT", "NARROW"]
-    }
-}
-impl AsRef<str> for Range {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum Colorimetry {
-    Bt2020,
-    Bt2100,
-    Bt601,
-    Bt709,
-    St20651,
-    St20653,
-    Xyz,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for Colorimetry {
-    fn from(s: &str) -> Self {
-        match s {
-            "BT2020" => Colorimetry::Bt2020,
-            "BT2100" => Colorimetry::Bt2100,
-            "BT601" => Colorimetry::Bt601,
-            "BT709" => Colorimetry::Bt709,
-            "ST2065-1" => Colorimetry::St20651,
-            "ST2065-3" => Colorimetry::St20653,
-            "XYZ" => Colorimetry::Xyz,
-            other => Colorimetry::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for Colorimetry {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Colorimetry::from(s))
-    }
-}
-impl Colorimetry {
-    pub fn as_str(&self) -> &str {
-        match self {
-            Colorimetry::Bt2020 => "BT2020",
-            Colorimetry::Bt2100 => "BT2100",
-            Colorimetry::Bt601 => "BT601",
-            Colorimetry::Bt709 => "BT709",
-            Colorimetry::St20651 => "ST2065-1",
-            Colorimetry::St20653 => "ST2065-3",
-            Colorimetry::Xyz => "XYZ",
-            Colorimetry::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "BT2020", "BT2100", "BT601", "BT709", "ST2065-1", "ST2065-3", "XYZ",
-        ]
-    }
-}
-impl AsRef<str> for Colorimetry {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// The settings for a flow entitlement.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Entitlement {
-    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    pub data_transfer_subscriber_fee_percent: i32,
-    /// A description of the entitlement.
-    pub description: std::option::Option<std::string::String>,
-    /// The type of encryption that will be used on the output that is associated with this entitlement.
-    pub encryption: std::option::Option<crate::model::Encryption>,
-    /// The ARN of the entitlement.
-    pub entitlement_arn: std::option::Option<std::string::String>,
-    /// An indication of whether the entitlement is enabled.
-    pub entitlement_status: std::option::Option<crate::model::EntitlementStatus>,
-    /// The name of the entitlement.
-    pub name: std::option::Option<std::string::String>,
-    /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl std::fmt::Debug for Entitlement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entitlement");
-        formatter.field(
-            "data_transfer_subscriber_fee_percent",
-            &self.data_transfer_subscriber_fee_percent,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("entitlement_arn", &self.entitlement_arn);
-        formatter.field("entitlement_status", &self.entitlement_status);
-        formatter.field("name", &self.name);
-        formatter.field("subscribers", &self.subscribers);
-        formatter.finish()
-    }
-}
-/// See [`Entitlement`](crate::model::Entitlement)
-pub mod entitlement {
-    /// A builder for [`Entitlement`](crate::model::Entitlement)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
-        pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) encryption: std::option::Option<crate::model::Encryption>,
-        pub(crate) entitlement_arn: std::option::Option<std::string::String>,
-        pub(crate) entitlement_status: std::option::Option<crate::model::EntitlementStatus>,
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-        pub fn data_transfer_subscriber_fee_percent(mut self, input: i32) -> Self {
-            self.data_transfer_subscriber_fee_percent = Some(input);
-            self
-        }
-        pub fn set_data_transfer_subscriber_fee_percent(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.data_transfer_subscriber_fee_percent = input;
-            self
-        }
-        /// A description of the entitlement.
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.description = Some(input.into());
-            self
-        }
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
-        }
-        /// The type of encryption that will be used on the output that is associated with this entitlement.
-        pub fn encryption(mut self, input: crate::model::Encryption) -> Self {
-            self.encryption = Some(input);
-            self
-        }
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::Encryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
-        }
-        /// The ARN of the entitlement.
-        pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.entitlement_arn = Some(input.into());
-            self
-        }
-        pub fn set_entitlement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entitlement_arn = input;
-            self
-        }
-        /// An indication of whether the entitlement is enabled.
-        pub fn entitlement_status(mut self, input: crate::model::EntitlementStatus) -> Self {
-            self.entitlement_status = Some(input);
-            self
-        }
-        pub fn set_entitlement_status(
-            mut self,
-            input: std::option::Option<crate::model::EntitlementStatus>,
-        ) -> Self {
-            self.entitlement_status = input;
-            self
-        }
-        /// The name of the entitlement.
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
-            self.subscribers = Some(v);
-            self
-        }
-        pub fn set_subscribers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subscribers = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Entitlement`](crate::model::Entitlement)
-        pub fn build(self) -> crate::model::Entitlement {
-            crate::model::Entitlement {
-                data_transfer_subscriber_fee_percent: self
-                    .data_transfer_subscriber_fee_percent
-                    .unwrap_or_default(),
-                description: self.description,
-                encryption: self.encryption,
-                entitlement_arn: self.entitlement_arn,
-                entitlement_status: self.entitlement_status,
-                name: self.name,
-                subscribers: self.subscribers,
-            }
-        }
-    }
-}
-impl Entitlement {
-    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement)
-    pub fn builder() -> crate::model::entitlement::Builder {
-        crate::model::entitlement::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum EntitlementStatus {
-    Disabled,
-    Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for EntitlementStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => EntitlementStatus::Disabled,
-            "ENABLED" => EntitlementStatus::Enabled,
-            other => EntitlementStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for EntitlementStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntitlementStatus::from(s))
-    }
-}
-impl EntitlementStatus {
-    pub fn as_str(&self) -> &str {
-        match self {
-            EntitlementStatus::Disabled => "DISABLED",
-            EntitlementStatus::Enabled => "ENABLED",
-            EntitlementStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
-    }
-}
-impl AsRef<str> for EntitlementStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// Attributes that are related to the media stream.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MediaStreamAttributesRequest {
-    /// The settings that you want to use to define the media stream.
-    pub fmtp: std::option::Option<crate::model::FmtpRequest>,
-    /// The audio language, in a format that is recognized by the receiver.
-    pub lang: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MediaStreamAttributesRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStreamAttributesRequest");
-        formatter.field("fmtp", &self.fmtp);
-        formatter.field("lang", &self.lang);
-        formatter.finish()
-    }
-}
-/// See [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
-pub mod media_stream_attributes_request {
-    /// A builder for [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) fmtp: std::option::Option<crate::model::FmtpRequest>,
-        pub(crate) lang: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// The settings that you want to use to define the media stream.
-        pub fn fmtp(mut self, input: crate::model::FmtpRequest) -> Self {
-            self.fmtp = Some(input);
-            self
-        }
-        pub fn set_fmtp(mut self, input: std::option::Option<crate::model::FmtpRequest>) -> Self {
-            self.fmtp = input;
-            self
-        }
-        /// The audio language, in a format that is recognized by the receiver.
-        pub fn lang(mut self, input: impl Into<std::string::String>) -> Self {
-            self.lang = Some(input.into());
-            self
-        }
-        pub fn set_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lang = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
-        pub fn build(self) -> crate::model::MediaStreamAttributesRequest {
-            crate::model::MediaStreamAttributesRequest {
-                fmtp: self.fmtp,
-                lang: self.lang,
-            }
-        }
-    }
-}
-impl MediaStreamAttributesRequest {
-    /// Creates a new builder-style object to manufacture [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
-    pub fn builder() -> crate::model::media_stream_attributes_request::Builder {
-        crate::model::media_stream_attributes_request::Builder::default()
-    }
-}
-
-/// The settings that you want to use to define the media stream.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FmtpRequest {
-    /// The format of the audio channel.
-    pub channel_order: std::option::Option<std::string::String>,
-    /// The format that is used for the representation of color.
-    pub colorimetry: std::option::Option<crate::model::Colorimetry>,
-    /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-    pub exact_framerate: std::option::Option<std::string::String>,
-    /// The pixel aspect ratio (PAR) of the video.
-    pub par: std::option::Option<std::string::String>,
-    /// The encoding range of the video.
-    pub range: std::option::Option<crate::model::Range>,
-    /// The type of compression that was used to smooth the video’s appearance.
-    pub scan_mode: std::option::Option<crate::model::ScanMode>,
-    /// The transfer characteristic system (TCS) that is used in the video.
-    pub tcs: std::option::Option<crate::model::Tcs>,
-}
-impl std::fmt::Debug for FmtpRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FmtpRequest");
-        formatter.field("channel_order", &self.channel_order);
-        formatter.field("colorimetry", &self.colorimetry);
-        formatter.field("exact_framerate", &self.exact_framerate);
-        formatter.field("par", &self.par);
-        formatter.field("range", &self.range);
-        formatter.field("scan_mode", &self.scan_mode);
-        formatter.field("tcs", &self.tcs);
-        formatter.finish()
-    }
-}
-/// See [`FmtpRequest`](crate::model::FmtpRequest)
-pub mod fmtp_request {
-    /// A builder for [`FmtpRequest`](crate::model::FmtpRequest)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) channel_order: std::option::Option<std::string::String>,
-        pub(crate) colorimetry: std::option::Option<crate::model::Colorimetry>,
-        pub(crate) exact_framerate: std::option::Option<std::string::String>,
-        pub(crate) par: std::option::Option<std::string::String>,
-        pub(crate) range: std::option::Option<crate::model::Range>,
-        pub(crate) scan_mode: std::option::Option<crate::model::ScanMode>,
-        pub(crate) tcs: std::option::Option<crate::model::Tcs>,
-    }
-    impl Builder {
-        /// The format of the audio channel.
-        pub fn channel_order(mut self, input: impl Into<std::string::String>) -> Self {
-            self.channel_order = Some(input.into());
-            self
-        }
-        pub fn set_channel_order(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.channel_order = input;
-            self
-        }
-        /// The format that is used for the representation of color.
-        pub fn colorimetry(mut self, input: crate::model::Colorimetry) -> Self {
-            self.colorimetry = Some(input);
-            self
-        }
-        pub fn set_colorimetry(
-            mut self,
-            input: std::option::Option<crate::model::Colorimetry>,
-        ) -> Self {
-            self.colorimetry = input;
-            self
-        }
-        /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-        pub fn exact_framerate(mut self, input: impl Into<std::string::String>) -> Self {
-            self.exact_framerate = Some(input.into());
-            self
-        }
-        pub fn set_exact_framerate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.exact_framerate = input;
-            self
-        }
-        /// The pixel aspect ratio (PAR) of the video.
-        pub fn par(mut self, input: impl Into<std::string::String>) -> Self {
-            self.par = Some(input.into());
-            self
-        }
-        pub fn set_par(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.par = input;
-            self
-        }
-        /// The encoding range of the video.
-        pub fn range(mut self, input: crate::model::Range) -> Self {
-            self.range = Some(input);
-            self
-        }
-        pub fn set_range(mut self, input: std::option::Option<crate::model::Range>) -> Self {
-            self.range = input;
-            self
-        }
-        /// The type of compression that was used to smooth the video’s appearance.
-        pub fn scan_mode(mut self, input: crate::model::ScanMode) -> Self {
-            self.scan_mode = Some(input);
-            self
-        }
-        pub fn set_scan_mode(mut self, input: std::option::Option<crate::model::ScanMode>) -> Self {
-            self.scan_mode = input;
-            self
-        }
-        /// The transfer characteristic system (TCS) that is used in the video.
-        pub fn tcs(mut self, input: crate::model::Tcs) -> Self {
-            self.tcs = Some(input);
-            self
-        }
-        pub fn set_tcs(mut self, input: std::option::Option<crate::model::Tcs>) -> Self {
-            self.tcs = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`FmtpRequest`](crate::model::FmtpRequest)
-        pub fn build(self) -> crate::model::FmtpRequest {
-            crate::model::FmtpRequest {
-                channel_order: self.channel_order,
-                colorimetry: self.colorimetry,
-                exact_framerate: self.exact_framerate,
-                par: self.par,
-                range: self.range,
-                scan_mode: self.scan_mode,
-                tcs: self.tcs,
-            }
-        }
-    }
-}
-impl FmtpRequest {
-    /// Creates a new builder-style object to manufacture [`FmtpRequest`](crate::model::FmtpRequest)
-    pub fn builder() -> crate::model::fmtp_request::Builder {
-        crate::model::fmtp_request::Builder::default()
     }
 }
 
@@ -5641,267 +5902,6 @@ impl AddOutputRequest {
     /// Creates a new builder-style object to manufacture [`AddOutputRequest`](crate::model::AddOutputRequest)
     pub fn builder() -> crate::model::add_output_request::Builder {
         crate::model::add_output_request::Builder::default()
-    }
-}
-
-/// The media stream that you want to associate with the output, and the parameters for that association.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MediaStreamOutputConfigurationRequest {
-    /// The transport parameters that you want to associate with the media stream.
-    pub destination_configurations:
-        std::option::Option<std::vec::Vec<crate::model::DestinationConfigurationRequest>>,
-    /// The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-    pub encoding_name: std::option::Option<crate::model::EncodingName>,
-    /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
-    pub encoding_parameters: std::option::Option<crate::model::EncodingParametersRequest>,
-    /// The name of the media stream that is associated with the output.
-    pub media_stream_name: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MediaStreamOutputConfigurationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStreamOutputConfigurationRequest");
-        formatter.field(
-            "destination_configurations",
-            &self.destination_configurations,
-        );
-        formatter.field("encoding_name", &self.encoding_name);
-        formatter.field("encoding_parameters", &self.encoding_parameters);
-        formatter.field("media_stream_name", &self.media_stream_name);
-        formatter.finish()
-    }
-}
-/// See [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
-pub mod media_stream_output_configuration_request {
-    /// A builder for [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) destination_configurations:
-            std::option::Option<std::vec::Vec<crate::model::DestinationConfigurationRequest>>,
-        pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
-        pub(crate) encoding_parameters:
-            std::option::Option<crate::model::EncodingParametersRequest>,
-        pub(crate) media_stream_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn destination_configurations(
-            mut self,
-            input: impl Into<crate::model::DestinationConfigurationRequest>,
-        ) -> Self {
-            let mut v = self.destination_configurations.unwrap_or_default();
-            v.push(input.into());
-            self.destination_configurations = Some(v);
-            self
-        }
-        pub fn set_destination_configurations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DestinationConfigurationRequest>,
-            >,
-        ) -> Self {
-            self.destination_configurations = input;
-            self
-        }
-        /// The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-        pub fn encoding_name(mut self, input: crate::model::EncodingName) -> Self {
-            self.encoding_name = Some(input);
-            self
-        }
-        pub fn set_encoding_name(
-            mut self,
-            input: std::option::Option<crate::model::EncodingName>,
-        ) -> Self {
-            self.encoding_name = input;
-            self
-        }
-        /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
-        pub fn encoding_parameters(
-            mut self,
-            input: crate::model::EncodingParametersRequest,
-        ) -> Self {
-            self.encoding_parameters = Some(input);
-            self
-        }
-        pub fn set_encoding_parameters(
-            mut self,
-            input: std::option::Option<crate::model::EncodingParametersRequest>,
-        ) -> Self {
-            self.encoding_parameters = input;
-            self
-        }
-        /// The name of the media stream that is associated with the output.
-        pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.media_stream_name = Some(input.into());
-            self
-        }
-        pub fn set_media_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_stream_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
-        pub fn build(self) -> crate::model::MediaStreamOutputConfigurationRequest {
-            crate::model::MediaStreamOutputConfigurationRequest {
-                destination_configurations: self.destination_configurations,
-                encoding_name: self.encoding_name,
-                encoding_parameters: self.encoding_parameters,
-                media_stream_name: self.media_stream_name,
-            }
-        }
-    }
-}
-impl MediaStreamOutputConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
-    pub fn builder() -> crate::model::media_stream_output_configuration_request::Builder {
-        crate::model::media_stream_output_configuration_request::Builder::default()
-    }
-}
-
-/// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EncodingParametersRequest {
-    /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
-    pub compression_factor: f64,
-    /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
-    pub encoder_profile: std::option::Option<crate::model::EncoderProfile>,
-}
-impl std::fmt::Debug for EncodingParametersRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncodingParametersRequest");
-        formatter.field("compression_factor", &self.compression_factor);
-        formatter.field("encoder_profile", &self.encoder_profile);
-        formatter.finish()
-    }
-}
-/// See [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
-pub mod encoding_parameters_request {
-    /// A builder for [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) compression_factor: std::option::Option<f64>,
-        pub(crate) encoder_profile: std::option::Option<crate::model::EncoderProfile>,
-    }
-    impl Builder {
-        /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
-        pub fn compression_factor(mut self, input: f64) -> Self {
-            self.compression_factor = Some(input);
-            self
-        }
-        pub fn set_compression_factor(mut self, input: std::option::Option<f64>) -> Self {
-            self.compression_factor = input;
-            self
-        }
-        /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
-        pub fn encoder_profile(mut self, input: crate::model::EncoderProfile) -> Self {
-            self.encoder_profile = Some(input);
-            self
-        }
-        pub fn set_encoder_profile(
-            mut self,
-            input: std::option::Option<crate::model::EncoderProfile>,
-        ) -> Self {
-            self.encoder_profile = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
-        pub fn build(self) -> crate::model::EncodingParametersRequest {
-            crate::model::EncodingParametersRequest {
-                compression_factor: self.compression_factor.unwrap_or_default(),
-                encoder_profile: self.encoder_profile,
-            }
-        }
-    }
-}
-impl EncodingParametersRequest {
-    /// Creates a new builder-style object to manufacture [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
-    pub fn builder() -> crate::model::encoding_parameters_request::Builder {
-        crate::model::encoding_parameters_request::Builder::default()
-    }
-}
-
-/// The transport parameters that you want to associate with an outbound media stream.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DestinationConfigurationRequest {
-    /// The IP address where you want MediaConnect to send contents of the media stream.
-    pub destination_ip: std::option::Option<std::string::String>,
-    /// The port that you want MediaConnect to use when it distributes the media stream to the output.
-    pub destination_port: i32,
-    /// The VPC interface that you want to use for the media stream associated with the output.
-    pub interface: std::option::Option<crate::model::InterfaceRequest>,
-}
-impl std::fmt::Debug for DestinationConfigurationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationConfigurationRequest");
-        formatter.field("destination_ip", &self.destination_ip);
-        formatter.field("destination_port", &self.destination_port);
-        formatter.field("interface", &self.interface);
-        formatter.finish()
-    }
-}
-/// See [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
-pub mod destination_configuration_request {
-    /// A builder for [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) destination_ip: std::option::Option<std::string::String>,
-        pub(crate) destination_port: std::option::Option<i32>,
-        pub(crate) interface: std::option::Option<crate::model::InterfaceRequest>,
-    }
-    impl Builder {
-        /// The IP address where you want MediaConnect to send contents of the media stream.
-        pub fn destination_ip(mut self, input: impl Into<std::string::String>) -> Self {
-            self.destination_ip = Some(input.into());
-            self
-        }
-        pub fn set_destination_ip(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_ip = input;
-            self
-        }
-        /// The port that you want MediaConnect to use when it distributes the media stream to the output.
-        pub fn destination_port(mut self, input: i32) -> Self {
-            self.destination_port = Some(input);
-            self
-        }
-        pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.destination_port = input;
-            self
-        }
-        /// The VPC interface that you want to use for the media stream associated with the output.
-        pub fn interface(mut self, input: crate::model::InterfaceRequest) -> Self {
-            self.interface = Some(input);
-            self
-        }
-        pub fn set_interface(
-            mut self,
-            input: std::option::Option<crate::model::InterfaceRequest>,
-        ) -> Self {
-            self.interface = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
-        pub fn build(self) -> crate::model::DestinationConfigurationRequest {
-            crate::model::DestinationConfigurationRequest {
-                destination_ip: self.destination_ip,
-                destination_port: self.destination_port.unwrap_or_default(),
-                interface: self.interface,
-            }
-        }
-    }
-}
-impl DestinationConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
-    pub fn builder() -> crate::model::destination_configuration_request::Builder {
-        crate::model::destination_configuration_request::Builder::default()
     }
 }
 

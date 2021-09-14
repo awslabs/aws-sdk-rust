@@ -2519,6 +2519,75 @@ impl ListSubscribedWorkteamsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListStudioLifecycleConfigsOutput {
+    /// <p>A token for getting the next set of actions, if there are any.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A list of Lifecycle Configurations and their properties.</p>
+    pub studio_lifecycle_configs:
+        std::option::Option<std::vec::Vec<crate::model::StudioLifecycleConfigDetails>>,
+}
+impl std::fmt::Debug for ListStudioLifecycleConfigsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListStudioLifecycleConfigsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("studio_lifecycle_configs", &self.studio_lifecycle_configs);
+        formatter.finish()
+    }
+}
+/// See [`ListStudioLifecycleConfigsOutput`](crate::output::ListStudioLifecycleConfigsOutput)
+pub mod list_studio_lifecycle_configs_output {
+    /// A builder for [`ListStudioLifecycleConfigsOutput`](crate::output::ListStudioLifecycleConfigsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) studio_lifecycle_configs:
+            std::option::Option<std::vec::Vec<crate::model::StudioLifecycleConfigDetails>>,
+    }
+    impl Builder {
+        /// <p>A token for getting the next set of actions, if there are any.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        pub fn studio_lifecycle_configs(
+            mut self,
+            input: impl Into<crate::model::StudioLifecycleConfigDetails>,
+        ) -> Self {
+            let mut v = self.studio_lifecycle_configs.unwrap_or_default();
+            v.push(input.into());
+            self.studio_lifecycle_configs = Some(v);
+            self
+        }
+        pub fn set_studio_lifecycle_configs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StudioLifecycleConfigDetails>>,
+        ) -> Self {
+            self.studio_lifecycle_configs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListStudioLifecycleConfigsOutput`](crate::output::ListStudioLifecycleConfigsOutput)
+        pub fn build(self) -> crate::output::ListStudioLifecycleConfigsOutput {
+            crate::output::ListStudioLifecycleConfigsOutput {
+                next_token: self.next_token,
+                studio_lifecycle_configs: self.studio_lifecycle_configs,
+            }
+        }
+    }
+}
+impl ListStudioLifecycleConfigsOutput {
+    /// Creates a new builder-style object to manufacture [`ListStudioLifecycleConfigsOutput`](crate::output::ListStudioLifecycleConfigsOutput)
+    pub fn builder() -> crate::output::list_studio_lifecycle_configs_output::Builder {
+        crate::output::list_studio_lifecycle_configs_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsOutput {
     /// <p>A list of summaries of projects.</p>
     pub project_summary_list: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
@@ -8614,6 +8683,166 @@ impl DescribeSubscribedWorkteamOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSubscribedWorkteamOutput`](crate::output::DescribeSubscribedWorkteamOutput)
     pub fn builder() -> crate::output::describe_subscribed_workteam_output::Builder {
         crate::output::describe_subscribed_workteam_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeStudioLifecycleConfigOutput {
+    /// <p>The ARN of the Lifecycle Configuration to describe.</p>
+    pub studio_lifecycle_config_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the Studio Lifecycle Configuration that is described.</p>
+    pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
+    /// <p>The creation time of the Studio Lifecycle Configuration.</p>
+    pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
+    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The content of your Studio Lifecycle Configuration script.</p>
+    pub studio_lifecycle_config_content: std::option::Option<std::string::String>,
+    /// <p>The App type that the Lifecycle Configuration is attached to.</p>
+    pub studio_lifecycle_config_app_type:
+        std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+}
+impl std::fmt::Debug for DescribeStudioLifecycleConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeStudioLifecycleConfigOutput");
+        formatter.field(
+            "studio_lifecycle_config_arn",
+            &self.studio_lifecycle_config_arn,
+        );
+        formatter.field(
+            "studio_lifecycle_config_name",
+            &self.studio_lifecycle_config_name,
+        );
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field(
+            "studio_lifecycle_config_content",
+            &self.studio_lifecycle_config_content,
+        );
+        formatter.field(
+            "studio_lifecycle_config_app_type",
+            &self.studio_lifecycle_config_app_type,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeStudioLifecycleConfigOutput`](crate::output::DescribeStudioLifecycleConfigOutput)
+pub mod describe_studio_lifecycle_config_output {
+    /// A builder for [`DescribeStudioLifecycleConfigOutput`](crate::output::DescribeStudioLifecycleConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio_lifecycle_config_arn: std::option::Option<std::string::String>,
+        pub(crate) studio_lifecycle_config_name: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) studio_lifecycle_config_content: std::option::Option<std::string::String>,
+        pub(crate) studio_lifecycle_config_app_type:
+            std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+    }
+    impl Builder {
+        /// <p>The ARN of the Lifecycle Configuration to describe.</p>
+        pub fn studio_lifecycle_config_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_arn = Some(input.into());
+            self
+        }
+        pub fn set_studio_lifecycle_config_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_arn = input;
+            self
+        }
+        /// <p>The name of the Studio Lifecycle Configuration that is described.</p>
+        pub fn studio_lifecycle_config_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_name = Some(input.into());
+            self
+        }
+        pub fn set_studio_lifecycle_config_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_name = input;
+            self
+        }
+        /// <p>The creation time of the Studio Lifecycle Configuration.</p>
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
+        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The content of your Studio Lifecycle Configuration script.</p>
+        pub fn studio_lifecycle_config_content(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_content = Some(input.into());
+            self
+        }
+        pub fn set_studio_lifecycle_config_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_content = input;
+            self
+        }
+        /// <p>The App type that the Lifecycle Configuration is attached to.</p>
+        pub fn studio_lifecycle_config_app_type(
+            mut self,
+            input: crate::model::StudioLifecycleConfigAppType,
+        ) -> Self {
+            self.studio_lifecycle_config_app_type = Some(input);
+            self
+        }
+        pub fn set_studio_lifecycle_config_app_type(
+            mut self,
+            input: std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+        ) -> Self {
+            self.studio_lifecycle_config_app_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeStudioLifecycleConfigOutput`](crate::output::DescribeStudioLifecycleConfigOutput)
+        pub fn build(self) -> crate::output::DescribeStudioLifecycleConfigOutput {
+            crate::output::DescribeStudioLifecycleConfigOutput {
+                studio_lifecycle_config_arn: self.studio_lifecycle_config_arn,
+                studio_lifecycle_config_name: self.studio_lifecycle_config_name,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+                studio_lifecycle_config_content: self.studio_lifecycle_config_content,
+                studio_lifecycle_config_app_type: self.studio_lifecycle_config_app_type,
+            }
+        }
+    }
+}
+impl DescribeStudioLifecycleConfigOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeStudioLifecycleConfigOutput`](crate::output::DescribeStudioLifecycleConfigOutput)
+    pub fn builder() -> crate::output::describe_studio_lifecycle_config_output::Builder {
+        crate::output::describe_studio_lifecycle_config_output::Builder::default()
     }
 }
 
@@ -18281,6 +18510,35 @@ impl DeleteTagsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStudioLifecycleConfigOutput {}
+impl std::fmt::Debug for DeleteStudioLifecycleConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStudioLifecycleConfigOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteStudioLifecycleConfigOutput`](crate::output::DeleteStudioLifecycleConfigOutput)
+pub mod delete_studio_lifecycle_config_output {
+    /// A builder for [`DeleteStudioLifecycleConfigOutput`](crate::output::DeleteStudioLifecycleConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteStudioLifecycleConfigOutput`](crate::output::DeleteStudioLifecycleConfigOutput)
+        pub fn build(self) -> crate::output::DeleteStudioLifecycleConfigOutput {
+            crate::output::DeleteStudioLifecycleConfigOutput {}
+        }
+    }
+}
+impl DeleteStudioLifecycleConfigOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteStudioLifecycleConfigOutput`](crate::output::DeleteStudioLifecycleConfigOutput)
+    pub fn builder() -> crate::output::delete_studio_lifecycle_config_output::Builder {
+        crate::output::delete_studio_lifecycle_config_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectOutput {}
 impl std::fmt::Debug for DeleteProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19636,6 +19894,61 @@ impl CreateTrainingJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrainingJobOutput`](crate::output::CreateTrainingJobOutput)
     pub fn builder() -> crate::output::create_training_job_output::Builder {
         crate::output::create_training_job_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateStudioLifecycleConfigOutput {
+    /// <p>The ARN of your created Lifecycle Configuration.</p>
+    pub studio_lifecycle_config_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateStudioLifecycleConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateStudioLifecycleConfigOutput");
+        formatter.field(
+            "studio_lifecycle_config_arn",
+            &self.studio_lifecycle_config_arn,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateStudioLifecycleConfigOutput`](crate::output::CreateStudioLifecycleConfigOutput)
+pub mod create_studio_lifecycle_config_output {
+    /// A builder for [`CreateStudioLifecycleConfigOutput`](crate::output::CreateStudioLifecycleConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio_lifecycle_config_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of your created Lifecycle Configuration.</p>
+        pub fn studio_lifecycle_config_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_arn = Some(input.into());
+            self
+        }
+        pub fn set_studio_lifecycle_config_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateStudioLifecycleConfigOutput`](crate::output::CreateStudioLifecycleConfigOutput)
+        pub fn build(self) -> crate::output::CreateStudioLifecycleConfigOutput {
+            crate::output::CreateStudioLifecycleConfigOutput {
+                studio_lifecycle_config_arn: self.studio_lifecycle_config_arn,
+            }
+        }
+    }
+}
+impl CreateStudioLifecycleConfigOutput {
+    /// Creates a new builder-style object to manufacture [`CreateStudioLifecycleConfigOutput`](crate::output::CreateStudioLifecycleConfigOutput)
+    pub fn builder() -> crate::output::create_studio_lifecycle_config_output::Builder {
+        crate::output::create_studio_lifecycle_config_output::Builder::default()
     }
 }
 

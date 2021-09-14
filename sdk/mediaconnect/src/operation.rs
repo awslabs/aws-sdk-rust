@@ -756,6 +756,34 @@ impl smithy_http::response::ParseStrictResponse for UpdateFlowMediaStream {
     }
 }
 
+/// Updates an existing flow output.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateFlowOutput {
+    _private: (),
+}
+impl UpdateFlowOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFlowOutputInput`](crate::input::UpdateFlowOutputInput)
+    pub fn builder() -> crate::input::update_flow_output_input::Builder {
+        crate::input::update_flow_output_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UpdateFlowOutput {
+    type Output = std::result::Result<
+        crate::output::UpdateFlowOutputOutput,
+        crate::error::UpdateFlowOutputError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 202 {
+            crate::operation_deser::parse_update_flow_output_error(response)
+        } else {
+            crate::operation_deser::parse_update_flow_output_response(response)
+        }
+    }
+}
+
 /// Updates the source of a flow.
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFlowSource {

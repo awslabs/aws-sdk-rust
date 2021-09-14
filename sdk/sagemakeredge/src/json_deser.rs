@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_service_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_service_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_exception::Builder,
 ) -> Result<crate::error::internal_service_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_service_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_device_registration(
+pub fn deser_operation_crate_operation_get_device_registration(
     input: &[u8],
     mut builder: crate::output::get_device_registration_output::Builder,
 ) -> Result<crate::output::get_device_registration_output::Builder, smithy_json::deserialize::Error>

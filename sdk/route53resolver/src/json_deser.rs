@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_service_error_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_service_error_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_error_exception::Builder,
 ) -> Result<crate::error::internal_service_error_exception::Builder, smithy_json::deserialize::Error>
@@ -123,7 +123,7 @@ pub fn deser_structure_internal_service_error_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -169,7 +169,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -215,7 +215,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -254,7 +254,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -293,7 +293,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_associate_firewall_rule_group(
+pub fn deser_operation_crate_operation_associate_firewall_rule_group(
     input: &[u8],
     mut builder: crate::output::associate_firewall_rule_group_output::Builder,
 ) -> Result<
@@ -312,9 +312,7 @@ pub fn deser_operation_associate_firewall_rule_group(
                 match key.to_unescaped()?.as_ref() {
                     "FirewallRuleGroupAssociation" => {
                         builder = builder.set_firewall_rule_group_association(
-                            crate::json_deser::deser_structure_firewall_rule_group_association(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_firewall_rule_group_association(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -335,7 +333,7 @@ pub fn deser_operation_associate_firewall_rule_group(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_parameter_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_parameter_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_parameter_exception::Builder,
 ) -> Result<crate::error::invalid_parameter_exception::Builder, smithy_json::deserialize::Error> {
@@ -381,7 +379,7 @@ pub fn deser_structure_invalid_parameter_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_request_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -420,7 +418,7 @@ pub fn deser_structure_invalid_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_exists_exception::Builder,
 ) -> Result<crate::error::resource_exists_exception::Builder, smithy_json::deserialize::Error> {
@@ -466,7 +464,7 @@ pub fn deser_structure_resource_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_associate_resolver_endpoint_ip_address(
+pub fn deser_operation_crate_operation_associate_resolver_endpoint_ip_address(
     input: &[u8],
     mut builder: crate::output::associate_resolver_endpoint_ip_address_output::Builder,
 ) -> Result<
@@ -485,7 +483,9 @@ pub fn deser_operation_associate_resolver_endpoint_ip_address(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverEndpoint" => {
                         builder = builder.set_resolver_endpoint(
-                            crate::json_deser::deser_structure_resolver_endpoint(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_endpoint(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -506,7 +506,7 @@ pub fn deser_operation_associate_resolver_endpoint_ip_address(
     Ok(builder)
 }
 
-pub fn deser_operation_associate_resolver_query_log_config(
+pub fn deser_operation_crate_operation_associate_resolver_query_log_config(
     input: &[u8],
     mut builder: crate::output::associate_resolver_query_log_config_output::Builder,
 ) -> Result<
@@ -525,7 +525,7 @@ pub fn deser_operation_associate_resolver_query_log_config(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverQueryLogConfigAssociation" => {
                         builder = builder.set_resolver_query_log_config_association(
-                            crate::json_deser::deser_structure_resolver_query_log_config_association(tokens)?
+                            crate::json_deser::deser_structure_crate_model_resolver_query_log_config_association(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -546,7 +546,7 @@ pub fn deser_operation_associate_resolver_query_log_config(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_unavailable_exception::Builder,
 ) -> Result<crate::error::resource_unavailable_exception::Builder, smithy_json::deserialize::Error>
@@ -593,7 +593,7 @@ pub fn deser_structure_resource_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_associate_resolver_rule(
+pub fn deser_operation_crate_operation_associate_resolver_rule(
     input: &[u8],
     mut builder: crate::output::associate_resolver_rule_output::Builder,
 ) -> Result<crate::output::associate_resolver_rule_output::Builder, smithy_json::deserialize::Error>
@@ -610,7 +610,7 @@ pub fn deser_operation_associate_resolver_rule(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverRuleAssociation" => {
                         builder = builder.set_resolver_rule_association(
-                            crate::json_deser::deser_structure_resolver_rule_association(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_rule_association(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -631,7 +631,7 @@ pub fn deser_operation_associate_resolver_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_create_firewall_domain_list(
+pub fn deser_operation_crate_operation_create_firewall_domain_list(
     input: &[u8],
     mut builder: crate::output::create_firewall_domain_list_output::Builder,
 ) -> Result<
@@ -650,7 +650,9 @@ pub fn deser_operation_create_firewall_domain_list(
                 match key.to_unescaped()?.as_ref() {
                     "FirewallDomainList" => {
                         builder = builder.set_firewall_domain_list(
-                            crate::json_deser::deser_structure_firewall_domain_list(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_firewall_domain_list(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -671,7 +673,7 @@ pub fn deser_operation_create_firewall_domain_list(
     Ok(builder)
 }
 
-pub fn deser_operation_create_firewall_rule(
+pub fn deser_operation_crate_operation_create_firewall_rule(
     input: &[u8],
     mut builder: crate::output::create_firewall_rule_output::Builder,
 ) -> Result<crate::output::create_firewall_rule_output::Builder, smithy_json::deserialize::Error> {
@@ -687,7 +689,7 @@ pub fn deser_operation_create_firewall_rule(
                 match key.to_unescaped()?.as_ref() {
                     "FirewallRule" => {
                         builder = builder.set_firewall_rule(
-                            crate::json_deser::deser_structure_firewall_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_firewall_rule(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -708,7 +710,7 @@ pub fn deser_operation_create_firewall_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_create_firewall_rule_group(
+pub fn deser_operation_crate_operation_create_firewall_rule_group(
     input: &[u8],
     mut builder: crate::output::create_firewall_rule_group_output::Builder,
 ) -> Result<
@@ -727,7 +729,9 @@ pub fn deser_operation_create_firewall_rule_group(
                 match key.to_unescaped()?.as_ref() {
                     "FirewallRuleGroup" => {
                         builder = builder.set_firewall_rule_group(
-                            crate::json_deser::deser_structure_firewall_rule_group(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_firewall_rule_group(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -748,7 +752,7 @@ pub fn deser_operation_create_firewall_rule_group(
     Ok(builder)
 }
 
-pub fn deser_operation_create_resolver_endpoint(
+pub fn deser_operation_crate_operation_create_resolver_endpoint(
     input: &[u8],
     mut builder: crate::output::create_resolver_endpoint_output::Builder,
 ) -> Result<crate::output::create_resolver_endpoint_output::Builder, smithy_json::deserialize::Error>
@@ -765,7 +769,9 @@ pub fn deser_operation_create_resolver_endpoint(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverEndpoint" => {
                         builder = builder.set_resolver_endpoint(
-                            crate::json_deser::deser_structure_resolver_endpoint(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_endpoint(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -786,7 +792,7 @@ pub fn deser_operation_create_resolver_endpoint(
     Ok(builder)
 }
 
-pub fn deser_operation_create_resolver_query_log_config(
+pub fn deser_operation_crate_operation_create_resolver_query_log_config(
     input: &[u8],
     mut builder: crate::output::create_resolver_query_log_config_output::Builder,
 ) -> Result<
@@ -805,7 +811,7 @@ pub fn deser_operation_create_resolver_query_log_config(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverQueryLogConfig" => {
                         builder = builder.set_resolver_query_log_config(
-                            crate::json_deser::deser_structure_resolver_query_log_config(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_query_log_config(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -826,7 +832,7 @@ pub fn deser_operation_create_resolver_query_log_config(
     Ok(builder)
 }
 
-pub fn deser_operation_create_resolver_rule(
+pub fn deser_operation_crate_operation_create_resolver_rule(
     input: &[u8],
     mut builder: crate::output::create_resolver_rule_output::Builder,
 ) -> Result<crate::output::create_resolver_rule_output::Builder, smithy_json::deserialize::Error> {
@@ -842,7 +848,7 @@ pub fn deser_operation_create_resolver_rule(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverRule" => {
                         builder = builder.set_resolver_rule(
-                            crate::json_deser::deser_structure_resolver_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_rule(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -863,7 +869,7 @@ pub fn deser_operation_create_resolver_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_firewall_domain_list(
+pub fn deser_operation_crate_operation_delete_firewall_domain_list(
     input: &[u8],
     mut builder: crate::output::delete_firewall_domain_list_output::Builder,
 ) -> Result<
@@ -882,7 +888,9 @@ pub fn deser_operation_delete_firewall_domain_list(
                 match key.to_unescaped()?.as_ref() {
                     "FirewallDomainList" => {
                         builder = builder.set_firewall_domain_list(
-                            crate::json_deser::deser_structure_firewall_domain_list(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_firewall_domain_list(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -903,7 +911,7 @@ pub fn deser_operation_delete_firewall_domain_list(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_firewall_rule(
+pub fn deser_operation_crate_operation_delete_firewall_rule(
     input: &[u8],
     mut builder: crate::output::delete_firewall_rule_output::Builder,
 ) -> Result<crate::output::delete_firewall_rule_output::Builder, smithy_json::deserialize::Error> {
@@ -919,7 +927,7 @@ pub fn deser_operation_delete_firewall_rule(
                 match key.to_unescaped()?.as_ref() {
                     "FirewallRule" => {
                         builder = builder.set_firewall_rule(
-                            crate::json_deser::deser_structure_firewall_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_firewall_rule(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -940,7 +948,7 @@ pub fn deser_operation_delete_firewall_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_firewall_rule_group(
+pub fn deser_operation_crate_operation_delete_firewall_rule_group(
     input: &[u8],
     mut builder: crate::output::delete_firewall_rule_group_output::Builder,
 ) -> Result<
@@ -959,7 +967,9 @@ pub fn deser_operation_delete_firewall_rule_group(
                 match key.to_unescaped()?.as_ref() {
                     "FirewallRuleGroup" => {
                         builder = builder.set_firewall_rule_group(
-                            crate::json_deser::deser_structure_firewall_rule_group(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_firewall_rule_group(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -980,7 +990,7 @@ pub fn deser_operation_delete_firewall_rule_group(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_resolver_endpoint(
+pub fn deser_operation_crate_operation_delete_resolver_endpoint(
     input: &[u8],
     mut builder: crate::output::delete_resolver_endpoint_output::Builder,
 ) -> Result<crate::output::delete_resolver_endpoint_output::Builder, smithy_json::deserialize::Error>
@@ -997,7 +1007,9 @@ pub fn deser_operation_delete_resolver_endpoint(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverEndpoint" => {
                         builder = builder.set_resolver_endpoint(
-                            crate::json_deser::deser_structure_resolver_endpoint(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_endpoint(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1018,7 +1030,7 @@ pub fn deser_operation_delete_resolver_endpoint(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_resolver_query_log_config(
+pub fn deser_operation_crate_operation_delete_resolver_query_log_config(
     input: &[u8],
     mut builder: crate::output::delete_resolver_query_log_config_output::Builder,
 ) -> Result<
@@ -1037,7 +1049,7 @@ pub fn deser_operation_delete_resolver_query_log_config(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverQueryLogConfig" => {
                         builder = builder.set_resolver_query_log_config(
-                            crate::json_deser::deser_structure_resolver_query_log_config(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_query_log_config(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1058,7 +1070,7 @@ pub fn deser_operation_delete_resolver_query_log_config(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_in_use_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_in_use_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_in_use_exception::Builder,
 ) -> Result<crate::error::resource_in_use_exception::Builder, smithy_json::deserialize::Error> {
@@ -1104,7 +1116,7 @@ pub fn deser_structure_resource_in_use_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_resolver_rule(
+pub fn deser_operation_crate_operation_delete_resolver_rule(
     input: &[u8],
     mut builder: crate::output::delete_resolver_rule_output::Builder,
 ) -> Result<crate::output::delete_resolver_rule_output::Builder, smithy_json::deserialize::Error> {
@@ -1120,7 +1132,7 @@ pub fn deser_operation_delete_resolver_rule(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverRule" => {
                         builder = builder.set_resolver_rule(
-                            crate::json_deser::deser_structure_resolver_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_rule(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1141,7 +1153,7 @@ pub fn deser_operation_delete_resolver_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_disassociate_firewall_rule_group(
+pub fn deser_operation_crate_operation_disassociate_firewall_rule_group(
     input: &[u8],
     mut builder: crate::output::disassociate_firewall_rule_group_output::Builder,
 ) -> Result<
@@ -1160,9 +1172,7 @@ pub fn deser_operation_disassociate_firewall_rule_group(
                 match key.to_unescaped()?.as_ref() {
                     "FirewallRuleGroupAssociation" => {
                         builder = builder.set_firewall_rule_group_association(
-                            crate::json_deser::deser_structure_firewall_rule_group_association(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_firewall_rule_group_association(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1183,7 +1193,7 @@ pub fn deser_operation_disassociate_firewall_rule_group(
     Ok(builder)
 }
 
-pub fn deser_operation_disassociate_resolver_endpoint_ip_address(
+pub fn deser_operation_crate_operation_disassociate_resolver_endpoint_ip_address(
     input: &[u8],
     mut builder: crate::output::disassociate_resolver_endpoint_ip_address_output::Builder,
 ) -> Result<
@@ -1202,240 +1212,7 @@ pub fn deser_operation_disassociate_resolver_endpoint_ip_address(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverEndpoint" => {
                         builder = builder.set_resolver_endpoint(
-                            crate::json_deser::deser_structure_resolver_endpoint(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_disassociate_resolver_query_log_config(
-    input: &[u8],
-    mut builder: crate::output::disassociate_resolver_query_log_config_output::Builder,
-) -> Result<
-    crate::output::disassociate_resolver_query_log_config_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "ResolverQueryLogConfigAssociation" => {
-                        builder = builder.set_resolver_query_log_config_association(
-                            crate::json_deser::deser_structure_resolver_query_log_config_association(tokens)?
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_disassociate_resolver_rule(
-    input: &[u8],
-    mut builder: crate::output::disassociate_resolver_rule_output::Builder,
-) -> Result<
-    crate::output::disassociate_resolver_rule_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "ResolverRuleAssociation" => {
-                        builder = builder.set_resolver_rule_association(
-                            crate::json_deser::deser_structure_resolver_rule_association(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_get_firewall_config(
-    input: &[u8],
-    mut builder: crate::output::get_firewall_config_output::Builder,
-) -> Result<crate::output::get_firewall_config_output::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "FirewallConfig" => {
-                        builder = builder.set_firewall_config(
-                            crate::json_deser::deser_structure_firewall_config(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_get_firewall_domain_list(
-    input: &[u8],
-    mut builder: crate::output::get_firewall_domain_list_output::Builder,
-) -> Result<crate::output::get_firewall_domain_list_output::Builder, smithy_json::deserialize::Error>
-{
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "FirewallDomainList" => {
-                        builder = builder.set_firewall_domain_list(
-                            crate::json_deser::deser_structure_firewall_domain_list(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_get_firewall_rule_group(
-    input: &[u8],
-    mut builder: crate::output::get_firewall_rule_group_output::Builder,
-) -> Result<crate::output::get_firewall_rule_group_output::Builder, smithy_json::deserialize::Error>
-{
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "FirewallRuleGroup" => {
-                        builder = builder.set_firewall_rule_group(
-                            crate::json_deser::deser_structure_firewall_rule_group(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_get_firewall_rule_group_association(
-    input: &[u8],
-    mut builder: crate::output::get_firewall_rule_group_association_output::Builder,
-) -> Result<
-    crate::output::get_firewall_rule_group_association_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "FirewallRuleGroupAssociation" => {
-                        builder = builder.set_firewall_rule_group_association(
-                            crate::json_deser::deser_structure_firewall_rule_group_association(
+                            crate::json_deser::deser_structure_crate_model_resolver_endpoint(
                                 tokens,
                             )?,
                         );
@@ -1458,7 +1235,244 @@ pub fn deser_operation_get_firewall_rule_group_association(
     Ok(builder)
 }
 
-pub fn deser_operation_get_firewall_rule_group_policy(
+pub fn deser_operation_crate_operation_disassociate_resolver_query_log_config(
+    input: &[u8],
+    mut builder: crate::output::disassociate_resolver_query_log_config_output::Builder,
+) -> Result<
+    crate::output::disassociate_resolver_query_log_config_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ResolverQueryLogConfigAssociation" => {
+                        builder = builder.set_resolver_query_log_config_association(
+                            crate::json_deser::deser_structure_crate_model_resolver_query_log_config_association(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_disassociate_resolver_rule(
+    input: &[u8],
+    mut builder: crate::output::disassociate_resolver_rule_output::Builder,
+) -> Result<
+    crate::output::disassociate_resolver_rule_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ResolverRuleAssociation" => {
+                        builder = builder.set_resolver_rule_association(
+                            crate::json_deser::deser_structure_crate_model_resolver_rule_association(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_get_firewall_config(
+    input: &[u8],
+    mut builder: crate::output::get_firewall_config_output::Builder,
+) -> Result<crate::output::get_firewall_config_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "FirewallConfig" => {
+                        builder = builder.set_firewall_config(
+                            crate::json_deser::deser_structure_crate_model_firewall_config(tokens)?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_get_firewall_domain_list(
+    input: &[u8],
+    mut builder: crate::output::get_firewall_domain_list_output::Builder,
+) -> Result<crate::output::get_firewall_domain_list_output::Builder, smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "FirewallDomainList" => {
+                        builder = builder.set_firewall_domain_list(
+                            crate::json_deser::deser_structure_crate_model_firewall_domain_list(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_get_firewall_rule_group(
+    input: &[u8],
+    mut builder: crate::output::get_firewall_rule_group_output::Builder,
+) -> Result<crate::output::get_firewall_rule_group_output::Builder, smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "FirewallRuleGroup" => {
+                        builder = builder.set_firewall_rule_group(
+                            crate::json_deser::deser_structure_crate_model_firewall_rule_group(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_get_firewall_rule_group_association(
+    input: &[u8],
+    mut builder: crate::output::get_firewall_rule_group_association_output::Builder,
+) -> Result<
+    crate::output::get_firewall_rule_group_association_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "FirewallRuleGroupAssociation" => {
+                        builder = builder.set_firewall_rule_group_association(
+                            crate::json_deser::deser_structure_crate_model_firewall_rule_group_association(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_get_firewall_rule_group_policy(
     input: &[u8],
     mut builder: crate::output::get_firewall_rule_group_policy_output::Builder,
 ) -> Result<
@@ -1500,7 +1514,7 @@ pub fn deser_operation_get_firewall_rule_group_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resolver_dnssec_config(
+pub fn deser_operation_crate_operation_get_resolver_dnssec_config(
     input: &[u8],
     mut builder: crate::output::get_resolver_dnssec_config_output::Builder,
 ) -> Result<
@@ -1519,7 +1533,9 @@ pub fn deser_operation_get_resolver_dnssec_config(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverDNSSECConfig" => {
                         builder = builder.set_resolver_dnssec_config(
-                            crate::json_deser::deser_structure_resolver_dnssec_config(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_dnssec_config(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1540,7 +1556,7 @@ pub fn deser_operation_get_resolver_dnssec_config(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resolver_endpoint(
+pub fn deser_operation_crate_operation_get_resolver_endpoint(
     input: &[u8],
     mut builder: crate::output::get_resolver_endpoint_output::Builder,
 ) -> Result<crate::output::get_resolver_endpoint_output::Builder, smithy_json::deserialize::Error> {
@@ -1556,7 +1572,9 @@ pub fn deser_operation_get_resolver_endpoint(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverEndpoint" => {
                         builder = builder.set_resolver_endpoint(
-                            crate::json_deser::deser_structure_resolver_endpoint(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_endpoint(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1577,7 +1595,7 @@ pub fn deser_operation_get_resolver_endpoint(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resolver_query_log_config(
+pub fn deser_operation_crate_operation_get_resolver_query_log_config(
     input: &[u8],
     mut builder: crate::output::get_resolver_query_log_config_output::Builder,
 ) -> Result<
@@ -1596,7 +1614,7 @@ pub fn deser_operation_get_resolver_query_log_config(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverQueryLogConfig" => {
                         builder = builder.set_resolver_query_log_config(
-                            crate::json_deser::deser_structure_resolver_query_log_config(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_query_log_config(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1617,7 +1635,7 @@ pub fn deser_operation_get_resolver_query_log_config(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resolver_query_log_config_association(
+pub fn deser_operation_crate_operation_get_resolver_query_log_config_association(
     input: &[u8],
     mut builder: crate::output::get_resolver_query_log_config_association_output::Builder,
 ) -> Result<
@@ -1636,7 +1654,7 @@ pub fn deser_operation_get_resolver_query_log_config_association(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverQueryLogConfigAssociation" => {
                         builder = builder.set_resolver_query_log_config_association(
-                            crate::json_deser::deser_structure_resolver_query_log_config_association(tokens)?
+                            crate::json_deser::deser_structure_crate_model_resolver_query_log_config_association(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1657,7 +1675,7 @@ pub fn deser_operation_get_resolver_query_log_config_association(
     Ok(builder)
 }
 
-pub fn deser_structure_unknown_resource_exceptionjson_err(
+pub fn deser_structure_crate_error_unknown_resource_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unknown_resource_exception::Builder,
 ) -> Result<crate::error::unknown_resource_exception::Builder, smithy_json::deserialize::Error> {
@@ -1696,7 +1714,7 @@ pub fn deser_structure_unknown_resource_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resolver_query_log_config_policy(
+pub fn deser_operation_crate_operation_get_resolver_query_log_config_policy(
     input: &[u8],
     mut builder: crate::output::get_resolver_query_log_config_policy_output::Builder,
 ) -> Result<
@@ -1738,7 +1756,7 @@ pub fn deser_operation_get_resolver_query_log_config_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resolver_rule(
+pub fn deser_operation_crate_operation_get_resolver_rule(
     input: &[u8],
     mut builder: crate::output::get_resolver_rule_output::Builder,
 ) -> Result<crate::output::get_resolver_rule_output::Builder, smithy_json::deserialize::Error> {
@@ -1754,7 +1772,7 @@ pub fn deser_operation_get_resolver_rule(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverRule" => {
                         builder = builder.set_resolver_rule(
-                            crate::json_deser::deser_structure_resolver_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_rule(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1775,7 +1793,7 @@ pub fn deser_operation_get_resolver_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resolver_rule_association(
+pub fn deser_operation_crate_operation_get_resolver_rule_association(
     input: &[u8],
     mut builder: crate::output::get_resolver_rule_association_output::Builder,
 ) -> Result<
@@ -1794,7 +1812,7 @@ pub fn deser_operation_get_resolver_rule_association(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverRuleAssociation" => {
                         builder = builder.set_resolver_rule_association(
-                            crate::json_deser::deser_structure_resolver_rule_association(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_rule_association(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1815,7 +1833,7 @@ pub fn deser_operation_get_resolver_rule_association(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resolver_rule_policy(
+pub fn deser_operation_crate_operation_get_resolver_rule_policy(
     input: &[u8],
     mut builder: crate::output::get_resolver_rule_policy_output::Builder,
 ) -> Result<crate::output::get_resolver_rule_policy_output::Builder, smithy_json::deserialize::Error>
@@ -1855,7 +1873,7 @@ pub fn deser_operation_get_resolver_rule_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_import_firewall_domains(
+pub fn deser_operation_crate_operation_import_firewall_domains(
     input: &[u8],
     mut builder: crate::output::import_firewall_domains_output::Builder,
 ) -> Result<crate::output::import_firewall_domains_output::Builder, smithy_json::deserialize::Error>
@@ -1920,7 +1938,7 @@ pub fn deser_operation_import_firewall_domains(
     Ok(builder)
 }
 
-pub fn deser_operation_list_firewall_configs(
+pub fn deser_operation_crate_operation_list_firewall_configs(
     input: &[u8],
     mut builder: crate::output::list_firewall_configs_output::Builder,
 ) -> Result<crate::output::list_firewall_configs_output::Builder, smithy_json::deserialize::Error> {
@@ -1943,7 +1961,7 @@ pub fn deser_operation_list_firewall_configs(
                     }
                     "FirewallConfigs" => {
                         builder = builder.set_firewall_configs(
-                            crate::json_deser::deser_list_firewall_config_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_firewall_config_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1964,7 +1982,7 @@ pub fn deser_operation_list_firewall_configs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_firewall_domain_lists(
+pub fn deser_operation_crate_operation_list_firewall_domain_lists(
     input: &[u8],
     mut builder: crate::output::list_firewall_domain_lists_output::Builder,
 ) -> Result<
@@ -1990,9 +2008,7 @@ pub fn deser_operation_list_firewall_domain_lists(
                     }
                     "FirewallDomainLists" => {
                         builder = builder.set_firewall_domain_lists(
-                            crate::json_deser::deser_list_firewall_domain_list_metadata_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_firewall_domain_list_metadata_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2013,7 +2029,7 @@ pub fn deser_operation_list_firewall_domain_lists(
     Ok(builder)
 }
 
-pub fn deser_operation_list_firewall_domains(
+pub fn deser_operation_crate_operation_list_firewall_domains(
     input: &[u8],
     mut builder: crate::output::list_firewall_domains_output::Builder,
 ) -> Result<crate::output::list_firewall_domains_output::Builder, smithy_json::deserialize::Error> {
@@ -2035,8 +2051,9 @@ pub fn deser_operation_list_firewall_domains(
                         );
                     }
                     "Domains" => {
-                        builder = builder
-                            .set_domains(crate::json_deser::deser_list_firewall_domains(tokens)?);
+                        builder = builder.set_domains(
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_firewall_domains(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -2056,7 +2073,7 @@ pub fn deser_operation_list_firewall_domains(
     Ok(builder)
 }
 
-pub fn deser_operation_list_firewall_rule_group_associations(
+pub fn deser_operation_crate_operation_list_firewall_rule_group_associations(
     input: &[u8],
     mut builder: crate::output::list_firewall_rule_group_associations_output::Builder,
 ) -> Result<
@@ -2082,7 +2099,7 @@ pub fn deser_operation_list_firewall_rule_group_associations(
                     }
                     "FirewallRuleGroupAssociations" => {
                         builder = builder.set_firewall_rule_group_associations(
-                            crate::json_deser::deser_list_firewall_rule_group_associations(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_firewall_rule_group_associations(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2103,7 +2120,7 @@ pub fn deser_operation_list_firewall_rule_group_associations(
     Ok(builder)
 }
 
-pub fn deser_operation_list_firewall_rule_groups(
+pub fn deser_operation_crate_operation_list_firewall_rule_groups(
     input: &[u8],
     mut builder: crate::output::list_firewall_rule_groups_output::Builder,
 ) -> Result<crate::output::list_firewall_rule_groups_output::Builder, smithy_json::deserialize::Error>
@@ -2127,9 +2144,7 @@ pub fn deser_operation_list_firewall_rule_groups(
                     }
                     "FirewallRuleGroups" => {
                         builder = builder.set_firewall_rule_groups(
-                            crate::json_deser::deser_list_firewall_rule_group_metadata_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_firewall_rule_group_metadata_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2150,7 +2165,7 @@ pub fn deser_operation_list_firewall_rule_groups(
     Ok(builder)
 }
 
-pub fn deser_operation_list_firewall_rules(
+pub fn deser_operation_crate_operation_list_firewall_rules(
     input: &[u8],
     mut builder: crate::output::list_firewall_rules_output::Builder,
 ) -> Result<crate::output::list_firewall_rules_output::Builder, smithy_json::deserialize::Error> {
@@ -2173,7 +2188,7 @@ pub fn deser_operation_list_firewall_rules(
                     }
                     "FirewallRules" => {
                         builder = builder.set_firewall_rules(
-                            crate::json_deser::deser_list_firewall_rules(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_firewall_rules(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2194,7 +2209,7 @@ pub fn deser_operation_list_firewall_rules(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_next_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_next_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_next_token_exception::Builder,
 ) -> Result<crate::error::invalid_next_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -2233,7 +2248,7 @@ pub fn deser_structure_invalid_next_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_resolver_dnssec_configs(
+pub fn deser_operation_crate_operation_list_resolver_dnssec_configs(
     input: &[u8],
     mut builder: crate::output::list_resolver_dnssec_configs_output::Builder,
 ) -> Result<
@@ -2259,7 +2274,7 @@ pub fn deser_operation_list_resolver_dnssec_configs(
                     }
                     "ResolverDnssecConfigs" => {
                         builder = builder.set_resolver_dnssec_configs(
-                            crate::json_deser::deser_list_resolver_dnssec_config_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_resolver_dnssec_config_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2280,7 +2295,7 @@ pub fn deser_operation_list_resolver_dnssec_configs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_resolver_endpoint_ip_addresses(
+pub fn deser_operation_crate_operation_list_resolver_endpoint_ip_addresses(
     input: &[u8],
     mut builder: crate::output::list_resolver_endpoint_ip_addresses_output::Builder,
 ) -> Result<
@@ -2312,7 +2327,7 @@ pub fn deser_operation_list_resolver_endpoint_ip_addresses(
                     }
                     "IpAddresses" => {
                         builder = builder.set_ip_addresses(
-                            crate::json_deser::deser_list_ip_addresses_response(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_ip_addresses_response(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2333,7 +2348,7 @@ pub fn deser_operation_list_resolver_endpoint_ip_addresses(
     Ok(builder)
 }
 
-pub fn deser_operation_list_resolver_endpoints(
+pub fn deser_operation_crate_operation_list_resolver_endpoints(
     input: &[u8],
     mut builder: crate::output::list_resolver_endpoints_output::Builder,
 ) -> Result<crate::output::list_resolver_endpoints_output::Builder, smithy_json::deserialize::Error>
@@ -2363,7 +2378,7 @@ pub fn deser_operation_list_resolver_endpoints(
                     }
                     "ResolverEndpoints" => {
                         builder = builder.set_resolver_endpoints(
-                            crate::json_deser::deser_list_resolver_endpoints(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_resolver_endpoints(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2384,7 +2399,7 @@ pub fn deser_operation_list_resolver_endpoints(
     Ok(builder)
 }
 
-pub fn deser_operation_list_resolver_query_log_config_associations(
+pub fn deser_operation_crate_operation_list_resolver_query_log_config_associations(
     input: &[u8],
     mut builder: crate::output::list_resolver_query_log_config_associations_output::Builder,
 ) -> Result<
@@ -2422,7 +2437,7 @@ pub fn deser_operation_list_resolver_query_log_config_associations(
                     }
                     "ResolverQueryLogConfigAssociations" => {
                         builder = builder.set_resolver_query_log_config_associations(
-                            crate::json_deser::deser_list_resolver_query_log_config_association_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_resolver_query_log_config_association_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2443,7 +2458,7 @@ pub fn deser_operation_list_resolver_query_log_config_associations(
     Ok(builder)
 }
 
-pub fn deser_operation_list_resolver_query_log_configs(
+pub fn deser_operation_crate_operation_list_resolver_query_log_configs(
     input: &[u8],
     mut builder: crate::output::list_resolver_query_log_configs_output::Builder,
 ) -> Result<
@@ -2481,7 +2496,7 @@ pub fn deser_operation_list_resolver_query_log_configs(
                     }
                     "ResolverQueryLogConfigs" => {
                         builder = builder.set_resolver_query_log_configs(
-                            crate::json_deser::deser_list_resolver_query_log_config_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_resolver_query_log_config_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2502,7 +2517,7 @@ pub fn deser_operation_list_resolver_query_log_configs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_resolver_rule_associations(
+pub fn deser_operation_crate_operation_list_resolver_rule_associations(
     input: &[u8],
     mut builder: crate::output::list_resolver_rule_associations_output::Builder,
 ) -> Result<
@@ -2534,7 +2549,7 @@ pub fn deser_operation_list_resolver_rule_associations(
                     }
                     "ResolverRuleAssociations" => {
                         builder = builder.set_resolver_rule_associations(
-                            crate::json_deser::deser_list_resolver_rule_associations(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_resolver_rule_associations(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2555,7 +2570,7 @@ pub fn deser_operation_list_resolver_rule_associations(
     Ok(builder)
 }
 
-pub fn deser_operation_list_resolver_rules(
+pub fn deser_operation_crate_operation_list_resolver_rules(
     input: &[u8],
     mut builder: crate::output::list_resolver_rules_output::Builder,
 ) -> Result<crate::output::list_resolver_rules_output::Builder, smithy_json::deserialize::Error> {
@@ -2584,7 +2599,7 @@ pub fn deser_operation_list_resolver_rules(
                     }
                     "ResolverRules" => {
                         builder = builder.set_resolver_rules(
-                            crate::json_deser::deser_list_resolver_rules(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_resolver_rules(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2605,7 +2620,7 @@ pub fn deser_operation_list_resolver_rules(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -2621,7 +2636,11 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_route53resolver_tag_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2648,7 +2667,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_put_firewall_rule_group_policy(
+pub fn deser_operation_crate_operation_put_firewall_rule_group_policy(
     input: &[u8],
     mut builder: crate::output::put_firewall_rule_group_policy_output::Builder,
 ) -> Result<
@@ -2688,7 +2707,7 @@ pub fn deser_operation_put_firewall_rule_group_policy(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_policy_documentjson_err(
+pub fn deser_structure_crate_error_invalid_policy_documentjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_policy_document::Builder,
 ) -> Result<crate::error::invalid_policy_document::Builder, smithy_json::deserialize::Error> {
@@ -2727,7 +2746,7 @@ pub fn deser_structure_invalid_policy_documentjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_put_resolver_query_log_config_policy(
+pub fn deser_operation_crate_operation_put_resolver_query_log_config_policy(
     input: &[u8],
     mut builder: crate::output::put_resolver_query_log_config_policy_output::Builder,
 ) -> Result<
@@ -2767,7 +2786,7 @@ pub fn deser_operation_put_resolver_query_log_config_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_put_resolver_rule_policy(
+pub fn deser_operation_crate_operation_put_resolver_rule_policy(
     input: &[u8],
     mut builder: crate::output::put_resolver_rule_policy_output::Builder,
 ) -> Result<crate::output::put_resolver_rule_policy_output::Builder, smithy_json::deserialize::Error>
@@ -2805,7 +2824,7 @@ pub fn deser_operation_put_resolver_rule_policy(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_tag_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_tag_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_tag_exception::Builder,
 ) -> Result<crate::error::invalid_tag_exception::Builder, smithy_json::deserialize::Error> {
@@ -2844,7 +2863,7 @@ pub fn deser_structure_invalid_tag_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_update_firewall_config(
+pub fn deser_operation_crate_operation_update_firewall_config(
     input: &[u8],
     mut builder: crate::output::update_firewall_config_output::Builder,
 ) -> Result<crate::output::update_firewall_config_output::Builder, smithy_json::deserialize::Error>
@@ -2861,7 +2880,7 @@ pub fn deser_operation_update_firewall_config(
                 match key.to_unescaped()?.as_ref() {
                     "FirewallConfig" => {
                         builder = builder.set_firewall_config(
-                            crate::json_deser::deser_structure_firewall_config(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_firewall_config(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2882,7 +2901,7 @@ pub fn deser_operation_update_firewall_config(
     Ok(builder)
 }
 
-pub fn deser_operation_update_firewall_domains(
+pub fn deser_operation_crate_operation_update_firewall_domains(
     input: &[u8],
     mut builder: crate::output::update_firewall_domains_output::Builder,
 ) -> Result<crate::output::update_firewall_domains_output::Builder, smithy_json::deserialize::Error>
@@ -2947,7 +2966,7 @@ pub fn deser_operation_update_firewall_domains(
     Ok(builder)
 }
 
-pub fn deser_operation_update_firewall_rule(
+pub fn deser_operation_crate_operation_update_firewall_rule(
     input: &[u8],
     mut builder: crate::output::update_firewall_rule_output::Builder,
 ) -> Result<crate::output::update_firewall_rule_output::Builder, smithy_json::deserialize::Error> {
@@ -2963,7 +2982,7 @@ pub fn deser_operation_update_firewall_rule(
                 match key.to_unescaped()?.as_ref() {
                     "FirewallRule" => {
                         builder = builder.set_firewall_rule(
-                            crate::json_deser::deser_structure_firewall_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_firewall_rule(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2984,7 +3003,7 @@ pub fn deser_operation_update_firewall_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_update_firewall_rule_group_association(
+pub fn deser_operation_crate_operation_update_firewall_rule_group_association(
     input: &[u8],
     mut builder: crate::output::update_firewall_rule_group_association_output::Builder,
 ) -> Result<
@@ -3003,7 +3022,47 @@ pub fn deser_operation_update_firewall_rule_group_association(
                 match key.to_unescaped()?.as_ref() {
                     "FirewallRuleGroupAssociation" => {
                         builder = builder.set_firewall_rule_group_association(
-                            crate::json_deser::deser_structure_firewall_rule_group_association(
+                            crate::json_deser::deser_structure_crate_model_firewall_rule_group_association(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_update_resolver_dnssec_config(
+    input: &[u8],
+    mut builder: crate::output::update_resolver_dnssec_config_output::Builder,
+) -> Result<
+    crate::output::update_resolver_dnssec_config_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ResolverDNSSECConfig" => {
+                        builder = builder.set_resolver_dnssec_config(
+                            crate::json_deser::deser_structure_crate_model_resolver_dnssec_config(
                                 tokens,
                             )?,
                         );
@@ -3026,47 +3085,7 @@ pub fn deser_operation_update_firewall_rule_group_association(
     Ok(builder)
 }
 
-pub fn deser_operation_update_resolver_dnssec_config(
-    input: &[u8],
-    mut builder: crate::output::update_resolver_dnssec_config_output::Builder,
-) -> Result<
-    crate::output::update_resolver_dnssec_config_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "ResolverDNSSECConfig" => {
-                        builder = builder.set_resolver_dnssec_config(
-                            crate::json_deser::deser_structure_resolver_dnssec_config(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_update_resolver_endpoint(
+pub fn deser_operation_crate_operation_update_resolver_endpoint(
     input: &[u8],
     mut builder: crate::output::update_resolver_endpoint_output::Builder,
 ) -> Result<crate::output::update_resolver_endpoint_output::Builder, smithy_json::deserialize::Error>
@@ -3083,7 +3102,9 @@ pub fn deser_operation_update_resolver_endpoint(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverEndpoint" => {
                         builder = builder.set_resolver_endpoint(
-                            crate::json_deser::deser_structure_resolver_endpoint(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_endpoint(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3104,7 +3125,7 @@ pub fn deser_operation_update_resolver_endpoint(
     Ok(builder)
 }
 
-pub fn deser_operation_update_resolver_rule(
+pub fn deser_operation_crate_operation_update_resolver_rule(
     input: &[u8],
     mut builder: crate::output::update_resolver_rule_output::Builder,
 ) -> Result<crate::output::update_resolver_rule_output::Builder, smithy_json::deserialize::Error> {
@@ -3120,7 +3141,7 @@ pub fn deser_operation_update_resolver_rule(
                 match key.to_unescaped()?.as_ref() {
                     "ResolverRule" => {
                         builder = builder.set_resolver_rule(
-                            crate::json_deser::deser_structure_resolver_rule(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resolver_rule(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3149,7 +3170,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_firewall_rule_group_association<'a, I>(
+pub fn deser_structure_crate_model_firewall_rule_group_association<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FirewallRuleGroupAssociation>, smithy_json::deserialize::Error>
 where
@@ -3311,7 +3332,7 @@ where
     }
 }
 
-pub fn deser_structure_resolver_endpoint<'a, I>(
+pub fn deser_structure_crate_model_resolver_endpoint<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResolverEndpoint>, smithy_json::deserialize::Error>
 where
@@ -3367,7 +3388,7 @@ where
                             }
                             "SecurityGroupIds" => {
                                 builder = builder.set_security_group_ids(
-                                    crate::json_deser::deser_list_security_group_ids(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_route53resolver_security_group_ids(tokens)?
                                 );
                             }
                             "Direction" => {
@@ -3460,7 +3481,7 @@ where
     }
 }
 
-pub fn deser_structure_resolver_query_log_config_association<'a, I>(
+pub fn deser_structure_crate_model_resolver_query_log_config_association<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResolverQueryLogConfigAssociation>, smithy_json::deserialize::Error>
 where
@@ -3559,7 +3580,7 @@ where
     }
 }
 
-pub fn deser_structure_resolver_rule_association<'a, I>(
+pub fn deser_structure_crate_model_resolver_rule_association<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResolverRuleAssociation>, smithy_json::deserialize::Error>
 where
@@ -3655,7 +3676,7 @@ where
     }
 }
 
-pub fn deser_structure_firewall_domain_list<'a, I>(
+pub fn deser_structure_crate_model_firewall_domain_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FirewallDomainList>, smithy_json::deserialize::Error>
 where
@@ -3784,7 +3805,7 @@ where
     }
 }
 
-pub fn deser_structure_firewall_rule<'a, I>(
+pub fn deser_structure_crate_model_firewall_rule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FirewallRule>, smithy_json::deserialize::Error>
 where
@@ -3936,7 +3957,7 @@ where
     }
 }
 
-pub fn deser_structure_firewall_rule_group<'a, I>(
+pub fn deser_structure_crate_model_firewall_rule_group<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FirewallRuleGroup>, smithy_json::deserialize::Error>
 where
@@ -4077,7 +4098,7 @@ where
     }
 }
 
-pub fn deser_structure_resolver_query_log_config<'a, I>(
+pub fn deser_structure_crate_model_resolver_query_log_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResolverQueryLogConfig>, smithy_json::deserialize::Error>
 where
@@ -4211,7 +4232,7 @@ where
     }
 }
 
-pub fn deser_structure_resolver_rule<'a, I>(
+pub fn deser_structure_crate_model_resolver_rule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResolverRule>, smithy_json::deserialize::Error>
 where
@@ -4310,7 +4331,7 @@ where
                             }
                             "TargetIps" => {
                                 builder = builder.set_target_ips(
-                                    crate::json_deser::deser_list_target_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_route53resolver_target_list(tokens)?
                                 );
                             }
                             "ResolverEndpointId" => {
@@ -4379,7 +4400,7 @@ where
     }
 }
 
-pub fn deser_structure_firewall_config<'a, I>(
+pub fn deser_structure_crate_model_firewall_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FirewallConfig>, smithy_json::deserialize::Error>
 where
@@ -4455,7 +4476,7 @@ where
     }
 }
 
-pub fn deser_structure_resolver_dnssec_config<'a, I>(
+pub fn deser_structure_crate_model_resolver_dnssec_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResolverDnssecConfig>, smithy_json::deserialize::Error>
 where
@@ -4534,7 +4555,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_firewall_config_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_firewall_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::FirewallConfig>>, smithy_json::deserialize::Error>
 where
@@ -4553,7 +4574,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_firewall_config(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_firewall_config(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4569,7 +4591,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_firewall_domain_list_metadata_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_firewall_domain_list_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
@@ -4592,9 +4614,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_firewall_domain_list_metadata(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_firewall_domain_list_metadata(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4610,7 +4631,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_firewall_domains<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_firewall_domains<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -4648,7 +4669,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_firewall_rule_group_associations<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_firewall_rule_group_associations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
@@ -4671,9 +4692,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_firewall_rule_group_association(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_firewall_rule_group_association(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4689,7 +4709,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_firewall_rule_group_metadata_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_firewall_rule_group_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
@@ -4712,9 +4732,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_firewall_rule_group_metadata(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_firewall_rule_group_metadata(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4730,7 +4749,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_firewall_rules<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_firewall_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::FirewallRule>>, smithy_json::deserialize::Error>
 where
@@ -4749,7 +4768,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_firewall_rule(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_firewall_rule(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4765,7 +4785,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resolver_dnssec_config_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_resolver_dnssec_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
@@ -4788,7 +4808,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_resolver_dnssec_config(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_resolver_dnssec_config(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4804,7 +4826,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_ip_addresses_response<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_ip_addresses_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::IpAddressResponse>>, smithy_json::deserialize::Error>
 where
@@ -4823,7 +4845,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_ip_address_response(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_ip_address_response(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4839,7 +4864,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resolver_endpoints<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_resolver_endpoints<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResolverEndpoint>>, smithy_json::deserialize::Error>
 where
@@ -4858,7 +4883,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_resolver_endpoint(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_resolver_endpoint(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4874,7 +4902,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resolver_query_log_config_association_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_resolver_query_log_config_association_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>,
@@ -4897,7 +4925,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_resolver_query_log_config_association(tokens)?
+                            crate::json_deser::deser_structure_crate_model_resolver_query_log_config_association(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -4914,7 +4942,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resolver_query_log_config_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_resolver_query_log_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
@@ -4937,7 +4965,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_resolver_query_log_config(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_resolver_query_log_config(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4953,7 +4982,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resolver_rule_associations<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_resolver_rule_associations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
@@ -4976,7 +5005,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_resolver_rule_association(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_resolver_rule_association(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4992,7 +5022,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resolver_rules<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_resolver_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResolverRule>>, smithy_json::deserialize::Error>
 where
@@ -5011,7 +5041,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_resolver_rule(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_resolver_rule(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5027,7 +5058,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -5046,7 +5077,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5062,7 +5093,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_security_group_ids<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_security_group_ids<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -5100,7 +5131,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_target_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53resolver_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TargetAddress>>, smithy_json::deserialize::Error>
 where
@@ -5119,7 +5150,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_target_address(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_target_address(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5134,7 +5166,7 @@ where
     }
 }
 
-pub fn deser_structure_firewall_domain_list_metadata<'a, I>(
+pub fn deser_structure_crate_model_firewall_domain_list_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FirewallDomainListMetadata>, smithy_json::deserialize::Error>
 where
@@ -5215,7 +5247,7 @@ where
     }
 }
 
-pub fn deser_structure_firewall_rule_group_metadata<'a, I>(
+pub fn deser_structure_crate_model_firewall_rule_group_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FirewallRuleGroupMetadata>, smithy_json::deserialize::Error>
 where
@@ -5308,7 +5340,7 @@ where
     }
 }
 
-pub fn deser_structure_ip_address_response<'a, I>(
+pub fn deser_structure_crate_model_ip_address_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::IpAddressResponse>, smithy_json::deserialize::Error>
 where
@@ -5411,7 +5443,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -5465,7 +5497,7 @@ where
     }
 }
 
-pub fn deser_structure_target_address<'a, I>(
+pub fn deser_structure_crate_model_target_address<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TargetAddress>, smithy_json::deserialize::Error>
 where

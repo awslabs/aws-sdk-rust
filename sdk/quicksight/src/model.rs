@@ -105,7 +105,7 @@ pub struct User {
     /// <li>
     /// <p>
     /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-    /// QuickSight settings.</p>
+    /// Amazon QuickSight settings.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -130,7 +130,7 @@ pub struct User {
     /// <p>The custom permissions profile associated with this user.</p>
     pub custom_permissions_name: std::option::Option<std::string::String>,
     /// <p>The type of supported external login provider that provides identity to let the user
-    /// federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
+    /// federate into Amazon QuickSight with an associated IAMrole. The type can be one of the following.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -232,7 +232,7 @@ pub mod user {
         /// <li>
         /// <p>
         /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-        /// QuickSight settings.</p>
+        /// Amazon QuickSight settings.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -298,7 +298,7 @@ pub mod user {
             self
         }
         /// <p>The type of supported external login provider that provides identity to let the user
-        /// federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
+        /// federate into Amazon QuickSight with an associated IAMrole. The type can be one of the following.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -505,13 +505,13 @@ pub struct ResourcePermission {
     /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
     /// </li>
     /// <li>
-    /// <p>The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a QuickSight
+    /// <p>The ARN of an Amazon Web Services account root: This is an IAMARN rather than a Amazon QuickSight
     /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
     /// (This is less common.) </p>
     /// </li>
     /// </ul>
     pub principal: std::option::Option<std::string::String>,
-    /// <p>The IAM action to grant or revoke permissions on.</p>
+    /// <p>The IAMaction to grant or revoke permissions on.</p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for ResourcePermission {
@@ -542,7 +542,7 @@ pub mod resource_permission {
         /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
         /// </li>
         /// <li>
-        /// <p>The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a QuickSight
+        /// <p>The ARN of an Amazon Web Services account root: This is an IAMARN rather than a Amazon QuickSight
         /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
         /// (This is less common.) </p>
         /// </li>
@@ -1990,7 +1990,7 @@ impl Group {
     }
 }
 
-/// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your
+/// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your
 /// underlying data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2260,45 +2260,46 @@ impl CredentialPair {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum DataSourceParameters {
-    /// <p>Amazon Elasticsearch Service parameters.</p>
+    /// <p>The parameters for Elasticsearch.</p>
     AmazonElasticsearchParameters(crate::model::AmazonElasticsearchParameters),
-    /// <p>Amazon Athena parameters.</p>
+    AmazonOpenSearchParameters(crate::model::AmazonOpenSearchParameters),
+    /// <p>The parameters for Amazon Athena.</p>
     AthenaParameters(crate::model::AthenaParameters),
-    /// <p>Amazon Aurora MySQL parameters.</p>
+    /// <p>The parameters for Amazon Aurora MySQL.</p>
     AuroraParameters(crate::model::AuroraParameters),
-    /// <p>Aurora PostgreSQL parameters.</p>
+    /// <p>The parameters for Amazon Aurora.</p>
     AuroraPostgreSqlParameters(crate::model::AuroraPostgreSqlParameters),
-    /// <p>Amazon Web Services IoT Analytics parameters.</p>
+    /// <p>The parameters for IoT Analytics.</p>
     AwsIotAnalyticsParameters(crate::model::AwsIotAnalyticsParameters),
-    /// <p>Jira parameters.</p>
+    /// <p>The parameters for Jira.</p>
     JiraParameters(crate::model::JiraParameters),
-    /// <p>MariaDB parameters.</p>
+    /// <p>The parameters for MariaDB.</p>
     MariaDbParameters(crate::model::MariaDbParameters),
-    /// <p>MySQL parameters.</p>
+    /// <p>The parameters for MySQL.</p>
     MySqlParameters(crate::model::MySqlParameters),
-    /// <p>Oracle parameters.</p>
+    /// <p>The parameters for Oracle.</p>
     OracleParameters(crate::model::OracleParameters),
-    /// <p>PostgreSQL parameters.</p>
+    /// <p>The parameters for PostgreSQL.</p>
     PostgreSqlParameters(crate::model::PostgreSqlParameters),
-    /// <p>Presto parameters.</p>
+    /// <p>The parameters for Presto.</p>
     PrestoParameters(crate::model::PrestoParameters),
-    /// <p>Amazon RDS parameters.</p>
+    /// <p>The parameters for Amazon RDS.</p>
     RdsParameters(crate::model::RdsParameters),
-    /// <p>Amazon Redshift parameters.</p>
+    /// <p>The parameters for Amazon Redshift.</p>
     RedshiftParameters(crate::model::RedshiftParameters),
-    /// <p>S3 parameters.</p>
+    /// <p>The parameters for S3.</p>
     S3Parameters(crate::model::S3Parameters),
-    /// <p>ServiceNow parameters.</p>
+    /// <p>The parameters for ServiceNow.</p>
     ServiceNowParameters(crate::model::ServiceNowParameters),
-    /// <p>Snowflake parameters.</p>
+    /// <p>The parameters for Snowflake.</p>
     SnowflakeParameters(crate::model::SnowflakeParameters),
-    /// <p>Spark parameters.</p>
+    /// <p>The parameters for Spark.</p>
     SparkParameters(crate::model::SparkParameters),
-    /// <p>SQL Server parameters.</p>
+    /// <p>The parameters for SQL Server.</p>
     SqlServerParameters(crate::model::SqlServerParameters),
-    /// <p>Teradata parameters.</p>
+    /// <p>The parameters for Teradata.</p>
     TeradataParameters(crate::model::TeradataParameters),
-    /// <p>Twitter parameters.</p>
+    /// <p>The parameters for Twitter.</p>
     TwitterParameters(crate::model::TwitterParameters),
 }
 impl DataSourceParameters {
@@ -2313,6 +2314,18 @@ impl DataSourceParameters {
     }
     pub fn is_amazon_elasticsearch_parameters(&self) -> bool {
         self.as_amazon_elasticsearch_parameters().is_ok()
+    }
+    pub fn as_amazon_open_search_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::AmazonOpenSearchParameters, &Self> {
+        if let DataSourceParameters::AmazonOpenSearchParameters(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_amazon_open_search_parameters(&self) -> bool {
+        self.as_amazon_open_search_parameters().is_ok()
     }
     pub fn as_athena_parameters(
         &self,
@@ -2538,7 +2551,51 @@ impl DataSourceParameters {
     }
 }
 
-/// <p>Twitter parameters.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AmazonOpenSearchParameters {
+    pub domain: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AmazonOpenSearchParameters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AmazonOpenSearchParameters");
+        formatter.field("domain", &self.domain);
+        formatter.finish()
+    }
+}
+/// See [`AmazonOpenSearchParameters`](crate::model::AmazonOpenSearchParameters)
+pub mod amazon_open_search_parameters {
+    /// A builder for [`AmazonOpenSearchParameters`](crate::model::AmazonOpenSearchParameters)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
+            self
+        }
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AmazonOpenSearchParameters`](crate::model::AmazonOpenSearchParameters)
+        pub fn build(self) -> crate::model::AmazonOpenSearchParameters {
+            crate::model::AmazonOpenSearchParameters {
+                domain: self.domain,
+            }
+        }
+    }
+}
+impl AmazonOpenSearchParameters {
+    /// Creates a new builder-style object to manufacture [`AmazonOpenSearchParameters`](crate::model::AmazonOpenSearchParameters)
+    pub fn builder() -> crate::model::amazon_open_search_parameters::Builder {
+        crate::model::amazon_open_search_parameters::Builder::default()
+    }
+}
+
+/// <p>The parameters for Twitter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TwitterParameters {
@@ -2599,7 +2656,7 @@ impl TwitterParameters {
     }
 }
 
-/// <p>Teradata parameters.</p>
+/// <p>The parameters for Teradata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TeradataParameters {
@@ -2674,7 +2731,7 @@ impl TeradataParameters {
     }
 }
 
-/// <p>SQL Server parameters.</p>
+/// <p>The parameters for SQL Server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqlServerParameters {
@@ -2749,7 +2806,7 @@ impl SqlServerParameters {
     }
 }
 
-/// <p>Spark parameters.</p>
+/// <p>The parameters for Spark.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SparkParameters {
@@ -2810,7 +2867,7 @@ impl SparkParameters {
     }
 }
 
-/// <p>Snowflake parameters.</p>
+/// <p>The parameters for Snowflake.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnowflakeParameters {
@@ -2885,7 +2942,7 @@ impl SnowflakeParameters {
     }
 }
 
-/// <p>ServiceNow parameters.</p>
+/// <p>The parameters for ServiceNow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNowParameters {
@@ -2935,12 +2992,12 @@ impl ServiceNowParameters {
     }
 }
 
-/// <p>S3 parameters.</p>
+/// <p>The parameters for S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Parameters {
     /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was
-    /// uploaded into QuickSight.</p>
+    /// uploaded into Amazon QuickSight.</p>
     pub manifest_file_location: std::option::Option<crate::model::ManifestFileLocation>,
 }
 impl std::fmt::Debug for S3Parameters {
@@ -2960,7 +3017,7 @@ pub mod s3_parameters {
     }
     impl Builder {
         /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was
-        /// uploaded into QuickSight.</p>
+        /// uploaded into Amazon QuickSight.</p>
         pub fn manifest_file_location(mut self, input: crate::model::ManifestFileLocation) -> Self {
             self.manifest_file_location = Some(input);
             self
@@ -3048,7 +3105,7 @@ impl ManifestFileLocation {
     }
 }
 
-/// <p>Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if
+/// <p>The parameters for Amazon Redshift. The <code>ClusterId</code> field can be blank if
 /// <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and
 /// <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set.</p>
 #[non_exhaustive]
@@ -3141,7 +3198,7 @@ impl RedshiftParameters {
     }
 }
 
-/// <p>Amazon RDS parameters.</p>
+/// <p>The parameters for Amazon RDS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RdsParameters {
@@ -3202,7 +3259,7 @@ impl RdsParameters {
     }
 }
 
-/// <p>Presto parameters.</p>
+/// <p>The parameters for Presto.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrestoParameters {
@@ -3277,7 +3334,7 @@ impl PrestoParameters {
     }
 }
 
-/// <p>PostgreSQL parameters.</p>
+/// <p>The parameters for PostgreSQL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostgreSqlParameters {
@@ -3352,7 +3409,7 @@ impl PostgreSqlParameters {
     }
 }
 
-/// <p>Oracle parameters.</p>
+/// <p>The parameters for Oracle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OracleParameters {
@@ -3427,7 +3484,7 @@ impl OracleParameters {
     }
 }
 
-/// <p>MySQL parameters.</p>
+/// <p>The parameters for MySQL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MySqlParameters {
@@ -3502,7 +3559,7 @@ impl MySqlParameters {
     }
 }
 
-/// <p>MariaDB parameters.</p>
+/// <p>The parameters for MariaDB.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MariaDbParameters {
@@ -3577,7 +3634,7 @@ impl MariaDbParameters {
     }
 }
 
-/// <p>Jira parameters.</p>
+/// <p>The parameters for Jira.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JiraParameters {
@@ -3627,7 +3684,7 @@ impl JiraParameters {
     }
 }
 
-/// <p>Amazon Web Services IoT Analytics parameters.</p>
+/// <p>The parameters for IoT Analytics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsIotAnalyticsParameters {
@@ -3677,15 +3734,15 @@ impl AwsIotAnalyticsParameters {
     }
 }
 
-/// <p>Amazon Aurora with PostgreSQL compatibility parameters.</p>
+/// <p>Parameters for Amazon Aurora PostgreSQL-Compatible Edition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuroraPostgreSqlParameters {
-    /// <p>Host.</p>
+    /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
     pub host: std::option::Option<std::string::String>,
-    /// <p>Port.</p>
+    /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
     pub port: i32,
-    /// <p>Database.</p>
+    /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
     pub database: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AuroraPostgreSqlParameters {
@@ -3708,7 +3765,7 @@ pub mod aurora_postgre_sql_parameters {
         pub(crate) database: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Host.</p>
+        /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
         pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
             self.host = Some(input.into());
             self
@@ -3717,7 +3774,7 @@ pub mod aurora_postgre_sql_parameters {
             self.host = input;
             self
         }
-        /// <p>Port.</p>
+        /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
@@ -3726,7 +3783,7 @@ pub mod aurora_postgre_sql_parameters {
             self.port = input;
             self
         }
-        /// <p>Database.</p>
+        /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
             self.database = Some(input.into());
             self
@@ -3752,7 +3809,7 @@ impl AuroraPostgreSqlParameters {
     }
 }
 
-/// <p>Amazon Aurora parameters.</p>
+/// <p>Parameters for Amazon Aurora.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuroraParameters {
@@ -3827,7 +3884,7 @@ impl AuroraParameters {
     }
 }
 
-/// <p>Amazon Athena parameters.</p>
+/// <p>Parameters for Amazon Athena.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AthenaParameters {
@@ -3874,11 +3931,11 @@ impl AthenaParameters {
     }
 }
 
-/// <p>Amazon Elasticsearch Service parameters.</p>
+/// <p>The parameters for Elasticsearch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmazonElasticsearchParameters {
-    /// <p>The Amazon Elasticsearch Service domain.</p>
+    /// <p>The Elasticsearch domain.</p>
     pub domain: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AmazonElasticsearchParameters {
@@ -3897,7 +3954,7 @@ pub mod amazon_elasticsearch_parameters {
         pub(crate) domain: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Elasticsearch Service domain.</p>
+        /// <p>The Elasticsearch domain.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
@@ -3921,6 +3978,83 @@ impl AmazonElasticsearchParameters {
     }
 }
 
+/// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSetUsageConfiguration {
+    /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
+    pub disable_use_as_direct_query_source: bool,
+    /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
+    pub disable_use_as_imported_source: bool,
+}
+impl std::fmt::Debug for DataSetUsageConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSetUsageConfiguration");
+        formatter.field(
+            "disable_use_as_direct_query_source",
+            &self.disable_use_as_direct_query_source,
+        );
+        formatter.field(
+            "disable_use_as_imported_source",
+            &self.disable_use_as_imported_source,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DataSetUsageConfiguration`](crate::model::DataSetUsageConfiguration)
+pub mod data_set_usage_configuration {
+    /// A builder for [`DataSetUsageConfiguration`](crate::model::DataSetUsageConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) disable_use_as_direct_query_source: std::option::Option<bool>,
+        pub(crate) disable_use_as_imported_source: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
+        pub fn disable_use_as_direct_query_source(mut self, input: bool) -> Self {
+            self.disable_use_as_direct_query_source = Some(input);
+            self
+        }
+        pub fn set_disable_use_as_direct_query_source(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.disable_use_as_direct_query_source = input;
+            self
+        }
+        /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
+        pub fn disable_use_as_imported_source(mut self, input: bool) -> Self {
+            self.disable_use_as_imported_source = Some(input);
+            self
+        }
+        pub fn set_disable_use_as_imported_source(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.disable_use_as_imported_source = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSetUsageConfiguration`](crate::model::DataSetUsageConfiguration)
+        pub fn build(self) -> crate::model::DataSetUsageConfiguration {
+            crate::model::DataSetUsageConfiguration {
+                disable_use_as_direct_query_source: self
+                    .disable_use_as_direct_query_source
+                    .unwrap_or_default(),
+                disable_use_as_imported_source: self
+                    .disable_use_as_imported_source
+                    .unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DataSetUsageConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataSetUsageConfiguration`](crate::model::DataSetUsageConfiguration)
+    pub fn builder() -> crate::model::data_set_usage_configuration::Builder {
+        crate::model::data_set_usage_configuration::Builder::default()
+    }
+}
+
 /// <p>A rule defined to grant access on one or more restricted columns.
 /// Each dataset can have multiple rules.
 /// To create a restricted column, you add it to one or more rules.
@@ -3930,7 +4064,7 @@ impl AmazonElasticsearchParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnLevelPermissionRule {
-    /// <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of column names.</p>
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4222,7 +4356,7 @@ pub struct RowLevelPermissionDataSet {
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code>
+    /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code>
     /// is included for backward compatibility only.</p>
     pub permission_policy: std::option::Option<crate::model::RowLevelPermissionPolicy>,
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
@@ -4274,7 +4408,7 @@ pub mod row_level_permission_data_set {
             self.arn = input;
             self
         }
-        /// <p>The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code>
+        /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code>
         /// is included for backward compatibility only.</p>
         pub fn permission_policy(mut self, input: crate::model::RowLevelPermissionPolicy) -> Self {
             self.permission_policy = Some(input);
@@ -4829,12 +4963,15 @@ pub struct LogicalTableSource {
     pub join_instruction: std::option::Option<crate::model::JoinInstruction>,
     /// <p>Physical table ID.</p>
     pub physical_table_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+    pub data_set_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LogicalTableSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogicalTableSource");
         formatter.field("join_instruction", &self.join_instruction);
         formatter.field("physical_table_id", &self.physical_table_id);
+        formatter.field("data_set_arn", &self.data_set_arn);
         formatter.finish()
     }
 }
@@ -4846,6 +4983,7 @@ pub mod logical_table_source {
     pub struct Builder {
         pub(crate) join_instruction: std::option::Option<crate::model::JoinInstruction>,
         pub(crate) physical_table_id: std::option::Option<std::string::String>,
+        pub(crate) data_set_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the result of a join of two logical tables.</p>
@@ -4872,11 +5010,21 @@ pub mod logical_table_source {
             self.physical_table_id = input;
             self
         }
+        /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+        pub fn data_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_set_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_set_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LogicalTableSource`](crate::model::LogicalTableSource)
         pub fn build(self) -> crate::model::LogicalTableSource {
             crate::model::LogicalTableSource {
                 join_instruction: self.join_instruction,
                 physical_table_id: self.physical_table_id,
+                data_set_arn: self.data_set_arn,
             }
         }
     }
@@ -5075,7 +5223,7 @@ impl AsRef<str> for JoinType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JoinKeyProperties {
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in
-    /// a join key. This is used by QuickSight to optimize query performance.</p>
+    /// a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     pub unique_key: std::option::Option<bool>,
 }
 impl std::fmt::Debug for JoinKeyProperties {
@@ -5095,7 +5243,7 @@ pub mod join_key_properties {
     }
     impl Builder {
         /// <p>A value that indicates that a row in a table is uniquely identified by the columns in
-        /// a join key. This is used by QuickSight to optimize query performance.</p>
+        /// a join key. This is used by Amazon QuickSight to optimize query performance.</p>
         pub fn unique_key(mut self, input: bool) -> Self {
             self.unique_key = Some(input);
             self
@@ -5136,6 +5284,8 @@ pub enum TransformOperation {
     RenameColumnOperation(crate::model::RenameColumnOperation),
     /// <p>An operation that tags a column with additional information.</p>
     TagColumnOperation(crate::model::TagColumnOperation),
+    /// <p>A transform operation that removes tags associated with a column.</p>
+    UntagColumnOperation(crate::model::UntagColumnOperation),
 }
 impl TransformOperation {
     pub fn as_cast_column_type_operation(
@@ -5209,6 +5359,133 @@ impl TransformOperation {
     }
     pub fn is_tag_column_operation(&self) -> bool {
         self.as_tag_column_operation().is_ok()
+    }
+    pub fn as_untag_column_operation(
+        &self,
+    ) -> std::result::Result<&crate::model::UntagColumnOperation, &Self> {
+        if let TransformOperation::UntagColumnOperation(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_untag_column_operation(&self) -> bool {
+        self.as_untag_column_operation().is_ok()
+    }
+}
+
+/// <p>A transform operation that removes tags associated with a column.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagColumnOperation {
+    /// <p>The column that this operation acts on.</p>
+    pub column_name: std::option::Option<std::string::String>,
+    /// <p>The column tags to remove from this column.</p>
+    pub tag_names: std::option::Option<std::vec::Vec<crate::model::ColumnTagName>>,
+}
+impl std::fmt::Debug for UntagColumnOperation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagColumnOperation");
+        formatter.field("column_name", &self.column_name);
+        formatter.field("tag_names", &self.tag_names);
+        formatter.finish()
+    }
+}
+/// See [`UntagColumnOperation`](crate::model::UntagColumnOperation)
+pub mod untag_column_operation {
+    /// A builder for [`UntagColumnOperation`](crate::model::UntagColumnOperation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) column_name: std::option::Option<std::string::String>,
+        pub(crate) tag_names: std::option::Option<std::vec::Vec<crate::model::ColumnTagName>>,
+    }
+    impl Builder {
+        /// <p>The column that this operation acts on.</p>
+        pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.column_name = Some(input.into());
+            self
+        }
+        pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.column_name = input;
+            self
+        }
+        pub fn tag_names(mut self, input: impl Into<crate::model::ColumnTagName>) -> Self {
+            let mut v = self.tag_names.unwrap_or_default();
+            v.push(input.into());
+            self.tag_names = Some(v);
+            self
+        }
+        pub fn set_tag_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ColumnTagName>>,
+        ) -> Self {
+            self.tag_names = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UntagColumnOperation`](crate::model::UntagColumnOperation)
+        pub fn build(self) -> crate::model::UntagColumnOperation {
+            crate::model::UntagColumnOperation {
+                column_name: self.column_name,
+                tag_names: self.tag_names,
+            }
+        }
+    }
+}
+impl UntagColumnOperation {
+    /// Creates a new builder-style object to manufacture [`UntagColumnOperation`](crate::model::UntagColumnOperation)
+    pub fn builder() -> crate::model::untag_column_operation::Builder {
+        crate::model::untag_column_operation::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ColumnTagName {
+    ColumnDescription,
+    ColumnGeographicRole,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ColumnTagName {
+    fn from(s: &str) -> Self {
+        match s {
+            "COLUMN_DESCRIPTION" => ColumnTagName::ColumnDescription,
+            "COLUMN_GEOGRAPHIC_ROLE" => ColumnTagName::ColumnGeographicRole,
+            other => ColumnTagName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ColumnTagName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ColumnTagName::from(s))
+    }
+}
+impl ColumnTagName {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ColumnTagName::ColumnDescription => "COLUMN_DESCRIPTION",
+            ColumnTagName::ColumnGeographicRole => "COLUMN_GEOGRAPHIC_ROLE",
+            ColumnTagName::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COLUMN_DESCRIPTION", "COLUMN_GEOGRAPHIC_ROLE"]
+    }
+}
+impl AsRef<str> for ColumnTagName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -5957,7 +6234,7 @@ pub struct S3Source {
     pub upload_settings: std::option::Option<crate::model::UploadSettings>,
     /// <p>A physical table type for an S3 data source.</p>
     /// <note>
-    /// <p>For non-JSON files, only <code>STRING</code> data types are supported in input columns.</p>
+    /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
     pub input_columns: std::option::Option<std::vec::Vec<crate::model::InputColumn>>,
 }
@@ -6927,17 +7204,17 @@ impl AdHocFilteringOption {
     }
 }
 
-/// <p>A list of QuickSight parameters and the list's override values.</p>
+/// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameters {
-    /// <p>String parameters.</p>
+    /// <p>The parameters that have a data type of string.</p>
     pub string_parameters: std::option::Option<std::vec::Vec<crate::model::StringParameter>>,
-    /// <p>Integer parameters.</p>
+    /// <p>The parameters that have a data type of integer.</p>
     pub integer_parameters: std::option::Option<std::vec::Vec<crate::model::IntegerParameter>>,
-    /// <p>Decimal parameters.</p>
+    /// <p>The parameters that have a data type of decimal.</p>
     pub decimal_parameters: std::option::Option<std::vec::Vec<crate::model::DecimalParameter>>,
-    /// <p>Date-time parameters.</p>
+    /// <p>The parameters that have a data type of date-time.</p>
     pub date_time_parameters: std::option::Option<std::vec::Vec<crate::model::DateTimeParameter>>,
 }
 impl std::fmt::Debug for Parameters {
@@ -7540,11 +7817,11 @@ impl AnalysisSourceTemplate {
     }
 }
 
-/// <p>The Amazon QuickSight customizations associated with your Amazon Web Services account; or a QuickSight namespace in a specific Amazon Web Services Region;.</p>
+/// <p>The Amazon QuickSight customizations associated with your Amazon Web Services account or a Amazon QuickSight namespace in a specific Amazon Web Services Region;.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountCustomization {
-    /// <p>The default theme for this QuickSight subscription.</p>
+    /// <p>The default theme for this Amazon QuickSight subscription.</p>
     pub default_theme: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccountCustomization {
@@ -7563,7 +7840,7 @@ pub mod account_customization {
         pub(crate) default_theme: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The default theme for this QuickSight subscription.</p>
+        /// <p>The default theme for this Amazon QuickSight subscription.</p>
         pub fn default_theme(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_theme = Some(input.into());
             self
@@ -8284,7 +8561,8 @@ pub struct AnalysisSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis. This ID displays in the URL.</p>
     pub analysis_id: std::option::Option<std::string::String>,
-    /// <p>The name of the analysis. This name is displayed in the QuickSight console.</p>
+    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.
+    /// </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The last known status for the analysis.</p>
     pub status: std::option::Option<crate::model::ResourceStatus>,
@@ -8337,7 +8615,8 @@ pub mod analysis_summary {
             self.analysis_id = input;
             self
         }
-        /// <p>The name of the analysis. This name is displayed in the QuickSight console.</p>
+        /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.
+        /// </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -8655,7 +8934,7 @@ pub struct ThemeSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>the display name for the theme.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the theme. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the theme. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The latest version number for the theme. </p>
     pub latest_version_number: std::option::Option<i64>,
@@ -8708,7 +8987,7 @@ pub mod theme_summary {
             self.name = input;
             self
         }
-        /// <p>The ID of the theme. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the theme. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_id = Some(input.into());
             self
@@ -8938,7 +9217,7 @@ impl TemplateVersionSummary {
 pub struct TemplateSummary {
     /// <p>A summary of a template.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the template. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the template. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>A display name for the template.</p>
     pub name: std::option::Option<std::string::String>,
@@ -8984,7 +9263,7 @@ pub mod template_summary {
             self.arn = input;
             self
         }
-        /// <p>The ID of the template. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the template. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self
@@ -10206,7 +10485,7 @@ impl AsRef<str> for IngestionStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveIamPolicyAssignment {
-    /// <p>A name for the IAM policy assignment.</p>
+    /// <p>A name for the IAMpolicy assignment.</p>
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub policy_arn: std::option::Option<std::string::String>,
@@ -10229,7 +10508,7 @@ pub mod active_iam_policy_assignment {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A name for the IAM policy assignment.</p>
+        /// <p>A name for the IAMpolicy assignment.</p>
         pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_name = Some(input.into());
             self
@@ -10266,7 +10545,7 @@ impl ActiveIamPolicyAssignment {
     }
 }
 
-/// <p>IAM policy assignment summary.</p>
+/// <p>IAMpolicy assignment summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamPolicyAssignmentSummary {
@@ -10463,7 +10742,7 @@ pub struct DataSource {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each
-    /// Amazon Web Services account;.</p>
+    /// Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: std::option::Option<std::string::String>,
@@ -10492,9 +10771,9 @@ pub struct DataSource {
     pub alternate_data_source_parameters:
         std::option::Option<std::vec::Vec<crate::model::DataSourceParameters>>,
     /// <p>The VPC connection information. You need to use this parameter only when you want
-    /// QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     pub vpc_connection_properties: std::option::Option<crate::model::VpcConnectionProperties>,
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your
     /// underlying source.</p>
     pub ssl_properties: std::option::Option<crate::model::SslProperties>,
     /// <p>Error information from the last update or the creation of the data source.</p>
@@ -10553,7 +10832,7 @@ pub mod data_source {
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each
-        /// Amazon Web Services account;.</p>
+        /// Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -10654,7 +10933,7 @@ pub mod data_source {
             self
         }
         /// <p>The VPC connection information. You need to use this parameter only when you want
-        /// QuickSight to use a VPC connection when connecting to your underlying source.</p>
+        /// Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
         pub fn vpc_connection_properties(
             mut self,
             input: crate::model::VpcConnectionProperties,
@@ -10669,7 +10948,7 @@ pub mod data_source {
             self.vpc_connection_properties = input;
             self
         }
-        /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your
+        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your
         /// underlying source.</p>
         pub fn ssl_properties(mut self, input: crate::model::SslProperties) -> Self {
             self.ssl_properties = Some(input);
@@ -10876,6 +11155,7 @@ impl AsRef<str> for DataSourceErrorInfoType {
 pub enum DataSourceType {
     AdobeAnalytics,
     AmazonElasticsearch,
+    AmazonOpensearch,
     Athena,
     Aurora,
     AuroraPostgresql,
@@ -10905,6 +11185,7 @@ impl std::convert::From<&str> for DataSourceType {
         match s {
             "ADOBE_ANALYTICS" => DataSourceType::AdobeAnalytics,
             "AMAZON_ELASTICSEARCH" => DataSourceType::AmazonElasticsearch,
+            "AMAZON_OPENSEARCH" => DataSourceType::AmazonOpensearch,
             "ATHENA" => DataSourceType::Athena,
             "AURORA" => DataSourceType::Aurora,
             "AURORA_POSTGRESQL" => DataSourceType::AuroraPostgresql,
@@ -10942,6 +11223,7 @@ impl DataSourceType {
         match self {
             DataSourceType::AdobeAnalytics => "ADOBE_ANALYTICS",
             DataSourceType::AmazonElasticsearch => "AMAZON_ELASTICSEARCH",
+            DataSourceType::AmazonOpensearch => "AMAZON_OPENSEARCH",
             DataSourceType::Athena => "ATHENA",
             DataSourceType::Aurora => "AURORA",
             DataSourceType::AuroraPostgresql => "AURORA_POSTGRESQL",
@@ -10970,6 +11252,7 @@ impl DataSourceType {
         &[
             "ADOBE_ANALYTICS",
             "AMAZON_ELASTICSEARCH",
+            "AMAZON_OPENSEARCH",
             "ATHENA",
             "AURORA",
             "AURORA_POSTGRESQL",
@@ -11990,7 +12273,7 @@ pub struct ThemeVersion {
     /// <p>The description of the theme.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All
-    /// themes initially inherit from a default QuickSight theme.</p>
+    /// themes initially inherit from a default Amazon QuickSight theme.</p>
     pub base_theme_id: std::option::Option<std::string::String>,
     /// <p>The date and time that this theme version was created.</p>
     pub created_time: std::option::Option<smithy_types::Instant>,
@@ -12059,7 +12342,7 @@ pub mod theme_version {
             self
         }
         /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All
-        /// themes initially inherit from a default QuickSight theme.</p>
+        /// themes initially inherit from a default Amazon QuickSight theme.</p>
         pub fn base_theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_theme_id = Some(input.into());
             self
@@ -12253,7 +12536,7 @@ impl AsRef<str> for ThemeErrorType {
     }
 }
 
-/// <p>A template object. A <i>template</i> is an entity in QuickSight that
+/// <p>A template object. A <i>template</i> is an entity in Amazon QuickSight that
 /// encapsulates the metadata required to create an analysis and that you can use to create
 /// a dashboard. A template adds a layer of abstraction by using placeholders to replace the
 /// dataset associated with an analysis. You can use templates to create dashboards by
@@ -12270,7 +12553,7 @@ pub struct Template {
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure describing the versions of the template.</p>
     pub version: std::option::Option<crate::model::TemplateVersion>,
-    /// <p>The ID for the template. This is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the template. This is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>Time when this was last updated.</p>
     pub last_updated_time: std::option::Option<smithy_types::Instant>,
@@ -12333,7 +12616,7 @@ pub mod template {
             self.version = input;
             self
         }
-        /// <p>The ID for the template. This is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the template. This is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self
@@ -12585,7 +12868,7 @@ impl TemplateVersion {
 pub struct Sheet {
     /// <p>The unique identifier associated with a sheet.</p>
     pub sheet_id: std::option::Option<std::string::String>,
-    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the QuickSight
+    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight
     /// console.</p>
     pub name: std::option::Option<std::string::String>,
 }
@@ -12616,7 +12899,7 @@ pub mod sheet {
             self.sheet_id = input;
             self
         }
-        /// <p>The name of a sheet. This name is displayed on the sheet's tab in the QuickSight
+        /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight
         /// console.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -13106,13 +13389,13 @@ impl AsRef<str> for TemplateErrorType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamPolicyAssignment {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>Assignment ID.</p>
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>Assignment name.</p>
     pub assignment_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+    /// <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>Identities.</p>
     pub identities: std::option::Option<
@@ -13149,7 +13432,7 @@ pub mod iam_policy_assignment {
         pub(crate) assignment_status: std::option::Option<crate::model::AssignmentStatus>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -13185,7 +13468,7 @@ pub mod iam_policy_assignment {
             self.assignment_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+        /// <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
@@ -13437,6 +13720,8 @@ pub struct DataSet {
     /// </code>.</p>
     pub column_level_permission_rules:
         std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
+    /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+    pub data_set_usage_configuration: std::option::Option<crate::model::DataSetUsageConfiguration>,
 }
 impl std::fmt::Debug for DataSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13467,6 +13752,10 @@ impl std::fmt::Debug for DataSet {
         formatter.field(
             "column_level_permission_rules",
             &self.column_level_permission_rules,
+        );
+        formatter.field(
+            "data_set_usage_configuration",
+            &self.data_set_usage_configuration,
         );
         formatter.finish()
     }
@@ -13501,6 +13790,8 @@ pub mod data_set {
             std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
         pub(crate) column_level_permission_rules:
             std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
+        pub(crate) data_set_usage_configuration:
+            std::option::Option<crate::model::DataSetUsageConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -13708,6 +13999,21 @@ pub mod data_set {
             self.column_level_permission_rules = input;
             self
         }
+        /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+        pub fn data_set_usage_configuration(
+            mut self,
+            input: crate::model::DataSetUsageConfiguration,
+        ) -> Self {
+            self.data_set_usage_configuration = Some(input);
+            self
+        }
+        pub fn set_data_set_usage_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSetUsageConfiguration>,
+        ) -> Self {
+            self.data_set_usage_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSet`](crate::model::DataSet)
         pub fn build(self) -> crate::model::DataSet {
             crate::model::DataSet {
@@ -13728,6 +14034,7 @@ pub mod data_set {
                 row_level_permission_data_set: self.row_level_permission_data_set,
                 row_level_permission_tag_configuration: self.row_level_permission_tag_configuration,
                 column_level_permission_rules: self.column_level_permission_rules,
+                data_set_usage_configuration: self.data_set_usage_configuration,
             }
         }
     }
@@ -14498,7 +14805,7 @@ impl Analysis {
     }
 }
 
-/// <p>A metadata error structure for an analysis.</p>
+/// <p>Analysis error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisError {
@@ -14647,20 +14954,20 @@ impl AsRef<str> for AnalysisErrorType {
     }
 }
 
-/// <p>The QuickSight settings associated with your Amazon Web Services account;.</p>
+/// <p>The Amazon QuickSight settings associated with your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSettings {
-    /// <p>The "account name" you provided for the QuickSight subscription in your Amazon Web Services account;.
-    /// You create this name when you sign up for QuickSight. It is unique in all of Amazon Web Services and
+    /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account.
+    /// You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and
     /// it appears only when users sign in.</p>
     pub account_name: std::option::Option<std::string::String>,
-    /// <p>The edition of QuickSight that you're currently subscribed to:
+    /// <p>The edition of Amazon QuickSight that you're currently subscribed to:
     /// Enterprise edition or Standard edition.</p>
     pub edition: std::option::Option<crate::model::Edition>,
-    /// <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
+    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
     pub default_namespace: std::option::Option<std::string::String>,
-    /// <p>The main notification email for your QuickSight subscription.</p>
+    /// <p>The main notification email for your Amazon QuickSight subscription.</p>
     pub notification_email: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccountSettings {
@@ -14685,8 +14992,8 @@ pub mod account_settings {
         pub(crate) notification_email: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The "account name" you provided for the QuickSight subscription in your Amazon Web Services account;.
-        /// You create this name when you sign up for QuickSight. It is unique in all of Amazon Web Services and
+        /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account.
+        /// You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and
         /// it appears only when users sign in.</p>
         pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_name = Some(input.into());
@@ -14696,7 +15003,7 @@ pub mod account_settings {
             self.account_name = input;
             self
         }
-        /// <p>The edition of QuickSight that you're currently subscribed to:
+        /// <p>The edition of Amazon QuickSight that you're currently subscribed to:
         /// Enterprise edition or Standard edition.</p>
         pub fn edition(mut self, input: crate::model::Edition) -> Self {
             self.edition = Some(input);
@@ -14706,7 +15013,7 @@ pub mod account_settings {
             self.edition = input;
             self
         }
-        /// <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
+        /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
         pub fn default_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_namespace = Some(input.into());
             self
@@ -14718,7 +15025,7 @@ pub mod account_settings {
             self.default_namespace = input;
             self
         }
-        /// <p>The main notification email for your QuickSight subscription.</p>
+        /// <p>The main notification email for your Amazon QuickSight subscription.</p>
         pub fn notification_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_email = Some(input.into());
             self

@@ -221,7 +221,9 @@ pub mod fluent_builders {
         /// Appends an item to `Tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        /// <p>Creates tags associated with the access point. Each tag is a key-value pair.</p>
+        /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+        /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -356,8 +358,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an
-        /// encrypted file system, you have the option of specifying <a>CreateFileSystemRequest$KmsKeyId</a> for an existing AWS Key Management Service (AWS
-        /// KMS) customer master key (CMK). If you don't specify a CMK, then the default CMK for
+        /// encrypted file system, you have the option of specifying <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service (KMS
+        /// customer master key (CMK). If you don't specify a CMK, then the default CMK for
         /// Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system.
         /// </p>
         pub fn encrypted(mut self, inp: bool) -> Self {
@@ -368,7 +370,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encrypted(input);
             self
         }
-        /// <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file system. This
+        /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This
         /// parameter is only required if you want to use a non-default KMS key. If this parameter is not
         /// specified, the default CMK for Amazon EFS is used. This ID can be in one of the following
         /// formats:</p>
@@ -425,7 +427,7 @@ pub mod fluent_builders {
         /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that
         /// you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
         /// to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this
-        /// limit, contact AWS Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a>
+        /// limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a>
         /// in the <i>Amazon EFS User Guide</i>.</p>
         pub fn provisioned_throughput_in_mibps(mut self, inp: f64) -> Self {
             self.inner = self.inner.provisioned_throughput_in_mibps(inp);
@@ -438,12 +440,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioned_throughput_in_mibps(input);
             self
         }
-        /// <p>Used to create a file system that uses One Zone storage classes. It specifies the AWS
+        /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services
         /// Availability Zone in which to create the file system. Use the format <code>us-east-1a</code>
         /// to specify the Availability Zone. For
         /// more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
         /// <note>
-        /// <p>One Zone storage classes are not available in all Availability Zones in AWS Regions where
+        /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where
         /// Amazon EFS is available.</p>
         /// </note>
         pub fn availability_zone_name(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -465,7 +467,7 @@ pub mod fluent_builders {
         /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>,
         /// the default is <code>true</code>.</p>
         /// <note>
-        /// <p>AWS Backup is not available in all AWS Regions where Amazon EFS is available.</p>
+        /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
         /// </note>
         pub fn backup(mut self, inp: bool) -> Self {
             self.inner = self.inner.backup(inp);
@@ -478,9 +480,11 @@ pub mod fluent_builders {
         /// Appends an item to `Tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        /// <p>A value that specifies to create one or more tags associated with the file system. Each
+        /// <p>Use to create one or more tags associated with the file system. Each
         /// tag is a user-defined key-value pair. Name your file system on creation by including a
-        /// <code>"Key":"Name","Value":"{value}"</code> key-value pair.</p>
+        /// <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+        /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -1093,7 +1097,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// Token used for pagination.
+        /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of
+        /// Amazon Web Services account preferences if the response payload was paginated.</p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
@@ -1102,7 +1107,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// Max results used for pagination.
+        /// <p>(Optional) When retrieving account preferences,
+        /// you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response.  
+        /// The default value is 100. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
@@ -1807,7 +1814,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// A preference indicating a choice to use 63bit/32bit IDs for all applicable resources.
+        /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region,
+        /// either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p>
         pub fn resource_id_type(mut self, inp: crate::model::ResourceIdType) -> Self {
             self.inner = self.inner.resource_id_type(inp);
             self

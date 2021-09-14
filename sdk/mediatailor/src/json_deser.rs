@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_operation_create_channel(
+pub fn deser_operation_crate_operation_create_channel(
     input: &[u8],
     mut builder: crate::output::create_channel_output::Builder,
 ) -> Result<crate::output::create_channel_output::Builder, smithy_json::deserialize::Error> {
@@ -51,6 +51,11 @@ pub fn deser_operation_create_channel(
                             )?,
                         );
                     }
+                    "FillerSlate" => {
+                        builder = builder.set_filler_slate(
+                            crate::json_deser::deser_structure_crate_model_slate_source(tokens)?,
+                        );
+                    }
                     "LastModifiedTime" => {
                         builder = builder.set_last_modified_time(
                             smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -60,8 +65,9 @@ pub fn deser_operation_create_channel(
                         );
                     }
                     "Outputs" => {
-                        builder = builder
-                            .set_outputs(crate::json_deser::deser_list_response_outputs(tokens)?);
+                        builder = builder.set_outputs(
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor_response_outputs(tokens)?
+                        );
                     }
                     "PlaybackMode" => {
                         builder = builder.set_playback_mode(
@@ -71,8 +77,9 @@ pub fn deser_operation_create_channel(
                         );
                     }
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -92,7 +99,7 @@ pub fn deser_operation_create_channel(
     Ok(builder)
 }
 
-pub fn deser_operation_create_program(
+pub fn deser_operation_crate_operation_create_program(
     input: &[u8],
     mut builder: crate::output::create_program_output::Builder,
 ) -> Result<crate::output::create_program_output::Builder, smithy_json::deserialize::Error> {
@@ -108,7 +115,7 @@ pub fn deser_operation_create_program(
                 match key.to_unescaped()?.as_ref() {
                     "AdBreaks" => {
                         builder = builder.set_ad_breaks(
-                            crate::json_deser::deser_list___list_of_ad_break(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor___list_of_ad_break(tokens)?
                         );
                     }
                     "Arn" => {
@@ -140,6 +147,14 @@ pub fn deser_operation_create_program(
                                 .transpose()?,
                         );
                     }
+                    "ScheduledStartTime" => {
+                        builder = builder.set_scheduled_start_time(
+                            smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                smithy_types::instant::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
                     "SourceLocationName" => {
                         builder = builder.set_source_location_name(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -172,7 +187,7 @@ pub fn deser_operation_create_program(
     Ok(builder)
 }
 
-pub fn deser_operation_create_source_location(
+pub fn deser_operation_crate_operation_create_source_location(
     input: &[u8],
     mut builder: crate::output::create_source_location_output::Builder,
 ) -> Result<crate::output::create_source_location_output::Builder, smithy_json::deserialize::Error>
@@ -189,7 +204,9 @@ pub fn deser_operation_create_source_location(
                 match key.to_unescaped()?.as_ref() {
                     "AccessConfiguration" => {
                         builder = builder.set_access_configuration(
-                            crate::json_deser::deser_structure_access_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_access_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "Arn" => {
@@ -209,12 +226,14 @@ pub fn deser_operation_create_source_location(
                     }
                     "DefaultSegmentDeliveryConfiguration" => {
                         builder = builder.set_default_segment_delivery_configuration(
-                            crate::json_deser::deser_structure_default_segment_delivery_configuration(tokens)?
+                            crate::json_deser::deser_structure_crate_model_default_segment_delivery_configuration(tokens)?
                         );
                     }
                     "HttpConfiguration" => {
                         builder = builder.set_http_configuration(
-                            crate::json_deser::deser_structure_http_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_http_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "LastModifiedTime" => {
@@ -233,8 +252,9 @@ pub fn deser_operation_create_source_location(
                         );
                     }
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -254,7 +274,7 @@ pub fn deser_operation_create_source_location(
     Ok(builder)
 }
 
-pub fn deser_operation_create_vod_source(
+pub fn deser_operation_crate_operation_create_vod_source(
     input: &[u8],
     mut builder: crate::output::create_vod_source_output::Builder,
 ) -> Result<crate::output::create_vod_source_output::Builder, smithy_json::deserialize::Error> {
@@ -285,7 +305,7 @@ pub fn deser_operation_create_vod_source(
                     }
                     "HttpPackageConfigurations" => {
                         builder = builder.set_http_package_configurations(
-                            crate::json_deser::deser_list_http_package_configurations(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor_http_package_configurations(tokens)?
                         );
                     }
                     "LastModifiedTime" => {
@@ -304,8 +324,9 @@ pub fn deser_operation_create_vod_source(
                         );
                     }
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     "VodSourceName" => {
                         builder = builder.set_vod_source_name(
@@ -332,7 +353,7 @@ pub fn deser_operation_create_vod_source(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_channel(
+pub fn deser_operation_crate_operation_describe_channel(
     input: &[u8],
     mut builder: crate::output::describe_channel_output::Builder,
 ) -> Result<crate::output::describe_channel_output::Builder, smithy_json::deserialize::Error> {
@@ -378,6 +399,11 @@ pub fn deser_operation_describe_channel(
                             )?,
                         );
                     }
+                    "FillerSlate" => {
+                        builder = builder.set_filler_slate(
+                            crate::json_deser::deser_structure_crate_model_slate_source(tokens)?,
+                        );
+                    }
                     "LastModifiedTime" => {
                         builder = builder.set_last_modified_time(
                             smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -387,8 +413,9 @@ pub fn deser_operation_describe_channel(
                         );
                     }
                     "Outputs" => {
-                        builder = builder
-                            .set_outputs(crate::json_deser::deser_list_response_outputs(tokens)?);
+                        builder = builder.set_outputs(
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor_response_outputs(tokens)?
+                        );
                     }
                     "PlaybackMode" => {
                         builder = builder.set_playback_mode(
@@ -398,8 +425,9 @@ pub fn deser_operation_describe_channel(
                         );
                     }
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -419,7 +447,7 @@ pub fn deser_operation_describe_channel(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_program(
+pub fn deser_operation_crate_operation_describe_program(
     input: &[u8],
     mut builder: crate::output::describe_program_output::Builder,
 ) -> Result<crate::output::describe_program_output::Builder, smithy_json::deserialize::Error> {
@@ -435,7 +463,7 @@ pub fn deser_operation_describe_program(
                 match key.to_unescaped()?.as_ref() {
                     "AdBreaks" => {
                         builder = builder.set_ad_breaks(
-                            crate::json_deser::deser_list___list_of_ad_break(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor___list_of_ad_break(tokens)?
                         );
                     }
                     "Arn" => {
@@ -467,6 +495,14 @@ pub fn deser_operation_describe_program(
                                 .transpose()?,
                         );
                     }
+                    "ScheduledStartTime" => {
+                        builder = builder.set_scheduled_start_time(
+                            smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                smithy_types::instant::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
                     "SourceLocationName" => {
                         builder = builder.set_source_location_name(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -499,7 +535,7 @@ pub fn deser_operation_describe_program(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_source_location(
+pub fn deser_operation_crate_operation_describe_source_location(
     input: &[u8],
     mut builder: crate::output::describe_source_location_output::Builder,
 ) -> Result<crate::output::describe_source_location_output::Builder, smithy_json::deserialize::Error>
@@ -516,7 +552,9 @@ pub fn deser_operation_describe_source_location(
                 match key.to_unescaped()?.as_ref() {
                     "AccessConfiguration" => {
                         builder = builder.set_access_configuration(
-                            crate::json_deser::deser_structure_access_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_access_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "Arn" => {
@@ -536,12 +574,14 @@ pub fn deser_operation_describe_source_location(
                     }
                     "DefaultSegmentDeliveryConfiguration" => {
                         builder = builder.set_default_segment_delivery_configuration(
-                            crate::json_deser::deser_structure_default_segment_delivery_configuration(tokens)?
+                            crate::json_deser::deser_structure_crate_model_default_segment_delivery_configuration(tokens)?
                         );
                     }
                     "HttpConfiguration" => {
                         builder = builder.set_http_configuration(
-                            crate::json_deser::deser_structure_http_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_http_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "LastModifiedTime" => {
@@ -560,8 +600,9 @@ pub fn deser_operation_describe_source_location(
                         );
                     }
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -581,7 +622,7 @@ pub fn deser_operation_describe_source_location(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_vod_source(
+pub fn deser_operation_crate_operation_describe_vod_source(
     input: &[u8],
     mut builder: crate::output::describe_vod_source_output::Builder,
 ) -> Result<crate::output::describe_vod_source_output::Builder, smithy_json::deserialize::Error> {
@@ -612,7 +653,7 @@ pub fn deser_operation_describe_vod_source(
                     }
                     "HttpPackageConfigurations" => {
                         builder = builder.set_http_package_configurations(
-                            crate::json_deser::deser_list_http_package_configurations(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor_http_package_configurations(tokens)?
                         );
                     }
                     "LastModifiedTime" => {
@@ -631,8 +672,9 @@ pub fn deser_operation_describe_vod_source(
                         );
                     }
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     "VodSourceName" => {
                         builder = builder.set_vod_source_name(
@@ -659,7 +701,7 @@ pub fn deser_operation_describe_vod_source(
     Ok(builder)
 }
 
-pub fn deser_operation_get_channel_policy(
+pub fn deser_operation_crate_operation_get_channel_policy(
     input: &[u8],
     mut builder: crate::output::get_channel_policy_output::Builder,
 ) -> Result<crate::output::get_channel_policy_output::Builder, smithy_json::deserialize::Error> {
@@ -698,7 +740,7 @@ pub fn deser_operation_get_channel_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_get_channel_schedule(
+pub fn deser_operation_crate_operation_get_channel_schedule(
     input: &[u8],
     mut builder: crate::output::get_channel_schedule_output::Builder,
 ) -> Result<crate::output::get_channel_schedule_output::Builder, smithy_json::deserialize::Error> {
@@ -714,7 +756,7 @@ pub fn deser_operation_get_channel_schedule(
                 match key.to_unescaped()?.as_ref() {
                     "Items" => {
                         builder = builder.set_items(
-                            crate::json_deser::deser_list___list_of_schedule_entry(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor___list_of_schedule_entry(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -742,7 +784,7 @@ pub fn deser_operation_get_channel_schedule(
     Ok(builder)
 }
 
-pub fn deser_operation_get_playback_configuration(
+pub fn deser_operation_crate_operation_get_playback_configuration(
     input: &[u8],
     mut builder: crate::output::get_playback_configuration_output::Builder,
 ) -> Result<
@@ -768,41 +810,50 @@ pub fn deser_operation_get_playback_configuration(
                     }
                     "AvailSuppression" => {
                         builder = builder.set_avail_suppression(
-                            crate::json_deser::deser_structure_avail_suppression(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_avail_suppression(
+                                tokens,
+                            )?,
                         );
                     }
                     "Bumper" => {
-                        builder =
-                            builder.set_bumper(crate::json_deser::deser_structure_bumper(tokens)?);
+                        builder = builder.set_bumper(
+                            crate::json_deser::deser_structure_crate_model_bumper(tokens)?,
+                        );
                     }
                     "CdnConfiguration" => {
                         builder = builder.set_cdn_configuration(
-                            crate::json_deser::deser_structure_cdn_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_cdn_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "ConfigurationAliases" => {
                         builder = builder.set_configuration_aliases(
-                            crate::json_deser::deser_map_configuration_aliases_response(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor_configuration_aliases_response(tokens)?
                         );
                     }
                     "DashConfiguration" => {
                         builder = builder.set_dash_configuration(
-                            crate::json_deser::deser_structure_dash_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_dash_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "HlsConfiguration" => {
                         builder = builder.set_hls_configuration(
-                            crate::json_deser::deser_structure_hls_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_hls_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "LivePreRollConfiguration" => {
                         builder = builder.set_live_pre_roll_configuration(
-                            crate::json_deser::deser_structure_live_pre_roll_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_live_pre_roll_configuration(tokens)?
                         );
                     }
                     "ManifestProcessingRules" => {
                         builder = builder.set_manifest_processing_rules(
-                            crate::json_deser::deser_structure_manifest_processing_rules(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_manifest_processing_rules(tokens)?
                         );
                     }
                     "Name" => {
@@ -847,8 +898,9 @@ pub fn deser_operation_get_playback_configuration(
                         );
                     }
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     "TranscodeProfileName" => {
                         builder = builder.set_transcode_profile_name(
@@ -882,7 +934,7 @@ pub fn deser_operation_get_playback_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_list_alerts(
+pub fn deser_operation_crate_operation_list_alerts(
     input: &[u8],
     mut builder: crate::output::list_alerts_output::Builder,
 ) -> Result<crate::output::list_alerts_output::Builder, smithy_json::deserialize::Error> {
@@ -897,8 +949,9 @@ pub fn deser_operation_list_alerts(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Items" => {
-                        builder = builder
-                            .set_items(crate::json_deser::deser_list___list_of_alert(tokens)?);
+                        builder = builder.set_items(
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor___list_of_alert(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -925,7 +978,7 @@ pub fn deser_operation_list_alerts(
     Ok(builder)
 }
 
-pub fn deser_operation_list_channels(
+pub fn deser_operation_crate_operation_list_channels(
     input: &[u8],
     mut builder: crate::output::list_channels_output::Builder,
 ) -> Result<crate::output::list_channels_output::Builder, smithy_json::deserialize::Error> {
@@ -940,8 +993,9 @@ pub fn deser_operation_list_channels(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Items" => {
-                        builder = builder
-                            .set_items(crate::json_deser::deser_list___list_of_channel(tokens)?);
+                        builder = builder.set_items(
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor___list_of_channel(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -968,7 +1022,7 @@ pub fn deser_operation_list_channels(
     Ok(builder)
 }
 
-pub fn deser_operation_list_playback_configurations(
+pub fn deser_operation_crate_operation_list_playback_configurations(
     input: &[u8],
     mut builder: crate::output::list_playback_configurations_output::Builder,
 ) -> Result<
@@ -987,7 +1041,7 @@ pub fn deser_operation_list_playback_configurations(
                 match key.to_unescaped()?.as_ref() {
                     "Items" => {
                         builder = builder.set_items(
-                            crate::json_deser::deser_list___list_of_playback_configuration(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor___list_of_playback_configuration(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1015,7 +1069,7 @@ pub fn deser_operation_list_playback_configurations(
     Ok(builder)
 }
 
-pub fn deser_operation_list_source_locations(
+pub fn deser_operation_crate_operation_list_source_locations(
     input: &[u8],
     mut builder: crate::output::list_source_locations_output::Builder,
 ) -> Result<crate::output::list_source_locations_output::Builder, smithy_json::deserialize::Error> {
@@ -1031,7 +1085,7 @@ pub fn deser_operation_list_source_locations(
                 match key.to_unescaped()?.as_ref() {
                     "Items" => {
                         builder = builder.set_items(
-                            crate::json_deser::deser_list___list_of_source_location(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor___list_of_source_location(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1059,7 +1113,7 @@ pub fn deser_operation_list_source_locations(
     Ok(builder)
 }
 
-pub fn deser_structure_bad_request_exceptionjson_err(
+pub fn deser_structure_crate_error_bad_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::bad_request_exception::Builder,
 ) -> Result<crate::error::bad_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -1098,7 +1152,7 @@ pub fn deser_structure_bad_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -1114,8 +1168,9 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1135,7 +1190,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_list_vod_sources(
+pub fn deser_operation_crate_operation_list_vod_sources(
     input: &[u8],
     mut builder: crate::output::list_vod_sources_output::Builder,
 ) -> Result<crate::output::list_vod_sources_output::Builder, smithy_json::deserialize::Error> {
@@ -1150,8 +1205,9 @@ pub fn deser_operation_list_vod_sources(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Items" => {
-                        builder = builder
-                            .set_items(crate::json_deser::deser_list___list_of_vod_source(tokens)?);
+                        builder = builder.set_items(
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor___list_of_vod_source(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -1178,7 +1234,7 @@ pub fn deser_operation_list_vod_sources(
     Ok(builder)
 }
 
-pub fn deser_operation_put_playback_configuration(
+pub fn deser_operation_crate_operation_put_playback_configuration(
     input: &[u8],
     mut builder: crate::output::put_playback_configuration_output::Builder,
 ) -> Result<
@@ -1204,41 +1260,50 @@ pub fn deser_operation_put_playback_configuration(
                     }
                     "AvailSuppression" => {
                         builder = builder.set_avail_suppression(
-                            crate::json_deser::deser_structure_avail_suppression(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_avail_suppression(
+                                tokens,
+                            )?,
                         );
                     }
                     "Bumper" => {
-                        builder =
-                            builder.set_bumper(crate::json_deser::deser_structure_bumper(tokens)?);
+                        builder = builder.set_bumper(
+                            crate::json_deser::deser_structure_crate_model_bumper(tokens)?,
+                        );
                     }
                     "CdnConfiguration" => {
                         builder = builder.set_cdn_configuration(
-                            crate::json_deser::deser_structure_cdn_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_cdn_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "ConfigurationAliases" => {
                         builder = builder.set_configuration_aliases(
-                            crate::json_deser::deser_map_configuration_aliases_response(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor_configuration_aliases_response(tokens)?
                         );
                     }
                     "DashConfiguration" => {
                         builder = builder.set_dash_configuration(
-                            crate::json_deser::deser_structure_dash_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_dash_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "HlsConfiguration" => {
                         builder = builder.set_hls_configuration(
-                            crate::json_deser::deser_structure_hls_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_hls_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "LivePreRollConfiguration" => {
                         builder = builder.set_live_pre_roll_configuration(
-                            crate::json_deser::deser_structure_live_pre_roll_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_live_pre_roll_configuration(tokens)?
                         );
                     }
                     "ManifestProcessingRules" => {
                         builder = builder.set_manifest_processing_rules(
-                            crate::json_deser::deser_structure_manifest_processing_rules(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_manifest_processing_rules(tokens)?
                         );
                     }
                     "Name" => {
@@ -1283,8 +1348,9 @@ pub fn deser_operation_put_playback_configuration(
                         );
                     }
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     "TranscodeProfileName" => {
                         builder = builder.set_transcode_profile_name(
@@ -1318,7 +1384,7 @@ pub fn deser_operation_put_playback_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_update_channel(
+pub fn deser_operation_crate_operation_update_channel(
     input: &[u8],
     mut builder: crate::output::update_channel_output::Builder,
 ) -> Result<crate::output::update_channel_output::Builder, smithy_json::deserialize::Error> {
@@ -1364,6 +1430,11 @@ pub fn deser_operation_update_channel(
                             )?,
                         );
                     }
+                    "FillerSlate" => {
+                        builder = builder.set_filler_slate(
+                            crate::json_deser::deser_structure_crate_model_slate_source(tokens)?,
+                        );
+                    }
                     "LastModifiedTime" => {
                         builder = builder.set_last_modified_time(
                             smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -1373,8 +1444,9 @@ pub fn deser_operation_update_channel(
                         );
                     }
                     "Outputs" => {
-                        builder = builder
-                            .set_outputs(crate::json_deser::deser_list_response_outputs(tokens)?);
+                        builder = builder.set_outputs(
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor_response_outputs(tokens)?
+                        );
                     }
                     "PlaybackMode" => {
                         builder = builder.set_playback_mode(
@@ -1384,8 +1456,9 @@ pub fn deser_operation_update_channel(
                         );
                     }
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1405,7 +1478,7 @@ pub fn deser_operation_update_channel(
     Ok(builder)
 }
 
-pub fn deser_operation_update_source_location(
+pub fn deser_operation_crate_operation_update_source_location(
     input: &[u8],
     mut builder: crate::output::update_source_location_output::Builder,
 ) -> Result<crate::output::update_source_location_output::Builder, smithy_json::deserialize::Error>
@@ -1422,7 +1495,9 @@ pub fn deser_operation_update_source_location(
                 match key.to_unescaped()?.as_ref() {
                     "AccessConfiguration" => {
                         builder = builder.set_access_configuration(
-                            crate::json_deser::deser_structure_access_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_access_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "Arn" => {
@@ -1442,12 +1517,14 @@ pub fn deser_operation_update_source_location(
                     }
                     "DefaultSegmentDeliveryConfiguration" => {
                         builder = builder.set_default_segment_delivery_configuration(
-                            crate::json_deser::deser_structure_default_segment_delivery_configuration(tokens)?
+                            crate::json_deser::deser_structure_crate_model_default_segment_delivery_configuration(tokens)?
                         );
                     }
                     "HttpConfiguration" => {
                         builder = builder.set_http_configuration(
-                            crate::json_deser::deser_structure_http_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_http_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "LastModifiedTime" => {
@@ -1466,8 +1543,9 @@ pub fn deser_operation_update_source_location(
                         );
                     }
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1487,7 +1565,7 @@ pub fn deser_operation_update_source_location(
     Ok(builder)
 }
 
-pub fn deser_operation_update_vod_source(
+pub fn deser_operation_crate_operation_update_vod_source(
     input: &[u8],
     mut builder: crate::output::update_vod_source_output::Builder,
 ) -> Result<crate::output::update_vod_source_output::Builder, smithy_json::deserialize::Error> {
@@ -1518,7 +1596,7 @@ pub fn deser_operation_update_vod_source(
                     }
                     "HttpPackageConfigurations" => {
                         builder = builder.set_http_package_configurations(
-                            crate::json_deser::deser_list_http_package_configurations(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_mediatailor_http_package_configurations(tokens)?
                         );
                     }
                     "LastModifiedTime" => {
@@ -1537,8 +1615,9 @@ pub fn deser_operation_update_vod_source(
                         );
                     }
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map___map_of__string(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        );
                     }
                     "VodSourceName" => {
                         builder = builder.set_vod_source_name(
@@ -1573,8 +1652,62 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub fn deser_structure_crate_model_slate_source<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::SlateSource>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::SlateSource::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "SourceLocationName" => {
+                                builder = builder.set_source_location_name(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "VodSourceName" => {
+                                builder = builder.set_vod_source_name(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_response_outputs<'a, I>(
+pub fn deser_list_com_amazonaws_mediatailor_response_outputs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResponseOutputItem>>, smithy_json::deserialize::Error>
 where
@@ -1594,7 +1727,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_response_output_item(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_response_output_item(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1610,7 +1745,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map___map_of__string<'a, I>(
+pub fn deser_map_com_amazonaws_mediatailor___map_of__string<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1654,7 +1789,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_ad_break<'a, I>(
+pub fn deser_list_com_amazonaws_mediatailor___list_of_ad_break<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AdBreak>>, smithy_json::deserialize::Error>
 where
@@ -1673,7 +1808,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_ad_break(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_ad_break(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1688,7 +1824,7 @@ where
     }
 }
 
-pub fn deser_structure_access_configuration<'a, I>(
+pub fn deser_structure_crate_model_access_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccessConfiguration>, smithy_json::deserialize::Error>
 where
@@ -1720,7 +1856,7 @@ where
                             }
                             "SecretsManagerAccessTokenConfiguration" => {
                                 builder = builder.set_secrets_manager_access_token_configuration(
-                                    crate::json_deser::deser_structure_secrets_manager_access_token_configuration(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_secrets_manager_access_token_configuration(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1741,7 +1877,7 @@ where
     }
 }
 
-pub fn deser_structure_default_segment_delivery_configuration<'a, I>(
+pub fn deser_structure_crate_model_default_segment_delivery_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::DefaultSegmentDeliveryConfiguration>,
@@ -1789,7 +1925,7 @@ where
     }
 }
 
-pub fn deser_structure_http_configuration<'a, I>(
+pub fn deser_structure_crate_model_http_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::HttpConfiguration>, smithy_json::deserialize::Error>
 where
@@ -1835,7 +1971,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_http_package_configurations<'a, I>(
+pub fn deser_list_com_amazonaws_mediatailor_http_package_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
@@ -1858,7 +1994,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_http_package_configuration(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_http_package_configuration(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1874,7 +2011,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_schedule_entry<'a, I>(
+pub fn deser_list_com_amazonaws_mediatailor___list_of_schedule_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ScheduleEntry>>, smithy_json::deserialize::Error>
 where
@@ -1893,7 +2030,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_schedule_entry(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_schedule_entry(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1908,7 +2046,7 @@ where
     }
 }
 
-pub fn deser_structure_avail_suppression<'a, I>(
+pub fn deser_structure_crate_model_avail_suppression<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AvailSuppression>, smithy_json::deserialize::Error>
 where
@@ -1965,7 +2103,7 @@ where
     }
 }
 
-pub fn deser_structure_bumper<'a, I>(
+pub fn deser_structure_crate_model_bumper<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Bumper>, smithy_json::deserialize::Error>
 where
@@ -2019,7 +2157,7 @@ where
     }
 }
 
-pub fn deser_structure_cdn_configuration<'a, I>(
+pub fn deser_structure_crate_model_cdn_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CdnConfiguration>, smithy_json::deserialize::Error>
 where
@@ -2074,7 +2212,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_configuration_aliases_response<'a, I>(
+pub fn deser_map_com_amazonaws_mediatailor_configuration_aliases_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
@@ -2099,7 +2237,9 @@ where
                     Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
-                        let value = crate::json_deser::deser_map___map_of__string(tokens)?;
+                        let value =
+                            crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
+                        ;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
@@ -2119,7 +2259,7 @@ where
     }
 }
 
-pub fn deser_structure_dash_configuration<'a, I>(
+pub fn deser_structure_crate_model_dash_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DashConfiguration>, smithy_json::deserialize::Error>
 where
@@ -2186,7 +2326,7 @@ where
     }
 }
 
-pub fn deser_structure_hls_configuration<'a, I>(
+pub fn deser_structure_crate_model_hls_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::HlsConfiguration>, smithy_json::deserialize::Error>
 where
@@ -2231,7 +2371,7 @@ where
     }
 }
 
-pub fn deser_structure_live_pre_roll_configuration<'a, I>(
+pub fn deser_structure_crate_model_live_pre_roll_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LivePreRollConfiguration>, smithy_json::deserialize::Error>
 where
@@ -2284,7 +2424,7 @@ where
     }
 }
 
-pub fn deser_structure_manifest_processing_rules<'a, I>(
+pub fn deser_structure_crate_model_manifest_processing_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ManifestProcessingRules>, smithy_json::deserialize::Error>
 where
@@ -2304,9 +2444,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "AdMarkerPassthrough" => {
                                 builder = builder.set_ad_marker_passthrough(
-                                    crate::json_deser::deser_structure_ad_marker_passthrough(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_ad_marker_passthrough(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2328,7 +2466,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_alert<'a, I>(
+pub fn deser_list_com_amazonaws_mediatailor___list_of_alert<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Alert>>, smithy_json::deserialize::Error>
 where
@@ -2347,7 +2485,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_alert(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_alert(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2363,7 +2501,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_channel<'a, I>(
+pub fn deser_list_com_amazonaws_mediatailor___list_of_channel<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Channel>>, smithy_json::deserialize::Error>
 where
@@ -2382,7 +2520,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_channel(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_channel(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2398,7 +2536,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_playback_configuration<'a, I>(
+pub fn deser_list_com_amazonaws_mediatailor___list_of_playback_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
@@ -2421,7 +2559,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_playback_configuration(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_playback_configuration(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2437,7 +2577,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_source_location<'a, I>(
+pub fn deser_list_com_amazonaws_mediatailor___list_of_source_location<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SourceLocation>>, smithy_json::deserialize::Error>
 where
@@ -2456,7 +2596,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_source_location(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_source_location(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2472,7 +2613,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_vod_source<'a, I>(
+pub fn deser_list_com_amazonaws_mediatailor___list_of_vod_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::VodSource>>, smithy_json::deserialize::Error>
 where
@@ -2491,7 +2632,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_vod_source(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_vod_source(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2506,7 +2648,7 @@ where
     }
 }
 
-pub fn deser_structure_response_output_item<'a, I>(
+pub fn deser_structure_crate_model_response_output_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResponseOutputItem>, smithy_json::deserialize::Error>
 where
@@ -2526,16 +2668,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "DashPlaylistSettings" => {
                                 builder = builder.set_dash_playlist_settings(
-                                    crate::json_deser::deser_structure_dash_playlist_settings(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_dash_playlist_settings(tokens)?
                                 );
                             }
                             "HlsPlaylistSettings" => {
                                 builder = builder.set_hls_playlist_settings(
-                                    crate::json_deser::deser_structure_hls_playlist_settings(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_hls_playlist_settings(tokens)?
                                 );
                             }
                             "ManifestName" => {
@@ -2583,7 +2721,7 @@ where
     }
 }
 
-pub fn deser_structure_ad_break<'a, I>(
+pub fn deser_structure_crate_model_ad_break<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AdBreak>, smithy_json::deserialize::Error>
 where
@@ -2623,14 +2761,14 @@ where
                             }
                             "Slate" => {
                                 builder = builder.set_slate(
-                                    crate::json_deser::deser_structure_slate_source(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_slate_source(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "SpliceInsertMessage" => {
                                 builder = builder.set_splice_insert_message(
-                                    crate::json_deser::deser_structure_splice_insert_message(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_splice_insert_message(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2651,7 +2789,7 @@ where
     }
 }
 
-pub fn deser_structure_secrets_manager_access_token_configuration<'a, I>(
+pub fn deser_structure_crate_model_secrets_manager_access_token_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::SecretsManagerAccessTokenConfiguration>,
@@ -2717,7 +2855,7 @@ where
     }
 }
 
-pub fn deser_structure_http_package_configuration<'a, I>(
+pub fn deser_structure_crate_model_http_package_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::HttpPackageConfiguration>, smithy_json::deserialize::Error>
 where
@@ -2783,7 +2921,7 @@ where
     }
 }
 
-pub fn deser_structure_schedule_entry<'a, I>(
+pub fn deser_structure_crate_model_schedule_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ScheduleEntry>, smithy_json::deserialize::Error>
 where
@@ -2846,9 +2984,20 @@ where
                             }
                             "ScheduleAdBreaks" => {
                                 builder = builder.set_schedule_ad_breaks(
-                                    crate::json_deser::deser_list___list_of_schedule_ad_break(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_mediatailor___list_of_schedule_ad_break(tokens)?
+                                );
+                            }
+                            "ScheduleEntryType" => {
+                                builder = builder.set_schedule_entry_type(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::ScheduleEntryType::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             "SourceLocationName" => {
@@ -2887,7 +3036,7 @@ where
     }
 }
 
-pub fn deser_structure_ad_marker_passthrough<'a, I>(
+pub fn deser_structure_crate_model_ad_marker_passthrough<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AdMarkerPassthrough>, smithy_json::deserialize::Error>
 where
@@ -2930,7 +3079,7 @@ where
     }
 }
 
-pub fn deser_structure_alert<'a, I>(
+pub fn deser_structure_crate_model_alert<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Alert>, smithy_json::deserialize::Error>
 where
@@ -2976,7 +3125,7 @@ where
                             }
                             "RelatedResourceArns" => {
                                 builder = builder.set_related_resource_arns(
-                                    crate::json_deser::deser_list___list_of__string(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_mediatailor___list_of__string(tokens)?
                                 );
                             }
                             "ResourceArn" => {
@@ -3006,7 +3155,7 @@ where
     }
 }
 
-pub fn deser_structure_channel<'a, I>(
+pub fn deser_structure_crate_model_channel<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Channel>, smithy_json::deserialize::Error>
 where
@@ -3059,6 +3208,13 @@ where
                                     )?,
                                 );
                             }
+                            "FillerSlate" => {
+                                builder = builder.set_filler_slate(
+                                    crate::json_deser::deser_structure_crate_model_slate_source(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             "LastModifiedTime" => {
                                 builder = builder.set_last_modified_time(
                                     smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -3069,7 +3225,7 @@ where
                             }
                             "Outputs" => {
                                 builder = builder.set_outputs(
-                                    crate::json_deser::deser_list_response_outputs(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_mediatailor_response_outputs(tokens)?
                                 );
                             }
                             "PlaybackMode" => {
@@ -3083,7 +3239,7 @@ where
                             }
                             "tags" => {
                                 builder = builder.set_tags(
-                                    crate::json_deser::deser_map___map_of__string(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3104,7 +3260,7 @@ where
     }
 }
 
-pub fn deser_structure_playback_configuration<'a, I>(
+pub fn deser_structure_crate_model_playback_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PlaybackConfiguration>, smithy_json::deserialize::Error>
 where
@@ -3133,47 +3289,42 @@ where
                             }
                             "AvailSuppression" => {
                                 builder = builder.set_avail_suppression(
-                                    crate::json_deser::deser_structure_avail_suppression(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_avail_suppression(tokens)?
                                 );
                             }
                             "Bumper" => {
-                                builder = builder
-                                    .set_bumper(crate::json_deser::deser_structure_bumper(tokens)?);
+                                builder = builder.set_bumper(
+                                    crate::json_deser::deser_structure_crate_model_bumper(tokens)?,
+                                );
                             }
                             "CdnConfiguration" => {
                                 builder = builder.set_cdn_configuration(
-                                    crate::json_deser::deser_structure_cdn_configuration(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_cdn_configuration(tokens)?
                                 );
                             }
                             "ConfigurationAliases" => {
                                 builder = builder.set_configuration_aliases(
-                                    crate::json_deser::deser_map_configuration_aliases_response(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_map_com_amazonaws_mediatailor_configuration_aliases_response(tokens)?
                                 );
                             }
                             "DashConfiguration" => {
                                 builder = builder.set_dash_configuration(
-                                    crate::json_deser::deser_structure_dash_configuration(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_dash_configuration(tokens)?
                                 );
                             }
                             "HlsConfiguration" => {
                                 builder = builder.set_hls_configuration(
-                                    crate::json_deser::deser_structure_hls_configuration(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_hls_configuration(tokens)?
                                 );
                             }
                             "LivePreRollConfiguration" => {
                                 builder = builder.set_live_pre_roll_configuration(
-                                    crate::json_deser::deser_structure_live_pre_roll_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_live_pre_roll_configuration(tokens)?
                                 );
                             }
                             "ManifestProcessingRules" => {
                                 builder = builder.set_manifest_processing_rules(
-                                    crate::json_deser::deser_structure_manifest_processing_rules(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_manifest_processing_rules(tokens)?
                                 );
                             }
                             "Name" => {
@@ -3231,7 +3382,7 @@ where
                             }
                             "tags" => {
                                 builder = builder.set_tags(
-                                    crate::json_deser::deser_map___map_of__string(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
                                 );
                             }
                             "TranscodeProfileName" => {
@@ -3270,7 +3421,7 @@ where
     }
 }
 
-pub fn deser_structure_source_location<'a, I>(
+pub fn deser_structure_crate_model_source_location<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SourceLocation>, smithy_json::deserialize::Error>
 where
@@ -3290,9 +3441,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "AccessConfiguration" => {
                                 builder = builder.set_access_configuration(
-                                    crate::json_deser::deser_structure_access_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_access_configuration(tokens)?
                                 );
                             }
                             "Arn" => {
@@ -3314,12 +3463,12 @@ where
                             }
                             "DefaultSegmentDeliveryConfiguration" => {
                                 builder = builder.set_default_segment_delivery_configuration(
-                                    crate::json_deser::deser_structure_default_segment_delivery_configuration(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_default_segment_delivery_configuration(tokens)?
                                 );
                             }
                             "HttpConfiguration" => {
                                 builder = builder.set_http_configuration(
-                                    crate::json_deser::deser_structure_http_configuration(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_http_configuration(tokens)?
                                 );
                             }
                             "LastModifiedTime" => {
@@ -3341,7 +3490,7 @@ where
                             }
                             "tags" => {
                                 builder = builder.set_tags(
-                                    crate::json_deser::deser_map___map_of__string(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3362,7 +3511,7 @@ where
     }
 }
 
-pub fn deser_structure_vod_source<'a, I>(
+pub fn deser_structure_crate_model_vod_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::VodSource>, smithy_json::deserialize::Error>
 where
@@ -3399,9 +3548,7 @@ where
                             }
                             "HttpPackageConfigurations" => {
                                 builder = builder.set_http_package_configurations(
-                                    crate::json_deser::deser_list_http_package_configurations(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_mediatailor_http_package_configurations(tokens)?
                                 );
                             }
                             "LastModifiedTime" => {
@@ -3423,7 +3570,7 @@ where
                             }
                             "tags" => {
                                 builder = builder.set_tags(
-                                    crate::json_deser::deser_map___map_of__string(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_mediatailor___map_of__string(tokens)?
                                 );
                             }
                             "VodSourceName" => {
@@ -3453,7 +3600,7 @@ where
     }
 }
 
-pub fn deser_structure_dash_playlist_settings<'a, I>(
+pub fn deser_structure_crate_model_dash_playlist_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DashPlaylistSettings>, smithy_json::deserialize::Error>
 where
@@ -3521,7 +3668,7 @@ where
     }
 }
 
-pub fn deser_structure_hls_playlist_settings<'a, I>(
+pub fn deser_structure_crate_model_hls_playlist_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::HlsPlaylistSettings>, smithy_json::deserialize::Error>
 where
@@ -3565,61 +3712,7 @@ where
     }
 }
 
-pub fn deser_structure_slate_source<'a, I>(
-    tokens: &mut std::iter::Peekable<I>,
-) -> Result<Option<crate::model::SlateSource>, smithy_json::deserialize::Error>
-where
-    I: Iterator<
-        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
-    >,
-{
-    match tokens.next().transpose()? {
-        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
-        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]
-            let mut builder = crate::model::SlateSource::builder();
-            loop {
-                match tokens.next().transpose()? {
-                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "SourceLocationName" => {
-                                builder = builder.set_source_location_name(
-                                    smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "VodSourceName" => {
-                                builder = builder.set_vod_source_name(
-                                    smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                        }
-                    }
-                    _ => {
-                        return Err(smithy_json::deserialize::Error::custom(
-                            "expected object key or end object",
-                        ))
-                    }
-                }
-            }
-            Ok(Some(builder.build()))
-        }
-        _ => Err(smithy_json::deserialize::Error::custom(
-            "expected start object or null",
-        )),
-    }
-}
-
-pub fn deser_structure_splice_insert_message<'a, I>(
+pub fn deser_structure_crate_model_splice_insert_message<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SpliceInsertMessage>, smithy_json::deserialize::Error>
 where
@@ -3688,7 +3781,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of_schedule_ad_break<'a, I>(
+pub fn deser_list_com_amazonaws_mediatailor___list_of_schedule_ad_break<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ScheduleAdBreak>>, smithy_json::deserialize::Error>
 where
@@ -3707,7 +3800,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_schedule_ad_break(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_schedule_ad_break(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3723,7 +3819,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list___list_of__string<'a, I>(
+pub fn deser_list_com_amazonaws_mediatailor___list_of__string<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -3760,7 +3856,7 @@ where
     }
 }
 
-pub fn deser_structure_schedule_ad_break<'a, I>(
+pub fn deser_structure_crate_model_schedule_ad_break<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ScheduleAdBreak>, smithy_json::deserialize::Error>
 where

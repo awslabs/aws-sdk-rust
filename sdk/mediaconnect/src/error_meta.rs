@@ -892,6 +892,39 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateFlowOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateFlowOutputError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateFlowOutputErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::UpdateFlowOutputErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::UpdateFlowOutputErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::UpdateFlowOutputErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::UpdateFlowOutputErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::UpdateFlowOutputErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::UpdateFlowOutputErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::UpdateFlowSourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

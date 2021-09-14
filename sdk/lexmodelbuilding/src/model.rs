@@ -139,6 +139,7 @@ pub enum Locale {
     FrFr,
     ItIt,
     JaJp,
+    KoKr,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -157,6 +158,7 @@ impl std::convert::From<&str> for Locale {
             "fr-FR" => Locale::FrFr,
             "it-IT" => Locale::ItIt,
             "ja-JP" => Locale::JaJp,
+            "ko-KR" => Locale::KoKr,
             other => Locale::Unknown(other.to_owned()),
         }
     }
@@ -183,13 +185,14 @@ impl Locale {
             Locale::FrFr => "fr-FR",
             Locale::ItIt => "it-IT",
             Locale::JaJp => "ja-JP",
+            Locale::KoKr => "ko-KR",
             Locale::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-AU", "en-GB", "en-IN", "en-US", "es-419", "es-ES", "es-US", "fr-CA",
-            "fr-FR", "it-IT", "ja-JP",
+            "fr-FR", "it-IT", "ja-JP", "ko-KR",
         ]
     }
 }

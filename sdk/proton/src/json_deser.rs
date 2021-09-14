@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -239,7 +239,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_accept_environment_account_connection(
+pub fn deser_operation_crate_operation_accept_environment_account_connection(
     input: &[u8],
     mut builder: crate::output::accept_environment_account_connection_output::Builder,
 ) -> Result<
@@ -258,7 +258,87 @@ pub fn deser_operation_accept_environment_account_connection(
                 match key.to_unescaped()?.as_ref() {
                     "environmentAccountConnection" => {
                         builder = builder.set_environment_account_connection(
-                            crate::json_deser::deser_structure_environment_account_connection(
+                            crate::json_deser::deser_structure_crate_model_environment_account_connection(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_cancel_environment_deployment(
+    input: &[u8],
+    mut builder: crate::output::cancel_environment_deployment_output::Builder,
+) -> Result<
+    crate::output::cancel_environment_deployment_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "environment" => {
+                        builder = builder.set_environment(
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_cancel_service_instance_deployment(
+    input: &[u8],
+    mut builder: crate::output::cancel_service_instance_deployment_output::Builder,
+) -> Result<
+    crate::output::cancel_service_instance_deployment_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "serviceInstance" => {
+                        builder = builder.set_service_instance(
+                            crate::json_deser::deser_structure_crate_model_service_instance(
                                 tokens,
                             )?,
                         );
@@ -281,87 +361,7 @@ pub fn deser_operation_accept_environment_account_connection(
     Ok(builder)
 }
 
-pub fn deser_operation_cancel_environment_deployment(
-    input: &[u8],
-    mut builder: crate::output::cancel_environment_deployment_output::Builder,
-) -> Result<
-    crate::output::cancel_environment_deployment_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "environment" => {
-                        builder = builder.set_environment(
-                            crate::json_deser::deser_structure_environment(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_cancel_service_instance_deployment(
-    input: &[u8],
-    mut builder: crate::output::cancel_service_instance_deployment_output::Builder,
-) -> Result<
-    crate::output::cancel_service_instance_deployment_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "serviceInstance" => {
-                        builder = builder.set_service_instance(
-                            crate::json_deser::deser_structure_service_instance(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_cancel_service_pipeline_deployment(
+pub fn deser_operation_crate_operation_cancel_service_pipeline_deployment(
     input: &[u8],
     mut builder: crate::output::cancel_service_pipeline_deployment_output::Builder,
 ) -> Result<
@@ -380,7 +380,9 @@ pub fn deser_operation_cancel_service_pipeline_deployment(
                 match key.to_unescaped()?.as_ref() {
                     "pipeline" => {
                         builder = builder.set_pipeline(
-                            crate::json_deser::deser_structure_service_pipeline(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_service_pipeline(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -401,7 +403,7 @@ pub fn deser_operation_cancel_service_pipeline_deployment(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -441,7 +443,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_environment(
+pub fn deser_operation_crate_operation_create_environment(
     input: &[u8],
     mut builder: crate::output::create_environment_output::Builder,
 ) -> Result<crate::output::create_environment_output::Builder, smithy_json::deserialize::Error> {
@@ -457,7 +459,7 @@ pub fn deser_operation_create_environment(
                 match key.to_unescaped()?.as_ref() {
                     "environment" => {
                         builder = builder.set_environment(
-                            crate::json_deser::deser_structure_environment(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -478,7 +480,7 @@ pub fn deser_operation_create_environment(
     Ok(builder)
 }
 
-pub fn deser_operation_create_environment_account_connection(
+pub fn deser_operation_crate_operation_create_environment_account_connection(
     input: &[u8],
     mut builder: crate::output::create_environment_account_connection_output::Builder,
 ) -> Result<
@@ -497,9 +499,7 @@ pub fn deser_operation_create_environment_account_connection(
                 match key.to_unescaped()?.as_ref() {
                     "environmentAccountConnection" => {
                         builder = builder.set_environment_account_connection(
-                            crate::json_deser::deser_structure_environment_account_connection(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_environment_account_connection(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -520,7 +520,7 @@ pub fn deser_operation_create_environment_account_connection(
     Ok(builder)
 }
 
-pub fn deser_operation_create_environment_template(
+pub fn deser_operation_crate_operation_create_environment_template(
     input: &[u8],
     mut builder: crate::output::create_environment_template_output::Builder,
 ) -> Result<
@@ -539,7 +539,9 @@ pub fn deser_operation_create_environment_template(
                 match key.to_unescaped()?.as_ref() {
                     "environmentTemplate" => {
                         builder = builder.set_environment_template(
-                            crate::json_deser::deser_structure_environment_template(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_environment_template(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -560,7 +562,7 @@ pub fn deser_operation_create_environment_template(
     Ok(builder)
 }
 
-pub fn deser_operation_create_environment_template_version(
+pub fn deser_operation_crate_operation_create_environment_template_version(
     input: &[u8],
     mut builder: crate::output::create_environment_template_version_output::Builder,
 ) -> Result<
@@ -579,7 +581,82 @@ pub fn deser_operation_create_environment_template_version(
                 match key.to_unescaped()?.as_ref() {
                     "environmentTemplateVersion" => {
                         builder = builder.set_environment_template_version(
-                            crate::json_deser::deser_structure_environment_template_version(
+                            crate::json_deser::deser_structure_crate_model_environment_template_version(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_create_service(
+    input: &[u8],
+    mut builder: crate::output::create_service_output::Builder,
+) -> Result<crate::output::create_service_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "service" => {
+                        builder = builder.set_service(
+                            crate::json_deser::deser_structure_crate_model_service(tokens)?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_create_service_template(
+    input: &[u8],
+    mut builder: crate::output::create_service_template_output::Builder,
+) -> Result<crate::output::create_service_template_output::Builder, smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "serviceTemplate" => {
+                        builder = builder.set_service_template(
+                            crate::json_deser::deser_structure_crate_model_service_template(
                                 tokens,
                             )?,
                         );
@@ -602,81 +679,7 @@ pub fn deser_operation_create_environment_template_version(
     Ok(builder)
 }
 
-pub fn deser_operation_create_service(
-    input: &[u8],
-    mut builder: crate::output::create_service_output::Builder,
-) -> Result<crate::output::create_service_output::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "service" => {
-                        builder = builder
-                            .set_service(crate::json_deser::deser_structure_service(tokens)?);
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_create_service_template(
-    input: &[u8],
-    mut builder: crate::output::create_service_template_output::Builder,
-) -> Result<crate::output::create_service_template_output::Builder, smithy_json::deserialize::Error>
-{
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "serviceTemplate" => {
-                        builder = builder.set_service_template(
-                            crate::json_deser::deser_structure_service_template(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_create_service_template_version(
+pub fn deser_operation_crate_operation_create_service_template_version(
     input: &[u8],
     mut builder: crate::output::create_service_template_version_output::Builder,
 ) -> Result<
@@ -695,7 +698,7 @@ pub fn deser_operation_create_service_template_version(
                 match key.to_unescaped()?.as_ref() {
                     "serviceTemplateVersion" => {
                         builder = builder.set_service_template_version(
-                            crate::json_deser::deser_structure_service_template_version(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_service_template_version(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -716,7 +719,7 @@ pub fn deser_operation_create_service_template_version(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_environment(
+pub fn deser_operation_crate_operation_delete_environment(
     input: &[u8],
     mut builder: crate::output::delete_environment_output::Builder,
 ) -> Result<crate::output::delete_environment_output::Builder, smithy_json::deserialize::Error> {
@@ -732,7 +735,7 @@ pub fn deser_operation_delete_environment(
                 match key.to_unescaped()?.as_ref() {
                     "environment" => {
                         builder = builder.set_environment(
-                            crate::json_deser::deser_structure_environment(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -753,7 +756,7 @@ pub fn deser_operation_delete_environment(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_environment_account_connection(
+pub fn deser_operation_crate_operation_delete_environment_account_connection(
     input: &[u8],
     mut builder: crate::output::delete_environment_account_connection_output::Builder,
 ) -> Result<
@@ -772,9 +775,7 @@ pub fn deser_operation_delete_environment_account_connection(
                 match key.to_unescaped()?.as_ref() {
                     "environmentAccountConnection" => {
                         builder = builder.set_environment_account_connection(
-                            crate::json_deser::deser_structure_environment_account_connection(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_environment_account_connection(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -795,7 +796,7 @@ pub fn deser_operation_delete_environment_account_connection(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_environment_template(
+pub fn deser_operation_crate_operation_delete_environment_template(
     input: &[u8],
     mut builder: crate::output::delete_environment_template_output::Builder,
 ) -> Result<
@@ -814,7 +815,9 @@ pub fn deser_operation_delete_environment_template(
                 match key.to_unescaped()?.as_ref() {
                     "environmentTemplate" => {
                         builder = builder.set_environment_template(
-                            crate::json_deser::deser_structure_environment_template(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_environment_template(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -835,7 +838,7 @@ pub fn deser_operation_delete_environment_template(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_environment_template_version(
+pub fn deser_operation_crate_operation_delete_environment_template_version(
     input: &[u8],
     mut builder: crate::output::delete_environment_template_version_output::Builder,
 ) -> Result<
@@ -854,7 +857,82 @@ pub fn deser_operation_delete_environment_template_version(
                 match key.to_unescaped()?.as_ref() {
                     "environmentTemplateVersion" => {
                         builder = builder.set_environment_template_version(
-                            crate::json_deser::deser_structure_environment_template_version(
+                            crate::json_deser::deser_structure_crate_model_environment_template_version(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_delete_service(
+    input: &[u8],
+    mut builder: crate::output::delete_service_output::Builder,
+) -> Result<crate::output::delete_service_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "service" => {
+                        builder = builder.set_service(
+                            crate::json_deser::deser_structure_crate_model_service(tokens)?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_delete_service_template(
+    input: &[u8],
+    mut builder: crate::output::delete_service_template_output::Builder,
+) -> Result<crate::output::delete_service_template_output::Builder, smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "serviceTemplate" => {
+                        builder = builder.set_service_template(
+                            crate::json_deser::deser_structure_crate_model_service_template(
                                 tokens,
                             )?,
                         );
@@ -877,81 +955,7 @@ pub fn deser_operation_delete_environment_template_version(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_service(
-    input: &[u8],
-    mut builder: crate::output::delete_service_output::Builder,
-) -> Result<crate::output::delete_service_output::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "service" => {
-                        builder = builder
-                            .set_service(crate::json_deser::deser_structure_service(tokens)?);
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_delete_service_template(
-    input: &[u8],
-    mut builder: crate::output::delete_service_template_output::Builder,
-) -> Result<crate::output::delete_service_template_output::Builder, smithy_json::deserialize::Error>
-{
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "serviceTemplate" => {
-                        builder = builder.set_service_template(
-                            crate::json_deser::deser_structure_service_template(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_delete_service_template_version(
+pub fn deser_operation_crate_operation_delete_service_template_version(
     input: &[u8],
     mut builder: crate::output::delete_service_template_version_output::Builder,
 ) -> Result<
@@ -970,7 +974,7 @@ pub fn deser_operation_delete_service_template_version(
                 match key.to_unescaped()?.as_ref() {
                     "serviceTemplateVersion" => {
                         builder = builder.set_service_template_version(
-                            crate::json_deser::deser_structure_service_template_version(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_service_template_version(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -991,7 +995,7 @@ pub fn deser_operation_delete_service_template_version(
     Ok(builder)
 }
 
-pub fn deser_operation_get_account_settings(
+pub fn deser_operation_crate_operation_get_account_settings(
     input: &[u8],
     mut builder: crate::output::get_account_settings_output::Builder,
 ) -> Result<crate::output::get_account_settings_output::Builder, smithy_json::deserialize::Error> {
@@ -1007,7 +1011,9 @@ pub fn deser_operation_get_account_settings(
                 match key.to_unescaped()?.as_ref() {
                     "accountSettings" => {
                         builder = builder.set_account_settings(
-                            crate::json_deser::deser_structure_account_settings(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_account_settings(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1028,7 +1034,7 @@ pub fn deser_operation_get_account_settings(
     Ok(builder)
 }
 
-pub fn deser_operation_get_environment(
+pub fn deser_operation_crate_operation_get_environment(
     input: &[u8],
     mut builder: crate::output::get_environment_output::Builder,
 ) -> Result<crate::output::get_environment_output::Builder, smithy_json::deserialize::Error> {
@@ -1044,7 +1050,7 @@ pub fn deser_operation_get_environment(
                 match key.to_unescaped()?.as_ref() {
                     "environment" => {
                         builder = builder.set_environment(
-                            crate::json_deser::deser_structure_environment(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1065,7 +1071,7 @@ pub fn deser_operation_get_environment(
     Ok(builder)
 }
 
-pub fn deser_operation_get_environment_account_connection(
+pub fn deser_operation_crate_operation_get_environment_account_connection(
     input: &[u8],
     mut builder: crate::output::get_environment_account_connection_output::Builder,
 ) -> Result<
@@ -1084,7 +1090,45 @@ pub fn deser_operation_get_environment_account_connection(
                 match key.to_unescaped()?.as_ref() {
                     "environmentAccountConnection" => {
                         builder = builder.set_environment_account_connection(
-                            crate::json_deser::deser_structure_environment_account_connection(
+                            crate::json_deser::deser_structure_crate_model_environment_account_connection(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_get_environment_template(
+    input: &[u8],
+    mut builder: crate::output::get_environment_template_output::Builder,
+) -> Result<crate::output::get_environment_template_output::Builder, smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "environmentTemplate" => {
+                        builder = builder.set_environment_template(
+                            crate::json_deser::deser_structure_crate_model_environment_template(
                                 tokens,
                             )?,
                         );
@@ -1107,45 +1151,7 @@ pub fn deser_operation_get_environment_account_connection(
     Ok(builder)
 }
 
-pub fn deser_operation_get_environment_template(
-    input: &[u8],
-    mut builder: crate::output::get_environment_template_output::Builder,
-) -> Result<crate::output::get_environment_template_output::Builder, smithy_json::deserialize::Error>
-{
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "environmentTemplate" => {
-                        builder = builder.set_environment_template(
-                            crate::json_deser::deser_structure_environment_template(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_get_environment_template_version(
+pub fn deser_operation_crate_operation_get_environment_template_version(
     input: &[u8],
     mut builder: crate::output::get_environment_template_version_output::Builder,
 ) -> Result<
@@ -1164,7 +1170,81 @@ pub fn deser_operation_get_environment_template_version(
                 match key.to_unescaped()?.as_ref() {
                     "environmentTemplateVersion" => {
                         builder = builder.set_environment_template_version(
-                            crate::json_deser::deser_structure_environment_template_version(
+                            crate::json_deser::deser_structure_crate_model_environment_template_version(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_get_service(
+    input: &[u8],
+    mut builder: crate::output::get_service_output::Builder,
+) -> Result<crate::output::get_service_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "service" => {
+                        builder = builder.set_service(
+                            crate::json_deser::deser_structure_crate_model_service(tokens)?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_get_service_instance(
+    input: &[u8],
+    mut builder: crate::output::get_service_instance_output::Builder,
+) -> Result<crate::output::get_service_instance_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "serviceInstance" => {
+                        builder = builder.set_service_instance(
+                            crate::json_deser::deser_structure_crate_model_service_instance(
                                 tokens,
                             )?,
                         );
@@ -1187,80 +1267,7 @@ pub fn deser_operation_get_environment_template_version(
     Ok(builder)
 }
 
-pub fn deser_operation_get_service(
-    input: &[u8],
-    mut builder: crate::output::get_service_output::Builder,
-) -> Result<crate::output::get_service_output::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "service" => {
-                        builder = builder
-                            .set_service(crate::json_deser::deser_structure_service(tokens)?);
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_get_service_instance(
-    input: &[u8],
-    mut builder: crate::output::get_service_instance_output::Builder,
-) -> Result<crate::output::get_service_instance_output::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "serviceInstance" => {
-                        builder = builder.set_service_instance(
-                            crate::json_deser::deser_structure_service_instance(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_get_service_template(
+pub fn deser_operation_crate_operation_get_service_template(
     input: &[u8],
     mut builder: crate::output::get_service_template_output::Builder,
 ) -> Result<crate::output::get_service_template_output::Builder, smithy_json::deserialize::Error> {
@@ -1276,7 +1283,9 @@ pub fn deser_operation_get_service_template(
                 match key.to_unescaped()?.as_ref() {
                     "serviceTemplate" => {
                         builder = builder.set_service_template(
-                            crate::json_deser::deser_structure_service_template(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_service_template(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1297,7 +1306,7 @@ pub fn deser_operation_get_service_template(
     Ok(builder)
 }
 
-pub fn deser_operation_get_service_template_version(
+pub fn deser_operation_crate_operation_get_service_template_version(
     input: &[u8],
     mut builder: crate::output::get_service_template_version_output::Builder,
 ) -> Result<
@@ -1316,7 +1325,7 @@ pub fn deser_operation_get_service_template_version(
                 match key.to_unescaped()?.as_ref() {
                     "serviceTemplateVersion" => {
                         builder = builder.set_service_template_version(
-                            crate::json_deser::deser_structure_service_template_version(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_service_template_version(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1337,7 +1346,7 @@ pub fn deser_operation_get_service_template_version(
     Ok(builder)
 }
 
-pub fn deser_operation_list_environment_account_connections(
+pub fn deser_operation_crate_operation_list_environment_account_connections(
     input: &[u8],
     mut builder: crate::output::list_environment_account_connections_output::Builder,
 ) -> Result<
@@ -1356,7 +1365,7 @@ pub fn deser_operation_list_environment_account_connections(
                 match key.to_unescaped()?.as_ref() {
                     "environmentAccountConnections" => {
                         builder = builder.set_environment_account_connections(
-                            crate::json_deser::deser_list_environment_account_connection_summary_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_proton_environment_account_connection_summary_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -1384,7 +1393,7 @@ pub fn deser_operation_list_environment_account_connections(
     Ok(builder)
 }
 
-pub fn deser_operation_list_environments(
+pub fn deser_operation_crate_operation_list_environments(
     input: &[u8],
     mut builder: crate::output::list_environments_output::Builder,
 ) -> Result<crate::output::list_environments_output::Builder, smithy_json::deserialize::Error> {
@@ -1407,7 +1416,7 @@ pub fn deser_operation_list_environments(
                     }
                     "environments" => {
                         builder = builder.set_environments(
-                            crate::json_deser::deser_list_environment_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_proton_environment_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1428,7 +1437,7 @@ pub fn deser_operation_list_environments(
     Ok(builder)
 }
 
-pub fn deser_operation_list_environment_templates(
+pub fn deser_operation_crate_operation_list_environment_templates(
     input: &[u8],
     mut builder: crate::output::list_environment_templates_output::Builder,
 ) -> Result<
@@ -1454,9 +1463,7 @@ pub fn deser_operation_list_environment_templates(
                     }
                     "templates" => {
                         builder = builder.set_templates(
-                            crate::json_deser::deser_list_environment_template_summary_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_proton_environment_template_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1477,7 +1484,7 @@ pub fn deser_operation_list_environment_templates(
     Ok(builder)
 }
 
-pub fn deser_operation_list_environment_template_versions(
+pub fn deser_operation_crate_operation_list_environment_template_versions(
     input: &[u8],
     mut builder: crate::output::list_environment_template_versions_output::Builder,
 ) -> Result<
@@ -1503,7 +1510,7 @@ pub fn deser_operation_list_environment_template_versions(
                     }
                     "templateVersions" => {
                         builder = builder.set_template_versions(
-                            crate::json_deser::deser_list_environment_template_version_summary_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_proton_environment_template_version_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1524,7 +1531,7 @@ pub fn deser_operation_list_environment_template_versions(
     Ok(builder)
 }
 
-pub fn deser_operation_list_service_instances(
+pub fn deser_operation_crate_operation_list_service_instances(
     input: &[u8],
     mut builder: crate::output::list_service_instances_output::Builder,
 ) -> Result<crate::output::list_service_instances_output::Builder, smithy_json::deserialize::Error>
@@ -1548,7 +1555,7 @@ pub fn deser_operation_list_service_instances(
                     }
                     "serviceInstances" => {
                         builder = builder.set_service_instances(
-                            crate::json_deser::deser_list_service_instance_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_proton_service_instance_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1569,7 +1576,7 @@ pub fn deser_operation_list_service_instances(
     Ok(builder)
 }
 
-pub fn deser_operation_list_services(
+pub fn deser_operation_crate_operation_list_services(
     input: &[u8],
     mut builder: crate::output::list_services_output::Builder,
 ) -> Result<crate::output::list_services_output::Builder, smithy_json::deserialize::Error> {
@@ -1592,7 +1599,7 @@ pub fn deser_operation_list_services(
                     }
                     "services" => {
                         builder = builder.set_services(
-                            crate::json_deser::deser_list_service_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_proton_service_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1613,7 +1620,7 @@ pub fn deser_operation_list_services(
     Ok(builder)
 }
 
-pub fn deser_operation_list_service_templates(
+pub fn deser_operation_crate_operation_list_service_templates(
     input: &[u8],
     mut builder: crate::output::list_service_templates_output::Builder,
 ) -> Result<crate::output::list_service_templates_output::Builder, smithy_json::deserialize::Error>
@@ -1637,7 +1644,7 @@ pub fn deser_operation_list_service_templates(
                     }
                     "templates" => {
                         builder = builder.set_templates(
-                            crate::json_deser::deser_list_service_template_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_proton_service_template_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1658,7 +1665,7 @@ pub fn deser_operation_list_service_templates(
     Ok(builder)
 }
 
-pub fn deser_operation_list_service_template_versions(
+pub fn deser_operation_crate_operation_list_service_template_versions(
     input: &[u8],
     mut builder: crate::output::list_service_template_versions_output::Builder,
 ) -> Result<
@@ -1684,9 +1691,7 @@ pub fn deser_operation_list_service_template_versions(
                     }
                     "templateVersions" => {
                         builder = builder.set_template_versions(
-                            crate::json_deser::deser_list_service_template_version_summary_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_proton_service_template_version_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1707,7 +1712,7 @@ pub fn deser_operation_list_service_template_versions(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -1723,7 +1728,9 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_proton_tag_list(tokens)?,
+                        );
                     }
                     "nextToken" => {
                         builder = builder.set_next_token(
@@ -1750,7 +1757,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_reject_environment_account_connection(
+pub fn deser_operation_crate_operation_reject_environment_account_connection(
     input: &[u8],
     mut builder: crate::output::reject_environment_account_connection_output::Builder,
 ) -> Result<
@@ -1769,7 +1776,45 @@ pub fn deser_operation_reject_environment_account_connection(
                 match key.to_unescaped()?.as_ref() {
                     "environmentAccountConnection" => {
                         builder = builder.set_environment_account_connection(
-                            crate::json_deser::deser_structure_environment_account_connection(
+                            crate::json_deser::deser_structure_crate_model_environment_account_connection(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_update_account_settings(
+    input: &[u8],
+    mut builder: crate::output::update_account_settings_output::Builder,
+) -> Result<crate::output::update_account_settings_output::Builder, smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "accountSettings" => {
+                        builder = builder.set_account_settings(
+                            crate::json_deser::deser_structure_crate_model_account_settings(
                                 tokens,
                             )?,
                         );
@@ -1792,45 +1837,7 @@ pub fn deser_operation_reject_environment_account_connection(
     Ok(builder)
 }
 
-pub fn deser_operation_update_account_settings(
-    input: &[u8],
-    mut builder: crate::output::update_account_settings_output::Builder,
-) -> Result<crate::output::update_account_settings_output::Builder, smithy_json::deserialize::Error>
-{
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "accountSettings" => {
-                        builder = builder.set_account_settings(
-                            crate::json_deser::deser_structure_account_settings(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_update_environment(
+pub fn deser_operation_crate_operation_update_environment(
     input: &[u8],
     mut builder: crate::output::update_environment_output::Builder,
 ) -> Result<crate::output::update_environment_output::Builder, smithy_json::deserialize::Error> {
@@ -1846,7 +1853,7 @@ pub fn deser_operation_update_environment(
                 match key.to_unescaped()?.as_ref() {
                     "environment" => {
                         builder = builder.set_environment(
-                            crate::json_deser::deser_structure_environment(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1867,7 +1874,7 @@ pub fn deser_operation_update_environment(
     Ok(builder)
 }
 
-pub fn deser_operation_update_environment_account_connection(
+pub fn deser_operation_crate_operation_update_environment_account_connection(
     input: &[u8],
     mut builder: crate::output::update_environment_account_connection_output::Builder,
 ) -> Result<
@@ -1886,9 +1893,7 @@ pub fn deser_operation_update_environment_account_connection(
                 match key.to_unescaped()?.as_ref() {
                     "environmentAccountConnection" => {
                         builder = builder.set_environment_account_connection(
-                            crate::json_deser::deser_structure_environment_account_connection(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_environment_account_connection(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1909,7 +1914,7 @@ pub fn deser_operation_update_environment_account_connection(
     Ok(builder)
 }
 
-pub fn deser_operation_update_environment_template(
+pub fn deser_operation_crate_operation_update_environment_template(
     input: &[u8],
     mut builder: crate::output::update_environment_template_output::Builder,
 ) -> Result<
@@ -1928,47 +1933,7 @@ pub fn deser_operation_update_environment_template(
                 match key.to_unescaped()?.as_ref() {
                     "environmentTemplate" => {
                         builder = builder.set_environment_template(
-                            crate::json_deser::deser_structure_environment_template(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_update_environment_template_version(
-    input: &[u8],
-    mut builder: crate::output::update_environment_template_version_output::Builder,
-) -> Result<
-    crate::output::update_environment_template_version_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "environmentTemplateVersion" => {
-                        builder = builder.set_environment_template_version(
-                            crate::json_deser::deser_structure_environment_template_version(
+                            crate::json_deser::deser_structure_crate_model_environment_template(
                                 tokens,
                             )?,
                         );
@@ -1991,10 +1956,13 @@ pub fn deser_operation_update_environment_template_version(
     Ok(builder)
 }
 
-pub fn deser_operation_update_service(
+pub fn deser_operation_crate_operation_update_environment_template_version(
     input: &[u8],
-    mut builder: crate::output::update_service_output::Builder,
-) -> Result<crate::output::update_service_output::Builder, smithy_json::deserialize::Error> {
+    mut builder: crate::output::update_environment_template_version_output::Builder,
+) -> Result<
+    crate::output::update_environment_template_version_output::Builder,
+    smithy_json::deserialize::Error,
+> {
     let mut tokens_owned =
         smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
             .peekable();
@@ -2005,9 +1973,10 @@ pub fn deser_operation_update_service(
             Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
-                    "service" => {
-                        builder = builder
-                            .set_service(crate::json_deser::deser_structure_service(tokens)?);
+                    "environmentTemplateVersion" => {
+                        builder = builder.set_environment_template_version(
+                            crate::json_deser::deser_structure_crate_model_environment_template_version(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -2027,7 +1996,44 @@ pub fn deser_operation_update_service(
     Ok(builder)
 }
 
-pub fn deser_operation_update_service_instance(
+pub fn deser_operation_crate_operation_update_service(
+    input: &[u8],
+    mut builder: crate::output::update_service_output::Builder,
+) -> Result<crate::output::update_service_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "service" => {
+                        builder = builder.set_service(
+                            crate::json_deser::deser_structure_crate_model_service(tokens)?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_update_service_instance(
     input: &[u8],
     mut builder: crate::output::update_service_instance_output::Builder,
 ) -> Result<crate::output::update_service_instance_output::Builder, smithy_json::deserialize::Error>
@@ -2044,7 +2050,9 @@ pub fn deser_operation_update_service_instance(
                 match key.to_unescaped()?.as_ref() {
                     "serviceInstance" => {
                         builder = builder.set_service_instance(
-                            crate::json_deser::deser_structure_service_instance(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_service_instance(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2065,7 +2073,7 @@ pub fn deser_operation_update_service_instance(
     Ok(builder)
 }
 
-pub fn deser_operation_update_service_pipeline(
+pub fn deser_operation_crate_operation_update_service_pipeline(
     input: &[u8],
     mut builder: crate::output::update_service_pipeline_output::Builder,
 ) -> Result<crate::output::update_service_pipeline_output::Builder, smithy_json::deserialize::Error>
@@ -2082,7 +2090,9 @@ pub fn deser_operation_update_service_pipeline(
                 match key.to_unescaped()?.as_ref() {
                     "pipeline" => {
                         builder = builder.set_pipeline(
-                            crate::json_deser::deser_structure_service_pipeline(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_service_pipeline(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2103,7 +2113,7 @@ pub fn deser_operation_update_service_pipeline(
     Ok(builder)
 }
 
-pub fn deser_operation_update_service_template(
+pub fn deser_operation_crate_operation_update_service_template(
     input: &[u8],
     mut builder: crate::output::update_service_template_output::Builder,
 ) -> Result<crate::output::update_service_template_output::Builder, smithy_json::deserialize::Error>
@@ -2120,7 +2130,9 @@ pub fn deser_operation_update_service_template(
                 match key.to_unescaped()?.as_ref() {
                     "serviceTemplate" => {
                         builder = builder.set_service_template(
-                            crate::json_deser::deser_structure_service_template(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_service_template(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2141,7 +2153,7 @@ pub fn deser_operation_update_service_template(
     Ok(builder)
 }
 
-pub fn deser_operation_update_service_template_version(
+pub fn deser_operation_crate_operation_update_service_template_version(
     input: &[u8],
     mut builder: crate::output::update_service_template_version_output::Builder,
 ) -> Result<
@@ -2160,7 +2172,7 @@ pub fn deser_operation_update_service_template_version(
                 match key.to_unescaped()?.as_ref() {
                     "serviceTemplateVersion" => {
                         builder = builder.set_service_template_version(
-                            crate::json_deser::deser_structure_service_template_version(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_service_template_version(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2189,7 +2201,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_environment_account_connection<'a, I>(
+pub fn deser_structure_crate_model_environment_account_connection<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EnvironmentAccountConnection>, smithy_json::deserialize::Error>
 where
@@ -2310,7 +2322,7 @@ where
     }
 }
 
-pub fn deser_structure_environment<'a, I>(
+pub fn deser_structure_crate_model_environment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Environment>, smithy_json::deserialize::Error>
 where
@@ -2494,7 +2506,7 @@ where
     }
 }
 
-pub fn deser_structure_service_instance<'a, I>(
+pub fn deser_structure_crate_model_service_instance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceInstance>, smithy_json::deserialize::Error>
 where
@@ -2648,7 +2660,7 @@ where
     }
 }
 
-pub fn deser_structure_service_pipeline<'a, I>(
+pub fn deser_structure_crate_model_service_pipeline<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServicePipeline>, smithy_json::deserialize::Error>
 where
@@ -2775,7 +2787,7 @@ where
     }
 }
 
-pub fn deser_structure_environment_template<'a, I>(
+pub fn deser_structure_crate_model_environment_template<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EnvironmentTemplate>, smithy_json::deserialize::Error>
 where
@@ -2893,7 +2905,7 @@ where
     }
 }
 
-pub fn deser_structure_environment_template_version<'a, I>(
+pub fn deser_structure_crate_model_environment_template_version<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EnvironmentTemplateVersion>, smithy_json::deserialize::Error>
 where
@@ -3030,7 +3042,7 @@ where
     }
 }
 
-pub fn deser_structure_service<'a, I>(
+pub fn deser_structure_crate_model_service<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Service>, smithy_json::deserialize::Error>
 where
@@ -3132,7 +3144,7 @@ where
                             }
                             "pipeline" => {
                                 builder = builder.set_pipeline(
-                                    crate::json_deser::deser_structure_service_pipeline(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_service_pipeline(tokens)?
                                 );
                             }
                             "repositoryConnectionArn" => {
@@ -3180,7 +3192,7 @@ where
     }
 }
 
-pub fn deser_structure_service_template<'a, I>(
+pub fn deser_structure_crate_model_service_template<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceTemplate>, smithy_json::deserialize::Error>
 where
@@ -3298,7 +3310,7 @@ where
     }
 }
 
-pub fn deser_structure_service_template_version<'a, I>(
+pub fn deser_structure_crate_model_service_template_version<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceTemplateVersion>, smithy_json::deserialize::Error>
 where
@@ -3410,7 +3422,7 @@ where
                             }
                             "compatibleEnvironmentTemplates" => {
                                 builder = builder.set_compatible_environment_templates(
-                                    crate::json_deser::deser_list_compatible_environment_template_list(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_proton_compatible_environment_template_list(tokens)?
                                 );
                             }
                             "schema" => {
@@ -3440,7 +3452,7 @@ where
     }
 }
 
-pub fn deser_structure_account_settings<'a, I>(
+pub fn deser_structure_crate_model_account_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccountSettings>, smithy_json::deserialize::Error>
 where
@@ -3486,7 +3498,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_environment_account_connection_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_proton_environment_account_connection_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::EnvironmentAccountConnectionSummary>>,
@@ -3509,7 +3521,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_environment_account_connection_summary(tokens)?
+                            crate::json_deser::deser_structure_crate_model_environment_account_connection_summary(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -3526,7 +3538,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_environment_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_proton_environment_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EnvironmentSummary>>, smithy_json::deserialize::Error>
 where
@@ -3545,7 +3557,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_environment_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_environment_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3561,7 +3576,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_environment_template_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_proton_environment_template_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::EnvironmentTemplateSummary>>,
@@ -3584,9 +3599,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_environment_template_summary(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_environment_template_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3602,7 +3616,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_environment_template_version_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_proton_environment_template_version_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::EnvironmentTemplateVersionSummary>>,
@@ -3625,7 +3639,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_environment_template_version_summary(tokens)?
+                            crate::json_deser::deser_structure_crate_model_environment_template_version_summary(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -3642,7 +3656,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_service_instance_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_proton_service_instance_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ServiceInstanceSummary>>,
@@ -3665,7 +3679,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_service_instance_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_service_instance_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3681,7 +3696,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_service_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_proton_service_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ServiceSummary>>, smithy_json::deserialize::Error>
 where
@@ -3700,7 +3715,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_service_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_service_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3716,7 +3732,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_service_template_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_proton_service_template_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ServiceTemplateSummary>>,
@@ -3739,7 +3755,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_service_template_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_service_template_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3755,7 +3772,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_service_template_version_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_proton_service_template_version_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ServiceTemplateVersionSummary>>,
@@ -3778,9 +3795,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_service_template_version_summary(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_service_template_version_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3796,7 +3812,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_proton_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -3815,7 +3831,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3831,7 +3847,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_compatible_environment_template_list<'a, I>(
+pub fn deser_list_com_amazonaws_proton_compatible_environment_template_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
@@ -3854,9 +3870,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_compatible_environment_template(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_compatible_environment_template(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3871,7 +3886,7 @@ where
     }
 }
 
-pub fn deser_structure_environment_account_connection_summary<'a, I>(
+pub fn deser_structure_crate_model_environment_account_connection_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::EnvironmentAccountConnectionSummary>,
@@ -3995,7 +4010,7 @@ where
     }
 }
 
-pub fn deser_structure_environment_summary<'a, I>(
+pub fn deser_structure_crate_model_environment_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EnvironmentSummary>, smithy_json::deserialize::Error>
 where
@@ -4170,7 +4185,7 @@ where
     }
 }
 
-pub fn deser_structure_environment_template_summary<'a, I>(
+pub fn deser_structure_crate_model_environment_template_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EnvironmentTemplateSummary>, smithy_json::deserialize::Error>
 where
@@ -4279,7 +4294,7 @@ where
     }
 }
 
-pub fn deser_structure_environment_template_version_summary<'a, I>(
+pub fn deser_structure_crate_model_environment_template_version_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EnvironmentTemplateVersionSummary>, smithy_json::deserialize::Error>
 where
@@ -4407,7 +4422,7 @@ where
     }
 }
 
-pub fn deser_structure_service_instance_summary<'a, I>(
+pub fn deser_structure_crate_model_service_instance_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceInstanceSummary>, smithy_json::deserialize::Error>
 where
@@ -4552,7 +4567,7 @@ where
     }
 }
 
-pub fn deser_structure_service_summary<'a, I>(
+pub fn deser_structure_crate_model_service_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceSummary>, smithy_json::deserialize::Error>
 where
@@ -4661,7 +4676,7 @@ where
     }
 }
 
-pub fn deser_structure_service_template_summary<'a, I>(
+pub fn deser_structure_crate_model_service_template_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceTemplateSummary>, smithy_json::deserialize::Error>
 where
@@ -4770,7 +4785,7 @@ where
     }
 }
 
-pub fn deser_structure_service_template_version_summary<'a, I>(
+pub fn deser_structure_crate_model_service_template_version_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceTemplateVersionSummary>, smithy_json::deserialize::Error>
 where
@@ -4898,7 +4913,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -4952,7 +4967,7 @@ where
     }
 }
 
-pub fn deser_structure_compatible_environment_template<'a, I>(
+pub fn deser_structure_crate_model_compatible_environment_template<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CompatibleEnvironmentTemplate>, smithy_json::deserialize::Error>
 where

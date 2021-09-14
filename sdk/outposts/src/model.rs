@@ -133,7 +133,9 @@ impl Site {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Outpost {
-    /// <p>The ID of the Outpost.</p>
+    /// <p>
+    /// The ID of the Outpost.
+    /// </p>
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The AWS account ID of the Outpost owner.</p>
     pub owner_id: std::option::Option<std::string::String>,
@@ -195,7 +197,9 @@ pub mod outpost {
         pub(crate) site_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Outpost.</p>
+        /// <p>
+        /// The ID of the Outpost.
+        /// </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
@@ -432,5 +436,482 @@ impl ResourceType {
 impl AsRef<str> for ResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Information about an order.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Order {
+    /// <p>
+    /// The ID of the Outpost.
+    /// </p>
+    pub outpost_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the order.</p>
+    pub order_id: std::option::Option<std::string::String>,
+    /// <p>The status of the order</p>
+    pub status: std::option::Option<crate::model::OrderStatus>,
+    /// <p>The line items for the order</p>
+    pub line_items: std::option::Option<std::vec::Vec<crate::model::LineItem>>,
+    /// <p>The payment option for the order.</p>
+    pub payment_option: std::option::Option<crate::model::PaymentOption>,
+    /// <p>The submission date for the order.</p>
+    pub order_submission_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The fulfillment date of the order.</p>
+    pub order_fulfilled_date: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for Order {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Order");
+        formatter.field("outpost_id", &self.outpost_id);
+        formatter.field("order_id", &self.order_id);
+        formatter.field("status", &self.status);
+        formatter.field("line_items", &self.line_items);
+        formatter.field("payment_option", &self.payment_option);
+        formatter.field("order_submission_date", &self.order_submission_date);
+        formatter.field("order_fulfilled_date", &self.order_fulfilled_date);
+        formatter.finish()
+    }
+}
+/// See [`Order`](crate::model::Order)
+pub mod order {
+    /// A builder for [`Order`](crate::model::Order)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) outpost_id: std::option::Option<std::string::String>,
+        pub(crate) order_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::OrderStatus>,
+        pub(crate) line_items: std::option::Option<std::vec::Vec<crate::model::LineItem>>,
+        pub(crate) payment_option: std::option::Option<crate::model::PaymentOption>,
+        pub(crate) order_submission_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) order_fulfilled_date: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>
+        /// The ID of the Outpost.
+        /// </p>
+        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.outpost_id = Some(input.into());
+            self
+        }
+        pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.outpost_id = input;
+            self
+        }
+        /// <p>The ID of the order.</p>
+        pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.order_id = Some(input.into());
+            self
+        }
+        pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.order_id = input;
+            self
+        }
+        /// <p>The status of the order</p>
+        pub fn status(mut self, input: crate::model::OrderStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(mut self, input: std::option::Option<crate::model::OrderStatus>) -> Self {
+            self.status = input;
+            self
+        }
+        pub fn line_items(mut self, input: impl Into<crate::model::LineItem>) -> Self {
+            let mut v = self.line_items.unwrap_or_default();
+            v.push(input.into());
+            self.line_items = Some(v);
+            self
+        }
+        pub fn set_line_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LineItem>>,
+        ) -> Self {
+            self.line_items = input;
+            self
+        }
+        /// <p>The payment option for the order.</p>
+        pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
+            self.payment_option = Some(input);
+            self
+        }
+        pub fn set_payment_option(
+            mut self,
+            input: std::option::Option<crate::model::PaymentOption>,
+        ) -> Self {
+            self.payment_option = input;
+            self
+        }
+        /// <p>The submission date for the order.</p>
+        pub fn order_submission_date(mut self, input: smithy_types::Instant) -> Self {
+            self.order_submission_date = Some(input);
+            self
+        }
+        pub fn set_order_submission_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.order_submission_date = input;
+            self
+        }
+        /// <p>The fulfillment date of the order.</p>
+        pub fn order_fulfilled_date(mut self, input: smithy_types::Instant) -> Self {
+            self.order_fulfilled_date = Some(input);
+            self
+        }
+        pub fn set_order_fulfilled_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.order_fulfilled_date = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Order`](crate::model::Order)
+        pub fn build(self) -> crate::model::Order {
+            crate::model::Order {
+                outpost_id: self.outpost_id,
+                order_id: self.order_id,
+                status: self.status,
+                line_items: self.line_items,
+                payment_option: self.payment_option,
+                order_submission_date: self.order_submission_date,
+                order_fulfilled_date: self.order_fulfilled_date,
+            }
+        }
+    }
+}
+impl Order {
+    /// Creates a new builder-style object to manufacture [`Order`](crate::model::Order)
+    pub fn builder() -> crate::model::order::Builder {
+        crate::model::order::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PaymentOption {
+    AllUpfront,
+    NoUpfront,
+    PartialUpfront,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PaymentOption {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL_UPFRONT" => PaymentOption::AllUpfront,
+            "NO_UPFRONT" => PaymentOption::NoUpfront,
+            "PARTIAL_UPFRONT" => PaymentOption::PartialUpfront,
+            other => PaymentOption::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PaymentOption {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PaymentOption::from(s))
+    }
+}
+impl PaymentOption {
+    pub fn as_str(&self) -> &str {
+        match self {
+            PaymentOption::AllUpfront => "ALL_UPFRONT",
+            PaymentOption::NoUpfront => "NO_UPFRONT",
+            PaymentOption::PartialUpfront => "PARTIAL_UPFRONT",
+            PaymentOption::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ALL_UPFRONT", "NO_UPFRONT", "PARTIAL_UPFRONT"]
+    }
+}
+impl AsRef<str> for PaymentOption {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information about a line item.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LineItem {
+    /// <p>
+    /// The ID of the catalog item.
+    /// </p>
+    pub catalog_item_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the line item.</p>
+    pub line_item_id: std::option::Option<std::string::String>,
+    /// <p>The quantity of the line item.</p>
+    pub quantity: i32,
+    /// <p>The status of the line item.</p>
+    pub status: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LineItem {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LineItem");
+        formatter.field("catalog_item_id", &self.catalog_item_id);
+        formatter.field("line_item_id", &self.line_item_id);
+        formatter.field("quantity", &self.quantity);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`LineItem`](crate::model::LineItem)
+pub mod line_item {
+    /// A builder for [`LineItem`](crate::model::LineItem)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_item_id: std::option::Option<std::string::String>,
+        pub(crate) line_item_id: std::option::Option<std::string::String>,
+        pub(crate) quantity: std::option::Option<i32>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>
+        /// The ID of the catalog item.
+        /// </p>
+        pub fn catalog_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_item_id = Some(input.into());
+            self
+        }
+        pub fn set_catalog_item_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.catalog_item_id = input;
+            self
+        }
+        /// <p>The ID of the line item.</p>
+        pub fn line_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.line_item_id = Some(input.into());
+            self
+        }
+        pub fn set_line_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.line_item_id = input;
+            self
+        }
+        /// <p>The quantity of the line item.</p>
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.quantity = Some(input);
+            self
+        }
+        pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+            self.quantity = input;
+            self
+        }
+        /// <p>The status of the line item.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LineItem`](crate::model::LineItem)
+        pub fn build(self) -> crate::model::LineItem {
+            crate::model::LineItem {
+                catalog_item_id: self.catalog_item_id,
+                line_item_id: self.line_item_id,
+                quantity: self.quantity.unwrap_or_default(),
+                status: self.status,
+            }
+        }
+    }
+}
+impl LineItem {
+    /// Creates a new builder-style object to manufacture [`LineItem`](crate::model::LineItem)
+    pub fn builder() -> crate::model::line_item::Builder {
+        crate::model::line_item::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OrderStatus {
+    Cancelled,
+    Fulfilled,
+    Installing,
+    Pending,
+    Processing,
+    Received,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OrderStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CANCELLED" => OrderStatus::Cancelled,
+            "FULFILLED" => OrderStatus::Fulfilled,
+            "INSTALLING" => OrderStatus::Installing,
+            "PENDING" => OrderStatus::Pending,
+            "PROCESSING" => OrderStatus::Processing,
+            "RECEIVED" => OrderStatus::Received,
+            other => OrderStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OrderStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OrderStatus::from(s))
+    }
+}
+impl OrderStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            OrderStatus::Cancelled => "CANCELLED",
+            OrderStatus::Fulfilled => "FULFILLED",
+            OrderStatus::Installing => "INSTALLING",
+            OrderStatus::Pending => "PENDING",
+            OrderStatus::Processing => "PROCESSING",
+            OrderStatus::Received => "RECEIVED",
+            OrderStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CANCELLED",
+            "FULFILLED",
+            "INSTALLING",
+            "PENDING",
+            "PROCESSING",
+            "RECEIVED",
+        ]
+    }
+}
+impl AsRef<str> for OrderStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PaymentTerm {
+    ThreeYears,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PaymentTerm {
+    fn from(s: &str) -> Self {
+        match s {
+            "THREE_YEARS" => PaymentTerm::ThreeYears,
+            other => PaymentTerm::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PaymentTerm {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PaymentTerm::from(s))
+    }
+}
+impl PaymentTerm {
+    pub fn as_str(&self) -> &str {
+        match self {
+            PaymentTerm::ThreeYears => "THREE_YEARS",
+            PaymentTerm::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["THREE_YEARS"]
+    }
+}
+impl AsRef<str> for PaymentTerm {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information about a line item request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LineItemRequest {
+    /// <p>The ID of the catalog item.</p>
+    pub catalog_item_id: std::option::Option<std::string::String>,
+    /// <p>The quantity of a line item request.</p>
+    pub quantity: i32,
+}
+impl std::fmt::Debug for LineItemRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LineItemRequest");
+        formatter.field("catalog_item_id", &self.catalog_item_id);
+        formatter.field("quantity", &self.quantity);
+        formatter.finish()
+    }
+}
+/// See [`LineItemRequest`](crate::model::LineItemRequest)
+pub mod line_item_request {
+    /// A builder for [`LineItemRequest`](crate::model::LineItemRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_item_id: std::option::Option<std::string::String>,
+        pub(crate) quantity: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The ID of the catalog item.</p>
+        pub fn catalog_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_item_id = Some(input.into());
+            self
+        }
+        pub fn set_catalog_item_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.catalog_item_id = input;
+            self
+        }
+        /// <p>The quantity of a line item request.</p>
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.quantity = Some(input);
+            self
+        }
+        pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+            self.quantity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LineItemRequest`](crate::model::LineItemRequest)
+        pub fn build(self) -> crate::model::LineItemRequest {
+            crate::model::LineItemRequest {
+                catalog_item_id: self.catalog_item_id,
+                quantity: self.quantity.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl LineItemRequest {
+    /// Creates a new builder-style object to manufacture [`LineItemRequest`](crate::model::LineItemRequest)
+    pub fn builder() -> crate::model::line_item_request::Builder {
+        crate::model::line_item_request::Builder::default()
     }
 }

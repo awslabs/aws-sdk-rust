@@ -184,7 +184,7 @@ pub mod fluent_builders {
         /// Appends an item to `TagsList`.
         ///
         /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
-        /// <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
+        /// <p>Contains a list of tags, up to a limit of 50</p>
         pub fn tags_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags_list(inp);
             self
@@ -254,7 +254,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.</p>
+        /// and <code>my--namespace</code> are not valid.</p>
         /// </li>
         /// <li>
         /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
@@ -329,7 +329,11 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
         /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail will not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
+        /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
+        /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
+        /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
+        /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn enable_log_file_validation(mut self, inp: bool) -> Self {
             self.inner = self.inner.enable_log_file_validation(inp);
@@ -340,7 +344,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-        /// to which CloudTrail logs will be delivered. Not required unless you specify CloudWatchLogsRoleArn.</p>
+        /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
             inp: impl Into<std::string::String>,
@@ -370,6 +374,8 @@ pub mod fluent_builders {
         /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
         /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
         /// specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
         /// <li>
@@ -393,9 +399,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in
-        /// AWS Organizations.</p>
+        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
+        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
+        /// Organizations.</p>
         pub fn is_organization_trail(mut self, inp: bool) -> Self {
             self.inner = self.inner.is_organization_trail(inp);
             self
@@ -464,8 +470,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The format of a
-        /// trail ARN is:
+        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
+        /// trail ARN.
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -816,7 +822,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The format of a trail ARN is:</p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
+        /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
@@ -873,7 +880,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
+        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
+        /// If not specified, the current time is used, and the current public key is returned.</p>
         pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
             self.inner = self.inner.start_time(inp);
             self
@@ -882,7 +890,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
+        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
+        /// specified, the current time is used.</p>
         pub fn end_time(mut self, inp: smithy_types::Instant) -> Self {
             self.inner = self.inner.end_time(inp);
             self
@@ -948,7 +957,8 @@ pub mod fluent_builders {
         /// Appends an item to `ResourceIdList`.
         ///
         /// To override the contents of this collection use [`set_resource_id_list`](Self::set_resource_id_list).
-        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a trail ARN is:</p>
+        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
+        /// a trail ARN.</p>
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
@@ -1198,13 +1208,13 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.</p>
+        /// and <code>my--namespace</code> are not valid.</p>
         /// </li>
         /// <li>
         /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
         /// </li>
         /// </ul>
-        /// <p>If you specify a trail ARN, it must be in the format:</p>
+        /// <p>If you specify a trail ARN, it must be in the following format.</p>
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
@@ -1243,7 +1253,7 @@ pub mod fluent_builders {
         /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
         /// advanced event selectors, see
         /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
         /// </p>
         pub fn advanced_event_selectors(
             mut self,
@@ -1316,7 +1326,7 @@ pub mod fluent_builders {
         /// Appends an item to `InsightSelectors`.
         ///
         /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
-        /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, only <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+        /// <p>A JSON string that contains the Insights types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
         pub fn insight_selectors(mut self, inp: impl Into<crate::model::InsightSelector>) -> Self {
             self.inner = self.inner.insight_selectors(inp);
             self
@@ -1445,7 +1455,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs AWS API calls. The format of a trail ARN is:</p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
+        /// The following is the format of a trail ARN.</p>
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
@@ -1502,7 +1513,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging AWS API calls. The format of a trail ARN is:</p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
+        /// API calls. The following is the format of a trail ARN.</p>
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
@@ -1573,13 +1585,13 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.</p>
+        /// and <code>my--namespace</code> are not valid.</p>
         /// </li>
         /// <li>
         /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
         /// </li>
         /// </ul>
-        /// <p>If <code>Name</code> is a trail ARN, it must be in the format:</p>
+        /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
@@ -1654,7 +1666,11 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether log file validation is enabled. The default is false.</p>
         /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail will not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
+        /// does not create digest files for log files that were delivered during a period in which log file integrity validation
+        /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
+        /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
+        /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn enable_log_file_validation(mut self, inp: bool) -> Self {
             self.inner = self.inner.enable_log_file_validation(inp);
@@ -1664,7 +1680,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_log_file_validation(input);
             self
         }
-        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify CloudWatchLogsRoleArn.</p>
+        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
             inp: impl Into<std::string::String>,
@@ -1694,6 +1710,8 @@ pub mod fluent_builders {
         /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
         /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
         /// specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
         /// <li>
@@ -1717,10 +1735,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in
-        /// AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong
-        /// to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be
+        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
+        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
+        /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
+        /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
         /// deleted from all member accounts in the organization.</p>
         pub fn is_organization_trail(mut self, inp: bool) -> Self {
             self.inner = self.inner.is_organization_trail(inp);

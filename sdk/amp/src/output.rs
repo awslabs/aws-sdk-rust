@@ -74,6 +74,9 @@ pub struct CreateWorkspaceOutput {
     pub arn: std::option::Option<std::string::String>,
     /// The status of the workspace that was just created (usually CREATING).
     pub status: std::option::Option<crate::model::WorkspaceStatus>,
+    /// The tags of this workspace.
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl std::fmt::Debug for CreateWorkspaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -81,6 +84,7 @@ impl std::fmt::Debug for CreateWorkspaceOutput {
         formatter.field("workspace_id", &self.workspace_id);
         formatter.field("arn", &self.arn);
         formatter.field("status", &self.status);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -93,6 +97,9 @@ pub mod create_workspace_output {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// The generated ID of the workspace that was just created.
@@ -125,12 +132,32 @@ pub mod create_workspace_output {
             self.status = input;
             self
         }
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput)
         pub fn build(self) -> crate::output::CreateWorkspaceOutput {
             crate::output::CreateWorkspaceOutput {
                 workspace_id: self.workspace_id,
                 arn: self.arn,
                 status: self.status,
+                tags: self.tags,
             }
         }
     }
@@ -247,5 +274,120 @@ impl DescribeWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput)
     pub fn builder() -> crate::output::describe_workspace_output::Builder {
         crate::output::describe_workspace_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceOutput {}
+impl std::fmt::Debug for UntagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+pub mod untag_resource_output {
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        pub fn build(self) -> crate::output::UntagResourceOutput {
+            crate::output::UntagResourceOutput {}
+        }
+    }
+}
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceOutput {}
+impl std::fmt::Debug for TagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+pub mod tag_resource_output {
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        pub fn build(self) -> crate::output::TagResourceOutput {
+            crate::output::TagResourceOutput {}
+        }
+    }
+}
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceOutput {
+    /// The list of tags assigned to the resource.
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for ListTagsForResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+pub mod list_tags_for_resource_output {
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        pub fn build(self) -> crate::output::ListTagsForResourceOutput {
+            crate::output::ListTagsForResourceOutput { tags: self.tags }
+        }
+    }
+}
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
     }
 }

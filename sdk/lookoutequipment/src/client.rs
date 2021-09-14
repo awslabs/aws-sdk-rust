@@ -207,7 +207,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_schema(input);
             self
         }
-        /// <p>Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt dataset data by Amazon Lookout for Equipment. </p>
+        /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_side_kms_key_id(inp);
             self
@@ -311,7 +311,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_scheduler_name(input);
             self
         }
-        /// <p> A period of time (in minutes) by which inference on the data is delayed after the data
+        /// <p>A period of time (in minutes) by which inference on the data is delayed after the data
         /// starts. For instance, if you select an offset delay time of five minutes, inference will
         /// not begin on the data until the first data measurement after the five minute mark. For example, if
         /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
@@ -383,7 +383,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+        /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_side_kms_key_id(inp);
             self
@@ -608,7 +608,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_pre_processing_configuration(input);
             self
         }
-        /// <p>Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt model data by Amazon Lookout for Equipment. </p>
+        /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_side_kms_key_id(inp);
             self
@@ -633,6 +633,18 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+        pub fn off_condition(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.off_condition(inp);
+            self
+        }
+        pub fn set_off_condition(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_off_condition(input);
             self
         }
     }
@@ -1936,7 +1948,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_scheduler_name(input);
             self
         }
-        /// <p>> A period of time (in minutes) by which inference on the data is delayed after the data
+        /// <p> A period of time (in minutes) by which inference on the data is delayed after the data
         /// starts. For instance, if you select an offset delay time of five minutes, inference will
         /// not begin on the data until the first data measurement after the five minute mark. For example, if
         /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the

@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_disabled_api_exceptionjson_err(
+pub fn deser_structure_crate_error_disabled_api_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::disabled_api_exception::Builder,
 ) -> Result<crate::error::disabled_api_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_disabled_api_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_service_error_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_service_error_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_error_exception::Builder,
 ) -> Result<crate::error::internal_service_error_exception::Builder, smithy_json::deserialize::Error>
@@ -84,7 +84,7 @@ pub fn deser_structure_internal_service_error_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_customer_identifier_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_customer_identifier_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_customer_identifier_exception::Builder,
 ) -> Result<
@@ -126,7 +126,7 @@ pub fn deser_structure_invalid_customer_identifier_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_product_code_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_product_code_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_product_code_exception::Builder,
 ) -> Result<crate::error::invalid_product_code_exception::Builder, smithy_json::deserialize::Error>
@@ -166,7 +166,7 @@ pub fn deser_structure_invalid_product_code_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_tag_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_tag_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_tag_exception::Builder,
 ) -> Result<crate::error::invalid_tag_exception::Builder, smithy_json::deserialize::Error> {
@@ -205,7 +205,7 @@ pub fn deser_structure_invalid_tag_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_usage_allocations_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_usage_allocations_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_usage_allocations_exception::Builder,
 ) -> Result<
@@ -247,7 +247,7 @@ pub fn deser_structure_invalid_usage_allocations_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_usage_dimension_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_usage_dimension_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_usage_dimension_exception::Builder,
 ) -> Result<crate::error::invalid_usage_dimension_exception::Builder, smithy_json::deserialize::Error>
@@ -287,7 +287,7 @@ pub fn deser_structure_invalid_usage_dimension_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -326,7 +326,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_timestamp_out_of_bounds_exceptionjson_err(
+pub fn deser_structure_crate_error_timestamp_out_of_bounds_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::timestamp_out_of_bounds_exception::Builder,
 ) -> Result<crate::error::timestamp_out_of_bounds_exception::Builder, smithy_json::deserialize::Error>
@@ -366,7 +366,7 @@ pub fn deser_structure_timestamp_out_of_bounds_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_meter_usage(
+pub fn deser_operation_crate_operation_batch_meter_usage(
     input: &[u8],
     mut builder: crate::output::batch_meter_usage_output::Builder,
 ) -> Result<crate::output::batch_meter_usage_output::Builder, smithy_json::deserialize::Error> {
@@ -382,12 +382,12 @@ pub fn deser_operation_batch_meter_usage(
                 match key.to_unescaped()?.as_ref() {
                     "Results" => {
                         builder = builder.set_results(
-                            crate::json_deser::deser_list_usage_record_result_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_marketplacemetering_usage_record_result_list(tokens)?
                         );
                     }
                     "UnprocessedRecords" => {
                         builder = builder.set_unprocessed_records(
-                            crate::json_deser::deser_list_usage_record_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_marketplacemetering_usage_record_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -408,7 +408,7 @@ pub fn deser_operation_batch_meter_usage(
     Ok(builder)
 }
 
-pub fn deser_structure_customer_not_entitled_exceptionjson_err(
+pub fn deser_structure_crate_error_customer_not_entitled_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::customer_not_entitled_exception::Builder,
 ) -> Result<crate::error::customer_not_entitled_exception::Builder, smithy_json::deserialize::Error>
@@ -448,7 +448,7 @@ pub fn deser_structure_customer_not_entitled_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_duplicate_request_exceptionjson_err(
+pub fn deser_structure_crate_error_duplicate_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::duplicate_request_exception::Builder,
 ) -> Result<crate::error::duplicate_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -487,7 +487,7 @@ pub fn deser_structure_duplicate_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_endpoint_region_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_endpoint_region_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_endpoint_region_exception::Builder,
 ) -> Result<crate::error::invalid_endpoint_region_exception::Builder, smithy_json::deserialize::Error>
@@ -527,7 +527,7 @@ pub fn deser_structure_invalid_endpoint_region_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_meter_usage(
+pub fn deser_operation_crate_operation_meter_usage(
     input: &[u8],
     mut builder: crate::output::meter_usage_output::Builder,
 ) -> Result<crate::output::meter_usage_output::Builder, smithy_json::deserialize::Error> {
@@ -566,7 +566,7 @@ pub fn deser_operation_meter_usage(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_public_key_version_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_public_key_version_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_public_key_version_exception::Builder,
 ) -> Result<
@@ -608,7 +608,7 @@ pub fn deser_structure_invalid_public_key_version_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_region_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_region_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_region_exception::Builder,
 ) -> Result<crate::error::invalid_region_exception::Builder, smithy_json::deserialize::Error> {
@@ -647,7 +647,7 @@ pub fn deser_structure_invalid_region_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_platform_not_supported_exceptionjson_err(
+pub fn deser_structure_crate_error_platform_not_supported_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::platform_not_supported_exception::Builder,
 ) -> Result<crate::error::platform_not_supported_exception::Builder, smithy_json::deserialize::Error>
@@ -687,7 +687,7 @@ pub fn deser_structure_platform_not_supported_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_register_usage(
+pub fn deser_operation_crate_operation_register_usage(
     input: &[u8],
     mut builder: crate::output::register_usage_output::Builder,
 ) -> Result<crate::output::register_usage_output::Builder, smithy_json::deserialize::Error> {
@@ -734,7 +734,7 @@ pub fn deser_operation_register_usage(
     Ok(builder)
 }
 
-pub fn deser_structure_expired_token_exceptionjson_err(
+pub fn deser_structure_crate_error_expired_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::expired_token_exception::Builder,
 ) -> Result<crate::error::expired_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -773,7 +773,7 @@ pub fn deser_structure_expired_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_token_exception::Builder,
 ) -> Result<crate::error::invalid_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -812,7 +812,7 @@ pub fn deser_structure_invalid_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_resolve_customer(
+pub fn deser_operation_crate_operation_resolve_customer(
     input: &[u8],
     mut builder: crate::output::resolve_customer_output::Builder,
 ) -> Result<crate::output::resolve_customer_output::Builder, smithy_json::deserialize::Error> {
@@ -867,7 +867,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_usage_record_result_list<'a, I>(
+pub fn deser_list_com_amazonaws_marketplacemetering_usage_record_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::UsageRecordResult>>, smithy_json::deserialize::Error>
 where
@@ -886,7 +886,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_usage_record_result(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_usage_record_result(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -902,7 +905,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_usage_record_list<'a, I>(
+pub fn deser_list_com_amazonaws_marketplacemetering_usage_record_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::UsageRecord>>, smithy_json::deserialize::Error>
 where
@@ -921,7 +924,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_usage_record(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_usage_record(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -936,7 +940,7 @@ where
     }
 }
 
-pub fn deser_structure_usage_record_result<'a, I>(
+pub fn deser_structure_crate_model_usage_record_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UsageRecordResult>, smithy_json::deserialize::Error>
 where
@@ -956,7 +960,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "UsageRecord" => {
                                 builder = builder.set_usage_record(
-                                    crate::json_deser::deser_structure_usage_record(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_usage_record(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "MeteringRecordId" => {
@@ -999,7 +1005,7 @@ where
     }
 }
 
-pub fn deser_structure_usage_record<'a, I>(
+pub fn deser_structure_crate_model_usage_record<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UsageRecord>, smithy_json::deserialize::Error>
 where
@@ -1053,7 +1059,7 @@ where
                             }
                             "UsageAllocations" => {
                                 builder = builder.set_usage_allocations(
-                                    crate::json_deser::deser_list_usage_allocations(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_marketplacemetering_usage_allocations(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1075,7 +1081,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_usage_allocations<'a, I>(
+pub fn deser_list_com_amazonaws_marketplacemetering_usage_allocations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::UsageAllocation>>, smithy_json::deserialize::Error>
 where
@@ -1094,7 +1100,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_usage_allocation(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_usage_allocation(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1109,7 +1118,7 @@ where
     }
 }
 
-pub fn deser_structure_usage_allocation<'a, I>(
+pub fn deser_structure_crate_model_usage_allocation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UsageAllocation>, smithy_json::deserialize::Error>
 where
@@ -1136,8 +1145,9 @@ where
                                 );
                             }
                             "Tags" => {
-                                builder = builder
-                                    .set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_list_com_amazonaws_marketplacemetering_tag_list(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -1158,7 +1168,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_marketplacemetering_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -1177,7 +1187,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1192,7 +1202,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where

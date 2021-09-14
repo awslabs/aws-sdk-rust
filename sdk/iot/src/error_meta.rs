@@ -776,6 +776,54 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateFleetMetricError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateFleetMetricError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateFleetMetricErrorKind::IndexNotReadyException(inner) => {
+                    Error::IndexNotReadyException(inner)
+                }
+                crate::error::CreateFleetMetricErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::CreateFleetMetricErrorKind::InvalidAggregationException(inner) => {
+                    Error::InvalidAggregationException(inner)
+                }
+                crate::error::CreateFleetMetricErrorKind::InvalidQueryException(inner) => {
+                    Error::InvalidQueryException(inner)
+                }
+                crate::error::CreateFleetMetricErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::CreateFleetMetricErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateFleetMetricErrorKind::ResourceAlreadyExistsException(inner) => {
+                    Error::ResourceAlreadyExistsException(inner)
+                }
+                crate::error::CreateFleetMetricErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateFleetMetricErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::CreateFleetMetricErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::CreateFleetMetricErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::CreateFleetMetricErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::CreateJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1659,6 +1707,39 @@ where
                     Error::VersionConflictException(inner)
                 }
                 crate::error::DeleteDynamicThingGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteFleetMetricError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteFleetMetricError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteFleetMetricErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::DeleteFleetMetricErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DeleteFleetMetricErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::DeleteFleetMetricErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteFleetMetricErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::DeleteFleetMetricErrorKind::VersionConflictException(inner) => {
+                    Error::VersionConflictException(inner)
+                }
+                crate::error::DeleteFleetMetricErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -2749,6 +2830,39 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeFleetMetricError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeFleetMetricError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeFleetMetricErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::DescribeFleetMetricErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DescribeFleetMetricErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeFleetMetricErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::DescribeFleetMetricErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeFleetMetricErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::DescribeFleetMetricErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::DescribeIndexError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3399,6 +3513,50 @@ where
                 crate::error::GetBehaviorModelTrainingSummariesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetBehaviorModelTrainingSummariesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::GetBucketsAggregationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetBucketsAggregationError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetBucketsAggregationErrorKind::IndexNotReadyException(inner) => {
+                    Error::IndexNotReadyException(inner)
+                }
+                crate::error::GetBucketsAggregationErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::GetBucketsAggregationErrorKind::InvalidAggregationException(
+                    inner,
+                ) => Error::InvalidAggregationException(inner),
+                crate::error::GetBucketsAggregationErrorKind::InvalidQueryException(inner) => {
+                    Error::InvalidQueryException(inner)
+                }
+                crate::error::GetBucketsAggregationErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::GetBucketsAggregationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetBucketsAggregationErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::GetBucketsAggregationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetBucketsAggregationErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::GetBucketsAggregationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -4288,6 +4446,36 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::ListDomainConfigurationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListFleetMetricsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListFleetMetricsError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListFleetMetricsErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::ListFleetMetricsErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListFleetMetricsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::ListFleetMetricsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListFleetMetricsErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::ListFleetMetricsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -6363,6 +6551,51 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateEventConfigurationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateFleetMetricError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateFleetMetricError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateFleetMetricErrorKind::IndexNotReadyException(inner) => {
+                    Error::IndexNotReadyException(inner)
+                }
+                crate::error::UpdateFleetMetricErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::UpdateFleetMetricErrorKind::InvalidAggregationException(inner) => {
+                    Error::InvalidAggregationException(inner)
+                }
+                crate::error::UpdateFleetMetricErrorKind::InvalidQueryException(inner) => {
+                    Error::InvalidQueryException(inner)
+                }
+                crate::error::UpdateFleetMetricErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::UpdateFleetMetricErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UpdateFleetMetricErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::UpdateFleetMetricErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::UpdateFleetMetricErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::UpdateFleetMetricErrorKind::VersionConflictException(inner) => {
+                    Error::VersionConflictException(inner)
+                }
+                crate::error::UpdateFleetMetricErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

@@ -7681,7 +7681,7 @@ pub mod fluent_builders {
         /// Appends an item to `UserGroupIdsToAdd`.
         ///
         /// To override the contents of this collection use [`set_user_group_ids_to_add`](Self::set_user_group_ids_to_add).
-        /// <p>The user group you are associating with the replication group.</p>
+        /// <p>The ID of the user group you are associating with the replication group.</p>
         pub fn user_group_ids_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_group_ids_to_add(inp);
             self
@@ -7696,7 +7696,7 @@ pub mod fluent_builders {
         /// Appends an item to `UserGroupIdsToRemove`.
         ///
         /// To override the contents of this collection use [`set_user_group_ids_to_remove`](Self::set_user_group_ids_to_remove).
-        /// <p>The user group to remove, meaning the users in the group no longer can access the replication group.</p>
+        /// <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
         pub fn user_group_ids_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_group_ids_to_remove(inp);
             self
@@ -7708,7 +7708,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_group_ids_to_remove(input);
             self
         }
-        /// <p>Removes the user groups that can access this replication group.</p>
+        /// <p>Removes the user group associated with this replication group.</p>
         pub fn remove_user_groups(mut self, inp: bool) -> Self {
             self.inner = self.inner.remove_user_groups(inp);
             self

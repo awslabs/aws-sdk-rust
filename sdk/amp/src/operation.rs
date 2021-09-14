@@ -83,6 +83,34 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorkspace {
     }
 }
 
+/// Lists the tags you have assigned to the resource.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListTagsForResource {
+    _private: (),
+}
+impl ListTagsForResource {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
+        } else {
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
 /// Lists all AMP workspaces, including workspaces being created or deleted.
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListWorkspaces {
@@ -105,6 +133,58 @@ impl smithy_http::response::ParseStrictResponse for ListWorkspaces {
             crate::operation_deser::parse_list_workspaces_error(response)
         } else {
             crate::operation_deser::parse_list_workspaces_response(response)
+        }
+    }
+}
+
+/// Creates tags for the specified resource.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct TagResource {
+    _private: (),
+}
+impl TagResource {
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for TagResource {
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_tag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_tag_resource_response(response)
+        }
+    }
+}
+
+/// Deletes tags from the specified resource.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UntagResource {
+    _private: (),
+}
+impl UntagResource {
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UntagResource {
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_untag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }

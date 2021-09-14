@@ -70,7 +70,10 @@ impl AddFlowMediaStreamsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_add_flow_media_streams(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_add_flow_media_streams(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -153,8 +156,11 @@ impl AddFlowMediaStreamsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -162,7 +168,11 @@ impl AddFlowMediaStreamsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -238,9 +248,11 @@ impl AddFlowOutputsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_add_flow_outputs(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_add_flow_outputs(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -316,8 +328,11 @@ impl AddFlowOutputsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -325,7 +340,11 @@ impl AddFlowOutputsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -401,9 +420,11 @@ impl AddFlowSourcesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_add_flow_sources(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_add_flow_sources(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -479,8 +500,11 @@ impl AddFlowSourcesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -488,7 +512,11 @@ impl AddFlowSourcesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -568,7 +596,10 @@ impl AddFlowVpcInterfacesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_add_flow_vpc_interfaces(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_add_flow_vpc_interfaces(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -651,8 +682,11 @@ impl AddFlowVpcInterfacesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -660,7 +694,11 @@ impl AddFlowVpcInterfacesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -848,8 +886,8 @@ impl CreateFlowInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_create_flow(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_create_flow(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -912,8 +950,11 @@ impl CreateFlowInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -921,7 +962,11 @@ impl CreateFlowInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1056,8 +1101,11 @@ impl DeleteFlowInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1065,7 +1113,11 @@ impl DeleteFlowInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1200,8 +1252,11 @@ impl DescribeFlowInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1209,7 +1264,11 @@ impl DescribeFlowInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1350,8 +1409,11 @@ impl DescribeOfferingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1359,7 +1421,11 @@ impl DescribeOfferingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1503,8 +1569,11 @@ impl DescribeReservationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1512,7 +1581,11 @@ impl DescribeReservationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1592,7 +1665,10 @@ impl GrantFlowEntitlementsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_grant_flow_entitlements(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_grant_flow_entitlements(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1675,8 +1751,11 @@ impl GrantFlowEntitlementsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1684,7 +1763,11 @@ impl GrantFlowEntitlementsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1830,8 +1913,11 @@ impl ListEntitlementsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1839,7 +1925,11 @@ impl ListEntitlementsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1981,8 +2071,11 @@ impl ListFlowsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1990,7 +2083,11 @@ impl ListFlowsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2134,8 +2231,11 @@ impl ListOfferingsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2143,7 +2243,11 @@ impl ListOfferingsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2289,8 +2393,11 @@ impl ListReservationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2298,7 +2405,11 @@ impl ListReservationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2436,8 +2547,11 @@ impl ListTagsForResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2445,7 +2559,11 @@ impl ListTagsForResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2531,9 +2649,11 @@ impl PurchaseOfferingInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_purchase_offering(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_purchase_offering(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2614,8 +2734,11 @@ impl PurchaseOfferingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2623,7 +2746,11 @@ impl PurchaseOfferingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2795,8 +2922,11 @@ impl RemoveFlowMediaStreamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2804,7 +2934,11 @@ impl RemoveFlowMediaStreamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2973,8 +3107,11 @@ impl RemoveFlowOutputInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2982,7 +3119,11 @@ impl RemoveFlowOutputInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3151,8 +3292,11 @@ impl RemoveFlowSourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3160,7 +3304,11 @@ impl RemoveFlowSourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3332,8 +3480,11 @@ impl RemoveFlowVpcInterfaceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3341,7 +3492,11 @@ impl RemoveFlowVpcInterfaceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3513,8 +3668,11 @@ impl RevokeFlowEntitlementInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3522,7 +3680,11 @@ impl RevokeFlowEntitlementInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3656,8 +3818,11 @@ impl StartFlowInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3665,7 +3830,11 @@ impl StartFlowInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3799,8 +3968,11 @@ impl StopFlowInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3808,7 +3980,11 @@ impl StopFlowInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3891,9 +4067,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3970,8 +4147,11 @@ impl TagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3979,7 +4159,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4139,8 +4323,11 @@ impl UntagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4148,7 +4335,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4221,8 +4412,8 @@ impl UpdateFlowInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_update_flow(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_update_flow(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -4301,8 +4492,11 @@ impl UpdateFlowInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4310,7 +4504,11 @@ impl UpdateFlowInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4439,7 +4637,10 @@ impl UpdateFlowEntitlementInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_flow_entitlement(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_flow_entitlement(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4539,8 +4740,11 @@ impl UpdateFlowEntitlementInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4548,7 +4752,11 @@ impl UpdateFlowEntitlementInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4684,7 +4892,10 @@ impl UpdateFlowMediaStreamInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_flow_media_stream(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_flow_media_stream(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4784,8 +4995,11 @@ impl UpdateFlowMediaStreamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4793,13 +5007,373 @@ impl UpdateFlowMediaStreamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateFlowMediaStreamInput`](crate::input::UpdateFlowMediaStreamInput)
     pub fn builder() -> crate::input::update_flow_media_stream_input::Builder {
         crate::input::update_flow_media_stream_input::Builder::default()
+    }
+}
+
+/// See [`UpdateFlowOutputInput`](crate::input::UpdateFlowOutputInput)
+pub mod update_flow_output_input {
+    /// A builder for [`UpdateFlowOutputInput`](crate::input::UpdateFlowOutputInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) destination: std::option::Option<std::string::String>,
+        pub(crate) encryption: std::option::Option<crate::model::UpdateEncryption>,
+        pub(crate) flow_arn: std::option::Option<std::string::String>,
+        pub(crate) max_latency: std::option::Option<i32>,
+        pub(crate) media_stream_output_configurations:
+            std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
+        pub(crate) min_latency: std::option::Option<i32>,
+        pub(crate) output_arn: std::option::Option<std::string::String>,
+        pub(crate) port: std::option::Option<i32>,
+        pub(crate) protocol: std::option::Option<crate::model::Protocol>,
+        pub(crate) remote_id: std::option::Option<std::string::String>,
+        pub(crate) smoothing_latency: std::option::Option<i32>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_interface_attachment:
+            std::option::Option<crate::model::VpcInterfaceAttachment>,
+    }
+    impl Builder {
+        pub fn cidr_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.cidr_allow_list.unwrap_or_default();
+            v.push(input.into());
+            self.cidr_allow_list = Some(v);
+            self
+        }
+        pub fn set_cidr_allow_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.cidr_allow_list = input;
+            self
+        }
+        /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// The IP address where you want to send the output.
+        pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination = Some(input.into());
+            self
+        }
+        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination = input;
+            self
+        }
+        /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+        pub fn encryption(mut self, input: crate::model::UpdateEncryption) -> Self {
+            self.encryption = Some(input);
+            self
+        }
+        pub fn set_encryption(
+            mut self,
+            input: std::option::Option<crate::model::UpdateEncryption>,
+        ) -> Self {
+            self.encryption = input;
+            self
+        }
+        /// The flow that is associated with the output that you want to update.
+        pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.flow_arn = Some(input.into());
+            self
+        }
+        pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.flow_arn = input;
+            self
+        }
+        /// The maximum latency in milliseconds for Zixi-based streams.
+        pub fn max_latency(mut self, input: i32) -> Self {
+            self.max_latency = Some(input);
+            self
+        }
+        pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_latency = input;
+            self
+        }
+        pub fn media_stream_output_configurations(
+            mut self,
+            input: impl Into<crate::model::MediaStreamOutputConfigurationRequest>,
+        ) -> Self {
+            let mut v = self.media_stream_output_configurations.unwrap_or_default();
+            v.push(input.into());
+            self.media_stream_output_configurations = Some(v);
+            self
+        }
+        pub fn set_media_stream_output_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>,
+            >,
+        ) -> Self {
+            self.media_stream_output_configurations = input;
+            self
+        }
+        /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+        pub fn min_latency(mut self, input: i32) -> Self {
+            self.min_latency = Some(input);
+            self
+        }
+        pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_latency = input;
+            self
+        }
+        /// The ARN of the output that you want to update.
+        pub fn output_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_arn = Some(input.into());
+            self
+        }
+        pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_arn = input;
+            self
+        }
+        /// The port to use when content is distributed to this output.
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
+        /// The protocol to use for the output.
+        pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
+            self.protocol = Some(input);
+            self
+        }
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
+            self.protocol = input;
+            self
+        }
+        /// The remote ID for the Zixi-pull stream.
+        pub fn remote_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.remote_id = Some(input.into());
+            self
+        }
+        pub fn set_remote_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.remote_id = input;
+            self
+        }
+        /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+        pub fn smoothing_latency(mut self, input: i32) -> Self {
+            self.smoothing_latency = Some(input);
+            self
+        }
+        pub fn set_smoothing_latency(mut self, input: std::option::Option<i32>) -> Self {
+            self.smoothing_latency = input;
+            self
+        }
+        /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
+            self
+        }
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
+            self
+        }
+        /// The name of the VPC interface attachment to use for this output.
+        pub fn vpc_interface_attachment(
+            mut self,
+            input: crate::model::VpcInterfaceAttachment,
+        ) -> Self {
+            self.vpc_interface_attachment = Some(input);
+            self
+        }
+        pub fn set_vpc_interface_attachment(
+            mut self,
+            input: std::option::Option<crate::model::VpcInterfaceAttachment>,
+        ) -> Self {
+            self.vpc_interface_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFlowOutputInput`](crate::input::UpdateFlowOutputInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateFlowOutputInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateFlowOutputInput {
+                cidr_allow_list: self.cidr_allow_list,
+                description: self.description,
+                destination: self.destination,
+                encryption: self.encryption,
+                flow_arn: self.flow_arn,
+                max_latency: self.max_latency.unwrap_or_default(),
+                media_stream_output_configurations: self.media_stream_output_configurations,
+                min_latency: self.min_latency.unwrap_or_default(),
+                output_arn: self.output_arn,
+                port: self.port.unwrap_or_default(),
+                protocol: self.protocol,
+                remote_id: self.remote_id,
+                smoothing_latency: self.smoothing_latency.unwrap_or_default(),
+                stream_id: self.stream_id,
+                vpc_interface_attachment: self.vpc_interface_attachment,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateFlowOutputInputOperationOutputAlias = crate::operation::UpdateFlowOutput;
+#[doc(hidden)]
+pub type UpdateFlowOutputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateFlowOutputInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateFlowOutput`](crate::operation::UpdateFlowOutput)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateFlowOutput,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_flow_output(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateFlowOutput::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateFlowOutput",
+                "mediaconnect",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_37 = &self.flow_arn;
+        let input_37 =
+            input_37
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "flow_arn",
+                    details: "cannot be empty or unset",
+                })?;
+        let flow_arn = smithy_http::label::fmt_string(input_37, false);
+        if flow_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "flow_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_38 = &self.output_arn;
+        let input_38 =
+            input_38
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "output_arn",
+                    details: "cannot be empty or unset",
+                })?;
+        let output_arn = smithy_http::label::fmt_string(input_38, false);
+        if output_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "output_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/v1/flows/{FlowArn}/outputs/{OutputArn}",
+            FlowArn = flow_arn,
+            OutputArn = output_arn
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("PUT").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateFlowOutputInput`](crate::input::UpdateFlowOutputInput)
+    pub fn builder() -> crate::input::update_flow_output_input::Builder {
+        crate::input::update_flow_output_input::Builder::default()
     }
 }
 
@@ -5030,10 +5604,11 @@ impl UpdateFlowSourceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_flow_source(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_flow_source(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5077,30 +5652,30 @@ impl UpdateFlowSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_37 = &self.flow_arn;
-        let input_37 =
-            input_37
+        let input_39 = &self.flow_arn;
+        let input_39 =
+            input_39
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let flow_arn = smithy_http::label::fmt_string(input_37, false);
+        let flow_arn = smithy_http::label::fmt_string(input_39, false);
         if flow_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "flow_arn",
                 details: "cannot be empty or unset",
             });
         }
-        let input_38 = &self.source_arn;
-        let input_38 =
-            input_38
+        let input_40 = &self.source_arn;
+        let input_40 =
+            input_40
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "source_arn",
                     details: "cannot be empty or unset",
                 })?;
-        let source_arn = smithy_http::label::fmt_string(input_38, false);
+        let source_arn = smithy_http::label::fmt_string(input_40, false);
         if source_arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "source_arn",
@@ -5130,8 +5705,11 @@ impl UpdateFlowSourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5139,7 +5717,11 @@ impl UpdateFlowSourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5206,6 +5788,67 @@ impl std::fmt::Debug for UpdateFlowSourceInput {
         formatter.field("stream_id", &self.stream_id);
         formatter.field("vpc_interface_name", &self.vpc_interface_name);
         formatter.field("whitelist_cidr", &self.whitelist_cidr);
+        formatter.finish()
+    }
+}
+
+/// The fields that you want to update in the output.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFlowOutputInput {
+    /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+    pub description: std::option::Option<std::string::String>,
+    /// The IP address where you want to send the output.
+    pub destination: std::option::Option<std::string::String>,
+    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    pub encryption: std::option::Option<crate::model::UpdateEncryption>,
+    /// The flow that is associated with the output that you want to update.
+    pub flow_arn: std::option::Option<std::string::String>,
+    /// The maximum latency in milliseconds for Zixi-based streams.
+    pub max_latency: i32,
+    /// The media streams that are associated with the output, and the parameters for those associations.
+    pub media_stream_output_configurations:
+        std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
+    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    pub min_latency: i32,
+    /// The ARN of the output that you want to update.
+    pub output_arn: std::option::Option<std::string::String>,
+    /// The port to use when content is distributed to this output.
+    pub port: i32,
+    /// The protocol to use for the output.
+    pub protocol: std::option::Option<crate::model::Protocol>,
+    /// The remote ID for the Zixi-pull stream.
+    pub remote_id: std::option::Option<std::string::String>,
+    /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    pub smoothing_latency: i32,
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    pub stream_id: std::option::Option<std::string::String>,
+    /// The name of the VPC interface attachment to use for this output.
+    pub vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
+}
+impl std::fmt::Debug for UpdateFlowOutputInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFlowOutputInput");
+        formatter.field("cidr_allow_list", &self.cidr_allow_list);
+        formatter.field("description", &self.description);
+        formatter.field("destination", &self.destination);
+        formatter.field("encryption", &self.encryption);
+        formatter.field("flow_arn", &self.flow_arn);
+        formatter.field("max_latency", &self.max_latency);
+        formatter.field(
+            "media_stream_output_configurations",
+            &self.media_stream_output_configurations,
+        );
+        formatter.field("min_latency", &self.min_latency);
+        formatter.field("output_arn", &self.output_arn);
+        formatter.field("port", &self.port);
+        formatter.field("protocol", &self.protocol);
+        formatter.field("remote_id", &self.remote_id);
+        formatter.field("smoothing_latency", &self.smoothing_latency);
+        formatter.field("stream_id", &self.stream_id);
+        formatter.field("vpc_interface_attachment", &self.vpc_interface_attachment);
         formatter.finish()
     }
 }

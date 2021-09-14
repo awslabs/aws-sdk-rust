@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_invalid_request_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_invalid_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_requests_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_requests_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_requests_exception::Builder,
 ) -> Result<crate::error::too_many_requests_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_too_many_requests_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unauthorized_exceptionjson_err(
+pub fn deser_structure_crate_error_unauthorized_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unauthorized_exception::Builder,
 ) -> Result<crate::error::unauthorized_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_unauthorized_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_role_credentials(
+pub fn deser_operation_crate_operation_get_role_credentials(
     input: &[u8],
     mut builder: crate::output::get_role_credentials_output::Builder,
 ) -> Result<crate::output::get_role_credentials_output::Builder, smithy_json::deserialize::Error> {
@@ -177,7 +177,9 @@ pub fn deser_operation_get_role_credentials(
                 match key.to_unescaped()?.as_ref() {
                     "roleCredentials" => {
                         builder = builder.set_role_credentials(
-                            crate::json_deser::deser_structure_role_credentials(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_role_credentials(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -198,7 +200,7 @@ pub fn deser_operation_get_role_credentials(
     Ok(builder)
 }
 
-pub fn deser_operation_list_account_roles(
+pub fn deser_operation_crate_operation_list_account_roles(
     input: &[u8],
     mut builder: crate::output::list_account_roles_output::Builder,
 ) -> Result<crate::output::list_account_roles_output::Builder, smithy_json::deserialize::Error> {
@@ -220,8 +222,9 @@ pub fn deser_operation_list_account_roles(
                         );
                     }
                     "roleList" => {
-                        builder = builder
-                            .set_role_list(crate::json_deser::deser_list_role_list_type(tokens)?);
+                        builder = builder.set_role_list(
+                            crate::json_deser::deser_list_com_amazonaws_sso_role_list_type(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -241,7 +244,7 @@ pub fn deser_operation_list_account_roles(
     Ok(builder)
 }
 
-pub fn deser_operation_list_accounts(
+pub fn deser_operation_crate_operation_list_accounts(
     input: &[u8],
     mut builder: crate::output::list_accounts_output::Builder,
 ) -> Result<crate::output::list_accounts_output::Builder, smithy_json::deserialize::Error> {
@@ -257,7 +260,9 @@ pub fn deser_operation_list_accounts(
                 match key.to_unescaped()?.as_ref() {
                     "accountList" => {
                         builder = builder.set_account_list(
-                            crate::json_deser::deser_list_account_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_sso_account_list_type(
+                                tokens,
+                            )?,
                         );
                     }
                     "nextToken" => {
@@ -293,7 +298,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_role_credentials<'a, I>(
+pub fn deser_structure_crate_model_role_credentials<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RoleCredentials>, smithy_json::deserialize::Error>
 where
@@ -365,7 +370,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_role_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_sso_role_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::RoleInfo>>, smithy_json::deserialize::Error>
 where
@@ -384,7 +389,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_role_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_role_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -400,7 +406,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_account_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_sso_account_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AccountInfo>>, smithy_json::deserialize::Error>
 where
@@ -419,7 +425,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_account_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_account_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -434,7 +441,7 @@ where
     }
 }
 
-pub fn deser_structure_role_info<'a, I>(
+pub fn deser_structure_crate_model_role_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RoleInfo>, smithy_json::deserialize::Error>
 where
@@ -488,7 +495,7 @@ where
     }
 }
 
-pub fn deser_structure_account_info<'a, I>(
+pub fn deser_structure_crate_model_account_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccountInfo>, smithy_json::deserialize::Error>
 where

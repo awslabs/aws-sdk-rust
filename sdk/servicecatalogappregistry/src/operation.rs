@@ -254,6 +254,34 @@ impl smithy_http::response::ParseStrictResponse for GetApplication {
     }
 }
 
+/// <p>Gets the resource associated with the application.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetAssociatedResource {
+    _private: (),
+}
+impl GetAssociatedResource {
+    /// Creates a new builder-style object to manufacture [`GetAssociatedResourceInput`](crate::input::GetAssociatedResourceInput)
+    pub fn builder() -> crate::input::get_associated_resource_input::Builder {
+        crate::input::get_associated_resource_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetAssociatedResource {
+    type Output = std::result::Result<
+        crate::output::GetAssociatedResourceOutput,
+        crate::error::GetAssociatedResourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_associated_resource_error(response)
+        } else {
+            crate::operation_deser::parse_get_associated_resource_response(response)
+        }
+    }
+}
+
 /// <p>Retrieves an attribute group, either by its name or its ID. The attribute group can be specified either by its unique ID or by its name.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetAttributeGroup {
@@ -422,7 +450,8 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
-/// <p>Syncs the resource with what is currently recorded in App registry. Specifically, the resource’s App registry system tags are synced with its associated application. The resource is removed if it is not associated with the application. The caller must have permissions to read and update the resource.</p>
+/// <p>Syncs the resource with current AppRegistry records.</p>
+/// <p>Specifically, the resource’s AppRegistry system tags sync with its associated application. We remove the resource's AppRegistry system tags if it does not associate with the application. The caller must have permissions to read and update the resource.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SyncResource {
     _private: (),

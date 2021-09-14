@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -58,7 +58,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_authorization_pending_exceptionjson_err(
+pub fn deser_structure_crate_error_authorization_pending_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::authorization_pending_exception::Builder,
 ) -> Result<crate::error::authorization_pending_exception::Builder, smithy_json::deserialize::Error>
@@ -112,7 +112,7 @@ pub fn deser_structure_authorization_pending_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_expired_token_exceptionjson_err(
+pub fn deser_structure_crate_error_expired_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::expired_token_exception::Builder,
 ) -> Result<crate::error::expired_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -165,7 +165,7 @@ pub fn deser_structure_expired_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -218,7 +218,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_client_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_client_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_client_exception::Builder,
 ) -> Result<crate::error::invalid_client_exception::Builder, smithy_json::deserialize::Error> {
@@ -271,7 +271,7 @@ pub fn deser_structure_invalid_client_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_grant_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_grant_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_grant_exception::Builder,
 ) -> Result<crate::error::invalid_grant_exception::Builder, smithy_json::deserialize::Error> {
@@ -324,7 +324,7 @@ pub fn deser_structure_invalid_grant_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_request_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -377,7 +377,7 @@ pub fn deser_structure_invalid_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_scope_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_scope_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_scope_exception::Builder,
 ) -> Result<crate::error::invalid_scope_exception::Builder, smithy_json::deserialize::Error> {
@@ -430,7 +430,7 @@ pub fn deser_structure_invalid_scope_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_slow_down_exceptionjson_err(
+pub fn deser_structure_crate_error_slow_down_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::slow_down_exception::Builder,
 ) -> Result<crate::error::slow_down_exception::Builder, smithy_json::deserialize::Error> {
@@ -483,7 +483,7 @@ pub fn deser_structure_slow_down_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unauthorized_client_exceptionjson_err(
+pub fn deser_structure_crate_error_unauthorized_client_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unauthorized_client_exception::Builder,
 ) -> Result<crate::error::unauthorized_client_exception::Builder, smithy_json::deserialize::Error> {
@@ -536,7 +536,7 @@ pub fn deser_structure_unauthorized_client_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_grant_type_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_grant_type_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_grant_type_exception::Builder,
 ) -> Result<crate::error::unsupported_grant_type_exception::Builder, smithy_json::deserialize::Error>
@@ -590,7 +590,7 @@ pub fn deser_structure_unsupported_grant_type_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_token(
+pub fn deser_operation_crate_operation_create_token(
     input: &[u8],
     mut builder: crate::output::create_token_output::Builder,
 ) -> Result<crate::output::create_token_output::Builder, smithy_json::deserialize::Error> {
@@ -656,7 +656,7 @@ pub fn deser_operation_create_token(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_client_metadata_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_client_metadata_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_client_metadata_exception::Builder,
 ) -> Result<crate::error::invalid_client_metadata_exception::Builder, smithy_json::deserialize::Error>
@@ -710,7 +710,7 @@ pub fn deser_structure_invalid_client_metadata_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_register_client(
+pub fn deser_operation_crate_operation_register_client(
     input: &[u8],
     mut builder: crate::output::register_client_output::Builder,
 ) -> Result<crate::output::register_client_output::Builder, smithy_json::deserialize::Error> {
@@ -782,7 +782,7 @@ pub fn deser_operation_register_client(
     Ok(builder)
 }
 
-pub fn deser_operation_start_device_authorization(
+pub fn deser_operation_crate_operation_start_device_authorization(
     input: &[u8],
     mut builder: crate::output::start_device_authorization_output::Builder,
 ) -> Result<

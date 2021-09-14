@@ -247,12 +247,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_code(input);
             self
         }
-        /// <p>An
-        /// optional field that Incident Manager uses to <code>ENFORCE</code>
-        /// <code>AcceptCode</code> validation when acknowledging an page.
-        /// Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the
-        /// console. Enforcing AcceptCode validation causes Incident Manager to verify that the code
-        /// entered by the user matches the code sent by Incident Manager with the page.</p>
+        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
+        /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
+        /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
+        /// validation causes Incident Manager to verify that the code entered by the user matches the
+        /// code sent by Incident Manager with the page.</p>
         /// <p>Incident Manager can also <code>IGNORE</code>
         /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
         /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
@@ -436,7 +435,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(inp);
             self
@@ -572,7 +572,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_defer_activation(input);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(inp);
             self
@@ -1778,7 +1779,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_id(input);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(inp);
             self
@@ -2124,7 +2126,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_channel_id(input);
             self
         }
-        /// <p>The name of the contact channel</p>
+        /// <p>The name of the contact channel.</p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
             self

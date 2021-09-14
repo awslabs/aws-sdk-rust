@@ -37,13 +37,15 @@ impl smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEventSt
                 "Stats" => {
                     let mut builder = crate::model::StatsEvent::builder();
                     builder = builder.details(
-                        crate::xml_deser::deser_member_stats_event_details(&message.payload()[..])
-                            .map_err(|err| {
-                                smithy_eventstream::error::Error::Unmarshalling(format!(
-                                    "failed to unmarshall Details: {}",
-                                    err
-                                ))
-                            })?,
+                        crate::xml_deser::deser_member_com_amazonaws_s3_stats_event_details(
+                            &message.payload()[..],
+                        )
+                        .map_err(|err| {
+                            smithy_eventstream::error::Error::Unmarshalling(format!(
+                                "failed to unmarshall Details: {}",
+                                err
+                            ))
+                        })?,
                     );
                     Ok(smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::model::SelectObjectContentEventStream::Stats(builder.build()),
@@ -52,7 +54,7 @@ impl smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEventSt
                 "Progress" => {
                     let mut builder = crate::model::ProgressEvent::builder();
                     builder = builder.details(
-                        crate::xml_deser::deser_member_progress_event_details(
+                        crate::xml_deser::deser_member_com_amazonaws_s3_progress_event_details(
                             &message.payload()[..],
                         )
                         .map_err(|err| {
@@ -68,30 +70,22 @@ impl smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEventSt
                 }
                 "Cont" => {
                     let parsed =
-                        crate::xml_deser::deser_member_select_object_content_event_stream_cont(
-                            &message.payload()[..],
-                        )
-                        .map_err(|err| {
-                            smithy_eventstream::error::Error::Unmarshalling(format!(
-                                "failed to unmarshall Cont: {}",
-                                err
-                            ))
-                        })?;
+                            crate::xml_deser::deser_member_com_amazonaws_s3_select_object_content_event_stream_cont(&message.payload()[..])
+                                            .map_err(|err| {
+                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall Cont: {}", err))
+                                            })?
+                        ;
                     Ok(smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::model::SelectObjectContentEventStream::Cont(parsed),
                     ))
                 }
                 "End" => {
                     let parsed =
-                        crate::xml_deser::deser_member_select_object_content_event_stream_end(
-                            &message.payload()[..],
-                        )
-                        .map_err(|err| {
-                            smithy_eventstream::error::Error::Unmarshalling(format!(
-                                "failed to unmarshall End: {}",
-                                err
-                            ))
-                        })?;
+                            crate::xml_deser::deser_member_com_amazonaws_s3_select_object_content_event_stream_end(&message.payload()[..])
+                                            .map_err(|err| {
+                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall End: {}", err))
+                                            })?
+                        ;
                     Ok(smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::model::SelectObjectContentEventStream::End(parsed),
                     ))

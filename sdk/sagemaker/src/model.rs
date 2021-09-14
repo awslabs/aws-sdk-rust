@@ -1321,6 +1321,8 @@ pub struct ResourceSpec {
     pub sage_maker_image_version_arn: std::option::Option<std::string::String>,
     /// <p>The instance type that the image version runs on.</p>
     pub instance_type: std::option::Option<crate::model::AppInstanceType>,
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the Resource.</p>
+    pub lifecycle_config_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1331,6 +1333,7 @@ impl std::fmt::Debug for ResourceSpec {
             &self.sage_maker_image_version_arn,
         );
         formatter.field("instance_type", &self.instance_type);
+        formatter.field("lifecycle_config_arn", &self.lifecycle_config_arn);
         formatter.finish()
     }
 }
@@ -1343,6 +1346,7 @@ pub mod resource_spec {
         pub(crate) sage_maker_image_arn: std::option::Option<std::string::String>,
         pub(crate) sage_maker_image_version_arn: std::option::Option<std::string::String>,
         pub(crate) instance_type: std::option::Option<crate::model::AppInstanceType>,
+        pub(crate) lifecycle_config_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the SageMaker image that the image version belongs to.</p>
@@ -1384,12 +1388,25 @@ pub mod resource_spec {
             self.instance_type = input;
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the Resource.</p>
+        pub fn lifecycle_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lifecycle_config_arn = Some(input.into());
+            self
+        }
+        pub fn set_lifecycle_config_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lifecycle_config_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResourceSpec`](crate::model::ResourceSpec)
         pub fn build(self) -> crate::model::ResourceSpec {
             crate::model::ResourceSpec {
                 sage_maker_image_arn: self.sage_maker_image_arn,
                 sage_maker_image_version_arn: self.sage_maker_image_version_arn,
                 instance_type: self.instance_type,
+                lifecycle_config_arn: self.lifecycle_config_arn,
             }
         }
     }
@@ -1650,12 +1667,15 @@ pub struct KernelGatewayAppSettings {
     pub default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
     /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
     pub custom_images: std::option::Option<std::vec::Vec<crate::model::CustomImage>>,
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the KernelGatewayApp.</p>
+    pub lifecycle_config_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for KernelGatewayAppSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KernelGatewayAppSettings");
         formatter.field("default_resource_spec", &self.default_resource_spec);
         formatter.field("custom_images", &self.custom_images);
+        formatter.field("lifecycle_config_arns", &self.lifecycle_config_arns);
         formatter.finish()
     }
 }
@@ -1667,6 +1687,7 @@ pub mod kernel_gateway_app_settings {
     pub struct Builder {
         pub(crate) default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
         pub(crate) custom_images: std::option::Option<std::vec::Vec<crate::model::CustomImage>>,
+        pub(crate) lifecycle_config_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p>
@@ -1694,11 +1715,25 @@ pub mod kernel_gateway_app_settings {
             self.custom_images = input;
             self
         }
+        pub fn lifecycle_config_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.lifecycle_config_arns.unwrap_or_default();
+            v.push(input.into());
+            self.lifecycle_config_arns = Some(v);
+            self
+        }
+        pub fn set_lifecycle_config_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.lifecycle_config_arns = input;
+            self
+        }
         /// Consumes the builder and constructs a [`KernelGatewayAppSettings`](crate::model::KernelGatewayAppSettings)
         pub fn build(self) -> crate::model::KernelGatewayAppSettings {
             crate::model::KernelGatewayAppSettings {
                 default_resource_spec: self.default_resource_spec,
                 custom_images: self.custom_images,
+                lifecycle_config_arns: self.lifecycle_config_arns,
             }
         }
     }
@@ -1795,11 +1830,14 @@ impl CustomImage {
 pub struct JupyterServerAppSettings {
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app.</p>
     pub default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.</p>
+    pub lifecycle_config_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for JupyterServerAppSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JupyterServerAppSettings");
         formatter.field("default_resource_spec", &self.default_resource_spec);
+        formatter.field("lifecycle_config_arns", &self.lifecycle_config_arns);
         formatter.finish()
     }
 }
@@ -1810,6 +1848,7 @@ pub mod jupyter_server_app_settings {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
+        pub(crate) lifecycle_config_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app.</p>
@@ -1824,10 +1863,24 @@ pub mod jupyter_server_app_settings {
             self.default_resource_spec = input;
             self
         }
+        pub fn lifecycle_config_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.lifecycle_config_arns.unwrap_or_default();
+            v.push(input.into());
+            self.lifecycle_config_arns = Some(v);
+            self
+        }
+        pub fn set_lifecycle_config_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.lifecycle_config_arns = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JupyterServerAppSettings`](crate::model::JupyterServerAppSettings)
         pub fn build(self) -> crate::model::JupyterServerAppSettings {
             crate::model::JupyterServerAppSettings {
                 default_resource_spec: self.default_resource_spec,
+                lifecycle_config_arns: self.lifecycle_config_arns,
             }
         }
     }
@@ -26127,6 +26180,247 @@ impl SubscribedWorkteam {
     }
 }
 
+/// <p>Details of the Studio Lifecycle Configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StudioLifecycleConfigDetails {
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
+    pub studio_lifecycle_config_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the Studio Lifecycle Configuration.</p>
+    pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
+    /// <p>The creation time of the Studio Lifecycle Configuration.</p>
+    pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
+    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The App type to which the Lifecycle Configuration is attached.</p>
+    pub studio_lifecycle_config_app_type:
+        std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+}
+impl std::fmt::Debug for StudioLifecycleConfigDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StudioLifecycleConfigDetails");
+        formatter.field(
+            "studio_lifecycle_config_arn",
+            &self.studio_lifecycle_config_arn,
+        );
+        formatter.field(
+            "studio_lifecycle_config_name",
+            &self.studio_lifecycle_config_name,
+        );
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field(
+            "studio_lifecycle_config_app_type",
+            &self.studio_lifecycle_config_app_type,
+        );
+        formatter.finish()
+    }
+}
+/// See [`StudioLifecycleConfigDetails`](crate::model::StudioLifecycleConfigDetails)
+pub mod studio_lifecycle_config_details {
+    /// A builder for [`StudioLifecycleConfigDetails`](crate::model::StudioLifecycleConfigDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio_lifecycle_config_arn: std::option::Option<std::string::String>,
+        pub(crate) studio_lifecycle_config_name: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) studio_lifecycle_config_app_type:
+            std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+    }
+    impl Builder {
+        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
+        pub fn studio_lifecycle_config_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_arn = Some(input.into());
+            self
+        }
+        pub fn set_studio_lifecycle_config_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_arn = input;
+            self
+        }
+        /// <p>The name of the Studio Lifecycle Configuration.</p>
+        pub fn studio_lifecycle_config_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_name = Some(input.into());
+            self
+        }
+        pub fn set_studio_lifecycle_config_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.studio_lifecycle_config_name = input;
+            self
+        }
+        /// <p>The creation time of the Studio Lifecycle Configuration.</p>
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
+        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The App type to which the Lifecycle Configuration is attached.</p>
+        pub fn studio_lifecycle_config_app_type(
+            mut self,
+            input: crate::model::StudioLifecycleConfigAppType,
+        ) -> Self {
+            self.studio_lifecycle_config_app_type = Some(input);
+            self
+        }
+        pub fn set_studio_lifecycle_config_app_type(
+            mut self,
+            input: std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+        ) -> Self {
+            self.studio_lifecycle_config_app_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StudioLifecycleConfigDetails`](crate::model::StudioLifecycleConfigDetails)
+        pub fn build(self) -> crate::model::StudioLifecycleConfigDetails {
+            crate::model::StudioLifecycleConfigDetails {
+                studio_lifecycle_config_arn: self.studio_lifecycle_config_arn,
+                studio_lifecycle_config_name: self.studio_lifecycle_config_name,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+                studio_lifecycle_config_app_type: self.studio_lifecycle_config_app_type,
+            }
+        }
+    }
+}
+impl StudioLifecycleConfigDetails {
+    /// Creates a new builder-style object to manufacture [`StudioLifecycleConfigDetails`](crate::model::StudioLifecycleConfigDetails)
+    pub fn builder() -> crate::model::studio_lifecycle_config_details::Builder {
+        crate::model::studio_lifecycle_config_details::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StudioLifecycleConfigAppType {
+    JupyterServer,
+    KernelGateway,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for StudioLifecycleConfigAppType {
+    fn from(s: &str) -> Self {
+        match s {
+            "JupyterServer" => StudioLifecycleConfigAppType::JupyterServer,
+            "KernelGateway" => StudioLifecycleConfigAppType::KernelGateway,
+            other => StudioLifecycleConfigAppType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for StudioLifecycleConfigAppType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StudioLifecycleConfigAppType::from(s))
+    }
+}
+impl StudioLifecycleConfigAppType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            StudioLifecycleConfigAppType::JupyterServer => "JupyterServer",
+            StudioLifecycleConfigAppType::KernelGateway => "KernelGateway",
+            StudioLifecycleConfigAppType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["JupyterServer", "KernelGateway"]
+    }
+}
+impl AsRef<str> for StudioLifecycleConfigAppType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StudioLifecycleConfigSortKey {
+    CreationTime,
+    LastModifiedTime,
+    Name,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for StudioLifecycleConfigSortKey {
+    fn from(s: &str) -> Self {
+        match s {
+            "CreationTime" => StudioLifecycleConfigSortKey::CreationTime,
+            "LastModifiedTime" => StudioLifecycleConfigSortKey::LastModifiedTime,
+            "Name" => StudioLifecycleConfigSortKey::Name,
+            other => StudioLifecycleConfigSortKey::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for StudioLifecycleConfigSortKey {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StudioLifecycleConfigSortKey::from(s))
+    }
+}
+impl StudioLifecycleConfigSortKey {
+    pub fn as_str(&self) -> &str {
+        match self {
+            StudioLifecycleConfigSortKey::CreationTime => "CreationTime",
+            StudioLifecycleConfigSortKey::LastModifiedTime => "LastModifiedTime",
+            StudioLifecycleConfigSortKey::Name => "Name",
+            StudioLifecycleConfigSortKey::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "LastModifiedTime", "Name"]
+    }
+}
+impl AsRef<str> for StudioLifecycleConfigSortKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Information about a project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -34978,6 +35272,7 @@ pub enum TargetDevice {
     AmbaCv25,
     Coreml,
     Deeplens,
+    Imx8Mplus,
     Imx8Qm,
     JacintoTda4Vm,
     JetsonNano,
@@ -35014,6 +35309,7 @@ impl std::convert::From<&str> for TargetDevice {
             "amba_cv25" => TargetDevice::AmbaCv25,
             "coreml" => TargetDevice::Coreml,
             "deeplens" => TargetDevice::Deeplens,
+            "imx8mplus" => TargetDevice::Imx8Mplus,
             "imx8qm" => TargetDevice::Imx8Qm,
             "jacinto_tda4vm" => TargetDevice::JacintoTda4Vm,
             "jetson_nano" => TargetDevice::JetsonNano,
@@ -35058,6 +35354,7 @@ impl TargetDevice {
             TargetDevice::AmbaCv25 => "amba_cv25",
             TargetDevice::Coreml => "coreml",
             TargetDevice::Deeplens => "deeplens",
+            TargetDevice::Imx8Mplus => "imx8mplus",
             TargetDevice::Imx8Qm => "imx8qm",
             TargetDevice::JacintoTda4Vm => "jacinto_tda4vm",
             TargetDevice::JetsonNano => "jetson_nano",
@@ -35093,6 +35390,7 @@ impl TargetDevice {
             "amba_cv25",
             "coreml",
             "deeplens",
+            "imx8mplus",
             "imx8qm",
             "jacinto_tda4vm",
             "jetson_nano",

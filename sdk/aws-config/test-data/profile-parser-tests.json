@@ -659,7 +659,6 @@
         "profiles": {}
       }
     },
-
     {
       "name": "Comment characters adjacent to profile decls",
       "input": {
@@ -687,17 +686,23 @@
         "configFile": "[profilefoo]\nname = value\n[profile bar]"
       },
       "output": {
-        "profiles": { "bar":  {} }
+        "profiles": {
+          "bar": {}
+        }
       }
     },
-
     {
       "name": "profile name with extra whitespace",
       "input": {
         "configFile": "[   profile foo    ]\nname = value\n[profile bar]"
       },
       "output": {
-        "profiles": { "bar":  {}, "foo": {"name":  "value"} }
+        "profiles": {
+          "bar": {},
+          "foo": {
+            "name": "value"
+          }
+        }
       }
     },
     {
@@ -706,7 +711,27 @@
         "credentialsFile": "[   foo    ]\nname = value\n[profile bar]"
       },
       "output": {
-        "profiles": { "foo": {"name":  "value"} }
+        "profiles": {
+          "foo": {
+            "name": "value"
+          }
+        }
+      }
+    },
+    {
+      "name": "properties from an invalid profile name are ignored",
+      "input": {
+        "configFile": "[profile foo]\nname = value\n[profile in valid]\nx = 1\n[profile bar]\nname = value2"
+      },
+      "output": {
+        "profiles": {
+          "bar": {
+            "name": "value2"
+          },
+          "foo": {
+            "name": "value"
+          }
+        }
       }
     }
   ]

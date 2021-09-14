@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_service_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_service_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_exception::Builder,
 ) -> Result<crate::error::internal_service_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_internal_service_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_in_use_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_in_use_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_in_use_exception::Builder,
 ) -> Result<crate::error::resource_in_use_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_resource_in_use_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -239,7 +239,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_cancel_change_set(
+pub fn deser_operation_crate_operation_cancel_change_set(
     input: &[u8],
     mut builder: crate::output::cancel_change_set_output::Builder,
 ) -> Result<crate::output::cancel_change_set_output::Builder, smithy_json::deserialize::Error> {
@@ -285,7 +285,7 @@ pub fn deser_operation_cancel_change_set(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_change_set(
+pub fn deser_operation_crate_operation_describe_change_set(
     input: &[u8],
     mut builder: crate::output::describe_change_set_output::Builder,
 ) -> Result<crate::output::describe_change_set_output::Builder, smithy_json::deserialize::Error> {
@@ -301,7 +301,7 @@ pub fn deser_operation_describe_change_set(
                 match key.to_unescaped()?.as_ref() {
                     "ChangeSet" => {
                         builder = builder.set_change_set(
-                            crate::json_deser::deser_list_change_set_description(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_marketplacecatalog_change_set_description(tokens)?
                         );
                     }
                     "ChangeSetArn" => {
@@ -384,7 +384,7 @@ pub fn deser_operation_describe_change_set(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_supported_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_supported_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_supported_exception::Builder,
 ) -> Result<crate::error::resource_not_supported_exception::Builder, smithy_json::deserialize::Error>
@@ -424,7 +424,7 @@ pub fn deser_structure_resource_not_supported_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_entity(
+pub fn deser_operation_crate_operation_describe_entity(
     input: &[u8],
     mut builder: crate::output::describe_entity_output::Builder,
 ) -> Result<crate::output::describe_entity_output::Builder, smithy_json::deserialize::Error> {
@@ -491,7 +491,7 @@ pub fn deser_operation_describe_entity(
     Ok(builder)
 }
 
-pub fn deser_operation_list_change_sets(
+pub fn deser_operation_crate_operation_list_change_sets(
     input: &[u8],
     mut builder: crate::output::list_change_sets_output::Builder,
 ) -> Result<crate::output::list_change_sets_output::Builder, smithy_json::deserialize::Error> {
@@ -507,7 +507,7 @@ pub fn deser_operation_list_change_sets(
                 match key.to_unescaped()?.as_ref() {
                     "ChangeSetSummaryList" => {
                         builder = builder.set_change_set_summary_list(
-                            crate::json_deser::deser_list_change_set_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_marketplacecatalog_change_set_summary_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -535,7 +535,7 @@ pub fn deser_operation_list_change_sets(
     Ok(builder)
 }
 
-pub fn deser_operation_list_entities(
+pub fn deser_operation_crate_operation_list_entities(
     input: &[u8],
     mut builder: crate::output::list_entities_output::Builder,
 ) -> Result<crate::output::list_entities_output::Builder, smithy_json::deserialize::Error> {
@@ -551,7 +551,7 @@ pub fn deser_operation_list_entities(
                 match key.to_unescaped()?.as_ref() {
                     "EntitySummaryList" => {
                         builder = builder.set_entity_summary_list(
-                            crate::json_deser::deser_list_entity_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_marketplacecatalog_entity_summary_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -579,7 +579,7 @@ pub fn deser_operation_list_entities(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -619,7 +619,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_start_change_set(
+pub fn deser_operation_crate_operation_start_change_set(
     input: &[u8],
     mut builder: crate::output::start_change_set_output::Builder,
 ) -> Result<crate::output::start_change_set_output::Builder, smithy_json::deserialize::Error> {
@@ -674,7 +674,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_change_set_description<'a, I>(
+pub fn deser_list_com_amazonaws_marketplacecatalog_change_set_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ChangeSummary>>, smithy_json::deserialize::Error>
 where
@@ -693,7 +693,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_change_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_change_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -709,7 +710,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_change_set_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_marketplacecatalog_change_set_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ChangeSetSummaryListItem>>,
@@ -732,9 +733,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_change_set_summary_list_item(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_change_set_summary_list_item(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -750,7 +750,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_entity_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_marketplacecatalog_entity_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EntitySummary>>, smithy_json::deserialize::Error>
 where
@@ -769,7 +769,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_entity_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_entity_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -784,7 +785,7 @@ where
     }
 }
 
-pub fn deser_structure_change_summary<'a, I>(
+pub fn deser_structure_crate_model_change_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ChangeSummary>, smithy_json::deserialize::Error>
 where
@@ -812,8 +813,9 @@ where
                                 );
                             }
                             "Entity" => {
-                                builder = builder
-                                    .set_entity(crate::json_deser::deser_structure_entity(tokens)?);
+                                builder = builder.set_entity(
+                                    crate::json_deser::deser_structure_crate_model_entity(tokens)?,
+                                );
                             }
                             "Details" => {
                                 builder = builder.set_details(
@@ -826,7 +828,7 @@ where
                             }
                             "ErrorDetailList" => {
                                 builder = builder.set_error_detail_list(
-                                    crate::json_deser::deser_list_error_detail_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_marketplacecatalog_error_detail_list(tokens)?
                                 );
                             }
                             "ChangeName" => {
@@ -856,7 +858,7 @@ where
     }
 }
 
-pub fn deser_structure_change_set_summary_list_item<'a, I>(
+pub fn deser_structure_crate_model_change_set_summary_list_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ChangeSetSummaryListItem>, smithy_json::deserialize::Error>
 where
@@ -933,7 +935,7 @@ where
                             }
                             "EntityIdList" => {
                                 builder = builder.set_entity_id_list(
-                                    crate::json_deser::deser_list_resource_id_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_marketplacecatalog_resource_id_list(tokens)?
                                 );
                             }
                             "FailureCode" => {
@@ -966,7 +968,7 @@ where
     }
 }
 
-pub fn deser_structure_entity_summary<'a, I>(
+pub fn deser_structure_crate_model_entity_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EntitySummary>, smithy_json::deserialize::Error>
 where
@@ -1056,7 +1058,7 @@ where
     }
 }
 
-pub fn deser_structure_entity<'a, I>(
+pub fn deser_structure_crate_model_entity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Entity>, smithy_json::deserialize::Error>
 where
@@ -1111,7 +1113,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_error_detail_list<'a, I>(
+pub fn deser_list_com_amazonaws_marketplacecatalog_error_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ErrorDetail>>, smithy_json::deserialize::Error>
 where
@@ -1130,7 +1132,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_error_detail(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_error_detail(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1146,7 +1149,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resource_id_list<'a, I>(
+pub fn deser_list_com_amazonaws_marketplacecatalog_resource_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1183,7 +1186,7 @@ where
     }
 }
 
-pub fn deser_structure_error_detail<'a, I>(
+pub fn deser_structure_crate_model_error_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ErrorDetail>, smithy_json::deserialize::Error>
 where

@@ -20,12 +20,7 @@ pub fn parse_delete_lexicon_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::lexicon_not_found_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_lexicon_not_found_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DeleteLexiconError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_lexicon_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteLexiconError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -42,11 +37,7 @@ pub fn parse_delete_lexicon_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteLexiconError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteLexiconError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -84,26 +75,23 @@ pub fn parse_describe_voices_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => {
-            crate::error::DescribeVoicesError {
-                meta: generic,
-                kind: crate::error::DescribeVoicesErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => crate::error::DescribeVoicesError {
+            meta: generic,
+            kind: crate::error::DescribeVoicesErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_next_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVoicesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVoicesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceFailureException" => crate::error::DescribeVoicesError {
             meta: generic,
             kind: crate::error::DescribeVoicesErrorKind::ServiceFailureException({
@@ -112,11 +100,7 @@ pub fn parse_describe_voices_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeVoicesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVoicesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -137,9 +121,11 @@ pub fn parse_describe_voices_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_voices_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_voices(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeVoicesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_voices(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeVoicesError::unhandled)?;
         output.build()
     })
 }
@@ -165,12 +151,7 @@ pub fn parse_get_lexicon_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::lexicon_not_found_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_lexicon_not_found_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::GetLexiconError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_lexicon_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLexiconError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -187,11 +168,7 @@ pub fn parse_get_lexicon_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetLexiconError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLexiconError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -212,8 +189,11 @@ pub fn parse_get_lexicon_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_lexicon_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_lexicon(response.body().as_ref(), output)
-            .map_err(crate::error::GetLexiconError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_get_lexicon(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetLexiconError::unhandled)?;
         output.build()
     })
 }
@@ -246,11 +226,7 @@ pub fn parse_get_speech_synthesis_task_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_task_id_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_task_id_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_task_id_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -267,11 +243,7 @@ pub fn parse_get_speech_synthesis_task_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -289,7 +261,7 @@ pub fn parse_get_speech_synthesis_task_error(
                     let mut output =
                         crate::error::synthesis_task_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_synthesis_task_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_synthesis_task_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -313,7 +285,7 @@ pub fn parse_get_speech_synthesis_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_speech_synthesis_task_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_speech_synthesis_task(
+        output = crate::json_deser::deser_operation_crate_operation_get_speech_synthesis_task(
             response.body().as_ref(),
             output,
         )
@@ -335,26 +307,23 @@ pub fn parse_list_lexicons_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => {
-            crate::error::ListLexiconsError {
-                meta: generic,
-                kind: crate::error::ListLexiconsErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => crate::error::ListLexiconsError {
+            meta: generic,
+            kind: crate::error::ListLexiconsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_next_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLexiconsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLexiconsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceFailureException" => crate::error::ListLexiconsError {
             meta: generic,
             kind: crate::error::ListLexiconsErrorKind::ServiceFailureException({
@@ -363,11 +332,7 @@ pub fn parse_list_lexicons_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListLexiconsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLexiconsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -388,8 +353,11 @@ pub fn parse_list_lexicons_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_lexicons_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_lexicons(response.body().as_ref(), output)
-            .map_err(crate::error::ListLexiconsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_lexicons(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListLexiconsError::unhandled)?;
         output.build()
     })
 }
@@ -414,26 +382,23 @@ pub fn parse_list_speech_synthesis_tasks_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => {
-            crate::error::ListSpeechSynthesisTasksError {
-                meta: generic,
-                kind: crate::error::ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => crate::error::ListSpeechSynthesisTasksError {
+            meta: generic,
+            kind: crate::error::ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_next_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceFailureException" => crate::error::ListSpeechSynthesisTasksError {
             meta: generic,
             kind: crate::error::ListSpeechSynthesisTasksErrorKind::ServiceFailureException({
@@ -442,11 +407,7 @@ pub fn parse_list_speech_synthesis_tasks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -470,7 +431,7 @@ pub fn parse_list_speech_synthesis_tasks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_speech_synthesis_tasks_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_speech_synthesis_tasks(
+        output = crate::json_deser::deser_operation_crate_operation_list_speech_synthesis_tasks(
             response.body().as_ref(),
             output,
         )
@@ -500,11 +461,7 @@ pub fn parse_put_lexicon_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_lexicon_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_lexicon_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutLexiconError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_lexicon_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -513,26 +470,24 @@ pub fn parse_put_lexicon_error(
                 tmp
             }),
         },
-        "LexiconSizeExceededException" => {
-            crate::error::PutLexiconError {
-                meta: generic,
-                kind: crate::error::PutLexiconErrorKind::LexiconSizeExceededException({
+        "LexiconSizeExceededException" => crate::error::PutLexiconError {
+            meta: generic,
+            kind: crate::error::PutLexiconErrorKind::LexiconSizeExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::lexicon_size_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_lexicon_size_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::lexicon_size_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_lexicon_size_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "MaxLexemeLengthExceededException" => crate::error::PutLexiconError {
             meta: generic,
             kind: crate::error::PutLexiconErrorKind::MaxLexemeLengthExceededException({
@@ -542,7 +497,7 @@ pub fn parse_put_lexicon_error(
                     let mut output =
                         crate::error::max_lexeme_length_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_max_lexeme_length_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_max_lexeme_length_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -560,7 +515,7 @@ pub fn parse_put_lexicon_error(
                     let mut output =
                         crate::error::max_lexicons_number_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_max_lexicons_number_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_max_lexicons_number_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -577,11 +532,7 @@ pub fn parse_put_lexicon_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutLexiconError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -599,7 +550,7 @@ pub fn parse_put_lexicon_error(
                     let mut output =
                         crate::error::unsupported_pls_alphabet_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_pls_alphabet_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_pls_alphabet_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -617,7 +568,7 @@ pub fn parse_put_lexicon_error(
                     let mut output =
                         crate::error::unsupported_pls_language_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_pls_language_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_pls_language_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -667,7 +618,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::engine_not_supported_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_engine_not_supported_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_engine_not_supported_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -681,7 +632,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_s3_bucket_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_s3_bucket_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_bucket_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -695,7 +646,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_s3_key_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_s3_key_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_key_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -709,7 +660,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_sample_rate_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_sample_rate_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_sample_rate_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -723,7 +674,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_sns_topic_arn_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_sns_topic_arn_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_sns_topic_arn_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -737,7 +688,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_ssml_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_ssml_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_ssml_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -751,7 +702,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::language_not_supported_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_language_not_supported_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_language_not_supported_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -765,7 +716,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::lexicon_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_lexicon_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_lexicon_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -779,7 +730,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::marks_not_supported_for_format_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_marks_not_supported_for_format_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_marks_not_supported_for_format_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -793,7 +744,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -807,7 +758,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::ssml_marks_not_supported_for_text_type_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_ssml_marks_not_supported_for_text_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_ssml_marks_not_supported_for_text_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -821,7 +772,7 @@ pub fn parse_start_speech_synthesis_task_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::text_length_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_text_length_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_text_length_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 }
             ;
@@ -845,7 +796,7 @@ pub fn parse_start_speech_synthesis_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_speech_synthesis_task_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_start_speech_synthesis_task(
+        output = crate::json_deser::deser_operation_crate_operation_start_speech_synthesis_task(
             response.body().as_ref(),
             output,
         )
@@ -893,46 +844,42 @@ pub fn parse_synthesize_speech_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EngineNotSupportedException" => {
-            crate::error::SynthesizeSpeechError {
-                meta: generic,
-                kind: crate::error::SynthesizeSpeechErrorKind::EngineNotSupportedException({
+        "EngineNotSupportedException" => crate::error::SynthesizeSpeechError {
+            meta: generic,
+            kind: crate::error::SynthesizeSpeechErrorKind::EngineNotSupportedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::engine_not_supported_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_engine_not_supported_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "InvalidSampleRateException" => {
-            crate::error::SynthesizeSpeechError {
-                meta: generic,
-                kind: crate::error::SynthesizeSpeechErrorKind::InvalidSampleRateException({
+                    let mut output =
+                        crate::error::engine_not_supported_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_engine_not_supported_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidSampleRateException" => crate::error::SynthesizeSpeechError {
+            meta: generic,
+            kind: crate::error::SynthesizeSpeechErrorKind::InvalidSampleRateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_sample_rate_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_sample_rate_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_sample_rate_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_sample_rate_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidSsmlException" => crate::error::SynthesizeSpeechError {
             meta: generic,
             kind: crate::error::SynthesizeSpeechErrorKind::InvalidSsmlException({
@@ -941,11 +888,7 @@ pub fn parse_synthesize_speech_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_ssml_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_ssml_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SynthesizeSpeechError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_ssml_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -963,7 +906,7 @@ pub fn parse_synthesize_speech_error(
                     let mut output =
                         crate::error::language_not_supported_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_language_not_supported_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_language_not_supported_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -980,12 +923,7 @@ pub fn parse_synthesize_speech_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::lexicon_not_found_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_lexicon_not_found_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::SynthesizeSpeechError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_lexicon_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1003,7 +941,7 @@ pub fn parse_synthesize_speech_error(
                     let mut output =
                         crate::error::marks_not_supported_for_format_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_marks_not_supported_for_format_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_marks_not_supported_for_format_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1020,11 +958,7 @@ pub fn parse_synthesize_speech_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SynthesizeSpeechError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1042,7 +976,7 @@ pub fn parse_synthesize_speech_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::ssml_marks_not_supported_for_text_type_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_ssml_marks_not_supported_for_text_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_ssml_marks_not_supported_for_text_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1052,26 +986,24 @@ pub fn parse_synthesize_speech_error(
                     },
                 ),
         },
-        "TextLengthExceededException" => {
-            crate::error::SynthesizeSpeechError {
-                meta: generic,
-                kind: crate::error::SynthesizeSpeechErrorKind::TextLengthExceededException({
+        "TextLengthExceededException" => crate::error::SynthesizeSpeechError {
+            meta: generic,
+            kind: crate::error::SynthesizeSpeechErrorKind::TextLengthExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::text_length_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_text_length_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::text_length_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_text_length_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::SynthesizeSpeechError::generic(generic),
     })
 }

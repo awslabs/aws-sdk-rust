@@ -6,10 +6,8 @@ pub fn ser_payload_complete_multipart_upload_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_complete_multipart_upload_input_multipart_upload(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_complete_multipart_upload_input_multipart_upload(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -20,10 +18,8 @@ pub fn ser_payload_create_bucket_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_create_bucket_input_create_bucket_configuration(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_create_bucket_input_create_bucket_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -36,8 +32,10 @@ pub fn ser_payload_delete_objects_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_delete_objects_input_delete(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_delete_objects_input_delete(
+            &payload,
+        )
+        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
 
@@ -49,7 +47,7 @@ pub fn ser_payload_put_bucket_accelerate_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_accelerate_configuration_input_accelerate_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_accelerate_configuration_input_accelerate_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -60,10 +58,8 @@ pub fn ser_payload_put_bucket_acl_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_acl_input_access_control_policy(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_acl_input_access_control_policy(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -75,7 +71,7 @@ pub fn ser_payload_put_bucket_analytics_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_analytics_configuration_input_analytics_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_analytics_configuration_input_analytics_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -86,10 +82,8 @@ pub fn ser_payload_put_bucket_cors_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_cors_input_cors_configuration(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_cors_input_cors_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -101,7 +95,7 @@ pub fn ser_payload_put_bucket_encryption_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_encryption_input_server_side_encryption_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_encryption_input_server_side_encryption_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -113,7 +107,7 @@ pub fn ser_payload_put_bucket_intelligent_tiering_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_intelligent_tiering_configuration_input_intelligent_tiering_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_intelligent_tiering_configuration_input_intelligent_tiering_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -125,7 +119,7 @@ pub fn ser_payload_put_bucket_inventory_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_inventory_configuration_input_inventory_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_inventory_configuration_input_inventory_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -137,7 +131,7 @@ pub fn ser_payload_put_bucket_lifecycle_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_lifecycle_configuration_input_lifecycle_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_lifecycle_configuration_input_lifecycle_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -148,10 +142,8 @@ pub fn ser_payload_put_bucket_logging_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_logging_input_bucket_logging_status(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_logging_input_bucket_logging_status(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -163,7 +155,7 @@ pub fn ser_payload_put_bucket_metrics_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_metrics_configuration_input_metrics_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_metrics_configuration_input_metrics_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -175,7 +167,7 @@ pub fn ser_payload_put_bucket_notification_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_notification_configuration_input_notification_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_notification_configuration_input_notification_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -186,12 +178,8 @@ pub fn ser_payload_put_bucket_ownership_controls_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_ownership_controls_input_ownership_controls(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_ownership_controls_input_ownership_controls(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -213,12 +201,8 @@ pub fn ser_payload_put_bucket_replication_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_replication_input_replication_configuration(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_replication_input_replication_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -230,7 +214,7 @@ pub fn ser_payload_put_bucket_request_payment_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_request_payment_input_request_payment_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_request_payment_input_request_payment_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -241,10 +225,8 @@ pub fn ser_payload_put_bucket_tagging_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_tagging_input_tagging(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_tagging_input_tagging(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -255,12 +237,8 @@ pub fn ser_payload_put_bucket_versioning_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_versioning_input_versioning_configuration(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_versioning_input_versioning_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -271,10 +249,8 @@ pub fn ser_payload_put_bucket_website_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_bucket_website_input_website_configuration(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_website_input_website_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -292,10 +268,8 @@ pub fn ser_payload_put_object_acl_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_object_acl_input_access_control_policy(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_object_acl_input_access_control_policy(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -306,10 +280,8 @@ pub fn ser_payload_put_object_legal_hold_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_object_legal_hold_input_legal_hold(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_object_legal_hold_input_legal_hold(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -321,7 +293,7 @@ pub fn ser_payload_put_object_lock_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_object_lock_configuration_input_object_lock_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_object_lock_configuration_input_object_lock_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -332,10 +304,8 @@ pub fn ser_payload_put_object_retention_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_object_retention_input_retention(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_object_retention_input_retention(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -346,10 +316,8 @@ pub fn ser_payload_put_object_tagging_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_object_tagging_input_tagging(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_object_tagging_input_tagging(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -361,7 +329,7 @@ pub fn ser_payload_put_public_access_block_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_put_public_access_block_input_public_access_block_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_public_access_block_input_public_access_block_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -372,14 +340,12 @@ pub fn ser_payload_restore_object_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_restore_object_input_restore_request(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_restore_object_input_restore_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
-pub fn serialize_operation_select_object_content(
+pub fn serialize_operation_crate_operation_select_object_content(
     input: &crate::input::SelectObjectContentInput,
 ) -> Result<smithy_http::body::SdkBody, std::string::String> {
     let mut out = String::new();
@@ -389,7 +355,7 @@ pub fn serialize_operation_select_object_content(
         let mut root = writer
             .start_el("SelectObjectContentRequest")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_select_object_content_input(&&input, root)
+        crate::xml_ser::serialize_structure_crate_input_select_object_content_input(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
 }

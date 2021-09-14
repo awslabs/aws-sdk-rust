@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_cancel_task(
+pub fn deser_operation_crate_operation_cancel_task(
     input: &[u8],
     mut builder: crate::output::cancel_task_output::Builder,
 ) -> Result<crate::output::cancel_task_output::Builder, smithy_json::deserialize::Error> {
@@ -239,7 +239,7 @@ pub fn deser_operation_cancel_task(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -279,7 +279,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_task(
+pub fn deser_operation_crate_operation_create_task(
     input: &[u8],
     mut builder: crate::output::create_task_output::Builder,
 ) -> Result<crate::output::create_task_output::Builder, smithy_json::deserialize::Error> {
@@ -325,7 +325,7 @@ pub fn deser_operation_create_task(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_device(
+pub fn deser_operation_crate_operation_describe_device(
     input: &[u8],
     mut builder: crate::output::describe_device_output::Builder,
 ) -> Result<crate::output::describe_device_output::Builder, smithy_json::deserialize::Error> {
@@ -348,7 +348,7 @@ pub fn deser_operation_describe_device(
                     }
                     "deviceCapacities" => {
                         builder = builder.set_device_capacities(
-                            crate::json_deser::deser_list_capacity_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_snowdevicemanagement_capacity_list(tokens)?
                         );
                     }
                     "deviceState" => {
@@ -400,16 +400,20 @@ pub fn deser_operation_describe_device(
                     }
                     "physicalNetworkInterfaces" => {
                         builder = builder.set_physical_network_interfaces(
-                            crate::json_deser::deser_list_physical_network_interface_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_snowdevicemanagement_physical_network_interface_list(tokens)?
                         );
                     }
                     "software" => {
                         builder = builder.set_software(
-                            crate::json_deser::deser_structure_software_information(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_software_information(
+                                tokens,
+                            )?,
                         );
                     }
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_snowdevicemanagement_tag_map(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -429,7 +433,7 @@ pub fn deser_operation_describe_device(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_device_ec2_instances(
+pub fn deser_operation_crate_operation_describe_device_ec2_instances(
     input: &[u8],
     mut builder: crate::output::describe_device_ec2_instances_output::Builder,
 ) -> Result<
@@ -448,7 +452,7 @@ pub fn deser_operation_describe_device_ec2_instances(
                 match key.to_unescaped()?.as_ref() {
                     "instances" => {
                         builder = builder.set_instances(
-                            crate::json_deser::deser_list_instance_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_snowdevicemanagement_instance_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -469,7 +473,7 @@ pub fn deser_operation_describe_device_ec2_instances(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_execution(
+pub fn deser_operation_crate_operation_describe_execution(
     input: &[u8],
     mut builder: crate::output::describe_execution_output::Builder,
 ) -> Result<crate::output::describe_execution_output::Builder, smithy_json::deserialize::Error> {
@@ -548,7 +552,7 @@ pub fn deser_operation_describe_execution(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_task(
+pub fn deser_operation_crate_operation_describe_task(
     input: &[u8],
     mut builder: crate::output::describe_task_output::Builder,
 ) -> Result<crate::output::describe_task_output::Builder, smithy_json::deserialize::Error> {
@@ -604,11 +608,14 @@ pub fn deser_operation_describe_task(
                         );
                     }
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_snowdevicemanagement_tag_map(tokens)?
+                        );
                     }
                     "targets" => {
-                        builder =
-                            builder.set_targets(crate::json_deser::deser_list_target_list(tokens)?);
+                        builder = builder.set_targets(
+                            crate::json_deser::deser_list_com_amazonaws_snowdevicemanagement_target_list(tokens)?
+                        );
                     }
                     "taskArn" => {
                         builder = builder.set_task_arn(
@@ -642,7 +649,7 @@ pub fn deser_operation_describe_task(
     Ok(builder)
 }
 
-pub fn deser_operation_list_device_resources(
+pub fn deser_operation_crate_operation_list_device_resources(
     input: &[u8],
     mut builder: crate::output::list_device_resources_output::Builder,
 ) -> Result<crate::output::list_device_resources_output::Builder, smithy_json::deserialize::Error> {
@@ -665,7 +672,7 @@ pub fn deser_operation_list_device_resources(
                     }
                     "resources" => {
                         builder = builder.set_resources(
-                            crate::json_deser::deser_list_resource_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_snowdevicemanagement_resource_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -686,7 +693,7 @@ pub fn deser_operation_list_device_resources(
     Ok(builder)
 }
 
-pub fn deser_operation_list_devices(
+pub fn deser_operation_crate_operation_list_devices(
     input: &[u8],
     mut builder: crate::output::list_devices_output::Builder,
 ) -> Result<crate::output::list_devices_output::Builder, smithy_json::deserialize::Error> {
@@ -702,7 +709,7 @@ pub fn deser_operation_list_devices(
                 match key.to_unescaped()?.as_ref() {
                     "devices" => {
                         builder = builder.set_devices(
-                            crate::json_deser::deser_list_device_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_snowdevicemanagement_device_summary_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -730,7 +737,7 @@ pub fn deser_operation_list_devices(
     Ok(builder)
 }
 
-pub fn deser_operation_list_executions(
+pub fn deser_operation_crate_operation_list_executions(
     input: &[u8],
     mut builder: crate::output::list_executions_output::Builder,
 ) -> Result<crate::output::list_executions_output::Builder, smithy_json::deserialize::Error> {
@@ -746,7 +753,7 @@ pub fn deser_operation_list_executions(
                 match key.to_unescaped()?.as_ref() {
                     "executions" => {
                         builder = builder.set_executions(
-                            crate::json_deser::deser_list_execution_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_snowdevicemanagement_execution_summary_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -774,7 +781,7 @@ pub fn deser_operation_list_executions(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -790,7 +797,9 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_snowdevicemanagement_tag_map(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -810,7 +819,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tasks(
+pub fn deser_operation_crate_operation_list_tasks(
     input: &[u8],
     mut builder: crate::output::list_tasks_output::Builder,
 ) -> Result<crate::output::list_tasks_output::Builder, smithy_json::deserialize::Error> {
@@ -832,8 +841,9 @@ pub fn deser_operation_list_tasks(
                         );
                     }
                     "tasks" => {
-                        builder = builder
-                            .set_tasks(crate::json_deser::deser_list_task_summary_list(tokens)?);
+                        builder = builder.set_tasks(
+                            crate::json_deser::deser_list_com_amazonaws_snowdevicemanagement_task_summary_list(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -862,7 +872,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_capacity_list<'a, I>(
+pub fn deser_list_com_amazonaws_snowdevicemanagement_capacity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Capacity>>, smithy_json::deserialize::Error>
 where
@@ -881,7 +891,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_capacity(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_capacity(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -897,7 +908,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_physical_network_interface_list<'a, I>(
+pub fn deser_list_com_amazonaws_snowdevicemanagement_physical_network_interface_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::PhysicalNetworkInterface>>,
@@ -920,7 +931,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_physical_network_interface(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_physical_network_interface(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -935,7 +947,7 @@ where
     }
 }
 
-pub fn deser_structure_software_information<'a, I>(
+pub fn deser_structure_crate_model_software_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SoftwareInformation>, smithy_json::deserialize::Error>
 where
@@ -999,7 +1011,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_tag_map<'a, I>(
+pub fn deser_map_com_amazonaws_snowdevicemanagement_tag_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1043,7 +1055,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_instance_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_snowdevicemanagement_instance_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::InstanceSummary>>, smithy_json::deserialize::Error>
 where
@@ -1062,7 +1074,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_instance_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_instance_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1078,7 +1093,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_target_list<'a, I>(
+pub fn deser_list_com_amazonaws_snowdevicemanagement_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1116,7 +1131,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resource_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_snowdevicemanagement_resource_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResourceSummary>>, smithy_json::deserialize::Error>
 where
@@ -1135,7 +1150,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_resource_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_resource_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1151,7 +1169,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_device_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_snowdevicemanagement_device_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DeviceSummary>>, smithy_json::deserialize::Error>
 where
@@ -1170,7 +1188,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_device_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_device_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1186,7 +1205,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_execution_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_snowdevicemanagement_execution_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ExecutionSummary>>, smithy_json::deserialize::Error>
 where
@@ -1205,7 +1224,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_execution_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_execution_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1221,7 +1243,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_task_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_snowdevicemanagement_task_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TaskSummary>>, smithy_json::deserialize::Error>
 where
@@ -1240,7 +1262,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_task_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_task_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1255,7 +1278,7 @@ where
     }
 }
 
-pub fn deser_structure_capacity<'a, I>(
+pub fn deser_structure_crate_model_capacity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Capacity>, smithy_json::deserialize::Error>
 where
@@ -1333,7 +1356,7 @@ where
     }
 }
 
-pub fn deser_structure_physical_network_interface<'a, I>(
+pub fn deser_structure_crate_model_physical_network_interface<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PhysicalNetworkInterface>, smithy_json::deserialize::Error>
 where
@@ -1440,7 +1463,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_summary<'a, I>(
+pub fn deser_structure_crate_model_instance_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceSummary>, smithy_json::deserialize::Error>
 where
@@ -1460,7 +1483,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "instance" => {
                                 builder = builder.set_instance(
-                                    crate::json_deser::deser_structure_instance(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_instance(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "lastUpdatedAt" => {
@@ -1489,7 +1514,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_summary<'a, I>(
+pub fn deser_structure_crate_model_resource_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceSummary>, smithy_json::deserialize::Error>
 where
@@ -1552,7 +1577,7 @@ where
     }
 }
 
-pub fn deser_structure_device_summary<'a, I>(
+pub fn deser_structure_crate_model_device_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeviceSummary>, smithy_json::deserialize::Error>
 where
@@ -1598,8 +1623,9 @@ where
                                 );
                             }
                             "tags" => {
-                                builder =
-                                    builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_map_com_amazonaws_snowdevicemanagement_tag_map(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -1619,7 +1645,7 @@ where
     }
 }
 
-pub fn deser_structure_execution_summary<'a, I>(
+pub fn deser_structure_crate_model_execution_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ExecutionSummary>, smithy_json::deserialize::Error>
 where
@@ -1694,7 +1720,7 @@ where
     }
 }
 
-pub fn deser_structure_task_summary<'a, I>(
+pub fn deser_structure_crate_model_task_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TaskSummary>, smithy_json::deserialize::Error>
 where
@@ -1743,8 +1769,9 @@ where
                                 );
                             }
                             "tags" => {
-                                builder =
-                                    builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_map_com_amazonaws_snowdevicemanagement_tag_map(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -1764,7 +1791,7 @@ where
     }
 }
 
-pub fn deser_structure_instance<'a, I>(
+pub fn deser_structure_crate_model_instance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Instance>, smithy_json::deserialize::Error>
 where
@@ -1810,7 +1837,9 @@ where
                             }
                             "state" => {
                                 builder = builder.set_state(
-                                    crate::json_deser::deser_structure_instance_state(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_instance_state(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "instanceType" => {
@@ -1858,19 +1887,19 @@ where
                             }
                             "blockDeviceMappings" => {
                                 builder = builder.set_block_device_mappings(
-                                    crate::json_deser::deser_list_instance_block_device_mapping_list(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_snowdevicemanagement_instance_block_device_mapping_list(tokens)?
                                 );
                             }
                             "securityGroups" => {
                                 builder = builder.set_security_groups(
-                                    crate::json_deser::deser_list_security_group_identifier_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_snowdevicemanagement_security_group_identifier_list(tokens)?
                                 );
                             }
                             "cpuOptions" => {
                                 builder = builder.set_cpu_options(
-                                    crate::json_deser::deser_structure_cpu_options(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_cpu_options(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "rootDeviceName" => {
@@ -1900,7 +1929,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_state<'a, I>(
+pub fn deser_structure_crate_model_instance_state<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceState>, smithy_json::deserialize::Error>
 where
@@ -1958,7 +1987,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_instance_block_device_mapping_list<'a, I>(
+pub fn deser_list_com_amazonaws_snowdevicemanagement_instance_block_device_mapping_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
@@ -1981,9 +2010,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_instance_block_device_mapping(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_instance_block_device_mapping(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1999,7 +2027,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_security_group_identifier_list<'a, I>(
+pub fn deser_list_com_amazonaws_snowdevicemanagement_security_group_identifier_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SecurityGroupIdentifier>>,
@@ -2022,7 +2050,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_security_group_identifier(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_security_group_identifier(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2037,7 +2066,7 @@ where
     }
 }
 
-pub fn deser_structure_cpu_options<'a, I>(
+pub fn deser_structure_crate_model_cpu_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CpuOptions>, smithy_json::deserialize::Error>
 where
@@ -2089,7 +2118,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_block_device_mapping<'a, I>(
+pub fn deser_structure_crate_model_instance_block_device_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceBlockDeviceMapping>, smithy_json::deserialize::Error>
 where
@@ -2118,9 +2147,7 @@ where
                             }
                             "ebs" => {
                                 builder = builder.set_ebs(
-                                    crate::json_deser::deser_structure_ebs_instance_block_device(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_ebs_instance_block_device(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2141,7 +2168,7 @@ where
     }
 }
 
-pub fn deser_structure_security_group_identifier<'a, I>(
+pub fn deser_structure_crate_model_security_group_identifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SecurityGroupIdentifier>, smithy_json::deserialize::Error>
 where
@@ -2195,7 +2222,7 @@ where
     }
 }
 
-pub fn deser_structure_ebs_instance_block_device<'a, I>(
+pub fn deser_structure_crate_model_ebs_instance_block_device<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EbsInstanceBlockDevice>, smithy_json::deserialize::Error>
 where

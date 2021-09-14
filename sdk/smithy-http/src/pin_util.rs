@@ -5,7 +5,7 @@
 
 /// Pins a value on the stack.
 ///
-/// # Example
+/// # Examples
 ///
 /// ```rust
 /// # use core::pin::Pin;

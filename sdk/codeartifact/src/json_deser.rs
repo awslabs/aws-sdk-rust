@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -100,7 +100,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -139,7 +139,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -195,7 +195,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -252,7 +252,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -297,7 +297,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -347,7 +347,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_associate_external_connection(
+pub fn deser_operation_crate_operation_associate_external_connection(
     input: &[u8],
     mut builder: crate::output::associate_external_connection_output::Builder,
 ) -> Result<
@@ -366,49 +366,7 @@ pub fn deser_operation_associate_external_connection(
                 match key.to_unescaped()?.as_ref() {
                     "repository" => {
                         builder = builder.set_repository(
-                            crate::json_deser::deser_structure_repository_description(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_copy_package_versions(
-    input: &[u8],
-    mut builder: crate::output::copy_package_versions_output::Builder,
-) -> Result<crate::output::copy_package_versions_output::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "failedVersions" => {
-                        builder = builder.set_failed_versions(
-                            crate::json_deser::deser_map_package_version_error_map(tokens)?,
-                        );
-                    }
-                    "successfulVersions" => {
-                        builder = builder.set_successful_versions(
-                            crate::json_deser::deser_map_successful_package_version_info_map(
+                            crate::json_deser::deser_structure_crate_model_repository_description(
                                 tokens,
                             )?,
                         );
@@ -431,7 +389,49 @@ pub fn deser_operation_copy_package_versions(
     Ok(builder)
 }
 
-pub fn deser_operation_create_domain(
+pub fn deser_operation_crate_operation_copy_package_versions(
+    input: &[u8],
+    mut builder: crate::output::copy_package_versions_output::Builder,
+) -> Result<crate::output::copy_package_versions_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "failedVersions" => {
+                        builder = builder.set_failed_versions(
+                            crate::json_deser::deser_map_com_amazonaws_codeartifact_package_version_error_map(tokens)?
+                        );
+                    }
+                    "successfulVersions" => {
+                        builder = builder.set_successful_versions(
+                            crate::json_deser::deser_map_com_amazonaws_codeartifact_successful_package_version_info_map(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_create_domain(
     input: &[u8],
     mut builder: crate::output::create_domain_output::Builder,
 ) -> Result<crate::output::create_domain_output::Builder, smithy_json::deserialize::Error> {
@@ -447,7 +447,9 @@ pub fn deser_operation_create_domain(
                 match key.to_unescaped()?.as_ref() {
                     "domain" => {
                         builder = builder.set_domain(
-                            crate::json_deser::deser_structure_domain_description(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_domain_description(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -468,7 +470,7 @@ pub fn deser_operation_create_domain(
     Ok(builder)
 }
 
-pub fn deser_operation_create_repository(
+pub fn deser_operation_crate_operation_create_repository(
     input: &[u8],
     mut builder: crate::output::create_repository_output::Builder,
 ) -> Result<crate::output::create_repository_output::Builder, smithy_json::deserialize::Error> {
@@ -484,7 +486,9 @@ pub fn deser_operation_create_repository(
                 match key.to_unescaped()?.as_ref() {
                     "repository" => {
                         builder = builder.set_repository(
-                            crate::json_deser::deser_structure_repository_description(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_repository_description(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -505,7 +509,7 @@ pub fn deser_operation_create_repository(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_domain(
+pub fn deser_operation_crate_operation_delete_domain(
     input: &[u8],
     mut builder: crate::output::delete_domain_output::Builder,
 ) -> Result<crate::output::delete_domain_output::Builder, smithy_json::deserialize::Error> {
@@ -521,7 +525,9 @@ pub fn deser_operation_delete_domain(
                 match key.to_unescaped()?.as_ref() {
                     "domain" => {
                         builder = builder.set_domain(
-                            crate::json_deser::deser_structure_domain_description(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_domain_description(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -542,7 +548,7 @@ pub fn deser_operation_delete_domain(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_domain_permissions_policy(
+pub fn deser_operation_crate_operation_delete_domain_permissions_policy(
     input: &[u8],
     mut builder: crate::output::delete_domain_permissions_policy_output::Builder,
 ) -> Result<
@@ -561,7 +567,7 @@ pub fn deser_operation_delete_domain_permissions_policy(
                 match key.to_unescaped()?.as_ref() {
                     "policy" => {
                         builder = builder.set_policy(
-                            crate::json_deser::deser_structure_resource_policy(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resource_policy(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -582,7 +588,7 @@ pub fn deser_operation_delete_domain_permissions_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_package_versions(
+pub fn deser_operation_crate_operation_delete_package_versions(
     input: &[u8],
     mut builder: crate::output::delete_package_versions_output::Builder,
 ) -> Result<crate::output::delete_package_versions_output::Builder, smithy_json::deserialize::Error>
@@ -599,12 +605,49 @@ pub fn deser_operation_delete_package_versions(
                 match key.to_unescaped()?.as_ref() {
                     "failedVersions" => {
                         builder = builder.set_failed_versions(
-                            crate::json_deser::deser_map_package_version_error_map(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_codeartifact_package_version_error_map(tokens)?
                         );
                     }
                     "successfulVersions" => {
                         builder = builder.set_successful_versions(
-                            crate::json_deser::deser_map_successful_package_version_info_map(
+                            crate::json_deser::deser_map_com_amazonaws_codeartifact_successful_package_version_info_map(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_delete_repository(
+    input: &[u8],
+    mut builder: crate::output::delete_repository_output::Builder,
+) -> Result<crate::output::delete_repository_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "repository" => {
+                        builder = builder.set_repository(
+                            crate::json_deser::deser_structure_crate_model_repository_description(
                                 tokens,
                             )?,
                         );
@@ -627,44 +670,7 @@ pub fn deser_operation_delete_package_versions(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_repository(
-    input: &[u8],
-    mut builder: crate::output::delete_repository_output::Builder,
-) -> Result<crate::output::delete_repository_output::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "repository" => {
-                        builder = builder.set_repository(
-                            crate::json_deser::deser_structure_repository_description(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_delete_repository_permissions_policy(
+pub fn deser_operation_crate_operation_delete_repository_permissions_policy(
     input: &[u8],
     mut builder: crate::output::delete_repository_permissions_policy_output::Builder,
 ) -> Result<
@@ -683,7 +689,7 @@ pub fn deser_operation_delete_repository_permissions_policy(
                 match key.to_unescaped()?.as_ref() {
                     "policy" => {
                         builder = builder.set_policy(
-                            crate::json_deser::deser_structure_resource_policy(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resource_policy(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -704,7 +710,7 @@ pub fn deser_operation_delete_repository_permissions_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_domain(
+pub fn deser_operation_crate_operation_describe_domain(
     input: &[u8],
     mut builder: crate::output::describe_domain_output::Builder,
 ) -> Result<crate::output::describe_domain_output::Builder, smithy_json::deserialize::Error> {
@@ -720,165 +726,7 @@ pub fn deser_operation_describe_domain(
                 match key.to_unescaped()?.as_ref() {
                     "domain" => {
                         builder = builder.set_domain(
-                            crate::json_deser::deser_structure_domain_description(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_describe_package_version(
-    input: &[u8],
-    mut builder: crate::output::describe_package_version_output::Builder,
-) -> Result<crate::output::describe_package_version_output::Builder, smithy_json::deserialize::Error>
-{
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "packageVersion" => {
-                        builder = builder.set_package_version(
-                            crate::json_deser::deser_structure_package_version_description(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_describe_repository(
-    input: &[u8],
-    mut builder: crate::output::describe_repository_output::Builder,
-) -> Result<crate::output::describe_repository_output::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "repository" => {
-                        builder = builder.set_repository(
-                            crate::json_deser::deser_structure_repository_description(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_disassociate_external_connection(
-    input: &[u8],
-    mut builder: crate::output::disassociate_external_connection_output::Builder,
-) -> Result<
-    crate::output::disassociate_external_connection_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "repository" => {
-                        builder = builder.set_repository(
-                            crate::json_deser::deser_structure_repository_description(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_dispose_package_versions(
-    input: &[u8],
-    mut builder: crate::output::dispose_package_versions_output::Builder,
-) -> Result<crate::output::dispose_package_versions_output::Builder, smithy_json::deserialize::Error>
-{
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "failedVersions" => {
-                        builder = builder.set_failed_versions(
-                            crate::json_deser::deser_map_package_version_error_map(tokens)?,
-                        );
-                    }
-                    "successfulVersions" => {
-                        builder = builder.set_successful_versions(
-                            crate::json_deser::deser_map_successful_package_version_info_map(
+                            crate::json_deser::deser_structure_crate_model_domain_description(
                                 tokens,
                             )?,
                         );
@@ -901,7 +749,169 @@ pub fn deser_operation_dispose_package_versions(
     Ok(builder)
 }
 
-pub fn deser_operation_get_authorization_token(
+pub fn deser_operation_crate_operation_describe_package_version(
+    input: &[u8],
+    mut builder: crate::output::describe_package_version_output::Builder,
+) -> Result<crate::output::describe_package_version_output::Builder, smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "packageVersion" => {
+                        builder = builder.set_package_version(
+                            crate::json_deser::deser_structure_crate_model_package_version_description(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_describe_repository(
+    input: &[u8],
+    mut builder: crate::output::describe_repository_output::Builder,
+) -> Result<crate::output::describe_repository_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "repository" => {
+                        builder = builder.set_repository(
+                            crate::json_deser::deser_structure_crate_model_repository_description(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_disassociate_external_connection(
+    input: &[u8],
+    mut builder: crate::output::disassociate_external_connection_output::Builder,
+) -> Result<
+    crate::output::disassociate_external_connection_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "repository" => {
+                        builder = builder.set_repository(
+                            crate::json_deser::deser_structure_crate_model_repository_description(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_dispose_package_versions(
+    input: &[u8],
+    mut builder: crate::output::dispose_package_versions_output::Builder,
+) -> Result<crate::output::dispose_package_versions_output::Builder, smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "failedVersions" => {
+                        builder = builder.set_failed_versions(
+                            crate::json_deser::deser_map_com_amazonaws_codeartifact_package_version_error_map(tokens)?
+                        );
+                    }
+                    "successfulVersions" => {
+                        builder = builder.set_successful_versions(
+                            crate::json_deser::deser_map_com_amazonaws_codeartifact_successful_package_version_info_map(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_get_authorization_token(
     input: &[u8],
     mut builder: crate::output::get_authorization_token_output::Builder,
 ) -> Result<crate::output::get_authorization_token_output::Builder, smithy_json::deserialize::Error>
@@ -949,7 +959,7 @@ pub fn deser_operation_get_authorization_token(
     Ok(builder)
 }
 
-pub fn deser_operation_get_domain_permissions_policy(
+pub fn deser_operation_crate_operation_get_domain_permissions_policy(
     input: &[u8],
     mut builder: crate::output::get_domain_permissions_policy_output::Builder,
 ) -> Result<
@@ -968,7 +978,7 @@ pub fn deser_operation_get_domain_permissions_policy(
                 match key.to_unescaped()?.as_ref() {
                     "policy" => {
                         builder = builder.set_policy(
-                            crate::json_deser::deser_structure_resource_policy(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resource_policy(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -989,7 +999,7 @@ pub fn deser_operation_get_domain_permissions_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_get_package_version_readme(
+pub fn deser_operation_crate_operation_get_package_version_readme(
     input: &[u8],
     mut builder: crate::output::get_package_version_readme_output::Builder,
 ) -> Result<
@@ -1069,7 +1079,7 @@ pub fn deser_operation_get_package_version_readme(
     Ok(builder)
 }
 
-pub fn deser_operation_get_repository_endpoint(
+pub fn deser_operation_crate_operation_get_repository_endpoint(
     input: &[u8],
     mut builder: crate::output::get_repository_endpoint_output::Builder,
 ) -> Result<crate::output::get_repository_endpoint_output::Builder, smithy_json::deserialize::Error>
@@ -1109,7 +1119,7 @@ pub fn deser_operation_get_repository_endpoint(
     Ok(builder)
 }
 
-pub fn deser_operation_get_repository_permissions_policy(
+pub fn deser_operation_crate_operation_get_repository_permissions_policy(
     input: &[u8],
     mut builder: crate::output::get_repository_permissions_policy_output::Builder,
 ) -> Result<
@@ -1128,7 +1138,7 @@ pub fn deser_operation_get_repository_permissions_policy(
                 match key.to_unescaped()?.as_ref() {
                     "policy" => {
                         builder = builder.set_policy(
-                            crate::json_deser::deser_structure_resource_policy(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resource_policy(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1149,7 +1159,7 @@ pub fn deser_operation_get_repository_permissions_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_list_domains(
+pub fn deser_operation_crate_operation_list_domains(
     input: &[u8],
     mut builder: crate::output::list_domains_output::Builder,
 ) -> Result<crate::output::list_domains_output::Builder, smithy_json::deserialize::Error> {
@@ -1165,7 +1175,7 @@ pub fn deser_operation_list_domains(
                 match key.to_unescaped()?.as_ref() {
                     "domains" => {
                         builder = builder.set_domains(
-                            crate::json_deser::deser_list_domain_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codeartifact_domain_summary_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -1193,7 +1203,7 @@ pub fn deser_operation_list_domains(
     Ok(builder)
 }
 
-pub fn deser_operation_list_packages(
+pub fn deser_operation_crate_operation_list_packages(
     input: &[u8],
     mut builder: crate::output::list_packages_output::Builder,
 ) -> Result<crate::output::list_packages_output::Builder, smithy_json::deserialize::Error> {
@@ -1216,7 +1226,7 @@ pub fn deser_operation_list_packages(
                     }
                     "packages" => {
                         builder = builder.set_packages(
-                            crate::json_deser::deser_list_package_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codeartifact_package_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1237,7 +1247,7 @@ pub fn deser_operation_list_packages(
     Ok(builder)
 }
 
-pub fn deser_operation_list_package_version_assets(
+pub fn deser_operation_crate_operation_list_package_version_assets(
     input: &[u8],
     mut builder: crate::output::list_package_version_assets_output::Builder,
 ) -> Result<
@@ -1255,8 +1265,9 @@ pub fn deser_operation_list_package_version_assets(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "assets" => {
-                        builder = builder
-                            .set_assets(crate::json_deser::deser_list_asset_summary_list(tokens)?);
+                        builder = builder.set_assets(
+                            crate::json_deser::deser_list_com_amazonaws_codeartifact_asset_summary_list(tokens)?
+                        );
                     }
                     "format" => {
                         builder = builder.set_format(
@@ -1321,7 +1332,7 @@ pub fn deser_operation_list_package_version_assets(
     Ok(builder)
 }
 
-pub fn deser_operation_list_package_version_dependencies(
+pub fn deser_operation_crate_operation_list_package_version_dependencies(
     input: &[u8],
     mut builder: crate::output::list_package_version_dependencies_output::Builder,
 ) -> Result<
@@ -1340,7 +1351,7 @@ pub fn deser_operation_list_package_version_dependencies(
                 match key.to_unescaped()?.as_ref() {
                     "dependencies" => {
                         builder = builder.set_dependencies(
-                            crate::json_deser::deser_list_package_dependency_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codeartifact_package_dependency_list(tokens)?
                         );
                     }
                     "format" => {
@@ -1406,7 +1417,7 @@ pub fn deser_operation_list_package_version_dependencies(
     Ok(builder)
 }
 
-pub fn deser_operation_list_package_versions(
+pub fn deser_operation_crate_operation_list_package_versions(
     input: &[u8],
     mut builder: crate::output::list_package_versions_output::Builder,
 ) -> Result<crate::output::list_package_versions_output::Builder, smithy_json::deserialize::Error> {
@@ -1460,7 +1471,7 @@ pub fn deser_operation_list_package_versions(
                     }
                     "versions" => {
                         builder = builder.set_versions(
-                            crate::json_deser::deser_list_package_version_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codeartifact_package_version_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1481,7 +1492,7 @@ pub fn deser_operation_list_package_versions(
     Ok(builder)
 }
 
-pub fn deser_operation_list_repositories(
+pub fn deser_operation_crate_operation_list_repositories(
     input: &[u8],
     mut builder: crate::output::list_repositories_output::Builder,
 ) -> Result<crate::output::list_repositories_output::Builder, smithy_json::deserialize::Error> {
@@ -1504,7 +1515,7 @@ pub fn deser_operation_list_repositories(
                     }
                     "repositories" => {
                         builder = builder.set_repositories(
-                            crate::json_deser::deser_list_repository_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codeartifact_repository_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1525,7 +1536,7 @@ pub fn deser_operation_list_repositories(
     Ok(builder)
 }
 
-pub fn deser_operation_list_repositories_in_domain(
+pub fn deser_operation_crate_operation_list_repositories_in_domain(
     input: &[u8],
     mut builder: crate::output::list_repositories_in_domain_output::Builder,
 ) -> Result<
@@ -1551,7 +1562,7 @@ pub fn deser_operation_list_repositories_in_domain(
                     }
                     "repositories" => {
                         builder = builder.set_repositories(
-                            crate::json_deser::deser_list_repository_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codeartifact_repository_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1572,7 +1583,7 @@ pub fn deser_operation_list_repositories_in_domain(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -1588,131 +1599,8 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_put_domain_permissions_policy(
-    input: &[u8],
-    mut builder: crate::output::put_domain_permissions_policy_output::Builder,
-) -> Result<
-    crate::output::put_domain_permissions_policy_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "policy" => {
-                        builder = builder.set_policy(
-                            crate::json_deser::deser_structure_resource_policy(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_put_repository_permissions_policy(
-    input: &[u8],
-    mut builder: crate::output::put_repository_permissions_policy_output::Builder,
-) -> Result<
-    crate::output::put_repository_permissions_policy_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "policy" => {
-                        builder = builder.set_policy(
-                            crate::json_deser::deser_structure_resource_policy(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_update_package_versions_status(
-    input: &[u8],
-    mut builder: crate::output::update_package_versions_status_output::Builder,
-) -> Result<
-    crate::output::update_package_versions_status_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "failedVersions" => {
-                        builder = builder.set_failed_versions(
-                            crate::json_deser::deser_map_package_version_error_map(tokens)?,
-                        );
-                    }
-                    "successfulVersions" => {
-                        builder = builder.set_successful_versions(
-                            crate::json_deser::deser_map_successful_package_version_info_map(
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_codeartifact_tag_list(
                                 tokens,
                             )?,
                         );
@@ -1735,7 +1623,132 @@ pub fn deser_operation_update_package_versions_status(
     Ok(builder)
 }
 
-pub fn deser_operation_update_repository(
+pub fn deser_operation_crate_operation_put_domain_permissions_policy(
+    input: &[u8],
+    mut builder: crate::output::put_domain_permissions_policy_output::Builder,
+) -> Result<
+    crate::output::put_domain_permissions_policy_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "policy" => {
+                        builder = builder.set_policy(
+                            crate::json_deser::deser_structure_crate_model_resource_policy(tokens)?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_put_repository_permissions_policy(
+    input: &[u8],
+    mut builder: crate::output::put_repository_permissions_policy_output::Builder,
+) -> Result<
+    crate::output::put_repository_permissions_policy_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "policy" => {
+                        builder = builder.set_policy(
+                            crate::json_deser::deser_structure_crate_model_resource_policy(tokens)?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_update_package_versions_status(
+    input: &[u8],
+    mut builder: crate::output::update_package_versions_status_output::Builder,
+) -> Result<
+    crate::output::update_package_versions_status_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "failedVersions" => {
+                        builder = builder.set_failed_versions(
+                            crate::json_deser::deser_map_com_amazonaws_codeartifact_package_version_error_map(tokens)?
+                        );
+                    }
+                    "successfulVersions" => {
+                        builder = builder.set_successful_versions(
+                            crate::json_deser::deser_map_com_amazonaws_codeartifact_successful_package_version_info_map(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_update_repository(
     input: &[u8],
     mut builder: crate::output::update_repository_output::Builder,
 ) -> Result<crate::output::update_repository_output::Builder, smithy_json::deserialize::Error> {
@@ -1751,7 +1764,9 @@ pub fn deser_operation_update_repository(
                 match key.to_unescaped()?.as_ref() {
                     "repository" => {
                         builder = builder.set_repository(
-                            crate::json_deser::deser_structure_repository_description(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_repository_description(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1780,7 +1795,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_repository_description<'a, I>(
+pub fn deser_structure_crate_model_repository_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RepositoryDescription>, smithy_json::deserialize::Error>
 where
@@ -1854,14 +1869,12 @@ where
                             }
                             "upstreams" => {
                                 builder = builder.set_upstreams(
-                                    crate::json_deser::deser_list_upstream_repository_info_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_codeartifact_upstream_repository_info_list(tokens)?
                                 );
                             }
                             "externalConnections" => {
                                 builder = builder.set_external_connections(
-                                    crate::json_deser::deser_list_repository_external_connection_info_list(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_codeartifact_repository_external_connection_info_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1883,7 +1896,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_package_version_error_map<'a, I>(
+pub fn deser_map_com_amazonaws_codeartifact_package_version_error_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::PackageVersionError>>,
@@ -1904,7 +1917,9 @@ where
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
                         let value =
-                            crate::json_deser::deser_structure_package_version_error(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_package_version_error(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
@@ -1925,7 +1940,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_successful_package_version_info_map<'a, I>(
+pub fn deser_map_com_amazonaws_codeartifact_successful_package_version_info_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
@@ -1948,9 +1963,8 @@ where
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
                         let value =
-                            crate::json_deser::deser_structure_successful_package_version_info(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_successful_package_version_info(tokens)?
+                        ;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
@@ -1970,7 +1984,7 @@ where
     }
 }
 
-pub fn deser_structure_domain_description<'a, I>(
+pub fn deser_structure_crate_model_domain_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DomainDescription>, smithy_json::deserialize::Error>
 where
@@ -2087,7 +2101,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_policy<'a, I>(
+pub fn deser_structure_crate_model_resource_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourcePolicy>, smithy_json::deserialize::Error>
 where
@@ -2150,7 +2164,7 @@ where
     }
 }
 
-pub fn deser_structure_package_version_description<'a, I>(
+pub fn deser_structure_crate_model_package_version_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PackageVersionDescription>, smithy_json::deserialize::Error>
 where
@@ -2253,7 +2267,7 @@ where
                             }
                             "licenses" => {
                                 builder = builder.set_licenses(
-                                    crate::json_deser::deser_list_license_info_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codeartifact_license_info_list(tokens)?
                                 );
                             }
                             "revision" => {
@@ -2297,7 +2311,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_domain_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_codeartifact_domain_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DomainSummary>>, smithy_json::deserialize::Error>
 where
@@ -2316,7 +2330,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_domain_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_domain_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2332,7 +2347,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_package_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_codeartifact_package_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PackageSummary>>, smithy_json::deserialize::Error>
 where
@@ -2351,7 +2366,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_package_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_package_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2367,7 +2383,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_asset_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_codeartifact_asset_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AssetSummary>>, smithy_json::deserialize::Error>
 where
@@ -2386,7 +2402,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_asset_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_asset_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2402,7 +2419,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_package_dependency_list<'a, I>(
+pub fn deser_list_com_amazonaws_codeartifact_package_dependency_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PackageDependency>>, smithy_json::deserialize::Error>
 where
@@ -2421,7 +2438,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_package_dependency(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_package_dependency(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2437,7 +2457,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_package_version_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_codeartifact_package_version_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::PackageVersionSummary>>,
@@ -2460,7 +2480,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_package_version_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_package_version_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2476,7 +2498,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_repository_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_codeartifact_repository_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::RepositorySummary>>, smithy_json::deserialize::Error>
 where
@@ -2495,7 +2517,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_repository_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_repository_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2511,7 +2536,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_codeartifact_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -2530,7 +2555,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2546,7 +2571,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_upstream_repository_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_codeartifact_upstream_repository_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::UpstreamRepositoryInfo>>,
@@ -2569,7 +2594,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_upstream_repository_info(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_upstream_repository_info(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2585,7 +2611,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_repository_external_connection_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_codeartifact_repository_external_connection_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::RepositoryExternalConnectionInfo>>,
@@ -2608,9 +2634,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_repository_external_connection_info(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_repository_external_connection_info(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2625,7 +2650,7 @@ where
     }
 }
 
-pub fn deser_structure_package_version_error<'a, I>(
+pub fn deser_structure_crate_model_package_version_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PackageVersionError>, smithy_json::deserialize::Error>
 where
@@ -2683,7 +2708,7 @@ where
     }
 }
 
-pub fn deser_structure_successful_package_version_info<'a, I>(
+pub fn deser_structure_crate_model_successful_package_version_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SuccessfulPackageVersionInfo>, smithy_json::deserialize::Error>
 where
@@ -2742,7 +2767,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_license_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_codeartifact_license_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::LicenseInfo>>, smithy_json::deserialize::Error>
 where
@@ -2761,7 +2786,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_license_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_license_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2776,7 +2802,7 @@ where
     }
 }
 
-pub fn deser_structure_domain_summary<'a, I>(
+pub fn deser_structure_crate_model_domain_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DomainSummary>, smithy_json::deserialize::Error>
 where
@@ -2868,7 +2894,7 @@ where
     }
 }
 
-pub fn deser_structure_package_summary<'a, I>(
+pub fn deser_structure_crate_model_package_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PackageSummary>, smithy_json::deserialize::Error>
 where
@@ -2934,7 +2960,7 @@ where
     }
 }
 
-pub fn deser_structure_asset_summary<'a, I>(
+pub fn deser_structure_crate_model_asset_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AssetSummary>, smithy_json::deserialize::Error>
 where
@@ -2970,8 +2996,9 @@ where
                                 );
                             }
                             "hashes" => {
-                                builder = builder
-                                    .set_hashes(crate::json_deser::deser_map_asset_hashes(tokens)?);
+                                builder = builder.set_hashes(
+                                    crate::json_deser::deser_map_com_amazonaws_codeartifact_asset_hashes(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -2991,7 +3018,7 @@ where
     }
 }
 
-pub fn deser_structure_package_dependency<'a, I>(
+pub fn deser_structure_crate_model_package_dependency<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PackageDependency>, smithy_json::deserialize::Error>
 where
@@ -3063,7 +3090,7 @@ where
     }
 }
 
-pub fn deser_structure_package_version_summary<'a, I>(
+pub fn deser_structure_crate_model_package_version_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PackageVersionSummary>, smithy_json::deserialize::Error>
 where
@@ -3130,7 +3157,7 @@ where
     }
 }
 
-pub fn deser_structure_repository_summary<'a, I>(
+pub fn deser_structure_crate_model_repository_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RepositorySummary>, smithy_json::deserialize::Error>
 where
@@ -3220,7 +3247,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -3274,7 +3301,7 @@ where
     }
 }
 
-pub fn deser_structure_upstream_repository_info<'a, I>(
+pub fn deser_structure_crate_model_upstream_repository_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UpstreamRepositoryInfo>, smithy_json::deserialize::Error>
 where
@@ -3319,7 +3346,7 @@ where
     }
 }
 
-pub fn deser_structure_repository_external_connection_info<'a, I>(
+pub fn deser_structure_crate_model_repository_external_connection_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RepositoryExternalConnectionInfo>, smithy_json::deserialize::Error>
 where
@@ -3389,7 +3416,7 @@ where
     }
 }
 
-pub fn deser_structure_license_info<'a, I>(
+pub fn deser_structure_crate_model_license_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LicenseInfo>, smithy_json::deserialize::Error>
 where
@@ -3444,7 +3471,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_asset_hashes<'a, I>(
+pub fn deser_map_com_amazonaws_codeartifact_asset_hashes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>>,

@@ -225,6 +225,57 @@ impl PutPublicAccessBlockOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutMultiRegionAccessPointPolicyOutput {
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
+    /// asynchronous requests.</p>
+    pub request_token_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for PutMultiRegionAccessPointPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutMultiRegionAccessPointPolicyOutput");
+        formatter.field("request_token_arn", &self.request_token_arn);
+        formatter.finish()
+    }
+}
+/// See [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput)
+pub mod put_multi_region_access_point_policy_output {
+    /// A builder for [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) request_token_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
+        /// asynchronous requests.</p>
+        pub fn request_token_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_token_arn = Some(input.into());
+            self
+        }
+        pub fn set_request_token_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_token_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput)
+        pub fn build(self) -> crate::output::PutMultiRegionAccessPointPolicyOutput {
+            crate::output::PutMultiRegionAccessPointPolicyOutput {
+                request_token_arn: self.request_token_arn,
+            }
+        }
+    }
+}
+impl PutMultiRegionAccessPointPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput)
+    pub fn builder() -> crate::output::put_multi_region_access_point_policy_output::Builder {
+        crate::output::put_multi_region_access_point_policy_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutJobTaggingOutput {}
 impl std::fmt::Debug for PutJobTaggingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -583,6 +634,79 @@ impl ListRegionalBucketsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMultiRegionAccessPointsOutput {
+    /// <p>The list of Multi-Region Access Points associated with the user.</p>
+    pub access_points:
+        std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointReport>>,
+    /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this
+    /// action, this field contains a continuation token. You can use this token tin subsequent
+    /// calls to this action to retrieve additional Multi-Region Access Points.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListMultiRegionAccessPointsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMultiRegionAccessPointsOutput");
+        formatter.field("access_points", &self.access_points);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput)
+pub mod list_multi_region_access_points_output {
+    /// A builder for [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_points:
+            std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointReport>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn access_points(
+            mut self,
+            input: impl Into<crate::model::MultiRegionAccessPointReport>,
+        ) -> Self {
+            let mut v = self.access_points.unwrap_or_default();
+            v.push(input.into());
+            self.access_points = Some(v);
+            self
+        }
+        pub fn set_access_points(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointReport>>,
+        ) -> Self {
+            self.access_points = input;
+            self
+        }
+        /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this
+        /// action, this field contains a continuation token. You can use this token tin subsequent
+        /// calls to this action to retrieve additional Multi-Region Access Points.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput)
+        pub fn build(self) -> crate::output::ListMultiRegionAccessPointsOutput {
+            crate::output::ListMultiRegionAccessPointsOutput {
+                access_points: self.access_points,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMultiRegionAccessPointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput)
+    pub fn builder() -> crate::output::list_multi_region_access_points_output::Builder {
+        crate::output::list_multi_region_access_points_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve
     /// the next page of results.</p>
@@ -899,7 +1023,7 @@ impl GetStorageLensConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicAccessBlockOutput {
-    /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this account.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
 }
@@ -923,7 +1047,7 @@ pub mod get_public_access_block_output {
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     }
     impl Builder {
-        /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this account.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
         pub fn public_access_block_configuration(
             mut self,
             input: crate::model::PublicAccessBlockConfiguration,
@@ -950,6 +1074,159 @@ impl GetPublicAccessBlockOutput {
     /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput)
     pub fn builder() -> crate::output::get_public_access_block_output::Builder {
         crate::output::get_public_access_block_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMultiRegionAccessPointPolicyStatusOutput {
+    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
+    /// <i>Amazon S3 User Guide</i>.
+    /// </p>
+    pub established: std::option::Option<crate::model::PolicyStatus>,
+}
+impl std::fmt::Debug for GetMultiRegionAccessPointPolicyStatusOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMultiRegionAccessPointPolicyStatusOutput");
+        formatter.field("established", &self.established);
+        formatter.finish()
+    }
+}
+/// See [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput)
+pub mod get_multi_region_access_point_policy_status_output {
+    /// A builder for [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) established: std::option::Option<crate::model::PolicyStatus>,
+    }
+    impl Builder {
+        /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
+        /// <i>Amazon S3 User Guide</i>.
+        /// </p>
+        pub fn established(mut self, input: crate::model::PolicyStatus) -> Self {
+            self.established = Some(input);
+            self
+        }
+        pub fn set_established(
+            mut self,
+            input: std::option::Option<crate::model::PolicyStatus>,
+        ) -> Self {
+            self.established = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput)
+        pub fn build(self) -> crate::output::GetMultiRegionAccessPointPolicyStatusOutput {
+            crate::output::GetMultiRegionAccessPointPolicyStatusOutput {
+                established: self.established,
+            }
+        }
+    }
+}
+impl GetMultiRegionAccessPointPolicyStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput)
+    pub fn builder() -> crate::output::get_multi_region_access_point_policy_status_output::Builder {
+        crate::output::get_multi_region_access_point_policy_status_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMultiRegionAccessPointPolicyOutput {
+    /// <p>The policy associated with the specified Multi-Region Access Point.</p>
+    pub policy: std::option::Option<crate::model::MultiRegionAccessPointPolicyDocument>,
+}
+impl std::fmt::Debug for GetMultiRegionAccessPointPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMultiRegionAccessPointPolicyOutput");
+        formatter.field("policy", &self.policy);
+        formatter.finish()
+    }
+}
+/// See [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput)
+pub mod get_multi_region_access_point_policy_output {
+    /// A builder for [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy: std::option::Option<crate::model::MultiRegionAccessPointPolicyDocument>,
+    }
+    impl Builder {
+        /// <p>The policy associated with the specified Multi-Region Access Point.</p>
+        pub fn policy(mut self, input: crate::model::MultiRegionAccessPointPolicyDocument) -> Self {
+            self.policy = Some(input);
+            self
+        }
+        pub fn set_policy(
+            mut self,
+            input: std::option::Option<crate::model::MultiRegionAccessPointPolicyDocument>,
+        ) -> Self {
+            self.policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput)
+        pub fn build(self) -> crate::output::GetMultiRegionAccessPointPolicyOutput {
+            crate::output::GetMultiRegionAccessPointPolicyOutput {
+                policy: self.policy,
+            }
+        }
+    }
+}
+impl GetMultiRegionAccessPointPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput)
+    pub fn builder() -> crate::output::get_multi_region_access_point_policy_output::Builder {
+        crate::output::get_multi_region_access_point_policy_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMultiRegionAccessPointOutput {
+    /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
+    pub access_point: std::option::Option<crate::model::MultiRegionAccessPointReport>,
+}
+impl std::fmt::Debug for GetMultiRegionAccessPointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMultiRegionAccessPointOutput");
+        formatter.field("access_point", &self.access_point);
+        formatter.finish()
+    }
+}
+/// See [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput)
+pub mod get_multi_region_access_point_output {
+    /// A builder for [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_point: std::option::Option<crate::model::MultiRegionAccessPointReport>,
+    }
+    impl Builder {
+        /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
+        pub fn access_point(mut self, input: crate::model::MultiRegionAccessPointReport) -> Self {
+            self.access_point = Some(input);
+            self
+        }
+        pub fn set_access_point(
+            mut self,
+            input: std::option::Option<crate::model::MultiRegionAccessPointReport>,
+        ) -> Self {
+            self.access_point = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput)
+        pub fn build(self) -> crate::output::GetMultiRegionAccessPointOutput {
+            crate::output::GetMultiRegionAccessPointOutput {
+                access_point: self.access_point,
+            }
+        }
+    }
+}
+impl GetMultiRegionAccessPointOutput {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput)
+    pub fn builder() -> crate::output::get_multi_region_access_point_output::Builder {
+        crate::output::get_multi_region_access_point_output::Builder::default()
     }
 }
 
@@ -1780,6 +2057,56 @@ impl GetAccessPointOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeMultiRegionAccessPointOperationOutput {
+    /// <p>A container element containing the details of the asynchronous operation.</p>
+    pub async_operation: std::option::Option<crate::model::AsyncOperation>,
+}
+impl std::fmt::Debug for DescribeMultiRegionAccessPointOperationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeMultiRegionAccessPointOperationOutput");
+        formatter.field("async_operation", &self.async_operation);
+        formatter.finish()
+    }
+}
+/// See [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput)
+pub mod describe_multi_region_access_point_operation_output {
+    /// A builder for [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) async_operation: std::option::Option<crate::model::AsyncOperation>,
+    }
+    impl Builder {
+        /// <p>A container element containing the details of the asynchronous operation.</p>
+        pub fn async_operation(mut self, input: crate::model::AsyncOperation) -> Self {
+            self.async_operation = Some(input);
+            self
+        }
+        pub fn set_async_operation(
+            mut self,
+            input: std::option::Option<crate::model::AsyncOperation>,
+        ) -> Self {
+            self.async_operation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput)
+        pub fn build(self) -> crate::output::DescribeMultiRegionAccessPointOperationOutput {
+            crate::output::DescribeMultiRegionAccessPointOperationOutput {
+                async_operation: self.async_operation,
+            }
+        }
+    }
+}
+impl DescribeMultiRegionAccessPointOperationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput)
+    pub fn builder() -> crate::output::describe_multi_region_access_point_operation_output::Builder
+    {
+        crate::output::describe_multi_region_access_point_operation_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobOutput {
     /// <p>Contains the configuration parameters and status for the job specified in the <code>Describe Job</code> request.</p>
     pub job: std::option::Option<crate::model::JobDescriptor>,
@@ -1906,6 +2233,57 @@ impl DeletePublicAccessBlockOutput {
     /// Creates a new builder-style object to manufacture [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput)
     pub fn builder() -> crate::output::delete_public_access_block_output::Builder {
         crate::output::delete_public_access_block_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMultiRegionAccessPointOutput {
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
+    /// asynchronous requests.</p>
+    pub request_token_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteMultiRegionAccessPointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteMultiRegionAccessPointOutput");
+        formatter.field("request_token_arn", &self.request_token_arn);
+        formatter.finish()
+    }
+}
+/// See [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput)
+pub mod delete_multi_region_access_point_output {
+    /// A builder for [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) request_token_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
+        /// asynchronous requests.</p>
+        pub fn request_token_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_token_arn = Some(input.into());
+            self
+        }
+        pub fn set_request_token_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_token_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput)
+        pub fn build(self) -> crate::output::DeleteMultiRegionAccessPointOutput {
+            crate::output::DeleteMultiRegionAccessPointOutput {
+                request_token_arn: self.request_token_arn,
+            }
+        }
+    }
+}
+impl DeleteMultiRegionAccessPointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput)
+    pub fn builder() -> crate::output::delete_multi_region_access_point_output::Builder {
+        crate::output::delete_multi_region_access_point_output::Builder::default()
     }
 }
 
@@ -2168,6 +2546,57 @@ impl DeleteAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput)
     pub fn builder() -> crate::output::delete_access_point_output::Builder {
         crate::output::delete_access_point_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMultiRegionAccessPointOutput {
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
+    /// asynchronous requests.</p>
+    pub request_token_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateMultiRegionAccessPointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMultiRegionAccessPointOutput");
+        formatter.field("request_token_arn", &self.request_token_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput)
+pub mod create_multi_region_access_point_output {
+    /// A builder for [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) request_token_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
+        /// asynchronous requests.</p>
+        pub fn request_token_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_token_arn = Some(input.into());
+            self
+        }
+        pub fn set_request_token_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_token_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput)
+        pub fn build(self) -> crate::output::CreateMultiRegionAccessPointOutput {
+            crate::output::CreateMultiRegionAccessPointOutput {
+                request_token_arn: self.request_token_arn,
+            }
+        }
+    }
+}
+impl CreateMultiRegionAccessPointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput)
+    pub fn builder() -> crate::output::create_multi_region_access_point_output::Builder {
+        crate::output::create_multi_region_access_point_output::Builder::default()
     }
 }
 

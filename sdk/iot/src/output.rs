@@ -793,6 +793,35 @@ impl UpdateIndexingConfigurationOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFleetMetricOutput {}
+impl std::fmt::Debug for UpdateFleetMetricOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFleetMetricOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateFleetMetricOutput`](crate::output::UpdateFleetMetricOutput)
+pub mod update_fleet_metric_output {
+    /// A builder for [`UpdateFleetMetricOutput`](crate::output::UpdateFleetMetricOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateFleetMetricOutput`](crate::output::UpdateFleetMetricOutput)
+        pub fn build(self) -> crate::output::UpdateFleetMetricOutput {
+            crate::output::UpdateFleetMetricOutput {}
+        }
+    }
+}
+impl UpdateFleetMetricOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFleetMetricOutput`](crate::output::UpdateFleetMetricOutput)
+    pub fn builder() -> crate::output::update_fleet_metric_output::Builder {
+        crate::output::update_fleet_metric_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventConfigurationsOutput {}
 impl std::fmt::Debug for UpdateEventConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5005,6 +5034,76 @@ impl ListIndicesOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFleetMetricsOutput {
+    /// <p>The list of fleet metrics objects.</p>
+    pub fleet_metrics: std::option::Option<std::vec::Vec<crate::model::FleetMetricNameAndArn>>,
+    /// <p>The token for the next set of results. Will not be returned if the operation has returned
+    /// all results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListFleetMetricsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListFleetMetricsOutput");
+        formatter.field("fleet_metrics", &self.fleet_metrics);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListFleetMetricsOutput`](crate::output::ListFleetMetricsOutput)
+pub mod list_fleet_metrics_output {
+    /// A builder for [`ListFleetMetricsOutput`](crate::output::ListFleetMetricsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fleet_metrics:
+            std::option::Option<std::vec::Vec<crate::model::FleetMetricNameAndArn>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn fleet_metrics(
+            mut self,
+            input: impl Into<crate::model::FleetMetricNameAndArn>,
+        ) -> Self {
+            let mut v = self.fleet_metrics.unwrap_or_default();
+            v.push(input.into());
+            self.fleet_metrics = Some(v);
+            self
+        }
+        pub fn set_fleet_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FleetMetricNameAndArn>>,
+        ) -> Self {
+            self.fleet_metrics = input;
+            self
+        }
+        /// <p>The token for the next set of results. Will not be returned if the operation has returned
+        /// all results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListFleetMetricsOutput`](crate::output::ListFleetMetricsOutput)
+        pub fn build(self) -> crate::output::ListFleetMetricsOutput {
+            crate::output::ListFleetMetricsOutput {
+                fleet_metrics: self.fleet_metrics,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListFleetMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFleetMetricsOutput`](crate::output::ListFleetMetricsOutput)
+    pub fn builder() -> crate::output::list_fleet_metrics_output::Builder {
+        crate::output::list_fleet_metrics_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainConfigurationsOutput {
     /// <p>A list of objects that contain summary information about the user's domain configurations.</p>
     pub domain_configurations:
@@ -5499,7 +5598,7 @@ impl ListCertificatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCaCertificatesOutput {
-    /// <p>The CA certificates registered in your AWS account.</p>
+    /// <p>The CA certificates registered in your Amazon Web Services account.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::CaCertificate>>,
     /// <p>The current position within the list of CA certificates.</p>
     pub next_marker: std::option::Option<std::string::String>,
@@ -6172,7 +6271,7 @@ impl ListActiveViolationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetV2LoggingOptionsOutput {
-    /// <p>The IAM role ARN AWS IoT uses to write to your CloudWatch logs.</p>
+    /// <p>The IAM role ARN IoT uses to write to your CloudWatch logs.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The default log level.</p>
     pub default_log_level: std::option::Option<crate::model::LogLevel>,
@@ -6199,7 +6298,7 @@ pub mod get_v2_logging_options_output {
         pub(crate) disable_all_logs: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The IAM role ARN AWS IoT uses to write to your CloudWatch logs.</p>
+        /// <p>The IAM role ARN IoT uses to write to your CloudWatch logs.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -7152,6 +7251,76 @@ impl GetCardinalityOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBucketsAggregationOutput {
+    /// <p>The total number of documents that fit the query string criteria and contain a value for
+    /// the Aggregation field targeted in the request.</p>
+    pub total_count: i32,
+    /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
+    /// <p>
+    /// <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
+    /// <p>
+    /// <code>count</code>: The number of documents that have that value.</p>
+    pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
+}
+impl std::fmt::Debug for GetBucketsAggregationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBucketsAggregationOutput");
+        formatter.field("total_count", &self.total_count);
+        formatter.field("buckets", &self.buckets);
+        formatter.finish()
+    }
+}
+/// See [`GetBucketsAggregationOutput`](crate::output::GetBucketsAggregationOutput)
+pub mod get_buckets_aggregation_output {
+    /// A builder for [`GetBucketsAggregationOutput`](crate::output::GetBucketsAggregationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) total_count: std::option::Option<i32>,
+        pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
+    }
+    impl Builder {
+        /// <p>The total number of documents that fit the query string criteria and contain a value for
+        /// the Aggregation field targeted in the request.</p>
+        pub fn total_count(mut self, input: i32) -> Self {
+            self.total_count = Some(input);
+            self
+        }
+        pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_count = input;
+            self
+        }
+        pub fn buckets(mut self, input: impl Into<crate::model::Bucket>) -> Self {
+            let mut v = self.buckets.unwrap_or_default();
+            v.push(input.into());
+            self.buckets = Some(v);
+            self
+        }
+        pub fn set_buckets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
+        ) -> Self {
+            self.buckets = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBucketsAggregationOutput`](crate::output::GetBucketsAggregationOutput)
+        pub fn build(self) -> crate::output::GetBucketsAggregationOutput {
+            crate::output::GetBucketsAggregationOutput {
+                total_count: self.total_count.unwrap_or_default(),
+                buckets: self.buckets,
+            }
+        }
+    }
+}
+impl GetBucketsAggregationOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketsAggregationOutput`](crate::output::GetBucketsAggregationOutput)
+    pub fn builder() -> crate::output::get_buckets_aggregation_output::Builder {
+        crate::output::get_buckets_aggregation_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBehaviorModelTrainingSummariesOutput {
     /// <p>
     /// A list of all ML Detect behaviors and their model status for a given Security Profile.
@@ -7938,7 +8107,7 @@ pub struct DescribeThingOutput {
     /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID.  
     /// Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or
     /// shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
-    /// <p>This lets you better organize your AWS IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
+    /// <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
     pub default_client_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
@@ -7996,7 +8165,7 @@ pub mod describe_thing_output {
         /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID.  
         /// Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or
         /// shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
-        /// <p>This lets you better organize your AWS IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
+        /// <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
         pub fn default_client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_client_id = Some(input.into());
             self
@@ -8924,7 +9093,7 @@ pub struct DescribeMitigationActionOutput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Parameters that control how the mitigation action is applied, specific to the type of mitigation action.</p>
     pub action_params: std::option::Option<crate::model::MitigationActionParams>,
-    /// <p>The date and time when the mitigation action was added to your AWS account.</p>
+    /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
     pub creation_date: std::option::Option<smithy_types::Instant>,
     /// <p>The date and time when the mitigation action was last changed.</p>
     pub last_modified_date: std::option::Option<smithy_types::Instant>,
@@ -9019,7 +9188,7 @@ pub mod describe_mitigation_action_output {
             self.action_params = input;
             self
         }
-        /// <p>The date and time when the mitigation action was added to your AWS account.</p>
+        /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
         pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
@@ -9492,6 +9661,240 @@ impl DescribeIndexOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIndexOutput`](crate::output::DescribeIndexOutput)
     pub fn builder() -> crate::output::describe_index_output::Builder {
         crate::output::describe_index_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetMetricOutput {
+    /// <p>The name of the fleet metric to describe.</p>
+    pub metric_name: std::option::Option<std::string::String>,
+    /// <p>The search query string.</p>
+    pub query_string: std::option::Option<std::string::String>,
+    /// <p>The type of the aggregation query.</p>
+    pub aggregation_type: std::option::Option<crate::model::AggregationType>,
+    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    pub period: std::option::Option<i32>,
+    /// <p>The field to aggregate.</p>
+    pub aggregation_field: std::option::Option<std::string::String>,
+    /// <p>The fleet metric description.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The query version.</p>
+    pub query_version: std::option::Option<std::string::String>,
+    /// <p>The name of the index to search.</p>
+    pub index_name: std::option::Option<std::string::String>,
+    /// <p>The date when the fleet metric is created.</p>
+    pub creation_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The date when the fleet metric is last modified.</p>
+    pub last_modified_date: std::option::Option<smithy_types::Instant>,
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
+    /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    pub unit: std::option::Option<crate::model::FleetMetricUnit>,
+    /// <p>The version of the fleet metric.</p>
+    pub version: i64,
+    /// <p>The ARN of the fleet metric to describe.</p>
+    pub metric_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeFleetMetricOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetMetricOutput");
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("query_string", &self.query_string);
+        formatter.field("aggregation_type", &self.aggregation_type);
+        formatter.field("period", &self.period);
+        formatter.field("aggregation_field", &self.aggregation_field);
+        formatter.field("description", &self.description);
+        formatter.field("query_version", &self.query_version);
+        formatter.field("index_name", &self.index_name);
+        formatter.field("creation_date", &self.creation_date);
+        formatter.field("last_modified_date", &self.last_modified_date);
+        formatter.field("unit", &self.unit);
+        formatter.field("version", &self.version);
+        formatter.field("metric_arn", &self.metric_arn);
+        formatter.finish()
+    }
+}
+/// See [`DescribeFleetMetricOutput`](crate::output::DescribeFleetMetricOutput)
+pub mod describe_fleet_metric_output {
+    /// A builder for [`DescribeFleetMetricOutput`](crate::output::DescribeFleetMetricOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+        pub(crate) query_string: std::option::Option<std::string::String>,
+        pub(crate) aggregation_type: std::option::Option<crate::model::AggregationType>,
+        pub(crate) period: std::option::Option<i32>,
+        pub(crate) aggregation_field: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) query_version: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) unit: std::option::Option<crate::model::FleetMetricUnit>,
+        pub(crate) version: std::option::Option<i64>,
+        pub(crate) metric_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the fleet metric to describe.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The search query string.</p>
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_string = Some(input.into());
+            self
+        }
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_string = input;
+            self
+        }
+        /// <p>The type of the aggregation query.</p>
+        pub fn aggregation_type(mut self, input: crate::model::AggregationType) -> Self {
+            self.aggregation_type = Some(input);
+            self
+        }
+        pub fn set_aggregation_type(
+            mut self,
+            input: std::option::Option<crate::model::AggregationType>,
+        ) -> Self {
+            self.aggregation_type = input;
+            self
+        }
+        /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+        pub fn period(mut self, input: i32) -> Self {
+            self.period = Some(input);
+            self
+        }
+        pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.period = input;
+            self
+        }
+        /// <p>The field to aggregate.</p>
+        pub fn aggregation_field(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aggregation_field = Some(input.into());
+            self
+        }
+        pub fn set_aggregation_field(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aggregation_field = input;
+            self
+        }
+        /// <p>The fleet metric description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The query version.</p>
+        pub fn query_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_version = Some(input.into());
+            self
+        }
+        pub fn set_query_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.query_version = input;
+            self
+        }
+        /// <p>The name of the index to search.</p>
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
+            self
+        }
+        /// <p>The date when the fleet metric is created.</p>
+        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date = Some(input);
+            self
+        }
+        pub fn set_creation_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.creation_date = input;
+            self
+        }
+        /// <p>The date when the fleet metric is last modified.</p>
+        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_date = Some(input);
+            self
+        }
+        pub fn set_last_modified_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_modified_date = input;
+            self
+        }
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
+        /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+        pub fn unit(mut self, input: crate::model::FleetMetricUnit) -> Self {
+            self.unit = Some(input);
+            self
+        }
+        pub fn set_unit(
+            mut self,
+            input: std::option::Option<crate::model::FleetMetricUnit>,
+        ) -> Self {
+            self.unit = input;
+            self
+        }
+        /// <p>The version of the fleet metric.</p>
+        pub fn version(mut self, input: i64) -> Self {
+            self.version = Some(input);
+            self
+        }
+        pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.version = input;
+            self
+        }
+        /// <p>The ARN of the fleet metric to describe.</p>
+        pub fn metric_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_arn = Some(input.into());
+            self
+        }
+        pub fn set_metric_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetMetricOutput`](crate::output::DescribeFleetMetricOutput)
+        pub fn build(self) -> crate::output::DescribeFleetMetricOutput {
+            crate::output::DescribeFleetMetricOutput {
+                metric_name: self.metric_name,
+                query_string: self.query_string,
+                aggregation_type: self.aggregation_type,
+                period: self.period,
+                aggregation_field: self.aggregation_field,
+                description: self.description,
+                query_version: self.query_version,
+                index_name: self.index_name,
+                creation_date: self.creation_date,
+                last_modified_date: self.last_modified_date,
+                unit: self.unit,
+                version: self.version.unwrap_or_default(),
+                metric_arn: self.metric_arn,
+            }
+        }
+    }
+}
+impl DescribeFleetMetricOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetMetricOutput`](crate::output::DescribeFleetMetricOutput)
+    pub fn builder() -> crate::output::describe_fleet_metric_output::Builder {
+        crate::output::describe_fleet_metric_output::Builder::default()
     }
 }
 
@@ -11047,7 +11450,7 @@ impl DescribeAuditFindingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAuditConfigurationOutput {
-    /// <p>The ARN of the role that grants permission to AWS IoT to access information
+    /// <p>The ARN of the role that grants permission to IoT to access information
     /// about your devices, policies, certificates, and other items as required when
     /// performing an audit.</p>
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
@@ -11099,7 +11502,7 @@ pub mod describe_account_audit_configuration_output {
         >,
     }
     impl Builder {
-        /// <p>The ARN of the role that grants permission to AWS IoT to access information
+        /// <p>The ARN of the role that grants permission to IoT to access information
         /// about your devices, policies, certificates, and other items as required when
         /// performing an audit.</p>
         /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
@@ -11786,6 +12189,35 @@ impl DeleteJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteJobOutput`](crate::output::DeleteJobOutput)
     pub fn builder() -> crate::output::delete_job_output::Builder {
         crate::output::delete_job_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFleetMetricOutput {}
+impl std::fmt::Debug for DeleteFleetMetricOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFleetMetricOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteFleetMetricOutput`](crate::output::DeleteFleetMetricOutput)
+pub mod delete_fleet_metric_output {
+    /// A builder for [`DeleteFleetMetricOutput`](crate::output::DeleteFleetMetricOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteFleetMetricOutput`](crate::output::DeleteFleetMetricOutput)
+        pub fn build(self) -> crate::output::DeleteFleetMetricOutput {
+            crate::output::DeleteFleetMetricOutput {}
+        }
+    }
+}
+impl DeleteFleetMetricOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFleetMetricOutput`](crate::output::DeleteFleetMetricOutput)
+    pub fn builder() -> crate::output::delete_fleet_metric_output::Builder {
+        crate::output::delete_fleet_metric_output::Builder::default()
     }
 }
 
@@ -13125,11 +13557,11 @@ impl CreatePolicyOutput {
 pub struct CreateOtaUpdateOutput {
     /// <p>The OTA update ID.</p>
     pub ota_update_id: std::option::Option<std::string::String>,
-    /// <p>The AWS IoT job ID associated with the OTA update.</p>
+    /// <p>The IoT job ID associated with the OTA update.</p>
     pub aws_iot_job_id: std::option::Option<std::string::String>,
     /// <p>The OTA update ARN.</p>
     pub ota_update_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS IoT job ARN associated with the OTA update.</p>
+    /// <p>The IoT job ARN associated with the OTA update.</p>
     pub aws_iot_job_arn: std::option::Option<std::string::String>,
     /// <p>The OTA update status.</p>
     pub ota_update_status: std::option::Option<crate::model::OtaUpdateStatus>,
@@ -13170,7 +13602,7 @@ pub mod create_ota_update_output {
             self.ota_update_id = input;
             self
         }
-        /// <p>The AWS IoT job ID associated with the OTA update.</p>
+        /// <p>The IoT job ID associated with the OTA update.</p>
         pub fn aws_iot_job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_iot_job_id = Some(input.into());
             self
@@ -13194,7 +13626,7 @@ pub mod create_ota_update_output {
             self.ota_update_arn = input;
             self
         }
-        /// <p>The AWS IoT job ARN associated with the OTA update.</p>
+        /// <p>The IoT job ARN associated with the OTA update.</p>
         pub fn aws_iot_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_iot_job_arn = Some(input.into());
             self
@@ -13303,8 +13735,8 @@ impl CreateMitigationActionOutput {
 pub struct CreateKeysAndCertificateOutput {
     /// <p>The ARN of the certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the certificate. AWS IoT issues a default subject name for the certificate
-    /// (for example, AWS IoT Certificate).</p>
+    /// <p>The ID of the certificate. IoT issues a default subject name for the certificate
+    /// (for example, IoT Certificate).</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The certificate data, in PEM format.</p>
     pub certificate_pem: std::option::Option<std::string::String>,
@@ -13345,8 +13777,8 @@ pub mod create_keys_and_certificate_output {
             self.certificate_arn = input;
             self
         }
-        /// <p>The ID of the certificate. AWS IoT issues a default subject name for the certificate
-        /// (for example, AWS IoT Certificate).</p>
+        /// <p>The ID of the certificate. IoT issues a default subject name for the certificate
+        /// (for example, IoT Certificate).</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
@@ -13534,6 +13966,66 @@ impl CreateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput)
     pub fn builder() -> crate::output::create_job_output::Builder {
         crate::output::create_job_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFleetMetricOutput {
+    /// <p>The name of the fleet metric to create.</p>
+    pub metric_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the new fleet metric.</p>
+    pub metric_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateFleetMetricOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFleetMetricOutput");
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("metric_arn", &self.metric_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateFleetMetricOutput`](crate::output::CreateFleetMetricOutput)
+pub mod create_fleet_metric_output {
+    /// A builder for [`CreateFleetMetricOutput`](crate::output::CreateFleetMetricOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+        pub(crate) metric_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the fleet metric to create.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the new fleet metric.</p>
+        pub fn metric_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_arn = Some(input.into());
+            self
+        }
+        pub fn set_metric_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFleetMetricOutput`](crate::output::CreateFleetMetricOutput)
+        pub fn build(self) -> crate::output::CreateFleetMetricOutput {
+            crate::output::CreateFleetMetricOutput {
+                metric_name: self.metric_name,
+                metric_arn: self.metric_arn,
+            }
+        }
+    }
+}
+impl CreateFleetMetricOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFleetMetricOutput`](crate::output::CreateFleetMetricOutput)
+    pub fn builder() -> crate::output::create_fleet_metric_output::Builder {
+        crate::output::create_fleet_metric_output::Builder::default()
     }
 }
 

@@ -23,11 +23,7 @@ pub fn parse_describe_dimension_keys_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeDimensionKeysError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDimensionKeysError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -44,11 +40,7 @@ pub fn parse_describe_dimension_keys_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_argument_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeDimensionKeysError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDimensionKeysError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -65,11 +57,7 @@ pub fn parse_describe_dimension_keys_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_authorized_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeDimensionKeysError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDimensionKeysError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -93,7 +81,7 @@ pub fn parse_describe_dimension_keys_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_dimension_keys_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_dimension_keys(
+        output = crate::json_deser::deser_operation_crate_operation_describe_dimension_keys(
             response.body().as_ref(),
             output,
         )
@@ -130,11 +118,7 @@ pub fn parse_get_dimension_key_details_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetDimensionKeyDetailsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::GetDimensionKeyDetailsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -151,11 +135,7 @@ pub fn parse_get_dimension_key_details_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_argument_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetDimensionKeyDetailsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDimensionKeyDetailsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -172,11 +152,7 @@ pub fn parse_get_dimension_key_details_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_authorized_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetDimensionKeyDetailsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDimensionKeyDetailsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -200,7 +176,7 @@ pub fn parse_get_dimension_key_details_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_dimension_key_details_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_dimension_key_details(
+        output = crate::json_deser::deser_operation_crate_operation_get_dimension_key_details(
             response.body().as_ref(),
             output,
         )
@@ -233,11 +209,7 @@ pub fn parse_get_resource_metrics_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetResourceMetricsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourceMetricsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -254,11 +226,7 @@ pub fn parse_get_resource_metrics_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_argument_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetResourceMetricsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourceMetricsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -275,11 +243,7 @@ pub fn parse_get_resource_metrics_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_authorized_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetResourceMetricsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourceMetricsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -303,7 +267,7 @@ pub fn parse_get_resource_metrics_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_resource_metrics_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_resource_metrics(
+        output = crate::json_deser::deser_operation_crate_operation_get_resource_metrics(
             response.body().as_ref(),
             output,
         )

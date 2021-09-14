@@ -282,6 +282,8 @@ pub struct UpdateDiscovererOutput {
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The state of the discoverer.</p>
     pub state: std::option::Option<crate::model::DiscovererState>,
+    /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+    pub cross_account: bool,
     /// <p>Tags associated with the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -294,6 +296,7 @@ impl std::fmt::Debug for UpdateDiscovererOutput {
         formatter.field("discoverer_id", &self.discoverer_id);
         formatter.field("source_arn", &self.source_arn);
         formatter.field("state", &self.state);
+        formatter.field("cross_account", &self.cross_account);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -309,6 +312,7 @@ pub mod update_discoverer_output {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::DiscovererState>,
+        pub(crate) cross_account: std::option::Option<bool>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -368,6 +372,15 @@ pub mod update_discoverer_output {
             self.state = input;
             self
         }
+        /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+        pub fn cross_account(mut self, input: bool) -> Self {
+            self.cross_account = Some(input);
+            self
+        }
+        pub fn set_cross_account(mut self, input: std::option::Option<bool>) -> Self {
+            self.cross_account = input;
+            self
+        }
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -395,6 +408,7 @@ pub mod update_discoverer_output {
                 discoverer_id: self.discoverer_id,
                 source_arn: self.source_arn,
                 state: self.state,
+                cross_account: self.cross_account.unwrap_or_default(),
                 tags: self.tags,
             }
         }
@@ -1678,6 +1692,8 @@ pub struct DescribeDiscovererOutput {
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The state of the discoverer.</p>
     pub state: std::option::Option<crate::model::DiscovererState>,
+    /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+    pub cross_account: bool,
     /// <p>Tags associated with the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1690,6 +1706,7 @@ impl std::fmt::Debug for DescribeDiscovererOutput {
         formatter.field("discoverer_id", &self.discoverer_id);
         formatter.field("source_arn", &self.source_arn);
         formatter.field("state", &self.state);
+        formatter.field("cross_account", &self.cross_account);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -1705,6 +1722,7 @@ pub mod describe_discoverer_output {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::DiscovererState>,
+        pub(crate) cross_account: std::option::Option<bool>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -1764,6 +1782,15 @@ pub mod describe_discoverer_output {
             self.state = input;
             self
         }
+        /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+        pub fn cross_account(mut self, input: bool) -> Self {
+            self.cross_account = Some(input);
+            self
+        }
+        pub fn set_cross_account(mut self, input: std::option::Option<bool>) -> Self {
+            self.cross_account = input;
+            self
+        }
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1791,6 +1818,7 @@ pub mod describe_discoverer_output {
                 discoverer_id: self.discoverer_id,
                 source_arn: self.source_arn,
                 state: self.state,
+                cross_account: self.cross_account.unwrap_or_default(),
                 tags: self.tags,
             }
         }
@@ -2331,6 +2359,8 @@ pub struct CreateDiscovererOutput {
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The state of the discoverer.</p>
     pub state: std::option::Option<crate::model::DiscovererState>,
+    /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+    pub cross_account: bool,
     /// <p>Tags associated with the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2343,6 +2373,7 @@ impl std::fmt::Debug for CreateDiscovererOutput {
         formatter.field("discoverer_id", &self.discoverer_id);
         formatter.field("source_arn", &self.source_arn);
         formatter.field("state", &self.state);
+        formatter.field("cross_account", &self.cross_account);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -2358,6 +2389,7 @@ pub mod create_discoverer_output {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::DiscovererState>,
+        pub(crate) cross_account: std::option::Option<bool>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -2417,6 +2449,15 @@ pub mod create_discoverer_output {
             self.state = input;
             self
         }
+        /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+        pub fn cross_account(mut self, input: bool) -> Self {
+            self.cross_account = Some(input);
+            self
+        }
+        pub fn set_cross_account(mut self, input: std::option::Option<bool>) -> Self {
+            self.cross_account = input;
+            self
+        }
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2444,6 +2485,7 @@ pub mod create_discoverer_output {
                 discoverer_id: self.discoverer_id,
                 source_arn: self.source_arn,
                 state: self.state,
+                cross_account: self.cross_account.unwrap_or_default(),
                 tags: self.tags,
             }
         }

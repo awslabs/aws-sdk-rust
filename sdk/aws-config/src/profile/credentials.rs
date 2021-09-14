@@ -293,7 +293,7 @@ pub struct Builder {
 impl Builder {
     /// Override the configuration for the [`ProfileFileCredentialsProvider`]
     ///
-    /// # Example
+    /// # Examples
     /// ```rust
     /// # async fn test() {
     /// use aws_config::profile::ProfileFileCredentialsProvider;
@@ -310,7 +310,7 @@ impl Builder {
 
     /// Adds a custom credential source
     ///
-    /// # Example
+    /// # Examples
     ///
     /// ```rust
     /// use aws_types::credentials::{self, ProvideCredentials, future};

@@ -293,7 +293,7 @@ pub mod fluent_builders {
         /// Appends an item to `resourceArns`.
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
-        /// <p>The Amazon Resource Names (ARN) of the resources.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arns(inp);
             self
@@ -308,9 +308,29 @@ pub mod fluent_builders {
         /// Appends an item to `principals`.
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
-        /// <p>The principals to associate with the resource share. The possible values are IDs of
-        /// AWS accounts, and the ARNs of organizational units (OU) or organizations from AWS
-        /// Organizations.</p>
+        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>An Amazon Web Services account ID</p>
+        /// </li>
+        /// <li>
+        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM role</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM user</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principals(inp);
             self
@@ -388,7 +408,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with the resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
+        /// resource share.</p>
         pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_arn(inp);
             self
@@ -401,8 +422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether the permission should replace the permissions that are currently
-        /// associated with the resource share. Use <code>true</code> to replace the current permissions.
-        /// Use <code>false</code> to add the permission to the current permission.</p>
+        /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
+        /// <code>false</code> to add the permission to the current permission.</p>
         pub fn replace(mut self, inp: bool) -> Self {
             self.inner = self.inner.replace(inp);
             self
@@ -420,7 +441,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The version of the AWS RAM permissions to associate with the resource share.</p>
+        /// <p>The version of the RAM permissions to associate with the resource share.</p>
         pub fn permission_version(mut self, inp: i32) -> Self {
             self.inner = self.inner.permission_version(inp);
             self
@@ -486,7 +507,7 @@ pub mod fluent_builders {
         /// Appends an item to `resourceArns`.
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
-        /// <p>The Amazon Resource Names (ARN) of the resources to associate with the resource share.</p>
+        /// <p>The ARNs of the resources to associate with the resource share.</p>
         pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arns(inp);
             self
@@ -501,8 +522,29 @@ pub mod fluent_builders {
         /// Appends an item to `principals`.
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
-        /// <p>The principals to associate with the resource share. The possible values are IDs of AWS accounts,
-        /// the ARN of an OU or organization from AWS Organizations.</p>
+        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>An Amazon Web Services account ID</p>
+        /// </li>
+        /// <li>
+        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM role</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM user</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principals(inp);
             self
@@ -529,7 +571,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Indicates whether principals outside your AWS organization can be associated with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated
+        /// with a resource share.</p>
         pub fn allow_external_principals(mut self, inp: bool) -> Self {
             self.inner = self.inner.allow_external_principals(inp);
             self
@@ -550,9 +593,10 @@ pub mod fluent_builders {
         /// Appends an item to `permissionArns`.
         ///
         /// To override the contents of this collection use [`set_permission_arns`](Self::set_permission_arns).
-        /// <p>The ARNs of the permissions to associate with the resource share. If you do not specify an ARN
-        /// for the permission, AWS RAM automatically attaches the default version of the permission
-        /// for each resource type.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
+        /// do not specify an ARN for the permission, RAM automatically attaches the default
+        /// version of the permission for each resource type. Only one permission can be associated
+        /// with each resource type in a resource share.</p>
         pub fn permission_arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_arns(inp);
             self
@@ -783,7 +827,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arn(input);
             self
         }
-        /// <p>The ARN of the permission to disassociate from the resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
         pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_arn(inp);
             self
@@ -894,7 +938,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the permission.</p>
         pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_arn(inp);
             self
@@ -963,7 +1007,7 @@ pub mod fluent_builders {
         /// Appends an item to `resourceArns`.
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
-        /// <p>The Amazon Resource Names (ARN) of the resources.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arns(inp);
             self
@@ -1049,8 +1093,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list
-        /// the resources that are associated with the specified resource share.</p>
+        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
+        /// that are associated with the specified resource share.</p>
         pub fn association_type(mut self, inp: crate::model::ResourceShareAssociationType) -> Self {
             self.inner = self.inner.association_type(inp);
             self
@@ -1077,8 +1121,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arns(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the
-        /// association type is <code>PRINCIPAL</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
+        /// the association type is <code>PRINCIPAL</code>.</p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
@@ -1276,7 +1320,7 @@ pub mod fluent_builders {
         /// Appends an item to `resourceShareArns`.
         ///
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
-        /// <p>The ARNs of the resource shares.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
         pub fn resource_share_arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_share_arns(inp);
             self
@@ -1355,7 +1399,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
+        /// resource share.</p>
         pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_arn(inp);
             self
@@ -1605,7 +1650,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
         /// </p>
         pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(inp);
@@ -1719,7 +1764,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
         /// </p>
         pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(inp);
@@ -1735,7 +1780,7 @@ pub mod fluent_builders {
         /// Appends an item to `resourceArns`.
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
-        /// <p>The Amazon Resource Names (ARN) of the resources.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arns(inp);
             self
@@ -1966,7 +2011,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the resource share to promote.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
         pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_share_arn(inp);
             self
@@ -2257,7 +2302,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Indicates whether principals outside your AWS organization can be associated with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated
+        /// with a resource share.</p>
         pub fn allow_external_principals(mut self, inp: bool) -> Self {
             self.inner = self.inner.allow_external_principals(inp);
             self

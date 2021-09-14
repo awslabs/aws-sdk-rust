@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_human_loop(
+pub fn deser_operation_crate_operation_describe_human_loop(
     input: &[u8],
     mut builder: crate::output::describe_human_loop_output::Builder,
 ) -> Result<crate::output::describe_human_loop_output::Builder, smithy_json::deserialize::Error> {
@@ -220,7 +220,9 @@ pub fn deser_operation_describe_human_loop(
                     }
                     "HumanLoopOutput" => {
                         builder = builder.set_human_loop_output(
-                            crate::json_deser::deser_structure_human_loop_output(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_human_loop_output(
+                                tokens,
+                            )?,
                         );
                     }
                     "HumanLoopStatus" => {
@@ -251,7 +253,7 @@ pub fn deser_operation_describe_human_loop(
     Ok(builder)
 }
 
-pub fn deser_operation_list_human_loops(
+pub fn deser_operation_crate_operation_list_human_loops(
     input: &[u8],
     mut builder: crate::output::list_human_loops_output::Builder,
 ) -> Result<crate::output::list_human_loops_output::Builder, smithy_json::deserialize::Error> {
@@ -267,7 +269,7 @@ pub fn deser_operation_list_human_loops(
                 match key.to_unescaped()?.as_ref() {
                     "HumanLoopSummaries" => {
                         builder = builder.set_human_loop_summaries(
-                            crate::json_deser::deser_list_human_loop_summaries(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_sagemakera2iruntime_human_loop_summaries(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -295,7 +297,7 @@ pub fn deser_operation_list_human_loops(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -334,7 +336,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -374,7 +376,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_start_human_loop(
+pub fn deser_operation_crate_operation_start_human_loop(
     input: &[u8],
     mut builder: crate::output::start_human_loop_output::Builder,
 ) -> Result<crate::output::start_human_loop_output::Builder, smithy_json::deserialize::Error> {
@@ -421,7 +423,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_human_loop_output<'a, I>(
+pub fn deser_structure_crate_model_human_loop_output<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::HumanLoopOutput>, smithy_json::deserialize::Error>
 where
@@ -467,7 +469,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_human_loop_summaries<'a, I>(
+pub fn deser_list_com_amazonaws_sagemakera2iruntime_human_loop_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::HumanLoopSummary>>, smithy_json::deserialize::Error>
 where
@@ -486,7 +488,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_human_loop_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_human_loop_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -501,7 +506,7 @@ where
     }
 }
 
-pub fn deser_structure_human_loop_summary<'a, I>(
+pub fn deser_structure_crate_model_human_loop_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::HumanLoopSummary>, smithy_json::deserialize::Error>
 where

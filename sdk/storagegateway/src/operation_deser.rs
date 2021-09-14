@@ -20,11 +20,7 @@ pub fn parse_activate_gateway_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ActivateGatewayError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ActivateGatewayError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -42,7 +38,7 @@ pub fn parse_activate_gateway_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ActivateGatewayError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ActivateGatewayError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -63,9 +59,11 @@ pub fn parse_activate_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::activate_gateway_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_activate_gateway(response.body().as_ref(), output)
-                .map_err(crate::error::ActivateGatewayError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_activate_gateway(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ActivateGatewayError::unhandled)?;
         output.build()
     })
 }
@@ -91,11 +89,7 @@ pub fn parse_add_cache_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddCacheError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AddCacheError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -113,7 +107,7 @@ pub fn parse_add_cache_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddCacheError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddCacheError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -134,8 +128,11 @@ pub fn parse_add_cache_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_cache_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_add_cache(response.body().as_ref(), output)
-            .map_err(crate::error::AddCacheError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_add_cache(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AddCacheError::unhandled)?;
         output.build()
     })
 }
@@ -162,11 +159,7 @@ pub fn parse_add_tags_to_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -184,7 +177,7 @@ pub fn parse_add_tags_to_resource_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -206,7 +199,7 @@ pub fn parse_add_tags_to_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_tags_to_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_add_tags_to_resource(
+        output = crate::json_deser::deser_operation_crate_operation_add_tags_to_resource(
             response.body().as_ref(),
             output,
         )
@@ -236,11 +229,7 @@ pub fn parse_add_upload_buffer_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddUploadBufferError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AddUploadBufferError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -258,7 +247,7 @@ pub fn parse_add_upload_buffer_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddUploadBufferError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddUploadBufferError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -279,9 +268,11 @@ pub fn parse_add_upload_buffer_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_upload_buffer_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_add_upload_buffer(response.body().as_ref(), output)
-                .map_err(crate::error::AddUploadBufferError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_add_upload_buffer(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AddUploadBufferError::unhandled)?;
         output.build()
     })
 }
@@ -308,11 +299,7 @@ pub fn parse_add_working_storage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddWorkingStorageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AddWorkingStorageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -330,7 +317,7 @@ pub fn parse_add_working_storage_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddWorkingStorageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddWorkingStorageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -352,7 +339,7 @@ pub fn parse_add_working_storage_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_working_storage_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_add_working_storage(
+        output = crate::json_deser::deser_operation_crate_operation_add_working_storage(
             response.body().as_ref(),
             output,
         )
@@ -382,11 +369,7 @@ pub fn parse_assign_tape_pool_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AssignTapePoolError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AssignTapePoolError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -404,7 +387,7 @@ pub fn parse_assign_tape_pool_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssignTapePoolError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssignTapePoolError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -425,9 +408,11 @@ pub fn parse_assign_tape_pool_response(
         #[allow(unused_mut)]
         let mut output = crate::output::assign_tape_pool_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_assign_tape_pool(response.body().as_ref(), output)
-                .map_err(crate::error::AssignTapePoolError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_assign_tape_pool(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AssignTapePoolError::unhandled)?;
         output.build()
     })
 }
@@ -456,11 +441,7 @@ pub fn parse_associate_file_system_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AssociateFileSystemError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AssociateFileSystemError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -478,7 +459,7 @@ pub fn parse_associate_file_system_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssociateFileSystemError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssociateFileSystemError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -502,7 +483,7 @@ pub fn parse_associate_file_system_response(
         #[allow(unused_mut)]
         let mut output = crate::output::associate_file_system_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_associate_file_system(
+        output = crate::json_deser::deser_operation_crate_operation_associate_file_system(
             response.body().as_ref(),
             output,
         )
@@ -532,11 +513,7 @@ pub fn parse_attach_volume_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AttachVolumeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AttachVolumeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -554,7 +531,7 @@ pub fn parse_attach_volume_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AttachVolumeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AttachVolumeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -575,8 +552,11 @@ pub fn parse_attach_volume_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_volume_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_attach_volume(response.body().as_ref(), output)
-            .map_err(crate::error::AttachVolumeError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_attach_volume(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AttachVolumeError::unhandled)?;
         output.build()
     })
 }
@@ -602,11 +582,7 @@ pub fn parse_cancel_archival_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CancelArchivalError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CancelArchivalError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -624,7 +600,7 @@ pub fn parse_cancel_archival_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelArchivalError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelArchivalError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -645,9 +621,11 @@ pub fn parse_cancel_archival_response(
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_archival_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_cancel_archival(response.body().as_ref(), output)
-                .map_err(crate::error::CancelArchivalError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_cancel_archival(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CancelArchivalError::unhandled)?;
         output.build()
     })
 }
@@ -673,11 +651,7 @@ pub fn parse_cancel_retrieval_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CancelRetrievalError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CancelRetrievalError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -695,7 +669,7 @@ pub fn parse_cancel_retrieval_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelRetrievalError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelRetrievalError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -716,9 +690,11 @@ pub fn parse_cancel_retrieval_response(
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_retrieval_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_cancel_retrieval(response.body().as_ref(), output)
-                .map_err(crate::error::CancelRetrievalError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_cancel_retrieval(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CancelRetrievalError::unhandled)?;
         output.build()
     })
 }
@@ -751,11 +727,7 @@ pub fn parse_create_cachedi_scsi_volume_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateCachediSCSIVolumeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCachediSCSIVolumeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -773,7 +745,7 @@ pub fn parse_create_cachedi_scsi_volume_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCachediSCSIVolumeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCachediSCSIVolumeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -797,7 +769,7 @@ pub fn parse_create_cachedi_scsi_volume_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_cachedi_scsi_volume_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_cachedi_scsi_volume(
+        output = crate::json_deser::deser_operation_crate_operation_create_cachedi_scsi_volume(
             response.body().as_ref(),
             output,
         )
@@ -830,11 +802,7 @@ pub fn parse_create_nfs_file_share_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateNFSFileShareError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateNFSFileShareError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -852,7 +820,7 @@ pub fn parse_create_nfs_file_share_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateNFSFileShareError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateNFSFileShareError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -876,7 +844,7 @@ pub fn parse_create_nfs_file_share_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_nfs_file_share_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_nfs_file_share(
+        output = crate::json_deser::deser_operation_crate_operation_create_nfs_file_share(
             response.body().as_ref(),
             output,
         )
@@ -909,11 +877,7 @@ pub fn parse_create_smb_file_share_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateSMBFileShareError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSMBFileShareError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -931,7 +895,7 @@ pub fn parse_create_smb_file_share_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSMBFileShareError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSMBFileShareError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -955,7 +919,7 @@ pub fn parse_create_smb_file_share_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_smb_file_share_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_smb_file_share(
+        output = crate::json_deser::deser_operation_crate_operation_create_smb_file_share(
             response.body().as_ref(),
             output,
         )
@@ -985,11 +949,7 @@ pub fn parse_create_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1007,7 +967,7 @@ pub fn parse_create_snapshot_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1024,11 +984,7 @@ pub fn parse_create_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_unavailable_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_unavailable_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1049,9 +1005,11 @@ pub fn parse_create_snapshot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_snapshot_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_snapshot(response.body().as_ref(), output)
-                .map_err(crate::error::CreateSnapshotError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateSnapshotError::unhandled)?;
         output.build()
     })
 }
@@ -1081,7 +1039,7 @@ pub fn parse_create_snapshot_from_volume_recovery_point_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1095,7 +1053,7 @@ pub fn parse_create_snapshot_from_volume_recovery_point_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1109,7 +1067,7 @@ pub fn parse_create_snapshot_from_volume_recovery_point_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_unavailable_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_unavailable_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1134,11 +1092,7 @@ pub fn parse_create_snapshot_from_volume_recovery_point_response(
         let mut output =
             crate::output::create_snapshot_from_volume_recovery_point_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_snapshot_from_volume_recovery_point(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_snapshot_from_volume_recovery_point(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
         output.build()
     })
 }
@@ -1171,11 +1125,7 @@ pub fn parse_create_storedi_scsi_volume_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStorediSCSIVolumeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStorediSCSIVolumeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1193,7 +1143,7 @@ pub fn parse_create_storedi_scsi_volume_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStorediSCSIVolumeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStorediSCSIVolumeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1217,7 +1167,7 @@ pub fn parse_create_storedi_scsi_volume_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_storedi_scsi_volume_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_storedi_scsi_volume(
+        output = crate::json_deser::deser_operation_crate_operation_create_storedi_scsi_volume(
             response.body().as_ref(),
             output,
         )
@@ -1247,11 +1197,7 @@ pub fn parse_create_tape_pool_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateTapePoolError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTapePoolError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1269,7 +1215,7 @@ pub fn parse_create_tape_pool_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTapePoolError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTapePoolError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1290,9 +1236,11 @@ pub fn parse_create_tape_pool_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_tape_pool_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_tape_pool(response.body().as_ref(), output)
-                .map_err(crate::error::CreateTapePoolError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_tape_pool(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateTapePoolError::unhandled)?;
         output.build()
     })
 }
@@ -1318,11 +1266,7 @@ pub fn parse_create_tapes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateTapesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTapesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1340,7 +1284,7 @@ pub fn parse_create_tapes_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTapesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTapesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1361,8 +1305,11 @@ pub fn parse_create_tapes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_tapes_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_tapes(response.body().as_ref(), output)
-            .map_err(crate::error::CreateTapesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_tapes(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateTapesError::unhandled)?;
         output.build()
     })
 }
@@ -1391,11 +1338,7 @@ pub fn parse_create_tape_with_barcode_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateTapeWithBarcodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTapeWithBarcodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1413,7 +1356,7 @@ pub fn parse_create_tape_with_barcode_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTapeWithBarcodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTapeWithBarcodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1437,7 +1380,7 @@ pub fn parse_create_tape_with_barcode_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_tape_with_barcode_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_tape_with_barcode(
+        output = crate::json_deser::deser_operation_crate_operation_create_tape_with_barcode(
             response.body().as_ref(),
             output,
         )
@@ -1469,7 +1412,7 @@ pub fn parse_delete_automatic_tape_creation_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutomaticTapeCreationPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutomaticTapeCreationPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1483,7 +1426,7 @@ pub fn parse_delete_automatic_tape_creation_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutomaticTapeCreationPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutomaticTapeCreationPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1508,11 +1451,7 @@ pub fn parse_delete_automatic_tape_creation_policy_response(
         let mut output =
             crate::output::delete_automatic_tape_creation_policy_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_automatic_tape_creation_policy(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteAutomaticTapeCreationPolicyError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_automatic_tape_creation_policy(response.body().as_ref(), output).map_err(crate::error::DeleteAutomaticTapeCreationPolicyError::unhandled)?;
         output.build()
     })
 }
@@ -1545,11 +1484,7 @@ pub fn parse_delete_bandwidth_rate_limit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBandwidthRateLimitError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBandwidthRateLimitError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1568,7 +1503,7 @@ pub fn parse_delete_bandwidth_rate_limit_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBandwidthRateLimitError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBandwidthRateLimitError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1593,7 +1528,7 @@ pub fn parse_delete_bandwidth_rate_limit_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bandwidth_rate_limit_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_bandwidth_rate_limit(
+        output = crate::json_deser::deser_operation_crate_operation_delete_bandwidth_rate_limit(
             response.body().as_ref(),
             output,
         )
@@ -1626,11 +1561,7 @@ pub fn parse_delete_chap_credentials_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteChapCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteChapCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1648,7 +1579,7 @@ pub fn parse_delete_chap_credentials_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteChapCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteChapCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1672,7 +1603,7 @@ pub fn parse_delete_chap_credentials_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_chap_credentials_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_chap_credentials(
+        output = crate::json_deser::deser_operation_crate_operation_delete_chap_credentials(
             response.body().as_ref(),
             output,
         )
@@ -1702,11 +1633,7 @@ pub fn parse_delete_file_share_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteFileShareError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileShareError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1724,7 +1651,7 @@ pub fn parse_delete_file_share_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileShareError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileShareError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1745,9 +1672,11 @@ pub fn parse_delete_file_share_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_file_share_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_delete_file_share(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteFileShareError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_file_share(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteFileShareError::unhandled)?;
         output.build()
     })
 }
@@ -1773,11 +1702,7 @@ pub fn parse_delete_gateway_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteGatewayError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGatewayError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1795,7 +1720,7 @@ pub fn parse_delete_gateway_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGatewayError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGatewayError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1816,9 +1741,11 @@ pub fn parse_delete_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_gateway_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_delete_gateway(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteGatewayError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_gateway(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteGatewayError::unhandled)?;
         output.build()
     })
 }
@@ -1851,11 +1778,7 @@ pub fn parse_delete_snapshot_schedule_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1873,7 +1796,7 @@ pub fn parse_delete_snapshot_schedule_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1897,7 +1820,7 @@ pub fn parse_delete_snapshot_schedule_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_snapshot_schedule_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_snapshot_schedule(
+        output = crate::json_deser::deser_operation_crate_operation_delete_snapshot_schedule(
             response.body().as_ref(),
             output,
         )
@@ -1927,11 +1850,7 @@ pub fn parse_delete_tape_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteTapeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1949,7 +1868,7 @@ pub fn parse_delete_tape_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1970,8 +1889,11 @@ pub fn parse_delete_tape_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_tape_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_tape(response.body().as_ref(), output)
-            .map_err(crate::error::DeleteTapeError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_tape(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteTapeError::unhandled)?;
         output.build()
     })
 }
@@ -1998,11 +1920,7 @@ pub fn parse_delete_tape_archive_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteTapeArchiveError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapeArchiveError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2020,7 +1938,7 @@ pub fn parse_delete_tape_archive_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapeArchiveError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapeArchiveError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2042,7 +1960,7 @@ pub fn parse_delete_tape_archive_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_tape_archive_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_tape_archive(
+        output = crate::json_deser::deser_operation_crate_operation_delete_tape_archive(
             response.body().as_ref(),
             output,
         )
@@ -2072,11 +1990,7 @@ pub fn parse_delete_tape_pool_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteTapePoolError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapePoolError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2094,7 +2008,7 @@ pub fn parse_delete_tape_pool_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapePoolError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapePoolError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2115,9 +2029,11 @@ pub fn parse_delete_tape_pool_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_tape_pool_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_delete_tape_pool(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteTapePoolError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_tape_pool(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteTapePoolError::unhandled)?;
         output.build()
     })
 }
@@ -2143,11 +2059,7 @@ pub fn parse_delete_volume_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteVolumeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteVolumeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2165,7 +2077,7 @@ pub fn parse_delete_volume_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteVolumeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteVolumeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2186,8 +2098,11 @@ pub fn parse_delete_volume_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_volume_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_volume(response.body().as_ref(), output)
-            .map_err(crate::error::DeleteVolumeError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_volume(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteVolumeError::unhandled)?;
         output.build()
     })
 }
@@ -2213,7 +2128,7 @@ pub fn parse_describe_availability_monitor_test_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAvailabilityMonitorTestError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAvailabilityMonitorTestError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2227,7 +2142,7 @@ pub fn parse_describe_availability_monitor_test_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAvailabilityMonitorTestError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAvailabilityMonitorTestError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2252,11 +2167,12 @@ pub fn parse_describe_availability_monitor_test_response(
         let mut output =
             crate::output::describe_availability_monitor_test_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_availability_monitor_test(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeAvailabilityMonitorTestError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_availability_monitor_test(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeAvailabilityMonitorTestError::unhandled)?;
         output.build()
     })
 }
@@ -2289,11 +2205,7 @@ pub fn parse_describe_bandwidth_rate_limit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBandwidthRateLimitError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2312,7 +2224,7 @@ pub fn parse_describe_bandwidth_rate_limit_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2337,7 +2249,7 @@ pub fn parse_describe_bandwidth_rate_limit_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_bandwidth_rate_limit_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_bandwidth_rate_limit(
+        output = crate::json_deser::deser_operation_crate_operation_describe_bandwidth_rate_limit(
             response.body().as_ref(),
             output,
         )
@@ -2369,7 +2281,7 @@ pub fn parse_describe_bandwidth_rate_limit_schedule_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitScheduleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitScheduleError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2383,7 +2295,7 @@ pub fn parse_describe_bandwidth_rate_limit_schedule_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitScheduleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitScheduleError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2408,11 +2320,7 @@ pub fn parse_describe_bandwidth_rate_limit_schedule_response(
         let mut output =
             crate::output::describe_bandwidth_rate_limit_schedule_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_bandwidth_rate_limit_schedule(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeBandwidthRateLimitScheduleError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_bandwidth_rate_limit_schedule(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitScheduleError::unhandled)?;
         output.build()
     })
 }
@@ -2438,11 +2346,7 @@ pub fn parse_describe_cache_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeCacheError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2460,7 +2364,7 @@ pub fn parse_describe_cache_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2481,9 +2385,11 @@ pub fn parse_describe_cache_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_cache_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_cache(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeCacheError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_cache(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeCacheError::unhandled)?;
         output.build()
     })
 }
@@ -2516,11 +2422,7 @@ pub fn parse_describe_cachedi_scsi_volumes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeCachediSCSIVolumesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeCachediSCSIVolumesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2539,7 +2441,7 @@ pub fn parse_describe_cachedi_scsi_volumes_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeCachediSCSIVolumesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeCachediSCSIVolumesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2564,7 +2466,7 @@ pub fn parse_describe_cachedi_scsi_volumes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_cachedi_scsi_volumes_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_cachedi_scsi_volumes(
+        output = crate::json_deser::deser_operation_crate_operation_describe_cachedi_scsi_volumes(
             response.body().as_ref(),
             output,
         )
@@ -2601,11 +2503,7 @@ pub fn parse_describe_chap_credentials_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeChapCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeChapCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2623,7 +2521,7 @@ pub fn parse_describe_chap_credentials_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeChapCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeChapCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2647,7 +2545,7 @@ pub fn parse_describe_chap_credentials_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_chap_credentials_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_chap_credentials(
+        output = crate::json_deser::deser_operation_crate_operation_describe_chap_credentials(
             response.body().as_ref(),
             output,
         )
@@ -2677,7 +2575,7 @@ pub fn parse_describe_file_system_associations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFileSystemAssociationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFileSystemAssociationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2691,7 +2589,7 @@ pub fn parse_describe_file_system_associations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFileSystemAssociationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFileSystemAssociationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2716,11 +2614,12 @@ pub fn parse_describe_file_system_associations_response(
         let mut output =
             crate::output::describe_file_system_associations_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_file_system_associations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeFileSystemAssociationsError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_file_system_associations(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeFileSystemAssociationsError::unhandled)?;
         output.build()
     })
 }
@@ -2753,11 +2652,7 @@ pub fn parse_describe_gateway_information_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeGatewayInformationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGatewayInformationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2776,7 +2671,7 @@ pub fn parse_describe_gateway_information_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGatewayInformationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGatewayInformationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2801,7 +2696,7 @@ pub fn parse_describe_gateway_information_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_gateway_information_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_gateway_information(
+        output = crate::json_deser::deser_operation_crate_operation_describe_gateway_information(
             response.body().as_ref(),
             output,
         )
@@ -2838,11 +2733,7 @@ pub fn parse_describe_maintenance_start_time_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeMaintenanceStartTimeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMaintenanceStartTimeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2862,7 +2753,7 @@ pub fn parse_describe_maintenance_start_time_error(
                             let mut output =
                                 crate::error::invalid_gateway_request_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMaintenanceStartTimeError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMaintenanceStartTimeError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -2887,11 +2778,12 @@ pub fn parse_describe_maintenance_start_time_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_maintenance_start_time_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_maintenance_start_time(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeMaintenanceStartTimeError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_maintenance_start_time(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeMaintenanceStartTimeError::unhandled)?;
         output.build()
     })
 }
@@ -2920,11 +2812,7 @@ pub fn parse_describe_nfs_file_shares_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeNFSFileSharesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeNFSFileSharesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2942,7 +2830,7 @@ pub fn parse_describe_nfs_file_shares_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeNFSFileSharesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeNFSFileSharesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2966,7 +2854,7 @@ pub fn parse_describe_nfs_file_shares_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_nfs_file_shares_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_nfs_file_shares(
+        output = crate::json_deser::deser_operation_crate_operation_describe_nfs_file_shares(
             response.body().as_ref(),
             output,
         )
@@ -2999,11 +2887,7 @@ pub fn parse_describe_smb_file_shares_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeSMBFileSharesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSMBFileSharesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3021,7 +2905,7 @@ pub fn parse_describe_smb_file_shares_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSMBFileSharesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSMBFileSharesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3045,7 +2929,7 @@ pub fn parse_describe_smb_file_shares_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_smb_file_shares_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_smb_file_shares(
+        output = crate::json_deser::deser_operation_crate_operation_describe_smb_file_shares(
             response.body().as_ref(),
             output,
         )
@@ -3078,11 +2962,7 @@ pub fn parse_describe_smb_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeSMBSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSMBSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3100,7 +2980,7 @@ pub fn parse_describe_smb_settings_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSMBSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSMBSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3124,7 +3004,7 @@ pub fn parse_describe_smb_settings_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_smb_settings_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_smb_settings(
+        output = crate::json_deser::deser_operation_crate_operation_describe_smb_settings(
             response.body().as_ref(),
             output,
         )
@@ -3161,11 +3041,7 @@ pub fn parse_describe_snapshot_schedule_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeSnapshotScheduleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotScheduleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3184,7 +3060,7 @@ pub fn parse_describe_snapshot_schedule_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotScheduleError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotScheduleError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3209,7 +3085,7 @@ pub fn parse_describe_snapshot_schedule_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_snapshot_schedule_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_snapshot_schedule(
+        output = crate::json_deser::deser_operation_crate_operation_describe_snapshot_schedule(
             response.body().as_ref(),
             output,
         )
@@ -3246,11 +3122,7 @@ pub fn parse_describe_storedi_scsi_volumes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeStorediSCSIVolumesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorediSCSIVolumesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3269,7 +3141,7 @@ pub fn parse_describe_storedi_scsi_volumes_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorediSCSIVolumesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorediSCSIVolumesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3294,7 +3166,7 @@ pub fn parse_describe_storedi_scsi_volumes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_storedi_scsi_volumes_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_storedi_scsi_volumes(
+        output = crate::json_deser::deser_operation_crate_operation_describe_storedi_scsi_volumes(
             response.body().as_ref(),
             output,
         )
@@ -3327,11 +3199,7 @@ pub fn parse_describe_tape_archives_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTapeArchivesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapeArchivesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3349,7 +3217,7 @@ pub fn parse_describe_tape_archives_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapeArchivesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapeArchivesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3373,7 +3241,7 @@ pub fn parse_describe_tape_archives_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_tape_archives_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_tape_archives(
+        output = crate::json_deser::deser_operation_crate_operation_describe_tape_archives(
             response.body().as_ref(),
             output,
         )
@@ -3410,11 +3278,7 @@ pub fn parse_describe_tape_recovery_points_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTapeRecoveryPointsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapeRecoveryPointsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3433,7 +3297,7 @@ pub fn parse_describe_tape_recovery_points_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapeRecoveryPointsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapeRecoveryPointsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3458,7 +3322,7 @@ pub fn parse_describe_tape_recovery_points_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_tape_recovery_points_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_tape_recovery_points(
+        output = crate::json_deser::deser_operation_crate_operation_describe_tape_recovery_points(
             response.body().as_ref(),
             output,
         )
@@ -3488,11 +3352,7 @@ pub fn parse_describe_tapes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTapesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3510,7 +3370,7 @@ pub fn parse_describe_tapes_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3531,9 +3391,11 @@ pub fn parse_describe_tapes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_tapes_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_tapes(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeTapesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_tapes(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeTapesError::unhandled)?;
         output.build()
     })
 }
@@ -3562,11 +3424,7 @@ pub fn parse_describe_upload_buffer_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeUploadBufferError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeUploadBufferError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3584,7 +3442,7 @@ pub fn parse_describe_upload_buffer_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeUploadBufferError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeUploadBufferError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3608,7 +3466,7 @@ pub fn parse_describe_upload_buffer_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_upload_buffer_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_upload_buffer(
+        output = crate::json_deser::deser_operation_crate_operation_describe_upload_buffer(
             response.body().as_ref(),
             output,
         )
@@ -3641,11 +3499,7 @@ pub fn parse_describe_vtl_devices_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeVTLDevicesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVTLDevicesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3663,7 +3517,7 @@ pub fn parse_describe_vtl_devices_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVTLDevicesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVTLDevicesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3687,7 +3541,7 @@ pub fn parse_describe_vtl_devices_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vtl_devices_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_vtl_devices(
+        output = crate::json_deser::deser_operation_crate_operation_describe_vtl_devices(
             response.body().as_ref(),
             output,
         )
@@ -3724,11 +3578,7 @@ pub fn parse_describe_working_storage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeWorkingStorageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkingStorageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3746,7 +3596,7 @@ pub fn parse_describe_working_storage_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkingStorageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkingStorageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3770,7 +3620,7 @@ pub fn parse_describe_working_storage_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_working_storage_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_working_storage(
+        output = crate::json_deser::deser_operation_crate_operation_describe_working_storage(
             response.body().as_ref(),
             output,
         )
@@ -3800,11 +3650,7 @@ pub fn parse_detach_volume_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DetachVolumeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DetachVolumeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3822,7 +3668,7 @@ pub fn parse_detach_volume_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DetachVolumeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DetachVolumeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3843,8 +3689,11 @@ pub fn parse_detach_volume_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_volume_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_detach_volume(response.body().as_ref(), output)
-            .map_err(crate::error::DetachVolumeError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_detach_volume(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DetachVolumeError::unhandled)?;
         output.build()
     })
 }
@@ -3870,11 +3719,7 @@ pub fn parse_disable_gateway_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DisableGatewayError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DisableGatewayError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3892,7 +3737,7 @@ pub fn parse_disable_gateway_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisableGatewayError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisableGatewayError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3913,9 +3758,11 @@ pub fn parse_disable_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disable_gateway_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_disable_gateway(response.body().as_ref(), output)
-                .map_err(crate::error::DisableGatewayError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_disable_gateway(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DisableGatewayError::unhandled)?;
         output.build()
     })
 }
@@ -3948,11 +3795,7 @@ pub fn parse_disassociate_file_system_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DisassociateFileSystemError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFileSystemError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3970,7 +3813,7 @@ pub fn parse_disassociate_file_system_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFileSystemError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFileSystemError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3994,7 +3837,7 @@ pub fn parse_disassociate_file_system_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_file_system_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_disassociate_file_system(
+        output = crate::json_deser::deser_operation_crate_operation_disassociate_file_system(
             response.body().as_ref(),
             output,
         )
@@ -4024,11 +3867,7 @@ pub fn parse_join_domain_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::JoinDomainError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::JoinDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4046,7 +3885,7 @@ pub fn parse_join_domain_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::JoinDomainError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::JoinDomainError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4067,8 +3906,11 @@ pub fn parse_join_domain_response(
         #[allow(unused_mut)]
         let mut output = crate::output::join_domain_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_join_domain(response.body().as_ref(), output)
-            .map_err(crate::error::JoinDomainError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_join_domain(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::JoinDomainError::unhandled)?;
         output.build()
     })
 }
@@ -4096,7 +3938,7 @@ pub fn parse_list_automatic_tape_creation_policies_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListAutomaticTapeCreationPoliciesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListAutomaticTapeCreationPoliciesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4110,7 +3952,7 @@ pub fn parse_list_automatic_tape_creation_policies_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAutomaticTapeCreationPoliciesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAutomaticTapeCreationPoliciesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4135,11 +3977,7 @@ pub fn parse_list_automatic_tape_creation_policies_response(
         let mut output =
             crate::output::list_automatic_tape_creation_policies_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_automatic_tape_creation_policies(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ListAutomaticTapeCreationPoliciesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_automatic_tape_creation_policies(response.body().as_ref(), output).map_err(crate::error::ListAutomaticTapeCreationPoliciesError::unhandled)?;
         output.build()
     })
 }
@@ -4165,11 +4003,7 @@ pub fn parse_list_file_shares_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListFileSharesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListFileSharesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4187,7 +4021,7 @@ pub fn parse_list_file_shares_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFileSharesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFileSharesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4208,9 +4042,11 @@ pub fn parse_list_file_shares_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_file_shares_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_file_shares(response.body().as_ref(), output)
-                .map_err(crate::error::ListFileSharesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_file_shares(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListFileSharesError::unhandled)?;
         output.build()
     })
 }
@@ -4243,11 +4079,7 @@ pub fn parse_list_file_system_associations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListFileSystemAssociationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListFileSystemAssociationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4266,7 +4098,7 @@ pub fn parse_list_file_system_associations_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFileSystemAssociationsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFileSystemAssociationsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4291,7 +4123,7 @@ pub fn parse_list_file_system_associations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_file_system_associations_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_file_system_associations(
+        output = crate::json_deser::deser_operation_crate_operation_list_file_system_associations(
             response.body().as_ref(),
             output,
         )
@@ -4321,11 +4153,7 @@ pub fn parse_list_gateways_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListGatewaysError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListGatewaysError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4343,7 +4171,7 @@ pub fn parse_list_gateways_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListGatewaysError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListGatewaysError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4364,8 +4192,11 @@ pub fn parse_list_gateways_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_gateways_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_gateways(response.body().as_ref(), output)
-            .map_err(crate::error::ListGatewaysError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_gateways(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListGatewaysError::unhandled)?;
         output.build()
     })
 }
@@ -4391,11 +4222,7 @@ pub fn parse_list_local_disks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListLocalDisksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListLocalDisksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4413,7 +4240,7 @@ pub fn parse_list_local_disks_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLocalDisksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLocalDisksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4434,9 +4261,11 @@ pub fn parse_list_local_disks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_local_disks_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_local_disks(response.body().as_ref(), output)
-                .map_err(crate::error::ListLocalDisksError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_local_disks(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListLocalDisksError::unhandled)?;
         output.build()
     })
 }
@@ -4465,11 +4294,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4487,7 +4312,7 @@ pub fn parse_list_tags_for_resource_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4511,7 +4336,7 @@ pub fn parse_list_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_tags_for_resource(
+        output = crate::json_deser::deser_operation_crate_operation_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
@@ -4541,11 +4366,7 @@ pub fn parse_list_tape_pools_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTapePoolsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListTapePoolsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4563,7 +4384,7 @@ pub fn parse_list_tape_pools_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTapePoolsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTapePoolsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4584,9 +4405,11 @@ pub fn parse_list_tape_pools_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tape_pools_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_tape_pools(response.body().as_ref(), output)
-                .map_err(crate::error::ListTapePoolsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_tape_pools(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListTapePoolsError::unhandled)?;
         output.build()
     })
 }
@@ -4612,11 +4435,7 @@ pub fn parse_list_tapes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTapesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListTapesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4634,7 +4453,7 @@ pub fn parse_list_tapes_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTapesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTapesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4655,8 +4474,11 @@ pub fn parse_list_tapes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tapes_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_tapes(response.body().as_ref(), output)
-            .map_err(crate::error::ListTapesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_tapes(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListTapesError::unhandled)?;
         output.build()
     })
 }
@@ -4685,11 +4507,7 @@ pub fn parse_list_volume_initiators_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListVolumeInitiatorsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListVolumeInitiatorsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4707,7 +4525,7 @@ pub fn parse_list_volume_initiators_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListVolumeInitiatorsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListVolumeInitiatorsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4731,7 +4549,7 @@ pub fn parse_list_volume_initiators_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_volume_initiators_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_volume_initiators(
+        output = crate::json_deser::deser_operation_crate_operation_list_volume_initiators(
             response.body().as_ref(),
             output,
         )
@@ -4768,11 +4586,7 @@ pub fn parse_list_volume_recovery_points_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListVolumeRecoveryPointsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListVolumeRecoveryPointsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4791,7 +4605,7 @@ pub fn parse_list_volume_recovery_points_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListVolumeRecoveryPointsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListVolumeRecoveryPointsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4816,7 +4630,7 @@ pub fn parse_list_volume_recovery_points_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_volume_recovery_points_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_volume_recovery_points(
+        output = crate::json_deser::deser_operation_crate_operation_list_volume_recovery_points(
             response.body().as_ref(),
             output,
         )
@@ -4846,11 +4660,7 @@ pub fn parse_list_volumes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListVolumesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListVolumesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4868,7 +4678,7 @@ pub fn parse_list_volumes_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListVolumesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListVolumesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4889,8 +4699,11 @@ pub fn parse_list_volumes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_volumes_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_volumes(response.body().as_ref(), output)
-            .map_err(crate::error::ListVolumesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_volumes(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListVolumesError::unhandled)?;
         output.build()
     })
 }
@@ -4919,11 +4732,7 @@ pub fn parse_notify_when_uploaded_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::NotifyWhenUploadedError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::NotifyWhenUploadedError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4941,7 +4750,7 @@ pub fn parse_notify_when_uploaded_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::NotifyWhenUploadedError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::NotifyWhenUploadedError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4965,7 +4774,7 @@ pub fn parse_notify_when_uploaded_response(
         #[allow(unused_mut)]
         let mut output = crate::output::notify_when_uploaded_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_notify_when_uploaded(
+        output = crate::json_deser::deser_operation_crate_operation_notify_when_uploaded(
             response.body().as_ref(),
             output,
         )
@@ -4995,11 +4804,7 @@ pub fn parse_refresh_cache_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RefreshCacheError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::RefreshCacheError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5017,7 +4822,7 @@ pub fn parse_refresh_cache_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RefreshCacheError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RefreshCacheError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5038,8 +4843,11 @@ pub fn parse_refresh_cache_response(
         #[allow(unused_mut)]
         let mut output = crate::output::refresh_cache_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_refresh_cache(response.body().as_ref(), output)
-            .map_err(crate::error::RefreshCacheError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_refresh_cache(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RefreshCacheError::unhandled)?;
         output.build()
     })
 }
@@ -5072,11 +4880,7 @@ pub fn parse_remove_tags_from_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5094,7 +4898,7 @@ pub fn parse_remove_tags_from_resource_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5118,7 +4922,7 @@ pub fn parse_remove_tags_from_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::remove_tags_from_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_remove_tags_from_resource(
+        output = crate::json_deser::deser_operation_crate_operation_remove_tags_from_resource(
             response.body().as_ref(),
             output,
         )
@@ -5148,11 +4952,7 @@ pub fn parse_reset_cache_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ResetCacheError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5170,7 +4970,7 @@ pub fn parse_reset_cache_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5191,8 +4991,11 @@ pub fn parse_reset_cache_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reset_cache_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_reset_cache(response.body().as_ref(), output)
-            .map_err(crate::error::ResetCacheError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_reset_cache(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ResetCacheError::unhandled)?;
         output.build()
     })
 }
@@ -5221,11 +5024,7 @@ pub fn parse_retrieve_tape_archive_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RetrieveTapeArchiveError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::RetrieveTapeArchiveError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5243,7 +5042,7 @@ pub fn parse_retrieve_tape_archive_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetrieveTapeArchiveError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetrieveTapeArchiveError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5267,7 +5066,7 @@ pub fn parse_retrieve_tape_archive_response(
         #[allow(unused_mut)]
         let mut output = crate::output::retrieve_tape_archive_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_retrieve_tape_archive(
+        output = crate::json_deser::deser_operation_crate_operation_retrieve_tape_archive(
             response.body().as_ref(),
             output,
         )
@@ -5304,11 +5103,7 @@ pub fn parse_retrieve_tape_recovery_point_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RetrieveTapeRecoveryPointError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::RetrieveTapeRecoveryPointError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5327,7 +5122,7 @@ pub fn parse_retrieve_tape_recovery_point_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetrieveTapeRecoveryPointError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetrieveTapeRecoveryPointError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -5352,7 +5147,7 @@ pub fn parse_retrieve_tape_recovery_point_response(
         #[allow(unused_mut)]
         let mut output = crate::output::retrieve_tape_recovery_point_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_retrieve_tape_recovery_point(
+        output = crate::json_deser::deser_operation_crate_operation_retrieve_tape_recovery_point(
             response.body().as_ref(),
             output,
         )
@@ -5389,11 +5184,7 @@ pub fn parse_set_local_console_password_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetLocalConsolePasswordError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::SetLocalConsolePasswordError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5411,7 +5202,7 @@ pub fn parse_set_local_console_password_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetLocalConsolePasswordError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetLocalConsolePasswordError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5435,7 +5226,7 @@ pub fn parse_set_local_console_password_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_local_console_password_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_set_local_console_password(
+        output = crate::json_deser::deser_operation_crate_operation_set_local_console_password(
             response.body().as_ref(),
             output,
         )
@@ -5468,11 +5259,7 @@ pub fn parse_set_smb_guest_password_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetSMBGuestPasswordError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::SetSMBGuestPasswordError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5490,7 +5277,7 @@ pub fn parse_set_smb_guest_password_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetSMBGuestPasswordError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetSMBGuestPasswordError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5514,7 +5301,7 @@ pub fn parse_set_smb_guest_password_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_smb_guest_password_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_set_smb_guest_password(
+        output = crate::json_deser::deser_operation_crate_operation_set_smb_guest_password(
             response.body().as_ref(),
             output,
         )
@@ -5544,11 +5331,7 @@ pub fn parse_shutdown_gateway_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ShutdownGatewayError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ShutdownGatewayError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5566,7 +5349,7 @@ pub fn parse_shutdown_gateway_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ShutdownGatewayError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ShutdownGatewayError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5587,9 +5370,11 @@ pub fn parse_shutdown_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::shutdown_gateway_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_shutdown_gateway(response.body().as_ref(), output)
-                .map_err(crate::error::ShutdownGatewayError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_shutdown_gateway(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ShutdownGatewayError::unhandled)?;
         output.build()
     })
 }
@@ -5622,11 +5407,7 @@ pub fn parse_start_availability_monitor_test_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartAvailabilityMonitorTestError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::StartAvailabilityMonitorTestError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5646,7 +5427,7 @@ pub fn parse_start_availability_monitor_test_error(
                             let mut output =
                                 crate::error::invalid_gateway_request_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartAvailabilityMonitorTestError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartAvailabilityMonitorTestError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -5671,11 +5452,12 @@ pub fn parse_start_availability_monitor_test_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_availability_monitor_test_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_start_availability_monitor_test(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::StartAvailabilityMonitorTestError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_start_availability_monitor_test(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::StartAvailabilityMonitorTestError::unhandled)?;
         output.build()
     })
 }
@@ -5701,11 +5483,7 @@ pub fn parse_start_gateway_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartGatewayError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::StartGatewayError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5723,7 +5501,7 @@ pub fn parse_start_gateway_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartGatewayError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartGatewayError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5744,8 +5522,11 @@ pub fn parse_start_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_gateway_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_start_gateway(response.body().as_ref(), output)
-            .map_err(crate::error::StartGatewayError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_start_gateway(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartGatewayError::unhandled)?;
         output.build()
     })
 }
@@ -5773,7 +5554,7 @@ pub fn parse_update_automatic_tape_creation_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutomaticTapeCreationPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutomaticTapeCreationPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5787,7 +5568,7 @@ pub fn parse_update_automatic_tape_creation_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutomaticTapeCreationPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutomaticTapeCreationPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5812,11 +5593,7 @@ pub fn parse_update_automatic_tape_creation_policy_response(
         let mut output =
             crate::output::update_automatic_tape_creation_policy_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_automatic_tape_creation_policy(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::UpdateAutomaticTapeCreationPolicyError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_automatic_tape_creation_policy(response.body().as_ref(), output).map_err(crate::error::UpdateAutomaticTapeCreationPolicyError::unhandled)?;
         output.build()
     })
 }
@@ -5849,11 +5626,7 @@ pub fn parse_update_bandwidth_rate_limit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBandwidthRateLimitError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5872,7 +5645,7 @@ pub fn parse_update_bandwidth_rate_limit_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -5897,7 +5670,7 @@ pub fn parse_update_bandwidth_rate_limit_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_bandwidth_rate_limit_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_bandwidth_rate_limit(
+        output = crate::json_deser::deser_operation_crate_operation_update_bandwidth_rate_limit(
             response.body().as_ref(),
             output,
         )
@@ -5929,7 +5702,7 @@ pub fn parse_update_bandwidth_rate_limit_schedule_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitScheduleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitScheduleError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5943,7 +5716,7 @@ pub fn parse_update_bandwidth_rate_limit_schedule_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitScheduleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitScheduleError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5968,11 +5741,7 @@ pub fn parse_update_bandwidth_rate_limit_schedule_response(
         let mut output =
             crate::output::update_bandwidth_rate_limit_schedule_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_bandwidth_rate_limit_schedule(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::UpdateBandwidthRateLimitScheduleError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_bandwidth_rate_limit_schedule(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitScheduleError::unhandled)?;
         output.build()
     })
 }
@@ -6001,11 +5770,7 @@ pub fn parse_update_chap_credentials_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateChapCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateChapCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6023,7 +5788,7 @@ pub fn parse_update_chap_credentials_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateChapCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateChapCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6047,7 +5812,7 @@ pub fn parse_update_chap_credentials_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_chap_credentials_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_chap_credentials(
+        output = crate::json_deser::deser_operation_crate_operation_update_chap_credentials(
             response.body().as_ref(),
             output,
         )
@@ -6084,11 +5849,7 @@ pub fn parse_update_file_system_association_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateFileSystemAssociationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemAssociationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6108,7 +5869,7 @@ pub fn parse_update_file_system_association_error(
                             let mut output =
                                 crate::error::invalid_gateway_request_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemAssociationError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemAssociationError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -6133,7 +5894,7 @@ pub fn parse_update_file_system_association_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_file_system_association_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_file_system_association(
+        output = crate::json_deser::deser_operation_crate_operation_update_file_system_association(
             response.body().as_ref(),
             output,
         )
@@ -6170,11 +5931,7 @@ pub fn parse_update_gateway_information_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateGatewayInformationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayInformationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6193,7 +5950,7 @@ pub fn parse_update_gateway_information_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayInformationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayInformationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6218,7 +5975,7 @@ pub fn parse_update_gateway_information_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_gateway_information_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_gateway_information(
+        output = crate::json_deser::deser_operation_crate_operation_update_gateway_information(
             response.body().as_ref(),
             output,
         )
@@ -6255,11 +6012,7 @@ pub fn parse_update_gateway_software_now_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateGatewaySoftwareNowError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewaySoftwareNowError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6278,7 +6031,7 @@ pub fn parse_update_gateway_software_now_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewaySoftwareNowError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewaySoftwareNowError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6303,7 +6056,7 @@ pub fn parse_update_gateway_software_now_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_gateway_software_now_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_gateway_software_now(
+        output = crate::json_deser::deser_operation_crate_operation_update_gateway_software_now(
             response.body().as_ref(),
             output,
         )
@@ -6340,11 +6093,7 @@ pub fn parse_update_maintenance_start_time_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateMaintenanceStartTimeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateMaintenanceStartTimeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6363,7 +6112,7 @@ pub fn parse_update_maintenance_start_time_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateMaintenanceStartTimeError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateMaintenanceStartTimeError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6388,7 +6137,7 @@ pub fn parse_update_maintenance_start_time_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_maintenance_start_time_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_maintenance_start_time(
+        output = crate::json_deser::deser_operation_crate_operation_update_maintenance_start_time(
             response.body().as_ref(),
             output,
         )
@@ -6421,11 +6170,7 @@ pub fn parse_update_nfs_file_share_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateNFSFileShareError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateNFSFileShareError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6443,7 +6188,7 @@ pub fn parse_update_nfs_file_share_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateNFSFileShareError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateNFSFileShareError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6467,7 +6212,7 @@ pub fn parse_update_nfs_file_share_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_nfs_file_share_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_nfs_file_share(
+        output = crate::json_deser::deser_operation_crate_operation_update_nfs_file_share(
             response.body().as_ref(),
             output,
         )
@@ -6500,11 +6245,7 @@ pub fn parse_update_smb_file_share_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSMBFileShareError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBFileShareError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6522,7 +6263,7 @@ pub fn parse_update_smb_file_share_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBFileShareError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBFileShareError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6546,7 +6287,7 @@ pub fn parse_update_smb_file_share_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_smb_file_share_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_smb_file_share(
+        output = crate::json_deser::deser_operation_crate_operation_update_smb_file_share(
             response.body().as_ref(),
             output,
         )
@@ -6583,11 +6324,7 @@ pub fn parse_update_smb_file_share_visibility_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSMBFileShareVisibilityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBFileShareVisibilityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6607,7 +6344,7 @@ pub fn parse_update_smb_file_share_visibility_error(
                             let mut output =
                                 crate::error::invalid_gateway_request_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBFileShareVisibilityError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBFileShareVisibilityError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -6632,11 +6369,12 @@ pub fn parse_update_smb_file_share_visibility_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_smb_file_share_visibility_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_smb_file_share_visibility(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::UpdateSMBFileShareVisibilityError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_update_smb_file_share_visibility(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::UpdateSMBFileShareVisibilityError::unhandled)?;
         output.build()
     })
 }
@@ -6669,11 +6407,7 @@ pub fn parse_update_smb_security_strategy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSMBSecurityStrategyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBSecurityStrategyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6692,7 +6426,7 @@ pub fn parse_update_smb_security_strategy_error(
                         let mut output =
                             crate::error::invalid_gateway_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBSecurityStrategyError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBSecurityStrategyError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6717,7 +6451,7 @@ pub fn parse_update_smb_security_strategy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_smb_security_strategy_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_smb_security_strategy(
+        output = crate::json_deser::deser_operation_crate_operation_update_smb_security_strategy(
             response.body().as_ref(),
             output,
         )
@@ -6754,11 +6488,7 @@ pub fn parse_update_snapshot_schedule_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSnapshotScheduleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSnapshotScheduleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6776,7 +6506,7 @@ pub fn parse_update_snapshot_schedule_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSnapshotScheduleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSnapshotScheduleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6800,7 +6530,7 @@ pub fn parse_update_snapshot_schedule_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_snapshot_schedule_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_snapshot_schedule(
+        output = crate::json_deser::deser_operation_crate_operation_update_snapshot_schedule(
             response.body().as_ref(),
             output,
         )
@@ -6833,11 +6563,7 @@ pub fn parse_update_vtl_device_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateVTLDeviceTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateVTLDeviceTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6855,7 +6581,7 @@ pub fn parse_update_vtl_device_type_error(
                     let mut output =
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateVTLDeviceTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateVTLDeviceTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6879,7 +6605,7 @@ pub fn parse_update_vtl_device_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_vtl_device_type_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_vtl_device_type(
+        output = crate::json_deser::deser_operation_crate_operation_update_vtl_device_type(
             response.body().as_ref(),
             output,
         )

@@ -14,7 +14,7 @@ pub mod create_access_point_input {
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     }
     impl Builder {
-        /// <p>The account ID for the owner of the bucket for which you want to create an access point.</p>
+        /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -113,7 +113,10 @@ impl CreateAccessPointInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_access_point(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_access_point(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -237,8 +240,11 @@ impl CreateAccessPointInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -246,7 +252,11 @@ impl CreateAccessPointInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -267,7 +277,7 @@ pub mod create_access_point_for_object_lambda_input {
         pub(crate) configuration: std::option::Option<crate::model::ObjectLambdaConfiguration>,
     }
     impl Builder {
-        /// <p>The account ID for owner of the specified Object Lambda Access Point.</p>
+        /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -334,12 +344,8 @@ impl CreateAccessPointForObjectLambdaInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_access_point_for_object_lambda(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_access_point_for_object_lambda(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -464,8 +470,11 @@ impl CreateAccessPointForObjectLambdaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -473,7 +482,11 @@ impl CreateAccessPointForObjectLambdaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -928,8 +941,11 @@ impl CreateBucketInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -937,7 +953,11 @@ impl CreateBucketInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -965,7 +985,7 @@ pub mod create_job_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
     }
     impl Builder {
-        /// <p>The account ID that creates the job.</p>
+        /// <p>The Amazon Web Services account ID that creates the job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -1115,8 +1135,8 @@ impl CreateJobInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_create_job(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -1222,8 +1242,11 @@ impl CreateJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1231,13 +1254,248 @@ impl CreateJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateJobInput`](crate::input::CreateJobInput)
     pub fn builder() -> crate::input::create_job_input::Builder {
         crate::input::create_job_input::Builder::default()
+    }
+}
+
+/// See [`CreateMultiRegionAccessPointInput`](crate::input::CreateMultiRegionAccessPointInput)
+pub mod create_multi_region_access_point_input {
+    /// A builder for [`CreateMultiRegionAccessPointInput`](crate::input::CreateMultiRegionAccessPointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) details: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own
+        /// the underlying buckets.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>An idempotency token used to identify the request and guarantee that requests are
+        /// unique.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p>A container element containing details about the Multi-Region Access Point.</p>
+        pub fn details(mut self, input: crate::model::CreateMultiRegionAccessPointInput) -> Self {
+            self.details = Some(input);
+            self
+        }
+        pub fn set_details(
+            mut self,
+            input: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
+        ) -> Self {
+            self.details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointInput`](crate::input::CreateMultiRegionAccessPointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateMultiRegionAccessPointInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateMultiRegionAccessPointInput {
+                account_id: self.account_id,
+                client_token: self.client_token,
+                details: self.details,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateMultiRegionAccessPointInputOperationOutputAlias =
+    crate::operation::CreateMultiRegionAccessPoint;
+#[doc(hidden)]
+pub type CreateMultiRegionAccessPointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateMultiRegionAccessPointInput {
+    /// Consumes the builder and constructs an Operation<[`CreateMultiRegionAccessPoint`](crate::operation::CreateMultiRegionAccessPoint)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateMultiRegionAccessPoint,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.client_token.is_none() {
+                self.client_token = Some(_config.make_token.make_idempotency_token());
+            }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_multi_region_access_point(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            let endpoint_prefix = {
+                let account_id = self.account_id.as_deref().unwrap_or_default();
+                if account_id.is_empty() {
+                    return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                }
+                smithy_http::endpoint::EndpointPrefix::new(format!(
+                    "{AccountId}.",
+                    AccountId = account_id
+                ))
+            };
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    smithy_types::base64::encode(&checksum[..])
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateMultiRegionAccessPoint::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateMultiRegionAccessPoint",
+                "s3control",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v20180820/async-requests/mrap/create").expect("formatting should succeed");
+        Ok(())
+    }
+    fn add_headers(
+        &self,
+        mut builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        if let Some(inner_25) = &self.account_id {
+            let formatted_26 = AsRef::<str>::as_ref(inner_25);
+            if !formatted_26.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_26;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "account_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("x-amz-account-id", header_value);
+            }
+        }
+        Ok(builder)
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        let builder = self.add_headers(builder)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointInput`](crate::input::CreateMultiRegionAccessPointInput)
+    pub fn builder() -> crate::input::create_multi_region_access_point_input::Builder {
+        crate::input::create_multi_region_access_point_input::Builder::default()
     }
 }
 
@@ -1369,15 +1627,15 @@ impl DeleteAccessPointInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_25 = &self.name;
-        let input_25 =
-            input_25
+        let input_27 = &self.name;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_25, false);
+        let name = smithy_http::label::fmt_string(input_27, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -1392,11 +1650,11 @@ impl DeleteAccessPointInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_26) = &self.account_id {
-            let formatted_27 = AsRef::<str>::as_ref(inner_26);
-            if !formatted_27.is_empty() {
+        if let Some(inner_28) = &self.account_id {
+            let formatted_29 = AsRef::<str>::as_ref(inner_28);
+            if !formatted_29.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_27;
+                let header_value = formatted_29;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1427,8 +1685,11 @@ impl DeleteAccessPointInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1436,7 +1697,11 @@ impl DeleteAccessPointInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1573,15 +1838,15 @@ impl DeleteAccessPointForObjectLambdaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_28 = &self.name;
-        let input_28 =
-            input_28
+        let input_30 = &self.name;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_28, false);
+        let name = smithy_http::label::fmt_string(input_30, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -1600,11 +1865,11 @@ impl DeleteAccessPointForObjectLambdaInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_29) = &self.account_id {
-            let formatted_30 = AsRef::<str>::as_ref(inner_29);
-            if !formatted_30.is_empty() {
+        if let Some(inner_31) = &self.account_id {
+            let formatted_32 = AsRef::<str>::as_ref(inner_31);
+            if !formatted_32.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_30;
+                let header_value = formatted_32;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1635,8 +1900,11 @@ impl DeleteAccessPointForObjectLambdaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1644,7 +1912,11 @@ impl DeleteAccessPointForObjectLambdaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1783,15 +2055,15 @@ impl DeleteAccessPointPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_31 = &self.name;
-        let input_31 =
-            input_31
+        let input_33 = &self.name;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_31, false);
+        let name = smithy_http::label::fmt_string(input_33, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -1806,11 +2078,11 @@ impl DeleteAccessPointPolicyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_32) = &self.account_id {
-            let formatted_33 = AsRef::<str>::as_ref(inner_32);
-            if !formatted_33.is_empty() {
+        if let Some(inner_34) = &self.account_id {
+            let formatted_35 = AsRef::<str>::as_ref(inner_34);
+            if !formatted_35.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_33;
+                let header_value = formatted_35;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1841,8 +2113,11 @@ impl DeleteAccessPointPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1850,7 +2125,11 @@ impl DeleteAccessPointPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1988,15 +2267,15 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_34 = &self.name;
-        let input_34 =
-            input_34
+        let input_36 = &self.name;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_34, false);
+        let name = smithy_http::label::fmt_string(input_36, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -2015,11 +2294,11 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_35) = &self.account_id {
-            let formatted_36 = AsRef::<str>::as_ref(inner_35);
-            if !formatted_36.is_empty() {
+        if let Some(inner_37) = &self.account_id {
+            let formatted_38 = AsRef::<str>::as_ref(inner_37);
+            if !formatted_38.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_36;
+                let header_value = formatted_38;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2050,8 +2329,11 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2059,7 +2341,11 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2195,15 +2481,15 @@ impl DeleteBucketInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_37 = &self.bucket;
-        let input_37 =
-            input_37
+        let input_39 = &self.bucket;
+        let input_39 =
+            input_39
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_37, false);
+        let bucket = smithy_http::label::fmt_string(input_39, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
@@ -2218,11 +2504,11 @@ impl DeleteBucketInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_38) = &self.account_id {
-            let formatted_39 = AsRef::<str>::as_ref(inner_38);
-            if !formatted_39.is_empty() {
+        if let Some(inner_40) = &self.account_id {
+            let formatted_41 = AsRef::<str>::as_ref(inner_40);
+            if !formatted_41.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_39;
+                let header_value = formatted_41;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2253,8 +2539,11 @@ impl DeleteBucketInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2262,7 +2551,11 @@ impl DeleteBucketInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2401,15 +2694,15 @@ impl DeleteBucketLifecycleConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_40 = &self.bucket;
-        let input_40 =
-            input_40
+        let input_42 = &self.bucket;
+        let input_42 =
+            input_42
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_40, false);
+        let bucket = smithy_http::label::fmt_string(input_42, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
@@ -2428,11 +2721,11 @@ impl DeleteBucketLifecycleConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_41) = &self.account_id {
-            let formatted_42 = AsRef::<str>::as_ref(inner_41);
-            if !formatted_42.is_empty() {
+        if let Some(inner_43) = &self.account_id {
+            let formatted_44 = AsRef::<str>::as_ref(inner_43);
+            if !formatted_44.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_42;
+                let header_value = formatted_44;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2463,8 +2756,11 @@ impl DeleteBucketLifecycleConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2472,7 +2768,11 @@ impl DeleteBucketLifecycleConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2610,15 +2910,15 @@ impl DeleteBucketPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_43 = &self.bucket;
-        let input_43 =
-            input_43
+        let input_45 = &self.bucket;
+        let input_45 =
+            input_45
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_43, false);
+        let bucket = smithy_http::label::fmt_string(input_45, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
@@ -2633,11 +2933,11 @@ impl DeleteBucketPolicyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_44) = &self.account_id {
-            let formatted_45 = AsRef::<str>::as_ref(inner_44);
-            if !formatted_45.is_empty() {
+        if let Some(inner_46) = &self.account_id {
+            let formatted_47 = AsRef::<str>::as_ref(inner_46);
+            if !formatted_47.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_45;
+                let header_value = formatted_47;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2668,8 +2968,11 @@ impl DeleteBucketPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2677,7 +2980,11 @@ impl DeleteBucketPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2697,7 +3004,7 @@ pub mod delete_bucket_tagging_input {
         pub(crate) bucket: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the Outposts bucket tag set to be removed.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -2815,15 +3122,15 @@ impl DeleteBucketTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_46 = &self.bucket;
-        let input_46 =
-            input_46
+        let input_48 = &self.bucket;
+        let input_48 =
+            input_48
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_46, false);
+        let bucket = smithy_http::label::fmt_string(input_48, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
@@ -2842,11 +3149,11 @@ impl DeleteBucketTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_47) = &self.account_id {
-            let formatted_48 = AsRef::<str>::as_ref(inner_47);
-            if !formatted_48.is_empty() {
+        if let Some(inner_49) = &self.account_id {
+            let formatted_50 = AsRef::<str>::as_ref(inner_49);
+            if !formatted_50.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_48;
+                let header_value = formatted_50;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2877,8 +3184,11 @@ impl DeleteBucketTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2886,7 +3196,11 @@ impl DeleteBucketTaggingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2906,7 +3220,7 @@ pub mod delete_job_tagging_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -3022,15 +3336,15 @@ impl DeleteJobTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_49 = &self.job_id;
-        let input_49 =
-            input_49
+        let input_51 = &self.job_id;
+        let input_51 =
+            input_51
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_49, false);
+        let job_id = smithy_http::label::fmt_string(input_51, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -3045,11 +3359,11 @@ impl DeleteJobTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_50) = &self.account_id {
-            let formatted_51 = AsRef::<str>::as_ref(inner_50);
-            if !formatted_51.is_empty() {
+        if let Some(inner_52) = &self.account_id {
+            let formatted_53 = AsRef::<str>::as_ref(inner_52);
+            if !formatted_53.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_51;
+                let header_value = formatted_53;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3080,8 +3394,11 @@ impl DeleteJobTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3089,13 +3406,247 @@ impl DeleteJobTaggingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteJobTaggingInput`](crate::input::DeleteJobTaggingInput)
     pub fn builder() -> crate::input::delete_job_tagging_input::Builder {
         crate::input::delete_job_tagging_input::Builder::default()
+    }
+}
+
+/// See [`DeleteMultiRegionAccessPointInput`](crate::input::DeleteMultiRegionAccessPointInput)
+pub mod delete_multi_region_access_point_input {
+    /// A builder for [`DeleteMultiRegionAccessPointInput`](crate::input::DeleteMultiRegionAccessPointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) details: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>An idempotency token used to identify the request and guarantee that requests are
+        /// unique.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p>A container element containing details about the Multi-Region Access Point.</p>
+        pub fn details(mut self, input: crate::model::DeleteMultiRegionAccessPointInput) -> Self {
+            self.details = Some(input);
+            self
+        }
+        pub fn set_details(
+            mut self,
+            input: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
+        ) -> Self {
+            self.details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteMultiRegionAccessPointInput`](crate::input::DeleteMultiRegionAccessPointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteMultiRegionAccessPointInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteMultiRegionAccessPointInput {
+                account_id: self.account_id,
+                client_token: self.client_token,
+                details: self.details,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteMultiRegionAccessPointInputOperationOutputAlias =
+    crate::operation::DeleteMultiRegionAccessPoint;
+#[doc(hidden)]
+pub type DeleteMultiRegionAccessPointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteMultiRegionAccessPointInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteMultiRegionAccessPoint`](crate::operation::DeleteMultiRegionAccessPoint)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteMultiRegionAccessPoint,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.client_token.is_none() {
+                self.client_token = Some(_config.make_token.make_idempotency_token());
+            }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_multi_region_access_point(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            let endpoint_prefix = {
+                let account_id = self.account_id.as_deref().unwrap_or_default();
+                if account_id.is_empty() {
+                    return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                }
+                smithy_http::endpoint::EndpointPrefix::new(format!(
+                    "{AccountId}.",
+                    AccountId = account_id
+                ))
+            };
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    smithy_types::base64::encode(&checksum[..])
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteMultiRegionAccessPoint::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteMultiRegionAccessPoint",
+                "s3control",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v20180820/async-requests/mrap/delete").expect("formatting should succeed");
+        Ok(())
+    }
+    fn add_headers(
+        &self,
+        mut builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        if let Some(inner_54) = &self.account_id {
+            let formatted_55 = AsRef::<str>::as_ref(inner_54);
+            if !formatted_55.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_55;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "account_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("x-amz-account-id", header_value);
+            }
+        }
+        Ok(builder)
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        let builder = self.add_headers(builder)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointInput`](crate::input::DeleteMultiRegionAccessPointInput)
+    pub fn builder() -> crate::input::delete_multi_region_access_point_input::Builder {
+        crate::input::delete_multi_region_access_point_input::Builder::default()
     }
 }
 
@@ -3108,7 +3659,7 @@ pub mod delete_public_access_block_input {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
         /// to remove.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
@@ -3224,11 +3775,11 @@ impl DeletePublicAccessBlockInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_52) = &self.account_id {
-            let formatted_53 = AsRef::<str>::as_ref(inner_52);
-            if !formatted_53.is_empty() {
+        if let Some(inner_56) = &self.account_id {
+            let formatted_57 = AsRef::<str>::as_ref(inner_56);
+            if !formatted_57.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_53;
+                let header_value = formatted_57;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3259,8 +3810,11 @@ impl DeletePublicAccessBlockInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3268,7 +3822,11 @@ impl DeletePublicAccessBlockInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3405,15 +3963,15 @@ impl DeleteStorageLensConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_54 = &self.config_id;
-        let input_54 =
-            input_54
+        let input_58 = &self.config_id;
+        let input_58 =
+            input_58
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 })?;
-        let config_id = smithy_http::label::fmt_string(input_54, false);
+        let config_id = smithy_http::label::fmt_string(input_58, false);
         if config_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "config_id",
@@ -3432,11 +3990,11 @@ impl DeleteStorageLensConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_55) = &self.account_id {
-            let formatted_56 = AsRef::<str>::as_ref(inner_55);
-            if !formatted_56.is_empty() {
+        if let Some(inner_59) = &self.account_id {
+            let formatted_60 = AsRef::<str>::as_ref(inner_59);
+            if !formatted_60.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_56;
+                let header_value = formatted_60;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3467,8 +4025,11 @@ impl DeleteStorageLensConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3476,7 +4037,11 @@ impl DeleteStorageLensConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3614,15 +4179,15 @@ impl DeleteStorageLensConfigurationTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_57 = &self.config_id;
-        let input_57 =
-            input_57
+        let input_61 = &self.config_id;
+        let input_61 =
+            input_61
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 })?;
-        let config_id = smithy_http::label::fmt_string(input_57, false);
+        let config_id = smithy_http::label::fmt_string(input_61, false);
         if config_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "config_id",
@@ -3641,11 +4206,11 @@ impl DeleteStorageLensConfigurationTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_58) = &self.account_id {
-            let formatted_59 = AsRef::<str>::as_ref(inner_58);
-            if !formatted_59.is_empty() {
+        if let Some(inner_62) = &self.account_id {
+            let formatted_63 = AsRef::<str>::as_ref(inner_62);
+            if !formatted_63.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_59;
+                let header_value = formatted_63;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3676,8 +4241,11 @@ impl DeleteStorageLensConfigurationTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3685,7 +4253,11 @@ impl DeleteStorageLensConfigurationTaggingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3705,7 +4277,7 @@ pub mod describe_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -3819,15 +4391,15 @@ impl DescribeJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_60 = &self.job_id;
-        let input_60 =
-            input_60
+        let input_64 = &self.job_id;
+        let input_64 =
+            input_64
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_60, false);
+        let job_id = smithy_http::label::fmt_string(input_64, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -3842,11 +4414,11 @@ impl DescribeJobInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_61) = &self.account_id {
-            let formatted_62 = AsRef::<str>::as_ref(inner_61);
-            if !formatted_62.is_empty() {
+        if let Some(inner_65) = &self.account_id {
+            let formatted_66 = AsRef::<str>::as_ref(inner_65);
+            if !formatted_66.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_62;
+                let header_value = formatted_66;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3877,8 +4449,11 @@ impl DescribeJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3886,13 +4461,253 @@ impl DescribeJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeJobInput`](crate::input::DescribeJobInput)
     pub fn builder() -> crate::input::describe_job_input::Builder {
         crate::input::describe_job_input::Builder::default()
+    }
+}
+
+/// See [`DescribeMultiRegionAccessPointOperationInput`](crate::input::DescribeMultiRegionAccessPointOperationInput)
+pub mod describe_multi_region_access_point_operation_input {
+    /// A builder for [`DescribeMultiRegionAccessPointOperationInput`](crate::input::DescribeMultiRegionAccessPointOperationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) request_token_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The request token associated with the request you want to know about. This request token
+        /// is returned as part of the response when you make an asynchronous request. You provide
+        /// this token to query about the status of the asynchronous action.</p>
+        pub fn request_token_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_token_arn = Some(input.into());
+            self
+        }
+        pub fn set_request_token_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_token_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeMultiRegionAccessPointOperationInput`](crate::input::DescribeMultiRegionAccessPointOperationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeMultiRegionAccessPointOperationInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeMultiRegionAccessPointOperationInput {
+                account_id: self.account_id,
+                request_token_arn: self.request_token_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeMultiRegionAccessPointOperationInputOperationOutputAlias =
+    crate::operation::DescribeMultiRegionAccessPointOperation;
+#[doc(hidden)]
+pub type DescribeMultiRegionAccessPointOperationInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl DescribeMultiRegionAccessPointOperationInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeMultiRegionAccessPointOperation`](crate::operation::DescribeMultiRegionAccessPointOperation)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeMultiRegionAccessPointOperation,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            let endpoint_prefix = {
+                let account_id = self.account_id.as_deref().unwrap_or_default();
+                if account_id.is_empty() {
+                    return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                }
+                smithy_http::endpoint::EndpointPrefix::new(format!(
+                    "{AccountId}.",
+                    AccountId = account_id
+                ))
+            };
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    smithy_types::base64::encode(&checksum[..])
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeMultiRegionAccessPointOperation::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeMultiRegionAccessPointOperation",
+                "s3control",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_67 = &self.request_token_arn;
+        let input_67 =
+            input_67
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "request_token_arn",
+                    details: "cannot be empty or unset",
+                })?;
+        let request_token_arn = smithy_http::label::fmt_string(input_67, true);
+        if request_token_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "request_token_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/v20180820/async-requests/mrap/{RequestTokenARN}",
+            RequestTokenARN = request_token_arn
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    fn add_headers(
+        &self,
+        mut builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        if let Some(inner_68) = &self.account_id {
+            let formatted_69 = AsRef::<str>::as_ref(inner_68);
+            if !formatted_69.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_69;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "account_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("x-amz-account-id", header_value);
+            }
+        }
+        Ok(builder)
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        let builder = self.add_headers(builder)?;
+        Ok(builder.method("GET").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationInput`](crate::input::DescribeMultiRegionAccessPointOperationInput)
+    pub fn builder() -> crate::input::describe_multi_region_access_point_operation_input::Builder {
+        crate::input::describe_multi_region_access_point_operation_input::Builder::default()
     }
 }
 
@@ -4024,15 +4839,15 @@ impl GetAccessPointInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_63 = &self.name;
-        let input_63 =
-            input_63
+        let input_70 = &self.name;
+        let input_70 =
+            input_70
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_63, false);
+        let name = smithy_http::label::fmt_string(input_70, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -4047,11 +4862,11 @@ impl GetAccessPointInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_64) = &self.account_id {
-            let formatted_65 = AsRef::<str>::as_ref(inner_64);
-            if !formatted_65.is_empty() {
+        if let Some(inner_71) = &self.account_id {
+            let formatted_72 = AsRef::<str>::as_ref(inner_71);
+            if !formatted_72.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_65;
+                let header_value = formatted_72;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -4082,8 +4897,11 @@ impl GetAccessPointInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4091,7 +4909,11 @@ impl GetAccessPointInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4231,15 +5053,15 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_66 = &self.name;
-        let input_66 =
-            input_66
+        let input_73 = &self.name;
+        let input_73 =
+            input_73
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_66, false);
+        let name = smithy_http::label::fmt_string(input_73, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -4258,11 +5080,11 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_67) = &self.account_id {
-            let formatted_68 = AsRef::<str>::as_ref(inner_67);
-            if !formatted_68.is_empty() {
+        if let Some(inner_74) = &self.account_id {
+            let formatted_75 = AsRef::<str>::as_ref(inner_74);
+            if !formatted_75.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_68;
+                let header_value = formatted_75;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -4293,8 +5115,11 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4302,7 +5127,11 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4440,15 +5269,15 @@ impl GetAccessPointForObjectLambdaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_69 = &self.name;
-        let input_69 =
-            input_69
+        let input_76 = &self.name;
+        let input_76 =
+            input_76
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_69, false);
+        let name = smithy_http::label::fmt_string(input_76, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -4467,11 +5296,11 @@ impl GetAccessPointForObjectLambdaInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_70) = &self.account_id {
-            let formatted_71 = AsRef::<str>::as_ref(inner_70);
-            if !formatted_71.is_empty() {
+        if let Some(inner_77) = &self.account_id {
+            let formatted_78 = AsRef::<str>::as_ref(inner_77);
+            if !formatted_78.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_71;
+                let header_value = formatted_78;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -4502,8 +5331,11 @@ impl GetAccessPointForObjectLambdaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4511,7 +5343,11 @@ impl GetAccessPointForObjectLambdaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4649,15 +5485,15 @@ impl GetAccessPointPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_72 = &self.name;
-        let input_72 =
-            input_72
+        let input_79 = &self.name;
+        let input_79 =
+            input_79
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_72, false);
+        let name = smithy_http::label::fmt_string(input_79, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -4672,11 +5508,11 @@ impl GetAccessPointPolicyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_73) = &self.account_id {
-            let formatted_74 = AsRef::<str>::as_ref(inner_73);
-            if !formatted_74.is_empty() {
+        if let Some(inner_80) = &self.account_id {
+            let formatted_81 = AsRef::<str>::as_ref(inner_80);
+            if !formatted_81.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_74;
+                let header_value = formatted_81;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -4707,8 +5543,11 @@ impl GetAccessPointPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4716,7 +5555,11 @@ impl GetAccessPointPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4854,15 +5697,15 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_75 = &self.name;
-        let input_75 =
-            input_75
+        let input_82 = &self.name;
+        let input_82 =
+            input_82
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_75, false);
+        let name = smithy_http::label::fmt_string(input_82, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -4881,11 +5724,11 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_76) = &self.account_id {
-            let formatted_77 = AsRef::<str>::as_ref(inner_76);
-            if !formatted_77.is_empty() {
+        if let Some(inner_83) = &self.account_id {
+            let formatted_84 = AsRef::<str>::as_ref(inner_83);
+            if !formatted_84.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_77;
+                let header_value = formatted_84;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -4916,8 +5759,11 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4925,7 +5771,11 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5062,15 +5912,15 @@ impl GetAccessPointPolicyStatusInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_78 = &self.name;
-        let input_78 =
-            input_78
+        let input_85 = &self.name;
+        let input_85 =
+            input_85
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_78, false);
+        let name = smithy_http::label::fmt_string(input_85, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -5089,11 +5939,11 @@ impl GetAccessPointPolicyStatusInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_79) = &self.account_id {
-            let formatted_80 = AsRef::<str>::as_ref(inner_79);
-            if !formatted_80.is_empty() {
+        if let Some(inner_86) = &self.account_id {
+            let formatted_87 = AsRef::<str>::as_ref(inner_86);
+            if !formatted_87.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_80;
+                let header_value = formatted_87;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -5124,8 +5974,11 @@ impl GetAccessPointPolicyStatusInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5133,7 +5986,11 @@ impl GetAccessPointPolicyStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5273,15 +6130,15 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_81 = &self.name;
-        let input_81 =
-            input_81
+        let input_88 = &self.name;
+        let input_88 =
+            input_88
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_81, false);
+        let name = smithy_http::label::fmt_string(input_88, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -5300,11 +6157,11 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_82) = &self.account_id {
-            let formatted_83 = AsRef::<str>::as_ref(inner_82);
-            if !formatted_83.is_empty() {
+        if let Some(inner_89) = &self.account_id {
+            let formatted_90 = AsRef::<str>::as_ref(inner_89);
+            if !formatted_90.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_83;
+                let header_value = formatted_90;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -5335,8 +6192,11 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5344,7 +6204,11 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5365,7 +6229,7 @@ pub mod get_bucket_input {
         pub(crate) bucket: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -5479,15 +6343,15 @@ impl GetBucketInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_84 = &self.bucket;
-        let input_84 =
-            input_84
+        let input_91 = &self.bucket;
+        let input_91 =
+            input_91
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_84, false);
+        let bucket = smithy_http::label::fmt_string(input_91, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
@@ -5502,11 +6366,11 @@ impl GetBucketInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_85) = &self.account_id {
-            let formatted_86 = AsRef::<str>::as_ref(inner_85);
-            if !formatted_86.is_empty() {
+        if let Some(inner_92) = &self.account_id {
+            let formatted_93 = AsRef::<str>::as_ref(inner_92);
+            if !formatted_93.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_86;
+                let header_value = formatted_93;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -5537,8 +6401,11 @@ impl GetBucketInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5546,7 +6413,11 @@ impl GetBucketInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5566,7 +6437,7 @@ pub mod get_bucket_lifecycle_configuration_input {
         pub(crate) bucket: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -5685,15 +6556,15 @@ impl GetBucketLifecycleConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_87 = &self.bucket;
-        let input_87 =
-            input_87
+        let input_94 = &self.bucket;
+        let input_94 =
+            input_94
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_87, false);
+        let bucket = smithy_http::label::fmt_string(input_94, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
@@ -5712,11 +6583,11 @@ impl GetBucketLifecycleConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_88) = &self.account_id {
-            let formatted_89 = AsRef::<str>::as_ref(inner_88);
-            if !formatted_89.is_empty() {
+        if let Some(inner_95) = &self.account_id {
+            let formatted_96 = AsRef::<str>::as_ref(inner_95);
+            if !formatted_96.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_89;
+                let header_value = formatted_96;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -5747,8 +6618,11 @@ impl GetBucketLifecycleConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5756,7 +6630,11 @@ impl GetBucketLifecycleConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5776,7 +6654,7 @@ pub mod get_bucket_policy_input {
         pub(crate) bucket: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -5894,15 +6772,15 @@ impl GetBucketPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_90 = &self.bucket;
-        let input_90 =
-            input_90
+        let input_97 = &self.bucket;
+        let input_97 =
+            input_97
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_90, false);
+        let bucket = smithy_http::label::fmt_string(input_97, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
@@ -5917,11 +6795,11 @@ impl GetBucketPolicyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_91) = &self.account_id {
-            let formatted_92 = AsRef::<str>::as_ref(inner_91);
-            if !formatted_92.is_empty() {
+        if let Some(inner_98) = &self.account_id {
+            let formatted_99 = AsRef::<str>::as_ref(inner_98);
+            if !formatted_99.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_92;
+                let header_value = formatted_99;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -5952,8 +6830,11 @@ impl GetBucketPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5961,7 +6842,11 @@ impl GetBucketPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5981,7 +6866,7 @@ pub mod get_bucket_tagging_input {
         pub(crate) bucket: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -6099,15 +6984,15 @@ impl GetBucketTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_93 = &self.bucket;
-        let input_93 =
-            input_93
+        let input_100 = &self.bucket;
+        let input_100 =
+            input_100
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_93, false);
+        let bucket = smithy_http::label::fmt_string(input_100, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
@@ -6126,11 +7011,11 @@ impl GetBucketTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_94) = &self.account_id {
-            let formatted_95 = AsRef::<str>::as_ref(inner_94);
-            if !formatted_95.is_empty() {
+        if let Some(inner_101) = &self.account_id {
+            let formatted_102 = AsRef::<str>::as_ref(inner_101);
+            if !formatted_102.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_95;
+                let header_value = formatted_102;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6161,8 +7046,11 @@ impl GetBucketTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6170,7 +7058,11 @@ impl GetBucketTaggingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6190,7 +7082,7 @@ pub mod get_job_tagging_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -6304,15 +7196,15 @@ impl GetJobTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_96 = &self.job_id;
-        let input_96 =
-            input_96
+        let input_103 = &self.job_id;
+        let input_103 =
+            input_103
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_96, false);
+        let job_id = smithy_http::label::fmt_string(input_103, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -6327,11 +7219,11 @@ impl GetJobTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_97) = &self.account_id {
-            let formatted_98 = AsRef::<str>::as_ref(inner_97);
-            if !formatted_98.is_empty() {
+        if let Some(inner_104) = &self.account_id {
+            let formatted_105 = AsRef::<str>::as_ref(inner_104);
+            if !formatted_105.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_98;
+                let header_value = formatted_105;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6362,8 +7254,11 @@ impl GetJobTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6371,13 +7266,713 @@ impl GetJobTaggingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetJobTaggingInput`](crate::input::GetJobTaggingInput)
     pub fn builder() -> crate::input::get_job_tagging_input::Builder {
         crate::input::get_job_tagging_input::Builder::default()
+    }
+}
+
+/// See [`GetMultiRegionAccessPointInput`](crate::input::GetMultiRegionAccessPointInput)
+pub mod get_multi_region_access_point_input {
+    /// A builder for [`GetMultiRegionAccessPointInput`](crate::input::GetMultiRegionAccessPointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of
+        /// the Multi-Region Access Point is different from the alias. For more information about the distinction
+        /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointInput`](crate::input::GetMultiRegionAccessPointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetMultiRegionAccessPointInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetMultiRegionAccessPointInput {
+                account_id: self.account_id,
+                name: self.name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetMultiRegionAccessPointInputOperationOutputAlias =
+    crate::operation::GetMultiRegionAccessPoint;
+#[doc(hidden)]
+pub type GetMultiRegionAccessPointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetMultiRegionAccessPointInput {
+    /// Consumes the builder and constructs an Operation<[`GetMultiRegionAccessPoint`](crate::operation::GetMultiRegionAccessPoint)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetMultiRegionAccessPoint,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            let endpoint_prefix = {
+                let account_id = self.account_id.as_deref().unwrap_or_default();
+                if account_id.is_empty() {
+                    return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                }
+                smithy_http::endpoint::EndpointPrefix::new(format!(
+                    "{AccountId}.",
+                    AccountId = account_id
+                ))
+            };
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    smithy_types::base64::encode(&checksum[..])
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetMultiRegionAccessPoint::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetMultiRegionAccessPoint",
+                "s3control",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_106 = &self.name;
+        let input_106 =
+            input_106
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+        let name = smithy_http::label::fmt_string(input_106, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(output, "/v20180820/mrap/instances/{Name}", Name = name)
+            .expect("formatting should succeed");
+        Ok(())
+    }
+    fn add_headers(
+        &self,
+        mut builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        if let Some(inner_107) = &self.account_id {
+            let formatted_108 = AsRef::<str>::as_ref(inner_107);
+            if !formatted_108.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_108;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "account_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("x-amz-account-id", header_value);
+            }
+        }
+        Ok(builder)
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        let builder = self.add_headers(builder)?;
+        Ok(builder.method("GET").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointInput`](crate::input::GetMultiRegionAccessPointInput)
+    pub fn builder() -> crate::input::get_multi_region_access_point_input::Builder {
+        crate::input::get_multi_region_access_point_input::Builder::default()
+    }
+}
+
+/// See [`GetMultiRegionAccessPointPolicyInput`](crate::input::GetMultiRegionAccessPointPolicyInput)
+pub mod get_multi_region_access_point_policy_input {
+    /// A builder for [`GetMultiRegionAccessPointPolicyInput`](crate::input::GetMultiRegionAccessPointPolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
+        /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyInput`](crate::input::GetMultiRegionAccessPointPolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetMultiRegionAccessPointPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetMultiRegionAccessPointPolicyInput {
+                account_id: self.account_id,
+                name: self.name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetMultiRegionAccessPointPolicyInputOperationOutputAlias =
+    crate::operation::GetMultiRegionAccessPointPolicy;
+#[doc(hidden)]
+pub type GetMultiRegionAccessPointPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetMultiRegionAccessPointPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`GetMultiRegionAccessPointPolicy`](crate::operation::GetMultiRegionAccessPointPolicy)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetMultiRegionAccessPointPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            let endpoint_prefix = {
+                let account_id = self.account_id.as_deref().unwrap_or_default();
+                if account_id.is_empty() {
+                    return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                }
+                smithy_http::endpoint::EndpointPrefix::new(format!(
+                    "{AccountId}.",
+                    AccountId = account_id
+                ))
+            };
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    smithy_types::base64::encode(&checksum[..])
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetMultiRegionAccessPointPolicy::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetMultiRegionAccessPointPolicy",
+                "s3control",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_109 = &self.name;
+        let input_109 =
+            input_109
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+        let name = smithy_http::label::fmt_string(input_109, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/v20180820/mrap/instances/{Name}/policy",
+            Name = name
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    fn add_headers(
+        &self,
+        mut builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        if let Some(inner_110) = &self.account_id {
+            let formatted_111 = AsRef::<str>::as_ref(inner_110);
+            if !formatted_111.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_111;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "account_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("x-amz-account-id", header_value);
+            }
+        }
+        Ok(builder)
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        let builder = self.add_headers(builder)?;
+        Ok(builder.method("GET").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyInput`](crate::input::GetMultiRegionAccessPointPolicyInput)
+    pub fn builder() -> crate::input::get_multi_region_access_point_policy_input::Builder {
+        crate::input::get_multi_region_access_point_policy_input::Builder::default()
+    }
+}
+
+/// See [`GetMultiRegionAccessPointPolicyStatusInput`](crate::input::GetMultiRegionAccessPointPolicyStatusInput)
+pub mod get_multi_region_access_point_policy_status_input {
+    /// A builder for [`GetMultiRegionAccessPointPolicyStatusInput`](crate::input::GetMultiRegionAccessPointPolicyStatusInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
+        /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyStatusInput`](crate::input::GetMultiRegionAccessPointPolicyStatusInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetMultiRegionAccessPointPolicyStatusInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetMultiRegionAccessPointPolicyStatusInput {
+                account_id: self.account_id,
+                name: self.name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetMultiRegionAccessPointPolicyStatusInputOperationOutputAlias =
+    crate::operation::GetMultiRegionAccessPointPolicyStatus;
+#[doc(hidden)]
+pub type GetMultiRegionAccessPointPolicyStatusInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl GetMultiRegionAccessPointPolicyStatusInput {
+    /// Consumes the builder and constructs an Operation<[`GetMultiRegionAccessPointPolicyStatus`](crate::operation::GetMultiRegionAccessPointPolicyStatus)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetMultiRegionAccessPointPolicyStatus,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            let endpoint_prefix = {
+                let account_id = self.account_id.as_deref().unwrap_or_default();
+                if account_id.is_empty() {
+                    return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                }
+                smithy_http::endpoint::EndpointPrefix::new(format!(
+                    "{AccountId}.",
+                    AccountId = account_id
+                ))
+            };
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    smithy_types::base64::encode(&checksum[..])
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetMultiRegionAccessPointPolicyStatus::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetMultiRegionAccessPointPolicyStatus",
+                "s3control",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_112 = &self.name;
+        let input_112 =
+            input_112
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+        let name = smithy_http::label::fmt_string(input_112, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/v20180820/mrap/instances/{Name}/policystatus",
+            Name = name
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    fn add_headers(
+        &self,
+        mut builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        if let Some(inner_113) = &self.account_id {
+            let formatted_114 = AsRef::<str>::as_ref(inner_113);
+            if !formatted_114.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_114;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "account_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("x-amz-account-id", header_value);
+            }
+        }
+        Ok(builder)
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        let builder = self.add_headers(builder)?;
+        Ok(builder.method("GET").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusInput`](crate::input::GetMultiRegionAccessPointPolicyStatusInput)
+    pub fn builder() -> crate::input::get_multi_region_access_point_policy_status_input::Builder {
+        crate::input::get_multi_region_access_point_policy_status_input::Builder::default()
     }
 }
 
@@ -6390,7 +7985,7 @@ pub mod get_public_access_block_input {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
         /// to retrieve.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
@@ -6505,11 +8100,11 @@ impl GetPublicAccessBlockInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_99) = &self.account_id {
-            let formatted_100 = AsRef::<str>::as_ref(inner_99);
-            if !formatted_100.is_empty() {
+        if let Some(inner_115) = &self.account_id {
+            let formatted_116 = AsRef::<str>::as_ref(inner_115);
+            if !formatted_116.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_100;
+                let header_value = formatted_116;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6540,8 +8135,11 @@ impl GetPublicAccessBlockInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6549,7 +8147,11 @@ impl GetPublicAccessBlockInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6686,15 +8288,15 @@ impl GetStorageLensConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_101 = &self.config_id;
-        let input_101 =
-            input_101
+        let input_117 = &self.config_id;
+        let input_117 =
+            input_117
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 })?;
-        let config_id = smithy_http::label::fmt_string(input_101, false);
+        let config_id = smithy_http::label::fmt_string(input_117, false);
         if config_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "config_id",
@@ -6713,11 +8315,11 @@ impl GetStorageLensConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_102) = &self.account_id {
-            let formatted_103 = AsRef::<str>::as_ref(inner_102);
-            if !formatted_103.is_empty() {
+        if let Some(inner_118) = &self.account_id {
+            let formatted_119 = AsRef::<str>::as_ref(inner_118);
+            if !formatted_119.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_103;
+                let header_value = formatted_119;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6748,8 +8350,11 @@ impl GetStorageLensConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6757,7 +8362,11 @@ impl GetStorageLensConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6894,15 +8503,15 @@ impl GetStorageLensConfigurationTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_104 = &self.config_id;
-        let input_104 =
-            input_104
+        let input_120 = &self.config_id;
+        let input_120 =
+            input_120
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 })?;
-        let config_id = smithy_http::label::fmt_string(input_104, false);
+        let config_id = smithy_http::label::fmt_string(input_120, false);
         if config_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "config_id",
@@ -6921,11 +8530,11 @@ impl GetStorageLensConfigurationTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_105) = &self.account_id {
-            let formatted_106 = AsRef::<str>::as_ref(inner_105);
-            if !formatted_106.is_empty() {
+        if let Some(inner_121) = &self.account_id {
+            let formatted_122 = AsRef::<str>::as_ref(inner_121);
+            if !formatted_122.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_106;
+                let header_value = formatted_122;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6956,8 +8565,11 @@ impl GetStorageLensConfigurationTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6965,7 +8577,11 @@ impl GetStorageLensConfigurationTaggingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6987,7 +8603,7 @@ pub mod list_access_points_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The account ID for owner of the bucket whose access points you want to list.</p>
+        /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -7135,11 +8751,11 @@ impl ListAccessPointsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_107) = &self.account_id {
-            let formatted_108 = AsRef::<str>::as_ref(inner_107);
-            if !formatted_108.is_empty() {
+        if let Some(inner_123) = &self.account_id {
+            let formatted_124 = AsRef::<str>::as_ref(inner_123);
+            if !formatted_124.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_108;
+                let header_value = formatted_124;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -7157,11 +8773,11 @@ impl ListAccessPointsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_109) = &self.bucket {
-            query.push_kv("bucket", &smithy_http::query::fmt_string(&inner_109));
+        if let Some(inner_125) = &self.bucket {
+            query.push_kv("bucket", &smithy_http::query::fmt_string(&inner_125));
         }
-        if let Some(inner_110) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_110));
+        if let Some(inner_126) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_126));
         }
         if self.max_results != 0 {
             query.push_kv(
@@ -7186,8 +8802,11 @@ impl ListAccessPointsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7195,7 +8814,11 @@ impl ListAccessPointsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7352,11 +8975,11 @@ impl ListAccessPointsForObjectLambdaInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_111) = &self.account_id {
-            let formatted_112 = AsRef::<str>::as_ref(inner_111);
-            if !formatted_112.is_empty() {
+        if let Some(inner_127) = &self.account_id {
+            let formatted_128 = AsRef::<str>::as_ref(inner_127);
+            if !formatted_128.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_112;
+                let header_value = formatted_128;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -7374,8 +8997,8 @@ impl ListAccessPointsForObjectLambdaInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_113) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_113));
+        if let Some(inner_129) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_129));
         }
         if self.max_results != 0 {
             query.push_kv(
@@ -7400,8 +9023,11 @@ impl ListAccessPointsForObjectLambdaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7409,7 +9035,11 @@ impl ListAccessPointsForObjectLambdaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7431,7 +9061,7 @@ pub mod list_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -7574,11 +9204,11 @@ impl ListJobsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_114) = &self.account_id {
-            let formatted_115 = AsRef::<str>::as_ref(inner_114);
-            if !formatted_115.is_empty() {
+        if let Some(inner_130) = &self.account_id {
+            let formatted_131 = AsRef::<str>::as_ref(inner_130);
+            if !formatted_131.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_115;
+                let header_value = formatted_131;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -7596,18 +9226,18 @@ impl ListJobsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_116) = &self.job_statuses {
-            for inner_117 in inner_116 {
-                query.push_kv("jobStatuses", &smithy_http::query::fmt_string(&inner_117));
+        if let Some(inner_132) = &self.job_statuses {
+            for inner_133 in inner_132 {
+                query.push_kv("jobStatuses", &smithy_http::query::fmt_string(&inner_133));
             }
         }
-        if let Some(inner_118) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_118));
+        if let Some(inner_134) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_134));
         }
-        if let Some(inner_119) = &self.max_results {
+        if let Some(inner_135) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_119).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_135).encode(),
             );
         }
     }
@@ -7627,8 +9257,11 @@ impl ListJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7636,13 +9269,251 @@ impl ListJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListJobsInput`](crate::input::ListJobsInput)
     pub fn builder() -> crate::input::list_jobs_input::Builder {
         crate::input::list_jobs_input::Builder::default()
+    }
+}
+
+/// See [`ListMultiRegionAccessPointsInput`](crate::input::ListMultiRegionAccessPointsInput)
+pub mod list_multi_region_access_points_input {
+    /// A builder for [`ListMultiRegionAccessPointsInput`](crate::input::ListMultiRegionAccessPointsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>Not currently used. Do not use this parameter.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Not currently used. Do not use this parameter.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMultiRegionAccessPointsInput`](crate::input::ListMultiRegionAccessPointsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListMultiRegionAccessPointsInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListMultiRegionAccessPointsInput {
+                account_id: self.account_id,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListMultiRegionAccessPointsInputOperationOutputAlias =
+    crate::operation::ListMultiRegionAccessPoints;
+#[doc(hidden)]
+pub type ListMultiRegionAccessPointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListMultiRegionAccessPointsInput {
+    /// Consumes the builder and constructs an Operation<[`ListMultiRegionAccessPoints`](crate::operation::ListMultiRegionAccessPoints)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListMultiRegionAccessPoints,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            let endpoint_prefix = {
+                let account_id = self.account_id.as_deref().unwrap_or_default();
+                if account_id.is_empty() {
+                    return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                }
+                smithy_http::endpoint::EndpointPrefix::new(format!(
+                    "{AccountId}.",
+                    AccountId = account_id
+                ))
+            };
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    smithy_types::base64::encode(&checksum[..])
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListMultiRegionAccessPoints::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListMultiRegionAccessPoints",
+                "s3control",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v20180820/mrap/instances").expect("formatting should succeed");
+        Ok(())
+    }
+    fn add_headers(
+        &self,
+        mut builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        if let Some(inner_136) = &self.account_id {
+            let formatted_137 = AsRef::<str>::as_ref(inner_136);
+            if !formatted_137.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_137;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "account_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("x-amz-account-id", header_value);
+            }
+        }
+        Ok(builder)
+    }
+    fn uri_query(&self, mut output: &mut String) {
+        let mut query = smithy_http::query::Writer::new(&mut output);
+        if let Some(inner_138) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_138));
+        }
+        if self.max_results != 0 {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
+            );
+        }
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        self.uri_query(&mut uri);
+        let builder = self.add_headers(builder)?;
+        Ok(builder.method("GET").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsInput`](crate::input::ListMultiRegionAccessPointsInput)
+    pub fn builder() -> crate::input::list_multi_region_access_points_input::Builder {
+        crate::input::list_multi_region_access_points_input::Builder::default()
     }
 }
 
@@ -7658,7 +9529,7 @@ pub mod list_regional_buckets_input {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -7804,11 +9675,11 @@ impl ListRegionalBucketsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_120) = &self.account_id {
-            let formatted_121 = AsRef::<str>::as_ref(inner_120);
-            if !formatted_121.is_empty() {
+        if let Some(inner_139) = &self.account_id {
+            let formatted_140 = AsRef::<str>::as_ref(inner_139);
+            if !formatted_140.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_121;
+                let header_value = formatted_140;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -7822,11 +9693,11 @@ impl ListRegionalBucketsInput {
                 builder = builder.header("x-amz-account-id", header_value);
             }
         }
-        if let Some(inner_122) = &self.outpost_id {
-            let formatted_123 = AsRef::<str>::as_ref(inner_122);
-            if !formatted_123.is_empty() {
+        if let Some(inner_141) = &self.outpost_id {
+            let formatted_142 = AsRef::<str>::as_ref(inner_141);
+            if !formatted_142.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_123;
+                let header_value = formatted_142;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -7844,8 +9715,8 @@ impl ListRegionalBucketsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_124) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_124));
+        if let Some(inner_143) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_143));
         }
         if self.max_results != 0 {
             query.push_kv(
@@ -7870,8 +9741,11 @@ impl ListRegionalBucketsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7879,7 +9753,11 @@ impl ListRegionalBucketsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8023,11 +9901,11 @@ impl ListStorageLensConfigurationsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_125) = &self.account_id {
-            let formatted_126 = AsRef::<str>::as_ref(inner_125);
-            if !formatted_126.is_empty() {
+        if let Some(inner_144) = &self.account_id {
+            let formatted_145 = AsRef::<str>::as_ref(inner_144);
+            if !formatted_145.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_126;
+                let header_value = formatted_145;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -8045,8 +9923,8 @@ impl ListStorageLensConfigurationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_127) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_127));
+        if let Some(inner_146) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_146));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8065,8 +9943,11 @@ impl ListStorageLensConfigurationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8074,7 +9955,11 @@ impl ListStorageLensConfigurationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8165,7 +10050,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_access_point_configuration_for_object_lambda(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_put_access_point_configuration_for_object_lambda(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -8230,15 +10115,15 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_128 = &self.name;
-        let input_128 =
-            input_128
+        let input_147 = &self.name;
+        let input_147 =
+            input_147
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_128, false);
+        let name = smithy_http::label::fmt_string(input_147, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -8257,11 +10142,11 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_129) = &self.account_id {
-            let formatted_130 = AsRef::<str>::as_ref(inner_129);
-            if !formatted_130.is_empty() {
+        if let Some(inner_148) = &self.account_id {
+            let formatted_149 = AsRef::<str>::as_ref(inner_148);
+            if !formatted_149.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_130;
+                let header_value = formatted_149;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -8292,8 +10177,11 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8301,7 +10189,11 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8323,7 +10215,7 @@ pub mod put_access_point_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID for owner of the bucket associated with the specified access point.</p>
+        /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -8387,7 +10279,10 @@ impl PutAccessPointPolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_access_point_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_access_point_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -8454,15 +10349,15 @@ impl PutAccessPointPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_131 = &self.name;
-        let input_131 =
-            input_131
+        let input_150 = &self.name;
+        let input_150 =
+            input_150
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_131, false);
+        let name = smithy_http::label::fmt_string(input_150, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -8477,11 +10372,11 @@ impl PutAccessPointPolicyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_132) = &self.account_id {
-            let formatted_133 = AsRef::<str>::as_ref(inner_132);
-            if !formatted_133.is_empty() {
+        if let Some(inner_151) = &self.account_id {
+            let formatted_152 = AsRef::<str>::as_ref(inner_151);
+            if !formatted_152.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_133;
+                let header_value = formatted_152;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -8512,8 +10407,11 @@ impl PutAccessPointPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8521,7 +10419,11 @@ impl PutAccessPointPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8607,7 +10509,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_access_point_policy_for_object_lambda(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_put_access_point_policy_for_object_lambda(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -8672,15 +10574,15 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_134 = &self.name;
-        let input_134 =
-            input_134
+        let input_153 = &self.name;
+        let input_153 =
+            input_153
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_134, false);
+        let name = smithy_http::label::fmt_string(input_153, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -8699,11 +10601,11 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_135) = &self.account_id {
-            let formatted_136 = AsRef::<str>::as_ref(inner_135);
-            if !formatted_136.is_empty() {
+        if let Some(inner_154) = &self.account_id {
+            let formatted_155 = AsRef::<str>::as_ref(inner_154);
+            if !formatted_155.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_136;
+                let header_value = formatted_155;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -8734,8 +10636,11 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8743,7 +10648,11 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8765,7 +10674,7 @@ pub mod put_bucket_lifecycle_configuration_input {
             std::option::Option<crate::model::LifecycleConfiguration>,
     }
     impl Builder {
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -8915,15 +10824,15 @@ impl PutBucketLifecycleConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_137 = &self.bucket;
-        let input_137 =
-            input_137
+        let input_156 = &self.bucket;
+        let input_156 =
+            input_156
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_137, false);
+        let bucket = smithy_http::label::fmt_string(input_156, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
@@ -8942,11 +10851,11 @@ impl PutBucketLifecycleConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_138) = &self.account_id {
-            let formatted_139 = AsRef::<str>::as_ref(inner_138);
-            if !formatted_139.is_empty() {
+        if let Some(inner_157) = &self.account_id {
+            let formatted_158 = AsRef::<str>::as_ref(inner_157);
+            if !formatted_158.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_139;
+                let header_value = formatted_158;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -8977,8 +10886,11 @@ impl PutBucketLifecycleConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8986,7 +10898,11 @@ impl PutBucketLifecycleConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9008,7 +10924,7 @@ pub mod put_bucket_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -9090,9 +11006,11 @@ impl PutBucketPolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_bucket_policy(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_bucket_policy(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -9171,15 +11089,15 @@ impl PutBucketPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_140 = &self.bucket;
-        let input_140 =
-            input_140
+        let input_159 = &self.bucket;
+        let input_159 =
+            input_159
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_140, false);
+        let bucket = smithy_http::label::fmt_string(input_159, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
@@ -9194,11 +11112,11 @@ impl PutBucketPolicyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_141) = &self.account_id {
-            let formatted_142 = AsRef::<str>::as_ref(inner_141);
-            if !formatted_142.is_empty() {
+        if let Some(inner_160) = &self.account_id {
+            let formatted_161 = AsRef::<str>::as_ref(inner_160);
+            if !formatted_161.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_142;
+                let header_value = formatted_161;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -9215,10 +11133,10 @@ impl PutBucketPolicyInput {
         if self.confirm_remove_self_bucket_access {
             let mut encoder =
                 smithy_types::primitive::Encoder::from(self.confirm_remove_self_bucket_access);
-            let formatted_143 = encoder.encode();
-            if !formatted_143.is_empty() {
+            let formatted_162 = encoder.encode();
+            if !formatted_162.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_143;
+                let header_value = formatted_162;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -9249,8 +11167,11 @@ impl PutBucketPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9258,7 +11179,11 @@ impl PutBucketPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9279,7 +11204,7 @@ pub mod put_bucket_tagging_input {
         pub(crate) tagging: std::option::Option<crate::model::Tagging>,
     }
     impl Builder {
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -9422,15 +11347,15 @@ impl PutBucketTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_144 = &self.bucket;
-        let input_144 =
-            input_144
+        let input_163 = &self.bucket;
+        let input_163 =
+            input_163
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-        let bucket = smithy_http::label::fmt_string(input_144, false);
+        let bucket = smithy_http::label::fmt_string(input_163, false);
         if bucket.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "bucket",
@@ -9449,11 +11374,11 @@ impl PutBucketTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_145) = &self.account_id {
-            let formatted_146 = AsRef::<str>::as_ref(inner_145);
-            if !formatted_146.is_empty() {
+        if let Some(inner_164) = &self.account_id {
+            let formatted_165 = AsRef::<str>::as_ref(inner_164);
+            if !formatted_165.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_146;
+                let header_value = formatted_165;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -9484,8 +11409,11 @@ impl PutBucketTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9493,7 +11421,11 @@ impl PutBucketTaggingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9514,7 +11446,7 @@ pub mod put_job_tagging_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
     }
     impl Builder {
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -9578,9 +11510,11 @@ impl PutJobTaggingInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_job_tagging(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_job_tagging(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -9644,15 +11578,15 @@ impl PutJobTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_147 = &self.job_id;
-        let input_147 =
-            input_147
+        let input_166 = &self.job_id;
+        let input_166 =
+            input_166
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_147, false);
+        let job_id = smithy_http::label::fmt_string(input_166, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -9667,11 +11601,11 @@ impl PutJobTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_148) = &self.account_id {
-            let formatted_149 = AsRef::<str>::as_ref(inner_148);
-            if !formatted_149.is_empty() {
+        if let Some(inner_167) = &self.account_id {
+            let formatted_168 = AsRef::<str>::as_ref(inner_167);
+            if !formatted_168.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_149;
+                let header_value = formatted_168;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -9702,8 +11636,11 @@ impl PutJobTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9711,13 +11648,251 @@ impl PutJobTaggingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutJobTaggingInput`](crate::input::PutJobTaggingInput)
     pub fn builder() -> crate::input::put_job_tagging_input::Builder {
         crate::input::put_job_tagging_input::Builder::default()
+    }
+}
+
+/// See [`PutMultiRegionAccessPointPolicyInput`](crate::input::PutMultiRegionAccessPointPolicyInput)
+pub mod put_multi_region_access_point_policy_input {
+    /// A builder for [`PutMultiRegionAccessPointPolicyInput`](crate::input::PutMultiRegionAccessPointPolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) details: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>An idempotency token used to identify the request and guarantee that requests are
+        /// unique.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
+        pub fn details(
+            mut self,
+            input: crate::model::PutMultiRegionAccessPointPolicyInput,
+        ) -> Self {
+            self.details = Some(input);
+            self
+        }
+        pub fn set_details(
+            mut self,
+            input: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
+        ) -> Self {
+            self.details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutMultiRegionAccessPointPolicyInput`](crate::input::PutMultiRegionAccessPointPolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::PutMultiRegionAccessPointPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutMultiRegionAccessPointPolicyInput {
+                account_id: self.account_id,
+                client_token: self.client_token,
+                details: self.details,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutMultiRegionAccessPointPolicyInputOperationOutputAlias =
+    crate::operation::PutMultiRegionAccessPointPolicy;
+#[doc(hidden)]
+pub type PutMultiRegionAccessPointPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl PutMultiRegionAccessPointPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`PutMultiRegionAccessPointPolicy`](crate::operation::PutMultiRegionAccessPointPolicy)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutMultiRegionAccessPointPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.client_token.is_none() {
+                self.client_token = Some(_config.make_token.make_idempotency_token());
+            }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_multi_region_access_point_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            let endpoint_prefix = {
+                let account_id = self.account_id.as_deref().unwrap_or_default();
+                if account_id.is_empty() {
+                    return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                }
+                smithy_http::endpoint::EndpointPrefix::new(format!(
+                    "{AccountId}.",
+                    AccountId = account_id
+                ))
+            };
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    smithy_types::base64::encode(&checksum[..])
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::PutMultiRegionAccessPointPolicy::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "PutMultiRegionAccessPointPolicy",
+                "s3control",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v20180820/async-requests/mrap/put-policy")
+            .expect("formatting should succeed");
+        Ok(())
+    }
+    fn add_headers(
+        &self,
+        mut builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        if let Some(inner_169) = &self.account_id {
+            let formatted_170 = AsRef::<str>::as_ref(inner_169);
+            if !formatted_170.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_170;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "account_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("x-amz-account-id", header_value);
+            }
+        }
+        Ok(builder)
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        let builder = self.add_headers(builder)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyInput`](crate::input::PutMultiRegionAccessPointPolicyInput)
+    pub fn builder() -> crate::input::put_multi_region_access_point_policy_input::Builder {
+        crate::input::put_multi_region_access_point_policy_input::Builder::default()
     }
 }
 
@@ -9732,7 +11907,7 @@ pub mod put_public_access_block_input {
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     }
     impl Builder {
-        /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
         /// to set.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
@@ -9742,7 +11917,7 @@ pub mod put_public_access_block_input {
             self.account_id = input;
             self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified account.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
         pub fn public_access_block_configuration(
             mut self,
             input: crate::model::PublicAccessBlockConfiguration,
@@ -9865,11 +12040,11 @@ impl PutPublicAccessBlockInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_150) = &self.account_id {
-            let formatted_151 = AsRef::<str>::as_ref(inner_150);
-            if !formatted_151.is_empty() {
+        if let Some(inner_171) = &self.account_id {
+            let formatted_172 = AsRef::<str>::as_ref(inner_171);
+            if !formatted_172.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_151;
+                let header_value = formatted_172;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -9900,8 +12075,11 @@ impl PutPublicAccessBlockInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9909,7 +12087,11 @@ impl PutPublicAccessBlockInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10016,10 +12198,8 @@ impl PutStorageLensConfigurationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_storage_lens_configuration(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -10083,15 +12263,15 @@ impl PutStorageLensConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_152 = &self.config_id;
-        let input_152 =
-            input_152
+        let input_173 = &self.config_id;
+        let input_173 =
+            input_173
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 })?;
-        let config_id = smithy_http::label::fmt_string(input_152, false);
+        let config_id = smithy_http::label::fmt_string(input_173, false);
         if config_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "config_id",
@@ -10110,11 +12290,11 @@ impl PutStorageLensConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_153) = &self.account_id {
-            let formatted_154 = AsRef::<str>::as_ref(inner_153);
-            if !formatted_154.is_empty() {
+        if let Some(inner_174) = &self.account_id {
+            let formatted_175 = AsRef::<str>::as_ref(inner_174);
+            if !formatted_175.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_154;
+                let header_value = formatted_175;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -10145,8 +12325,11 @@ impl PutStorageLensConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10154,7 +12337,11 @@ impl PutStorageLensConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10243,12 +12430,8 @@ impl PutStorageLensConfigurationTaggingInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_storage_lens_configuration_tagging(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration_tagging(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -10312,15 +12495,15 @@ impl PutStorageLensConfigurationTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_155 = &self.config_id;
-        let input_155 =
-            input_155
+        let input_176 = &self.config_id;
+        let input_176 =
+            input_176
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 })?;
-        let config_id = smithy_http::label::fmt_string(input_155, false);
+        let config_id = smithy_http::label::fmt_string(input_176, false);
         if config_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "config_id",
@@ -10339,11 +12522,11 @@ impl PutStorageLensConfigurationTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_156) = &self.account_id {
-            let formatted_157 = AsRef::<str>::as_ref(inner_156);
-            if !formatted_157.is_empty() {
+        if let Some(inner_177) = &self.account_id {
+            let formatted_178 = AsRef::<str>::as_ref(inner_177);
+            if !formatted_178.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_157;
+                let header_value = formatted_178;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -10374,8 +12557,11 @@ impl PutStorageLensConfigurationTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10383,7 +12569,11 @@ impl PutStorageLensConfigurationTaggingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10404,7 +12594,7 @@ pub mod update_job_priority_input {
         pub(crate) priority: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -10530,15 +12720,15 @@ impl UpdateJobPriorityInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_158 = &self.job_id;
-        let input_158 =
-            input_158
+        let input_179 = &self.job_id;
+        let input_179 =
+            input_179
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_158, false);
+        let job_id = smithy_http::label::fmt_string(input_179, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -10553,11 +12743,11 @@ impl UpdateJobPriorityInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_159) = &self.account_id {
-            let formatted_160 = AsRef::<str>::as_ref(inner_159);
-            if !formatted_160.is_empty() {
+        if let Some(inner_180) = &self.account_id {
+            let formatted_181 = AsRef::<str>::as_ref(inner_180);
+            if !formatted_181.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_160;
+                let header_value = formatted_181;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -10598,8 +12788,11 @@ impl UpdateJobPriorityInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10607,7 +12800,11 @@ impl UpdateJobPriorityInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10629,7 +12826,7 @@ pub mod update_job_status_input {
         pub(crate) status_update_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -10771,15 +12968,15 @@ impl UpdateJobStatusInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_161 = &self.job_id;
-        let input_161 =
-            input_161
+        let input_182 = &self.job_id;
+        let input_182 =
+            input_182
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_161, false);
+        let job_id = smithy_http::label::fmt_string(input_182, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -10794,11 +12991,11 @@ impl UpdateJobStatusInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_162) = &self.account_id {
-            let formatted_163 = AsRef::<str>::as_ref(inner_162);
-            if !formatted_163.is_empty() {
+        if let Some(inner_183) = &self.account_id {
+            let formatted_184 = AsRef::<str>::as_ref(inner_183);
+            if !formatted_184.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_163;
+                let header_value = formatted_184;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -10816,16 +13013,16 @@ impl UpdateJobStatusInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_164) = &self.requested_job_status {
+        if let Some(inner_185) = &self.requested_job_status {
             query.push_kv(
                 "requestedJobStatus",
-                &smithy_http::query::fmt_string(&inner_164),
+                &smithy_http::query::fmt_string(&inner_185),
             );
         }
-        if let Some(inner_165) = &self.status_update_reason {
+        if let Some(inner_186) = &self.status_update_reason {
             query.push_kv(
                 "statusUpdateReason",
-                &smithy_http::query::fmt_string(&inner_165),
+                &smithy_http::query::fmt_string(&inner_186),
             );
         }
     }
@@ -10845,8 +13042,11 @@ impl UpdateJobStatusInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/xml",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10854,7 +13054,11 @@ impl UpdateJobStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10867,7 +13071,7 @@ impl UpdateJobStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobStatusInput {
-    /// <p>The account ID associated with the S3 Batch Operations job.</p>
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the job whose status you want to update.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -10890,7 +13094,7 @@ impl std::fmt::Debug for UpdateJobStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobPriorityInput {
-    /// <p>The account ID associated with the S3 Batch Operations job.</p>
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the job whose priority you want to update.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -10962,10 +13166,10 @@ impl std::fmt::Debug for PutStorageLensConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPublicAccessBlockInput {
-    /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
     /// to set.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified account.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
 }
@@ -10983,8 +13187,29 @@ impl std::fmt::Debug for PutPublicAccessBlockInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutMultiRegionAccessPointPolicyInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>An idempotency token used to identify the request and guarantee that requests are
+    /// unique.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
+    pub details: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
+}
+impl std::fmt::Debug for PutMultiRegionAccessPointPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutMultiRegionAccessPointPolicyInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("client_token", &self.client_token);
+        formatter.field("details", &self.details);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutJobTaggingInput {
-    /// <p>The account ID associated with the S3 Batch Operations job.</p>
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -11004,7 +13229,7 @@ impl std::fmt::Debug for PutJobTaggingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketTaggingInput {
-    /// <p>The account ID of the Outposts bucket.</p>
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11026,7 +13251,7 @@ impl std::fmt::Debug for PutBucketTaggingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketPolicyInput {
-    /// <p>The account ID of the Outposts bucket.</p>
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11057,7 +13282,7 @@ impl std::fmt::Debug for PutBucketPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketLifecycleConfigurationInput {
-    /// <p>The account ID of the Outposts bucket.</p>
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the bucket for which to set the configuration.</p>
     pub bucket: std::option::Option<std::string::String>,
@@ -11097,7 +13322,7 @@ impl std::fmt::Debug for PutAccessPointPolicyForObjectLambdaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccessPointPolicyInput {
-    /// <p>The account ID for owner of the bucket associated with the specified access point.</p>
+    /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point that you want to associate with the specified policy.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11156,7 +13381,7 @@ impl std::fmt::Debug for ListStorageLensConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegionalBucketsInput {
-    /// <p>The account ID of the Outposts bucket.</p>
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p></p>
     pub next_token: std::option::Option<std::string::String>,
@@ -11181,8 +13406,28 @@ impl std::fmt::Debug for ListRegionalBucketsInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMultiRegionAccessPointsInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>Not currently used. Do not use this parameter.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Not currently used. Do not use this parameter.</p>
+    pub max_results: i32,
+}
+impl std::fmt::Debug for ListMultiRegionAccessPointsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMultiRegionAccessPointsInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsInput {
-    /// <p>The account ID associated with the S3 Batch Operations job.</p>
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
     pub job_statuses: std::option::Option<std::vec::Vec<crate::model::JobStatus>>,
@@ -11227,7 +13472,7 @@ impl std::fmt::Debug for ListAccessPointsForObjectLambdaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPointsInput {
-    /// <p>The account ID for owner of the bucket whose access points you want to list.</p>
+    /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the bucket whose associated access points you want to list.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11289,7 +13534,7 @@ impl std::fmt::Debug for GetStorageLensConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicAccessBlockInput {
-    /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
     /// to retrieve.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
@@ -11303,8 +13548,68 @@ impl std::fmt::Debug for GetPublicAccessBlockInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMultiRegionAccessPointPolicyStatusInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
+    /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetMultiRegionAccessPointPolicyStatusInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMultiRegionAccessPointPolicyStatusInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMultiRegionAccessPointPolicyInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
+    /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetMultiRegionAccessPointPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMultiRegionAccessPointPolicyInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMultiRegionAccessPointInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of
+    /// the Multi-Region Access Point is different from the alias. For more information about the distinction
+    /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetMultiRegionAccessPointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMultiRegionAccessPointInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobTaggingInput {
-    /// <p>The account ID associated with the S3 Batch Operations job.</p>
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the S3 Batch Operations job whose tags you want to retrieve.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -11321,7 +13626,7 @@ impl std::fmt::Debug for GetJobTaggingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketTaggingInput {
-    /// <p>The account ID of the Outposts bucket.</p>
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11340,7 +13645,7 @@ impl std::fmt::Debug for GetBucketTaggingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketPolicyInput {
-    /// <p>The account ID of the Outposts bucket.</p>
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11359,7 +13664,7 @@ impl std::fmt::Debug for GetBucketPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketLifecycleConfigurationInput {
-    /// <p>The account ID of the Outposts bucket.</p>
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11378,7 +13683,7 @@ impl std::fmt::Debug for GetBucketLifecycleConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketInput {
-    /// <p>The account ID of the Outposts bucket.</p>
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11519,8 +13824,27 @@ impl std::fmt::Debug for GetAccessPointInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeMultiRegionAccessPointOperationInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The request token associated with the request you want to know about. This request token
+    /// is returned as part of the response when you make an asynchronous request. You provide
+    /// this token to query about the status of the asynchronous action.</p>
+    pub request_token_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeMultiRegionAccessPointOperationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeMultiRegionAccessPointOperationInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("request_token_arn", &self.request_token_arn);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobInput {
-    /// <p>The account ID associated with the S3 Batch Operations job.</p>
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the job whose information you want to retrieve.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -11571,7 +13895,7 @@ impl std::fmt::Debug for DeleteStorageLensConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePublicAccessBlockInput {
-    /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
     /// to remove.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
@@ -11585,8 +13909,29 @@ impl std::fmt::Debug for DeletePublicAccessBlockInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMultiRegionAccessPointInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>An idempotency token used to identify the request and guarantee that requests are
+    /// unique.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>A container element containing details about the Multi-Region Access Point.</p>
+    pub details: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
+}
+impl std::fmt::Debug for DeleteMultiRegionAccessPointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteMultiRegionAccessPointInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("client_token", &self.client_token);
+        formatter.field("details", &self.details);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobTaggingInput {
-    /// <p>The account ID associated with the S3 Batch Operations job.</p>
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -11603,7 +13948,7 @@ impl std::fmt::Debug for DeleteJobTaggingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketTaggingInput {
-    /// <p>The account ID of the Outposts bucket tag set to be removed.</p>
+    /// <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bucket ARN that has the tag set to be removed.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11750,8 +14095,30 @@ impl std::fmt::Debug for DeleteAccessPointInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMultiRegionAccessPointInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own
+    /// the underlying buckets.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>An idempotency token used to identify the request and guarantee that requests are
+    /// unique.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>A container element containing details about the Multi-Region Access Point.</p>
+    pub details: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
+}
+impl std::fmt::Debug for CreateMultiRegionAccessPointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMultiRegionAccessPointInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("client_token", &self.client_token);
+        formatter.field("details", &self.details);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
-    /// <p>The account ID that creates the job.</p>
+    /// <p>The Amazon Web Services account ID that creates the job.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
     pub confirmation_required: std::option::Option<bool>,
@@ -11870,7 +14237,7 @@ impl std::fmt::Debug for CreateBucketInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPointForObjectLambdaInput {
-    /// <p>The account ID for owner of the specified Object Lambda Access Point.</p>
+    /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name you want to assign to this Object Lambda Access Point.</p>
     pub name: std::option::Option<std::string::String>,
@@ -11890,7 +14257,7 @@ impl std::fmt::Debug for CreateAccessPointForObjectLambdaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPointInput {
-    /// <p>The account ID for the owner of the bucket for which you want to create an access point.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name you want to assign to this access point.</p>
     pub name: std::option::Option<std::string::String>,

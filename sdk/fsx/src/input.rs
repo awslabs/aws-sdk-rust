@@ -12,8 +12,8 @@ pub mod associate_file_system_aliases_input {
     }
     impl Builder {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -90,10 +90,8 @@ impl AssociateFileSystemAliasesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_associate_file_system_aliases(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_associate_file_system_aliases(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -156,12 +154,12 @@ impl AssociateFileSystemAliasesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.AssociateFileSystemAliases",
         );
         Ok(builder)
@@ -171,7 +169,11 @@ impl AssociateFileSystemAliasesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -233,10 +235,9 @@ impl CancelDataRepositoryTaskInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_cancel_data_repository_task(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_cancel_data_repository_task(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -299,12 +300,12 @@ impl CancelDataRepositoryTaskInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.CancelDataRepositoryTask",
         );
         Ok(builder)
@@ -314,7 +315,11 @@ impl CancelDataRepositoryTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -339,8 +344,8 @@ pub mod copy_backup_input {
     }
     impl Builder {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -365,9 +370,9 @@ pub mod copy_backup_input {
             self.source_backup_id = input;
             self
         }
-        /// <p>The source AWS Region of the backup. Specifies the AWS Region from which
+        /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which
         /// the backup is being copied. The source and destination Regions must be in
-        /// the same AWS partition. If you don't specify a Region, it defaults to
+        /// the same Amazon Web Services partition. If you don't specify a Region, it defaults to
         /// the Region where the request is sent from (in-Region copy).</p>
         pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_region = Some(input.into());
@@ -380,12 +385,12 @@ pub mod copy_backup_input {
             self.source_region = input;
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data
-        /// for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file
-        /// systems at rest. In either case, if not specified, the Amazon FSx managed key
-        /// is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using
-        /// Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>AWS Key Management Service API Reference</i>.</p>
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+        /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+        /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+        /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+        /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+        /// in the <i>Key Management Service API Reference</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -462,8 +467,8 @@ impl CopyBackupInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_copy_backup(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_copy_backup(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -525,12 +530,12 @@ impl CopyBackupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.CopyBackup",
         );
         Ok(builder)
@@ -540,7 +545,11 @@ impl CopyBackupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -559,6 +568,7 @@ pub mod create_backup_input {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) volume_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the file system to back up.</p>
@@ -575,7 +585,7 @@ pub mod create_backup_input {
         }
         /// <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure
         /// idempotent creation. This string is automatically filled on your behalf when you use the
-        /// AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -600,6 +610,15 @@ pub mod create_backup_input {
             self.tags = input;
             self
         }
+        /// <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_id = Some(input.into());
+            self
+        }
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBackupInput`](crate::input::CreateBackupInput)
         pub fn build(
             self,
@@ -609,6 +628,7 @@ pub mod create_backup_input {
                 file_system_id: self.file_system_id,
                 client_request_token: self.client_request_token,
                 tags: self.tags,
+                volume_id: self.volume_id,
             })
         }
     }
@@ -637,9 +657,10 @@ impl CreateBackupInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_backup(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_backup(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -699,12 +720,12 @@ impl CreateBackupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.CreateBackup",
         );
         Ok(builder)
@@ -714,7 +735,11 @@ impl CreateBackupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -791,8 +816,8 @@ pub mod create_data_repository_task_input {
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -859,10 +884,9 @@ impl CreateDataRepositoryTaskInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_data_repository_task(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_data_repository_task(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -925,12 +949,12 @@ impl CreateDataRepositoryTaskInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.CreateDataRepositoryTask",
         );
         Ok(builder)
@@ -940,7 +964,11 @@ impl CreateDataRepositoryTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -968,11 +996,13 @@ pub mod create_file_system_input {
             std::option::Option<crate::model::CreateFileSystemWindowsConfiguration>,
         pub(crate) lustre_configuration:
             std::option::Option<crate::model::CreateFileSystemLustreConfiguration>,
+        pub(crate) ontap_configuration:
+            std::option::Option<crate::model::CreateFileSystemOntapConfiguration>,
     }
     impl Builder {
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
         /// idempotent creation. This string is automatically filled on your behalf when you use the
-        /// AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -984,7 +1014,8 @@ pub mod create_file_system_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The type of Amazon FSx file system to create, either <code>WINDOWS</code> or <code>LUSTRE</code>.</p>
+        /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>,
+        /// <code>LUSTRE</code>, and <code>ONTAP</code>.</p>
         pub fn file_system_type(mut self, input: crate::model::FileSystemType) -> Self {
             self.file_system_type = Some(input);
             self
@@ -1021,6 +1052,12 @@ pub mod create_file_system_input {
         /// <p>If <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64 TiB).</p>
         /// </li>
         /// </ul>
+        /// <p>For ONTAP file systems:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Valid values are 1024 GiB - 196,608 GiB (192 TiB).</p>
+        /// </li>
+        /// </ul>
         pub fn storage_capacity(mut self, input: i32) -> Self {
             self.storage_capacity = Some(input);
             self
@@ -1034,7 +1071,7 @@ pub mod create_file_system_input {
         /// <ul>
         /// <li>
         /// <p>Set to <code>SSD</code> to use solid state drive storage.
-        /// SSD is supported on all Windows and Lustre deployment types.</p>
+        /// SSD is supported on all Windows, Lustre, and ONTAP deployment types.</p>
         /// </li>
         /// <li>
         /// <p>Set to <code>HDD</code> to use hard disk drive storage.
@@ -1100,12 +1137,12 @@ pub mod create_file_system_input {
             self.tags = input;
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data
-        /// for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file
-        /// systems at rest. In either case, if not specified, the Amazon FSx managed key
-        /// is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using
-        /// Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>AWS Key Management Service API Reference</i>.</p>
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+        /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+        /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+        /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+        /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+        /// in the <i>Key Management Service API Reference</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -1146,6 +1183,21 @@ pub mod create_file_system_input {
             self.lustre_configuration = input;
             self
         }
+        /// <p>The ONTAP configuration properties of the FSx for NetApp ONTAP file system that you are creating.</p>
+        pub fn ontap_configuration(
+            mut self,
+            input: crate::model::CreateFileSystemOntapConfiguration,
+        ) -> Self {
+            self.ontap_configuration = Some(input);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateFileSystemOntapConfiguration>,
+        ) -> Self {
+            self.ontap_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFileSystemInput`](crate::input::CreateFileSystemInput)
         pub fn build(
             self,
@@ -1164,6 +1216,7 @@ pub mod create_file_system_input {
                 kms_key_id: self.kms_key_id,
                 windows_configuration: self.windows_configuration,
                 lustre_configuration: self.lustre_configuration,
+                ontap_configuration: self.ontap_configuration,
             })
         }
     }
@@ -1191,10 +1244,11 @@ impl CreateFileSystemInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_file_system(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_file_system(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1257,12 +1311,12 @@ impl CreateFileSystemInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.CreateFileSystem",
         );
         Ok(builder)
@@ -1272,7 +1326,11 @@ impl CreateFileSystemInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1312,7 +1370,7 @@ pub mod create_file_system_from_backup_input {
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
         /// idempotent creation. This string is automatically filled on your behalf when you use the
-        /// AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -1428,12 +1486,12 @@ pub mod create_file_system_from_backup_input {
             self.storage_type = input;
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data
-        /// for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file
-        /// systems at rest. In either case, if not specified, the Amazon FSx managed key
-        /// is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using
-        /// Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>AWS Key Management Service API Reference</i>.</p>
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+        /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+        /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+        /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+        /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+        /// in the <i>Key Management Service API Reference</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -1488,10 +1546,8 @@ impl CreateFileSystemFromBackupInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_file_system_from_backup(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_file_system_from_backup(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1554,12 +1610,12 @@ impl CreateFileSystemFromBackupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.CreateFileSystemFromBackup",
         );
         Ok(builder)
@@ -1569,13 +1625,700 @@ impl CreateFileSystemFromBackupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateFileSystemFromBackupInput`](crate::input::CreateFileSystemFromBackupInput)
     pub fn builder() -> crate::input::create_file_system_from_backup_input::Builder {
         crate::input::create_file_system_from_backup_input::Builder::default()
+    }
+}
+
+/// See [`CreateStorageVirtualMachineInput`](crate::input::CreateStorageVirtualMachineInput)
+pub mod create_storage_virtual_machine_input {
+    /// A builder for [`CreateStorageVirtualMachineInput`](crate::input::CreateStorageVirtualMachineInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) active_directory_configuration:
+            std::option::Option<crate::model::CreateSvmActiveDirectoryConfiguration>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) file_system_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) svm_admin_password: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) root_volume_security_style:
+            std::option::Option<crate::model::StorageVirtualMachineRootVolumeSecurityStyle>,
+    }
+    impl Builder {
+        /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM.
+        /// Joining an Active Directory provides user authentication and access control for SMB clients,
+        /// including Microsoft Windows and macOS client accessing the file system.</p>
+        pub fn active_directory_configuration(
+            mut self,
+            input: crate::model::CreateSvmActiveDirectoryConfiguration,
+        ) -> Self {
+            self.active_directory_configuration = Some(input);
+            self
+        }
+        pub fn set_active_directory_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateSvmActiveDirectoryConfiguration>,
+        ) -> Self {
+            self.active_directory_configuration = input;
+            self
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_system_id = Some(input.into());
+            self
+        }
+        pub fn set_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_system_id = input;
+            self
+        }
+        /// <p>The name of the SVM.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API.
+        /// If you do not specify a password, you can still use the file system's
+        /// <code>fsxadmin</code> user to manage the SVM.</p>
+        pub fn svm_admin_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.svm_admin_password = Some(input.into());
+            self
+        }
+        pub fn set_svm_admin_password(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.svm_admin_password = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>UNIX</code> if the file system is managed by a UNIX
+        /// administrator, the majority of users are NFS clients, and an application
+        /// accessing the data uses a UNIX user as the service account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NTFS</code> if the file system is managed by a Windows
+        /// administrator, the majority of users are SMB clients, and an application
+        /// accessing the data uses a Windows user as the service account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MIXED</code> if the file system is managed by both UNIX
+        /// and Windows administrators and users consist of both NFS and SMB clients.</p>
+        /// </li>
+        /// </ul>
+        pub fn root_volume_security_style(
+            mut self,
+            input: crate::model::StorageVirtualMachineRootVolumeSecurityStyle,
+        ) -> Self {
+            self.root_volume_security_style = Some(input);
+            self
+        }
+        pub fn set_root_volume_security_style(
+            mut self,
+            input: std::option::Option<crate::model::StorageVirtualMachineRootVolumeSecurityStyle>,
+        ) -> Self {
+            self.root_volume_security_style = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateStorageVirtualMachineInput`](crate::input::CreateStorageVirtualMachineInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateStorageVirtualMachineInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateStorageVirtualMachineInput {
+                active_directory_configuration: self.active_directory_configuration,
+                client_request_token: self.client_request_token,
+                file_system_id: self.file_system_id,
+                name: self.name,
+                svm_admin_password: self.svm_admin_password,
+                tags: self.tags,
+                root_volume_security_style: self.root_volume_security_style,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateStorageVirtualMachineInputOperationOutputAlias =
+    crate::operation::CreateStorageVirtualMachine;
+#[doc(hidden)]
+pub type CreateStorageVirtualMachineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateStorageVirtualMachineInput {
+    /// Consumes the builder and constructs an Operation<[`CreateStorageVirtualMachine`](crate::operation::CreateStorageVirtualMachine)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateStorageVirtualMachine,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.client_request_token.is_none() {
+                self.client_request_token = Some(_config.make_token.make_idempotency_token());
+            }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_storage_virtual_machine(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateStorageVirtualMachine::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateStorageVirtualMachine",
+                "fsx",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "AWSSimbaAPIService_v20180301.CreateStorageVirtualMachine",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateStorageVirtualMachineInput`](crate::input::CreateStorageVirtualMachineInput)
+    pub fn builder() -> crate::input::create_storage_virtual_machine_input::Builder {
+        crate::input::create_storage_virtual_machine_input::Builder::default()
+    }
+}
+
+/// See [`CreateVolumeInput`](crate::input::CreateVolumeInput)
+pub mod create_volume_input {
+    /// A builder for [`CreateVolumeInput`](crate::input::CreateVolumeInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) volume_type: std::option::Option<crate::model::VolumeType>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) ontap_configuration:
+            std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>Specifies the type of volume to create; <code>ONTAP</code> is the only valid volume type.</p>
+        pub fn volume_type(mut self, input: crate::model::VolumeType) -> Self {
+            self.volume_type = Some(input);
+            self
+        }
+        pub fn set_volume_type(
+            mut self,
+            input: std::option::Option<crate::model::VolumeType>,
+        ) -> Self {
+            self.volume_type = input;
+            self
+        }
+        /// <p>Specifies the name of the volume you're creating.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies the <code>ONTAP</code> configuration to use in creating the volume.</p>
+        pub fn ontap_configuration(
+            mut self,
+            input: crate::model::CreateOntapVolumeConfiguration,
+        ) -> Self {
+            self.ontap_configuration = Some(input);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
+        ) -> Self {
+            self.ontap_configuration = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVolumeInput`](crate::input::CreateVolumeInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::CreateVolumeInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateVolumeInput {
+                client_request_token: self.client_request_token,
+                volume_type: self.volume_type,
+                name: self.name,
+                ontap_configuration: self.ontap_configuration,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateVolumeInputOperationOutputAlias = crate::operation::CreateVolume;
+#[doc(hidden)]
+pub type CreateVolumeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateVolumeInput {
+    /// Consumes the builder and constructs an Operation<[`CreateVolume`](crate::operation::CreateVolume)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateVolume,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.client_request_token.is_none() {
+                self.client_request_token = Some(_config.make_token.make_idempotency_token());
+            }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_volume(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateVolume::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("CreateVolume", "fsx"));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "AWSSimbaAPIService_v20180301.CreateVolume",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateVolumeInput`](crate::input::CreateVolumeInput)
+    pub fn builder() -> crate::input::create_volume_input::Builder {
+        crate::input::create_volume_input::Builder::default()
+    }
+}
+
+/// See [`CreateVolumeFromBackupInput`](crate::input::CreateVolumeFromBackupInput)
+pub mod create_volume_from_backup_input {
+    /// A builder for [`CreateVolumeFromBackupInput`](crate::input::CreateVolumeFromBackupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) backup_id: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) ontap_configuration:
+            std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_id = Some(input.into());
+            self
+        }
+        pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backup_id = input;
+            self
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>The name of the new volume you're creating.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
+        pub fn ontap_configuration(
+            mut self,
+            input: crate::model::CreateOntapVolumeConfiguration,
+        ) -> Self {
+            self.ontap_configuration = Some(input);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
+        ) -> Self {
+            self.ontap_configuration = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVolumeFromBackupInput`](crate::input::CreateVolumeFromBackupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateVolumeFromBackupInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateVolumeFromBackupInput {
+                backup_id: self.backup_id,
+                client_request_token: self.client_request_token,
+                name: self.name,
+                ontap_configuration: self.ontap_configuration,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateVolumeFromBackupInputOperationOutputAlias = crate::operation::CreateVolumeFromBackup;
+#[doc(hidden)]
+pub type CreateVolumeFromBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateVolumeFromBackupInput {
+    /// Consumes the builder and constructs an Operation<[`CreateVolumeFromBackup`](crate::operation::CreateVolumeFromBackup)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateVolumeFromBackup,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.client_request_token.is_none() {
+                self.client_request_token = Some(_config.make_token.make_idempotency_token());
+            }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_volume_from_backup(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateVolumeFromBackup::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateVolumeFromBackup",
+                "fsx",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "AWSSimbaAPIService_v20180301.CreateVolumeFromBackup",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateVolumeFromBackupInput`](crate::input::CreateVolumeFromBackupInput)
+    pub fn builder() -> crate::input::create_volume_from_backup_input::Builder {
+        crate::input::create_volume_from_backup_input::Builder::default()
     }
 }
 
@@ -1599,8 +2342,8 @@ pub mod delete_backup_input {
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent deletion. This is automatically filled on your behalf when using the AWS CLI
-        /// or SDK.</p>
+        /// idempotent deletion. This is automatically filled on your behalf when using
+        /// the CLI or SDK.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -1648,9 +2391,10 @@ impl DeleteBackupInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_backup(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_backup(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1710,12 +2454,12 @@ impl DeleteBackupInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.DeleteBackup",
         );
         Ok(builder)
@@ -1725,7 +2469,11 @@ impl DeleteBackupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1762,8 +2510,8 @@ pub mod delete_file_system_input {
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent deletion. This is automatically filled on your behalf when using the AWS CLI
-        /// or SDK.</p>
+        /// idempotent deletion. This is automatically filled on your behalf when using the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -1846,10 +2594,11 @@ impl DeleteFileSystemInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_file_system(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_file_system(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1912,12 +2661,12 @@ impl DeleteFileSystemInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.DeleteFileSystem",
         );
         Ok(builder)
@@ -1927,13 +2676,365 @@ impl DeleteFileSystemInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemInput`](crate::input::DeleteFileSystemInput)
     pub fn builder() -> crate::input::delete_file_system_input::Builder {
         crate::input::delete_file_system_input::Builder::default()
+    }
+}
+
+/// See [`DeleteStorageVirtualMachineInput`](crate::input::DeleteStorageVirtualMachineInput)
+pub mod delete_storage_virtual_machine_input {
+    /// A builder for [`DeleteStorageVirtualMachineInput`](crate::input::DeleteStorageVirtualMachineInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) storage_virtual_machine_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>The ID of the SVM that you want to delete.</p>
+        pub fn storage_virtual_machine_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_virtual_machine_id = Some(input.into());
+            self
+        }
+        pub fn set_storage_virtual_machine_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.storage_virtual_machine_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteStorageVirtualMachineInput`](crate::input::DeleteStorageVirtualMachineInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteStorageVirtualMachineInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteStorageVirtualMachineInput {
+                client_request_token: self.client_request_token,
+                storage_virtual_machine_id: self.storage_virtual_machine_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteStorageVirtualMachineInputOperationOutputAlias =
+    crate::operation::DeleteStorageVirtualMachine;
+#[doc(hidden)]
+pub type DeleteStorageVirtualMachineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteStorageVirtualMachineInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteStorageVirtualMachine`](crate::operation::DeleteStorageVirtualMachine)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteStorageVirtualMachine,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.client_request_token.is_none() {
+                self.client_request_token = Some(_config.make_token.make_idempotency_token());
+            }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_storage_virtual_machine(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteStorageVirtualMachine::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteStorageVirtualMachine",
+                "fsx",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "AWSSimbaAPIService_v20180301.DeleteStorageVirtualMachine",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteStorageVirtualMachineInput`](crate::input::DeleteStorageVirtualMachineInput)
+    pub fn builder() -> crate::input::delete_storage_virtual_machine_input::Builder {
+        crate::input::delete_storage_virtual_machine_input::Builder::default()
+    }
+}
+
+/// See [`DeleteVolumeInput`](crate::input::DeleteVolumeInput)
+pub mod delete_volume_input {
+    /// A builder for [`DeleteVolumeInput`](crate::input::DeleteVolumeInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) volume_id: std::option::Option<std::string::String>,
+        pub(crate) ontap_configuration:
+            std::option::Option<crate::model::DeleteVolumeOntapConfiguration>,
+    }
+    impl Builder {
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>The ID of the volume you are deleting.</p>
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_id = Some(input.into());
+            self
+        }
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_id = input;
+            self
+        }
+        /// <p>For Amazon FSx for ONTAP volumes, specify whether to take
+        /// a final backup of the volume, and apply tags to the backup.</p>
+        pub fn ontap_configuration(
+            mut self,
+            input: crate::model::DeleteVolumeOntapConfiguration,
+        ) -> Self {
+            self.ontap_configuration = Some(input);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DeleteVolumeOntapConfiguration>,
+        ) -> Self {
+            self.ontap_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVolumeInput`](crate::input::DeleteVolumeInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::DeleteVolumeInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteVolumeInput {
+                client_request_token: self.client_request_token,
+                volume_id: self.volume_id,
+                ontap_configuration: self.ontap_configuration,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteVolumeInputOperationOutputAlias = crate::operation::DeleteVolume;
+#[doc(hidden)]
+pub type DeleteVolumeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteVolumeInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteVolume`](crate::operation::DeleteVolume)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteVolume,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.client_request_token.is_none() {
+                self.client_request_token = Some(_config.make_token.make_idempotency_token());
+            }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_volume(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteVolume::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("DeleteVolume", "fsx"));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "AWSSimbaAPIService_v20180301.DeleteVolume",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteVolumeInput`](crate::input::DeleteVolumeInput)
+    pub fn builder() -> crate::input::delete_volume_input::Builder {
+        crate::input::delete_volume_input::Builder::default()
     }
 }
 
@@ -2034,9 +3135,11 @@ impl DescribeBackupsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_backups(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_backups(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2099,12 +3202,12 @@ impl DescribeBackupsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.DescribeBackups",
         );
         Ok(builder)
@@ -2114,7 +3217,11 @@ impl DescribeBackupsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2222,10 +3329,8 @@ impl DescribeDataRepositoryTasksInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_data_repository_tasks(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_data_repository_tasks(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2288,12 +3393,12 @@ impl DescribeDataRepositoryTasksInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.DescribeDataRepositoryTasks",
         );
         Ok(builder)
@@ -2303,7 +3408,11 @@ impl DescribeDataRepositoryTasksInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2326,8 +3435,8 @@ pub mod describe_file_system_aliases_input {
     }
     impl Builder {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -2416,10 +3525,8 @@ impl DescribeFileSystemAliasesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_file_system_aliases(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_file_system_aliases(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2482,12 +3589,12 @@ impl DescribeFileSystemAliasesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.DescribeFileSystemAliases",
         );
         Ok(builder)
@@ -2497,7 +3604,11 @@ impl DescribeFileSystemAliasesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2589,7 +3700,10 @@ impl DescribeFileSystemsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_file_systems(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_file_systems(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2655,12 +3769,12 @@ impl DescribeFileSystemsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.DescribeFileSystems",
         );
         Ok(builder)
@@ -2670,13 +3784,406 @@ impl DescribeFileSystemsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemsInput`](crate::input::DescribeFileSystemsInput)
     pub fn builder() -> crate::input::describe_file_systems_input::Builder {
         crate::input::describe_file_systems_input::Builder::default()
+    }
+}
+
+/// See [`DescribeStorageVirtualMachinesInput`](crate::input::DescribeStorageVirtualMachinesInput)
+pub mod describe_storage_virtual_machines_input {
+    /// A builder for [`DescribeStorageVirtualMachinesInput`](crate::input::DescribeStorageVirtualMachinesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) storage_virtual_machine_ids:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) filters:
+            std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachineFilter>>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn storage_virtual_machine_ids(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.storage_virtual_machine_ids.unwrap_or_default();
+            v.push(input.into());
+            self.storage_virtual_machine_ids = Some(v);
+            self
+        }
+        pub fn set_storage_virtual_machine_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.storage_virtual_machine_ids = input;
+            self
+        }
+        pub fn filters(
+            mut self,
+            input: impl Into<crate::model::StorageVirtualMachineFilter>,
+        ) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input.into());
+            self.filters = Some(v);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachineFilter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>The maximum number of resources to return in the response. This value must be an
+        /// integer greater than zero.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+        /// present, this token indicates from what point you can continue processing the request, where
+        /// the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeStorageVirtualMachinesInput`](crate::input::DescribeStorageVirtualMachinesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeStorageVirtualMachinesInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeStorageVirtualMachinesInput {
+                storage_virtual_machine_ids: self.storage_virtual_machine_ids,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeStorageVirtualMachinesInputOperationOutputAlias =
+    crate::operation::DescribeStorageVirtualMachines;
+#[doc(hidden)]
+pub type DescribeStorageVirtualMachinesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeStorageVirtualMachinesInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeStorageVirtualMachines`](crate::operation::DescribeStorageVirtualMachines)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeStorageVirtualMachines,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_storage_virtual_machines(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeStorageVirtualMachines::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeStorageVirtualMachines",
+                "fsx",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "AWSSimbaAPIService_v20180301.DescribeStorageVirtualMachines",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeStorageVirtualMachinesInput`](crate::input::DescribeStorageVirtualMachinesInput)
+    pub fn builder() -> crate::input::describe_storage_virtual_machines_input::Builder {
+        crate::input::describe_storage_virtual_machines_input::Builder::default()
+    }
+}
+
+/// See [`DescribeVolumesInput`](crate::input::DescribeVolumesInput)
+pub mod describe_volumes_input {
+    /// A builder for [`DescribeVolumesInput`](crate::input::DescribeVolumesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) volume_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::VolumeFilter>>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn volume_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.volume_ids.unwrap_or_default();
+            v.push(input.into());
+            self.volume_ids = Some(v);
+            self
+        }
+        pub fn set_volume_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.volume_ids = input;
+            self
+        }
+        pub fn filters(mut self, input: impl Into<crate::model::VolumeFilter>) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input.into());
+            self.filters = Some(v);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VolumeFilter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>The maximum number of resources to return in the response. This value must be an
+        /// integer greater than zero.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+        /// present, this token indicates from what point you can continue processing the request, where
+        /// the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVolumesInput`](crate::input::DescribeVolumesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeVolumesInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeVolumesInput {
+                volume_ids: self.volume_ids,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeVolumesInputOperationOutputAlias = crate::operation::DescribeVolumes;
+#[doc(hidden)]
+pub type DescribeVolumesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeVolumesInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeVolumes`](crate::operation::DescribeVolumes)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeVolumes,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_volumes(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeVolumes::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeVolumes",
+                "fsx",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "AWSSimbaAPIService_v20180301.DescribeVolumes",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeVolumesInput`](crate::input::DescribeVolumesInput)
+    pub fn builder() -> crate::input::describe_volumes_input::Builder {
+        crate::input::describe_volumes_input::Builder::default()
     }
 }
 
@@ -2692,8 +4199,8 @@ pub mod disassociate_file_system_aliases_input {
     }
     impl Builder {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -2770,10 +4277,8 @@ impl DisassociateFileSystemAliasesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_disassociate_file_system_aliases(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_disassociate_file_system_aliases(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2836,12 +4341,12 @@ impl DisassociateFileSystemAliasesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.DisassociateFileSystemAliases",
         );
         Ok(builder)
@@ -2851,7 +4356,11 @@ impl DisassociateFileSystemAliasesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2939,7 +4448,10 @@ impl ListTagsForResourceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_tags_for_resource(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3005,12 +4517,12 @@ impl ListTagsForResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.ListTagsForResource",
         );
         Ok(builder)
@@ -3020,7 +4532,11 @@ impl ListTagsForResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3096,9 +4612,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3158,12 +4675,12 @@ impl TagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.TagResource",
         );
         Ok(builder)
@@ -3173,7 +4690,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3248,9 +4769,10 @@ impl UntagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3313,12 +4835,12 @@ impl UntagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.UntagResource",
         );
         Ok(builder)
@@ -3328,7 +4850,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3351,6 +4877,8 @@ pub mod update_file_system_input {
             std::option::Option<crate::model::UpdateFileSystemWindowsConfiguration>,
         pub(crate) lustre_configuration:
             std::option::Option<crate::model::UpdateFileSystemLustreConfiguration>,
+        pub(crate) ontap_configuration:
+            std::option::Option<crate::model::UpdateFileSystemOntapConfiguration>,
     }
     impl Builder {
         /// <p>Identifies the file system that you are updating.</p>
@@ -3366,8 +4894,8 @@ pub mod update_file_system_input {
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent updates. This string is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// idempotent updates. This string is automatically filled on your behalf when you use
+        /// the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -3379,7 +4907,8 @@ pub mod update_file_system_input {
             self.client_request_token = input;
             self
         }
-        /// <p>Use this parameter to increase the storage capacity of an Amazon FSx file system.
+        /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server
+        /// or Amazon FSx for Lustre file system.
         /// Specifies the storage capacity target value, GiB, to increase the storage capacity for the
         /// file system that you're updating. You cannot make a storage capacity increase request if
         /// there is an existing storage capacity increase request in progress.</p>
@@ -3444,6 +4973,21 @@ pub mod update_file_system_input {
             self.lustre_configuration = input;
             self
         }
+        /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
+        pub fn ontap_configuration(
+            mut self,
+            input: crate::model::UpdateFileSystemOntapConfiguration,
+        ) -> Self {
+            self.ontap_configuration = Some(input);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UpdateFileSystemOntapConfiguration>,
+        ) -> Self {
+            self.ontap_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFileSystemInput`](crate::input::UpdateFileSystemInput)
         pub fn build(
             self,
@@ -3457,6 +5001,7 @@ pub mod update_file_system_input {
                 storage_capacity: self.storage_capacity,
                 windows_configuration: self.windows_configuration,
                 lustre_configuration: self.lustre_configuration,
+                ontap_configuration: self.ontap_configuration,
             })
         }
     }
@@ -3484,10 +5029,11 @@ impl UpdateFileSystemInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_file_system(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_file_system(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3550,12 +5096,12 @@ impl UpdateFileSystemInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AWSSimbaAPIService_v20180301.UpdateFileSystem",
         );
         Ok(builder)
@@ -3565,13 +5111,450 @@ impl UpdateFileSystemInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemInput`](crate::input::UpdateFileSystemInput)
     pub fn builder() -> crate::input::update_file_system_input::Builder {
         crate::input::update_file_system_input::Builder::default()
+    }
+}
+
+/// See [`UpdateStorageVirtualMachineInput`](crate::input::UpdateStorageVirtualMachineInput)
+pub mod update_storage_virtual_machine_input {
+    /// A builder for [`UpdateStorageVirtualMachineInput`](crate::input::UpdateStorageVirtualMachineInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) active_directory_configuration:
+            std::option::Option<crate::model::UpdateSvmActiveDirectoryConfiguration>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) storage_virtual_machine_id: std::option::Option<std::string::String>,
+        pub(crate) svm_admin_password: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+        pub fn active_directory_configuration(
+            mut self,
+            input: crate::model::UpdateSvmActiveDirectoryConfiguration,
+        ) -> Self {
+            self.active_directory_configuration = Some(input);
+            self
+        }
+        pub fn set_active_directory_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UpdateSvmActiveDirectoryConfiguration>,
+        ) -> Self {
+            self.active_directory_configuration = input;
+            self
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
+        pub fn storage_virtual_machine_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_virtual_machine_id = Some(input.into());
+            self
+        }
+        pub fn set_storage_virtual_machine_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.storage_virtual_machine_id = input;
+            self
+        }
+        /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
+        pub fn svm_admin_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.svm_admin_password = Some(input.into());
+            self
+        }
+        pub fn set_svm_admin_password(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.svm_admin_password = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateStorageVirtualMachineInput`](crate::input::UpdateStorageVirtualMachineInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateStorageVirtualMachineInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateStorageVirtualMachineInput {
+                active_directory_configuration: self.active_directory_configuration,
+                client_request_token: self.client_request_token,
+                storage_virtual_machine_id: self.storage_virtual_machine_id,
+                svm_admin_password: self.svm_admin_password,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateStorageVirtualMachineInputOperationOutputAlias =
+    crate::operation::UpdateStorageVirtualMachine;
+#[doc(hidden)]
+pub type UpdateStorageVirtualMachineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateStorageVirtualMachineInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateStorageVirtualMachine`](crate::operation::UpdateStorageVirtualMachine)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateStorageVirtualMachine,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.client_request_token.is_none() {
+                self.client_request_token = Some(_config.make_token.make_idempotency_token());
+            }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_storage_virtual_machine(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateStorageVirtualMachine::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateStorageVirtualMachine",
+                "fsx",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "AWSSimbaAPIService_v20180301.UpdateStorageVirtualMachine",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateStorageVirtualMachineInput`](crate::input::UpdateStorageVirtualMachineInput)
+    pub fn builder() -> crate::input::update_storage_virtual_machine_input::Builder {
+        crate::input::update_storage_virtual_machine_input::Builder::default()
+    }
+}
+
+/// See [`UpdateVolumeInput`](crate::input::UpdateVolumeInput)
+pub mod update_volume_input {
+    /// A builder for [`UpdateVolumeInput`](crate::input::UpdateVolumeInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) volume_id: std::option::Option<std::string::String>,
+        pub(crate) ontap_configuration:
+            std::option::Option<crate::model::UpdateOntapVolumeConfiguration>,
+    }
+    impl Builder {
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>Specifies the volume that you want to update, formatted <code>fsvol-0123456789abcdef0</code>.</p>
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_id = Some(input.into());
+            self
+        }
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_id = input;
+            self
+        }
+        /// <p>The <code>ONTAP</code> configuration of the volume you are updating.</p>
+        pub fn ontap_configuration(
+            mut self,
+            input: crate::model::UpdateOntapVolumeConfiguration,
+        ) -> Self {
+            self.ontap_configuration = Some(input);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UpdateOntapVolumeConfiguration>,
+        ) -> Self {
+            self.ontap_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateVolumeInput`](crate::input::UpdateVolumeInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::UpdateVolumeInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateVolumeInput {
+                client_request_token: self.client_request_token,
+                volume_id: self.volume_id,
+                ontap_configuration: self.ontap_configuration,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateVolumeInputOperationOutputAlias = crate::operation::UpdateVolume;
+#[doc(hidden)]
+pub type UpdateVolumeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateVolumeInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateVolume`](crate::operation::UpdateVolume)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateVolume,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.client_request_token.is_none() {
+                self.client_request_token = Some(_config.make_token.make_idempotency_token());
+            }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_volume(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateVolume::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("UpdateVolume", "fsx"));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "AWSSimbaAPIService_v20180301.UpdateVolume",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateVolumeInput`](crate::input::UpdateVolumeInput)
+    pub fn builder() -> crate::input::update_volume_input::Builder {
+        crate::input::update_volume_input::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateVolumeInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>Specifies the volume that you want to update, formatted <code>fsvol-0123456789abcdef0</code>.</p>
+    pub volume_id: std::option::Option<std::string::String>,
+    /// <p>The <code>ONTAP</code> configuration of the volume you are updating.</p>
+    pub ontap_configuration: std::option::Option<crate::model::UpdateOntapVolumeConfiguration>,
+}
+impl std::fmt::Debug for UpdateVolumeInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateVolumeInput");
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("volume_id", &self.volume_id);
+        formatter.field("ontap_configuration", &self.ontap_configuration);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateStorageVirtualMachineInput {
+    /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+    pub active_directory_configuration:
+        std::option::Option<crate::model::UpdateSvmActiveDirectoryConfiguration>,
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
+    pub storage_virtual_machine_id: std::option::Option<std::string::String>,
+    /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
+    pub svm_admin_password: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateStorageVirtualMachineInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateStorageVirtualMachineInput");
+        formatter.field(
+            "active_directory_configuration",
+            &self.active_directory_configuration,
+        );
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field(
+            "storage_virtual_machine_id",
+            &self.storage_virtual_machine_id,
+        );
+        formatter.field("svm_admin_password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 
@@ -3582,10 +5565,11 @@ pub struct UpdateFileSystemInput {
     /// <p>Identifies the file system that you are updating.</p>
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-    /// idempotent updates. This string is automatically filled on your behalf when you use the AWS
-    /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+    /// idempotent updates. This string is automatically filled on your behalf when you use
+    /// the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>Use this parameter to increase the storage capacity of an Amazon FSx file system.
+    /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server
+    /// or Amazon FSx for Lustre file system.
     /// Specifies the storage capacity target value, GiB, to increase the storage capacity for the
     /// file system that you're updating. You cannot make a storage capacity increase request if
     /// there is an existing storage capacity increase request in progress.</p>
@@ -3619,6 +5603,8 @@ pub struct UpdateFileSystemInput {
     /// <code>UpdateFileSystem</code> operation.</p>
     pub lustre_configuration:
         std::option::Option<crate::model::UpdateFileSystemLustreConfiguration>,
+    /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
+    pub ontap_configuration: std::option::Option<crate::model::UpdateFileSystemOntapConfiguration>,
 }
 impl std::fmt::Debug for UpdateFileSystemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3628,6 +5614,7 @@ impl std::fmt::Debug for UpdateFileSystemInput {
         formatter.field("storage_capacity", &self.storage_capacity);
         formatter.field("windows_configuration", &self.windows_configuration);
         formatter.field("lustre_configuration", &self.lustre_configuration);
+        formatter.field("ontap_configuration", &self.ontap_configuration);
         formatter.finish()
     }
 }
@@ -3702,8 +5689,8 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-    /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-    /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
     pub file_system_id: std::option::Option<std::string::String>,
@@ -3716,6 +5703,61 @@ impl std::fmt::Debug for DisassociateFileSystemAliasesInput {
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("file_system_id", &self.file_system_id);
         formatter.field("aliases", &self.aliases);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeVolumesInput {
+    /// <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+    pub volume_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Enter a filter name:value pair to view a select set of volumes.</p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::VolumeFilter>>,
+    /// <p>The maximum number of resources to return in the response. This value must be an
+    /// integer greater than zero.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeVolumesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeVolumesInput");
+        formatter.field("volume_ids", &self.volume_ids);
+        formatter.field("filters", &self.filters);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeStorageVirtualMachinesInput {
+    /// <p>Enter the ID of one or more SVMs that you want to view.</p>
+    pub storage_virtual_machine_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachineFilter>>,
+    /// <p>The maximum number of resources to return in the response. This value must be an
+    /// integer greater than zero.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeStorageVirtualMachinesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeStorageVirtualMachinesInput");
+        formatter.field(
+            "storage_virtual_machine_ids",
+            &self.storage_virtual_machine_ids,
+        );
+        formatter.field("filters", &self.filters);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -3752,8 +5794,8 @@ impl std::fmt::Debug for DescribeFileSystemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-    /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-    /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ID of the file system to return the associated DNS aliases for
     /// (String).</p>
@@ -3814,8 +5856,9 @@ pub struct DescribeBackupsInput {
     /// <p>IDs of the backups you want to retrieve (String). This overrides any
     /// filters. If any IDs are not found, BackupNotFound will be thrown.</p>
     pub backup_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Filters structure. Supported names are file-system-id and
-    /// backup-type.</p>
+    /// <p>Filters structure. Supported names are <code>file-system-id</code>,
+    /// <code>backup-type</code>, <code>file-system-type</code>, and
+    /// <code>volume-id</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Maximum number of backups to return in the response (integer). This
     /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
@@ -3838,6 +5881,51 @@ impl std::fmt::Debug for DescribeBackupsInput {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteVolumeInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The ID of the volume you are deleting.</p>
+    pub volume_id: std::option::Option<std::string::String>,
+    /// <p>For Amazon FSx for ONTAP volumes, specify whether to take
+    /// a final backup of the volume, and apply tags to the backup.</p>
+    pub ontap_configuration: std::option::Option<crate::model::DeleteVolumeOntapConfiguration>,
+}
+impl std::fmt::Debug for DeleteVolumeInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteVolumeInput");
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("volume_id", &self.volume_id);
+        formatter.field("ontap_configuration", &self.ontap_configuration);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStorageVirtualMachineInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The ID of the SVM that you want to delete.</p>
+    pub storage_virtual_machine_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteStorageVirtualMachineInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStorageVirtualMachineInput");
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field(
+            "storage_virtual_machine_id",
+            &self.storage_virtual_machine_id,
+        );
+        formatter.finish()
+    }
+}
+
 /// <p>The request object for <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3845,8 +5933,8 @@ pub struct DeleteFileSystemInput {
     /// <p>The ID of the file system you want to delete.</p>
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-    /// idempotent deletion. This is automatically filled on your behalf when using the AWS CLI
-    /// or SDK.</p>
+    /// idempotent deletion. This is automatically filled on your behalf when using the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The configuration object for the Microsoft Windows file system used in the
     /// <code>DeleteFileSystem</code> operation.</p>
@@ -3875,8 +5963,8 @@ pub struct DeleteBackupInput {
     /// <p>The ID of the backup you want to delete.</p>
     pub backup_id: std::option::Option<std::string::String>,
     /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-    /// idempotent deletion. This is automatically filled on your behalf when using the AWS CLI
-    /// or SDK.</p>
+    /// idempotent deletion. This is automatically filled on your behalf when using
+    /// the CLI or SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteBackupInput {
@@ -3884,6 +5972,127 @@ impl std::fmt::Debug for DeleteBackupInput {
         let mut formatter = f.debug_struct("DeleteBackupInput");
         formatter.field("backup_id", &self.backup_id);
         formatter.field("client_request_token", &self.client_request_token);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateVolumeFromBackupInput {
+    /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
+    pub backup_id: std::option::Option<std::string::String>,
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The name of the new volume you're creating.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
+    pub ontap_configuration: std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for CreateVolumeFromBackupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateVolumeFromBackupInput");
+        formatter.field("backup_id", &self.backup_id);
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("name", &self.name);
+        formatter.field("ontap_configuration", &self.ontap_configuration);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateVolumeInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>Specifies the type of volume to create; <code>ONTAP</code> is the only valid volume type.</p>
+    pub volume_type: std::option::Option<crate::model::VolumeType>,
+    /// <p>Specifies the name of the volume you're creating.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies the <code>ONTAP</code> configuration to use in creating the volume.</p>
+    pub ontap_configuration: std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for CreateVolumeInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateVolumeInput");
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("volume_type", &self.volume_type);
+        formatter.field("name", &self.name);
+        formatter.field("ontap_configuration", &self.ontap_configuration);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateStorageVirtualMachineInput {
+    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM.
+    /// Joining an Active Directory provides user authentication and access control for SMB clients,
+    /// including Microsoft Windows and macOS client accessing the file system.</p>
+    pub active_directory_configuration:
+        std::option::Option<crate::model::CreateSvmActiveDirectoryConfiguration>,
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub file_system_id: std::option::Option<std::string::String>,
+    /// <p>The name of the SVM.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API.
+    /// If you do not specify a password, you can still use the file system's
+    /// <code>fsxadmin</code> user to manage the SVM.</p>
+    pub svm_admin_password: std::option::Option<std::string::String>,
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>UNIX</code> if the file system is managed by a UNIX
+    /// administrator, the majority of users are NFS clients, and an application
+    /// accessing the data uses a UNIX user as the service account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NTFS</code> if the file system is managed by a Windows
+    /// administrator, the majority of users are SMB clients, and an application
+    /// accessing the data uses a Windows user as the service account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MIXED</code> if the file system is managed by both UNIX
+    /// and Windows administrators and users consist of both NFS and SMB clients.</p>
+    /// </li>
+    /// </ul>
+    pub root_volume_security_style:
+        std::option::Option<crate::model::StorageVirtualMachineRootVolumeSecurityStyle>,
+}
+impl std::fmt::Debug for CreateStorageVirtualMachineInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateStorageVirtualMachineInput");
+        formatter.field(
+            "active_directory_configuration",
+            &self.active_directory_configuration,
+        );
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("file_system_id", &self.file_system_id);
+        formatter.field("name", &self.name);
+        formatter.field("svm_admin_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
+        formatter.field(
+            "root_volume_security_style",
+            &self.root_volume_security_style,
+        );
         formatter.finish()
     }
 }
@@ -3897,7 +6106,7 @@ pub struct CreateFileSystemFromBackupInput {
     pub backup_id: std::option::Option<std::string::String>,
     /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
     /// idempotent creation. This string is automatically filled on your behalf when you use the
-    /// AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code>
     /// file system deployment types, provide exactly two subnet IDs, one for the preferred file server
@@ -3946,12 +6155,12 @@ pub struct CreateFileSystemFromBackupInput {
     /// </p>
     /// </note>
     pub storage_type: std::option::Option<crate::model::StorageType>,
-    /// <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data
-    /// for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file
-    /// systems at rest. In either case, if not specified, the Amazon FSx managed key
-    /// is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using
-    /// Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-    /// in the <i>AWS Key Management Service API Reference</i>.</p>
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+    /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+    /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+    /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+    /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+    /// in the <i>Key Management Service API Reference</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateFileSystemFromBackupInput {
@@ -3976,9 +6185,10 @@ impl std::fmt::Debug for CreateFileSystemFromBackupInput {
 pub struct CreateFileSystemInput {
     /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
     /// idempotent creation. This string is automatically filled on your behalf when you use the
-    /// AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The type of Amazon FSx file system to create, either <code>WINDOWS</code> or <code>LUSTRE</code>.</p>
+    /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>,
+    /// <code>LUSTRE</code>, and <code>ONTAP</code>.</p>
     pub file_system_type: std::option::Option<crate::model::FileSystemType>,
     /// <p>Sets the storage capacity of the file system that you're creating.</p>      
     /// <p>For Lustre file systems:</p>
@@ -4005,13 +6215,19 @@ pub struct CreateFileSystemInput {
     /// <p>If <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64 TiB).</p>
     /// </li>
     /// </ul>
+    /// <p>For ONTAP file systems:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Valid values are 1024 GiB - 196,608 GiB (192 TiB).</p>
+    /// </li>
+    /// </ul>
     pub storage_capacity: std::option::Option<i32>,
     /// <p>Sets the storage type for the file system you're creating.
     /// Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Set to <code>SSD</code> to use solid state drive storage.
-    /// SSD is supported on all Windows and Lustre deployment types.</p>
+    /// SSD is supported on all Windows, Lustre, and ONTAP deployment types.</p>
     /// </li>
     /// <li>
     /// <p>Set to <code>HDD</code> to use hard disk drive storage.
@@ -4028,12 +6244,17 @@ pub struct CreateFileSystemInput {
     /// in the <i>Amazon FSx for Lustre User Guide</i>.
     /// </p>
     pub storage_type: std::option::Option<crate::model::StorageType>,
-    /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code>
-    /// file system deployment types, provide exactly two subnet IDs, one for the preferred file server
-    /// and one for the standby file server. You specify one of these subnets as the preferred subnet
-    /// using the <code>WindowsConfiguration > PreferredSubnetID</code> property. For more information,
+    /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+    /// and ONTAP <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs,
+    /// one for the preferred file server and one for the standby file server. You specify one of these
+    /// subnets as the preferred subnet using the <code>WindowsConfiguration > PreferredSubnetID</code>
+    /// or <code>OntapConfiguration > PreferredSubnetID</code> properties. For more information,
     /// see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-    /// Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p>
+    /// Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+    /// <i>Amazon FSx for Windows User Guide</i> and
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+    /// Availability and durability</a> in the
+    /// <i>Amazon FSx for ONTAP User Guide</i>.</p>
     /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems, provide exactly one subnet ID.
     /// The file server is launched in that subnet's Availability Zone.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4044,12 +6265,12 @@ pub struct CreateFileSystemInput {
     /// <p>The tags to apply to the file system being created. The key value of
     /// the <code>Name</code> tag appears in the console as the file system name.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data
-    /// for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file
-    /// systems at rest. In either case, if not specified, the Amazon FSx managed key
-    /// is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using
-    /// Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-    /// in the <i>AWS Key Management Service API Reference</i>.</p>
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+    /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+    /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+    /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+    /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+    /// in the <i>Key Management Service API Reference</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Microsoft Windows configuration for the file system being created.
     /// </p>
@@ -4059,6 +6280,8 @@ pub struct CreateFileSystemInput {
     /// </p>
     pub lustre_configuration:
         std::option::Option<crate::model::CreateFileSystemLustreConfiguration>,
+    /// <p>The ONTAP configuration properties of the FSx for NetApp ONTAP file system that you are creating.</p>
+    pub ontap_configuration: std::option::Option<crate::model::CreateFileSystemOntapConfiguration>,
 }
 impl std::fmt::Debug for CreateFileSystemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4073,6 +6296,7 @@ impl std::fmt::Debug for CreateFileSystemInput {
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("windows_configuration", &self.windows_configuration);
         formatter.field("lustre_configuration", &self.lustre_configuration);
+        formatter.field("ontap_configuration", &self.ontap_configuration);
         formatter.finish()
     }
 }
@@ -4096,8 +6320,8 @@ pub struct CreateDataRepositoryTaskInput {
     /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
     pub report: std::option::Option<crate::model::CompletionReport>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-    /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-    /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4123,12 +6347,14 @@ pub struct CreateBackupInput {
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure
     /// idempotent creation. This string is automatically filled on your behalf when you use the
-    /// AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>(Optional) The tags to apply to the backup at backup creation. The key value of the
     /// <code>Name</code> tag appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and
     /// you specify one or more tags using the <code>CreateBackup</code> action, no existing file system tags are copied from the file system to the backup.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+    pub volume_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateBackupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4136,6 +6362,7 @@ impl std::fmt::Debug for CreateBackupInput {
         formatter.field("file_system_id", &self.file_system_id);
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("tags", &self.tags);
+        formatter.field("volume_id", &self.volume_id);
         formatter.finish()
     }
 }
@@ -4144,23 +6371,23 @@ impl std::fmt::Debug for CreateBackupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyBackupInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-    /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-    /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ID of the source backup. Specifies the ID of the backup that is
     /// being copied.</p>
     pub source_backup_id: std::option::Option<std::string::String>,
-    /// <p>The source AWS Region of the backup. Specifies the AWS Region from which
+    /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which
     /// the backup is being copied. The source and destination Regions must be in
-    /// the same AWS partition. If you don't specify a Region, it defaults to
+    /// the same Amazon Web Services partition. If you don't specify a Region, it defaults to
     /// the Region where the request is sent from (in-Region copy).</p>
     pub source_region: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data
-    /// for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file
-    /// systems at rest. In either case, if not specified, the Amazon FSx managed key
-    /// is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using
-    /// Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-    /// in the <i>AWS Key Management Service API Reference</i>.</p>
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+    /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+    /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+    /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+    /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+    /// in the <i>Key Management Service API Reference</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A boolean flag indicating whether tags from the source backup
     /// should be copied to the backup copy. This value defaults to false.</p>
@@ -4207,8 +6434,8 @@ impl std::fmt::Debug for CancelDataRepositoryTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-    /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-    /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
     pub file_system_id: std::option::Option<std::string::String>,

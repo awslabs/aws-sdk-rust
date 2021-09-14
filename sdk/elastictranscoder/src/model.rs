@@ -7472,3 +7472,428 @@ impl CreateJobPlaylist {
         crate::model::create_job_playlist::Builder::default()
     }
 }
+
+/// <p>The <code>CreateJobOutput</code> structure.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateJobOutput {
+    /// <p> The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket
+    /// specified by the <code>OutputBucket</code> object in the pipeline that is specified by
+    /// the pipeline ID. If a file with the specified name already exists in the output bucket,
+    /// the job fails. </p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>Whether you want Elastic Transcoder to create thumbnails for your videos and, if so, how you want Elastic Transcoder to name the files.</p>
+    /// <p>If you don't want Elastic Transcoder to create thumbnails, specify "".</p>
+    /// <p>If you do want Elastic Transcoder to create thumbnails, specify the information that you want to include
+    /// in the file name for each thumbnail. You can specify the following values in any sequence:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>{count}</code> (Required)</b>: If you want to create thumbnails, you
+    /// must include <code>{count}</code> in the <code>ThumbnailPattern</code> object.
+    /// Wherever you specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence
+    /// number (beginning with <b>00001</b>) to thumbnail file names. The number
+    /// indicates where a given thumbnail appears in the sequence of thumbnails for a
+    /// transcoded file. </p>
+    /// <important>
+    /// <p>If you specify a literal value and/or <code>{resolution}</code> but you
+    /// omit <code>{count}</code>, Elastic Transcoder returns a validation error and does not create
+    /// the job.</p>
+    /// </important>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Literal values (Optional)</b>: You can specify literal values anywhere in the
+    /// <code>ThumbnailPattern</code> object. For example, you can include them as a
+    /// file name prefix or as a delimiter between <code>{resolution}</code> and
+    /// <code>{count}</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the
+    /// resolution in the file name, include <code>{resolution}</code> in the
+    /// <code>ThumbnailPattern</code> object. </p>
+    /// </li>
+    /// </ul>
+    /// <p>When creating thumbnails, Elastic Transcoder automatically saves the files in the format (.jpg or .png)
+    /// that appears in the preset that you specified in the <code>PresetID</code> value of
+    /// <code>CreateJobOutput</code>. Elastic Transcoder also appends the applicable file name
+    /// extension.</p>
+    pub thumbnail_pattern: std::option::Option<std::string::String>,
+    /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your thumbnail.</p>
+    pub thumbnail_encryption: std::option::Option<crate::model::Encryption>,
+    /// <p> The number of degrees clockwise by which you want Elastic Transcoder to rotate the output relative to
+    /// the input. Enter one of the following values: <code>auto</code>, <code>0</code>,
+    /// <code>90</code>, <code>180</code>, <code>270</code>. The value <code>auto</code>
+    /// generally works only if the file that you're transcoding contains rotation metadata.
+    /// </p>
+    pub rotate: std::option::Option<std::string::String>,
+    /// <p> The <code>Id</code> of the preset to use for this job. The preset determines the audio,
+    /// video, and thumbnail settings that Elastic Transcoder uses for transcoding. </p>
+    pub preset_id: std::option::Option<std::string::String>,
+    /// <important>
+    /// <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+    /// </important>
+    /// <p>If you specify a preset in
+    /// <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
+    /// <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of
+    /// each segment in seconds. For <code>HLSv3</code> format playlists,
+    /// each media segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code>
+    /// playlists, all media segments for an output are stored in a single file. Each segment is approximately the length of
+    /// the <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
+    /// <p>The range of valid values is 1 to 60 seconds. If the duration
+    /// of the video is not evenly divisible by <code>SegmentDuration</code>, the duration of
+    /// the last segment is the remainder of total length/SegmentDuration.</p>
+    /// <p>Elastic Transcoder
+    /// creates an output-specific playlist for each output <code>HLS</code> output that you specify in OutputKeys. To
+    /// add an output to the master playlist for this job, include it in the <code>OutputKeys</code> of
+    /// the associated playlist.</p>
+    pub segment_duration: std::option::Option<std::string::String>,
+    /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding.
+    /// You can specify up to four watermarks for each output. Settings for each watermark must be defined
+    /// in the preset for the current output.</p>
+    pub watermarks: std::option::Option<std::vec::Vec<crate::model::JobWatermark>>,
+    /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding.
+    /// You can specify up to twenty album artworks for each output. Settings for each artwork must be
+    /// defined in the job for the current output.</p>
+    pub album_art: std::option::Option<crate::model::JobAlbumArt>,
+    /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a
+    /// clip, can come from the beginning, middle, or end of the file. The Composition object contains settings
+    /// for the clips that make up an output file. For the current release, you can only specify settings for a
+    /// single clip per output file. The Composition object cannot be null.</p>
+    pub composition: std::option::Option<std::vec::Vec<crate::model::Clip>>,
+    /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All
+    /// captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Embedded:</b> Embedded captions
+    /// are included in the same file as the audio and video. Elastic Transcoder supports
+    /// only one embedded caption per language, to a maximum of 300 embedded captions per file.</p>
+    /// <p>Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel only),
+    /// <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+    /// </p>
+    /// <p>Valid outputs include: <code>mov-text</code>
+    /// </p>
+    /// <p>Elastic Transcoder supports a maximum of one embedded format per output.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Sidecar:</b> Sidecar captions are kept in a
+    /// separate metadata file from the audio and video data.  Sidecar captions require a player
+    /// that is capable of understanding the relationship between the video file and the sidecar
+    /// file. Elastic Transcoder supports only one sidecar caption per language, to a maximum of 20 sidecar
+    /// captions per file.</p>
+    /// <p>Valid input values include: <code>dfxp</code> (first div element only),
+    /// <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>, <code>srt</code>,
+    /// <code>ttml</code> (first div element only), and <code>webvtt</code>
+    /// </p>
+    /// <p>Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>,
+    /// <code>srt</code>, and <code>webvtt</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.</p>
+    /// <p>Elastic Transcoder does not support OCR (Optical Character Recognition), does not accept pictures
+    /// as a valid input for captions, and is not available for audio-only transcoding. Elastic Transcoder does
+    /// not preserve text formatting (for example, italics) during the transcoding process.</p>
+    /// <p>To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through
+    /// existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>,
+    /// and pass in a null <code>CaptionSources</code> array.</p>
+    /// <p>For more information on embedded files, see the Subtitles Wikipedia page.</p>
+    /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
+    pub captions: std::option::Option<crate::model::Captions>,
+    /// <p>You can specify encryption settings for any output files that you want to use for a
+    /// transcoding job. This includes the output file and any watermarks, thumbnails, album art,
+    /// or captions that you want to use. You must specify encryption settings for each file
+    /// individually.</p>
+    pub encryption: std::option::Option<crate::model::Encryption>,
+}
+impl std::fmt::Debug for CreateJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateJobOutput");
+        formatter.field("key", &self.key);
+        formatter.field("thumbnail_pattern", &self.thumbnail_pattern);
+        formatter.field("thumbnail_encryption", &self.thumbnail_encryption);
+        formatter.field("rotate", &self.rotate);
+        formatter.field("preset_id", &self.preset_id);
+        formatter.field("segment_duration", &self.segment_duration);
+        formatter.field("watermarks", &self.watermarks);
+        formatter.field("album_art", &self.album_art);
+        formatter.field("composition", &self.composition);
+        formatter.field("captions", &self.captions);
+        formatter.field("encryption", &self.encryption);
+        formatter.finish()
+    }
+}
+/// See [`CreateJobOutput`](crate::model::CreateJobOutput)
+pub mod create_job_output {
+    /// A builder for [`CreateJobOutput`](crate::model::CreateJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) thumbnail_pattern: std::option::Option<std::string::String>,
+        pub(crate) thumbnail_encryption: std::option::Option<crate::model::Encryption>,
+        pub(crate) rotate: std::option::Option<std::string::String>,
+        pub(crate) preset_id: std::option::Option<std::string::String>,
+        pub(crate) segment_duration: std::option::Option<std::string::String>,
+        pub(crate) watermarks: std::option::Option<std::vec::Vec<crate::model::JobWatermark>>,
+        pub(crate) album_art: std::option::Option<crate::model::JobAlbumArt>,
+        pub(crate) composition: std::option::Option<std::vec::Vec<crate::model::Clip>>,
+        pub(crate) captions: std::option::Option<crate::model::Captions>,
+        pub(crate) encryption: std::option::Option<crate::model::Encryption>,
+    }
+    impl Builder {
+        /// <p> The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket
+        /// specified by the <code>OutputBucket</code> object in the pipeline that is specified by
+        /// the pipeline ID. If a file with the specified name already exists in the output bucket,
+        /// the job fails. </p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>Whether you want Elastic Transcoder to create thumbnails for your videos and, if so, how you want Elastic Transcoder to name the files.</p>
+        /// <p>If you don't want Elastic Transcoder to create thumbnails, specify "".</p>
+        /// <p>If you do want Elastic Transcoder to create thumbnails, specify the information that you want to include
+        /// in the file name for each thumbnail. You can specify the following values in any sequence:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>{count}</code> (Required)</b>: If you want to create thumbnails, you
+        /// must include <code>{count}</code> in the <code>ThumbnailPattern</code> object.
+        /// Wherever you specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence
+        /// number (beginning with <b>00001</b>) to thumbnail file names. The number
+        /// indicates where a given thumbnail appears in the sequence of thumbnails for a
+        /// transcoded file. </p>
+        /// <important>
+        /// <p>If you specify a literal value and/or <code>{resolution}</code> but you
+        /// omit <code>{count}</code>, Elastic Transcoder returns a validation error and does not create
+        /// the job.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Literal values (Optional)</b>: You can specify literal values anywhere in the
+        /// <code>ThumbnailPattern</code> object. For example, you can include them as a
+        /// file name prefix or as a delimiter between <code>{resolution}</code> and
+        /// <code>{count}</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the
+        /// resolution in the file name, include <code>{resolution}</code> in the
+        /// <code>ThumbnailPattern</code> object. </p>
+        /// </li>
+        /// </ul>
+        /// <p>When creating thumbnails, Elastic Transcoder automatically saves the files in the format (.jpg or .png)
+        /// that appears in the preset that you specified in the <code>PresetID</code> value of
+        /// <code>CreateJobOutput</code>. Elastic Transcoder also appends the applicable file name
+        /// extension.</p>
+        pub fn thumbnail_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.thumbnail_pattern = Some(input.into());
+            self
+        }
+        pub fn set_thumbnail_pattern(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.thumbnail_pattern = input;
+            self
+        }
+        /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your thumbnail.</p>
+        pub fn thumbnail_encryption(mut self, input: crate::model::Encryption) -> Self {
+            self.thumbnail_encryption = Some(input);
+            self
+        }
+        pub fn set_thumbnail_encryption(
+            mut self,
+            input: std::option::Option<crate::model::Encryption>,
+        ) -> Self {
+            self.thumbnail_encryption = input;
+            self
+        }
+        /// <p> The number of degrees clockwise by which you want Elastic Transcoder to rotate the output relative to
+        /// the input. Enter one of the following values: <code>auto</code>, <code>0</code>,
+        /// <code>90</code>, <code>180</code>, <code>270</code>. The value <code>auto</code>
+        /// generally works only if the file that you're transcoding contains rotation metadata.
+        /// </p>
+        pub fn rotate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rotate = Some(input.into());
+            self
+        }
+        pub fn set_rotate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rotate = input;
+            self
+        }
+        /// <p> The <code>Id</code> of the preset to use for this job. The preset determines the audio,
+        /// video, and thumbnail settings that Elastic Transcoder uses for transcoding. </p>
+        pub fn preset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.preset_id = Some(input.into());
+            self
+        }
+        pub fn set_preset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.preset_id = input;
+            self
+        }
+        /// <important>
+        /// <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+        /// </important>
+        /// <p>If you specify a preset in
+        /// <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
+        /// <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of
+        /// each segment in seconds. For <code>HLSv3</code> format playlists,
+        /// each media segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code>
+        /// playlists, all media segments for an output are stored in a single file. Each segment is approximately the length of
+        /// the <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
+        /// <p>The range of valid values is 1 to 60 seconds. If the duration
+        /// of the video is not evenly divisible by <code>SegmentDuration</code>, the duration of
+        /// the last segment is the remainder of total length/SegmentDuration.</p>
+        /// <p>Elastic Transcoder
+        /// creates an output-specific playlist for each output <code>HLS</code> output that you specify in OutputKeys. To
+        /// add an output to the master playlist for this job, include it in the <code>OutputKeys</code> of
+        /// the associated playlist.</p>
+        pub fn segment_duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment_duration = Some(input.into());
+            self
+        }
+        pub fn set_segment_duration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.segment_duration = input;
+            self
+        }
+        pub fn watermarks(mut self, input: impl Into<crate::model::JobWatermark>) -> Self {
+            let mut v = self.watermarks.unwrap_or_default();
+            v.push(input.into());
+            self.watermarks = Some(v);
+            self
+        }
+        pub fn set_watermarks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::JobWatermark>>,
+        ) -> Self {
+            self.watermarks = input;
+            self
+        }
+        /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding.
+        /// You can specify up to twenty album artworks for each output. Settings for each artwork must be
+        /// defined in the job for the current output.</p>
+        pub fn album_art(mut self, input: crate::model::JobAlbumArt) -> Self {
+            self.album_art = Some(input);
+            self
+        }
+        pub fn set_album_art(
+            mut self,
+            input: std::option::Option<crate::model::JobAlbumArt>,
+        ) -> Self {
+            self.album_art = input;
+            self
+        }
+        pub fn composition(mut self, input: impl Into<crate::model::Clip>) -> Self {
+            let mut v = self.composition.unwrap_or_default();
+            v.push(input.into());
+            self.composition = Some(v);
+            self
+        }
+        pub fn set_composition(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Clip>>,
+        ) -> Self {
+            self.composition = input;
+            self
+        }
+        /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All
+        /// captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Embedded:</b> Embedded captions
+        /// are included in the same file as the audio and video. Elastic Transcoder supports
+        /// only one embedded caption per language, to a maximum of 300 embedded captions per file.</p>
+        /// <p>Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel only),
+        /// <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+        /// </p>
+        /// <p>Valid outputs include: <code>mov-text</code>
+        /// </p>
+        /// <p>Elastic Transcoder supports a maximum of one embedded format per output.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Sidecar:</b> Sidecar captions are kept in a
+        /// separate metadata file from the audio and video data.  Sidecar captions require a player
+        /// that is capable of understanding the relationship between the video file and the sidecar
+        /// file. Elastic Transcoder supports only one sidecar caption per language, to a maximum of 20 sidecar
+        /// captions per file.</p>
+        /// <p>Valid input values include: <code>dfxp</code> (first div element only),
+        /// <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>, <code>srt</code>,
+        /// <code>ttml</code> (first div element only), and <code>webvtt</code>
+        /// </p>
+        /// <p>Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>,
+        /// <code>srt</code>, and <code>webvtt</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.</p>
+        /// <p>Elastic Transcoder does not support OCR (Optical Character Recognition), does not accept pictures
+        /// as a valid input for captions, and is not available for audio-only transcoding. Elastic Transcoder does
+        /// not preserve text formatting (for example, italics) during the transcoding process.</p>
+        /// <p>To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through
+        /// existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>,
+        /// and pass in a null <code>CaptionSources</code> array.</p>
+        /// <p>For more information on embedded files, see the Subtitles Wikipedia page.</p>
+        /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
+        pub fn captions(mut self, input: crate::model::Captions) -> Self {
+            self.captions = Some(input);
+            self
+        }
+        pub fn set_captions(mut self, input: std::option::Option<crate::model::Captions>) -> Self {
+            self.captions = input;
+            self
+        }
+        /// <p>You can specify encryption settings for any output files that you want to use for a
+        /// transcoding job. This includes the output file and any watermarks, thumbnails, album art,
+        /// or captions that you want to use. You must specify encryption settings for each file
+        /// individually.</p>
+        pub fn encryption(mut self, input: crate::model::Encryption) -> Self {
+            self.encryption = Some(input);
+            self
+        }
+        pub fn set_encryption(
+            mut self,
+            input: std::option::Option<crate::model::Encryption>,
+        ) -> Self {
+            self.encryption = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateJobOutput`](crate::model::CreateJobOutput)
+        pub fn build(self) -> crate::model::CreateJobOutput {
+            crate::model::CreateJobOutput {
+                key: self.key,
+                thumbnail_pattern: self.thumbnail_pattern,
+                thumbnail_encryption: self.thumbnail_encryption,
+                rotate: self.rotate,
+                preset_id: self.preset_id,
+                segment_duration: self.segment_duration,
+                watermarks: self.watermarks,
+                album_art: self.album_art,
+                composition: self.composition,
+                captions: self.captions,
+                encryption: self.encryption,
+            }
+        }
+    }
+}
+impl CreateJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::model::CreateJobOutput)
+    pub fn builder() -> crate::model::create_job_output::Builder {
+        crate::model::create_job_output::Builder::default()
+    }
+}

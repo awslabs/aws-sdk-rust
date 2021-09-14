@@ -370,6 +370,131 @@ impl std::error::Error for DescribeWorkspaceError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct ListTagsForResourceError {
+    pub kind: ListTagsForResourceErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTagsForResourceErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTagsForResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
+    fn code(&self) -> Option<&str> {
+        ListTagsForResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            ListTagsForResourceErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListTagsForResourceErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl ListTagsForResourceError {
+    pub fn new(kind: ListTagsForResourceErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListTagsForResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct ListWorkspacesError {
     pub kind: ListWorkspacesErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -474,6 +599,233 @@ impl std::error::Error for ListWorkspacesError {
             ListWorkspacesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListWorkspacesErrorKind::ValidationException(_inner) => Some(_inner),
             ListWorkspacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct TagResourceError {
+    pub kind: TagResourceErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum TagResourceErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for TagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            TagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for TagResourceError {
+    fn code(&self) -> Option<&str> {
+        TagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            TagResourceErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            TagResourceErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
+    }
+}
+impl TagResourceError {
+    pub fn new(kind: TagResourceErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for TagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            TagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
+            TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UntagResourceError {
+    pub kind: UntagResourceErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UntagResourceErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UntagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UntagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UntagResourceError {
+    fn code(&self) -> Option<&str> {
+        UntagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            UntagResourceErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UntagResourceErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl UntagResourceError {
+    pub fn new(kind: UntagResourceErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UntagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UntagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

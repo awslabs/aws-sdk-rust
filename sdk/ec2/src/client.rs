@@ -5995,8 +5995,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the destination snapshots of the copied image should be encrypted.
         /// You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted
-        /// copy of an encrypted snapshot. The default CMK for EBS is used unless you specify a non-default
-        /// AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you specify a non-default
+        /// Key Management Service (KMS) KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn encrypted(mut self, inp: bool) -> Self {
             self.inner = self.inner.encrypted(inp);
             self
@@ -6005,10 +6005,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encrypted(input);
             self
         }
-        /// <p>The identifier of the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
-        /// encrypted volumes. If this parameter is not specified, your AWS managed CMK for EBS is used.
-        /// If you specify a CMK, you must also set the encrypted state to <code>true</code>.</p>
-        /// <p>You can specify a CMK using any of the following:</p>
+        /// <p>The identifier of the symmetric Key Management Service (KMS) KMS key to use when creating
+        /// encrypted volumes. If this parameter is not specified, your Amazon Web Services managed KMS key for Amazon EBS is used.
+        /// If you specify a KMS key, you must also set the encrypted state to <code>true</code>.</p>
+        /// <p>You can specify a KMS key using any of the following:</p>
         /// <ul>
         /// <li>
         /// <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p>
@@ -6023,10 +6023,10 @@ pub mod fluent_builders {
         /// <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p>
         /// </li>
         /// </ul>
-        /// <p>AWS authenticates the CMK asynchronously. Therefore, if you specify an identifier that is not valid,
+        /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an identifier that is not valid,
         /// the action can appear to complete, but eventually fails.</p>
-        /// <p>The specified CMK must exist in the destination Region.</p>
-        /// <p>Amazon EBS does not support asymmetric CMKs.</p>
+        /// <p>The specified KMS key must exist in the destination Region.</p>
+        /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
             self
@@ -6069,12 +6069,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only
-        /// specify this parameter when copying an AMI from an AWS Region to an Outpost.
+        /// specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost.
         /// The AMI must be in the Region of the destination Outpost. You cannot copy an
         /// AMI from an Outpost to a Region, from one Outpost to another, or within the same
         /// Outpost.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-        /// Copying AMIs from an AWS Region to an Outpost</a> in the
+        /// Copying AMIs from an Amazon Web Services Region to an Outpost</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn destination_outpost_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.destination_outpost_arn(inp);
@@ -8202,7 +8202,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the <code>No Reboot</code> option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this option is used, file system integrity on the created image can't be guaranteed.</p>
+        /// <p>By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image.
+        /// If the <code>No Reboot</code> option is set, Amazon EC2 doesn't shut down the instance before creating
+        /// the image. Without a reboot, the AMI will be crash consistent (all the volumes are snapshotted
+        /// at the same time), but not application consistent (all the operating system buffers are not flushed
+        /// to disk before the snapshots are created).</p>
         pub fn no_reboot(mut self, inp: bool) -> Self {
             self.inner = self.inner.no_reboot(inp);
             self
@@ -8222,7 +8226,7 @@ pub mod fluent_builders {
         /// <code>image</code>.</p>
         /// </li>
         /// <li>
-        /// <p>To tag the snapshots that are created of the root volume and of other EBS volumes that
+        /// <p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that
         /// are attached to the instance, the value for <code>ResourceType</code> must be
         /// <code>snapshot</code>. The same tag is applied to all of the snapshots that are
         /// created.</p>
@@ -10485,7 +10489,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the S3 bucket that contains the stored AMI object.</p>
+        /// <p>The name of the Amazon S3 bucket that contains the stored AMI object.</p>
         pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(inp);
             self
@@ -11354,7 +11358,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_id(input);
             self
         }
-        /// <p>The name of the S3 bucket in which the AMI object will be stored. The bucket must be in
+        /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in
         /// the Region in which the request is being made. The AMI object appears in the bucket only after
         /// the upload task has completed. </p>
         pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -11368,7 +11372,7 @@ pub mod fluent_builders {
         /// Appends an item to `S3ObjectTags`.
         ///
         /// To override the contents of this collection use [`set_s3_object_tags`](Self::set_s3_object_tags).
-        /// <p>The tags to apply to the AMI object that will be stored in the S3 bucket. </p>
+        /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
         pub fn s3_object_tags(mut self, inp: impl Into<crate::model::S3ObjectTag>) -> Self {
             self.inner = self.inner.s3_object_tags(inp);
             self
@@ -23387,7 +23391,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_executable_users`](Self::set_executable_users).
         /// <p>Scopes the images by users with explicit launch permissions.
-        /// Specify an AWS account ID, <code>self</code> (the sender of the request),
+        /// Specify an Amazon Web Services account ID, <code>self</code> (the sender of the request),
         /// or <code>all</code> (public AMIs).</p>
         pub fn executable_users(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.executable_users(inp);
@@ -23422,22 +23426,22 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the EBS
+        /// <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS
         /// volume.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume, in GiB.</p>
+        /// <code>block-device-mapping.volume-size</code> - The volume size of the Amazon EBS volume, in GiB.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume
-        /// (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> |
-        /// <code>standard</code>).</p>
+        /// <code>block-device-mapping.volume-type</code> - The volume type of the Amazon EBS volume
+        /// (<code>io1</code> | <code>io2</code> | <code>gp2</code> | <code>gp3</code> | <code>sc1
+        /// </code>| <code>st1</code> | <code>standard</code>).</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether the EBS volume is encrypted.</p>
+        /// <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether the Amazon EBS volume is encrypted.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -23482,13 +23486,13 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).
-        /// The valid aliases are defined in an Amazon-maintained list. This is not the AWS account alias that can be
+        /// The valid aliases are defined in an Amazon-maintained list. This is not the Amazon Web Services account alias that can be
         /// set using the IAM console. We recommend that you use the <b>Owner</b>
         /// request parameter instead of this filter.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the
+        /// <code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend that you use the
         /// <b>Owner</b> request parameter instead of this filter.</p>
         /// </li>
         /// <li>
@@ -23502,8 +23506,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>product-code.type</code> - The type of the product code (<code>devpay</code> |
-        /// <code>marketplace</code>).</p>
+        /// <code>product-code.type</code> - The type of the product code (<code>marketplace</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -23582,7 +23585,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_owners`](Self::set_owners).
         /// <p>Scopes the results to images with the specified owners. You can specify a combination of  
-        /// AWS account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>.
+        /// Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>.
         /// If you omit this parameter, the results include all images for which you have launch permissions,
         /// regardless of ownership.</p>
         pub fn owners(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -25193,13 +25196,11 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported
-        /// (<code>true</code> | <code>false</code>).</p>
+        /// <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported  (<code>true</code> | <code>false</code>).</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>bare-metal</code> - Indicates whether it is a bare metal instance type
-        /// (<code>true</code> | <code>false</code>).</p>
+        /// <code>bare-metal</code> - Indicates whether it is a bare metal instance type  (<code>true</code> | <code>false</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -25255,8 +25256,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe)
-        /// is supported for EBS volumes (<code>required</code> | <code>supported</code> |
-        /// <code>unsupported</code>).</p>
+        /// is supported for EBS volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -25265,8 +25265,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported
-        /// (<code>true</code> | <code>false</code>).</p>
+        /// <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported  (<code>true</code> | <code>false</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -25330,7 +25329,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>network-info.encryption-in-transit-supported</code> - Indicates whether the instance type
-        /// automatically encrypts in-transit traffic between instances.</p>
+        /// automatically encrypts in-transit traffic between instances  (<code>true</code> | <code>false</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -25344,8 +25343,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports
-        /// IPv6  (<code>true</code> | <code>false</code>).</p>
+        /// <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6  (<code>true</code> | <code>false</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -41935,8 +41933,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_capacity_reservation_id(input);
             self
         }
-        /// <p>The number of instances for which to reserve capacity.</p>
-        /// <p>Valid range: 1 - 1000</p>
+        /// <p>The number of instances for which to reserve capacity. The number of instances can't be increased or
+        /// decreased by more than <code>1000</code> in a single request.</p>
         pub fn instance_count(mut self, inp: i32) -> Self {
             self.inner = self.inner.instance_count(inp);
             self
@@ -42995,7 +42993,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the attribute to modify.
-        /// The valid values are <code>description</code>, <code>launchPermission</code>, and <code>productCodes</code>.</p>
+        /// The valid values are <code>description</code> and <code>launchPermission</code>.</p>
         pub fn attribute(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.attribute(inp);
             self
@@ -43056,7 +43054,7 @@ pub mod fluent_builders {
         /// Appends an item to `ProductCodes`.
         ///
         /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
-        /// <p>The DevPay product codes. After you add a product code to an AMI, it can't be removed.</p>
+        /// <p>Not supported.</p>
         pub fn product_codes(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.product_codes(inp);
             self
@@ -43087,7 +43085,7 @@ pub mod fluent_builders {
         /// Appends an item to `UserIds`.
         ///
         /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
-        /// <p>The AWS account IDs.
+        /// <p>The Amazon Web Services account IDs.
         /// This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
         pub fn user_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_ids(inp);
@@ -43101,7 +43099,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value of the attribute being modified.
-        /// This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>productCodes</code>.</p>
+        /// This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code>.</p>
         pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.value(inp);
             self
@@ -44005,6 +44003,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tenancy for the instance.</p>
+        /// <p>For T3 instances, you can't change the tenancy from <code>dedicated</code> to
+        /// <code>host</code>, or from <code>host</code> to <code>dedicated</code>. Attempting
+        /// to make one of these unsupported tenancy changes results in the <code>InvalidTenancy</code>
+        /// error code.</p>
         pub fn tenancy(mut self, inp: crate::model::HostTenancy) -> Self {
             self.inner = self.inner.tenancy(inp);
             self
@@ -44268,6 +44270,9 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of entries for the prefix list. You cannot modify the entries  
         /// of a prefix list and modify the size of a prefix list at the same time.</p>
+        /// <p>If any of the resources that reference the prefix list cannot support the new
+        /// maximum size, the modify operation fails. Check the state message for the IDs of
+        /// the first ten resources that do not support the new maximum size.</p>
         pub fn max_entries(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_entries(inp);
             self
@@ -47897,7 +47902,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         /// <p>The block device mapping entries.</p>
-        /// <p>If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of the volume.</p>
+        /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
         /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region
         /// of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
         /// only. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
@@ -47969,7 +47974,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_billing_products`](Self::set_billing_products).
         /// <p>The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
-        /// you can use the AWS Marketplace to bill for the use of an AMI.</p>
+        /// you can use the Amazon Web Services Marketplace to bill for the use of an AMI.</p>
         pub fn billing_products(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.billing_products(inp);
             self
@@ -51712,6 +51717,8 @@ pub mod fluent_builders {
         /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
         /// <p>Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
         /// instances)</p>
+        /// <p>For T3 instances with <code>host</code> tenancy, only <code>standard</code> is
+        /// supported.</p>
         pub fn credit_specification(
             mut self,
             inp: crate::model::CreditSpecificationRequest,

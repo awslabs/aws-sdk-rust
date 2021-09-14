@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_request_timeout_exceptionjson_err(
+pub fn deser_structure_crate_error_request_timeout_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::request_timeout_exception::Builder,
 ) -> Result<crate::error::request_timeout_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_request_timeout_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -201,7 +201,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_service_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable_exception::Builder,
 ) -> Result<crate::error::service_unavailable_exception::Builder, smithy_json::deserialize::Error> {
@@ -240,7 +240,7 @@ pub fn deser_structure_service_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -279,7 +279,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -318,7 +318,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_create_table_rows(
+pub fn deser_operation_crate_operation_batch_create_table_rows(
     input: &[u8],
     mut builder: crate::output::batch_create_table_rows_output::Builder,
 ) -> Result<crate::output::batch_create_table_rows_output::Builder, smithy_json::deserialize::Error>
@@ -335,12 +335,14 @@ pub fn deser_operation_batch_create_table_rows(
                 match key.to_unescaped()?.as_ref() {
                     "createdRows" => {
                         builder = builder.set_created_rows(
-                            crate::json_deser::deser_map_created_rows_map(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_honeycode_created_rows_map(
+                                tokens,
+                            )?,
                         );
                     }
                     "failedBatchItems" => {
                         builder = builder.set_failed_batch_items(
-                            crate::json_deser::deser_list_failed_batch_items(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_honeycode_failed_batch_items(tokens)?
                         );
                     }
                     "workbookCursor" => {
@@ -367,7 +369,7 @@ pub fn deser_operation_batch_create_table_rows(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_delete_table_rows(
+pub fn deser_operation_crate_operation_batch_delete_table_rows(
     input: &[u8],
     mut builder: crate::output::batch_delete_table_rows_output::Builder,
 ) -> Result<crate::output::batch_delete_table_rows_output::Builder, smithy_json::deserialize::Error>
@@ -384,7 +386,7 @@ pub fn deser_operation_batch_delete_table_rows(
                 match key.to_unescaped()?.as_ref() {
                     "failedBatchItems" => {
                         builder = builder.set_failed_batch_items(
-                            crate::json_deser::deser_list_failed_batch_items(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_honeycode_failed_batch_items(tokens)?
                         );
                     }
                     "workbookCursor" => {
@@ -411,7 +413,7 @@ pub fn deser_operation_batch_delete_table_rows(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_update_table_rows(
+pub fn deser_operation_crate_operation_batch_update_table_rows(
     input: &[u8],
     mut builder: crate::output::batch_update_table_rows_output::Builder,
 ) -> Result<crate::output::batch_update_table_rows_output::Builder, smithy_json::deserialize::Error>
@@ -428,7 +430,7 @@ pub fn deser_operation_batch_update_table_rows(
                 match key.to_unescaped()?.as_ref() {
                     "failedBatchItems" => {
                         builder = builder.set_failed_batch_items(
-                            crate::json_deser::deser_list_failed_batch_items(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_honeycode_failed_batch_items(tokens)?
                         );
                     }
                     "workbookCursor" => {
@@ -455,7 +457,7 @@ pub fn deser_operation_batch_update_table_rows(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_upsert_table_rows(
+pub fn deser_operation_crate_operation_batch_upsert_table_rows(
     input: &[u8],
     mut builder: crate::output::batch_upsert_table_rows_output::Builder,
 ) -> Result<crate::output::batch_upsert_table_rows_output::Builder, smithy_json::deserialize::Error>
@@ -472,12 +474,13 @@ pub fn deser_operation_batch_upsert_table_rows(
                 match key.to_unescaped()?.as_ref() {
                     "failedBatchItems" => {
                         builder = builder.set_failed_batch_items(
-                            crate::json_deser::deser_list_failed_batch_items(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_honeycode_failed_batch_items(tokens)?
                         );
                     }
                     "rows" => {
-                        builder = builder
-                            .set_rows(crate::json_deser::deser_map_upsert_rows_result_map(tokens)?);
+                        builder = builder.set_rows(
+                            crate::json_deser::deser_map_com_amazonaws_honeycode_upsert_rows_result_map(tokens)?
+                        );
                     }
                     "workbookCursor" => {
                         builder = builder.set_workbook_cursor(
@@ -503,7 +506,7 @@ pub fn deser_operation_batch_upsert_table_rows(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_table_data_import_job(
+pub fn deser_operation_crate_operation_describe_table_data_import_job(
     input: &[u8],
     mut builder: crate::output::describe_table_data_import_job_output::Builder,
 ) -> Result<
@@ -522,9 +525,7 @@ pub fn deser_operation_describe_table_data_import_job(
                 match key.to_unescaped()?.as_ref() {
                     "jobMetadata" => {
                         builder = builder.set_job_metadata(
-                            crate::json_deser::deser_structure_table_data_import_job_metadata(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_table_data_import_job_metadata(tokens)?
                         );
                     }
                     "jobStatus" => {
@@ -563,7 +564,7 @@ pub fn deser_operation_describe_table_data_import_job(
     Ok(builder)
 }
 
-pub fn deser_operation_get_screen_data(
+pub fn deser_operation_crate_operation_get_screen_data(
     input: &[u8],
     mut builder: crate::output::get_screen_data_output::Builder,
 ) -> Result<crate::output::get_screen_data_output::Builder, smithy_json::deserialize::Error> {
@@ -585,8 +586,11 @@ pub fn deser_operation_get_screen_data(
                         );
                     }
                     "results" => {
-                        builder = builder
-                            .set_results(crate::json_deser::deser_map_result_set_map(tokens)?);
+                        builder = builder.set_results(
+                            crate::json_deser::deser_map_com_amazonaws_honeycode_result_set_map(
+                                tokens,
+                            )?,
+                        );
                     }
                     "workbookCursor" => {
                         builder = builder.set_workbook_cursor(
@@ -612,7 +616,7 @@ pub fn deser_operation_get_screen_data(
     Ok(builder)
 }
 
-pub fn deser_structure_automation_execution_exceptionjson_err(
+pub fn deser_structure_crate_error_automation_execution_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::automation_execution_exception::Builder,
 ) -> Result<crate::error::automation_execution_exception::Builder, smithy_json::deserialize::Error>
@@ -652,7 +656,7 @@ pub fn deser_structure_automation_execution_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_automation_execution_timeout_exceptionjson_err(
+pub fn deser_structure_crate_error_automation_execution_timeout_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::automation_execution_timeout_exception::Builder,
 ) -> Result<
@@ -694,7 +698,7 @@ pub fn deser_structure_automation_execution_timeout_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_invoke_screen_automation(
+pub fn deser_operation_crate_operation_invoke_screen_automation(
     input: &[u8],
     mut builder: crate::output::invoke_screen_automation_output::Builder,
 ) -> Result<crate::output::invoke_screen_automation_output::Builder, smithy_json::deserialize::Error>
@@ -733,7 +737,7 @@ pub fn deser_operation_invoke_screen_automation(
     Ok(builder)
 }
 
-pub fn deser_operation_list_table_columns(
+pub fn deser_operation_crate_operation_list_table_columns(
     input: &[u8],
     mut builder: crate::output::list_table_columns_output::Builder,
 ) -> Result<crate::output::list_table_columns_output::Builder, smithy_json::deserialize::Error> {
@@ -756,7 +760,9 @@ pub fn deser_operation_list_table_columns(
                     }
                     "tableColumns" => {
                         builder = builder.set_table_columns(
-                            crate::json_deser::deser_list_table_columns(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_honeycode_table_columns(
+                                tokens,
+                            )?,
                         );
                     }
                     "workbookCursor" => {
@@ -783,7 +789,7 @@ pub fn deser_operation_list_table_columns(
     Ok(builder)
 }
 
-pub fn deser_operation_list_table_rows(
+pub fn deser_operation_crate_operation_list_table_rows(
     input: &[u8],
     mut builder: crate::output::list_table_rows_output::Builder,
 ) -> Result<crate::output::list_table_rows_output::Builder, smithy_json::deserialize::Error> {
@@ -798,8 +804,11 @@ pub fn deser_operation_list_table_rows(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "columnIds" => {
-                        builder = builder
-                            .set_column_ids(crate::json_deser::deser_list_resource_ids(tokens)?);
+                        builder = builder.set_column_ids(
+                            crate::json_deser::deser_list_com_amazonaws_honeycode_resource_ids(
+                                tokens,
+                            )?,
+                        );
                     }
                     "nextToken" => {
                         builder = builder.set_next_token(
@@ -810,12 +819,17 @@ pub fn deser_operation_list_table_rows(
                     }
                     "rowIdsNotFound" => {
                         builder = builder.set_row_ids_not_found(
-                            crate::json_deser::deser_list_row_id_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_honeycode_row_id_list(
+                                tokens,
+                            )?,
                         );
                     }
                     "rows" => {
-                        builder =
-                            builder.set_rows(crate::json_deser::deser_list_table_rows(tokens)?);
+                        builder = builder.set_rows(
+                            crate::json_deser::deser_list_com_amazonaws_honeycode_table_rows(
+                                tokens,
+                            )?,
+                        );
                     }
                     "workbookCursor" => {
                         builder = builder.set_workbook_cursor(
@@ -841,7 +855,7 @@ pub fn deser_operation_list_table_rows(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tables(
+pub fn deser_operation_crate_operation_list_tables(
     input: &[u8],
     mut builder: crate::output::list_tables_output::Builder,
 ) -> Result<crate::output::list_tables_output::Builder, smithy_json::deserialize::Error> {
@@ -863,7 +877,9 @@ pub fn deser_operation_list_tables(
                         );
                     }
                     "tables" => {
-                        builder = builder.set_tables(crate::json_deser::deser_list_tables(tokens)?);
+                        builder = builder.set_tables(
+                            crate::json_deser::deser_list_com_amazonaws_honeycode_tables(tokens)?,
+                        );
                     }
                     "workbookCursor" => {
                         builder = builder.set_workbook_cursor(
@@ -889,7 +905,7 @@ pub fn deser_operation_list_tables(
     Ok(builder)
 }
 
-pub fn deser_operation_query_table_rows(
+pub fn deser_operation_crate_operation_query_table_rows(
     input: &[u8],
     mut builder: crate::output::query_table_rows_output::Builder,
 ) -> Result<crate::output::query_table_rows_output::Builder, smithy_json::deserialize::Error> {
@@ -904,8 +920,11 @@ pub fn deser_operation_query_table_rows(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "columnIds" => {
-                        builder = builder
-                            .set_column_ids(crate::json_deser::deser_list_resource_ids(tokens)?);
+                        builder = builder.set_column_ids(
+                            crate::json_deser::deser_list_com_amazonaws_honeycode_resource_ids(
+                                tokens,
+                            )?,
+                        );
                     }
                     "nextToken" => {
                         builder = builder.set_next_token(
@@ -915,8 +934,11 @@ pub fn deser_operation_query_table_rows(
                         );
                     }
                     "rows" => {
-                        builder =
-                            builder.set_rows(crate::json_deser::deser_list_table_rows(tokens)?);
+                        builder = builder.set_rows(
+                            crate::json_deser::deser_list_com_amazonaws_honeycode_table_rows(
+                                tokens,
+                            )?,
+                        );
                     }
                     "workbookCursor" => {
                         builder = builder.set_workbook_cursor(
@@ -942,7 +964,7 @@ pub fn deser_operation_query_table_rows(
     Ok(builder)
 }
 
-pub fn deser_operation_start_table_data_import_job(
+pub fn deser_operation_crate_operation_start_table_data_import_job(
     input: &[u8],
     mut builder: crate::output::start_table_data_import_job_output::Builder,
 ) -> Result<
@@ -1004,7 +1026,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_created_rows_map<'a, I>(
+pub fn deser_map_com_amazonaws_honeycode_created_rows_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1048,7 +1070,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_failed_batch_items<'a, I>(
+pub fn deser_list_com_amazonaws_honeycode_failed_batch_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::FailedBatchItem>>, smithy_json::deserialize::Error>
 where
@@ -1067,7 +1089,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_failed_batch_item(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_failed_batch_item(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1083,7 +1108,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_upsert_rows_result_map<'a, I>(
+pub fn deser_map_com_amazonaws_honeycode_upsert_rows_result_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>>,
@@ -1103,7 +1128,10 @@ where
                     Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
-                        let value = crate::json_deser::deser_structure_upsert_rows_result(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_upsert_rows_result(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
@@ -1123,7 +1151,7 @@ where
     }
 }
 
-pub fn deser_structure_table_data_import_job_metadata<'a, I>(
+pub fn deser_structure_crate_model_table_data_import_job_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TableDataImportJobMetadata>, smithy_json::deserialize::Error>
 where
@@ -1143,9 +1171,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "submitter" => {
                                 builder = builder.set_submitter(
-                                    crate::json_deser::deser_structure_import_job_submitter(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_import_job_submitter(tokens)?
                                 );
                             }
                             "submitTime" => {
@@ -1158,12 +1184,14 @@ where
                             }
                             "importOptions" => {
                                 builder = builder.set_import_options(
-                                    crate::json_deser::deser_structure_import_options(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_import_options(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "dataSource" => {
                                 builder = builder.set_data_source(
-                                    crate::json_deser::deser_structure_import_data_source(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_import_data_source(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1185,7 +1213,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_result_set_map<'a, I>(
+pub fn deser_map_com_amazonaws_honeycode_result_set_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::ResultSet>>,
@@ -1205,7 +1233,8 @@ where
                     Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
-                        let value = crate::json_deser::deser_structure_result_set(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_result_set(tokens)?;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
@@ -1226,7 +1255,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_table_columns<'a, I>(
+pub fn deser_list_com_amazonaws_honeycode_table_columns<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TableColumn>>, smithy_json::deserialize::Error>
 where
@@ -1245,7 +1274,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_table_column(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_table_column(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1261,7 +1291,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resource_ids<'a, I>(
+pub fn deser_list_com_amazonaws_honeycode_resource_ids<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1299,7 +1329,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_row_id_list<'a, I>(
+pub fn deser_list_com_amazonaws_honeycode_row_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1337,7 +1367,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_table_rows<'a, I>(
+pub fn deser_list_com_amazonaws_honeycode_table_rows<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TableRow>>, smithy_json::deserialize::Error>
 where
@@ -1356,7 +1386,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_table_row(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_table_row(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1372,7 +1403,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tables<'a, I>(
+pub fn deser_list_com_amazonaws_honeycode_tables<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Table>>, smithy_json::deserialize::Error>
 where
@@ -1391,7 +1422,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_table(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_table(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1406,7 +1437,7 @@ where
     }
 }
 
-pub fn deser_structure_failed_batch_item<'a, I>(
+pub fn deser_structure_crate_model_failed_batch_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FailedBatchItem>, smithy_json::deserialize::Error>
 where
@@ -1460,7 +1491,7 @@ where
     }
 }
 
-pub fn deser_structure_upsert_rows_result<'a, I>(
+pub fn deser_structure_crate_model_upsert_rows_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UpsertRowsResult>, smithy_json::deserialize::Error>
 where
@@ -1480,7 +1511,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "rowIds" => {
                                 builder = builder.set_row_ids(
-                                    crate::json_deser::deser_list_row_id_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_honeycode_row_id_list(tokens)?
                                 );
                             }
                             "upsertAction" => {
@@ -1513,7 +1544,7 @@ where
     }
 }
 
-pub fn deser_structure_import_job_submitter<'a, I>(
+pub fn deser_structure_crate_model_import_job_submitter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ImportJobSubmitter>, smithy_json::deserialize::Error>
 where
@@ -1567,7 +1598,7 @@ where
     }
 }
 
-pub fn deser_structure_import_options<'a, I>(
+pub fn deser_structure_crate_model_import_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ImportOptions>, smithy_json::deserialize::Error>
 where
@@ -1587,12 +1618,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "destinationOptions" => {
                                 builder = builder.set_destination_options(
-                                    crate::json_deser::deser_structure_destination_options(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_destination_options(tokens)?
                                 );
                             }
                             "delimitedTextOptions" => {
                                 builder = builder.set_delimited_text_options(
-                                    crate::json_deser::deser_structure_delimited_text_import_options(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_delimited_text_import_options(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1613,7 +1644,7 @@ where
     }
 }
 
-pub fn deser_structure_import_data_source<'a, I>(
+pub fn deser_structure_crate_model_import_data_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ImportDataSource>, smithy_json::deserialize::Error>
 where
@@ -1633,9 +1664,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "dataSourceConfig" => {
                                 builder = builder.set_data_source_config(
-                                    crate::json_deser::deser_structure_import_data_source_config(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_import_data_source_config(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1656,7 +1685,7 @@ where
     }
 }
 
-pub fn deser_structure_result_set<'a, I>(
+pub fn deser_structure_crate_model_result_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResultSet>, smithy_json::deserialize::Error>
 where
@@ -1676,12 +1705,13 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "headers" => {
                                 builder = builder.set_headers(
-                                    crate::json_deser::deser_list_result_header(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_honeycode_result_header(tokens)?
                                 );
                             }
                             "rows" => {
-                                builder = builder
-                                    .set_rows(crate::json_deser::deser_list_result_rows(tokens)?);
+                                builder = builder.set_rows(
+                                    crate::json_deser::deser_list_com_amazonaws_honeycode_result_rows(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -1701,7 +1731,7 @@ where
     }
 }
 
-pub fn deser_structure_table_column<'a, I>(
+pub fn deser_structure_crate_model_table_column<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TableColumn>, smithy_json::deserialize::Error>
 where
@@ -1767,7 +1797,7 @@ where
     }
 }
 
-pub fn deser_structure_table_row<'a, I>(
+pub fn deser_structure_crate_model_table_row<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TableRow>, smithy_json::deserialize::Error>
 where
@@ -1795,8 +1825,11 @@ where
                                 );
                             }
                             "cells" => {
-                                builder =
-                                    builder.set_cells(crate::json_deser::deser_list_cells(tokens)?);
+                                builder = builder.set_cells(
+                                    crate::json_deser::deser_list_com_amazonaws_honeycode_cells(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -1816,7 +1849,7 @@ where
     }
 }
 
-pub fn deser_structure_table<'a, I>(
+pub fn deser_structure_crate_model_table<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Table>, smithy_json::deserialize::Error>
 where
@@ -1870,7 +1903,7 @@ where
     }
 }
 
-pub fn deser_structure_destination_options<'a, I>(
+pub fn deser_structure_crate_model_destination_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DestinationOptions>, smithy_json::deserialize::Error>
 where
@@ -1890,7 +1923,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "columnMap" => {
                                 builder = builder.set_column_map(
-                                    crate::json_deser::deser_map_import_column_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_honeycode_import_column_map(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1911,7 +1944,7 @@ where
     }
 }
 
-pub fn deser_structure_delimited_text_import_options<'a, I>(
+pub fn deser_structure_crate_model_delimited_text_import_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DelimitedTextImportOptions>, smithy_json::deserialize::Error>
 where
@@ -1985,7 +2018,7 @@ where
     }
 }
 
-pub fn deser_structure_import_data_source_config<'a, I>(
+pub fn deser_structure_crate_model_import_data_source_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ImportDataSourceConfig>, smithy_json::deserialize::Error>
 where
@@ -2031,7 +2064,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_result_header<'a, I>(
+pub fn deser_list_com_amazonaws_honeycode_result_header<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ColumnMetadata>>, smithy_json::deserialize::Error>
 where
@@ -2050,7 +2083,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_column_metadata(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_column_metadata(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2066,7 +2100,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_result_rows<'a, I>(
+pub fn deser_list_com_amazonaws_honeycode_result_rows<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResultRow>>, smithy_json::deserialize::Error>
 where
@@ -2085,7 +2119,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_result_row(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_result_row(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2101,7 +2136,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_cells<'a, I>(
+pub fn deser_list_com_amazonaws_honeycode_cells<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Cell>>, smithy_json::deserialize::Error>
 where
@@ -2120,7 +2155,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_cell(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_cell(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2136,7 +2171,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_import_column_map<'a, I>(
+pub fn deser_map_com_amazonaws_honeycode_import_column_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
@@ -2159,9 +2194,8 @@ where
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
                         let value =
-                            crate::json_deser::deser_structure_source_data_column_properties(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_source_data_column_properties(tokens)?
+                        ;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
@@ -2181,7 +2215,7 @@ where
     }
 }
 
-pub fn deser_structure_column_metadata<'a, I>(
+pub fn deser_structure_crate_model_column_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ColumnMetadata>, smithy_json::deserialize::Error>
 where
@@ -2238,7 +2272,7 @@ where
     }
 }
 
-pub fn deser_structure_result_row<'a, I>(
+pub fn deser_structure_crate_model_result_row<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResultRow>, smithy_json::deserialize::Error>
 where
@@ -2267,7 +2301,7 @@ where
                             }
                             "dataItems" => {
                                 builder = builder.set_data_items(
-                                    crate::json_deser::deser_list_data_items(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_honeycode_data_items(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2288,7 +2322,7 @@ where
     }
 }
 
-pub fn deser_structure_cell<'a, I>(
+pub fn deser_structure_crate_model_cell<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Cell>, smithy_json::deserialize::Error>
 where
@@ -2363,7 +2397,7 @@ where
     }
 }
 
-pub fn deser_structure_source_data_column_properties<'a, I>(
+pub fn deser_structure_crate_model_source_data_column_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SourceDataColumnProperties>, smithy_json::deserialize::Error>
 where
@@ -2408,7 +2442,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_data_items<'a, I>(
+pub fn deser_list_com_amazonaws_honeycode_data_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DataItem>>, smithy_json::deserialize::Error>
 where
@@ -2427,7 +2461,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_data_item(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_data_item(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2442,7 +2477,7 @@ where
     }
 }
 
-pub fn deser_structure_data_item<'a, I>(
+pub fn deser_structure_crate_model_data_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DataItem>, smithy_json::deserialize::Error>
 where

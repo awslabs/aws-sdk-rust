@@ -636,7 +636,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The size of the volume, in GiB. The maximum size is <code>16384</code> GiB (16
+        /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64
         /// TiB).</p>
         pub fn volume_size(mut self, inp: i64) -> Self {
             self.inner = self.inner.volume_size(inp);

@@ -20,7 +20,7 @@ pub fn parse_add_permission_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::over_limit::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_over_limit_xml_err(
+                    output = crate::xml_deser::deser_structure_crate_error_over_limit_xml_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -69,27 +69,25 @@ pub fn parse_change_message_visibility_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AWS.SimpleQueueService.MessageNotInflight" => crate::error::ChangeMessageVisibilityError {
-            meta: generic,
-            kind: crate::error::ChangeMessageVisibilityErrorKind::MessageNotInflight({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AWS.SimpleQueueService.MessageNotInflight" => {
+            crate::error::ChangeMessageVisibilityError {
+                meta: generic,
+                kind: crate::error::ChangeMessageVisibilityErrorKind::MessageNotInflight({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::message_not_inflight::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_message_not_inflight_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ChangeMessageVisibilityError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::message_not_inflight::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_message_not_inflight_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ReceiptHandleIsInvalid" => crate::error::ChangeMessageVisibilityError {
             meta: generic,
             kind: crate::error::ChangeMessageVisibilityErrorKind::ReceiptHandleIsInvalid({
@@ -98,11 +96,7 @@ pub fn parse_change_message_visibility_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::receipt_handle_is_invalid::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_receipt_handle_is_invalid_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ChangeMessageVisibilityError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_receipt_handle_is_invalid_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -155,7 +149,7 @@ pub fn parse_change_message_visibility_batch_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::batch_entry_ids_not_distinct::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_batch_entry_ids_not_distinct_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_batch_entry_ids_not_distinct_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
                     output.build()
                 }
             ;
@@ -169,7 +163,7 @@ pub fn parse_change_message_visibility_batch_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::empty_batch_request::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_empty_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_empty_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
                     output.build()
                 }
             ;
@@ -183,7 +177,7 @@ pub fn parse_change_message_visibility_batch_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_batch_entry_id::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_batch_entry_id_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_batch_entry_id_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
                     output.build()
                 }
             ;
@@ -197,7 +191,7 @@ pub fn parse_change_message_visibility_batch_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_entries_in_batch_request::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_entries_in_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_entries_in_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
                     output.build()
                 }
             ;
@@ -221,7 +215,7 @@ pub fn parse_change_message_visibility_batch_response(
         #[allow(unused_mut)]
         let mut output = crate::output::change_message_visibility_batch_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_change_message_visibility_batch(
+        output = crate::xml_deser::deser_operation_crate_operation_change_message_visibility_batch(
             response.body().as_ref(),
             output,
         )
@@ -251,11 +245,7 @@ pub fn parse_create_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::queue_deleted_recently::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_queue_deleted_recently_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateQueueError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_queue_deleted_recently_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -264,27 +254,25 @@ pub fn parse_create_queue_error(
                 tmp
             }),
         },
-        "QueueAlreadyExists" => crate::error::CreateQueueError {
-            meta: generic,
-            kind: crate::error::CreateQueueErrorKind::QueueNameExists({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "QueueAlreadyExists" => {
+            crate::error::CreateQueueError {
+                meta: generic,
+                kind: crate::error::CreateQueueErrorKind::QueueNameExists({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::queue_name_exists::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_queue_name_exists_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateQueueError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::queue_name_exists::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_queue_name_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueueError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::CreateQueueError::generic(generic),
     })
 }
@@ -297,8 +285,11 @@ pub fn parse_create_queue_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_queue_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_queue(response.body().as_ref(), output)
-            .map_err(crate::error::CreateQueueError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_queue(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateQueueError::unhandled)?;
         output.build()
     })
 }
@@ -316,27 +307,25 @@ pub fn parse_delete_message_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidIdFormat" => crate::error::DeleteMessageError {
-            meta: generic,
-            kind: crate::error::DeleteMessageErrorKind::InvalidIdFormat({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidIdFormat" => {
+            crate::error::DeleteMessageError {
+                meta: generic,
+                kind: crate::error::DeleteMessageErrorKind::InvalidIdFormat({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_id_format::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_id_format_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteMessageError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_id_format::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_id_format_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ReceiptHandleIsInvalid" => crate::error::DeleteMessageError {
             meta: generic,
             kind: crate::error::DeleteMessageErrorKind::ReceiptHandleIsInvalid({
@@ -345,11 +334,7 @@ pub fn parse_delete_message_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::receipt_handle_is_invalid::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_receipt_handle_is_invalid_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteMessageError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_receipt_handle_is_invalid_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -400,12 +385,7 @@ pub fn parse_delete_message_batch_error(
                         let mut output =
                             crate::error::batch_entry_ids_not_distinct::Builder::default();
                         let _ = response;
-                        output =
-                            crate::xml_deser::deser_structure_batch_entry_ids_not_distinct_xml_err(
-                                response.body().as_ref(),
-                                output,
-                            )
-                            .map_err(crate::error::DeleteMessageBatchError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_batch_entry_ids_not_distinct_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageBatchError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -415,27 +395,25 @@ pub fn parse_delete_message_batch_error(
                 }),
             }
         }
-        "AWS.SimpleQueueService.EmptyBatchRequest" => crate::error::DeleteMessageBatchError {
-            meta: generic,
-            kind: crate::error::DeleteMessageBatchErrorKind::EmptyBatchRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AWS.SimpleQueueService.EmptyBatchRequest" => {
+            crate::error::DeleteMessageBatchError {
+                meta: generic,
+                kind: crate::error::DeleteMessageBatchErrorKind::EmptyBatchRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::empty_batch_request::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_empty_batch_request_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteMessageBatchError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::empty_batch_request::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_empty_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageBatchError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "AWS.SimpleQueueService.InvalidBatchEntryId" => crate::error::DeleteMessageBatchError {
             meta: generic,
             kind: crate::error::DeleteMessageBatchErrorKind::InvalidBatchEntryId({
@@ -444,11 +422,7 @@ pub fn parse_delete_message_batch_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_batch_entry_id::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_batch_entry_id_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteMessageBatchError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_batch_entry_id_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageBatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -467,7 +441,7 @@ pub fn parse_delete_message_batch_error(
                         let mut output =
                             crate::error::too_many_entries_in_batch_request::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_too_many_entries_in_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageBatchError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_too_many_entries_in_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageBatchError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -492,7 +466,7 @@ pub fn parse_delete_message_batch_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_message_batch_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_message_batch(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_message_batch(
             response.body().as_ref(),
             output,
         )
@@ -546,11 +520,7 @@ pub fn parse_get_queue_attributes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_attribute_name::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_attribute_name_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetQueueAttributesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_attribute_name_xml_err(response.body().as_ref(), output).map_err(crate::error::GetQueueAttributesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -574,7 +544,7 @@ pub fn parse_get_queue_attributes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_queue_attributes_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_queue_attributes(
+        output = crate::xml_deser::deser_operation_crate_operation_get_queue_attributes(
             response.body().as_ref(),
             output,
         )
@@ -596,27 +566,25 @@ pub fn parse_get_queue_url_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AWS.SimpleQueueService.NonExistentQueue" => crate::error::GetQueueUrlError {
-            meta: generic,
-            kind: crate::error::GetQueueUrlErrorKind::QueueDoesNotExist({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AWS.SimpleQueueService.NonExistentQueue" => {
+            crate::error::GetQueueUrlError {
+                meta: generic,
+                kind: crate::error::GetQueueUrlErrorKind::QueueDoesNotExist({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::queue_does_not_exist::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_queue_does_not_exist_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetQueueUrlError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::queue_does_not_exist::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_queue_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::GetQueueUrlError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::GetQueueUrlError::generic(generic),
     })
 }
@@ -629,8 +597,11 @@ pub fn parse_get_queue_url_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_queue_url_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_queue_url(response.body().as_ref(), output)
-            .map_err(crate::error::GetQueueUrlError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_queue_url(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetQueueUrlError::unhandled)?;
         output.build()
     })
 }
@@ -664,11 +635,7 @@ pub fn parse_list_dead_letter_source_queues_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::queue_does_not_exist::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_queue_does_not_exist_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::ListDeadLetterSourceQueuesError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_queue_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDeadLetterSourceQueuesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -693,7 +660,7 @@ pub fn parse_list_dead_letter_source_queues_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_dead_letter_source_queues_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_dead_letter_source_queues(
+        output = crate::xml_deser::deser_operation_crate_operation_list_dead_letter_source_queues(
             response.body().as_ref(),
             output,
         )
@@ -719,8 +686,11 @@ pub fn parse_list_queues_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_queues_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_queues(response.body().as_ref(), output)
-            .map_err(crate::error::ListQueuesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_queues(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListQueuesError::unhandled)?;
         output.build()
     })
 }
@@ -742,9 +712,11 @@ pub fn parse_list_queue_tags_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_queue_tags_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_list_queue_tags(response.body().as_ref(), output)
-                .map_err(crate::error::ListQueueTagsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_queue_tags(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListQueueTagsError::unhandled)?;
         output.build()
     })
 }
@@ -770,11 +742,7 @@ pub fn parse_purge_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::purge_queue_in_progress::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_purge_queue_in_progress_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PurgeQueueError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_purge_queue_in_progress_xml_err(response.body().as_ref(), output).map_err(crate::error::PurgeQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -783,27 +751,25 @@ pub fn parse_purge_queue_error(
                 tmp
             }),
         },
-        "AWS.SimpleQueueService.NonExistentQueue" => crate::error::PurgeQueueError {
-            meta: generic,
-            kind: crate::error::PurgeQueueErrorKind::QueueDoesNotExist({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AWS.SimpleQueueService.NonExistentQueue" => {
+            crate::error::PurgeQueueError {
+                meta: generic,
+                kind: crate::error::PurgeQueueErrorKind::QueueDoesNotExist({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::queue_does_not_exist::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_queue_does_not_exist_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PurgeQueueError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::queue_does_not_exist::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_queue_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::PurgeQueueError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::PurgeQueueError::generic(generic),
     })
 }
@@ -841,7 +807,7 @@ pub fn parse_receive_message_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::over_limit::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_over_limit_xml_err(
+                    output = crate::xml_deser::deser_structure_crate_error_over_limit_xml_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -866,9 +832,11 @@ pub fn parse_receive_message_response(
         #[allow(unused_mut)]
         let mut output = crate::output::receive_message_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_receive_message(response.body().as_ref(), output)
-                .map_err(crate::error::ReceiveMessageError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_receive_message(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ReceiveMessageError::unhandled)?;
         output.build()
     })
 }
@@ -917,11 +885,7 @@ pub fn parse_send_message_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_message_contents::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_message_contents_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendMessageError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_message_contents_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -938,11 +902,7 @@ pub fn parse_send_message_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_operation::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_unsupported_operation_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendMessageError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -963,8 +923,11 @@ pub fn parse_send_message_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_message_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_send_message(response.body().as_ref(), output)
-            .map_err(crate::error::SendMessageError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_send_message(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::SendMessageError::unhandled)?;
         output.build()
     })
 }
@@ -991,12 +954,7 @@ pub fn parse_send_message_batch_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::batch_entry_ids_not_distinct::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_batch_entry_ids_not_distinct_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::SendMessageBatchError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_batch_entry_ids_not_distinct_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1013,11 +971,7 @@ pub fn parse_send_message_batch_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::batch_request_too_long::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_batch_request_too_long_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendMessageBatchError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_batch_request_too_long_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1026,27 +980,25 @@ pub fn parse_send_message_batch_error(
                 tmp
             }),
         },
-        "AWS.SimpleQueueService.EmptyBatchRequest" => crate::error::SendMessageBatchError {
-            meta: generic,
-            kind: crate::error::SendMessageBatchErrorKind::EmptyBatchRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AWS.SimpleQueueService.EmptyBatchRequest" => {
+            crate::error::SendMessageBatchError {
+                meta: generic,
+                kind: crate::error::SendMessageBatchErrorKind::EmptyBatchRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::empty_batch_request::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_empty_batch_request_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendMessageBatchError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::empty_batch_request::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_empty_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "AWS.SimpleQueueService.InvalidBatchEntryId" => crate::error::SendMessageBatchError {
             meta: generic,
             kind: crate::error::SendMessageBatchErrorKind::InvalidBatchEntryId({
@@ -1055,11 +1007,7 @@ pub fn parse_send_message_batch_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_batch_entry_id::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_batch_entry_id_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendMessageBatchError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_batch_entry_id_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1078,7 +1026,7 @@ pub fn parse_send_message_batch_error(
                         let mut output =
                             crate::error::too_many_entries_in_batch_request::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_too_many_entries_in_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_too_many_entries_in_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1096,11 +1044,7 @@ pub fn parse_send_message_batch_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_operation::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_unsupported_operation_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendMessageBatchError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1122,9 +1066,11 @@ pub fn parse_send_message_batch_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_message_batch_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_send_message_batch(response.body().as_ref(), output)
-                .map_err(crate::error::SendMessageBatchError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_send_message_batch(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::SendMessageBatchError::unhandled)?;
         output.build()
     })
 }
@@ -1153,11 +1099,7 @@ pub fn parse_set_queue_attributes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_attribute_name::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_attribute_name_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetQueueAttributesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_attribute_name_xml_err(response.body().as_ref(), output).map_err(crate::error::SetQueueAttributesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

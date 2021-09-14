@@ -23,12 +23,7 @@ pub fn parse_delete_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_concurrent_update_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -45,11 +40,7 @@ pub fn parse_delete_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -66,11 +57,7 @@ pub fn parse_delete_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::object_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_object_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_object_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -87,11 +74,7 @@ pub fn parse_delete_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -143,12 +126,7 @@ pub fn parse_delete_scheduled_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_concurrent_update_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DeleteScheduledActionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScheduledActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -165,11 +143,7 @@ pub fn parse_delete_scheduled_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteScheduledActionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScheduledActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -186,11 +160,7 @@ pub fn parse_delete_scheduled_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::object_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_object_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteScheduledActionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_object_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScheduledActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -207,11 +177,7 @@ pub fn parse_delete_scheduled_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteScheduledActionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScheduledActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -267,12 +233,7 @@ pub fn parse_deregister_scalable_target_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_concurrent_update_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DeregisterScalableTargetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterScalableTargetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -289,11 +250,7 @@ pub fn parse_deregister_scalable_target_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeregisterScalableTargetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterScalableTargetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -310,11 +267,7 @@ pub fn parse_deregister_scalable_target_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::object_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_object_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeregisterScalableTargetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_object_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterScalableTargetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -331,11 +284,7 @@ pub fn parse_deregister_scalable_target_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeregisterScalableTargetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterScalableTargetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -391,12 +340,7 @@ pub fn parse_describe_scalable_targets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_concurrent_update_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DescribeScalableTargetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalableTargetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -413,11 +357,7 @@ pub fn parse_describe_scalable_targets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScalableTargetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalableTargetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -426,26 +366,23 @@ pub fn parse_describe_scalable_targets_error(
                 tmp
             }),
         },
-        "InvalidNextTokenException" => {
-            crate::error::DescribeScalableTargetsError {
-                meta: generic,
-                kind: crate::error::DescribeScalableTargetsErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => crate::error::DescribeScalableTargetsError {
+            meta: generic,
+            kind: crate::error::DescribeScalableTargetsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_next_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalableTargetsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalableTargetsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DescribeScalableTargetsError {
             meta: generic,
             kind: crate::error::DescribeScalableTargetsErrorKind::ValidationException({
@@ -454,11 +391,7 @@ pub fn parse_describe_scalable_targets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScalableTargetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalableTargetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -482,7 +415,7 @@ pub fn parse_describe_scalable_targets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_scalable_targets_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_scalable_targets(
+        output = crate::json_deser::deser_operation_crate_operation_describe_scalable_targets(
             response.body().as_ref(),
             output,
         )
@@ -511,41 +444,15 @@ pub fn parse_describe_scaling_activities_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentUpdateException" => {
-            crate::error::DescribeScalingActivitiesError {
-                meta: generic,
-                kind: crate::error::DescribeScalingActivitiesErrorKind::ConcurrentUpdateException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::concurrent_update_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
-        "InternalServiceException" => crate::error::DescribeScalingActivitiesError {
+        "ConcurrentUpdateException" => crate::error::DescribeScalingActivitiesError {
             meta: generic,
-            kind: crate::error::DescribeScalingActivitiesErrorKind::InternalServiceException({
+            kind: crate::error::DescribeScalingActivitiesErrorKind::ConcurrentUpdateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -554,28 +461,40 @@ pub fn parse_describe_scaling_activities_error(
                 tmp
             }),
         },
-        "InvalidNextTokenException" => {
-            crate::error::DescribeScalingActivitiesError {
-                meta: generic,
-                kind: crate::error::DescribeScalingActivitiesErrorKind::InvalidNextTokenException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::invalid_next_token_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
+        "InternalServiceException" => crate::error::DescribeScalingActivitiesError {
+            meta: generic,
+            kind: crate::error::DescribeScalingActivitiesErrorKind::InternalServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNextTokenException" => crate::error::DescribeScalingActivitiesError {
+            meta: generic,
+            kind: crate::error::DescribeScalingActivitiesErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DescribeScalingActivitiesError {
             meta: generic,
             kind: crate::error::DescribeScalingActivitiesErrorKind::ValidationException({
@@ -584,11 +503,7 @@ pub fn parse_describe_scaling_activities_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -612,7 +527,7 @@ pub fn parse_describe_scaling_activities_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_scaling_activities_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_scaling_activities(
+        output = crate::json_deser::deser_operation_crate_operation_describe_scaling_activities(
             response.body().as_ref(),
             output,
         )
@@ -649,12 +564,7 @@ pub fn parse_describe_scaling_policies_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_concurrent_update_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -672,7 +582,7 @@ pub fn parse_describe_scaling_policies_error(
                     let mut output =
                         crate::error::failed_resource_access_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_failed_resource_access_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_failed_resource_access_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -689,11 +599,7 @@ pub fn parse_describe_scaling_policies_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -702,26 +608,23 @@ pub fn parse_describe_scaling_policies_error(
                 tmp
             }),
         },
-        "InvalidNextTokenException" => {
-            crate::error::DescribeScalingPoliciesError {
-                meta: generic,
-                kind: crate::error::DescribeScalingPoliciesErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => crate::error::DescribeScalingPoliciesError {
+            meta: generic,
+            kind: crate::error::DescribeScalingPoliciesErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_next_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DescribeScalingPoliciesError {
             meta: generic,
             kind: crate::error::DescribeScalingPoliciesErrorKind::ValidationException({
@@ -730,11 +633,7 @@ pub fn parse_describe_scaling_policies_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -758,7 +657,7 @@ pub fn parse_describe_scaling_policies_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_scaling_policies_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_scaling_policies(
+        output = crate::json_deser::deser_operation_crate_operation_describe_scaling_policies(
             response.body().as_ref(),
             output,
         )
@@ -795,12 +694,7 @@ pub fn parse_describe_scheduled_actions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_concurrent_update_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -817,11 +711,7 @@ pub fn parse_describe_scheduled_actions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -830,26 +720,23 @@ pub fn parse_describe_scheduled_actions_error(
                 tmp
             }),
         },
-        "InvalidNextTokenException" => {
-            crate::error::DescribeScheduledActionsError {
-                meta: generic,
-                kind: crate::error::DescribeScheduledActionsErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => crate::error::DescribeScheduledActionsError {
+            meta: generic,
+            kind: crate::error::DescribeScheduledActionsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_next_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DescribeScheduledActionsError {
             meta: generic,
             kind: crate::error::DescribeScheduledActionsErrorKind::ValidationException({
@@ -858,11 +745,7 @@ pub fn parse_describe_scheduled_actions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -886,7 +769,7 @@ pub fn parse_describe_scheduled_actions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_scheduled_actions_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_scheduled_actions(
+        output = crate::json_deser::deser_operation_crate_operation_describe_scheduled_actions(
             response.body().as_ref(),
             output,
         )
@@ -917,12 +800,7 @@ pub fn parse_put_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_concurrent_update_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -940,7 +818,7 @@ pub fn parse_put_scaling_policy_error(
                     let mut output =
                         crate::error::failed_resource_access_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_failed_resource_access_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_failed_resource_access_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -957,11 +835,7 @@ pub fn parse_put_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -978,11 +852,7 @@ pub fn parse_put_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -999,11 +869,7 @@ pub fn parse_put_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::object_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_object_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_object_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1020,11 +886,7 @@ pub fn parse_put_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1046,9 +908,11 @@ pub fn parse_put_scaling_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_scaling_policy_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_put_scaling_policy(response.body().as_ref(), output)
-                .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_put_scaling_policy(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::PutScalingPolicyError::unhandled)?;
         output.build()
     })
 }
@@ -1077,12 +941,7 @@ pub fn parse_put_scheduled_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_concurrent_update_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::PutScheduledActionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1099,11 +958,7 @@ pub fn parse_put_scheduled_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScheduledActionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1120,11 +975,7 @@ pub fn parse_put_scheduled_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScheduledActionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1141,11 +992,7 @@ pub fn parse_put_scheduled_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::object_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_object_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScheduledActionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_object_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1162,11 +1009,7 @@ pub fn parse_put_scheduled_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScheduledActionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1222,12 +1065,7 @@ pub fn parse_register_scalable_target_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_concurrent_update_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::RegisterScalableTargetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterScalableTargetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1244,11 +1082,7 @@ pub fn parse_register_scalable_target_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterScalableTargetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterScalableTargetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1265,11 +1099,7 @@ pub fn parse_register_scalable_target_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterScalableTargetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterScalableTargetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1286,11 +1116,7 @@ pub fn parse_register_scalable_target_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterScalableTargetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterScalableTargetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

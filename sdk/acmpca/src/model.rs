@@ -73,19 +73,30 @@ impl AsRef<str> for CertificateAuthorityStatus {
 }
 
 /// <p>Certificate revocation information used by the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> actions. Your private certificate authority (CA)
-/// can create and maintain a certificate revocation list (CRL). A CRL contains information
-/// about certificates revoked by your CA. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a>.</p>
+/// can configure Online Certificate Status Protocol (OCSP) support and/or maintain a
+/// certificate revocation list (CRL). OCSP returns validation information about
+/// certificates as requested by clients, and a CRL contains an updated list of certificates
+/// revoked by your CA. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html">Setting up a
+/// certificate revocation method</a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User
+/// Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevocationConfiguration {
-    /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your
-    /// private CA.</p>
+    /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private
+    /// CA. A CRL is typically updated approximately 30 minutes after a certificate
+    /// is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts
+    /// every 15 minutes.</p>
     pub crl_configuration: std::option::Option<crate::model::CrlConfiguration>,
+    /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by
+    /// your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes
+    /// to reflect the new status.</p>
+    pub ocsp_configuration: std::option::Option<crate::model::OcspConfiguration>,
 }
 impl std::fmt::Debug for RevocationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevocationConfiguration");
         formatter.field("crl_configuration", &self.crl_configuration);
+        formatter.field("ocsp_configuration", &self.ocsp_configuration);
         formatter.finish()
     }
 }
@@ -96,10 +107,13 @@ pub mod revocation_configuration {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_configuration: std::option::Option<crate::model::CrlConfiguration>,
+        pub(crate) ocsp_configuration: std::option::Option<crate::model::OcspConfiguration>,
     }
     impl Builder {
-        /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your
-        /// private CA.</p>
+        /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private
+        /// CA. A CRL is typically updated approximately 30 minutes after a certificate
+        /// is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts
+        /// every 15 minutes.</p>
         pub fn crl_configuration(mut self, input: crate::model::CrlConfiguration) -> Self {
             self.crl_configuration = Some(input);
             self
@@ -111,10 +125,25 @@ pub mod revocation_configuration {
             self.crl_configuration = input;
             self
         }
+        /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by
+        /// your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes
+        /// to reflect the new status.</p>
+        pub fn ocsp_configuration(mut self, input: crate::model::OcspConfiguration) -> Self {
+            self.ocsp_configuration = Some(input);
+            self
+        }
+        pub fn set_ocsp_configuration(
+            mut self,
+            input: std::option::Option<crate::model::OcspConfiguration>,
+        ) -> Self {
+            self.ocsp_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RevocationConfiguration`](crate::model::RevocationConfiguration)
         pub fn build(self) -> crate::model::RevocationConfiguration {
             crate::model::RevocationConfiguration {
                 crl_configuration: self.crl_configuration,
+                ocsp_configuration: self.ocsp_configuration,
             }
         }
     }
@@ -123,6 +152,89 @@ impl RevocationConfiguration {
     /// Creates a new builder-style object to manufacture [`RevocationConfiguration`](crate::model::RevocationConfiguration)
     pub fn builder() -> crate::model::revocation_configuration::Builder {
         crate::model::revocation_configuration::Builder::default()
+    }
+}
+
+/// <p>Contains information to enable and configure Online Certificate Status Protocol (OCSP) for
+/// validating certificate revocation status.</p>
+/// <p>When you revoke a certificate, OCSP responses may take up to 60 minutes
+/// to reflect the new status.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OcspConfiguration {
+    /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating
+    /// certificate revocation status.</p>
+    pub enabled: std::option::Option<bool>,
+    /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the
+    /// Online Certificate Status Protocol (OCSP). A customer can alternatively use this object
+    /// to define a CNAME specifying a customized OCSP domain.</p>
+    /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or
+    /// "https://".</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
+    /// Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User
+    /// Guide</i>.</p>
+    pub ocsp_custom_cname: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for OcspConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OcspConfiguration");
+        formatter.field("enabled", &self.enabled);
+        formatter.field("ocsp_custom_cname", &self.ocsp_custom_cname);
+        formatter.finish()
+    }
+}
+/// See [`OcspConfiguration`](crate::model::OcspConfiguration)
+pub mod ocsp_configuration {
+    /// A builder for [`OcspConfiguration`](crate::model::OcspConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) ocsp_custom_cname: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating
+        /// certificate revocation status.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the
+        /// Online Certificate Status Protocol (OCSP). A customer can alternatively use this object
+        /// to define a CNAME specifying a customized OCSP domain.</p>
+        /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or
+        /// "https://".</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
+        /// Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User
+        /// Guide</i>.</p>
+        pub fn ocsp_custom_cname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ocsp_custom_cname = Some(input.into());
+            self
+        }
+        pub fn set_ocsp_custom_cname(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ocsp_custom_cname = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OcspConfiguration`](crate::model::OcspConfiguration)
+        pub fn build(self) -> crate::model::OcspConfiguration {
+            crate::model::OcspConfiguration {
+                enabled: self.enabled,
+                ocsp_custom_cname: self.ocsp_custom_cname,
+            }
+        }
+    }
+}
+impl OcspConfiguration {
+    /// Creates a new builder-style object to manufacture [`OcspConfiguration`](crate::model::OcspConfiguration)
+    pub fn builder() -> crate::model::ocsp_configuration::Builder {
+        crate::model::ocsp_configuration::Builder::default()
     }
 }
 
@@ -137,10 +249,15 @@ impl RevocationConfiguration {
 /// <p>ACM Private CA assets that are stored in Amazon S3 can be protected with encryption.
 /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting Your
 /// CRLs</a>.</p>
-/// <p>Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next
-/// update or when a certificate is revoked. When a certificate is revoked, it is recorded
-/// in the next CRL that is generated and in the next audit report. Only time valid
-/// certificates are listed in the CRL. Expired certificates are not included. </p>
+/// <p>Your private CA uses the value in the <b>ExpirationInDays</b>
+/// parameter to calculate the <b>nextUpdate</b> field in the CRL.
+/// The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked.
+/// When a certificate is revoked, it is recorded in the next CRL that is generated and in
+/// the next audit report. Only time valid certificates are listed in the CRL. Expired
+/// certificates are not included.</p>
+/// <p>A CRL is typically updated approximately 30 minutes after a certificate
+/// is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts
+/// every 15 minutes.</p>
 /// <p>CRLs contain the following fields:</p>
 /// <ul>
 /// <li>
@@ -232,6 +349,9 @@ impl RevocationConfiguration {
 /// <code>openssl crl -inform DER -text -in <i>crl_path</i>
 /// -noout</code>
 /// </p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning a certificate revocation list (CRL)</a>
+/// in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrlConfiguration {
@@ -250,9 +370,8 @@ pub struct CrlConfiguration {
     /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the
     /// <b>CustomCname</b> argument, the name of your S3 bucket
     /// is placed into the <b>CRL Distribution Points</b> extension of
-    /// the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. You must specify a
-    /// <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that
-    /// allows ACM Private CA to write the CRL to your bucket.</p>
+    /// the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+    /// policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>Determines whether the CRL will be publicly readable or privately held in the CRL
     /// Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public
@@ -331,9 +450,8 @@ pub mod crl_configuration {
         /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the
         /// <b>CustomCname</b> argument, the name of your S3 bucket
         /// is placed into the <b>CRL Distribution Points</b> extension of
-        /// the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. You must specify a
-        /// <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that
-        /// allows ACM Private CA to write the CRL to your bucket.</p>
+        /// the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+        /// policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
@@ -809,8 +927,8 @@ pub struct CertificateAuthority {
     /// <p>Your private CA configuration.</p>
     pub certificate_authority_configuration:
         std::option::Option<crate::model::CertificateAuthorityConfiguration>,
-    /// <p>Information about the certificate revocation list (CRL) created and maintained by your
-    /// private CA. </p>
+    /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or
+    /// certificate revocation list (CRL) created and maintained by your private CA. </p>
     pub revocation_configuration: std::option::Option<crate::model::RevocationConfiguration>,
     /// <p>The period during which a deleted CA can be restored. For more information, see the
     /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
@@ -999,8 +1117,8 @@ pub mod certificate_authority {
             self.certificate_authority_configuration = input;
             self
         }
-        /// <p>Information about the certificate revocation list (CRL) created and maintained by your
-        /// private CA. </p>
+        /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or
+        /// certificate revocation list (CRL) created and maintained by your private CA. </p>
         pub fn revocation_configuration(
             mut self,
             input: crate::model::RevocationConfiguration,

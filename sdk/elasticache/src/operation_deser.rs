@@ -13,26 +13,24 @@ pub fn parse_add_tags_to_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterNotFound" => {
-            crate::error::AddTagsToResourceError {
-                meta: generic,
-                kind: crate::error::AddTagsToResourceErrorKind::CacheClusterNotFoundFault({
+        "CacheClusterNotFound" => crate::error::AddTagsToResourceError {
+            meta: generic,
+            kind: crate::error::AddTagsToResourceErrorKind::CacheClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::cache_cluster_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cache_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "CacheParameterGroupNotFound" => crate::error::AddTagsToResourceError {
             meta: generic,
             kind: crate::error::AddTagsToResourceErrorKind::CacheParameterGroupNotFoundFault({
@@ -42,7 +40,7 @@ pub fn parse_add_tags_to_resource_error(
                     let mut output =
                         crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -60,7 +58,7 @@ pub fn parse_add_tags_to_resource_error(
                     let mut output =
                         crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -78,7 +76,7 @@ pub fn parse_add_tags_to_resource_error(
                     let mut output =
                         crate::error::cache_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -87,27 +85,25 @@ pub fn parse_add_tags_to_resource_error(
                 tmp
             }),
         },
-        "InvalidARN" => crate::error::AddTagsToResourceError {
-            meta: generic,
-            kind: crate::error::AddTagsToResourceErrorKind::InvalidArnFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidARN" => {
+            crate::error::AddTagsToResourceError {
+                meta: generic,
+                kind: crate::error::AddTagsToResourceErrorKind::InvalidArnFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_arn_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddTagsToResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_arn_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_arn_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidReplicationGroupState" => crate::error::AddTagsToResourceError {
             meta: generic,
             kind: crate::error::AddTagsToResourceErrorKind::InvalidReplicationGroupStateFault({
@@ -117,7 +113,7 @@ pub fn parse_add_tags_to_resource_error(
                     let mut output =
                         crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -135,7 +131,7 @@ pub fn parse_add_tags_to_resource_error(
                     let mut output =
                         crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -153,7 +149,7 @@ pub fn parse_add_tags_to_resource_error(
                     let mut output =
                         crate::error::reserved_cache_node_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -170,11 +166,7 @@ pub fn parse_add_tags_to_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::snapshot_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_snapshot_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -183,17 +175,51 @@ pub fn parse_add_tags_to_resource_error(
                 tmp
             }),
         },
-        "TagQuotaPerResourceExceeded" => {
+        "TagQuotaPerResourceExceeded" => crate::error::AddTagsToResourceError {
+            meta: generic,
+            kind: crate::error::AddTagsToResourceErrorKind::TagQuotaPerResourceExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UserGroupNotFound" => crate::error::AddTagsToResourceError {
+            meta: generic,
+            kind: crate::error::AddTagsToResourceErrorKind::UserGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UserNotFound" => {
             crate::error::AddTagsToResourceError {
                 meta: generic,
-                kind: crate::error::AddTagsToResourceErrorKind::TagQuotaPerResourceExceeded({
+                kind: crate::error::AddTagsToResourceErrorKind::UserNotFoundFault({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                        let mut output = crate::error::user_not_found_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -203,48 +229,6 @@ pub fn parse_add_tags_to_resource_error(
                 }),
             }
         }
-        "UserGroupNotFound" => crate::error::AddTagsToResourceError {
-            meta: generic,
-            kind: crate::error::AddTagsToResourceErrorKind::UserGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::user_group_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_user_group_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddTagsToResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UserNotFound" => crate::error::AddTagsToResourceError {
-            meta: generic,
-            kind: crate::error::AddTagsToResourceErrorKind::UserNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::user_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_user_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddTagsToResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
         _ => crate::error::AddTagsToResourceError::generic(generic),
     })
 }
@@ -258,7 +242,7 @@ pub fn parse_add_tags_to_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_tags_to_resource_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_add_tags_to_resource(
+        output = crate::xml_deser::deser_operation_crate_operation_add_tags_to_resource(
             response.body().as_ref(),
             output,
         )
@@ -290,7 +274,7 @@ pub fn parse_authorize_cache_security_group_ingress_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::authorization_already_exists_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_authorization_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_authorization_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
                 }
             ;
@@ -304,7 +288,7 @@ pub fn parse_authorize_cache_security_group_ingress_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
                 }
             ;
@@ -318,7 +302,7 @@ pub fn parse_authorize_cache_security_group_ingress_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
                 }
             ;
@@ -332,7 +316,7 @@ pub fn parse_authorize_cache_security_group_ingress_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
                 }
             ;
@@ -346,7 +330,7 @@ pub fn parse_authorize_cache_security_group_ingress_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
                 }
             ;
@@ -371,11 +355,7 @@ pub fn parse_authorize_cache_security_group_ingress_response(
         let mut output =
             crate::output::authorize_cache_security_group_ingress_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_authorize_cache_security_group_ingress(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_authorize_cache_security_group_ingress(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
         output.build()
     })
 }
@@ -409,7 +389,7 @@ pub fn parse_batch_apply_update_action_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchApplyUpdateActionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchApplyUpdateActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -418,26 +398,24 @@ pub fn parse_batch_apply_update_action_error(
                 tmp
             }),
         },
-        "ServiceUpdateNotFoundFault" => {
-            crate::error::BatchApplyUpdateActionError {
-                meta: generic,
-                kind: crate::error::BatchApplyUpdateActionErrorKind::ServiceUpdateNotFoundFault({
+        "ServiceUpdateNotFoundFault" => crate::error::BatchApplyUpdateActionError {
+            meta: generic,
+            kind: crate::error::BatchApplyUpdateActionErrorKind::ServiceUpdateNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_update_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchApplyUpdateActionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_update_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchApplyUpdateActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::BatchApplyUpdateActionError::generic(generic),
     })
 }
@@ -453,7 +431,7 @@ pub fn parse_batch_apply_update_action_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_apply_update_action_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_batch_apply_update_action(
+        output = crate::xml_deser::deser_operation_crate_operation_batch_apply_update_action(
             response.body().as_ref(),
             output,
         )
@@ -487,7 +465,7 @@ pub fn parse_batch_stop_update_action_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchStopUpdateActionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchStopUpdateActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -496,26 +474,24 @@ pub fn parse_batch_stop_update_action_error(
                 tmp
             }),
         },
-        "ServiceUpdateNotFoundFault" => {
-            crate::error::BatchStopUpdateActionError {
-                meta: generic,
-                kind: crate::error::BatchStopUpdateActionErrorKind::ServiceUpdateNotFoundFault({
+        "ServiceUpdateNotFoundFault" => crate::error::BatchStopUpdateActionError {
+            meta: generic,
+            kind: crate::error::BatchStopUpdateActionErrorKind::ServiceUpdateNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_update_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchStopUpdateActionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_update_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchStopUpdateActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::BatchStopUpdateActionError::generic(generic),
     })
 }
@@ -531,7 +507,7 @@ pub fn parse_batch_stop_update_action_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_stop_update_action_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_batch_stop_update_action(
+        output = crate::xml_deser::deser_operation_crate_operation_batch_stop_update_action(
             response.body().as_ref(),
             output,
         )
@@ -563,7 +539,7 @@ pub fn parse_complete_migration_error(
                     let mut output =
                         crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteMigrationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteMigrationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -581,7 +557,7 @@ pub fn parse_complete_migration_error(
                     let mut output =
                         crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteMigrationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteMigrationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -598,7 +574,7 @@ pub fn parse_complete_migration_error(
                     let mut tmp = {
                         #[allow(unused_mut)]let mut output = crate::error::replication_group_not_under_migration_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_replication_group_not_under_migration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteMigrationError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_replication_group_not_under_migration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteMigrationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -621,9 +597,11 @@ pub fn parse_complete_migration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::complete_migration_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_complete_migration(response.body().as_ref(), output)
-                .map_err(crate::error::CompleteMigrationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_complete_migration(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CompleteMigrationError::unhandled)?;
         output.build()
     })
 }
@@ -650,7 +628,7 @@ pub fn parse_copy_snapshot_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -668,7 +646,7 @@ pub fn parse_copy_snapshot_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -685,12 +663,7 @@ pub fn parse_copy_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_snapshot_state_fault::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_invalid_snapshot_state_fault_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::CopySnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -699,26 +672,24 @@ pub fn parse_copy_snapshot_error(
                 tmp
             }),
         },
-        "SnapshotAlreadyExistsFault" => {
-            crate::error::CopySnapshotError {
-                meta: generic,
-                kind: crate::error::CopySnapshotErrorKind::SnapshotAlreadyExistsFault({
+        "SnapshotAlreadyExistsFault" => crate::error::CopySnapshotError {
+            meta: generic,
+            kind: crate::error::CopySnapshotErrorKind::SnapshotAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::snapshot_already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::snapshot_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "SnapshotNotFoundFault" => crate::error::CopySnapshotError {
             meta: generic,
             kind: crate::error::CopySnapshotErrorKind::SnapshotNotFoundFault({
@@ -727,11 +698,7 @@ pub fn parse_copy_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::snapshot_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_snapshot_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CopySnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -740,46 +707,42 @@ pub fn parse_copy_snapshot_error(
                 tmp
             }),
         },
-        "SnapshotQuotaExceededFault" => {
-            crate::error::CopySnapshotError {
-                meta: generic,
-                kind: crate::error::CopySnapshotErrorKind::SnapshotQuotaExceededFault({
+        "SnapshotQuotaExceededFault" => crate::error::CopySnapshotError {
+            meta: generic,
+            kind: crate::error::CopySnapshotErrorKind::SnapshotQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::snapshot_quota_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "TagQuotaPerResourceExceeded" => {
-            crate::error::CopySnapshotError {
-                meta: generic,
-                kind: crate::error::CopySnapshotErrorKind::TagQuotaPerResourceExceeded({
+                    let mut output =
+                        crate::error::snapshot_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TagQuotaPerResourceExceeded" => crate::error::CopySnapshotError {
+            meta: generic,
+            kind: crate::error::CopySnapshotErrorKind::TagQuotaPerResourceExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::tag_quota_per_resource_exceeded::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CopySnapshotError::generic(generic),
     })
 }
@@ -792,8 +755,11 @@ pub fn parse_copy_snapshot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::copy_snapshot_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_copy_snapshot(response.body().as_ref(), output)
-            .map_err(crate::error::CopySnapshotError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_copy_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CopySnapshotError::unhandled)?;
         output.build()
     })
 }
@@ -823,7 +789,7 @@ pub fn parse_create_cache_cluster_error(
                     let mut output =
                         crate::error::cache_cluster_already_exists_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -841,7 +807,7 @@ pub fn parse_create_cache_cluster_error(
                     let mut output =
                         crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -859,7 +825,7 @@ pub fn parse_create_cache_cluster_error(
                     let mut output =
                         crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -877,7 +843,7 @@ pub fn parse_create_cache_cluster_error(
                     let mut output =
                         crate::error::cache_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -894,7 +860,7 @@ pub fn parse_create_cache_cluster_error(
                     let mut tmp = {
                         #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -912,7 +878,7 @@ pub fn parse_create_cache_cluster_error(
                     let mut tmp = {
                         #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -932,7 +898,7 @@ pub fn parse_create_cache_cluster_error(
                             let mut tmp = {
                                 #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                                 let _ = response;
-                                output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                                output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                                 output.build()
                             };
                             if (&tmp.message).is_none() {
@@ -952,7 +918,7 @@ pub fn parse_create_cache_cluster_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -970,7 +936,7 @@ pub fn parse_create_cache_cluster_error(
                     let mut output =
                         crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -979,26 +945,24 @@ pub fn parse_create_cache_cluster_error(
                 tmp
             }),
         },
-        "InvalidVPCNetworkStateFault" => {
-            crate::error::CreateCacheClusterError {
-                meta: generic,
-                kind: crate::error::CreateCacheClusterErrorKind::InvalidVpcNetworkStateFault({
+        "InvalidVPCNetworkStateFault" => crate::error::CreateCacheClusterError {
+            meta: generic,
+            kind: crate::error::CreateCacheClusterErrorKind::InvalidVpcNetworkStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_vpc_network_state_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "NodeQuotaForClusterExceeded" => crate::error::CreateCacheClusterError {
             meta: generic,
             kind: crate::error::CreateCacheClusterErrorKind::NodeQuotaForClusterExceededFault({
@@ -1008,7 +972,7 @@ pub fn parse_create_cache_cluster_error(
                     let mut output =
                         crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1026,7 +990,7 @@ pub fn parse_create_cache_cluster_error(
                     let mut output =
                         crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1044,7 +1008,7 @@ pub fn parse_create_cache_cluster_error(
                     let mut output =
                         crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1053,26 +1017,24 @@ pub fn parse_create_cache_cluster_error(
                 tmp
             }),
         },
-        "TagQuotaPerResourceExceeded" => {
-            crate::error::CreateCacheClusterError {
-                meta: generic,
-                kind: crate::error::CreateCacheClusterErrorKind::TagQuotaPerResourceExceeded({
+        "TagQuotaPerResourceExceeded" => crate::error::CreateCacheClusterError {
+            meta: generic,
+            kind: crate::error::CreateCacheClusterErrorKind::TagQuotaPerResourceExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::tag_quota_per_resource_exceeded::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateCacheClusterError::generic(generic),
     })
 }
@@ -1088,7 +1050,7 @@ pub fn parse_create_cache_cluster_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_cache_cluster_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_cache_cluster(
+        output = crate::xml_deser::deser_operation_crate_operation_create_cache_cluster(
             response.body().as_ref(),
             output,
         )
@@ -1122,7 +1084,7 @@ pub fn parse_create_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_already_exists_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1136,7 +1098,7 @@ pub fn parse_create_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1150,7 +1112,7 @@ pub fn parse_create_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1164,7 +1126,7 @@ pub fn parse_create_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1178,7 +1140,7 @@ pub fn parse_create_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1192,7 +1154,7 @@ pub fn parse_create_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1216,7 +1178,7 @@ pub fn parse_create_cache_parameter_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_cache_parameter_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_cache_parameter_group(
+        output = crate::xml_deser::deser_operation_crate_operation_create_cache_parameter_group(
             response.body().as_ref(),
             output,
         )
@@ -1250,7 +1212,7 @@ pub fn parse_create_cache_security_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_security_group_already_exists_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1264,7 +1226,7 @@ pub fn parse_create_cache_security_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_security_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1278,7 +1240,7 @@ pub fn parse_create_cache_security_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1292,7 +1254,7 @@ pub fn parse_create_cache_security_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1306,7 +1268,7 @@ pub fn parse_create_cache_security_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1330,7 +1292,7 @@ pub fn parse_create_cache_security_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_cache_security_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_cache_security_group(
+        output = crate::xml_deser::deser_operation_crate_operation_create_cache_security_group(
             response.body().as_ref(),
             output,
         )
@@ -1370,7 +1332,7 @@ pub fn parse_create_cache_subnet_group_error(
                             crate::error::cache_subnet_group_already_exists_fault::Builder::default(
                             );
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_subnet_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1391,7 +1353,7 @@ pub fn parse_create_cache_subnet_group_error(
                             crate::error::cache_subnet_group_quota_exceeded_fault::Builder::default(
                             );
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_subnet_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1410,7 +1372,7 @@ pub fn parse_create_cache_subnet_group_error(
                     let mut output =
                         crate::error::cache_subnet_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1427,7 +1389,7 @@ pub fn parse_create_cache_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_subnet::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_subnet_xml_err(
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1448,11 +1410,7 @@ pub fn parse_create_cache_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::subnet_not_allowed_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_subnet_not_allowed_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_subnet_not_allowed_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1461,26 +1419,24 @@ pub fn parse_create_cache_subnet_group_error(
                 tmp
             }),
         },
-        "TagQuotaPerResourceExceeded" => {
-            crate::error::CreateCacheSubnetGroupError {
-                meta: generic,
-                kind: crate::error::CreateCacheSubnetGroupErrorKind::TagQuotaPerResourceExceeded({
+        "TagQuotaPerResourceExceeded" => crate::error::CreateCacheSubnetGroupError {
+            meta: generic,
+            kind: crate::error::CreateCacheSubnetGroupErrorKind::TagQuotaPerResourceExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::tag_quota_per_resource_exceeded::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateCacheSubnetGroupError::generic(generic),
     })
 }
@@ -1496,7 +1452,7 @@ pub fn parse_create_cache_subnet_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_cache_subnet_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_cache_subnet_group(
+        output = crate::xml_deser::deser_operation_crate_operation_create_cache_subnet_group(
             response.body().as_ref(),
             output,
         )
@@ -1530,7 +1486,7 @@ pub fn parse_create_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::global_replication_group_already_exists_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_global_replication_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_global_replication_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1544,7 +1500,7 @@ pub fn parse_create_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1558,7 +1514,7 @@ pub fn parse_create_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1572,7 +1528,7 @@ pub fn parse_create_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1586,7 +1542,7 @@ pub fn parse_create_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1610,7 +1566,7 @@ pub fn parse_create_global_replication_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_global_replication_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_global_replication_group(
+        output = crate::xml_deser::deser_operation_crate_operation_create_global_replication_group(
             response.body().as_ref(),
             output,
         )
@@ -1644,7 +1600,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_cluster_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1658,7 +1614,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1672,7 +1628,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1686,7 +1642,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1700,7 +1656,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1714,7 +1670,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1728,7 +1684,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1742,7 +1698,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1756,7 +1712,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1770,7 +1726,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1784,7 +1740,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1798,7 +1754,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_user_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1812,7 +1768,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1826,7 +1782,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1840,7 +1796,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1854,7 +1810,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1868,7 +1824,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::replication_group_already_exists_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1882,7 +1838,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1896,7 +1852,7 @@ pub fn parse_create_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::user_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1920,7 +1876,7 @@ pub fn parse_create_replication_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_replication_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_replication_group(
+        output = crate::xml_deser::deser_operation_crate_operation_create_replication_group(
             response.body().as_ref(),
             output,
         )
@@ -1942,26 +1898,24 @@ pub fn parse_create_snapshot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterNotFound" => {
-            crate::error::CreateSnapshotError {
-                meta: generic,
-                kind: crate::error::CreateSnapshotErrorKind::CacheClusterNotFoundFault({
+        "CacheClusterNotFound" => crate::error::CreateSnapshotError {
+            meta: generic,
+            kind: crate::error::CreateSnapshotErrorKind::CacheClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::cache_cluster_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cache_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidCacheClusterState" => crate::error::CreateSnapshotError {
             meta: generic,
             kind: crate::error::CreateSnapshotErrorKind::InvalidCacheClusterStateFault({
@@ -1971,7 +1925,7 @@ pub fn parse_create_snapshot_error(
                     let mut output =
                         crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1989,7 +1943,7 @@ pub fn parse_create_snapshot_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2007,7 +1961,7 @@ pub fn parse_create_snapshot_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2025,7 +1979,7 @@ pub fn parse_create_snapshot_error(
                     let mut output =
                         crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2043,7 +1997,7 @@ pub fn parse_create_snapshot_error(
                     let mut output =
                         crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2052,26 +2006,24 @@ pub fn parse_create_snapshot_error(
                 tmp
             }),
         },
-        "SnapshotAlreadyExistsFault" => {
-            crate::error::CreateSnapshotError {
-                meta: generic,
-                kind: crate::error::CreateSnapshotErrorKind::SnapshotAlreadyExistsFault({
+        "SnapshotAlreadyExistsFault" => crate::error::CreateSnapshotError {
+            meta: generic,
+            kind: crate::error::CreateSnapshotErrorKind::SnapshotAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::snapshot_already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::snapshot_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "SnapshotFeatureNotSupportedFault" => crate::error::CreateSnapshotError {
             meta: generic,
             kind: crate::error::CreateSnapshotErrorKind::SnapshotFeatureNotSupportedFault({
@@ -2081,7 +2033,7 @@ pub fn parse_create_snapshot_error(
                     let mut output =
                         crate::error::snapshot_feature_not_supported_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_snapshot_feature_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_feature_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2090,46 +2042,42 @@ pub fn parse_create_snapshot_error(
                 tmp
             }),
         },
-        "SnapshotQuotaExceededFault" => {
-            crate::error::CreateSnapshotError {
-                meta: generic,
-                kind: crate::error::CreateSnapshotErrorKind::SnapshotQuotaExceededFault({
+        "SnapshotQuotaExceededFault" => crate::error::CreateSnapshotError {
+            meta: generic,
+            kind: crate::error::CreateSnapshotErrorKind::SnapshotQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::snapshot_quota_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "TagQuotaPerResourceExceeded" => {
-            crate::error::CreateSnapshotError {
-                meta: generic,
-                kind: crate::error::CreateSnapshotErrorKind::TagQuotaPerResourceExceeded({
+                    let mut output =
+                        crate::error::snapshot_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TagQuotaPerResourceExceeded" => crate::error::CreateSnapshotError {
+            meta: generic,
+            kind: crate::error::CreateSnapshotErrorKind::TagQuotaPerResourceExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::tag_quota_per_resource_exceeded::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateSnapshotError::generic(generic),
     })
 }
@@ -2142,9 +2090,11 @@ pub fn parse_create_snapshot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_snapshot_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_snapshot(response.body().as_ref(), output)
-                .map_err(crate::error::CreateSnapshotError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateSnapshotError::unhandled)?;
         output.build()
     })
 }
@@ -2170,11 +2120,7 @@ pub fn parse_create_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::duplicate_user_name_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_duplicate_user_name_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateUserError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_duplicate_user_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2192,7 +2138,7 @@ pub fn parse_create_user_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2210,7 +2156,7 @@ pub fn parse_create_user_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2219,26 +2165,24 @@ pub fn parse_create_user_error(
                 tmp
             }),
         },
-        "TagQuotaPerResourceExceeded" => {
-            crate::error::CreateUserError {
-                meta: generic,
-                kind: crate::error::CreateUserErrorKind::TagQuotaPerResourceExceeded({
+        "TagQuotaPerResourceExceeded" => crate::error::CreateUserError {
+            meta: generic,
+            kind: crate::error::CreateUserErrorKind::TagQuotaPerResourceExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::tag_quota_per_resource_exceeded::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UserAlreadyExists" => crate::error::CreateUserError {
             meta: generic,
             kind: crate::error::CreateUserErrorKind::UserAlreadyExistsFault({
@@ -2247,11 +2191,7 @@ pub fn parse_create_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::user_already_exists_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_user_already_exists_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateUserError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_user_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2268,11 +2208,7 @@ pub fn parse_create_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::user_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_user_quota_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateUserError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_user_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2293,8 +2229,11 @@ pub fn parse_create_user_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_user_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_user(response.body().as_ref(), output)
-            .map_err(crate::error::CreateUserError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_user(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateUserError::unhandled)?;
         output.build()
     })
 }
@@ -2320,11 +2259,7 @@ pub fn parse_create_user_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::default_user_required::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_default_user_required_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateUserGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_default_user_required_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2341,11 +2276,7 @@ pub fn parse_create_user_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::duplicate_user_name_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_duplicate_user_name_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateUserGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_duplicate_user_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2363,7 +2294,7 @@ pub fn parse_create_user_group_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2372,79 +2303,16 @@ pub fn parse_create_user_group_error(
                 tmp
             }),
         },
-        "TagQuotaPerResourceExceeded" => {
-            crate::error::CreateUserGroupError {
-                meta: generic,
-                kind: crate::error::CreateUserGroupErrorKind::TagQuotaPerResourceExceeded({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::tag_quota_per_resource_exceeded::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "UserGroupAlreadyExists" => {
-            crate::error::CreateUserGroupError {
-                meta: generic,
-                kind: crate::error::CreateUserGroupErrorKind::UserGroupAlreadyExistsFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::user_group_already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_user_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "UserGroupQuotaExceeded" => {
-            crate::error::CreateUserGroupError {
-                meta: generic,
-                kind: crate::error::CreateUserGroupErrorKind::UserGroupQuotaExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::user_group_quota_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_user_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "UserNotFound" => crate::error::CreateUserGroupError {
+        "TagQuotaPerResourceExceeded" => crate::error::CreateUserGroupError {
             meta: generic,
-            kind: crate::error::CreateUserGroupErrorKind::UserNotFoundFault({
+            kind: crate::error::CreateUserGroupErrorKind::TagQuotaPerResourceExceeded({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::user_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_user_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateUserGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2453,6 +2321,61 @@ pub fn parse_create_user_group_error(
                 tmp
             }),
         },
+        "UserGroupAlreadyExists" => crate::error::CreateUserGroupError {
+            meta: generic,
+            kind: crate::error::CreateUserGroupErrorKind::UserGroupAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::user_group_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_user_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UserGroupQuotaExceeded" => crate::error::CreateUserGroupError {
+            meta: generic,
+            kind: crate::error::CreateUserGroupErrorKind::UserGroupQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::user_group_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_user_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UserNotFound" => {
+            crate::error::CreateUserGroupError {
+                meta: generic,
+                kind: crate::error::CreateUserGroupErrorKind::UserNotFoundFault({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::user_not_found_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::CreateUserGroupError::generic(generic),
     })
 }
@@ -2465,9 +2388,11 @@ pub fn parse_create_user_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_user_group_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_user_group(response.body().as_ref(), output)
-                .map_err(crate::error::CreateUserGroupError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_user_group(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateUserGroupError::unhandled)?;
         output.build()
     })
 }
@@ -2497,7 +2422,7 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2511,7 +2436,7 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2525,7 +2450,7 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2539,7 +2464,7 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2562,12 +2487,7 @@ pub fn parse_decrease_node_groups_in_global_replication_group_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::decrease_node_groups_in_global_replication_group_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_decrease_node_groups_in_global_replication_group(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_decrease_node_groups_in_global_replication_group(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
         output.build()
     })
 }
@@ -2593,7 +2513,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2607,7 +2527,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2621,7 +2541,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2635,7 +2555,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2649,7 +2569,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2663,7 +2583,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2677,7 +2597,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2691,7 +2611,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2705,7 +2625,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2719,7 +2639,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_operation_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_no_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_no_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2733,7 +2653,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2747,7 +2667,7 @@ pub fn parse_decrease_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2771,7 +2691,7 @@ pub fn parse_decrease_replica_count_response(
         #[allow(unused_mut)]
         let mut output = crate::output::decrease_replica_count_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_decrease_replica_count(
+        output = crate::xml_deser::deser_operation_crate_operation_decrease_replica_count(
             response.body().as_ref(),
             output,
         )
@@ -2796,26 +2716,24 @@ pub fn parse_delete_cache_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterNotFound" => {
-            crate::error::DeleteCacheClusterError {
-                meta: generic,
-                kind: crate::error::DeleteCacheClusterErrorKind::CacheClusterNotFoundFault({
+        "CacheClusterNotFound" => crate::error::DeleteCacheClusterError {
+            meta: generic,
+            kind: crate::error::DeleteCacheClusterErrorKind::CacheClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::cache_cluster_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cache_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidCacheClusterState" => crate::error::DeleteCacheClusterError {
             meta: generic,
             kind: crate::error::DeleteCacheClusterErrorKind::InvalidCacheClusterStateFault({
@@ -2825,7 +2743,7 @@ pub fn parse_delete_cache_cluster_error(
                     let mut output =
                         crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2844,7 +2762,7 @@ pub fn parse_delete_cache_cluster_error(
                             let mut tmp = {
                                 #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                                 let _ = response;
-                                output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
+                                output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
                                 output.build()
                             };
                             if (&tmp.message).is_none() {
@@ -2864,7 +2782,7 @@ pub fn parse_delete_cache_cluster_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2873,26 +2791,24 @@ pub fn parse_delete_cache_cluster_error(
                 tmp
             }),
         },
-        "SnapshotAlreadyExistsFault" => {
-            crate::error::DeleteCacheClusterError {
-                meta: generic,
-                kind: crate::error::DeleteCacheClusterErrorKind::SnapshotAlreadyExistsFault({
+        "SnapshotAlreadyExistsFault" => crate::error::DeleteCacheClusterError {
+            meta: generic,
+            kind: crate::error::DeleteCacheClusterErrorKind::SnapshotAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::snapshot_already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::snapshot_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "SnapshotFeatureNotSupportedFault" => crate::error::DeleteCacheClusterError {
             meta: generic,
             kind: crate::error::DeleteCacheClusterErrorKind::SnapshotFeatureNotSupportedFault({
@@ -2902,7 +2818,7 @@ pub fn parse_delete_cache_cluster_error(
                     let mut output =
                         crate::error::snapshot_feature_not_supported_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_snapshot_feature_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_feature_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2911,26 +2827,24 @@ pub fn parse_delete_cache_cluster_error(
                 tmp
             }),
         },
-        "SnapshotQuotaExceededFault" => {
-            crate::error::DeleteCacheClusterError {
-                meta: generic,
-                kind: crate::error::DeleteCacheClusterErrorKind::SnapshotQuotaExceededFault({
+        "SnapshotQuotaExceededFault" => crate::error::DeleteCacheClusterError {
+            meta: generic,
+            kind: crate::error::DeleteCacheClusterErrorKind::SnapshotQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::snapshot_quota_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::snapshot_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteCacheClusterError::generic(generic),
     })
 }
@@ -2946,7 +2860,7 @@ pub fn parse_delete_cache_cluster_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_cache_cluster_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_cache_cluster(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_cache_cluster(
             response.body().as_ref(),
             output,
         )
@@ -2980,7 +2894,7 @@ pub fn parse_delete_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2994,7 +2908,7 @@ pub fn parse_delete_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3008,7 +2922,7 @@ pub fn parse_delete_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3022,7 +2936,7 @@ pub fn parse_delete_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3075,7 +2989,7 @@ pub fn parse_delete_cache_security_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3089,7 +3003,7 @@ pub fn parse_delete_cache_security_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3103,7 +3017,7 @@ pub fn parse_delete_cache_security_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3117,7 +3031,7 @@ pub fn parse_delete_cache_security_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3173,11 +3087,7 @@ pub fn parse_delete_cache_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cache_subnet_group_in_use::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_subnet_group_in_use_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteCacheSubnetGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3195,7 +3105,7 @@ pub fn parse_delete_cache_subnet_group_error(
                     let mut output =
                         crate::error::cache_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSubnetGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3248,7 +3158,7 @@ pub fn parse_delete_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3262,7 +3172,7 @@ pub fn parse_delete_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3276,7 +3186,7 @@ pub fn parse_delete_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3300,7 +3210,7 @@ pub fn parse_delete_global_replication_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_global_replication_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_global_replication_group(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_global_replication_group(
             response.body().as_ref(),
             output,
         )
@@ -3338,7 +3248,7 @@ pub fn parse_delete_replication_group_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -3357,7 +3267,7 @@ pub fn parse_delete_replication_group_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3376,7 +3286,7 @@ pub fn parse_delete_replication_group_error(
                         let mut output =
                             crate::error::invalid_replication_group_state_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3395,7 +3305,7 @@ pub fn parse_delete_replication_group_error(
                     let mut output =
                         crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3404,26 +3314,24 @@ pub fn parse_delete_replication_group_error(
                 tmp
             }),
         },
-        "SnapshotAlreadyExistsFault" => {
-            crate::error::DeleteReplicationGroupError {
-                meta: generic,
-                kind: crate::error::DeleteReplicationGroupErrorKind::SnapshotAlreadyExistsFault({
+        "SnapshotAlreadyExistsFault" => crate::error::DeleteReplicationGroupError {
+            meta: generic,
+            kind: crate::error::DeleteReplicationGroupErrorKind::SnapshotAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::snapshot_already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::snapshot_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "SnapshotFeatureNotSupportedFault" => crate::error::DeleteReplicationGroupError {
             meta: generic,
             kind: crate::error::DeleteReplicationGroupErrorKind::SnapshotFeatureNotSupportedFault(
@@ -3434,7 +3342,7 @@ pub fn parse_delete_replication_group_error(
                         let mut output =
                             crate::error::snapshot_feature_not_supported_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_snapshot_feature_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_snapshot_feature_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3444,26 +3352,24 @@ pub fn parse_delete_replication_group_error(
                 },
             ),
         },
-        "SnapshotQuotaExceededFault" => {
-            crate::error::DeleteReplicationGroupError {
-                meta: generic,
-                kind: crate::error::DeleteReplicationGroupErrorKind::SnapshotQuotaExceededFault({
+        "SnapshotQuotaExceededFault" => crate::error::DeleteReplicationGroupError {
+            meta: generic,
+            kind: crate::error::DeleteReplicationGroupErrorKind::SnapshotQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::snapshot_quota_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::snapshot_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteReplicationGroupError::generic(generic),
     })
 }
@@ -3479,7 +3385,7 @@ pub fn parse_delete_replication_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_replication_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_replication_group(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_replication_group(
             response.body().as_ref(),
             output,
         )
@@ -3510,7 +3416,7 @@ pub fn parse_delete_snapshot_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3528,7 +3434,7 @@ pub fn parse_delete_snapshot_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3545,12 +3451,7 @@ pub fn parse_delete_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_snapshot_state_fault::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_invalid_snapshot_state_fault_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DeleteSnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3567,11 +3468,7 @@ pub fn parse_delete_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::snapshot_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_snapshot_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSnapshotError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3592,9 +3489,11 @@ pub fn parse_delete_snapshot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_snapshot_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_delete_snapshot(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteSnapshotError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteSnapshotError::unhandled)?;
         output.build()
     })
 }
@@ -3620,7 +3519,7 @@ pub fn parse_delete_user_error(
                     let mut tmp = {
                         #[allow(unused_mut)]let mut output = crate::error::default_user_associated_to_user_group_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_default_user_associated_to_user_group_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_default_user_associated_to_user_group_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3639,7 +3538,7 @@ pub fn parse_delete_user_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3656,11 +3555,7 @@ pub fn parse_delete_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_user_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_user_state_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteUserError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_user_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3669,27 +3564,25 @@ pub fn parse_delete_user_error(
                 tmp
             }),
         },
-        "UserNotFound" => crate::error::DeleteUserError {
-            meta: generic,
-            kind: crate::error::DeleteUserErrorKind::UserNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "UserNotFound" => {
+            crate::error::DeleteUserError {
+                meta: generic,
+                kind: crate::error::DeleteUserErrorKind::UserNotFoundFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::user_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_user_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteUserError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::user_not_found_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DeleteUserError::generic(generic),
     })
 }
@@ -3702,8 +3595,11 @@ pub fn parse_delete_user_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_user_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_user(response.body().as_ref(), output)
-            .map_err(crate::error::DeleteUserError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_user(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteUserError::unhandled)?;
         output.build()
     })
 }
@@ -3730,7 +3626,7 @@ pub fn parse_delete_user_group_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3739,26 +3635,24 @@ pub fn parse_delete_user_group_error(
                 tmp
             }),
         },
-        "InvalidUserGroupState" => {
-            crate::error::DeleteUserGroupError {
-                meta: generic,
-                kind: crate::error::DeleteUserGroupErrorKind::InvalidUserGroupStateFault({
+        "InvalidUserGroupState" => crate::error::DeleteUserGroupError {
+            meta: generic,
+            kind: crate::error::DeleteUserGroupErrorKind::InvalidUserGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_user_group_state_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_user_group_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UserGroupNotFound" => crate::error::DeleteUserGroupError {
             meta: generic,
             kind: crate::error::DeleteUserGroupErrorKind::UserGroupNotFoundFault({
@@ -3767,11 +3661,7 @@ pub fn parse_delete_user_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::user_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_user_group_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteUserGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3792,9 +3682,11 @@ pub fn parse_delete_user_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_user_group_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_delete_user_group(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteUserGroupError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_user_group(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteUserGroupError::unhandled)?;
         output.build()
     })
 }
@@ -3815,26 +3707,24 @@ pub fn parse_describe_cache_clusters_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterNotFound" => {
-            crate::error::DescribeCacheClustersError {
-                meta: generic,
-                kind: crate::error::DescribeCacheClustersErrorKind::CacheClusterNotFoundFault({
+        "CacheClusterNotFound" => crate::error::DescribeCacheClustersError {
+            meta: generic,
+            kind: crate::error::DescribeCacheClustersErrorKind::CacheClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::cache_cluster_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheClustersError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cache_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheClustersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidParameterCombination" => crate::error::DescribeCacheClustersError {
             meta: generic,
             kind:
@@ -3844,7 +3734,7 @@ pub fn parse_describe_cache_clusters_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheClustersError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheClustersError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -3863,7 +3753,7 @@ pub fn parse_describe_cache_clusters_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheClustersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheClustersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3887,7 +3777,7 @@ pub fn parse_describe_cache_clusters_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_cache_clusters_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_cache_clusters(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_cache_clusters(
             response.body().as_ref(),
             output,
         )
@@ -3921,7 +3811,7 @@ pub fn parse_describe_cache_engine_versions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_cache_engine_versions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_cache_engine_versions(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_cache_engine_versions(
             response.body().as_ref(),
             output,
         )
@@ -3955,7 +3845,7 @@ pub fn parse_describe_cache_parameter_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3969,7 +3859,7 @@ pub fn parse_describe_cache_parameter_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3983,7 +3873,7 @@ pub fn parse_describe_cache_parameter_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4007,7 +3897,7 @@ pub fn parse_describe_cache_parameter_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_cache_parameter_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_cache_parameter_groups(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_cache_parameter_groups(
             response.body().as_ref(),
             output,
         )
@@ -4046,7 +3936,7 @@ pub fn parse_describe_cache_parameters_error(
                         let mut output =
                             crate::error::cache_parameter_group_not_found_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParametersError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParametersError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4065,7 +3955,7 @@ pub fn parse_describe_cache_parameters_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParametersError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParametersError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -4084,7 +3974,7 @@ pub fn parse_describe_cache_parameters_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParametersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParametersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4108,7 +3998,7 @@ pub fn parse_describe_cache_parameters_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_cache_parameters_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_cache_parameters(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_cache_parameters(
             response.body().as_ref(),
             output,
         )
@@ -4142,7 +4032,7 @@ pub fn parse_describe_cache_security_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSecurityGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSecurityGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4156,7 +4046,7 @@ pub fn parse_describe_cache_security_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSecurityGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSecurityGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4170,7 +4060,7 @@ pub fn parse_describe_cache_security_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSecurityGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSecurityGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4194,7 +4084,7 @@ pub fn parse_describe_cache_security_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_cache_security_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_cache_security_groups(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_cache_security_groups(
             response.body().as_ref(),
             output,
         )
@@ -4233,7 +4123,7 @@ pub fn parse_describe_cache_subnet_groups_error(
                         let mut output =
                             crate::error::cache_subnet_group_not_found_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSubnetGroupsError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSubnetGroupsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4258,7 +4148,7 @@ pub fn parse_describe_cache_subnet_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_cache_subnet_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_cache_subnet_groups(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_cache_subnet_groups(
             response.body().as_ref(),
             output,
         )
@@ -4288,7 +4178,7 @@ pub fn parse_describe_engine_default_parameters_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEngineDefaultParametersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEngineDefaultParametersError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4302,7 +4192,7 @@ pub fn parse_describe_engine_default_parameters_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEngineDefaultParametersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEngineDefaultParametersError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4327,11 +4217,12 @@ pub fn parse_describe_engine_default_parameters_response(
         let mut output =
             crate::output::describe_engine_default_parameters_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_engine_default_parameters(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeEngineDefaultParametersError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_engine_default_parameters(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeEngineDefaultParametersError::unhandled)?;
         output.build()
     })
 }
@@ -4358,7 +4249,7 @@ pub fn parse_describe_events_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4376,7 +4267,7 @@ pub fn parse_describe_events_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4397,9 +4288,11 @@ pub fn parse_describe_events_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_events_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_events(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeEventsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_events(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeEventsError::unhandled)?;
         output.build()
     })
 }
@@ -4425,7 +4318,7 @@ pub fn parse_describe_global_replication_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeGlobalReplicationGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeGlobalReplicationGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4439,7 +4332,7 @@ pub fn parse_describe_global_replication_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeGlobalReplicationGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeGlobalReplicationGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4453,7 +4346,7 @@ pub fn parse_describe_global_replication_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeGlobalReplicationGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeGlobalReplicationGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4478,11 +4371,12 @@ pub fn parse_describe_global_replication_groups_response(
         let mut output =
             crate::output::describe_global_replication_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_global_replication_groups(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeGlobalReplicationGroupsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_global_replication_groups(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeGlobalReplicationGroupsError::unhandled)?;
         output.build()
     })
 }
@@ -4512,7 +4406,7 @@ pub fn parse_describe_replication_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4526,7 +4420,7 @@ pub fn parse_describe_replication_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4540,7 +4434,7 @@ pub fn parse_describe_replication_groups_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationGroupsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4564,7 +4458,7 @@ pub fn parse_describe_replication_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_replication_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_replication_groups(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_replication_groups(
             response.body().as_ref(),
             output,
         )
@@ -4598,7 +4492,7 @@ pub fn parse_describe_reserved_cache_nodes_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4612,7 +4506,7 @@ pub fn parse_describe_reserved_cache_nodes_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4626,7 +4520,7 @@ pub fn parse_describe_reserved_cache_nodes_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::reserved_cache_node_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4650,7 +4544,7 @@ pub fn parse_describe_reserved_cache_nodes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_reserved_cache_nodes_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_reserved_cache_nodes(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_reserved_cache_nodes(
             response.body().as_ref(),
             output,
         )
@@ -4682,7 +4576,7 @@ pub fn parse_describe_reserved_cache_nodes_offerings_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesOfferingsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesOfferingsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4696,7 +4590,7 @@ pub fn parse_describe_reserved_cache_nodes_offerings_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesOfferingsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesOfferingsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4710,7 +4604,7 @@ pub fn parse_describe_reserved_cache_nodes_offerings_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::reserved_cache_nodes_offering_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_reserved_cache_nodes_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesOfferingsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_cache_nodes_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesOfferingsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4735,11 +4629,7 @@ pub fn parse_describe_reserved_cache_nodes_offerings_response(
         let mut output =
             crate::output::describe_reserved_cache_nodes_offerings_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_reserved_cache_nodes_offerings(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeReservedCacheNodesOfferingsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_reserved_cache_nodes_offerings(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesOfferingsError::unhandled)?;
         output.build()
     })
 }
@@ -4773,7 +4663,7 @@ pub fn parse_describe_service_updates_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -4792,7 +4682,7 @@ pub fn parse_describe_service_updates_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4801,26 +4691,24 @@ pub fn parse_describe_service_updates_error(
                 tmp
             }),
         },
-        "ServiceUpdateNotFoundFault" => {
-            crate::error::DescribeServiceUpdatesError {
-                meta: generic,
-                kind: crate::error::DescribeServiceUpdatesErrorKind::ServiceUpdateNotFoundFault({
+        "ServiceUpdateNotFoundFault" => crate::error::DescribeServiceUpdatesError {
+            meta: generic,
+            kind: crate::error::DescribeServiceUpdatesErrorKind::ServiceUpdateNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_update_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_update_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeServiceUpdatesError::generic(generic),
     })
 }
@@ -4836,7 +4724,7 @@ pub fn parse_describe_service_updates_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_service_updates_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_service_updates(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_service_updates(
             response.body().as_ref(),
             output,
         )
@@ -4859,26 +4747,24 @@ pub fn parse_describe_snapshots_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterNotFound" => {
-            crate::error::DescribeSnapshotsError {
-                meta: generic,
-                kind: crate::error::DescribeSnapshotsErrorKind::CacheClusterNotFoundFault({
+        "CacheClusterNotFound" => crate::error::DescribeSnapshotsError {
+            meta: generic,
+            kind: crate::error::DescribeSnapshotsErrorKind::CacheClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::cache_cluster_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cache_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidParameterCombination" => crate::error::DescribeSnapshotsError {
             meta: generic,
             kind: crate::error::DescribeSnapshotsErrorKind::InvalidParameterCombinationException({
@@ -4888,7 +4774,7 @@ pub fn parse_describe_snapshots_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4906,7 +4792,7 @@ pub fn parse_describe_snapshots_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4923,11 +4809,7 @@ pub fn parse_describe_snapshots_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::snapshot_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_snapshot_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4949,9 +4831,11 @@ pub fn parse_describe_snapshots_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_snapshots_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_snapshots(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_snapshots(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
         output.build()
     })
 }
@@ -4981,7 +4865,7 @@ pub fn parse_describe_update_actions_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUpdateActionsError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUpdateActionsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -5000,7 +4884,7 @@ pub fn parse_describe_update_actions_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUpdateActionsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUpdateActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5024,7 +4908,7 @@ pub fn parse_describe_update_actions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_update_actions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_update_actions(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_update_actions(
             response.body().as_ref(),
             output,
         )
@@ -5059,7 +4943,7 @@ pub fn parse_describe_user_groups_error(
                             let mut tmp = {
                                 #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                                 let _ = response;
-                                output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserGroupsError::unhandled)?;
+                                output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserGroupsError::unhandled)?;
                                 output.build()
                             };
                             if (&tmp.message).is_none() {
@@ -5078,11 +4962,7 @@ pub fn parse_describe_user_groups_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::user_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_user_group_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeUserGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5106,7 +4986,7 @@ pub fn parse_describe_user_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_user_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_user_groups(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_user_groups(
             response.body().as_ref(),
             output,
         )
@@ -5137,7 +5017,7 @@ pub fn parse_describe_users_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5146,27 +5026,25 @@ pub fn parse_describe_users_error(
                 tmp
             }),
         },
-        "UserNotFound" => crate::error::DescribeUsersError {
-            meta: generic,
-            kind: crate::error::DescribeUsersErrorKind::UserNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "UserNotFound" => {
+            crate::error::DescribeUsersError {
+                meta: generic,
+                kind: crate::error::DescribeUsersErrorKind::UserNotFoundFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::user_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_user_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeUsersError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::user_not_found_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsersError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DescribeUsersError::generic(generic),
     })
 }
@@ -5179,8 +5057,11 @@ pub fn parse_describe_users_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_users_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_users(response.body().as_ref(), output)
-            .map_err(crate::error::DescribeUsersError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_users(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeUsersError::unhandled)?;
         output.build()
     })
 }
@@ -5208,7 +5089,7 @@ pub fn parse_disassociate_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5222,7 +5103,7 @@ pub fn parse_disassociate_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5236,7 +5117,7 @@ pub fn parse_disassociate_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5250,7 +5131,7 @@ pub fn parse_disassociate_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5275,11 +5156,7 @@ pub fn parse_disassociate_global_replication_group_response(
         let mut output =
             crate::output::disassociate_global_replication_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disassociate_global_replication_group(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_disassociate_global_replication_group(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
         output.build()
     })
 }
@@ -5305,7 +5182,7 @@ pub fn parse_failover_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5319,7 +5196,7 @@ pub fn parse_failover_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5333,7 +5210,7 @@ pub fn parse_failover_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5347,7 +5224,7 @@ pub fn parse_failover_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5372,11 +5249,12 @@ pub fn parse_failover_global_replication_group_response(
         let mut output =
             crate::output::failover_global_replication_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_failover_global_replication_group(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_failover_global_replication_group(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
         output.build()
     })
 }
@@ -5406,7 +5284,7 @@ pub fn parse_increase_node_groups_in_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5420,7 +5298,7 @@ pub fn parse_increase_node_groups_in_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5434,7 +5312,7 @@ pub fn parse_increase_node_groups_in_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5457,12 +5335,7 @@ pub fn parse_increase_node_groups_in_global_replication_group_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::increase_node_groups_in_global_replication_group_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_increase_node_groups_in_global_replication_group(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_increase_node_groups_in_global_replication_group(response.body().as_ref(), output).map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
         output.build()
     })
 }
@@ -5488,7 +5361,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5502,7 +5375,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5516,7 +5389,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5530,7 +5403,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5544,7 +5417,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5558,7 +5431,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5572,7 +5445,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5586,7 +5459,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5600,7 +5473,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5614,7 +5487,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5628,7 +5501,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_operation_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_no_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_no_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5642,7 +5515,7 @@ pub fn parse_increase_replica_count_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5666,7 +5539,7 @@ pub fn parse_increase_replica_count_response(
         #[allow(unused_mut)]
         let mut output = crate::output::increase_replica_count_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_increase_replica_count(
+        output = crate::xml_deser::deser_operation_crate_operation_increase_replica_count(
             response.body().as_ref(),
             output,
         )
@@ -5698,7 +5571,7 @@ pub fn parse_list_allowed_node_type_modifications_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_cluster_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5712,7 +5585,7 @@ pub fn parse_list_allowed_node_type_modifications_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5726,7 +5599,7 @@ pub fn parse_list_allowed_node_type_modifications_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5740,7 +5613,7 @@ pub fn parse_list_allowed_node_type_modifications_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5765,11 +5638,12 @@ pub fn parse_list_allowed_node_type_modifications_response(
         let mut output =
             crate::output::list_allowed_node_type_modifications_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_allowed_node_type_modifications(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_list_allowed_node_type_modifications(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
         output.build()
     })
 }
@@ -5790,26 +5664,24 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterNotFound" => {
-            crate::error::ListTagsForResourceError {
-                meta: generic,
-                kind: crate::error::ListTagsForResourceErrorKind::CacheClusterNotFoundFault({
+        "CacheClusterNotFound" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::CacheClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::cache_cluster_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cache_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "CacheParameterGroupNotFound" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::CacheParameterGroupNotFoundFault({
@@ -5819,7 +5691,7 @@ pub fn parse_list_tags_for_resource_error(
                     let mut output =
                         crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5837,7 +5709,7 @@ pub fn parse_list_tags_for_resource_error(
                     let mut output =
                         crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5855,7 +5727,7 @@ pub fn parse_list_tags_for_resource_error(
                     let mut output =
                         crate::error::cache_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5864,27 +5736,25 @@ pub fn parse_list_tags_for_resource_error(
                 tmp
             }),
         },
-        "InvalidARN" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::InvalidArnFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidARN" => {
+            crate::error::ListTagsForResourceError {
+                meta: generic,
+                kind: crate::error::ListTagsForResourceErrorKind::InvalidArnFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_arn_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_arn_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_arn_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidReplicationGroupState" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::InvalidReplicationGroupStateFault({
@@ -5894,7 +5764,7 @@ pub fn parse_list_tags_for_resource_error(
                     let mut output =
                         crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5912,7 +5782,7 @@ pub fn parse_list_tags_for_resource_error(
                     let mut output =
                         crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5930,7 +5800,7 @@ pub fn parse_list_tags_for_resource_error(
                     let mut output =
                         crate::error::reserved_cache_node_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5947,11 +5817,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::snapshot_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_snapshot_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5968,11 +5834,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::user_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_user_group_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5981,27 +5843,25 @@ pub fn parse_list_tags_for_resource_error(
                 tmp
             }),
         },
-        "UserNotFound" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::UserNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "UserNotFound" => {
+            crate::error::ListTagsForResourceError {
+                meta: generic,
+                kind: crate::error::ListTagsForResourceErrorKind::UserNotFoundFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::user_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_user_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::user_not_found_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -6017,7 +5877,7 @@ pub fn parse_list_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_tags_for_resource(
+        output = crate::xml_deser::deser_operation_crate_operation_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
@@ -6042,26 +5902,24 @@ pub fn parse_modify_cache_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterNotFound" => {
-            crate::error::ModifyCacheClusterError {
-                meta: generic,
-                kind: crate::error::ModifyCacheClusterErrorKind::CacheClusterNotFoundFault({
+        "CacheClusterNotFound" => crate::error::ModifyCacheClusterError {
+            meta: generic,
+            kind: crate::error::ModifyCacheClusterErrorKind::CacheClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::cache_cluster_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cache_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "CacheParameterGroupNotFound" => crate::error::ModifyCacheClusterError {
             meta: generic,
             kind: crate::error::ModifyCacheClusterErrorKind::CacheParameterGroupNotFoundFault({
@@ -6071,7 +5929,7 @@ pub fn parse_modify_cache_cluster_error(
                     let mut output =
                         crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6089,7 +5947,7 @@ pub fn parse_modify_cache_cluster_error(
                     let mut output =
                         crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6106,7 +5964,7 @@ pub fn parse_modify_cache_cluster_error(
                     let mut tmp = {
                         #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6125,7 +5983,7 @@ pub fn parse_modify_cache_cluster_error(
                     let mut output =
                         crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6143,7 +6001,7 @@ pub fn parse_modify_cache_cluster_error(
                     let mut output =
                         crate::error::invalid_cache_security_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6162,7 +6020,7 @@ pub fn parse_modify_cache_cluster_error(
                             let mut tmp = {
                                 #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                                 let _ = response;
-                                output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                                output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                                 output.build()
                             };
                             if (&tmp.message).is_none() {
@@ -6182,7 +6040,7 @@ pub fn parse_modify_cache_cluster_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6191,26 +6049,24 @@ pub fn parse_modify_cache_cluster_error(
                 tmp
             }),
         },
-        "InvalidVPCNetworkStateFault" => {
-            crate::error::ModifyCacheClusterError {
-                meta: generic,
-                kind: crate::error::ModifyCacheClusterErrorKind::InvalidVpcNetworkStateFault({
+        "InvalidVPCNetworkStateFault" => crate::error::ModifyCacheClusterError {
+            meta: generic,
+            kind: crate::error::ModifyCacheClusterErrorKind::InvalidVpcNetworkStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_vpc_network_state_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "NodeQuotaForClusterExceeded" => crate::error::ModifyCacheClusterError {
             meta: generic,
             kind: crate::error::ModifyCacheClusterErrorKind::NodeQuotaForClusterExceededFault({
@@ -6220,7 +6076,7 @@ pub fn parse_modify_cache_cluster_error(
                     let mut output =
                         crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6238,7 +6094,7 @@ pub fn parse_modify_cache_cluster_error(
                     let mut output =
                         crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6262,7 +6118,7 @@ pub fn parse_modify_cache_cluster_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_cache_cluster_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_cache_cluster(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_cache_cluster(
             response.body().as_ref(),
             output,
         )
@@ -6296,7 +6152,7 @@ pub fn parse_modify_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -6310,7 +6166,7 @@ pub fn parse_modify_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -6324,7 +6180,7 @@ pub fn parse_modify_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -6338,7 +6194,7 @@ pub fn parse_modify_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -6352,7 +6208,7 @@ pub fn parse_modify_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -6376,7 +6232,7 @@ pub fn parse_modify_cache_parameter_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_cache_parameter_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_cache_parameter_group(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_cache_parameter_group(
             response.body().as_ref(),
             output,
         )
@@ -6414,7 +6270,7 @@ pub fn parse_modify_cache_subnet_group_error(
                     let mut output =
                         crate::error::cache_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheSubnetGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6432,7 +6288,7 @@ pub fn parse_modify_cache_subnet_group_error(
                     let mut output =
                         crate::error::cache_subnet_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheSubnetGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6449,7 +6305,7 @@ pub fn parse_modify_cache_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_subnet::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_subnet_xml_err(
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -6470,7 +6326,7 @@ pub fn parse_modify_cache_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::subnet_in_use::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_subnet_in_use_xml_err(
+                    output = crate::xml_deser::deser_structure_crate_error_subnet_in_use_xml_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -6491,11 +6347,7 @@ pub fn parse_modify_cache_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::subnet_not_allowed_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_subnet_not_allowed_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ModifyCacheSubnetGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_subnet_not_allowed_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6519,7 +6371,7 @@ pub fn parse_modify_cache_subnet_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_cache_subnet_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_cache_subnet_group(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_cache_subnet_group(
             response.body().as_ref(),
             output,
         )
@@ -6553,7 +6405,7 @@ pub fn parse_modify_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -6567,7 +6419,7 @@ pub fn parse_modify_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -6581,7 +6433,7 @@ pub fn parse_modify_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -6605,7 +6457,7 @@ pub fn parse_modify_global_replication_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_global_replication_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_global_replication_group(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_global_replication_group(
             response.body().as_ref(),
             output,
         )
@@ -6634,26 +6486,24 @@ pub fn parse_modify_replication_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterNotFound" => {
-            crate::error::ModifyReplicationGroupError {
-                meta: generic,
-                kind: crate::error::ModifyReplicationGroupErrorKind::CacheClusterNotFoundFault({
+        "CacheClusterNotFound" => crate::error::ModifyReplicationGroupError {
+            meta: generic,
+            kind: crate::error::ModifyReplicationGroupErrorKind::CacheClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::cache_cluster_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cache_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "CacheParameterGroupNotFound" => crate::error::ModifyReplicationGroupError {
             meta: generic,
             kind: crate::error::ModifyReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(
@@ -6664,7 +6514,7 @@ pub fn parse_modify_replication_group_error(
                         let mut output =
                             crate::error::cache_parameter_group_not_found_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6683,7 +6533,7 @@ pub fn parse_modify_replication_group_error(
                     let mut output =
                         crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6701,7 +6551,7 @@ pub fn parse_modify_replication_group_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -6720,7 +6570,7 @@ pub fn parse_modify_replication_group_error(
                     let mut output =
                         crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6738,7 +6588,7 @@ pub fn parse_modify_replication_group_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -6756,11 +6606,7 @@ pub fn parse_modify_replication_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_kms_key_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_kms_key_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6778,7 +6624,7 @@ pub fn parse_modify_replication_group_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -6797,7 +6643,7 @@ pub fn parse_modify_replication_group_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6816,7 +6662,7 @@ pub fn parse_modify_replication_group_error(
                         let mut output =
                             crate::error::invalid_replication_group_state_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6826,46 +6672,42 @@ pub fn parse_modify_replication_group_error(
                 },
             ),
         },
-        "InvalidUserGroupState" => {
-            crate::error::ModifyReplicationGroupError {
-                meta: generic,
-                kind: crate::error::ModifyReplicationGroupErrorKind::InvalidUserGroupStateFault({
+        "InvalidUserGroupState" => crate::error::ModifyReplicationGroupError {
+            meta: generic,
+            kind: crate::error::ModifyReplicationGroupErrorKind::InvalidUserGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_user_group_state_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "InvalidVPCNetworkStateFault" => {
-            crate::error::ModifyReplicationGroupError {
-                meta: generic,
-                kind: crate::error::ModifyReplicationGroupErrorKind::InvalidVpcNetworkStateFault({
+                    let mut output =
+                        crate::error::invalid_user_group_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidVPCNetworkStateFault" => crate::error::ModifyReplicationGroupError {
+            meta: generic,
+            kind: crate::error::ModifyReplicationGroupErrorKind::InvalidVpcNetworkStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_vpc_network_state_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "NodeQuotaForClusterExceeded" => crate::error::ModifyReplicationGroupError {
             meta: generic,
             kind: crate::error::ModifyReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(
@@ -6876,7 +6718,7 @@ pub fn parse_modify_replication_group_error(
                         let mut output =
                             crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6896,7 +6738,7 @@ pub fn parse_modify_replication_group_error(
                             let mut tmp = {
                                 #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                                 let _ = response;
-                                output = crate::xml_deser::deser_structure_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                                output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                                 output.build()
                             };
                             if (&tmp.message).is_none() {
@@ -6916,7 +6758,7 @@ pub fn parse_modify_replication_group_error(
                     let mut output =
                         crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6933,11 +6775,7 @@ pub fn parse_modify_replication_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::user_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_user_group_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6961,7 +6799,7 @@ pub fn parse_modify_replication_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_replication_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_replication_group(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_replication_group(
             response.body().as_ref(),
             output,
         )
@@ -6995,7 +6833,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7009,7 +6847,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7023,7 +6861,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7037,7 +6875,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7051,7 +6889,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7065,7 +6903,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7079,7 +6917,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7093,7 +6931,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7107,7 +6945,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7121,7 +6959,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7146,11 +6984,7 @@ pub fn parse_modify_replication_group_shard_configuration_response(
         let mut output =
             crate::output::modify_replication_group_shard_configuration_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_replication_group_shard_configuration(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_replication_group_shard_configuration(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
         output.build()
     })
 }
@@ -7177,7 +7011,7 @@ pub fn parse_modify_user_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7195,7 +7029,7 @@ pub fn parse_modify_user_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7212,11 +7046,7 @@ pub fn parse_modify_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_user_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_user_state_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ModifyUserError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_user_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7225,27 +7055,25 @@ pub fn parse_modify_user_error(
                 tmp
             }),
         },
-        "UserNotFound" => crate::error::ModifyUserError {
-            meta: generic,
-            kind: crate::error::ModifyUserErrorKind::UserNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "UserNotFound" => {
+            crate::error::ModifyUserError {
+                meta: generic,
+                kind: crate::error::ModifyUserErrorKind::UserNotFoundFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::user_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_user_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ModifyUserError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::user_not_found_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::ModifyUserError::generic(generic),
     })
 }
@@ -7258,8 +7086,11 @@ pub fn parse_modify_user_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_user_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_user(response.body().as_ref(), output)
-            .map_err(crate::error::ModifyUserError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_user(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyUserError::unhandled)?;
         output.build()
     })
 }
@@ -7285,11 +7116,7 @@ pub fn parse_modify_user_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::default_user_required::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_default_user_required_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ModifyUserGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_default_user_required_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7306,11 +7133,7 @@ pub fn parse_modify_user_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::duplicate_user_name_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_duplicate_user_name_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ModifyUserGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_duplicate_user_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7328,7 +7151,7 @@ pub fn parse_modify_user_group_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7346,7 +7169,7 @@ pub fn parse_modify_user_group_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7355,17 +7178,51 @@ pub fn parse_modify_user_group_error(
                 tmp
             }),
         },
-        "InvalidUserGroupState" => {
+        "InvalidUserGroupState" => crate::error::ModifyUserGroupError {
+            meta: generic,
+            kind: crate::error::ModifyUserGroupErrorKind::InvalidUserGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_user_group_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UserGroupNotFound" => crate::error::ModifyUserGroupError {
+            meta: generic,
+            kind: crate::error::ModifyUserGroupErrorKind::UserGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UserNotFound" => {
             crate::error::ModifyUserGroupError {
                 meta: generic,
-                kind: crate::error::ModifyUserGroupErrorKind::InvalidUserGroupStateFault({
+                kind: crate::error::ModifyUserGroupErrorKind::UserNotFoundFault({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_user_group_state_fault::Builder::default();
+                        let mut output = crate::error::user_not_found_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -7375,48 +7232,6 @@ pub fn parse_modify_user_group_error(
                 }),
             }
         }
-        "UserGroupNotFound" => crate::error::ModifyUserGroupError {
-            meta: generic,
-            kind: crate::error::ModifyUserGroupErrorKind::UserGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::user_group_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_user_group_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ModifyUserGroupError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UserNotFound" => crate::error::ModifyUserGroupError {
-            meta: generic,
-            kind: crate::error::ModifyUserGroupErrorKind::UserNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::user_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_user_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ModifyUserGroupError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
         _ => crate::error::ModifyUserGroupError::generic(generic),
     })
 }
@@ -7429,9 +7244,11 @@ pub fn parse_modify_user_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_user_group_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_modify_user_group(response.body().as_ref(), output)
-                .map_err(crate::error::ModifyUserGroupError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_user_group(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyUserGroupError::unhandled)?;
         output.build()
     })
 }
@@ -7459,7 +7276,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7473,7 +7290,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7487,7 +7304,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::reserved_cache_node_already_exists_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_reserved_cache_node_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7501,7 +7318,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::reserved_cache_node_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_reserved_cache_node_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7515,7 +7332,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::reserved_cache_nodes_offering_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_reserved_cache_nodes_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_cache_nodes_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7529,7 +7346,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7554,11 +7371,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_response(
         let mut output =
             crate::output::purchase_reserved_cache_nodes_offering_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_purchase_reserved_cache_nodes_offering(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_purchase_reserved_cache_nodes_offering(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
         output.build()
     })
 }
@@ -7588,7 +7401,7 @@ pub fn parse_rebalance_slots_in_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebalanceSlotsInGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebalanceSlotsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7602,7 +7415,7 @@ pub fn parse_rebalance_slots_in_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebalanceSlotsInGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebalanceSlotsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7616,7 +7429,7 @@ pub fn parse_rebalance_slots_in_global_replication_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RebalanceSlotsInGlobalReplicationGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RebalanceSlotsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7641,11 +7454,7 @@ pub fn parse_rebalance_slots_in_global_replication_group_response(
         let mut output =
             crate::output::rebalance_slots_in_global_replication_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_rebalance_slots_in_global_replication_group(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::RebalanceSlotsInGlobalReplicationGroupError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_rebalance_slots_in_global_replication_group(response.body().as_ref(), output).map_err(crate::error::RebalanceSlotsInGlobalReplicationGroupError::unhandled)?;
         output.build()
     })
 }
@@ -7666,26 +7475,24 @@ pub fn parse_reboot_cache_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterNotFound" => {
-            crate::error::RebootCacheClusterError {
-                meta: generic,
-                kind: crate::error::RebootCacheClusterErrorKind::CacheClusterNotFoundFault({
+        "CacheClusterNotFound" => crate::error::RebootCacheClusterError {
+            meta: generic,
+            kind: crate::error::RebootCacheClusterErrorKind::CacheClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::cache_cluster_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootCacheClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cache_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootCacheClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidCacheClusterState" => crate::error::RebootCacheClusterError {
             meta: generic,
             kind: crate::error::RebootCacheClusterErrorKind::InvalidCacheClusterStateFault({
@@ -7695,7 +7502,7 @@ pub fn parse_reboot_cache_cluster_error(
                     let mut output =
                         crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootCacheClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootCacheClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7719,7 +7526,7 @@ pub fn parse_reboot_cache_cluster_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reboot_cache_cluster_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_reboot_cache_cluster(
+        output = crate::xml_deser::deser_operation_crate_operation_reboot_cache_cluster(
             response.body().as_ref(),
             output,
         )
@@ -7748,26 +7555,24 @@ pub fn parse_remove_tags_from_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterNotFound" => {
-            crate::error::RemoveTagsFromResourceError {
-                meta: generic,
-                kind: crate::error::RemoveTagsFromResourceErrorKind::CacheClusterNotFoundFault({
+        "CacheClusterNotFound" => crate::error::RemoveTagsFromResourceError {
+            meta: generic,
+            kind: crate::error::RemoveTagsFromResourceErrorKind::CacheClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::cache_cluster_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cache_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "CacheParameterGroupNotFound" => crate::error::RemoveTagsFromResourceError {
             meta: generic,
             kind: crate::error::RemoveTagsFromResourceErrorKind::CacheParameterGroupNotFoundFault(
@@ -7778,7 +7583,7 @@ pub fn parse_remove_tags_from_resource_error(
                         let mut output =
                             crate::error::cache_parameter_group_not_found_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -7797,7 +7602,7 @@ pub fn parse_remove_tags_from_resource_error(
                     let mut output =
                         crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7815,7 +7620,7 @@ pub fn parse_remove_tags_from_resource_error(
                     let mut output =
                         crate::error::cache_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7824,27 +7629,25 @@ pub fn parse_remove_tags_from_resource_error(
                 tmp
             }),
         },
-        "InvalidARN" => crate::error::RemoveTagsFromResourceError {
-            meta: generic,
-            kind: crate::error::RemoveTagsFromResourceErrorKind::InvalidArnFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidARN" => {
+            crate::error::RemoveTagsFromResourceError {
+                meta: generic,
+                kind: crate::error::RemoveTagsFromResourceErrorKind::InvalidArnFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_arn_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_arn_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_arn_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidReplicationGroupState" => crate::error::RemoveTagsFromResourceError {
             meta: generic,
             kind: crate::error::RemoveTagsFromResourceErrorKind::InvalidReplicationGroupStateFault(
@@ -7855,7 +7658,7 @@ pub fn parse_remove_tags_from_resource_error(
                         let mut output =
                             crate::error::invalid_replication_group_state_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -7874,7 +7677,7 @@ pub fn parse_remove_tags_from_resource_error(
                     let mut output =
                         crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7892,7 +7695,7 @@ pub fn parse_remove_tags_from_resource_error(
                     let mut output =
                         crate::error::reserved_cache_node_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7909,11 +7712,7 @@ pub fn parse_remove_tags_from_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::snapshot_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_snapshot_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7922,27 +7721,25 @@ pub fn parse_remove_tags_from_resource_error(
                 tmp
             }),
         },
-        "TagNotFound" => crate::error::RemoveTagsFromResourceError {
-            meta: generic,
-            kind: crate::error::RemoveTagsFromResourceErrorKind::TagNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TagNotFound" => {
+            crate::error::RemoveTagsFromResourceError {
+                meta: generic,
+                kind: crate::error::RemoveTagsFromResourceErrorKind::TagNotFoundFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tag_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_tag_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::tag_not_found_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_tag_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "UserGroupNotFound" => crate::error::RemoveTagsFromResourceError {
             meta: generic,
             kind: crate::error::RemoveTagsFromResourceErrorKind::UserGroupNotFoundFault({
@@ -7951,11 +7748,7 @@ pub fn parse_remove_tags_from_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::user_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_user_group_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7964,27 +7757,25 @@ pub fn parse_remove_tags_from_resource_error(
                 tmp
             }),
         },
-        "UserNotFound" => crate::error::RemoveTagsFromResourceError {
-            meta: generic,
-            kind: crate::error::RemoveTagsFromResourceErrorKind::UserNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "UserNotFound" => {
+            crate::error::RemoveTagsFromResourceError {
+                meta: generic,
+                kind: crate::error::RemoveTagsFromResourceErrorKind::UserNotFoundFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::user_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_user_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::user_not_found_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::RemoveTagsFromResourceError::generic(generic),
     })
 }
@@ -8000,7 +7791,7 @@ pub fn parse_remove_tags_from_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::remove_tags_from_resource_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_remove_tags_from_resource(
+        output = crate::xml_deser::deser_operation_crate_operation_remove_tags_from_resource(
             response.body().as_ref(),
             output,
         )
@@ -8034,7 +7825,7 @@ pub fn parse_reset_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -8048,7 +7839,7 @@ pub fn parse_reset_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -8062,7 +7853,7 @@ pub fn parse_reset_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -8076,7 +7867,7 @@ pub fn parse_reset_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -8090,7 +7881,7 @@ pub fn parse_reset_cache_parameter_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -8114,7 +7905,7 @@ pub fn parse_reset_cache_parameter_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reset_cache_parameter_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_reset_cache_parameter_group(
+        output = crate::xml_deser::deser_operation_crate_operation_reset_cache_parameter_group(
             response.body().as_ref(),
             output,
         )
@@ -8144,7 +7935,7 @@ pub fn parse_revoke_cache_security_group_ingress_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::authorization_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_authorization_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_authorization_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
                 }
             ;
@@ -8158,7 +7949,7 @@ pub fn parse_revoke_cache_security_group_ingress_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
                 }
             ;
@@ -8172,7 +7963,7 @@ pub fn parse_revoke_cache_security_group_ingress_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
                 }
             ;
@@ -8186,7 +7977,7 @@ pub fn parse_revoke_cache_security_group_ingress_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
                 }
             ;
@@ -8200,7 +7991,7 @@ pub fn parse_revoke_cache_security_group_ingress_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
                 }
             ;
@@ -8225,11 +8016,12 @@ pub fn parse_revoke_cache_security_group_ingress_response(
         let mut output =
             crate::output::revoke_cache_security_group_ingress_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_revoke_cache_security_group_ingress(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_revoke_cache_security_group_ingress(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
         output.build()
     })
 }
@@ -8256,7 +8048,7 @@ pub fn parse_start_migration_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8274,7 +8066,7 @@ pub fn parse_start_migration_error(
                     let mut output =
                         crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8291,7 +8083,7 @@ pub fn parse_start_migration_error(
                     let mut tmp = {
                         #[allow(unused_mut)]let mut output = crate::error::replication_group_already_under_migration_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_replication_group_already_under_migration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_replication_group_already_under_migration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -8310,7 +8102,7 @@ pub fn parse_start_migration_error(
                     let mut output =
                         crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8331,9 +8123,11 @@ pub fn parse_start_migration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_migration_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_start_migration(response.body().as_ref(), output)
-                .map_err(crate::error::StartMigrationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_start_migration(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartMigrationError::unhandled)?;
         output.build()
     })
 }
@@ -8359,7 +8153,7 @@ pub fn parse_test_failover_error(
                     let mut tmp = {
                         #[allow(unused_mut)]let mut output = crate::error::api_call_rate_for_customer_exceeded_fault::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_api_call_rate_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_api_call_rate_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -8378,7 +8172,7 @@ pub fn parse_test_failover_error(
                     let mut output =
                         crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8395,11 +8189,7 @@ pub fn parse_test_failover_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_kms_key_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_kms_key_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8417,7 +8207,7 @@ pub fn parse_test_failover_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8435,7 +8225,7 @@ pub fn parse_test_failover_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8453,7 +8243,7 @@ pub fn parse_test_failover_error(
                     let mut output =
                         crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8470,11 +8260,7 @@ pub fn parse_test_failover_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::node_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_node_group_not_found_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_node_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8492,7 +8278,7 @@ pub fn parse_test_failover_error(
                     let mut output =
                         crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8510,7 +8296,7 @@ pub fn parse_test_failover_error(
                     let mut output =
                         crate::error::test_failover_not_available_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_test_failover_not_available_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_test_failover_not_available_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8531,8 +8317,11 @@ pub fn parse_test_failover_response(
         #[allow(unused_mut)]
         let mut output = crate::output::test_failover_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_test_failover(response.body().as_ref(), output)
-            .map_err(crate::error::TestFailoverError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_test_failover(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::TestFailoverError::unhandled)?;
         output.build()
     })
 }

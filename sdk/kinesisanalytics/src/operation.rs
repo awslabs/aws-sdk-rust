@@ -365,6 +365,39 @@ impl smithy_http::response::ParseStrictResponse for DeleteApplicationInputProces
 /// <note>
 /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
 /// </note>
+/// <p>Deletes output destination configuration from your application configuration. Amazon Kinesis Analytics will no longer write data from the corresponding in-application stream to the external output destination.</p>
+/// <p>This operation requires permissions to perform the
+/// <code>kinesisanalytics:DeleteApplicationOutput</code> action.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteApplicationOutput {
+    _private: (),
+}
+impl DeleteApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputInput`](crate::input::DeleteApplicationOutputInput)
+    pub fn builder() -> crate::input::delete_application_output_input::Builder {
+        crate::input::delete_application_output_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteApplicationOutput {
+    type Output = std::result::Result<
+        crate::output::DeleteApplicationOutputOutput,
+        crate::error::DeleteApplicationOutputError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_application_output_error(response)
+        } else {
+            crate::operation_deser::parse_delete_application_output_response(response)
+        }
+    }
+}
+
+/// <note>
+/// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
+/// </note>
 /// <p>Deletes a reference data source configuration from the specified application configuration.</p>
 /// <p>If the application is running, Amazon Kinesis Analytics immediately removes the in-application table
 /// that you created using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a> operation.  </p>

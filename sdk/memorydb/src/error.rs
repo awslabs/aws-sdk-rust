@@ -6082,6 +6082,7 @@ impl TestFailoverNotAvailableFault {
     }
 }
 
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShardNotFoundFault {

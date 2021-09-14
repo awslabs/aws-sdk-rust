@@ -78,12 +78,8 @@ impl BatchGetAggregateResourceConfigInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_batch_get_aggregate_resource_config(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_batch_get_aggregate_resource_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -146,12 +142,12 @@ impl BatchGetAggregateResourceConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.BatchGetAggregateResourceConfig",
         );
         Ok(builder)
@@ -161,7 +157,11 @@ impl BatchGetAggregateResourceConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -226,10 +226,9 @@ impl BatchGetResourceConfigInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_batch_get_resource_config(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_batch_get_resource_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -292,12 +291,12 @@ impl BatchGetResourceConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.BatchGetResourceConfig",
         );
         Ok(builder)
@@ -307,7 +306,11 @@ impl BatchGetResourceConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -388,10 +391,8 @@ impl DeleteAggregationAuthorizationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_aggregation_authorization(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_aggregation_authorization(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -454,12 +455,12 @@ impl DeleteAggregationAuthorizationInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteAggregationAuthorization",
         );
         Ok(builder)
@@ -469,7 +470,11 @@ impl DeleteAggregationAuthorizationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -488,7 +493,7 @@ pub mod delete_config_rule_input {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule that you want to
+        /// <p>The name of the Config rule that you want to
         /// delete.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
@@ -534,10 +539,11 @@ impl DeleteConfigRuleInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_config_rule(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_config_rule(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -600,12 +606,12 @@ impl DeleteConfigRuleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteConfigRule",
         );
         Ok(builder)
@@ -615,7 +621,11 @@ impl DeleteConfigRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -684,10 +694,8 @@ impl DeleteConfigurationAggregatorInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_configuration_aggregator(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_configuration_aggregator(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -750,12 +758,12 @@ impl DeleteConfigurationAggregatorInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteConfigurationAggregator",
         );
         Ok(builder)
@@ -765,7 +773,11 @@ impl DeleteConfigurationAggregatorInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -836,10 +848,8 @@ impl DeleteConfigurationRecorderInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_configuration_recorder(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_configuration_recorder(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -902,12 +912,12 @@ impl DeleteConfigurationRecorderInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteConfigurationRecorder",
         );
         Ok(builder)
@@ -917,7 +927,11 @@ impl DeleteConfigurationRecorderInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -981,7 +995,10 @@ impl DeleteConformancePackInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_conformance_pack(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_conformance_pack(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1047,12 +1064,12 @@ impl DeleteConformancePackInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteConformancePack",
         );
         Ok(builder)
@@ -1062,7 +1079,11 @@ impl DeleteConformancePackInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1126,7 +1147,10 @@ impl DeleteDeliveryChannelInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_delivery_channel(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_delivery_channel(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1192,12 +1216,12 @@ impl DeleteDeliveryChannelInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteDeliveryChannel",
         );
         Ok(builder)
@@ -1207,7 +1231,11 @@ impl DeleteDeliveryChannelInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1226,7 +1254,7 @@ pub mod delete_evaluation_results_input {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule for which you want to delete
+        /// <p>The name of the Config rule for which you want to delete
         /// the evaluation results.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
@@ -1273,10 +1301,9 @@ impl DeleteEvaluationResultsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_evaluation_results(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_evaluation_results(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1339,12 +1366,12 @@ impl DeleteEvaluationResultsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteEvaluationResults",
         );
         Ok(builder)
@@ -1354,7 +1381,11 @@ impl DeleteEvaluationResultsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1423,10 +1454,8 @@ impl DeleteOrganizationConfigRuleInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_organization_config_rule(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_organization_config_rule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1489,12 +1518,12 @@ impl DeleteOrganizationConfigRuleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteOrganizationConfigRule",
         );
         Ok(builder)
@@ -1504,7 +1533,11 @@ impl DeleteOrganizationConfigRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1573,12 +1606,8 @@ impl DeleteOrganizationConformancePackInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_organization_conformance_pack(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_organization_conformance_pack(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1641,12 +1670,12 @@ impl DeleteOrganizationConformancePackInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteOrganizationConformancePack",
         );
         Ok(builder)
@@ -1656,7 +1685,11 @@ impl DeleteOrganizationConformancePackInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1737,10 +1770,8 @@ impl DeletePendingAggregationRequestInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_pending_aggregation_request(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_pending_aggregation_request(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1803,12 +1834,12 @@ impl DeletePendingAggregationRequestInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeletePendingAggregationRequest",
         );
         Ok(builder)
@@ -1818,7 +1849,11 @@ impl DeletePendingAggregationRequestInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1838,7 +1873,7 @@ pub mod delete_remediation_configuration_input {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule for which you want to delete remediation configuration.</p>
+        /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -1898,10 +1933,8 @@ impl DeleteRemediationConfigurationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_remediation_configuration(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_remediation_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1964,12 +1997,12 @@ impl DeleteRemediationConfigurationInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteRemediationConfiguration",
         );
         Ok(builder)
@@ -1979,7 +2012,11 @@ impl DeleteRemediationConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2000,7 +2037,7 @@ pub mod delete_remediation_exceptions_input {
             std::option::Option<std::vec::Vec<crate::model::RemediationExceptionResourceKey>>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule for which you want to delete remediation exception configuration.</p>
+        /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -2066,10 +2103,8 @@ impl DeleteRemediationExceptionsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_remediation_exceptions(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_remediation_exceptions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2132,12 +2167,12 @@ impl DeleteRemediationExceptionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteRemediationExceptions",
         );
         Ok(builder)
@@ -2147,7 +2182,11 @@ impl DeleteRemediationExceptionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2222,7 +2261,10 @@ impl DeleteResourceConfigInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_resource_config(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_resource_config(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2288,12 +2330,12 @@ impl DeleteResourceConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteResourceConfig",
         );
         Ok(builder)
@@ -2303,7 +2345,11 @@ impl DeleteResourceConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2372,10 +2418,8 @@ impl DeleteRetentionConfigurationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_retention_configuration(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_retention_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2438,12 +2482,12 @@ impl DeleteRetentionConfigurationInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteRetentionConfiguration",
         );
         Ok(builder)
@@ -2453,7 +2497,11 @@ impl DeleteRetentionConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2514,7 +2562,10 @@ impl DeleteStoredQueryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_stored_query(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_stored_query(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2580,12 +2631,12 @@ impl DeleteStoredQueryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeleteStoredQuery",
         );
         Ok(builder)
@@ -2595,7 +2646,11 @@ impl DeleteStoredQueryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2660,7 +2715,10 @@ impl DeliverConfigSnapshotInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_deliver_config_snapshot(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_deliver_config_snapshot(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2726,12 +2784,12 @@ impl DeliverConfigSnapshotInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DeliverConfigSnapshot",
         );
         Ok(builder)
@@ -2741,7 +2799,11 @@ impl DeliverConfigSnapshotInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2794,7 +2856,7 @@ pub mod describe_aggregate_compliance_by_config_rules_input {
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is
         /// maximum.
-        /// If you specify 0, AWS Config uses the default.</p>
+        /// If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -2854,7 +2916,7 @@ impl DescribeAggregateComplianceByConfigRulesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_aggregate_compliance_by_config_rules(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_describe_aggregate_compliance_by_config_rules(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -2918,12 +2980,12 @@ impl DescribeAggregateComplianceByConfigRulesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeAggregateComplianceByConfigRules",
         );
         Ok(builder)
@@ -2933,7 +2995,11 @@ impl DescribeAggregateComplianceByConfigRulesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2986,7 +3052,7 @@ pub mod describe_aggregate_compliance_by_conformance_packs_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, AWS Config uses the default. </p>
+        /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -3045,7 +3111,7 @@ impl DescribeAggregateComplianceByConformancePacksInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_aggregate_compliance_by_conformance_packs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_describe_aggregate_compliance_by_conformance_packs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -3109,12 +3175,12 @@ impl DescribeAggregateComplianceByConformancePacksInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeAggregateComplianceByConformancePacks",
         );
         Ok(builder)
@@ -3124,7 +3190,11 @@ impl DescribeAggregateComplianceByConformancePacksInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3146,7 +3216,7 @@ pub mod describe_aggregation_authorizations_input {
     }
     impl Builder {
         /// <p>The maximum number of AggregationAuthorizations returned on
-        /// each page. The default is maximum. If you specify 0, AWS Config uses
+        /// each page. The default is maximum. If you specify 0, Config uses
         /// the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
@@ -3202,12 +3272,8 @@ impl DescribeAggregationAuthorizationsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_aggregation_authorizations(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_aggregation_authorizations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3270,12 +3336,12 @@ impl DescribeAggregationAuthorizationsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeAggregationAuthorizations",
         );
         Ok(builder)
@@ -3285,7 +3351,11 @@ impl DescribeAggregationAuthorizationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3381,10 +3451,8 @@ impl DescribeComplianceByConfigRuleInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_compliance_by_config_rule(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_compliance_by_config_rule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3447,12 +3515,12 @@ impl DescribeComplianceByConfigRuleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeComplianceByConfigRule",
         );
         Ok(builder)
@@ -3462,7 +3530,11 @@ impl DescribeComplianceByConfigRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3486,9 +3558,9 @@ pub mod describe_compliance_by_resource_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The types of AWS resources for which you want compliance
+        /// <p>The types of Amazon Web Services resources for which you want compliance
         /// information (for example, <code>AWS::EC2::Instance</code>). For this
-        /// action, you can specify that the resource type is an AWS account by
+        /// action, you can specify that the resource type is an Amazon Web Services account by
         /// specifying <code>AWS::::Account</code>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -3501,7 +3573,7 @@ pub mod describe_compliance_by_resource_input {
             self.resource_type = input;
             self
         }
-        /// <p>The ID of the AWS resource for which you want compliance
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance
         /// information. You can specify only one resource ID. If you specify a
         /// resource ID, you must also specify a type for
         /// <code>ResourceType</code>.</p>
@@ -3528,7 +3600,7 @@ pub mod describe_compliance_by_resource_input {
         }
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, AWS Config uses the default.</p>
+        /// you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -3587,10 +3659,8 @@ impl DescribeComplianceByResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_compliance_by_resource(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_compliance_by_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3653,12 +3723,12 @@ impl DescribeComplianceByResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeComplianceByResource",
         );
         Ok(builder)
@@ -3668,7 +3738,11 @@ impl DescribeComplianceByResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3718,7 +3792,7 @@ pub mod describe_config_rule_evaluation_status_input {
         /// <p>This parameter is required if the rule limit for your account
         /// is more than the default of 150 rules.</p>
         /// <p>For information about requesting a rule limit increase, see
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a> in the <i>AWS General
+        /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
         /// Reference Guide</i>.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
@@ -3765,12 +3839,8 @@ impl DescribeConfigRuleEvaluationStatusInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_config_rule_evaluation_status(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_config_rule_evaluation_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3833,12 +3903,12 @@ impl DescribeConfigRuleEvaluationStatusInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeConfigRuleEvaluationStatus",
         );
         Ok(builder)
@@ -3848,7 +3918,11 @@ impl DescribeConfigRuleEvaluationStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3926,7 +4000,10 @@ impl DescribeConfigRulesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_config_rules(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_config_rules(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3992,12 +4069,12 @@ impl DescribeConfigRulesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeConfigRules",
         );
         Ok(builder)
@@ -4007,7 +4084,11 @@ impl DescribeConfigRulesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4056,7 +4137,7 @@ pub mod describe_configuration_aggregators_input {
             self
         }
         /// <p>The maximum number of configuration aggregators returned on
-        /// each page. The default is maximum. If you specify 0, AWS Config uses
+        /// each page. The default is maximum. If you specify 0, Config uses
         /// the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
@@ -4103,10 +4184,8 @@ impl DescribeConfigurationAggregatorsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_configuration_aggregators(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_configuration_aggregators(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4169,12 +4248,12 @@ impl DescribeConfigurationAggregatorsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeConfigurationAggregators",
         );
         Ok(builder)
@@ -4184,7 +4263,11 @@ impl DescribeConfigurationAggregatorsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4249,7 +4332,7 @@ pub mod describe_configuration_aggregator_sources_status_input {
             self
         }
         /// <p>The maximum number of AggregatorSourceStatus returned on each
-        /// page. The default is maximum. If you specify 0, AWS Config uses the
+        /// page. The default is maximum. If you specify 0, Config uses the
         /// default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
@@ -4300,7 +4383,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_configuration_aggregator_sources_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_describe_configuration_aggregator_sources_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -4364,12 +4447,12 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeConfigurationAggregatorSourcesStatus",
         );
         Ok(builder)
@@ -4379,7 +4462,11 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4451,10 +4538,8 @@ impl DescribeConfigurationRecordersInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_configuration_recorders(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_configuration_recorders(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4517,12 +4602,12 @@ impl DescribeConfigurationRecordersInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeConfigurationRecorders",
         );
         Ok(builder)
@@ -4532,7 +4617,11 @@ impl DescribeConfigurationRecordersInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4604,12 +4693,8 @@ impl DescribeConfigurationRecorderStatusInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_configuration_recorder_status(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_configuration_recorder_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4672,12 +4757,12 @@ impl DescribeConfigurationRecorderStatusInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeConfigurationRecorderStatus",
         );
         Ok(builder)
@@ -4687,7 +4772,11 @@ impl DescribeConfigurationRecorderStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4733,7 +4822,7 @@ pub mod describe_conformance_pack_compliance_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of AWS Config rules within a conformance pack are returned on each page.</p>
+        /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -4789,12 +4878,8 @@ impl DescribeConformancePackComplianceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_conformance_pack_compliance(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_conformance_pack_compliance(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4857,12 +4942,12 @@ impl DescribeConformancePackComplianceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeConformancePackCompliance",
         );
         Ok(builder)
@@ -4872,7 +4957,11 @@ impl DescribeConformancePackComplianceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4960,10 +5049,9 @@ impl DescribeConformancePacksInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_conformance_packs(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_conformance_packs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5026,12 +5114,12 @@ impl DescribeConformancePacksInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeConformancePacks",
         );
         Ok(builder)
@@ -5041,7 +5129,11 @@ impl DescribeConformancePacksInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5130,10 +5222,8 @@ impl DescribeConformancePackStatusInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_conformance_pack_status(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_conformance_pack_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5196,12 +5286,12 @@ impl DescribeConformancePackStatusInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeConformancePackStatus",
         );
         Ok(builder)
@@ -5211,7 +5301,11 @@ impl DescribeConformancePackStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5277,10 +5371,9 @@ impl DescribeDeliveryChannelsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_delivery_channels(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_delivery_channels(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5343,12 +5436,12 @@ impl DescribeDeliveryChannelsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeDeliveryChannels",
         );
         Ok(builder)
@@ -5358,7 +5451,11 @@ impl DescribeDeliveryChannelsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5425,10 +5522,8 @@ impl DescribeDeliveryChannelStatusInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_delivery_channel_status(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_delivery_channel_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5491,12 +5586,12 @@ impl DescribeDeliveryChannelStatusInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeDeliveryChannelStatus",
         );
         Ok(builder)
@@ -5506,7 +5601,11 @@ impl DescribeDeliveryChannelStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5544,7 +5643,7 @@ pub mod describe_organization_config_rules_input {
             self.organization_config_rule_names = input;
             self
         }
-        /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, AWS Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -5599,10 +5698,8 @@ impl DescribeOrganizationConfigRulesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_organization_config_rules(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_organization_config_rules(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5665,12 +5762,12 @@ impl DescribeOrganizationConfigRulesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeOrganizationConfigRules",
         );
         Ok(builder)
@@ -5680,7 +5777,11 @@ impl DescribeOrganizationConfigRulesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5718,7 +5819,7 @@ pub mod describe_organization_config_rule_statuses_input {
             self.organization_config_rule_names = input;
             self
         }
-        /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, AWS Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -5774,7 +5875,7 @@ impl DescribeOrganizationConfigRuleStatusesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_organization_config_rule_statuses(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_describe_organization_config_rule_statuses(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -5838,12 +5939,12 @@ impl DescribeOrganizationConfigRuleStatusesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeOrganizationConfigRuleStatuses",
         );
         Ok(builder)
@@ -5853,7 +5954,11 @@ impl DescribeOrganizationConfigRuleStatusesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5892,7 +5997,7 @@ pub mod describe_organization_conformance_packs_input {
             self
         }
         /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-        /// number, AWS Config uses the default. The default is 100.</p>
+        /// number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -5949,12 +6054,8 @@ impl DescribeOrganizationConformancePacksInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_organization_conformance_packs(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_organization_conformance_packs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6017,12 +6118,12 @@ impl DescribeOrganizationConformancePacksInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeOrganizationConformancePacks",
         );
         Ok(builder)
@@ -6032,7 +6133,11 @@ impl DescribeOrganizationConformancePacksInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6071,7 +6176,7 @@ pub mod describe_organization_conformance_pack_statuses_input {
             self
         }
         /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-        /// If you do no specify a number, AWS Config uses the default. The default is 100. </p>
+        /// If you do no specify a number, Config uses the default. The default is 100. </p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -6129,7 +6234,7 @@ impl DescribeOrganizationConformancePackStatusesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_organization_conformance_pack_statuses(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_describe_organization_conformance_pack_statuses(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -6193,12 +6298,12 @@ impl DescribeOrganizationConformancePackStatusesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeOrganizationConformancePackStatuses",
         );
         Ok(builder)
@@ -6208,7 +6313,11 @@ impl DescribeOrganizationConformancePackStatusesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6230,7 +6339,7 @@ pub mod describe_pending_aggregation_requests_input {
     }
     impl Builder {
         /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is maximum. If you specify 0, AWS Config uses the
+        /// The default is maximum. If you specify 0, Config uses the
         /// default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
@@ -6286,12 +6395,8 @@ impl DescribePendingAggregationRequestsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_pending_aggregation_requests(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_pending_aggregation_requests(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6354,12 +6459,12 @@ impl DescribePendingAggregationRequestsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribePendingAggregationRequests",
         );
         Ok(builder)
@@ -6369,7 +6474,11 @@ impl DescribePendingAggregationRequestsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6436,12 +6545,8 @@ impl DescribeRemediationConfigurationsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_remediation_configurations(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_remediation_configurations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6504,12 +6609,12 @@ impl DescribeRemediationConfigurationsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeRemediationConfigurations",
         );
         Ok(builder)
@@ -6519,7 +6624,11 @@ impl DescribeRemediationConfigurationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6542,7 +6651,7 @@ pub mod describe_remediation_exceptions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule.</p>
+        /// <p>The name of the Config rule.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -6572,7 +6681,7 @@ pub mod describe_remediation_exceptions_input {
             self.resource_keys = input;
             self
         }
-        /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, AWS Config uses the default.</p>
+        /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -6628,10 +6737,8 @@ impl DescribeRemediationExceptionsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_remediation_exceptions(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_remediation_exceptions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6694,12 +6801,12 @@ impl DescribeRemediationExceptionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeRemediationExceptions",
         );
         Ok(builder)
@@ -6709,7 +6816,11 @@ impl DescribeRemediationExceptionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6731,7 +6842,7 @@ pub mod describe_remediation_execution_status_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A list of AWS Config rule names.</p>
+        /// <p>A list of Config rule names.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -6756,7 +6867,7 @@ pub mod describe_remediation_execution_status_input {
             self.resource_keys = input;
             self
         }
-        /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, AWS Config uses the default. </p>
+        /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -6812,12 +6923,8 @@ impl DescribeRemediationExecutionStatusInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_remediation_execution_status(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_remediation_execution_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6880,12 +6987,12 @@ impl DescribeRemediationExecutionStatusInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeRemediationExecutionStatus",
         );
         Ok(builder)
@@ -6895,7 +7002,11 @@ impl DescribeRemediationExecutionStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6979,10 +7090,8 @@ impl DescribeRetentionConfigurationsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_retention_configurations(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_retention_configurations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -7045,12 +7154,12 @@ impl DescribeRetentionConfigurationsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.DescribeRetentionConfigurations",
         );
         Ok(builder)
@@ -7060,7 +7169,11 @@ impl DescribeRetentionConfigurationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7100,7 +7213,7 @@ pub mod get_aggregate_compliance_details_by_config_rule_input {
             self.configuration_aggregator_name = input;
             self
         }
-        /// <p>The name of the AWS Config rule for which you want compliance
+        /// <p>The name of the Config rule for which you want compliance
         /// information.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
@@ -7135,8 +7248,8 @@ pub mod get_aggregate_compliance_details_by_config_rule_input {
         /// <note>
         /// <p>For the
         /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-        /// data type, AWS Config supports only the <code>COMPLIANT</code>
-        /// and <code>NON_COMPLIANT</code>. AWS Config does not support the
+        /// data type, Config supports only the <code>COMPLIANT</code>
+        /// and <code>NON_COMPLIANT</code>. Config does not support the
         /// <code>NOT_APPLICABLE</code> and
         /// <code>INSUFFICIENT_DATA</code> values.</p>
         /// </note>
@@ -7153,7 +7266,7 @@ pub mod get_aggregate_compliance_details_by_config_rule_input {
         }
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 50. You cannot specify a number greater than 100. If
-        /// you specify 0, AWS Config uses the default.</p>
+        /// you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -7216,7 +7329,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_aggregate_compliance_details_by_config_rule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_get_aggregate_compliance_details_by_config_rule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -7280,12 +7393,12 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetAggregateComplianceDetailsByConfigRule",
         );
         Ok(builder)
@@ -7295,7 +7408,11 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7365,7 +7482,7 @@ pub mod get_aggregate_config_rule_compliance_summary_input {
         }
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 1000. You cannot specify a number greater than 1000.
-        /// If you specify 0, AWS Config uses the default.</p>
+        /// If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -7424,7 +7541,7 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_aggregate_config_rule_compliance_summary(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_get_aggregate_config_rule_compliance_summary(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -7488,12 +7605,12 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetAggregateConfigRuleComplianceSummary",
         );
         Ok(builder)
@@ -7503,7 +7620,11 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7560,7 +7681,7 @@ pub mod get_aggregate_conformance_pack_compliance_summary_input {
             self.filters = input;
             self
         }
-        /// <p>Groups the result based on AWS Account ID or AWS Region.</p>
+        /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
         pub fn group_by_key(
             mut self,
             input: crate::model::AggregateConformancePackComplianceSummaryGroupKey,
@@ -7577,7 +7698,7 @@ pub mod get_aggregate_conformance_pack_compliance_summary_input {
             self.group_by_key = input;
             self
         }
-        /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, AWS Config uses the default.</p>
+        /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -7637,7 +7758,7 @@ impl GetAggregateConformancePackComplianceSummaryInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_aggregate_conformance_pack_compliance_summary(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_get_aggregate_conformance_pack_compliance_summary(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -7701,12 +7822,12 @@ impl GetAggregateConformancePackComplianceSummaryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetAggregateConformancePackComplianceSummary",
         );
         Ok(builder)
@@ -7716,7 +7837,11 @@ impl GetAggregateConformancePackComplianceSummaryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7779,7 +7904,7 @@ pub mod get_aggregate_discovered_resource_counts_input {
             self.group_by_key = input;
             self
         }
-        /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, AWS Config uses the default.</p>
+        /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -7837,12 +7962,8 @@ impl GetAggregateDiscoveredResourceCountsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_aggregate_discovered_resource_counts(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_aggregate_discovered_resource_counts(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -7905,12 +8026,12 @@ impl GetAggregateDiscoveredResourceCountsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetAggregateDiscoveredResourceCounts",
         );
         Ok(builder)
@@ -7920,7 +8041,11 @@ impl GetAggregateDiscoveredResourceCountsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8007,10 +8132,8 @@ impl GetAggregateResourceConfigInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_aggregate_resource_config(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_aggregate_resource_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8073,12 +8196,12 @@ impl GetAggregateResourceConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetAggregateResourceConfig",
         );
         Ok(builder)
@@ -8088,7 +8211,11 @@ impl GetAggregateResourceConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8111,7 +8238,7 @@ pub mod get_compliance_details_by_config_rule_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule for which you want compliance
+        /// <p>The name of the Config rule for which you want compliance
         /// information.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
@@ -8139,7 +8266,7 @@ pub mod get_compliance_details_by_config_rule_input {
         }
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, AWS Config uses the default.</p>
+        /// you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -8197,12 +8324,8 @@ impl GetComplianceDetailsByConfigRuleInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_compliance_details_by_config_rule(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_compliance_details_by_config_rule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8265,12 +8388,12 @@ impl GetComplianceDetailsByConfigRuleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetComplianceDetailsByConfigRule",
         );
         Ok(builder)
@@ -8280,7 +8403,11 @@ impl GetComplianceDetailsByConfigRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8303,7 +8430,7 @@ pub mod get_compliance_details_by_resource_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of the AWS resource for which you want compliance
+        /// <p>The type of the Amazon Web Services resource for which you want compliance
         /// information.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -8316,7 +8443,7 @@ pub mod get_compliance_details_by_resource_input {
             self.resource_type = input;
             self
         }
-        /// <p>The ID of the AWS resource for which you want compliance
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance
         /// information.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -8388,10 +8515,8 @@ impl GetComplianceDetailsByResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_compliance_details_by_resource(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_compliance_details_by_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8454,12 +8579,12 @@ impl GetComplianceDetailsByResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetComplianceDetailsByResource",
         );
         Ok(builder)
@@ -8469,7 +8594,11 @@ impl GetComplianceDetailsByResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8519,12 +8648,8 @@ impl GetComplianceSummaryByConfigRuleInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_compliance_summary_by_config_rule(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_compliance_summary_by_config_rule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8587,12 +8712,12 @@ impl GetComplianceSummaryByConfigRuleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetComplianceSummaryByConfigRule",
         );
         Ok(builder)
@@ -8602,7 +8727,11 @@ impl GetComplianceSummaryByConfigRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8669,12 +8798,8 @@ impl GetComplianceSummaryByResourceTypeInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_compliance_summary_by_resource_type(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_compliance_summary_by_resource_type(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8737,12 +8862,12 @@ impl GetComplianceSummaryByResourceTypeInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetComplianceSummaryByResourceType",
         );
         Ok(builder)
@@ -8752,7 +8877,11 @@ impl GetComplianceSummaryByResourceTypeInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8798,7 +8927,7 @@ pub mod get_conformance_pack_compliance_details_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, AWS Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -8855,12 +8984,8 @@ impl GetConformancePackComplianceDetailsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_conformance_pack_compliance_details(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_conformance_pack_compliance_details(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8923,12 +9048,12 @@ impl GetConformancePackComplianceDetailsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetConformancePackComplianceDetails",
         );
         Ok(builder)
@@ -8938,7 +9063,11 @@ impl GetConformancePackComplianceDetailsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9028,12 +9157,8 @@ impl GetConformancePackComplianceSummaryInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_conformance_pack_compliance_summary(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_conformance_pack_compliance_summary(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -9096,12 +9221,12 @@ impl GetConformancePackComplianceSummaryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetConformancePackComplianceSummary",
         );
         Ok(builder)
@@ -9111,7 +9236,11 @@ impl GetConformancePackComplianceSummaryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9147,7 +9276,7 @@ pub mod get_discovered_resource_counts_input {
         }
         /// <p>The maximum number of <a>ResourceCount</a> objects
         /// returned on each page. The default is 100. You cannot specify a
-        /// number greater than 100. If you specify 0, AWS Config uses the
+        /// number greater than 100. If you specify 0, Config uses the
         /// default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
@@ -9205,10 +9334,8 @@ impl GetDiscoveredResourceCountsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_discovered_resource_counts(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_discovered_resource_counts(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -9271,12 +9398,12 @@ impl GetDiscoveredResourceCountsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetDiscoveredResourceCounts",
         );
         Ok(builder)
@@ -9286,7 +9413,11 @@ impl GetDiscoveredResourceCountsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9335,7 +9466,7 @@ pub mod get_organization_config_rule_detailed_status_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, AWS Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -9392,7 +9523,7 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_organization_config_rule_detailed_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_get_organization_config_rule_detailed_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -9456,12 +9587,12 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetOrganizationConfigRuleDetailedStatus",
         );
         Ok(builder)
@@ -9471,7 +9602,11 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9525,7 +9660,7 @@ pub mod get_organization_conformance_pack_detailed_status_input {
             self
         }
         /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-        /// If you do not specify a number, AWS Config uses the default. The default is 100. </p>
+        /// If you do not specify a number, Config uses the default. The default is 100. </p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -9584,7 +9719,7 @@ impl GetOrganizationConformancePackDetailedStatusInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_organization_conformance_pack_detailed_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_crate_operation_get_organization_conformance_pack_detailed_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
@@ -9648,12 +9783,12 @@ impl GetOrganizationConformancePackDetailedStatusInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetOrganizationConformancePackDetailedStatus",
         );
         Ok(builder)
@@ -9663,7 +9798,11 @@ impl GetOrganizationConformancePackDetailedStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9752,7 +9891,7 @@ pub mod get_resource_config_history_input {
         }
         /// <p>The maximum number of configuration items returned on each
         /// page. The default is 10. You cannot specify a number greater than
-        /// 100. If you specify 0, AWS Config uses the default.</p>
+        /// 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -9812,10 +9951,9 @@ impl GetResourceConfigHistoryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_resource_config_history(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_resource_config_history(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -9878,12 +10016,12 @@ impl GetResourceConfigHistoryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetResourceConfigHistory",
         );
         Ok(builder)
@@ -9893,7 +10031,11 @@ impl GetResourceConfigHistoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9954,9 +10096,11 @@ impl GetStoredQueryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_stored_query(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_stored_query(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -10019,12 +10163,12 @@ impl GetStoredQueryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.GetStoredQuery",
         );
         Ok(builder)
@@ -10034,7 +10178,11 @@ impl GetStoredQueryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10072,7 +10220,7 @@ pub mod list_aggregate_discovered_resources_input {
             self.configuration_aggregator_name = input;
             self
         }
-        /// <p>The type of resources that you want AWS Config to list in the response.</p>
+        /// <p>The type of resources that you want Config to list in the response.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
@@ -10096,7 +10244,7 @@ pub mod list_aggregate_discovered_resources_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, AWS Config uses the default.</p>
+        /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -10153,12 +10301,8 @@ impl ListAggregateDiscoveredResourcesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_aggregate_discovered_resources(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_aggregate_discovered_resources(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -10221,12 +10365,12 @@ impl ListAggregateDiscoveredResourcesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.ListAggregateDiscoveredResources",
         );
         Ok(builder)
@@ -10236,7 +10380,11 @@ impl ListAggregateDiscoveredResourcesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10260,7 +10408,7 @@ pub mod list_discovered_resources_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of resources that you want AWS Config to list in the
+        /// <p>The type of resources that you want Config to list in the
         /// response.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
@@ -10286,9 +10434,8 @@ pub mod list_discovered_resources_input {
             self.resource_ids = input;
             self
         }
-        /// <p>The custom name of only those resources that you want AWS
-        /// Config to list in the response. If you do not specify this
-        /// parameter, AWS Config lists all resources of the specified type that
+        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
+        /// parameter, Config lists all resources of the specified type that
         /// it has discovered.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_name = Some(input.into());
@@ -10303,7 +10450,7 @@ pub mod list_discovered_resources_input {
         }
         /// <p>The maximum number of resource identifiers returned on each
         /// page. The default is 100. You cannot specify a number greater than
-        /// 100. If you specify 0, AWS Config uses the default.</p>
+        /// 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -10312,7 +10459,7 @@ pub mod list_discovered_resources_input {
             self.limit = input;
             self
         }
-        /// <p>Specifies whether AWS Config includes deleted resources in the
+        /// <p>Specifies whether Config includes deleted resources in the
         /// results. By default, deleted resources are not included.</p>
         pub fn include_deleted_resources(mut self, input: bool) -> Self {
             self.include_deleted_resources = Some(input);
@@ -10372,10 +10519,9 @@ impl ListDiscoveredResourcesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_discovered_resources(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_discovered_resources(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -10438,12 +10584,12 @@ impl ListDiscoveredResourcesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.ListDiscoveredResources",
         );
         Ok(builder)
@@ -10453,7 +10599,11 @@ impl ListDiscoveredResourcesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10525,7 +10675,10 @@ impl ListStoredQueriesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_stored_queries(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_stored_queries(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -10591,12 +10744,12 @@ impl ListStoredQueriesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.ListStoredQueries",
         );
         Ok(builder)
@@ -10606,7 +10759,11 @@ impl ListStoredQueriesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10636,7 +10793,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, AWS Config uses the default. </p>
+        /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
@@ -10689,7 +10846,10 @@ impl ListTagsForResourceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_tags_for_resource(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -10755,12 +10915,12 @@ impl ListTagsForResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.ListTagsForResource",
         );
         Ok(builder)
@@ -10770,7 +10930,11 @@ impl ListTagsForResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10865,10 +11029,8 @@ impl PutAggregationAuthorizationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_aggregation_authorization(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_put_aggregation_authorization(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -10931,12 +11093,12 @@ impl PutAggregationAuthorizationInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutAggregationAuthorization",
         );
         Ok(builder)
@@ -10946,7 +11108,11 @@ impl PutAggregationAuthorizationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11023,9 +11189,11 @@ impl PutConfigRuleInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_config_rule(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_config_rule(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -11088,12 +11256,12 @@ impl PutConfigRuleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutConfigRule",
         );
         Ok(builder)
@@ -11103,7 +11271,11 @@ impl PutConfigRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11224,10 +11396,8 @@ impl PutConfigurationAggregatorInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_configuration_aggregator(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_put_configuration_aggregator(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -11290,12 +11460,12 @@ impl PutConfigurationAggregatorInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutConfigurationAggregator",
         );
         Ok(builder)
@@ -11305,7 +11475,11 @@ impl PutConfigurationAggregatorInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11374,10 +11548,9 @@ impl PutConfigurationRecorderInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_configuration_recorder(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_configuration_recorder(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -11440,12 +11613,12 @@ impl PutConfigurationRecorderInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutConfigurationRecorder",
         );
         Ok(builder)
@@ -11455,7 +11628,11 @@ impl PutConfigurationRecorderInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11522,7 +11699,7 @@ pub mod put_conformance_pack_input {
             self.template_body = input;
             self
         }
-        /// <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
         /// <note>
         /// <p>This field is optional.</p>
         /// </note>
@@ -11606,7 +11783,10 @@ impl PutConformancePackInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_conformance_pack(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_conformance_pack(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -11672,12 +11852,12 @@ impl PutConformancePackInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutConformancePack",
         );
         Ok(builder)
@@ -11687,7 +11867,11 @@ impl PutConformancePackInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11753,7 +11937,10 @@ impl PutDeliveryChannelInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_delivery_channel(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_delivery_channel(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -11819,12 +12006,12 @@ impl PutDeliveryChannelInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutDeliveryChannel",
         );
         Ok(builder)
@@ -11834,7 +12021,11 @@ impl PutDeliveryChannelInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11868,8 +12059,7 @@ pub mod put_evaluations_input {
             self.evaluations = input;
             self
         }
-        /// <p>An encrypted token that associates an evaluation with an AWS
-        /// Config rule. Identifies the rule and the event that triggered the
+        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
         /// evaluation.</p>
         pub fn result_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_token = Some(input.into());
@@ -11880,10 +12070,9 @@ pub mod put_evaluations_input {
             self
         }
         /// <p>Use this parameter to specify a test run for
-        /// <code>PutEvaluations</code>. You can verify whether your AWS
-        /// Lambda function will deliver evaluation results to AWS Config. No
+        /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
         /// updates occur to your existing evaluations, and evaluation results
-        /// are not sent to AWS Config.</p>
+        /// are not sent to Config.</p>
         /// <note>
         /// <p>When <code>TestMode</code> is <code>true</code>,
         /// <code>PutEvaluations</code> doesn't require a valid value
@@ -11933,9 +12122,11 @@ impl PutEvaluationsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_evaluations(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_evaluations(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -11998,12 +12189,12 @@ impl PutEvaluationsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutEvaluations",
         );
         Ok(builder)
@@ -12013,7 +12204,11 @@ impl PutEvaluationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12033,7 +12228,7 @@ pub mod put_external_evaluation_input {
         pub(crate) external_evaluation: std::option::Option<crate::model::ExternalEvaluation>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule.</p>
+        /// <p>The name of the Config rule.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -12091,7 +12286,10 @@ impl PutExternalEvaluationInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_external_evaluation(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_external_evaluation(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -12157,12 +12355,12 @@ impl PutExternalEvaluationInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutExternalEvaluation",
         );
         Ok(builder)
@@ -12172,7 +12370,11 @@ impl PutExternalEvaluationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12292,10 +12494,8 @@ impl PutOrganizationConfigRuleInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_organization_config_rule(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_put_organization_config_rule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -12358,12 +12558,12 @@ impl PutOrganizationConfigRuleInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutOrganizationConfigRule",
         );
         Ok(builder)
@@ -12373,7 +12573,11 @@ impl PutOrganizationConfigRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12443,7 +12647,7 @@ pub mod put_organization_conformance_pack_input {
             self.template_body = input;
             self
         }
-        /// <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
         /// <note>
         /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
         /// </note>
@@ -12543,10 +12747,8 @@ impl PutOrganizationConformancePackInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_organization_conformance_pack(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_put_organization_conformance_pack(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -12609,12 +12811,12 @@ impl PutOrganizationConformancePackInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutOrganizationConformancePack",
         );
         Ok(builder)
@@ -12624,7 +12826,11 @@ impl PutOrganizationConformancePackInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12695,10 +12901,8 @@ impl PutRemediationConfigurationsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_remediation_configurations(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_put_remediation_configurations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -12761,12 +12965,12 @@ impl PutRemediationConfigurationsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutRemediationConfigurations",
         );
         Ok(builder)
@@ -12776,7 +12980,11 @@ impl PutRemediationConfigurationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12799,7 +13007,7 @@ pub mod put_remediation_exceptions_input {
         pub(crate) expiration_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule for which you want to create remediation exception.</p>
+        /// <p>The name of the Config rule for which you want to create remediation exception.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -12887,10 +13095,9 @@ impl PutRemediationExceptionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_remediation_exceptions(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_remediation_exceptions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -12953,12 +13160,12 @@ impl PutRemediationExceptionsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutRemediationExceptions",
         );
         Ok(builder)
@@ -12968,7 +13175,11 @@ impl PutRemediationExceptionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12994,9 +13205,9 @@ pub mod put_resource_config_input {
         >,
     }
     impl Builder {
-        /// <p>The type of the resource. The custom resource type must be registered with AWS CloudFormation. </p>
+        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
         /// <note>
-        /// <p>You cannot use the organization names “aws”, “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
+        /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
         /// </note>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -13009,7 +13220,7 @@ pub mod put_resource_config_input {
             self.resource_type = input;
             self
         }
-        /// <p>Version of the schema registered for the ResourceType in AWS CloudFormation.</p>
+        /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
         pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_version_id = Some(input.into());
             self
@@ -13042,7 +13253,7 @@ pub mod put_resource_config_input {
             self.resource_name = input;
             self
         }
-        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with AWS CloudFormation.</p>
+        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
         /// <note>
         /// <p>The configuration JSON must not exceed 64 KB.</p>
         /// </note>
@@ -13114,7 +13325,10 @@ impl PutResourceConfigInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_resource_config(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_resource_config(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -13180,12 +13394,12 @@ impl PutResourceConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutResourceConfig",
         );
         Ok(builder)
@@ -13195,7 +13409,11 @@ impl PutResourceConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13214,7 +13432,7 @@ pub mod put_retention_configuration_input {
         pub(crate) retention_period_in_days: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Number of days AWS Config stores your historical
+        /// <p>Number of days Config stores your historical
         /// information.</p>
         /// <note>
         /// <p>Currently, only applicable to the configuration item
@@ -13262,10 +13480,9 @@ impl PutRetentionConfigurationInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_retention_configuration(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_retention_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -13328,12 +13545,12 @@ impl PutRetentionConfigurationInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutRetentionConfiguration",
         );
         Ok(builder)
@@ -13343,7 +13560,11 @@ impl PutRetentionConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13427,9 +13648,11 @@ impl PutStoredQueryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_stored_query(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_stored_query(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -13492,12 +13715,12 @@ impl PutStoredQueryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.PutStoredQuery",
         );
         Ok(builder)
@@ -13507,7 +13730,11 @@ impl PutStoredQueryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13563,7 +13790,7 @@ pub mod select_aggregate_resource_config_input {
             self.limit = input;
             self
         }
-        /// <p>The maximum number of query results returned on each page. AWS Config also allows the Limit request parameter.</p>
+        /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -13620,10 +13847,8 @@ impl SelectAggregateResourceConfigInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_select_aggregate_resource_config(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_select_aggregate_resource_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -13686,12 +13911,12 @@ impl SelectAggregateResourceConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.SelectAggregateResourceConfig",
         );
         Ok(builder)
@@ -13701,7 +13926,11 @@ impl SelectAggregateResourceConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13784,7 +14013,10 @@ impl SelectResourceConfigInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_select_resource_config(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_select_resource_config(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -13850,12 +14082,12 @@ impl SelectResourceConfigInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.SelectResourceConfig",
         );
         Ok(builder)
@@ -13865,7 +14097,11 @@ impl SelectResourceConfigInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13932,10 +14168,8 @@ impl StartConfigRulesEvaluationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_start_config_rules_evaluation(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_start_config_rules_evaluation(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -13998,12 +14232,12 @@ impl StartConfigRulesEvaluationInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.StartConfigRulesEvaluation",
         );
         Ok(builder)
@@ -14013,7 +14247,11 @@ impl StartConfigRulesEvaluationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14083,10 +14321,8 @@ impl StartConfigurationRecorderInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_start_configuration_recorder(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_start_configuration_recorder(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -14149,12 +14385,12 @@ impl StartConfigurationRecorderInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.StartConfigurationRecorder",
         );
         Ok(builder)
@@ -14164,7 +14400,11 @@ impl StartConfigurationRecorderInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14184,7 +14424,7 @@ pub mod start_remediation_execution_input {
         pub(crate) resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
     }
     impl Builder {
-        /// <p>The list of names of AWS Config rules that you want to run remediation execution for.</p>
+        /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -14244,10 +14484,9 @@ impl StartRemediationExecutionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_start_remediation_execution(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_start_remediation_execution(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -14310,12 +14549,12 @@ impl StartRemediationExecutionInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.StartRemediationExecution",
         );
         Ok(builder)
@@ -14325,7 +14564,11 @@ impl StartRemediationExecutionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14393,10 +14636,9 @@ impl StopConfigurationRecorderInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_stop_configuration_recorder(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_stop_configuration_recorder(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -14459,12 +14701,12 @@ impl StopConfigurationRecorderInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.StopConfigurationRecorder",
         );
         Ok(builder)
@@ -14474,7 +14716,11 @@ impl StopConfigurationRecorderInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14549,9 +14795,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -14614,12 +14861,12 @@ impl TagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.TagResource",
         );
         Ok(builder)
@@ -14629,7 +14876,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14704,9 +14955,10 @@ impl UntagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -14769,12 +15021,12 @@ impl UntagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "StarlingDoveService.UntagResource",
         );
         Ok(builder)
@@ -14784,7 +15036,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14849,7 +15105,7 @@ impl std::fmt::Debug for StopConfigurationRecorderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRemediationExecutionInput {
-    /// <p>The list of names of AWS Config rules that you want to run remediation execution for.</p>
+    /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
     pub resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
@@ -14887,7 +15143,7 @@ impl std::fmt::Debug for StartConfigurationRecorderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConfigRulesEvaluationInput {
-    /// <p>The list of names of AWS Config rules that you want to run
+    /// <p>The list of names of Config rules that you want to run
     /// evaluations for.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -14928,7 +15184,7 @@ pub struct SelectAggregateResourceConfigInput {
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of query results returned on each page. </p>
     pub limit: i32,
-    /// <p>The maximum number of query results returned on each page. AWS Config also allows the Limit request parameter.</p>
+    /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
     pub max_results: i32,
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -14973,7 +15229,7 @@ impl std::fmt::Debug for PutStoredQueryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRetentionConfigurationInput {
-    /// <p>Number of days AWS Config stores your historical
+    /// <p>Number of days Config stores your historical
     /// information.</p>
     /// <note>
     /// <p>Currently, only applicable to the configuration item
@@ -14992,18 +15248,18 @@ impl std::fmt::Debug for PutRetentionConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourceConfigInput {
-    /// <p>The type of the resource. The custom resource type must be registered with AWS CloudFormation. </p>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
     /// <note>
-    /// <p>You cannot use the organization names “aws”, “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
+    /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>Version of the schema registered for the ResourceType in AWS CloudFormation.</p>
+    /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>Unique identifier of the resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Name of the resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
-    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with AWS CloudFormation.</p>
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
     /// <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
@@ -15028,9 +15284,9 @@ impl std::fmt::Debug for PutResourceConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRemediationExceptionsInput {
-    /// <p>The name of the AWS Config rule for which you want to create remediation exception.</p>
+    /// <p>The name of the Config rule for which you want to create remediation exception.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>An exception list of resource exception keys to be processed with the current request. AWS Config adds exception for each resource key. For example, AWS Config adds 3 exceptions for 3 resource keys. </p>
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
     pub resource_keys:
         std::option::Option<std::vec::Vec<crate::model::RemediationExceptionResourceKey>>,
     /// <p>The message contains an explanation of the exception.</p>
@@ -15081,7 +15337,7 @@ pub struct PutOrganizationConformancePackInput {
     /// <p>A string containing full conformance pack template body. Structure containing the template body
     /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
     /// <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
@@ -15094,7 +15350,7 @@ pub struct PutOrganizationConformancePackInput {
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
     pub conformance_pack_input_parameters:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
-    /// <p>A list of AWS accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
+    /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for PutOrganizationConformancePackInput {
@@ -15154,7 +15410,7 @@ impl std::fmt::Debug for PutOrganizationConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutExternalEvaluationInput {
-    /// <p>The name of the AWS Config rule.</p>
+    /// <p>The name of the Config rule.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
     pub external_evaluation: std::option::Option<crate::model::ExternalEvaluation>,
@@ -15172,20 +15428,18 @@ impl std::fmt::Debug for PutExternalEvaluationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEvaluationsInput {
-    /// <p>The assessments that the AWS Lambda function performs. Each
-    /// evaluation identifies an AWS resource and indicates whether it
-    /// complies with the AWS Config rule that invokes the AWS Lambda
+    /// <p>The assessments that the Lambda function performs. Each
+    /// evaluation identifies an Amazon Web Services resource and indicates whether it
+    /// complies with the Config rule that invokes the Lambda
     /// function.</p>
     pub evaluations: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
-    /// <p>An encrypted token that associates an evaluation with an AWS
-    /// Config rule. Identifies the rule and the event that triggered the
+    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
     /// evaluation.</p>
     pub result_token: std::option::Option<std::string::String>,
     /// <p>Use this parameter to specify a test run for
-    /// <code>PutEvaluations</code>. You can verify whether your AWS
-    /// Lambda function will deliver evaluation results to AWS Config. No
+    /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
     /// updates occur to your existing evaluations, and evaluation results
-    /// are not sent to AWS Config.</p>
+    /// are not sent to Config.</p>
     /// <note>
     /// <p>When <code>TestMode</code> is <code>true</code>,
     /// <code>PutEvaluations</code> doesn't require a valid value
@@ -15237,7 +15491,7 @@ pub struct PutConformancePackInput {
     /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
     /// </note>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
     /// <note>
     /// <p>This field is optional.</p>
     /// </note>
@@ -15361,7 +15615,7 @@ impl std::fmt::Debug for PutAggregationAuthorizationInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, AWS Config uses the default. </p>
+    /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -15397,24 +15651,22 @@ impl std::fmt::Debug for ListStoredQueriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoveredResourcesInput {
-    /// <p>The type of resources that you want AWS Config to list in the
+    /// <p>The type of resources that you want Config to list in the
     /// response.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>The IDs of only those resources that you want AWS Config to
-    /// list in the response. If you do not specify this parameter, AWS
-    /// Config lists all resources of the specified type that it has
+    /// <p>The IDs of only those resources that you want Config to
+    /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
     /// discovered.</p>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The custom name of only those resources that you want AWS
-    /// Config to list in the response. If you do not specify this
-    /// parameter, AWS Config lists all resources of the specified type that
+    /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
+    /// parameter, Config lists all resources of the specified type that
     /// it has discovered.</p>
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of resource identifiers returned on each
     /// page. The default is 100. You cannot specify a number greater than
-    /// 100. If you specify 0, AWS Config uses the default.</p>
+    /// 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>Specifies whether AWS Config includes deleted resources in the
+    /// <p>Specifies whether Config includes deleted resources in the
     /// results. By default, deleted resources are not included.</p>
     pub include_deleted_resources: bool,
     /// <p>The <code>nextToken</code> string returned on a previous page
@@ -15440,11 +15692,11 @@ impl std::fmt::Debug for ListDiscoveredResourcesInput {
 pub struct ListAggregateDiscoveredResourcesInput {
     /// <p>The name of the configuration aggregator. </p>
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
-    /// <p>The type of resources that you want AWS Config to list in the response.</p>
+    /// <p>The type of resources that you want Config to list in the response.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
     pub filters: std::option::Option<crate::model::ResourceFilters>,
-    /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, AWS Config uses the default.</p>
+    /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -15502,7 +15754,7 @@ pub struct GetResourceConfigHistoryInput {
     pub chronological_order: std::option::Option<crate::model::ChronologicalOrder>,
     /// <p>The maximum number of configuration items returned on each
     /// page. The default is 10. You cannot specify a number greater than
-    /// 100. If you specify 0, AWS Config uses the default.</p>
+    /// 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page
     /// that you use to get the next page of results in a paginated
@@ -15531,7 +15783,7 @@ pub struct GetOrganizationConformancePackDetailedStatusInput {
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
     pub filters: std::option::Option<crate::model::OrganizationResourceDetailedStatusFilters>,
     /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-    /// If you do not specify a number, AWS Config uses the default. The default is 100. </p>
+    /// If you do not specify a number, Config uses the default. The default is 100. </p>
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -15557,7 +15809,7 @@ pub struct GetOrganizationConfigRuleDetailedStatusInput {
     pub organization_config_rule_name: std::option::Option<std::string::String>,
     /// <p>A <code>StatusDetailFilters</code> object.</p>
     pub filters: std::option::Option<crate::model::StatusDetailFilters>,
-    /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, AWS Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -15580,14 +15832,13 @@ impl std::fmt::Debug for GetOrganizationConfigRuleDetailedStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDiscoveredResourceCountsInput {
     /// <p>The comma-separated list that specifies the resource types that
-    /// you want AWS Config to return (for example,
+    /// you want Config to return (for example,
     /// <code>"AWS::EC2::Instance"</code>,
     /// <code>"AWS::IAM::User"</code>).</p>
-    /// <p>If a value for <code>resourceTypes</code> is not specified, AWS
-    /// Config returns all resource types that AWS Config is recording in
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
     /// the region for your account.</p>
     /// <note>
-    /// <p>If the configuration recorder is turned off, AWS Config
+    /// <p>If the configuration recorder is turned off, Config
     /// returns an empty list of <a>ResourceCount</a>
     /// objects. If the configuration recorder is not recording a
     /// specific resource type (for example, S3 buckets), that resource
@@ -15596,7 +15847,7 @@ pub struct GetDiscoveredResourceCountsInput {
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of <a>ResourceCount</a> objects
     /// returned on each page. The default is 100. You cannot specify a
-    /// number greater than 100. If you specify 0, AWS Config uses the
+    /// number greater than 100. If you specify 0, Config uses the
     /// default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page
@@ -15641,7 +15892,7 @@ pub struct GetConformancePackComplianceDetailsInput {
     pub conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
     pub filters: std::option::Option<crate::model::ConformancePackEvaluationFilters>,
-    /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, AWS Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -15664,9 +15915,9 @@ pub struct GetComplianceSummaryByResourceTypeInput {
     /// <p>Specify one or more resource types to get the number of
     /// resources that are compliant and the number that are noncompliant
     /// for each resource type.</p>
-    /// <p>For this request, you can specify an AWS resource type such as
+    /// <p>For this request, you can specify an Amazon Web Services resource type such as
     /// <code>AWS::EC2::Instance</code>. You can specify that the
-    /// resource type is an AWS account by specifying
+    /// resource type is an Amazon Web Services account by specifying
     /// <code>AWS::::Account</code>.</p>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -15692,10 +15943,10 @@ impl std::fmt::Debug for GetComplianceSummaryByConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByResourceInput {
-    /// <p>The type of the AWS resource for which you want compliance
+    /// <p>The type of the Amazon Web Services resource for which you want compliance
     /// information.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS resource for which you want compliance
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance
     /// information.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
@@ -15723,7 +15974,7 @@ impl std::fmt::Debug for GetComplianceDetailsByResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByConfigRuleInput {
-    /// <p>The name of the AWS Config rule for which you want compliance
+    /// <p>The name of the Config rule for which you want compliance
     /// information.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
@@ -15733,7 +15984,7 @@ pub struct GetComplianceDetailsByConfigRuleInput {
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
     /// <p>The maximum number of evaluation results returned on each page.
     /// The default is 10. You cannot specify a number greater than 100. If
-    /// you specify 0, AWS Config uses the default.</p>
+    /// you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page
     /// that you use to get the next page of results in a paginated
@@ -15780,7 +16031,7 @@ pub struct GetAggregateDiscoveredResourceCountsInput {
     pub filters: std::option::Option<crate::model::ResourceCountFilters>,
     /// <p>The key to group the resource counts.</p>
     pub group_by_key: std::option::Option<crate::model::ResourceCountGroupKey>,
-    /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, AWS Config uses the default.</p>
+    /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -15808,10 +16059,10 @@ pub struct GetAggregateConformancePackComplianceSummaryInput {
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
     pub filters:
         std::option::Option<crate::model::AggregateConformancePackComplianceSummaryFilters>,
-    /// <p>Groups the result based on AWS Account ID or AWS Region.</p>
+    /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub group_by_key:
         std::option::Option<crate::model::AggregateConformancePackComplianceSummaryGroupKey>,
-    /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, AWS Config uses the default.</p>
+    /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -15843,7 +16094,7 @@ pub struct GetAggregateConfigRuleComplianceSummaryInput {
     pub group_by_key: std::option::Option<crate::model::ConfigRuleComplianceSummaryGroupKey>,
     /// <p>The maximum number of evaluation results returned on each page.
     /// The default is 1000. You cannot specify a number greater than 1000.
-    /// If you specify 0, AWS Config uses the default.</p>
+    /// If you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use
     /// to get the next page of results in a paginated response.</p>
@@ -15869,7 +16120,7 @@ impl std::fmt::Debug for GetAggregateConfigRuleComplianceSummaryInput {
 pub struct GetAggregateComplianceDetailsByConfigRuleInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
-    /// <p>The name of the AWS Config rule for which you want compliance
+    /// <p>The name of the Config rule for which you want compliance
     /// information.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>The 12-digit account ID of the source account.</p>
@@ -15880,15 +16131,15 @@ pub struct GetAggregateComplianceDetailsByConfigRuleInput {
     /// <note>
     /// <p>For the
     /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-    /// data type, AWS Config supports only the <code>COMPLIANT</code>
-    /// and <code>NON_COMPLIANT</code>. AWS Config does not support the
+    /// data type, Config supports only the <code>COMPLIANT</code>
+    /// and <code>NON_COMPLIANT</code>. Config does not support the
     /// <code>NOT_APPLICABLE</code> and
     /// <code>INSUFFICIENT_DATA</code> values.</p>
     /// </note>
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
     /// <p>The maximum number of evaluation results returned on each page.
     /// The default is 50. You cannot specify a number greater than 100. If
-    /// you specify 0, AWS Config uses the default.</p>
+    /// you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use
     /// to get the next page of results in a paginated response.</p>
@@ -15915,10 +16166,10 @@ impl std::fmt::Debug for GetAggregateComplianceDetailsByConfigRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRetentionConfigurationsInput {
     /// <p>A list of names of retention configurations for which you want
-    /// details. If you do not specify a name, AWS Config returns details
+    /// details. If you do not specify a name, Config returns details
     /// for all the retention configurations for that account.</p>
     /// <note>
-    /// <p>Currently, AWS Config supports only one retention
+    /// <p>Currently, Config supports only one retention
     /// configuration per region in your account.</p>
     /// </note>
     pub retention_configuration_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15942,11 +16193,11 @@ impl std::fmt::Debug for DescribeRetentionConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRemediationExecutionStatusInput {
-    /// <p>A list of AWS Config rule names.</p>
+    /// <p>A list of Config rule names.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
     pub resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
-    /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, AWS Config uses the default. </p>
+    /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -15965,12 +16216,12 @@ impl std::fmt::Debug for DescribeRemediationExecutionStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRemediationExceptionsInput {
-    /// <p>The name of the AWS Config rule.</p>
+    /// <p>The name of the Config rule.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>An exception list of resource exception keys to be processed with the current request. AWS Config adds exception for each resource key. For example, AWS Config adds 3 exceptions for 3 resource keys. </p>
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
     pub resource_keys:
         std::option::Option<std::vec::Vec<crate::model::RemediationExceptionResourceKey>>,
-    /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, AWS Config uses the default.</p>
+    /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -15989,7 +16240,7 @@ impl std::fmt::Debug for DescribeRemediationExceptionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRemediationConfigurationsInput {
-    /// <p>A list of AWS Config rule names of remediation configurations for which you want details. </p>
+    /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for DescribeRemediationConfigurationsInput {
@@ -16004,7 +16255,7 @@ impl std::fmt::Debug for DescribeRemediationConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingAggregationRequestsInput {
     /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is maximum. If you specify 0, AWS Config uses the
+    /// The default is maximum. If you specify 0, Config uses the
     /// default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use
@@ -16024,11 +16275,11 @@ impl std::fmt::Debug for DescribePendingAggregationRequestsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConformancePackStatusesInput {
     /// <p>The names of organization conformance packs for which you want status details.
-    /// If you do not specify any names, AWS Config returns details for all your organization conformance packs. </p>
+    /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
     pub organization_conformance_pack_names:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-    /// If you do no specify a number, AWS Config uses the default. The default is 100. </p>
+    /// If you do no specify a number, Config uses the default. The default is 100. </p>
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -16053,7 +16304,7 @@ pub struct DescribeOrganizationConformancePacksInput {
     pub organization_conformance_pack_names:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-    /// number, AWS Config uses the default. The default is 100.</p>
+    /// number, Config uses the default. The default is 100.</p>
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
     /// paginated response.</p>
@@ -16075,9 +16326,9 @@ impl std::fmt::Debug for DescribeOrganizationConformancePacksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigRuleStatusesInput {
-    /// <p>The names of organization config rules for which you want status details. If you do not specify any names, AWS Config returns details for all your organization AWS Confg rules.</p>
+    /// <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     pub organization_config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, AWS Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -16098,9 +16349,9 @@ impl std::fmt::Debug for DescribeOrganizationConfigRuleStatusesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigRulesInput {
-    /// <p>The names of organization config rules for which you want details. If you do not specify any names, AWS Config returns details for all your organization config rules.</p>
+    /// <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
     pub organization_config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, AWS Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -16173,7 +16424,7 @@ impl std::fmt::Debug for DescribeConformancePackStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConformancePacksInput {
-    /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, AWS Config returns details for all your conformance packs. </p>
+    /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
     pub conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub limit: i32,
@@ -16197,7 +16448,7 @@ pub struct DescribeConformancePackComplianceInput {
     pub conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
     pub filters: std::option::Option<crate::model::ConformancePackComplianceFilters>,
-    /// <p>The maximum number of AWS Config rules within a conformance pack are returned on each page.</p>
+    /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -16277,7 +16528,7 @@ pub struct DescribeConfigurationAggregatorSourcesStatusInput {
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of AggregatorSourceStatus returned on each
-    /// page. The default is maximum. If you specify 0, AWS Config uses the
+    /// page. The default is maximum. If you specify 0, Config uses the
     /// default.</p>
     pub limit: i32,
 }
@@ -16304,7 +16555,7 @@ pub struct DescribeConfigurationAggregatorsInput {
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of configuration aggregators returned on
-    /// each page. The default is maximum. If you specify 0, AWS Config uses
+    /// each page. The default is maximum. If you specify 0, Config uses
     /// the default.</p>
     pub limit: i32,
 }
@@ -16325,8 +16576,8 @@ impl std::fmt::Debug for DescribeConfigurationAggregatorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRulesInput {
-    /// <p>The names of the AWS Config rules for which you want details.
-    /// If you do not specify any names, AWS Config returns details for all
+    /// <p>The names of the Config rules for which you want details.
+    /// If you do not specify any names, Config returns details for all
     /// your rules.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page
@@ -16347,9 +16598,9 @@ impl std::fmt::Debug for DescribeConfigRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRuleEvaluationStatusInput {
-    /// <p>The name of the AWS managed Config rules for which you want
-    /// status information. If you do not specify any names, AWS Config
-    /// returns status information for all AWS managed Config rules that you
+    /// <p>The name of the Config managed rules for which you want
+    /// status information. If you do not specify any names, Config
+    /// returns status information for all Config managed rules that you
     /// use.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page
@@ -16361,7 +16612,7 @@ pub struct DescribeConfigRuleEvaluationStatusInput {
     /// <p>This parameter is required if the rule limit for your account
     /// is more than the default of 150 rules.</p>
     /// <p>For information about requesting a rule limit increase, see
-    /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a> in the <i>AWS General
+    /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
     /// Reference Guide</i>.</p>
     pub limit: i32,
 }
@@ -16379,12 +16630,12 @@ impl std::fmt::Debug for DescribeConfigRuleEvaluationStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByResourceInput {
-    /// <p>The types of AWS resources for which you want compliance
+    /// <p>The types of Amazon Web Services resources for which you want compliance
     /// information (for example, <code>AWS::EC2::Instance</code>). For this
-    /// action, you can specify that the resource type is an AWS account by
+    /// action, you can specify that the resource type is an Amazon Web Services account by
     /// specifying <code>AWS::::Account</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS resource for which you want compliance
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance
     /// information. You can specify only one resource ID. If you specify a
     /// resource ID, you must also specify a type for
     /// <code>ResourceType</code>.</p>
@@ -16394,7 +16645,7 @@ pub struct DescribeComplianceByResourceInput {
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
     /// <p>The maximum number of evaluation results returned on each page.
     /// The default is 10. You cannot specify a number greater than 100. If
-    /// you specify 0, AWS Config uses the default.</p>
+    /// you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page
     /// that you use to get the next page of results in a paginated
@@ -16417,7 +16668,7 @@ impl std::fmt::Debug for DescribeComplianceByResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByConfigRuleInput {
-    /// <p>Specify one or more AWS Config rule names to filter the results
+    /// <p>Specify one or more Config rule names to filter the results
     /// by rule.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters the results by compliance.</p>
@@ -16442,7 +16693,7 @@ impl std::fmt::Debug for DescribeComplianceByConfigRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregationAuthorizationsInput {
     /// <p>The maximum number of AggregationAuthorizations returned on
-    /// each page. The default is maximum. If you specify 0, AWS Config uses
+    /// each page. The default is maximum. If you specify 0, Config uses
     /// the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use
@@ -16465,7 +16716,7 @@ pub struct DescribeAggregateComplianceByConformancePacksInput {
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p>
     pub filters: std::option::Option<crate::model::AggregateConformancePackComplianceFilters>,
-    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, AWS Config uses the default. </p>
+    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -16495,7 +16746,7 @@ pub struct DescribeAggregateComplianceByConfigRulesInput {
     /// <p>The maximum number of evaluation results returned on each page.
     /// The default is
     /// maximum.
-    /// If you specify 0, AWS Config uses the default.</p>
+    /// If you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use
     /// to get the next page of results in a paginated response.</p>
@@ -16583,9 +16834,9 @@ impl std::fmt::Debug for DeleteResourceConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRemediationExceptionsInput {
-    /// <p>The name of the AWS Config rule for which you want to delete remediation exception configuration.</p>
+    /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>An exception list of resource exception keys to be processed with the current request. AWS Config adds exception for each resource key. For example, AWS Config adds 3 exceptions for 3 resource keys. </p>
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
     pub resource_keys:
         std::option::Option<std::vec::Vec<crate::model::RemediationExceptionResourceKey>>,
 }
@@ -16601,7 +16852,7 @@ impl std::fmt::Debug for DeleteRemediationExceptionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRemediationConfigurationInput {
-    /// <p>The name of the AWS Config rule for which you want to delete remediation configuration.</p>
+    /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>The type of a resource.</p>
     pub resource_type: std::option::Option<std::string::String>,
@@ -16671,7 +16922,7 @@ impl std::fmt::Debug for DeleteOrganizationConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEvaluationResultsInput {
-    /// <p>The name of the AWS Config rule for which you want to delete
+    /// <p>The name of the Config rule for which you want to delete
     /// the evaluation results.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
 }
@@ -16756,7 +17007,7 @@ impl std::fmt::Debug for DeleteConfigurationAggregatorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigRuleInput {
-    /// <p>The name of the AWS Config rule that you want to
+    /// <p>The name of the Config rule that you want to
     /// delete.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
 }

@@ -64,8 +64,8 @@ impl AddTagsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_add_tags(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -128,12 +128,12 @@ impl AddTagsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.AddTags",
         );
         Ok(builder)
@@ -143,7 +143,11 @@ impl AddTagsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -186,7 +190,7 @@ pub mod create_trail_input {
         /// </li>
         /// <li>
         /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.</p>
+        /// and <code>my--namespace</code> are not valid.</p>
         /// </li>
         /// <li>
         /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
@@ -261,7 +265,11 @@ pub mod create_trail_input {
         }
         /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
         /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail will not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
+        /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
+        /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
+        /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
+        /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn enable_log_file_validation(mut self, input: bool) -> Self {
             self.enable_log_file_validation = Some(input);
@@ -272,7 +280,7 @@ pub mod create_trail_input {
             self
         }
         /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-        /// to which CloudTrail logs will be delivered. Not required unless you specify CloudWatchLogsRoleArn.</p>
+        /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -302,6 +310,8 @@ pub mod create_trail_input {
         /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
         /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
         /// specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
         /// <li>
@@ -325,9 +335,9 @@ pub mod create_trail_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in
-        /// AWS Organizations.</p>
+        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
+        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
+        /// Organizations.</p>
         pub fn is_organization_trail(mut self, input: bool) -> Self {
             self.is_organization_trail = Some(input);
             self
@@ -392,9 +402,10 @@ impl CreateTrailInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_trail(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_trail(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -457,12 +468,12 @@ impl CreateTrailInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.CreateTrail",
         );
         Ok(builder)
@@ -472,7 +483,11 @@ impl CreateTrailInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -491,8 +506,8 @@ pub mod delete_trail_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The format of a
-        /// trail ARN is:
+        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
+        /// trail ARN.
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -533,9 +548,10 @@ impl DeleteTrailInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_trail(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_trail(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -598,12 +614,12 @@ impl DeleteTrailInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.DeleteTrail",
         );
         Ok(builder)
@@ -613,7 +629,11 @@ impl DeleteTrailInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -691,9 +711,11 @@ impl DescribeTrailsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_trails(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_trails(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -756,12 +778,12 @@ impl DescribeTrailsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.DescribeTrails",
         );
         Ok(builder)
@@ -771,7 +793,11 @@ impl DescribeTrailsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -855,7 +881,10 @@ impl GetEventSelectorsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_event_selectors(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_event_selectors(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -921,12 +950,12 @@ impl GetEventSelectorsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.GetEventSelectors",
         );
         Ok(builder)
@@ -936,7 +965,11 @@ impl GetEventSelectorsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1020,7 +1053,10 @@ impl GetInsightSelectorsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_insight_selectors(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_insight_selectors(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1086,12 +1122,12 @@ impl GetInsightSelectorsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.GetInsightSelectors",
         );
         Ok(builder)
@@ -1101,7 +1137,11 @@ impl GetInsightSelectorsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1158,10 +1198,10 @@ impl GetTrailInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_get_trail(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body = crate::operation_ser::serialize_operation_crate_operation_get_trail(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1222,12 +1262,12 @@ impl GetTrailInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.GetTrail",
         );
         Ok(builder)
@@ -1237,7 +1277,11 @@ impl GetTrailInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1256,7 +1300,8 @@ pub mod get_trail_status_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The format of a trail ARN is:</p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
+        /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
@@ -1299,9 +1344,11 @@ impl GetTrailStatusInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_trail_status(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_trail_status(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1364,12 +1411,12 @@ impl GetTrailStatusInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.GetTrailStatus",
         );
         Ok(builder)
@@ -1379,7 +1426,11 @@ impl GetTrailStatusInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1400,7 +1451,8 @@ pub mod list_public_keys_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
+        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
+        /// If not specified, the current time is used, and the current public key is returned.</p>
         pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
@@ -1409,7 +1461,8 @@ pub mod list_public_keys_input {
             self.start_time = input;
             self
         }
-        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
+        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
+        /// specified, the current time is used.</p>
         pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
@@ -1462,9 +1515,11 @@ impl ListPublicKeysInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_public_keys(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_public_keys(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1527,12 +1582,12 @@ impl ListPublicKeysInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.ListPublicKeys",
         );
         Ok(builder)
@@ -1542,7 +1597,11 @@ impl ListPublicKeysInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1616,10 +1675,10 @@ impl ListTagsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_tags(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1680,12 +1739,12 @@ impl ListTagsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.ListTags",
         );
         Ok(builder)
@@ -1695,7 +1754,11 @@ impl ListTagsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1757,8 +1820,8 @@ impl ListTrailsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_trails(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_list_trails(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -1823,12 +1886,12 @@ impl ListTrailsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.ListTrails",
         );
         Ok(builder)
@@ -1838,7 +1901,11 @@ impl ListTrailsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1966,9 +2033,10 @@ impl LookupEventsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_lookup_events(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_lookup_events(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2031,12 +2099,12 @@ impl LookupEventsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.LookupEvents",
         );
         Ok(builder)
@@ -2046,7 +2114,11 @@ impl LookupEventsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2082,13 +2154,13 @@ pub mod put_event_selectors_input {
         /// </li>
         /// <li>
         /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.</p>
+        /// and <code>my--namespace</code> are not valid.</p>
         /// </li>
         /// <li>
         /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
         /// </li>
         /// </ul>
-        /// <p>If you specify a trail ARN, it must be in the format:</p>
+        /// <p>If you specify a trail ARN, it must be in the following format.</p>
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
@@ -2164,7 +2236,10 @@ impl PutEventSelectorsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_event_selectors(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_event_selectors(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2230,12 +2305,12 @@ impl PutEventSelectorsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.PutEventSelectors",
         );
         Ok(builder)
@@ -2245,7 +2320,11 @@ impl PutEventSelectorsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2325,7 +2404,10 @@ impl PutInsightSelectorsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_insight_selectors(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_insight_selectors(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2391,12 +2473,12 @@ impl PutInsightSelectorsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.PutInsightSelectors",
         );
         Ok(builder)
@@ -2406,7 +2488,11 @@ impl PutInsightSelectorsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2483,8 +2569,8 @@ impl RemoveTagsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_remove_tags(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -2549,12 +2635,12 @@ impl RemoveTagsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.RemoveTags",
         );
         Ok(builder)
@@ -2564,7 +2650,11 @@ impl RemoveTagsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2583,7 +2673,8 @@ pub mod start_logging_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs AWS API calls. The format of a trail ARN is:</p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
+        /// The following is the format of a trail ARN.</p>
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
@@ -2625,9 +2716,10 @@ impl StartLoggingInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_start_logging(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_start_logging(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2690,12 +2782,12 @@ impl StartLoggingInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.StartLogging",
         );
         Ok(builder)
@@ -2705,7 +2797,11 @@ impl StartLoggingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2724,7 +2820,8 @@ pub mod stop_logging_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging AWS API calls. The format of a trail ARN is:</p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
+        /// API calls. The following is the format of a trail ARN.</p>
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
@@ -2766,9 +2863,10 @@ impl StopLoggingInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_stop_logging(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_stop_logging(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2831,12 +2929,12 @@ impl StopLoggingInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.StopLogging",
         );
         Ok(builder)
@@ -2846,7 +2944,11 @@ impl StopLoggingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2889,13 +2991,13 @@ pub mod update_trail_input {
         /// </li>
         /// <li>
         /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are invalid.</p>
+        /// and <code>my--namespace</code> are not valid.</p>
         /// </li>
         /// <li>
         /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
         /// </li>
         /// </ul>
-        /// <p>If <code>Name</code> is a trail ARN, it must be in the format:</p>
+        /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
@@ -2970,7 +3072,11 @@ pub mod update_trail_input {
         }
         /// <p>Specifies whether log file validation is enabled. The default is false.</p>
         /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail will not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
+        /// does not create digest files for log files that were delivered during a period in which log file integrity validation
+        /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
+        /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
+        /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn enable_log_file_validation(mut self, input: bool) -> Self {
             self.enable_log_file_validation = Some(input);
@@ -2980,7 +3086,7 @@ pub mod update_trail_input {
             self.enable_log_file_validation = input;
             self
         }
-        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify CloudWatchLogsRoleArn.</p>
+        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -3010,6 +3116,8 @@ pub mod update_trail_input {
         /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
         /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
         /// specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
         /// <li>
@@ -3033,10 +3141,10 @@ pub mod update_trail_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in
-        /// AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong
-        /// to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be
+        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
+        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
+        /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
+        /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
         /// deleted from all member accounts in the organization.</p>
         pub fn is_organization_trail(mut self, input: bool) -> Self {
             self.is_organization_trail = Some(input);
@@ -3088,9 +3196,10 @@ impl UpdateTrailInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_trail(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_trail(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3153,12 +3262,12 @@ impl UpdateTrailInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "CloudTrail_20131101.UpdateTrail",
         );
         Ok(builder)
@@ -3168,7 +3277,11 @@ impl UpdateTrailInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3196,13 +3309,13 @@ pub struct UpdateTrailInput {
     /// </li>
     /// <li>
     /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are invalid.</p>
+    /// and <code>my--namespace</code> are not valid.</p>
     /// </li>
     /// <li>
     /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
     /// </li>
     /// </ul>
-    /// <p>If <code>Name</code> is a trail ARN, it must be in the format:</p>
+    /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
     /// <p>
     /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
     /// </p>
@@ -3223,16 +3336,22 @@ pub struct UpdateTrailInput {
     pub is_multi_region_trail: std::option::Option<bool>,
     /// <p>Specifies whether log file validation is enabled. The default is false.</p>
     /// <note>
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail will not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
+    /// does not create digest files for log files that were delivered during a period in which log file integrity validation
+    /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
+    /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
+    /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub enable_log_file_validation: std::option::Option<bool>,
-    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify CloudWatchLogsRoleArn.</p>
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
     /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
     /// specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
     /// <li>
@@ -3249,10 +3368,10 @@ pub struct UpdateTrailInput {
     /// </li>
     /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account.
-    /// The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in
-    /// AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong
-    /// to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
+    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
+    /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
+    /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
     /// deleted from all member accounts in the organization.</p>
     pub is_organization_trail: std::option::Option<bool>,
 }
@@ -3283,11 +3402,12 @@ impl std::fmt::Debug for UpdateTrailInput {
     }
 }
 
-/// <p>Passes the request to CloudTrail to stop logging AWS API calls for the specified account.</p>
+/// <p>Passes the request to CloudTrail to stop logging Amazon Web Services API calls for the specified account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopLoggingInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging AWS API calls. The format of a trail ARN is:</p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
+    /// API calls. The following is the format of a trail ARN.</p>
     /// <p>
     /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
     /// </p>
@@ -3301,11 +3421,12 @@ impl std::fmt::Debug for StopLoggingInput {
     }
 }
 
-/// <p>The request to CloudTrail to start logging AWS API calls for an account.</p>
+/// <p>The request to CloudTrail to start logging Amazon Web Services API calls for an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLoggingInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs AWS API calls. The format of a trail ARN is:</p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
+    /// The following is the format of a trail ARN.</p>
     /// <p>
     /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
     /// </p>
@@ -3345,7 +3466,7 @@ impl std::fmt::Debug for RemoveTagsInput {
 pub struct PutInsightSelectorsInput {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
     pub trail_name: std::option::Option<std::string::String>,
-    /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, only <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+    /// <p>A JSON string that contains the Insights types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
     pub insight_selectors: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
 }
 impl std::fmt::Debug for PutInsightSelectorsInput {
@@ -3374,13 +3495,13 @@ pub struct PutEventSelectorsInput {
     /// </li>
     /// <li>
     /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are invalid.</p>
+    /// and <code>my--namespace</code> are not valid.</p>
     /// </li>
     /// <li>
     /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
     /// </li>
     /// </ul>
-    /// <p>If you specify a trail ARN, it must be in the format:</p>
+    /// <p>If you specify a trail ARN, it must be in the following format.</p>
     /// <p>
     /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
     /// </p>
@@ -3396,7 +3517,7 @@ pub struct PutEventSelectorsInput {
     /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
     /// advanced event selectors, see
     /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+    /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
     /// </p>
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
@@ -3464,7 +3585,8 @@ impl std::fmt::Debug for ListTrailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
-    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a trail ARN is:</p>
+    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
+    /// a trail ARN.</p>
     /// <p>
     /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
     /// </p>
@@ -3485,9 +3607,11 @@ impl std::fmt::Debug for ListTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublicKeysInput {
-    /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
+    /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
+    /// If not specified, the current time is used, and the current public key is returned.</p>
     pub start_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
+    /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
+    /// specified, the current time is used.</p>
     pub end_time: std::option::Option<smithy_types::Instant>,
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -3506,7 +3630,8 @@ impl std::fmt::Debug for ListPublicKeysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrailStatusInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The format of a trail ARN is:</p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
+    /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
     /// <p>
     /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
     /// </p>
@@ -3648,8 +3773,8 @@ impl std::fmt::Debug for DescribeTrailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrailInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The format of a
-    /// trail ARN is:
+    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
+    /// trail ARN.
     /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
     /// </p>
     pub name: std::option::Option<std::string::String>,
@@ -3679,7 +3804,7 @@ pub struct CreateTrailInput {
     /// </li>
     /// <li>
     /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are invalid.</p>
+    /// and <code>my--namespace</code> are not valid.</p>
     /// </li>
     /// <li>
     /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
@@ -3700,17 +3825,23 @@ pub struct CreateTrailInput {
     pub is_multi_region_trail: std::option::Option<bool>,
     /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
     /// <note>
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail will not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
+    /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
+    /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
+    /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
+    /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub enable_log_file_validation: std::option::Option<bool>,
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-    /// to which CloudTrail logs will be delivered. Not required unless you specify CloudWatchLogsRoleArn.</p>
+    /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
     /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
     /// specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
     /// <li>
@@ -3727,9 +3858,9 @@ pub struct CreateTrailInput {
     /// </li>
     /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account.
-    /// The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in
-    /// AWS Organizations.</p>
+    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
+    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
+    /// Organizations.</p>
     pub is_organization_trail: std::option::Option<bool>,
     /// <p>A list of tags.</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3771,7 +3902,7 @@ pub struct AddTagsInput {
     /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
     /// </p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
+    /// <p>Contains a list of tags, up to a limit of 50</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for AddTagsInput {

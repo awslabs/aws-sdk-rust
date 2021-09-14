@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_failure_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_failure_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_failure_exception::Builder,
 ) -> Result<crate::error::internal_failure_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_failure_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_request_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_invalid_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_method_not_allowed_exceptionjson_err(
+pub fn deser_structure_crate_error_method_not_allowed_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::method_not_allowed_exception::Builder,
 ) -> Result<crate::error::method_not_allowed_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_method_not_allowed_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_service_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable_exception::Builder,
 ) -> Result<crate::error::service_unavailable_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_service_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -239,7 +239,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unauthorized_exceptionjson_err(
+pub fn deser_structure_crate_error_unauthorized_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unauthorized_exception::Builder,
 ) -> Result<crate::error::unauthorized_exception::Builder, smithy_json::deserialize::Error> {
@@ -278,7 +278,7 @@ pub fn deser_structure_unauthorized_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_document_encoding_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_document_encoding_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_document_encoding_exception::Builder,
 ) -> Result<
@@ -320,7 +320,7 @@ pub fn deser_structure_unsupported_document_encoding_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_retained_message(
+pub fn deser_operation_crate_operation_get_retained_message(
     input: &[u8],
     mut builder: crate::output::get_retained_message_output::Builder,
 ) -> Result<crate::output::get_retained_message_output::Builder, smithy_json::deserialize::Error> {
@@ -376,7 +376,7 @@ pub fn deser_operation_get_retained_message(
     Ok(builder)
 }
 
-pub fn deser_operation_list_named_shadows_for_thing(
+pub fn deser_operation_crate_operation_list_named_shadows_for_thing(
     input: &[u8],
     mut builder: crate::output::list_named_shadows_for_thing_output::Builder,
 ) -> Result<
@@ -401,8 +401,9 @@ pub fn deser_operation_list_named_shadows_for_thing(
                         );
                     }
                     "results" => {
-                        builder = builder
-                            .set_results(crate::json_deser::deser_list_named_shadow_list(tokens)?);
+                        builder = builder.set_results(
+                            crate::json_deser::deser_list_com_amazonaws_iotdataplane_named_shadow_list(tokens)?
+                        );
                     }
                     "timestamp" => {
                         builder = builder.set_timestamp(
@@ -428,7 +429,7 @@ pub fn deser_operation_list_named_shadows_for_thing(
     Ok(builder)
 }
 
-pub fn deser_operation_list_retained_messages(
+pub fn deser_operation_crate_operation_list_retained_messages(
     input: &[u8],
     mut builder: crate::output::list_retained_messages_output::Builder,
 ) -> Result<crate::output::list_retained_messages_output::Builder, smithy_json::deserialize::Error>
@@ -452,7 +453,7 @@ pub fn deser_operation_list_retained_messages(
                     }
                     "retainedTopics" => {
                         builder = builder.set_retained_topics(
-                            crate::json_deser::deser_list_retained_message_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotdataplane_retained_message_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -473,7 +474,7 @@ pub fn deser_operation_list_retained_messages(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -512,7 +513,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_request_entity_too_large_exceptionjson_err(
+pub fn deser_structure_crate_error_request_entity_too_large_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::request_entity_too_large_exception::Builder,
 ) -> Result<
@@ -563,7 +564,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_named_shadow_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotdataplane_named_shadow_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -601,7 +602,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_retained_message_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotdataplane_retained_message_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::RetainedMessageSummary>>,
@@ -624,7 +625,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_retained_message_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_retained_message_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -639,7 +641,7 @@ where
     }
 }
 
-pub fn deser_structure_retained_message_summary<'a, I>(
+pub fn deser_structure_crate_model_retained_message_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RetainedMessageSummary>, smithy_json::deserialize::Error>
 where

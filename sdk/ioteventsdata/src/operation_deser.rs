@@ -23,11 +23,7 @@ pub fn parse_batch_acknowledge_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchAcknowledgeAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchAcknowledgeAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -44,11 +40,7 @@ pub fn parse_batch_acknowledge_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchAcknowledgeAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchAcknowledgeAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -57,26 +49,24 @@ pub fn parse_batch_acknowledge_alarm_error(
                 tmp
             }),
         },
-        "ServiceUnavailableException" => {
-            crate::error::BatchAcknowledgeAlarmError {
-                meta: generic,
-                kind: crate::error::BatchAcknowledgeAlarmErrorKind::ServiceUnavailableException({
+        "ServiceUnavailableException" => crate::error::BatchAcknowledgeAlarmError {
+            meta: generic,
+            kind: crate::error::BatchAcknowledgeAlarmErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchAcknowledgeAlarmError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchAcknowledgeAlarmError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::BatchAcknowledgeAlarmError {
             meta: generic,
             kind: crate::error::BatchAcknowledgeAlarmErrorKind::ThrottlingException({
@@ -85,11 +75,7 @@ pub fn parse_batch_acknowledge_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchAcknowledgeAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchAcknowledgeAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -113,7 +99,7 @@ pub fn parse_batch_acknowledge_alarm_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_acknowledge_alarm_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_batch_acknowledge_alarm(
+        output = crate::json_deser::deser_operation_crate_operation_batch_acknowledge_alarm(
             response.body().as_ref(),
             output,
         )
@@ -144,11 +130,7 @@ pub fn parse_batch_disable_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchDisableAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchDisableAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -165,11 +147,7 @@ pub fn parse_batch_disable_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchDisableAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchDisableAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -178,26 +156,24 @@ pub fn parse_batch_disable_alarm_error(
                 tmp
             }),
         },
-        "ServiceUnavailableException" => {
-            crate::error::BatchDisableAlarmError {
-                meta: generic,
-                kind: crate::error::BatchDisableAlarmErrorKind::ServiceUnavailableException({
+        "ServiceUnavailableException" => crate::error::BatchDisableAlarmError {
+            meta: generic,
+            kind: crate::error::BatchDisableAlarmErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchDisableAlarmError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchDisableAlarmError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::BatchDisableAlarmError {
             meta: generic,
             kind: crate::error::BatchDisableAlarmErrorKind::ThrottlingException({
@@ -206,11 +182,7 @@ pub fn parse_batch_disable_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchDisableAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchDisableAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -232,7 +204,7 @@ pub fn parse_batch_disable_alarm_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_disable_alarm_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_batch_disable_alarm(
+        output = crate::json_deser::deser_operation_crate_operation_batch_disable_alarm(
             response.body().as_ref(),
             output,
         )
@@ -263,11 +235,7 @@ pub fn parse_batch_enable_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchEnableAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchEnableAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -284,11 +252,7 @@ pub fn parse_batch_enable_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchEnableAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchEnableAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -297,26 +261,24 @@ pub fn parse_batch_enable_alarm_error(
                 tmp
             }),
         },
-        "ServiceUnavailableException" => {
-            crate::error::BatchEnableAlarmError {
-                meta: generic,
-                kind: crate::error::BatchEnableAlarmErrorKind::ServiceUnavailableException({
+        "ServiceUnavailableException" => crate::error::BatchEnableAlarmError {
+            meta: generic,
+            kind: crate::error::BatchEnableAlarmErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchEnableAlarmError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchEnableAlarmError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::BatchEnableAlarmError {
             meta: generic,
             kind: crate::error::BatchEnableAlarmErrorKind::ThrottlingException({
@@ -325,11 +287,7 @@ pub fn parse_batch_enable_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchEnableAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchEnableAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -351,9 +309,11 @@ pub fn parse_batch_enable_alarm_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_enable_alarm_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_batch_enable_alarm(response.body().as_ref(), output)
-                .map_err(crate::error::BatchEnableAlarmError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_batch_enable_alarm(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BatchEnableAlarmError::unhandled)?;
         output.build()
     })
 }
@@ -379,11 +339,7 @@ pub fn parse_batch_put_message_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchPutMessageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchPutMessageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -400,11 +356,7 @@ pub fn parse_batch_put_message_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchPutMessageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchPutMessageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -413,26 +365,24 @@ pub fn parse_batch_put_message_error(
                 tmp
             }),
         },
-        "ServiceUnavailableException" => {
-            crate::error::BatchPutMessageError {
-                meta: generic,
-                kind: crate::error::BatchPutMessageErrorKind::ServiceUnavailableException({
+        "ServiceUnavailableException" => crate::error::BatchPutMessageError {
+            meta: generic,
+            kind: crate::error::BatchPutMessageErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchPutMessageError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchPutMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::BatchPutMessageError {
             meta: generic,
             kind: crate::error::BatchPutMessageErrorKind::ThrottlingException({
@@ -441,11 +391,7 @@ pub fn parse_batch_put_message_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchPutMessageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchPutMessageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -466,9 +412,11 @@ pub fn parse_batch_put_message_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_put_message_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_batch_put_message(response.body().as_ref(), output)
-                .map_err(crate::error::BatchPutMessageError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_batch_put_message(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BatchPutMessageError::unhandled)?;
         output.build()
     })
 }
@@ -494,11 +442,7 @@ pub fn parse_batch_reset_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchResetAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchResetAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -515,11 +459,7 @@ pub fn parse_batch_reset_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchResetAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchResetAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -528,26 +468,24 @@ pub fn parse_batch_reset_alarm_error(
                 tmp
             }),
         },
-        "ServiceUnavailableException" => {
-            crate::error::BatchResetAlarmError {
-                meta: generic,
-                kind: crate::error::BatchResetAlarmErrorKind::ServiceUnavailableException({
+        "ServiceUnavailableException" => crate::error::BatchResetAlarmError {
+            meta: generic,
+            kind: crate::error::BatchResetAlarmErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchResetAlarmError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchResetAlarmError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::BatchResetAlarmError {
             meta: generic,
             kind: crate::error::BatchResetAlarmErrorKind::ThrottlingException({
@@ -556,11 +494,7 @@ pub fn parse_batch_reset_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchResetAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchResetAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -581,9 +515,11 @@ pub fn parse_batch_reset_alarm_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_reset_alarm_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_batch_reset_alarm(response.body().as_ref(), output)
-                .map_err(crate::error::BatchResetAlarmError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_batch_reset_alarm(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BatchResetAlarmError::unhandled)?;
         output.build()
     })
 }
@@ -610,11 +546,7 @@ pub fn parse_batch_snooze_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchSnoozeAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchSnoozeAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -631,11 +563,7 @@ pub fn parse_batch_snooze_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchSnoozeAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchSnoozeAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -644,26 +572,24 @@ pub fn parse_batch_snooze_alarm_error(
                 tmp
             }),
         },
-        "ServiceUnavailableException" => {
-            crate::error::BatchSnoozeAlarmError {
-                meta: generic,
-                kind: crate::error::BatchSnoozeAlarmErrorKind::ServiceUnavailableException({
+        "ServiceUnavailableException" => crate::error::BatchSnoozeAlarmError {
+            meta: generic,
+            kind: crate::error::BatchSnoozeAlarmErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchSnoozeAlarmError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchSnoozeAlarmError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::BatchSnoozeAlarmError {
             meta: generic,
             kind: crate::error::BatchSnoozeAlarmErrorKind::ThrottlingException({
@@ -672,11 +598,7 @@ pub fn parse_batch_snooze_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchSnoozeAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchSnoozeAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -698,9 +620,11 @@ pub fn parse_batch_snooze_alarm_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_snooze_alarm_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_batch_snooze_alarm(response.body().as_ref(), output)
-                .map_err(crate::error::BatchSnoozeAlarmError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_batch_snooze_alarm(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BatchSnoozeAlarmError::unhandled)?;
         output.build()
     })
 }
@@ -729,11 +653,7 @@ pub fn parse_batch_update_detector_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchUpdateDetectorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -750,11 +670,7 @@ pub fn parse_batch_update_detector_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchUpdateDetectorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -763,26 +679,24 @@ pub fn parse_batch_update_detector_error(
                 tmp
             }),
         },
-        "ServiceUnavailableException" => {
-            crate::error::BatchUpdateDetectorError {
-                meta: generic,
-                kind: crate::error::BatchUpdateDetectorErrorKind::ServiceUnavailableException({
+        "ServiceUnavailableException" => crate::error::BatchUpdateDetectorError {
+            meta: generic,
+            kind: crate::error::BatchUpdateDetectorErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateDetectorError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateDetectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::BatchUpdateDetectorError {
             meta: generic,
             kind: crate::error::BatchUpdateDetectorErrorKind::ThrottlingException({
@@ -791,11 +705,7 @@ pub fn parse_batch_update_detector_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchUpdateDetectorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -819,7 +729,7 @@ pub fn parse_batch_update_detector_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_update_detector_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_batch_update_detector(
+        output = crate::json_deser::deser_operation_crate_operation_batch_update_detector(
             response.body().as_ref(),
             output,
         )
@@ -849,11 +759,7 @@ pub fn parse_describe_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -870,11 +776,7 @@ pub fn parse_describe_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -883,46 +785,41 @@ pub fn parse_describe_alarm_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeAlarmError {
-                meta: generic,
-                kind: crate::error::DescribeAlarmErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeAlarmError {
+            meta: generic,
+            kind: crate::error::DescribeAlarmErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ServiceUnavailableException" => {
-            crate::error::DescribeAlarmError {
-                meta: generic,
-                kind: crate::error::DescribeAlarmErrorKind::ServiceUnavailableException({
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::DescribeAlarmError {
+            meta: generic,
+            kind: crate::error::DescribeAlarmErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DescribeAlarmError {
             meta: generic,
             kind: crate::error::DescribeAlarmErrorKind::ThrottlingException({
@@ -931,11 +828,7 @@ pub fn parse_describe_alarm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAlarmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -956,9 +849,11 @@ pub fn parse_describe_alarm_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_alarm_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_alarm(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeAlarmError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_alarm(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeAlarmError::unhandled)?;
         output.build()
     })
 }
@@ -985,11 +880,7 @@ pub fn parse_describe_detector_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeDetectorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1006,11 +897,7 @@ pub fn parse_describe_detector_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeDetectorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1019,46 +906,41 @@ pub fn parse_describe_detector_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeDetectorError {
-                meta: generic,
-                kind: crate::error::DescribeDetectorErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeDetectorError {
+            meta: generic,
+            kind: crate::error::DescribeDetectorErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ServiceUnavailableException" => {
-            crate::error::DescribeDetectorError {
-                meta: generic,
-                kind: crate::error::DescribeDetectorErrorKind::ServiceUnavailableException({
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::DescribeDetectorError {
+            meta: generic,
+            kind: crate::error::DescribeDetectorErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DescribeDetectorError {
             meta: generic,
             kind: crate::error::DescribeDetectorErrorKind::ThrottlingException({
@@ -1067,11 +949,7 @@ pub fn parse_describe_detector_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeDetectorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1093,9 +971,11 @@ pub fn parse_describe_detector_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_detector_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_detector(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeDetectorError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_detector(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeDetectorError::unhandled)?;
         output.build()
     })
 }
@@ -1121,11 +1001,7 @@ pub fn parse_list_alarms_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListAlarmsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAlarmsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1142,11 +1018,7 @@ pub fn parse_list_alarms_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListAlarmsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAlarmsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1155,46 +1027,41 @@ pub fn parse_list_alarms_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListAlarmsError {
-                meta: generic,
-                kind: crate::error::ListAlarmsErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListAlarmsError {
+            meta: generic,
+            kind: crate::error::ListAlarmsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAlarmsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ServiceUnavailableException" => {
-            crate::error::ListAlarmsError {
-                meta: generic,
-                kind: crate::error::ListAlarmsErrorKind::ServiceUnavailableException({
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAlarmsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::ListAlarmsError {
+            meta: generic,
+            kind: crate::error::ListAlarmsErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAlarmsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAlarmsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::ListAlarmsError {
             meta: generic,
             kind: crate::error::ListAlarmsErrorKind::ThrottlingException({
@@ -1203,11 +1070,7 @@ pub fn parse_list_alarms_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListAlarmsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAlarmsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1228,8 +1091,11 @@ pub fn parse_list_alarms_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_alarms_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_alarms(response.body().as_ref(), output)
-            .map_err(crate::error::ListAlarmsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_alarms(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListAlarmsError::unhandled)?;
         output.build()
     })
 }
@@ -1255,11 +1121,7 @@ pub fn parse_list_detectors_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListDetectorsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListDetectorsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1276,11 +1138,7 @@ pub fn parse_list_detectors_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListDetectorsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListDetectorsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1289,46 +1147,41 @@ pub fn parse_list_detectors_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListDetectorsError {
-                meta: generic,
-                kind: crate::error::ListDetectorsErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListDetectorsError {
+            meta: generic,
+            kind: crate::error::ListDetectorsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListDetectorsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ServiceUnavailableException" => {
-            crate::error::ListDetectorsError {
-                meta: generic,
-                kind: crate::error::ListDetectorsErrorKind::ServiceUnavailableException({
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListDetectorsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::ListDetectorsError {
+            meta: generic,
+            kind: crate::error::ListDetectorsErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListDetectorsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListDetectorsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::ListDetectorsError {
             meta: generic,
             kind: crate::error::ListDetectorsErrorKind::ThrottlingException({
@@ -1337,11 +1190,7 @@ pub fn parse_list_detectors_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListDetectorsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListDetectorsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1362,9 +1211,11 @@ pub fn parse_list_detectors_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_detectors_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_detectors(response.body().as_ref(), output)
-                .map_err(crate::error::ListDetectorsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_detectors(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListDetectorsError::unhandled)?;
         output.build()
     })
 }

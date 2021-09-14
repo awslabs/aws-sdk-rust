@@ -3109,7 +3109,7 @@ impl smithy_http::response::ParseStrictResponse for ModifyCertificates {
 /// Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
 /// </important>
 /// <note>
-/// <p>This action only applies to Aurora DB clusters.</p>
+/// <p>This action only applies to Aurora Serverless DB clusters.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyCurrentDBClusterCapacity {

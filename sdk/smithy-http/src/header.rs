@@ -5,16 +5,19 @@
 
 //! Utilities for parsing information from headers
 
-use http::header::{HeaderName, ValueIter};
-use http::HeaderValue;
-use smithy_types::instant::Format;
-use smithy_types::primitive::Parse;
-use smithy_types::Instant;
 use std::borrow::Cow;
+use std::convert::TryFrom;
 use std::error::Error;
 use std::fmt;
 use std::fmt::{Display, Formatter};
 use std::str::FromStr;
+
+use http::header::{HeaderName, ValueIter};
+use http::HeaderValue;
+
+use smithy_types::instant::Format;
+use smithy_types::primitive::Parse;
+use smithy_types::Instant;
 
 #[derive(Debug, Eq, PartialEq)]
 #[non_exhaustive]
@@ -141,14 +144,18 @@ pub fn one_or_none<T: FromStr>(
     }
 }
 
-pub fn set_header_if_absent(
+pub fn set_header_if_absent<V>(
     request: http::request::Builder,
-    key: &'static str,
-    value: &'static str,
-) -> http::request::Builder {
+    key: HeaderName,
+    value: V,
+) -> http::request::Builder
+where
+    HeaderValue: TryFrom<V>,
+    <HeaderValue as TryFrom<V>>::Error: Into<http::Error>,
+{
     if !request
         .headers_ref()
-        .map(|map| map.contains_key(key))
+        .map(|map| map.contains_key(&key))
         .unwrap_or(false)
     {
         request.header(key, value)
@@ -186,16 +193,19 @@ fn then_delim(s: &[u8]) -> Result<&[u8], ParseError> {
 
 #[cfg(test)]
 mod test {
+    use std::collections::HashMap;
+
+    use http::header::HeaderName;
+
     use crate::header::{
         headers_for_prefix, read_many_primitive, set_header_if_absent, ParseError,
     };
-    use std::collections::HashMap;
 
     #[test]
     fn put_if_absent() {
         let builder = http::Request::builder().header("foo", "bar");
-        let builder = set_header_if_absent(builder, "foo", "baz");
-        let builder = set_header_if_absent(builder, "other", "value");
+        let builder = set_header_if_absent(builder, HeaderName::from_static("foo"), "baz");
+        let builder = set_header_if_absent(builder, HeaderName::from_static("other"), "value");
         let req = builder.body(()).expect("valid request");
         assert_eq!(
             req.headers().get_all("foo").iter().collect::<Vec<_>>(),

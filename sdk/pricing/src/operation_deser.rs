@@ -13,26 +13,23 @@ pub fn parse_describe_services_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExpiredNextTokenException" => {
-            crate::error::DescribeServicesError {
-                meta: generic,
-                kind: crate::error::DescribeServicesErrorKind::ExpiredNextTokenException({
+        "ExpiredNextTokenException" => crate::error::DescribeServicesError {
+            meta: generic,
+            kind: crate::error::DescribeServicesErrorKind::ExpiredNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::expired_next_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_expired_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServicesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::expired_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_expired_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServicesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::DescribeServicesError {
             meta: generic,
             kind: crate::error::DescribeServicesErrorKind::InternalErrorException({
@@ -41,11 +38,7 @@ pub fn parse_describe_services_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_error_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeServicesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServicesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -54,17 +47,50 @@ pub fn parse_describe_services_error(
                 tmp
             }),
         },
-        "InvalidNextTokenException" => {
+        "InvalidNextTokenException" => crate::error::DescribeServicesError {
+            meta: generic,
+            kind: crate::error::DescribeServicesErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServicesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::DescribeServicesError {
+            meta: generic,
+            kind: crate::error::DescribeServicesErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServicesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => {
             crate::error::DescribeServicesError {
                 meta: generic,
-                kind: crate::error::DescribeServicesErrorKind::InvalidNextTokenException({
+                kind: crate::error::DescribeServicesErrorKind::NotFoundException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_next_token_exception::Builder::default();
+                        let mut output = crate::error::not_found_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServicesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServicesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -74,49 +100,6 @@ pub fn parse_describe_services_error(
                 }),
             }
         }
-        "InvalidParameterException" => crate::error::DescribeServicesError {
-            meta: generic,
-            kind: crate::error::DescribeServicesErrorKind::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_invalid_parameter_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DescribeServicesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DescribeServicesError {
-            meta: generic,
-            kind: crate::error::DescribeServicesErrorKind::NotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeServicesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
         _ => crate::error::DescribeServicesError::generic(generic),
     })
 }
@@ -130,9 +113,11 @@ pub fn parse_describe_services_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_services_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_services(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeServicesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_services(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeServicesError::unhandled)?;
         output.build()
     })
 }
@@ -153,26 +138,23 @@ pub fn parse_get_attribute_values_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExpiredNextTokenException" => {
-            crate::error::GetAttributeValuesError {
-                meta: generic,
-                kind: crate::error::GetAttributeValuesErrorKind::ExpiredNextTokenException({
+        "ExpiredNextTokenException" => crate::error::GetAttributeValuesError {
+            meta: generic,
+            kind: crate::error::GetAttributeValuesErrorKind::ExpiredNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::expired_next_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_expired_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAttributeValuesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::expired_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_expired_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAttributeValuesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::GetAttributeValuesError {
             meta: generic,
             kind: crate::error::GetAttributeValuesErrorKind::InternalErrorException({
@@ -181,11 +163,7 @@ pub fn parse_get_attribute_values_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_error_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetAttributeValuesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAttributeValuesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -194,17 +172,50 @@ pub fn parse_get_attribute_values_error(
                 tmp
             }),
         },
-        "InvalidNextTokenException" => {
+        "InvalidNextTokenException" => crate::error::GetAttributeValuesError {
+            meta: generic,
+            kind: crate::error::GetAttributeValuesErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAttributeValuesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::GetAttributeValuesError {
+            meta: generic,
+            kind: crate::error::GetAttributeValuesErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAttributeValuesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => {
             crate::error::GetAttributeValuesError {
                 meta: generic,
-                kind: crate::error::GetAttributeValuesErrorKind::InvalidNextTokenException({
+                kind: crate::error::GetAttributeValuesErrorKind::NotFoundException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_next_token_exception::Builder::default();
+                        let mut output = crate::error::not_found_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAttributeValuesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAttributeValuesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -214,49 +225,6 @@ pub fn parse_get_attribute_values_error(
                 }),
             }
         }
-        "InvalidParameterException" => crate::error::GetAttributeValuesError {
-            meta: generic,
-            kind: crate::error::GetAttributeValuesErrorKind::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_invalid_parameter_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::GetAttributeValuesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetAttributeValuesError {
-            meta: generic,
-            kind: crate::error::GetAttributeValuesErrorKind::NotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetAttributeValuesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
         _ => crate::error::GetAttributeValuesError::generic(generic),
     })
 }
@@ -272,7 +240,7 @@ pub fn parse_get_attribute_values_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_attribute_values_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_attribute_values(
+        output = crate::json_deser::deser_operation_crate_operation_get_attribute_values(
             response.body().as_ref(),
             output,
         )
@@ -294,26 +262,23 @@ pub fn parse_get_products_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExpiredNextTokenException" => {
-            crate::error::GetProductsError {
-                meta: generic,
-                kind: crate::error::GetProductsErrorKind::ExpiredNextTokenException({
+        "ExpiredNextTokenException" => crate::error::GetProductsError {
+            meta: generic,
+            kind: crate::error::GetProductsErrorKind::ExpiredNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::expired_next_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_expired_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProductsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::expired_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_expired_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProductsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::GetProductsError {
             meta: generic,
             kind: crate::error::GetProductsErrorKind::InternalErrorException({
@@ -322,11 +287,7 @@ pub fn parse_get_products_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_error_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetProductsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProductsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -335,17 +296,50 @@ pub fn parse_get_products_error(
                 tmp
             }),
         },
-        "InvalidNextTokenException" => {
+        "InvalidNextTokenException" => crate::error::GetProductsError {
+            meta: generic,
+            kind: crate::error::GetProductsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProductsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::GetProductsError {
+            meta: generic,
+            kind: crate::error::GetProductsErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProductsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => {
             crate::error::GetProductsError {
                 meta: generic,
-                kind: crate::error::GetProductsErrorKind::InvalidNextTokenException({
+                kind: crate::error::GetProductsErrorKind::NotFoundException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_next_token_exception::Builder::default();
+                        let mut output = crate::error::not_found_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProductsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProductsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -355,49 +349,6 @@ pub fn parse_get_products_error(
                 }),
             }
         }
-        "InvalidParameterException" => crate::error::GetProductsError {
-            meta: generic,
-            kind: crate::error::GetProductsErrorKind::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_invalid_parameter_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::GetProductsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetProductsError {
-            meta: generic,
-            kind: crate::error::GetProductsErrorKind::NotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetProductsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
         _ => crate::error::GetProductsError::generic(generic),
     })
 }
@@ -410,8 +361,11 @@ pub fn parse_get_products_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_products_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_products(response.body().as_ref(), output)
-            .map_err(crate::error::GetProductsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_get_products(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetProductsError::unhandled)?;
         output.build()
     })
 }

@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_service_errorjson_err(
+pub fn deser_structure_crate_error_internal_service_errorjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_error::Builder,
 ) -> Result<crate::error::internal_service_error::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_service_errorjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_parameter_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_parameter_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_parameter_exception::Builder,
 ) -> Result<crate::error::invalid_parameter_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_invalid_parameter_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_request_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_invalid_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_cancel_rotate_secret(
+pub fn deser_operation_crate_operation_cancel_rotate_secret(
     input: &[u8],
     mut builder: crate::output::cancel_rotate_secret_output::Builder,
 ) -> Result<crate::output::cancel_rotate_secret_output::Builder, smithy_json::deserialize::Error> {
@@ -214,7 +214,7 @@ pub fn deser_operation_cancel_rotate_secret(
     Ok(builder)
 }
 
-pub fn deser_structure_encryption_failurejson_err(
+pub fn deser_structure_crate_error_encryption_failurejson_err(
     input: &[u8],
     mut builder: crate::error::encryption_failure::Builder,
 ) -> Result<crate::error::encryption_failure::Builder, smithy_json::deserialize::Error> {
@@ -253,7 +253,7 @@ pub fn deser_structure_encryption_failurejson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -292,7 +292,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_malformed_policy_document_exceptionjson_err(
+pub fn deser_structure_crate_error_malformed_policy_document_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::malformed_policy_document_exception::Builder,
 ) -> Result<
@@ -334,7 +334,7 @@ pub fn deser_structure_malformed_policy_document_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_precondition_not_met_exceptionjson_err(
+pub fn deser_structure_crate_error_precondition_not_met_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::precondition_not_met_exception::Builder,
 ) -> Result<crate::error::precondition_not_met_exception::Builder, smithy_json::deserialize::Error>
@@ -374,7 +374,7 @@ pub fn deser_structure_precondition_not_met_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_exists_exception::Builder,
 ) -> Result<crate::error::resource_exists_exception::Builder, smithy_json::deserialize::Error> {
@@ -413,7 +413,7 @@ pub fn deser_structure_resource_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_secret(
+pub fn deser_operation_crate_operation_create_secret(
     input: &[u8],
     mut builder: crate::output::create_secret_output::Builder,
 ) -> Result<crate::output::create_secret_output::Builder, smithy_json::deserialize::Error> {
@@ -450,7 +450,7 @@ pub fn deser_operation_create_secret(
                     }
                     "ReplicationStatus" => {
                         builder = builder.set_replication_status(
-                            crate::json_deser::deser_list_replication_status_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_secretsmanager_replication_status_list_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -471,7 +471,7 @@ pub fn deser_operation_create_secret(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_resource_policy(
+pub fn deser_operation_crate_operation_delete_resource_policy(
     input: &[u8],
     mut builder: crate::output::delete_resource_policy_output::Builder,
 ) -> Result<crate::output::delete_resource_policy_output::Builder, smithy_json::deserialize::Error>
@@ -518,7 +518,7 @@ pub fn deser_operation_delete_resource_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_secret(
+pub fn deser_operation_crate_operation_delete_secret(
     input: &[u8],
     mut builder: crate::output::delete_secret_output::Builder,
 ) -> Result<crate::output::delete_secret_output::Builder, smithy_json::deserialize::Error> {
@@ -572,7 +572,7 @@ pub fn deser_operation_delete_secret(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_secret(
+pub fn deser_operation_crate_operation_describe_secret(
     input: &[u8],
     mut builder: crate::output::describe_secret_output::Builder,
 ) -> Result<crate::output::describe_secret_output::Builder, smithy_json::deserialize::Error> {
@@ -628,7 +628,9 @@ pub fn deser_operation_describe_secret(
                     }
                     "RotationRules" => {
                         builder = builder.set_rotation_rules(
-                            crate::json_deser::deser_structure_rotation_rules_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_rotation_rules_type(
+                                tokens,
+                            )?,
                         );
                     }
                     "LastRotatedDate" => {
@@ -664,14 +666,13 @@ pub fn deser_operation_describe_secret(
                         );
                     }
                     "Tags" => {
-                        builder =
-                            builder.set_tags(crate::json_deser::deser_list_tag_list_type(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_secretsmanager_tag_list_type(tokens)?
+                        );
                     }
                     "VersionIdsToStages" => {
                         builder = builder.set_version_ids_to_stages(
-                            crate::json_deser::deser_map_secret_versions_to_stages_map_type(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_map_com_amazonaws_secretsmanager_secret_versions_to_stages_map_type(tokens)?
                         );
                     }
                     "OwningService" => {
@@ -698,7 +699,7 @@ pub fn deser_operation_describe_secret(
                     }
                     "ReplicationStatus" => {
                         builder = builder.set_replication_status(
-                            crate::json_deser::deser_list_replication_status_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_secretsmanager_replication_status_list_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -719,7 +720,7 @@ pub fn deser_operation_describe_secret(
     Ok(builder)
 }
 
-pub fn deser_operation_get_random_password(
+pub fn deser_operation_crate_operation_get_random_password(
     input: &[u8],
     mut builder: crate::output::get_random_password_output::Builder,
 ) -> Result<crate::output::get_random_password_output::Builder, smithy_json::deserialize::Error> {
@@ -758,7 +759,7 @@ pub fn deser_operation_get_random_password(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resource_policy(
+pub fn deser_operation_crate_operation_get_resource_policy(
     input: &[u8],
     mut builder: crate::output::get_resource_policy_output::Builder,
 ) -> Result<crate::output::get_resource_policy_output::Builder, smithy_json::deserialize::Error> {
@@ -811,7 +812,7 @@ pub fn deser_operation_get_resource_policy(
     Ok(builder)
 }
 
-pub fn deser_structure_decryption_failurejson_err(
+pub fn deser_structure_crate_error_decryption_failurejson_err(
     input: &[u8],
     mut builder: crate::error::decryption_failure::Builder,
 ) -> Result<crate::error::decryption_failure::Builder, smithy_json::deserialize::Error> {
@@ -850,7 +851,7 @@ pub fn deser_structure_decryption_failurejson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_secret_value(
+pub fn deser_operation_crate_operation_get_secret_value(
     input: &[u8],
     mut builder: crate::output::get_secret_value_output::Builder,
 ) -> Result<crate::output::get_secret_value_output::Builder, smithy_json::deserialize::Error> {
@@ -899,7 +900,7 @@ pub fn deser_operation_get_secret_value(
                     }
                     "VersionStages" => {
                         builder = builder.set_version_stages(
-                            crate::json_deser::deser_list_secret_version_stages_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_secretsmanager_secret_version_stages_type(tokens)?
                         );
                     }
                     "CreatedDate" => {
@@ -928,7 +929,7 @@ pub fn deser_operation_get_secret_value(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_next_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_next_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_next_token_exception::Builder,
 ) -> Result<crate::error::invalid_next_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -967,7 +968,7 @@ pub fn deser_structure_invalid_next_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_secrets(
+pub fn deser_operation_crate_operation_list_secrets(
     input: &[u8],
     mut builder: crate::output::list_secrets_output::Builder,
 ) -> Result<crate::output::list_secrets_output::Builder, smithy_json::deserialize::Error> {
@@ -983,7 +984,7 @@ pub fn deser_operation_list_secrets(
                 match key.to_unescaped()?.as_ref() {
                     "SecretList" => {
                         builder = builder.set_secret_list(
-                            crate::json_deser::deser_list_secret_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_secretsmanager_secret_list_type(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1011,7 +1012,7 @@ pub fn deser_operation_list_secrets(
     Ok(builder)
 }
 
-pub fn deser_operation_list_secret_version_ids(
+pub fn deser_operation_crate_operation_list_secret_version_ids(
     input: &[u8],
     mut builder: crate::output::list_secret_version_ids_output::Builder,
 ) -> Result<crate::output::list_secret_version_ids_output::Builder, smithy_json::deserialize::Error>
@@ -1028,7 +1029,7 @@ pub fn deser_operation_list_secret_version_ids(
                 match key.to_unescaped()?.as_ref() {
                     "Versions" => {
                         builder = builder.set_versions(
-                            crate::json_deser::deser_list_secret_versions_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_secretsmanager_secret_versions_list_type(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1070,7 +1071,7 @@ pub fn deser_operation_list_secret_version_ids(
     Ok(builder)
 }
 
-pub fn deser_structure_public_policy_exceptionjson_err(
+pub fn deser_structure_crate_error_public_policy_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::public_policy_exception::Builder,
 ) -> Result<crate::error::public_policy_exception::Builder, smithy_json::deserialize::Error> {
@@ -1109,7 +1110,7 @@ pub fn deser_structure_public_policy_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_put_resource_policy(
+pub fn deser_operation_crate_operation_put_resource_policy(
     input: &[u8],
     mut builder: crate::output::put_resource_policy_output::Builder,
 ) -> Result<crate::output::put_resource_policy_output::Builder, smithy_json::deserialize::Error> {
@@ -1155,7 +1156,7 @@ pub fn deser_operation_put_resource_policy(
     Ok(builder)
 }
 
-pub fn deser_operation_put_secret_value(
+pub fn deser_operation_crate_operation_put_secret_value(
     input: &[u8],
     mut builder: crate::output::put_secret_value_output::Builder,
 ) -> Result<crate::output::put_secret_value_output::Builder, smithy_json::deserialize::Error> {
@@ -1192,7 +1193,7 @@ pub fn deser_operation_put_secret_value(
                     }
                     "VersionStages" => {
                         builder = builder.set_version_stages(
-                            crate::json_deser::deser_list_secret_version_stages_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_secretsmanager_secret_version_stages_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1213,7 +1214,7 @@ pub fn deser_operation_put_secret_value(
     Ok(builder)
 }
 
-pub fn deser_operation_remove_regions_from_replication(
+pub fn deser_operation_crate_operation_remove_regions_from_replication(
     input: &[u8],
     mut builder: crate::output::remove_regions_from_replication_output::Builder,
 ) -> Result<
@@ -1239,7 +1240,7 @@ pub fn deser_operation_remove_regions_from_replication(
                     }
                     "ReplicationStatus" => {
                         builder = builder.set_replication_status(
-                            crate::json_deser::deser_list_replication_status_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_secretsmanager_replication_status_list_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1260,7 +1261,7 @@ pub fn deser_operation_remove_regions_from_replication(
     Ok(builder)
 }
 
-pub fn deser_operation_replicate_secret_to_regions(
+pub fn deser_operation_crate_operation_replicate_secret_to_regions(
     input: &[u8],
     mut builder: crate::output::replicate_secret_to_regions_output::Builder,
 ) -> Result<
@@ -1286,7 +1287,7 @@ pub fn deser_operation_replicate_secret_to_regions(
                     }
                     "ReplicationStatus" => {
                         builder = builder.set_replication_status(
-                            crate::json_deser::deser_list_replication_status_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_secretsmanager_replication_status_list_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1307,7 +1308,7 @@ pub fn deser_operation_replicate_secret_to_regions(
     Ok(builder)
 }
 
-pub fn deser_operation_restore_secret(
+pub fn deser_operation_crate_operation_restore_secret(
     input: &[u8],
     mut builder: crate::output::restore_secret_output::Builder,
 ) -> Result<crate::output::restore_secret_output::Builder, smithy_json::deserialize::Error> {
@@ -1353,7 +1354,7 @@ pub fn deser_operation_restore_secret(
     Ok(builder)
 }
 
-pub fn deser_operation_rotate_secret(
+pub fn deser_operation_crate_operation_rotate_secret(
     input: &[u8],
     mut builder: crate::output::rotate_secret_output::Builder,
 ) -> Result<crate::output::rotate_secret_output::Builder, smithy_json::deserialize::Error> {
@@ -1406,7 +1407,7 @@ pub fn deser_operation_rotate_secret(
     Ok(builder)
 }
 
-pub fn deser_operation_stop_replication_to_replica(
+pub fn deser_operation_crate_operation_stop_replication_to_replica(
     input: &[u8],
     mut builder: crate::output::stop_replication_to_replica_output::Builder,
 ) -> Result<
@@ -1448,7 +1449,7 @@ pub fn deser_operation_stop_replication_to_replica(
     Ok(builder)
 }
 
-pub fn deser_operation_update_secret(
+pub fn deser_operation_crate_operation_update_secret(
     input: &[u8],
     mut builder: crate::output::update_secret_output::Builder,
 ) -> Result<crate::output::update_secret_output::Builder, smithy_json::deserialize::Error> {
@@ -1501,7 +1502,7 @@ pub fn deser_operation_update_secret(
     Ok(builder)
 }
 
-pub fn deser_operation_update_secret_version_stage(
+pub fn deser_operation_crate_operation_update_secret_version_stage(
     input: &[u8],
     mut builder: crate::output::update_secret_version_stage_output::Builder,
 ) -> Result<
@@ -1550,7 +1551,7 @@ pub fn deser_operation_update_secret_version_stage(
     Ok(builder)
 }
 
-pub fn deser_operation_validate_resource_policy(
+pub fn deser_operation_crate_operation_validate_resource_policy(
     input: &[u8],
     mut builder: crate::output::validate_resource_policy_output::Builder,
 ) -> Result<crate::output::validate_resource_policy_output::Builder, smithy_json::deserialize::Error>
@@ -1572,7 +1573,7 @@ pub fn deser_operation_validate_resource_policy(
                     }
                     "ValidationErrors" => {
                         builder = builder.set_validation_errors(
-                            crate::json_deser::deser_list_validation_errors_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_secretsmanager_validation_errors_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1602,7 +1603,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_replication_status_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_secretsmanager_replication_status_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
@@ -1625,7 +1626,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_replication_status_type(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_replication_status_type(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1640,7 +1643,7 @@ where
     }
 }
 
-pub fn deser_structure_rotation_rules_type<'a, I>(
+pub fn deser_structure_crate_model_rotation_rules_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RotationRulesType>, smithy_json::deserialize::Error>
 where
@@ -1685,7 +1688,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_secretsmanager_tag_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -1704,7 +1707,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1720,7 +1723,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_secret_versions_to_stages_map_type<'a, I>(
+pub fn deser_map_com_amazonaws_secretsmanager_secret_versions_to_stages_map_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
@@ -1741,7 +1744,8 @@ where
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
                         let value =
-                            crate::json_deser::deser_list_secret_version_stages_type(tokens)?;
+                            crate::json_deser::deser_list_com_amazonaws_secretsmanager_secret_version_stages_type(tokens)?
+                        ;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
@@ -1762,7 +1766,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_secret_version_stages_type<'a, I>(
+pub fn deser_list_com_amazonaws_secretsmanager_secret_version_stages_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1800,7 +1804,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_secret_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_secretsmanager_secret_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SecretListEntry>>, smithy_json::deserialize::Error>
 where
@@ -1819,7 +1823,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_secret_list_entry(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_secret_list_entry(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1835,7 +1842,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_secret_versions_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_secretsmanager_secret_versions_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
@@ -1858,7 +1865,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_secret_versions_list_entry(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_secret_versions_list_entry(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1874,7 +1882,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_validation_errors_type<'a, I>(
+pub fn deser_list_com_amazonaws_secretsmanager_validation_errors_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
@@ -1897,7 +1905,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_validation_errors_entry(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_validation_errors_entry(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1912,7 +1922,7 @@ where
     }
 }
 
-pub fn deser_structure_replication_status_type<'a, I>(
+pub fn deser_structure_crate_model_replication_status_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ReplicationStatusType>, smithy_json::deserialize::Error>
 where
@@ -1995,7 +2005,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -2049,7 +2059,7 @@ where
     }
 }
 
-pub fn deser_structure_secret_list_entry<'a, I>(
+pub fn deser_structure_crate_model_secret_list_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SecretListEntry>, smithy_json::deserialize::Error>
 where
@@ -2121,7 +2131,7 @@ where
                             }
                             "RotationRules" => {
                                 builder = builder.set_rotation_rules(
-                                    crate::json_deser::deser_structure_rotation_rules_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_rotation_rules_type(tokens)?
                                 );
                             }
                             "LastRotatedDate" => {
@@ -2157,12 +2167,13 @@ where
                                 );
                             }
                             "Tags" => {
-                                builder = builder
-                                    .set_tags(crate::json_deser::deser_list_tag_list_type(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_list_com_amazonaws_secretsmanager_tag_list_type(tokens)?
+                                );
                             }
                             "SecretVersionsToStages" => {
                                 builder = builder.set_secret_versions_to_stages(
-                                    crate::json_deser::deser_map_secret_versions_to_stages_map_type(tokens)?
+                                    crate::json_deser::deser_map_com_amazonaws_secretsmanager_secret_versions_to_stages_map_type(tokens)?
                                 );
                             }
                             "OwningService" => {
@@ -2209,7 +2220,7 @@ where
     }
 }
 
-pub fn deser_structure_secret_versions_list_entry<'a, I>(
+pub fn deser_structure_crate_model_secret_versions_list_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SecretVersionsListEntry>, smithy_json::deserialize::Error>
 where
@@ -2238,9 +2249,7 @@ where
                             }
                             "VersionStages" => {
                                 builder = builder.set_version_stages(
-                                    crate::json_deser::deser_list_secret_version_stages_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_secretsmanager_secret_version_stages_type(tokens)?
                                 );
                             }
                             "LastAccessedDate" => {
@@ -2261,7 +2270,7 @@ where
                             }
                             "KmsKeyIds" => {
                                 builder = builder.set_kms_key_ids(
-                                    crate::json_deser::deser_list_kms_key_id_list_type(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_secretsmanager_kms_key_id_list_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2282,7 +2291,7 @@ where
     }
 }
 
-pub fn deser_structure_validation_errors_entry<'a, I>(
+pub fn deser_structure_crate_model_validation_errors_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ValidationErrorsEntry>, smithy_json::deserialize::Error>
 where
@@ -2337,7 +2346,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_kms_key_id_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_secretsmanager_kms_key_id_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where

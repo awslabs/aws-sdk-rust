@@ -5298,16 +5298,24 @@ pub struct ScalingConfigurationInfo {
     /// <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     pub max_capacity: std::option::Option<i32>,
     /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster
-    /// in <code>serverless</code> DB engine mode.</p>    
+    /// in <code>serverless</code> DB engine mode.</p>
     /// <p>When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.</p>
     pub auto_pause: std::option::Option<bool>,
     /// <p>The remaining amount of time, in seconds, before the Aurora DB cluster in
     /// <code>serverless</code> mode is paused. A DB cluster can be paused only when
     /// it's idle (it has no connections).</p>
     pub seconds_until_auto_pause: std::option::Option<i32>,
-    /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
-    /// <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
+    /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an
+    /// Aurora Serverless cluster. The value is either <code>ForceApplyCapacityChange</code> or
+    /// <code>RollbackCapacityChange</code>.</p>
+    /// <p>
+    /// <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
+    /// <p>
+    /// <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
     pub timeout_action: std::option::Option<std::string::String>,
+    /// <p>The number of seconds before scaling times out. What happens when an attempted scaling action times out
+    /// is determined by the <code>TimeoutAction</code> setting.</p>
+    pub seconds_before_timeout: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ScalingConfigurationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5317,6 +5325,7 @@ impl std::fmt::Debug for ScalingConfigurationInfo {
         formatter.field("auto_pause", &self.auto_pause);
         formatter.field("seconds_until_auto_pause", &self.seconds_until_auto_pause);
         formatter.field("timeout_action", &self.timeout_action);
+        formatter.field("seconds_before_timeout", &self.seconds_before_timeout);
         formatter.finish()
     }
 }
@@ -5331,6 +5340,7 @@ pub mod scaling_configuration_info {
         pub(crate) auto_pause: std::option::Option<bool>,
         pub(crate) seconds_until_auto_pause: std::option::Option<i32>,
         pub(crate) timeout_action: std::option::Option<std::string::String>,
+        pub(crate) seconds_before_timeout: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine
@@ -5353,7 +5363,7 @@ pub mod scaling_configuration_info {
             self
         }
         /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster
-        /// in <code>serverless</code> DB engine mode.</p>    
+        /// in <code>serverless</code> DB engine mode.</p>
         /// <p>When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.</p>
         pub fn auto_pause(mut self, input: bool) -> Self {
             self.auto_pause = Some(input);
@@ -5374,8 +5384,13 @@ pub mod scaling_configuration_info {
             self.seconds_until_auto_pause = input;
             self
         }
-        /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
-        /// <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
+        /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an
+        /// Aurora Serverless cluster. The value is either <code>ForceApplyCapacityChange</code> or
+        /// <code>RollbackCapacityChange</code>.</p>
+        /// <p>
+        /// <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
+        /// <p>
+        /// <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
         pub fn timeout_action(mut self, input: impl Into<std::string::String>) -> Self {
             self.timeout_action = Some(input.into());
             self
@@ -5387,6 +5402,16 @@ pub mod scaling_configuration_info {
             self.timeout_action = input;
             self
         }
+        /// <p>The number of seconds before scaling times out. What happens when an attempted scaling action times out
+        /// is determined by the <code>TimeoutAction</code> setting.</p>
+        pub fn seconds_before_timeout(mut self, input: i32) -> Self {
+            self.seconds_before_timeout = Some(input);
+            self
+        }
+        pub fn set_seconds_before_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.seconds_before_timeout = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ScalingConfigurationInfo`](crate::model::ScalingConfigurationInfo)
         pub fn build(self) -> crate::model::ScalingConfigurationInfo {
             crate::model::ScalingConfigurationInfo {
@@ -5395,6 +5420,7 @@ pub mod scaling_configuration_info {
                 auto_pause: self.auto_pause,
                 seconds_until_auto_pause: self.seconds_until_auto_pause,
                 timeout_action: self.timeout_action,
+                seconds_before_timeout: self.seconds_before_timeout,
             }
         }
     }
@@ -6092,6 +6118,10 @@ pub struct ScalingConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
     /// Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub timeout_action: std::option::Option<std::string::String>,
+    /// <p>The amount of time, in seconds, that Aurora Serverless tries to find a scaling point
+    /// to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
+    /// <p>Specify a value between 60 and 600 seconds.</p>
+    pub seconds_before_timeout: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ScalingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6101,6 +6131,7 @@ impl std::fmt::Debug for ScalingConfiguration {
         formatter.field("auto_pause", &self.auto_pause);
         formatter.field("seconds_until_auto_pause", &self.seconds_until_auto_pause);
         formatter.field("timeout_action", &self.timeout_action);
+        formatter.field("seconds_before_timeout", &self.seconds_before_timeout);
         formatter.finish()
     }
 }
@@ -6115,6 +6146,7 @@ pub mod scaling_configuration {
         pub(crate) auto_pause: std::option::Option<bool>,
         pub(crate) seconds_until_auto_pause: std::option::Option<i32>,
         pub(crate) timeout_action: std::option::Option<std::string::String>,
+        pub(crate) seconds_before_timeout: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
@@ -6187,6 +6219,17 @@ pub mod scaling_configuration {
             self.timeout_action = input;
             self
         }
+        /// <p>The amount of time, in seconds, that Aurora Serverless tries to find a scaling point
+        /// to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
+        /// <p>Specify a value between 60 and 600 seconds.</p>
+        pub fn seconds_before_timeout(mut self, input: i32) -> Self {
+            self.seconds_before_timeout = Some(input);
+            self
+        }
+        pub fn set_seconds_before_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.seconds_before_timeout = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ScalingConfiguration`](crate::model::ScalingConfiguration)
         pub fn build(self) -> crate::model::ScalingConfiguration {
             crate::model::ScalingConfiguration {
@@ -6195,6 +6238,7 @@ pub mod scaling_configuration {
                 auto_pause: self.auto_pause,
                 seconds_until_auto_pause: self.seconds_until_auto_pause,
                 timeout_action: self.timeout_action,
+                seconds_before_timeout: self.seconds_before_timeout,
             }
         }
     }

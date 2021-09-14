@@ -16,9 +16,11 @@ pub fn parse_create_channel_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_channel_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_channel(response.body().as_ref(), output)
-                .map_err(crate::error::CreateChannelError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_channel(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateChannelError::unhandled)?;
         output.build()
     })
 }
@@ -40,9 +42,11 @@ pub fn parse_create_program_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_program_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_program(response.body().as_ref(), output)
-                .map_err(crate::error::CreateProgramError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_program(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateProgramError::unhandled)?;
         output.build()
     })
 }
@@ -70,7 +74,7 @@ pub fn parse_create_source_location_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_source_location_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_source_location(
+        output = crate::json_deser::deser_operation_crate_operation_create_source_location(
             response.body().as_ref(),
             output,
         )
@@ -96,9 +100,11 @@ pub fn parse_create_vod_source_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_vod_source_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_vod_source(response.body().as_ref(), output)
-                .map_err(crate::error::CreateVodSourceError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_vod_source(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateVodSourceError::unhandled)?;
         output.build()
     })
 }
@@ -266,9 +272,11 @@ pub fn parse_describe_channel_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_channel_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_channel(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeChannelError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_channel(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeChannelError::unhandled)?;
         output.build()
     })
 }
@@ -290,9 +298,11 @@ pub fn parse_describe_program_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_program_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_program(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeProgramError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_program(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeProgramError::unhandled)?;
         output.build()
     })
 }
@@ -320,7 +330,7 @@ pub fn parse_describe_source_location_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_source_location_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_source_location(
+        output = crate::json_deser::deser_operation_crate_operation_describe_source_location(
             response.body().as_ref(),
             output,
         )
@@ -348,7 +358,7 @@ pub fn parse_describe_vod_source_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vod_source_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_vod_source(
+        output = crate::json_deser::deser_operation_crate_operation_describe_vod_source(
             response.body().as_ref(),
             output,
         )
@@ -376,9 +386,11 @@ pub fn parse_get_channel_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_channel_policy_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_get_channel_policy(response.body().as_ref(), output)
-                .map_err(crate::error::GetChannelPolicyError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_get_channel_policy(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetChannelPolicyError::unhandled)?;
         output.build()
     })
 }
@@ -406,7 +418,7 @@ pub fn parse_get_channel_schedule_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_channel_schedule_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_channel_schedule(
+        output = crate::json_deser::deser_operation_crate_operation_get_channel_schedule(
             response.body().as_ref(),
             output,
         )
@@ -440,7 +452,7 @@ pub fn parse_get_playback_configuration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_playback_configuration_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_playback_configuration(
+        output = crate::json_deser::deser_operation_crate_operation_get_playback_configuration(
             response.body().as_ref(),
             output,
         )
@@ -466,8 +478,11 @@ pub fn parse_list_alerts_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_alerts_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_alerts(response.body().as_ref(), output)
-            .map_err(crate::error::ListAlertsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_alerts(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListAlertsError::unhandled)?;
         output.build()
     })
 }
@@ -489,8 +504,11 @@ pub fn parse_list_channels_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_channels_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_channels(response.body().as_ref(), output)
-            .map_err(crate::error::ListChannelsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_channels(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListChannelsError::unhandled)?;
         output.build()
     })
 }
@@ -520,7 +538,7 @@ pub fn parse_list_playback_configurations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_playback_configurations_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_playback_configurations(
+        output = crate::json_deser::deser_operation_crate_operation_list_playback_configurations(
             response.body().as_ref(),
             output,
         )
@@ -552,7 +570,7 @@ pub fn parse_list_source_locations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_source_locations_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_source_locations(
+        output = crate::json_deser::deser_operation_crate_operation_list_source_locations(
             response.body().as_ref(),
             output,
         )
@@ -585,11 +603,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -613,7 +627,7 @@ pub fn parse_list_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_tags_for_resource(
+        output = crate::json_deser::deser_operation_crate_operation_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
@@ -639,9 +653,11 @@ pub fn parse_list_vod_sources_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_vod_sources_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_vod_sources(response.body().as_ref(), output)
-                .map_err(crate::error::ListVodSourcesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_vod_sources(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListVodSourcesError::unhandled)?;
         output.build()
     })
 }
@@ -694,7 +710,7 @@ pub fn parse_put_playback_configuration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_playback_configuration_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_put_playback_configuration(
+        output = crate::json_deser::deser_operation_crate_operation_put_playback_configuration(
             response.body().as_ref(),
             output,
         )
@@ -766,11 +782,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -816,11 +828,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -862,9 +870,11 @@ pub fn parse_update_channel_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_channel_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_update_channel(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateChannelError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_channel(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateChannelError::unhandled)?;
         output.build()
     })
 }
@@ -892,7 +902,7 @@ pub fn parse_update_source_location_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_source_location_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_source_location(
+        output = crate::json_deser::deser_operation_crate_operation_update_source_location(
             response.body().as_ref(),
             output,
         )
@@ -918,9 +928,11 @@ pub fn parse_update_vod_source_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_vod_source_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_update_vod_source(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateVodSourceError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_vod_source(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateVodSourceError::unhandled)?;
         output.build()
     })
 }

@@ -20,11 +20,7 @@ pub fn parse_create_activity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::activity_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_activity_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateActivityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_activity_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CreateActivityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -41,7 +37,7 @@ pub fn parse_create_activity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_name::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_namejson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_namejson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -62,7 +58,7 @@ pub fn parse_create_activity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_too_many_tagsjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tagsjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -87,9 +83,11 @@ pub fn parse_create_activity_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_activity_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_activity(response.body().as_ref(), output)
-                .map_err(crate::error::CreateActivityError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_activity(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateActivityError::unhandled)?;
         output.build()
     })
 }
@@ -118,7 +116,7 @@ pub fn parse_create_state_machine_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -131,38 +129,16 @@ pub fn parse_create_state_machine_error(
                 tmp
             }),
         },
-        "InvalidDefinition" => crate::error::CreateStateMachineError {
-            meta: generic,
-            kind: crate::error::CreateStateMachineErrorKind::InvalidDefinition({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_definition::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_definitionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStateMachineError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidLoggingConfiguration" => {
+        "InvalidDefinition" => {
             crate::error::CreateStateMachineError {
                 meta: generic,
-                kind: crate::error::CreateStateMachineErrorKind::InvalidLoggingConfiguration({
+                kind: crate::error::CreateStateMachineErrorKind::InvalidDefinition({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_logging_configuration::Builder::default();
+                        let mut output = crate::error::invalid_definition::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_logging_configurationjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_definitionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -172,6 +148,24 @@ pub fn parse_create_state_machine_error(
                 }),
             }
         }
+        "InvalidLoggingConfiguration" => crate::error::CreateStateMachineError {
+            meta: generic,
+            kind: crate::error::CreateStateMachineErrorKind::InvalidLoggingConfiguration({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_logging_configuration::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_logging_configurationjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidName" => crate::error::CreateStateMachineError {
             meta: generic,
             kind: crate::error::CreateStateMachineErrorKind::InvalidName({
@@ -180,7 +174,7 @@ pub fn parse_create_state_machine_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_name::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_namejson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_namejson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -193,46 +187,41 @@ pub fn parse_create_state_machine_error(
                 tmp
             }),
         },
-        "InvalidTracingConfiguration" => {
-            crate::error::CreateStateMachineError {
-                meta: generic,
-                kind: crate::error::CreateStateMachineErrorKind::InvalidTracingConfiguration({
+        "InvalidTracingConfiguration" => crate::error::CreateStateMachineError {
+            meta: generic,
+            kind: crate::error::CreateStateMachineErrorKind::InvalidTracingConfiguration({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_tracing_configuration::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_tracing_configurationjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "StateMachineAlreadyExists" => {
-            crate::error::CreateStateMachineError {
-                meta: generic,
-                kind: crate::error::CreateStateMachineErrorKind::StateMachineAlreadyExists({
+                    let mut output =
+                        crate::error::invalid_tracing_configuration::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tracing_configurationjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "StateMachineAlreadyExists" => crate::error::CreateStateMachineError {
+            meta: generic,
+            kind: crate::error::CreateStateMachineErrorKind::StateMachineAlreadyExists({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::state_machine_already_exists::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_state_machine_already_existsjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::state_machine_already_exists::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_already_existsjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "StateMachineDeleting" => crate::error::CreateStateMachineError {
             meta: generic,
             kind: crate::error::CreateStateMachineErrorKind::StateMachineDeleting({
@@ -241,11 +230,7 @@ pub fn parse_create_state_machine_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_deleting::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_state_machine_deletingjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_deletingjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -254,26 +239,23 @@ pub fn parse_create_state_machine_error(
                 tmp
             }),
         },
-        "StateMachineLimitExceeded" => {
-            crate::error::CreateStateMachineError {
-                meta: generic,
-                kind: crate::error::CreateStateMachineErrorKind::StateMachineLimitExceeded({
+        "StateMachineLimitExceeded" => crate::error::CreateStateMachineError {
+            meta: generic,
+            kind: crate::error::CreateStateMachineErrorKind::StateMachineLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::state_machine_limit_exceeded::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_state_machine_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::state_machine_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "StateMachineTypeNotSupported" => crate::error::CreateStateMachineError {
             meta: generic,
             kind: crate::error::CreateStateMachineErrorKind::StateMachineTypeNotSupported({
@@ -283,7 +265,7 @@ pub fn parse_create_state_machine_error(
                     let mut output =
                         crate::error::state_machine_type_not_supported::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_state_machine_type_not_supportedjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_type_not_supportedjson_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -300,7 +282,7 @@ pub fn parse_create_state_machine_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_too_many_tagsjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tagsjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -328,7 +310,7 @@ pub fn parse_create_state_machine_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_state_machine_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_state_machine(
+        output = crate::json_deser::deser_operation_crate_operation_create_state_machine(
             response.body().as_ref(),
             output,
         )
@@ -358,7 +340,7 @@ pub fn parse_delete_activity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -411,7 +393,7 @@ pub fn parse_delete_state_machine_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -465,11 +447,7 @@ pub fn parse_describe_activity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::activity_does_not_exist::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_activity_does_not_existjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeActivityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_activity_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeActivityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -486,7 +464,7 @@ pub fn parse_describe_activity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -512,9 +490,11 @@ pub fn parse_describe_activity_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_activity_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_activity(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeActivityError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_activity(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeActivityError::unhandled)?;
         output.build()
     })
 }
@@ -541,11 +521,7 @@ pub fn parse_describe_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::execution_does_not_exist::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_execution_does_not_existjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_execution_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -562,7 +538,7 @@ pub fn parse_describe_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -588,9 +564,11 @@ pub fn parse_describe_execution_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_execution_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_execution(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeExecutionError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_execution(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeExecutionError::unhandled)?;
         output.build()
     })
 }
@@ -619,7 +597,7 @@ pub fn parse_describe_state_machine_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -632,26 +610,23 @@ pub fn parse_describe_state_machine_error(
                 tmp
             }),
         },
-        "StateMachineDoesNotExist" => {
-            crate::error::DescribeStateMachineError {
-                meta: generic,
-                kind: crate::error::DescribeStateMachineErrorKind::StateMachineDoesNotExist({
+        "StateMachineDoesNotExist" => crate::error::DescribeStateMachineError {
+            meta: generic,
+            kind: crate::error::DescribeStateMachineErrorKind::StateMachineDoesNotExist({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::state_machine_does_not_exist::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_state_machine_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeStateMachineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::state_machine_does_not_exist::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeStateMachineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeStateMachineError::generic(generic),
     })
 }
@@ -667,7 +642,7 @@ pub fn parse_describe_state_machine_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_state_machine_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_state_machine(
+        output = crate::json_deser::deser_operation_crate_operation_describe_state_machine(
             response.body().as_ref(),
             output,
         )
@@ -702,11 +677,7 @@ pub fn parse_describe_state_machine_for_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::execution_does_not_exist::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_execution_does_not_existjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeStateMachineForExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_execution_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeStateMachineForExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -723,7 +694,7 @@ pub fn parse_describe_state_machine_for_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -752,11 +723,7 @@ pub fn parse_describe_state_machine_for_execution_response(
         let mut output =
             crate::output::describe_state_machine_for_execution_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_state_machine_for_execution(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeStateMachineForExecutionError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_state_machine_for_execution(response.body().as_ref(), output).map_err(crate::error::DescribeStateMachineForExecutionError::unhandled)?;
         output.build()
     })
 }
@@ -782,11 +749,7 @@ pub fn parse_get_activity_task_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::activity_does_not_exist::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_activity_does_not_existjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetActivityTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_activity_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::GetActivityTaskError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -795,26 +758,24 @@ pub fn parse_get_activity_task_error(
                 tmp
             }),
         },
-        "ActivityWorkerLimitExceeded" => {
-            crate::error::GetActivityTaskError {
-                meta: generic,
-                kind: crate::error::GetActivityTaskErrorKind::ActivityWorkerLimitExceeded({
+        "ActivityWorkerLimitExceeded" => crate::error::GetActivityTaskError {
+            meta: generic,
+            kind: crate::error::GetActivityTaskErrorKind::ActivityWorkerLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::activity_worker_limit_exceeded::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_activity_worker_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::GetActivityTaskError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::activity_worker_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_activity_worker_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::GetActivityTaskError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidArn" => crate::error::GetActivityTaskError {
             meta: generic,
             kind: crate::error::GetActivityTaskErrorKind::InvalidArn({
@@ -823,7 +784,7 @@ pub fn parse_get_activity_task_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -848,9 +809,11 @@ pub fn parse_get_activity_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_activity_task_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_get_activity_task(response.body().as_ref(), output)
-                .map_err(crate::error::GetActivityTaskError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_get_activity_task(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetActivityTaskError::unhandled)?;
         output.build()
     })
 }
@@ -879,11 +842,7 @@ pub fn parse_get_execution_history_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::execution_does_not_exist::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_execution_does_not_existjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetExecutionHistoryError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_execution_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::GetExecutionHistoryError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -900,7 +859,7 @@ pub fn parse_get_execution_history_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -921,7 +880,7 @@ pub fn parse_get_execution_history_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_tokenjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tokenjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -949,7 +908,7 @@ pub fn parse_get_execution_history_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_execution_history_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_execution_history(
+        output = crate::json_deser::deser_operation_crate_operation_get_execution_history(
             response.body().as_ref(),
             output,
         )
@@ -979,7 +938,7 @@ pub fn parse_list_activities_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_tokenjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tokenjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1004,9 +963,11 @@ pub fn parse_list_activities_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_activities_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_activities(response.body().as_ref(), output)
-                .map_err(crate::error::ListActivitiesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_activities(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListActivitiesError::unhandled)?;
         output.build()
     })
 }
@@ -1032,7 +993,7 @@ pub fn parse_list_executions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1053,7 +1014,7 @@ pub fn parse_list_executions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_tokenjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tokenjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1066,26 +1027,23 @@ pub fn parse_list_executions_error(
                 tmp
             }),
         },
-        "StateMachineDoesNotExist" => {
-            crate::error::ListExecutionsError {
-                meta: generic,
-                kind: crate::error::ListExecutionsErrorKind::StateMachineDoesNotExist({
+        "StateMachineDoesNotExist" => crate::error::ListExecutionsError {
+            meta: generic,
+            kind: crate::error::ListExecutionsErrorKind::StateMachineDoesNotExist({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::state_machine_does_not_exist::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_state_machine_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::ListExecutionsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::state_machine_does_not_exist::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::ListExecutionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "StateMachineTypeNotSupported" => crate::error::ListExecutionsError {
             meta: generic,
             kind: crate::error::ListExecutionsErrorKind::StateMachineTypeNotSupported({
@@ -1095,7 +1053,7 @@ pub fn parse_list_executions_error(
                     let mut output =
                         crate::error::state_machine_type_not_supported::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_state_machine_type_not_supportedjson_err(response.body().as_ref(), output).map_err(crate::error::ListExecutionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_type_not_supportedjson_err(response.body().as_ref(), output).map_err(crate::error::ListExecutionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1116,9 +1074,11 @@ pub fn parse_list_executions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_executions_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_executions(response.body().as_ref(), output)
-                .map_err(crate::error::ListExecutionsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_executions(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListExecutionsError::unhandled)?;
         output.build()
     })
 }
@@ -1145,7 +1105,7 @@ pub fn parse_list_state_machines_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_tokenjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tokenjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1171,7 +1131,7 @@ pub fn parse_list_state_machines_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_state_machines_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_state_machines(
+        output = crate::json_deser::deser_operation_crate_operation_list_state_machines(
             response.body().as_ref(),
             output,
         )
@@ -1204,7 +1164,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1217,27 +1177,25 @@ pub fn parse_list_tags_for_resource_error(
                 tmp
             }),
         },
-        "ResourceNotFound" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ResourceNotFound" => {
+            crate::error::ListTagsForResourceError {
+                meta: generic,
+                kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_resource_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -1253,7 +1211,7 @@ pub fn parse_list_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_tags_for_resource(
+        output = crate::json_deser::deser_operation_crate_operation_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
@@ -1283,7 +1241,7 @@ pub fn parse_send_task_failure_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_tokenjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tokenjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1296,27 +1254,25 @@ pub fn parse_send_task_failure_error(
                 tmp
             }),
         },
-        "TaskDoesNotExist" => crate::error::SendTaskFailureError {
-            meta: generic,
-            kind: crate::error::SendTaskFailureErrorKind::TaskDoesNotExist({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TaskDoesNotExist" => {
+            crate::error::SendTaskFailureError {
+                meta: generic,
+                kind: crate::error::SendTaskFailureErrorKind::TaskDoesNotExist({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::task_does_not_exist::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_task_does_not_existjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendTaskFailureError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::task_does_not_exist::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_task_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::SendTaskFailureError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "TaskTimedOut" => crate::error::SendTaskFailureError {
             meta: generic,
             kind: crate::error::SendTaskFailureErrorKind::TaskTimedOut({
@@ -1325,7 +1281,7 @@ pub fn parse_send_task_failure_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::task_timed_out::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_task_timed_outjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_task_timed_outjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1376,7 +1332,7 @@ pub fn parse_send_task_heartbeat_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_tokenjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tokenjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1389,27 +1345,25 @@ pub fn parse_send_task_heartbeat_error(
                 tmp
             }),
         },
-        "TaskDoesNotExist" => crate::error::SendTaskHeartbeatError {
-            meta: generic,
-            kind: crate::error::SendTaskHeartbeatErrorKind::TaskDoesNotExist({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TaskDoesNotExist" => {
+            crate::error::SendTaskHeartbeatError {
+                meta: generic,
+                kind: crate::error::SendTaskHeartbeatErrorKind::TaskDoesNotExist({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::task_does_not_exist::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_task_does_not_existjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendTaskHeartbeatError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::task_does_not_exist::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_task_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::SendTaskHeartbeatError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "TaskTimedOut" => crate::error::SendTaskHeartbeatError {
             meta: generic,
             kind: crate::error::SendTaskHeartbeatErrorKind::TaskTimedOut({
@@ -1418,7 +1372,7 @@ pub fn parse_send_task_heartbeat_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::task_timed_out::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_task_timed_outjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_task_timed_outjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1469,7 +1423,7 @@ pub fn parse_send_task_success_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_output::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_outputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_outputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1490,7 +1444,7 @@ pub fn parse_send_task_success_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_tokenjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tokenjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1503,27 +1457,25 @@ pub fn parse_send_task_success_error(
                 tmp
             }),
         },
-        "TaskDoesNotExist" => crate::error::SendTaskSuccessError {
-            meta: generic,
-            kind: crate::error::SendTaskSuccessErrorKind::TaskDoesNotExist({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TaskDoesNotExist" => {
+            crate::error::SendTaskSuccessError {
+                meta: generic,
+                kind: crate::error::SendTaskSuccessErrorKind::TaskDoesNotExist({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::task_does_not_exist::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_task_does_not_existjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendTaskSuccessError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::task_does_not_exist::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_task_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::SendTaskSuccessError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "TaskTimedOut" => crate::error::SendTaskSuccessError {
             meta: generic,
             kind: crate::error::SendTaskSuccessErrorKind::TaskTimedOut({
@@ -1532,7 +1484,7 @@ pub fn parse_send_task_success_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::task_timed_out::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_task_timed_outjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_task_timed_outjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1582,11 +1534,7 @@ pub fn parse_start_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::execution_already_exists::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_execution_already_existsjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_execution_already_existsjson_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1603,11 +1551,7 @@ pub fn parse_start_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::execution_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_execution_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_execution_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1624,7 +1568,7 @@ pub fn parse_start_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1645,11 +1589,7 @@ pub fn parse_start_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_execution_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_execution_inputjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_execution_inputjson_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1666,7 +1606,7 @@ pub fn parse_start_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_name::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_namejson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_namejson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1687,11 +1627,7 @@ pub fn parse_start_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_deleting::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_state_machine_deletingjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_deletingjson_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1700,26 +1636,23 @@ pub fn parse_start_execution_error(
                 tmp
             }),
         },
-        "StateMachineDoesNotExist" => {
-            crate::error::StartExecutionError {
-                meta: generic,
-                kind: crate::error::StartExecutionErrorKind::StateMachineDoesNotExist({
+        "StateMachineDoesNotExist" => crate::error::StartExecutionError {
+            meta: generic,
+            kind: crate::error::StartExecutionErrorKind::StateMachineDoesNotExist({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::state_machine_does_not_exist::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_state_machine_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::state_machine_does_not_exist::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartExecutionError::generic(generic),
     })
 }
@@ -1732,9 +1665,11 @@ pub fn parse_start_execution_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_execution_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_start_execution(response.body().as_ref(), output)
-                .map_err(crate::error::StartExecutionError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_start_execution(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartExecutionError::unhandled)?;
         output.build()
     })
 }
@@ -1763,7 +1698,7 @@ pub fn parse_start_sync_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1784,11 +1719,7 @@ pub fn parse_start_sync_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_execution_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_execution_inputjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartSyncExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_execution_inputjson_err(response.body().as_ref(), output).map_err(crate::error::StartSyncExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1805,7 +1736,7 @@ pub fn parse_start_sync_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_name::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_namejson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_namejson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1826,11 +1757,7 @@ pub fn parse_start_sync_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_deleting::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_state_machine_deletingjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartSyncExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_deletingjson_err(response.body().as_ref(), output).map_err(crate::error::StartSyncExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1839,26 +1766,23 @@ pub fn parse_start_sync_execution_error(
                 tmp
             }),
         },
-        "StateMachineDoesNotExist" => {
-            crate::error::StartSyncExecutionError {
-                meta: generic,
-                kind: crate::error::StartSyncExecutionErrorKind::StateMachineDoesNotExist({
+        "StateMachineDoesNotExist" => crate::error::StartSyncExecutionError {
+            meta: generic,
+            kind: crate::error::StartSyncExecutionErrorKind::StateMachineDoesNotExist({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::state_machine_does_not_exist::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_state_machine_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::StartSyncExecutionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::state_machine_does_not_exist::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::StartSyncExecutionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "StateMachineTypeNotSupported" => crate::error::StartSyncExecutionError {
             meta: generic,
             kind: crate::error::StartSyncExecutionErrorKind::StateMachineTypeNotSupported({
@@ -1868,7 +1792,7 @@ pub fn parse_start_sync_execution_error(
                     let mut output =
                         crate::error::state_machine_type_not_supported::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_state_machine_type_not_supportedjson_err(response.body().as_ref(), output).map_err(crate::error::StartSyncExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_type_not_supportedjson_err(response.body().as_ref(), output).map_err(crate::error::StartSyncExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1892,7 +1816,7 @@ pub fn parse_start_sync_execution_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_sync_execution_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_start_sync_execution(
+        output = crate::json_deser::deser_operation_crate_operation_start_sync_execution(
             response.body().as_ref(),
             output,
         )
@@ -1922,11 +1846,7 @@ pub fn parse_stop_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::execution_does_not_exist::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_execution_does_not_existjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StopExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_execution_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::StopExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1943,7 +1863,7 @@ pub fn parse_stop_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1968,9 +1888,11 @@ pub fn parse_stop_execution_response(
         #[allow(unused_mut)]
         let mut output = crate::output::stop_execution_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_stop_execution(response.body().as_ref(), output)
-                .map_err(crate::error::StopExecutionError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_stop_execution(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StopExecutionError::unhandled)?;
         output.build()
     })
 }
@@ -1996,7 +1918,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2009,27 +1931,25 @@ pub fn parse_tag_resource_error(
                 tmp
             }),
         },
-        "ResourceNotFound" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ResourceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ResourceNotFound" => {
+            crate::error::TagResourceError {
+                meta: generic,
+                kind: crate::error::TagResourceErrorKind::ResourceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_resource_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "TooManyTags" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::TooManyTags({
@@ -2038,7 +1958,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_too_many_tagsjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tagsjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2088,7 +2008,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2101,27 +2021,25 @@ pub fn parse_untag_resource_error(
                 tmp
             }),
         },
-        "ResourceNotFound" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ResourceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ResourceNotFound" => {
+            crate::error::UntagResourceError {
+                meta: generic,
+                kind: crate::error::UntagResourceErrorKind::ResourceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_resource_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -2162,7 +2080,7 @@ pub fn parse_update_state_machine_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arnjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_arnjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2175,19 +2093,35 @@ pub fn parse_update_state_machine_error(
                 tmp
             }),
         },
-        "InvalidDefinition" => crate::error::UpdateStateMachineError {
+        "InvalidDefinition" => {
+            crate::error::UpdateStateMachineError {
+                meta: generic,
+                kind: crate::error::UpdateStateMachineErrorKind::InvalidDefinition({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_definition::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_definitionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidLoggingConfiguration" => crate::error::UpdateStateMachineError {
             meta: generic,
-            kind: crate::error::UpdateStateMachineErrorKind::InvalidDefinition({
+            kind: crate::error::UpdateStateMachineErrorKind::InvalidLoggingConfiguration({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_definition::Builder::default();
+                    let mut output =
+                        crate::error::invalid_logging_configuration::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_definitionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_logging_configurationjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2196,46 +2130,24 @@ pub fn parse_update_state_machine_error(
                 tmp
             }),
         },
-        "InvalidLoggingConfiguration" => {
-            crate::error::UpdateStateMachineError {
-                meta: generic,
-                kind: crate::error::UpdateStateMachineErrorKind::InvalidLoggingConfiguration({
+        "InvalidTracingConfiguration" => crate::error::UpdateStateMachineError {
+            meta: generic,
+            kind: crate::error::UpdateStateMachineErrorKind::InvalidTracingConfiguration({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_logging_configuration::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_logging_configurationjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "InvalidTracingConfiguration" => {
-            crate::error::UpdateStateMachineError {
-                meta: generic,
-                kind: crate::error::UpdateStateMachineErrorKind::InvalidTracingConfiguration({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_tracing_configuration::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_tracing_configurationjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_tracing_configuration::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tracing_configurationjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "MissingRequiredParameter" => crate::error::UpdateStateMachineError {
             meta: generic,
             kind: crate::error::UpdateStateMachineErrorKind::MissingRequiredParameter({
@@ -2244,11 +2156,7 @@ pub fn parse_update_state_machine_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::missing_required_parameter::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_missing_required_parameterjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_required_parameterjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2265,11 +2173,7 @@ pub fn parse_update_state_machine_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_deleting::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_state_machine_deletingjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_deletingjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2278,26 +2182,23 @@ pub fn parse_update_state_machine_error(
                 tmp
             }),
         },
-        "StateMachineDoesNotExist" => {
-            crate::error::UpdateStateMachineError {
-                meta: generic,
-                kind: crate::error::UpdateStateMachineErrorKind::StateMachineDoesNotExist({
+        "StateMachineDoesNotExist" => crate::error::UpdateStateMachineError {
+            meta: generic,
+            kind: crate::error::UpdateStateMachineErrorKind::StateMachineDoesNotExist({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::state_machine_does_not_exist::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_state_machine_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::state_machine_does_not_exist::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_state_machine_does_not_existjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::UpdateStateMachineError::generic(generic),
     })
 }
@@ -2313,7 +2214,7 @@ pub fn parse_update_state_machine_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_state_machine_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_state_machine(
+        output = crate::json_deser::deser_operation_crate_operation_update_state_machine(
             response.body().as_ref(),
             output,
         )

@@ -76,6 +76,9 @@ where
                 crate::error::CreateServerErrorKind::ResourceExistsException(inner) => {
                     Error::ResourceExistsException(inner)
                 }
+                crate::error::CreateServerErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
                 crate::error::CreateServerErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
@@ -111,6 +114,37 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::CreateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateWorkflowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateWorkflowError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateWorkflowErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::CreateWorkflowErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::CreateWorkflowErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::CreateWorkflowErrorKind::ResourceExistsException(inner) => {
+                    Error::ResourceExistsException(inner)
+                }
+                crate::error::CreateWorkflowErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::CreateWorkflowErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::CreateWorkflowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -224,6 +258,34 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteWorkflowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteWorkflowError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteWorkflowErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteWorkflowErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::DeleteWorkflowErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DeleteWorkflowErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteWorkflowErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::DeleteWorkflowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::DescribeAccessError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -244,6 +306,33 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeAccessErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeExecutionError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeExecutionErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::DescribeExecutionErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DescribeExecutionErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeExecutionErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::DescribeExecutionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -328,6 +417,33 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeWorkflowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeWorkflowError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeWorkflowErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::DescribeWorkflowErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DescribeWorkflowErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeWorkflowErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::DescribeWorkflowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::ImportSshPublicKeyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -384,6 +500,34 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::ListAccessesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListExecutionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListExecutionsError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListExecutionsErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::ListExecutionsErrorKind::InvalidNextTokenException(inner) => {
+                    Error::InvalidNextTokenException(inner)
+                }
+                crate::error::ListExecutionsErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListExecutionsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListExecutionsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::ListExecutionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -493,6 +637,66 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::ListUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListWorkflowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListWorkflowsError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListWorkflowsErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::ListWorkflowsErrorKind::InvalidNextTokenException(inner) => {
+                    Error::InvalidNextTokenException(inner)
+                }
+                crate::error::ListWorkflowsErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListWorkflowsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::ListWorkflowsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::SendWorkflowStepStateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::SendWorkflowStepStateError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SendWorkflowStepStateErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::SendWorkflowStepStateErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::SendWorkflowStepStateErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::SendWorkflowStepStateErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::SendWorkflowStepStateErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::SendWorkflowStepStateErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::SendWorkflowStepStateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

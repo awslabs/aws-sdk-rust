@@ -2,7 +2,7 @@
 /// <p>Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's value when a new value is specified for an existing tag key.
 /// Tag key names must be unique for a trail; you cannot have two keys with the same name but different values.
 /// If you specify a key without a value, the tag will be created with the specified key and a value of null.
-/// You can tag a trail that applies to all AWS Regions only from the Region in which the trail was created (also known as its home region).</p>
+/// You can tag a trail that applies to all Amazon Web Services Regions only from the Region in which the trail was created (also known as its home region).</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AddTags {
     _private: (),
@@ -27,7 +27,8 @@ impl smithy_http::response::ParseStrictResponse for AddTags {
     }
 }
 
-/// <p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. </p>
+/// <p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket.
+/// </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTrail {
     _private: (),
@@ -123,7 +124,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeTrails {
 /// </li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging Data and Management Events for Trails
-/// </a> in the <i>AWS CloudTrail User Guide</i>.</p>
+/// </a> in the <i>CloudTrail User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetEventSelectors {
     _private: (),
@@ -157,7 +158,7 @@ impl smithy_http::response::ParseStrictResponse for GetEventSelectors {
 /// <code>InsightNotEnabledException</code>
 /// </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging CloudTrail Insights Events for Trails
-/// </a> in the <i>AWS CloudTrail User Guide</i>.</p>
+/// </a> in the <i>CloudTrail User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetInsightSelectors {
     _private: (),
@@ -238,7 +239,9 @@ impl smithy_http::response::ParseStrictResponse for GetTrailStatus {
 
 /// <p>Returns all public keys whose private keys were used to sign the digest files within the specified time range. The public key is needed to validate digest files that were signed with its corresponding private key.</p>
 /// <note>
-/// <p>CloudTrail uses different private/public key pairs per region. Each digest file is signed with a private key unique to its region. Therefore, when you validate a digest file from a particular region, you must look in the same region for its corresponding public key.</p>
+/// <p>CloudTrail uses different private and public key pairs per region. Each digest file is signed with a private key
+/// unique to its region. When you validate a digest file from a specific region, you must look in the same region for its
+/// corresponding public key.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListPublicKeys {
@@ -321,7 +324,7 @@ impl smithy_http::response::ParseStrictResponse for ListTrails {
 /// You can look up events that occurred in a region within the last 90 days. Lookup supports the following attributes for management events:</p>
 /// <ul>
 /// <li>
-/// <p>AWS access key</p>
+/// <p>Amazon Web Services access key</p>
 /// </li>
 /// <li>
 /// <p>Event ID</p>
@@ -396,7 +399,7 @@ impl smithy_http::response::ParseStrictResponse for LookupEvents {
 /// <p>When an event occurs in your account, CloudTrail
 /// evaluates the event selectors or advanced event selectors in all trails. For each trail, if the event matches
 /// any event selector, the trail processes and logs the event. If the event doesn't match any event
-/// selector, the trail doesn't log the event. </p>
+/// selector, the trail doesn't log the event.</p>
 /// <p>Example</p>
 /// <ol>
 /// <li>
@@ -425,15 +428,15 @@ impl smithy_http::response::ParseStrictResponse for LookupEvents {
 /// the trail was created; otherwise, an <code>InvalidHomeRegionException</code> exception is
 /// thrown.</p>
 /// <p>You can configure up to five event selectors for each trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging data and management events for trails
-/// </a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in AWS CloudTrail</a>
-/// in the <i>AWS CloudTrail User Guide</i>.</p>
+/// </a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in CloudTrail</a>
+/// in the <i>CloudTrail User Guide</i>.</p>
 /// <p>You can add advanced event selectors, and conditions for your advanced
 /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
 /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
 /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
 /// advanced event selectors, see
 /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-/// data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+/// data events for trails</a> in the <i>CloudTrail User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutEventSelectors {
     _private: (),
@@ -464,7 +467,7 @@ impl smithy_http::response::ParseStrictResponse for PutEventSelectors {
 /// <p>Lets you enable Insights event logging by specifying the Insights
 /// selectors that you want to enable on an existing trail. You also use
 /// <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an empty list of insight types.
-/// In this release, only <code>ApiCallRateInsight</code> is supported as an Insights selector.</p>
+/// The valid Insights event type in this release is <code>ApiCallRateInsight</code>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutInsightSelectors {
     _private: (),
@@ -518,7 +521,7 @@ impl smithy_http::response::ParseStrictResponse for RemoveTags {
     }
 }
 
-/// <p>Starts the recording of AWS API calls and log file delivery for a trail. For a trail that is enabled in all regions, this operation must be called from the region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>
+/// <p>Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is enabled in all regions, this operation must be called from the region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartLogging {
     _private: (),
@@ -544,7 +547,7 @@ impl smithy_http::response::ParseStrictResponse for StartLogging {
     }
 }
 
-/// <p>Suspends the recording of AWS API calls and log file delivery for the specified trail.
+/// <p>Suspends the recording of Amazon Web Services API calls and log file delivery for the specified trail.
 /// Under most circumstances, there is no need to use this action. You can update a trail
 /// without stopping it first. This action is the only way to stop recording. For a trail
 /// enabled in all regions, this operation must be called from the region in which the trail
@@ -576,7 +579,7 @@ impl smithy_http::response::ParseStrictResponse for StopLogging {
     }
 }
 
-/// <p>Updates the settings that specify delivery of log files. Changes to a trail do not require
+/// <p>Updates trail settings that control what events you are logging, and how to handle log files. Changes to a trail do not require
 /// stopping the CloudTrail service. Use this action to designate an existing bucket for log
 /// delivery. If the existing bucket has previously been a target for CloudTrail log files,
 /// an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the

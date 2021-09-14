@@ -69,12 +69,12 @@ pub struct RepositoryAssociationSummary {
     /// </p>
     pub association_arn: std::option::Option<std::string::String>,
     /// <p>
-    /// The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+    /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
     /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
     /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
     /// <code>Connection</code>
     /// </a> in
-    /// the <i>AWS CodeStar Connections API Reference</i>.
+    /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
     /// </p>
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, since the repository association
@@ -87,9 +87,9 @@ pub struct RepositoryAssociationSummary {
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository association.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
     /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or AWS account ID.</p>
+    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The provider type of the repository association.</p>
     pub provider_type: std::option::Option<crate::model::ProviderType>,
@@ -202,12 +202,12 @@ pub mod repository_association_summary {
             self
         }
         /// <p>
-        /// The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+        /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
         /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
         /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
         /// <code>Connection</code>
         /// </a> in
-        /// the <i>AWS CodeStar Connections API Reference</i>.
+        /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
         /// </p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
@@ -257,9 +257,9 @@ pub mod repository_association_summary {
             self.name = input;
             self
         }
-        /// <p>The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
         /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or AWS account ID.</p>
+        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
@@ -524,6 +524,12 @@ pub struct RecommendationSummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of a recommendation.</p>
     pub recommendation_category: std::option::Option<crate::model::RecommendationCategory>,
+    /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a
+    /// short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is
+    /// included in analysis results if code is detected that violates the rule.</p>
+    pub rule_metadata: std::option::Option<crate::model::RuleMetadata>,
+    /// <p>The severity of the issue in the code that generated this recommendation.</p>
+    pub severity: std::option::Option<crate::model::Severity>,
 }
 impl std::fmt::Debug for RecommendationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -534,6 +540,8 @@ impl std::fmt::Debug for RecommendationSummary {
         formatter.field("end_line", &self.end_line);
         formatter.field("description", &self.description);
         formatter.field("recommendation_category", &self.recommendation_category);
+        formatter.field("rule_metadata", &self.rule_metadata);
+        formatter.field("severity", &self.severity);
         formatter.finish()
     }
 }
@@ -550,6 +558,8 @@ pub mod recommendation_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) recommendation_category:
             std::option::Option<crate::model::RecommendationCategory>,
+        pub(crate) rule_metadata: std::option::Option<crate::model::RuleMetadata>,
+        pub(crate) severity: std::option::Option<crate::model::Severity>,
     }
     impl Builder {
         /// <p>Name of the file on which a recommendation is provided.</p>
@@ -623,6 +633,29 @@ pub mod recommendation_summary {
             self.recommendation_category = input;
             self
         }
+        /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a
+        /// short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is
+        /// included in analysis results if code is detected that violates the rule.</p>
+        pub fn rule_metadata(mut self, input: crate::model::RuleMetadata) -> Self {
+            self.rule_metadata = Some(input);
+            self
+        }
+        pub fn set_rule_metadata(
+            mut self,
+            input: std::option::Option<crate::model::RuleMetadata>,
+        ) -> Self {
+            self.rule_metadata = input;
+            self
+        }
+        /// <p>The severity of the issue in the code that generated this recommendation.</p>
+        pub fn severity(mut self, input: crate::model::Severity) -> Self {
+            self.severity = Some(input);
+            self
+        }
+        pub fn set_severity(mut self, input: std::option::Option<crate::model::Severity>) -> Self {
+            self.severity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RecommendationSummary`](crate::model::RecommendationSummary)
         pub fn build(self) -> crate::model::RecommendationSummary {
             crate::model::RecommendationSummary {
@@ -632,6 +665,8 @@ pub mod recommendation_summary {
                 end_line: self.end_line,
                 description: self.description,
                 recommendation_category: self.recommendation_category,
+                rule_metadata: self.rule_metadata,
+                severity: self.severity,
             }
         }
     }
@@ -653,9 +688,184 @@ impl RecommendationSummary {
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum Severity {
+    Critical,
+    High,
+    Info,
+    Low,
+    Medium,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Severity {
+    fn from(s: &str) -> Self {
+        match s {
+            "Critical" => Severity::Critical,
+            "High" => Severity::High,
+            "Info" => Severity::Info,
+            "Low" => Severity::Low,
+            "Medium" => Severity::Medium,
+            other => Severity::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Severity {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Severity::from(s))
+    }
+}
+impl Severity {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Severity::Critical => "Critical",
+            Severity::High => "High",
+            Severity::Info => "Info",
+            Severity::Low => "Low",
+            Severity::Medium => "Medium",
+            Severity::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Critical", "High", "Info", "Low", "Medium"]
+    }
+}
+impl AsRef<str> for Severity {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a
+/// short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is
+/// included in analysis results if code is detected that violates the rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RuleMetadata {
+    /// <p>The ID of the rule.</p>
+    pub rule_id: std::option::Option<std::string::String>,
+    /// <p>The name of the rule.</p>
+    pub rule_name: std::option::Option<std::string::String>,
+    /// <p>A short description of the rule.</p>
+    pub short_description: std::option::Option<std::string::String>,
+    /// <p>A long description of the rule.</p>
+    pub long_description: std::option::Option<std::string::String>,
+    /// <p>Tags that are associated with the rule.</p>
+    pub rule_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for RuleMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RuleMetadata");
+        formatter.field("rule_id", &self.rule_id);
+        formatter.field("rule_name", &self.rule_name);
+        formatter.field("short_description", &self.short_description);
+        formatter.field("long_description", &self.long_description);
+        formatter.field("rule_tags", &self.rule_tags);
+        formatter.finish()
+    }
+}
+/// See [`RuleMetadata`](crate::model::RuleMetadata)
+pub mod rule_metadata {
+    /// A builder for [`RuleMetadata`](crate::model::RuleMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rule_id: std::option::Option<std::string::String>,
+        pub(crate) rule_name: std::option::Option<std::string::String>,
+        pub(crate) short_description: std::option::Option<std::string::String>,
+        pub(crate) long_description: std::option::Option<std::string::String>,
+        pub(crate) rule_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The ID of the rule.</p>
+        pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_id = Some(input.into());
+            self
+        }
+        pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_id = input;
+            self
+        }
+        /// <p>The name of the rule.</p>
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_name = Some(input.into());
+            self
+        }
+        pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_name = input;
+            self
+        }
+        /// <p>A short description of the rule.</p>
+        pub fn short_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.short_description = Some(input.into());
+            self
+        }
+        pub fn set_short_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.short_description = input;
+            self
+        }
+        /// <p>A long description of the rule.</p>
+        pub fn long_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.long_description = Some(input.into());
+            self
+        }
+        pub fn set_long_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.long_description = input;
+            self
+        }
+        pub fn rule_tags(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.rule_tags.unwrap_or_default();
+            v.push(input.into());
+            self.rule_tags = Some(v);
+            self
+        }
+        pub fn set_rule_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.rule_tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuleMetadata`](crate::model::RuleMetadata)
+        pub fn build(self) -> crate::model::RuleMetadata {
+            crate::model::RuleMetadata {
+                rule_id: self.rule_id,
+                rule_name: self.rule_name,
+                short_description: self.short_description,
+                long_description: self.long_description,
+                rule_tags: self.rule_tags,
+            }
+        }
+    }
+}
+impl RuleMetadata {
+    /// Creates a new builder-style object to manufacture [`RuleMetadata`](crate::model::RuleMetadata)
+    pub fn builder() -> crate::model::rule_metadata::Builder {
+        crate::model::rule_metadata::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum RecommendationCategory {
     AwsBestPractices,
     AwsCloudformationIssues,
+    CodeInconsistencies,
     CodeMaintenanceIssues,
     ConcurrencyIssues,
     DuplicateCode,
@@ -672,6 +882,7 @@ impl std::convert::From<&str> for RecommendationCategory {
         match s {
             "AWSBestPractices" => RecommendationCategory::AwsBestPractices,
             "AWSCloudFormationIssues" => RecommendationCategory::AwsCloudformationIssues,
+            "CodeInconsistencies" => RecommendationCategory::CodeInconsistencies,
             "CodeMaintenanceIssues" => RecommendationCategory::CodeMaintenanceIssues,
             "ConcurrencyIssues" => RecommendationCategory::ConcurrencyIssues,
             "DuplicateCode" => RecommendationCategory::DuplicateCode,
@@ -696,6 +907,7 @@ impl RecommendationCategory {
         match self {
             RecommendationCategory::AwsBestPractices => "AWSBestPractices",
             RecommendationCategory::AwsCloudformationIssues => "AWSCloudFormationIssues",
+            RecommendationCategory::CodeInconsistencies => "CodeInconsistencies",
             RecommendationCategory::CodeMaintenanceIssues => "CodeMaintenanceIssues",
             RecommendationCategory::ConcurrencyIssues => "ConcurrencyIssues",
             RecommendationCategory::DuplicateCode => "DuplicateCode",
@@ -711,6 +923,7 @@ impl RecommendationCategory {
         &[
             "AWSBestPractices",
             "AWSCloudFormationIssues",
+            "CodeInconsistencies",
             "CodeMaintenanceIssues",
             "ConcurrencyIssues",
             "DuplicateCode",
@@ -746,9 +959,9 @@ pub struct RecommendationFeedbackSummary {
     /// The ID of the user that gave the feedback.
     /// </p>
     /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name (ARN). For
+    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
     /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
     /// </p>
     pub user_id: std::option::Option<std::string::String>,
 }
@@ -803,9 +1016,9 @@ pub mod recommendation_feedback_summary {
         /// The ID of the user that gave the feedback.
         /// </p>
         /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name (ARN). For
+        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
         /// </p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -851,9 +1064,9 @@ pub struct CodeReviewSummary {
     /// The name of the repository.
     /// </p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
     /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or AWS account ID.</p>
+    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>
     /// The provider type of the repository association.
@@ -989,9 +1202,9 @@ pub mod code_review_summary {
             self.repository_name = input;
             self
         }
-        /// <p>The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
         /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or AWS account ID.</p>
+        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
@@ -2228,19 +2441,19 @@ pub struct RepositoryAssociation {
     /// <p>The Amazon Resource Name (ARN) identifying the repository association.</p>
     pub association_arn: std::option::Option<std::string::String>,
     /// <p>
-    /// The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+    /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
     /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
     /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
     /// <code>Connection</code>
     /// </a> in
-    /// the <i>AWS CodeStar Connections API Reference</i>.
+    /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
     /// </p>
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
     /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or AWS account ID.</p>
+    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The provider type of the repository association.</p>
     pub provider_type: std::option::Option<crate::model::ProviderType>,
@@ -2309,11 +2522,11 @@ pub struct RepositoryAssociation {
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
     /// <li>
-    /// <p>The encryption option for this repository association. It is either owned by AWS
+    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
     /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
     /// </li>
     /// <li>
-    /// <p>The ID of the AWS KMS key that
+    /// <p>The ID of the Amazon Web Services KMS key that
     /// is associated with this respository association.</p>
     /// </li>
     /// </ul>
@@ -2387,12 +2600,12 @@ pub mod repository_association {
             self
         }
         /// <p>
-        /// The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+        /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
         /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
         /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
         /// <code>Connection</code>
         /// </a> in
-        /// the <i>AWS CodeStar Connections API Reference</i>.
+        /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
         /// </p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
@@ -2414,9 +2627,9 @@ pub mod repository_association {
             self.name = input;
             self
         }
-        /// <p>The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
         /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or AWS account ID.</p>
+        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
@@ -2539,11 +2752,11 @@ pub mod repository_association {
         /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
         /// <ul>
         /// <li>
-        /// <p>The encryption option for this repository association. It is either owned by AWS
+        /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
         /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
         /// </li>
         /// <li>
-        /// <p>The ID of the AWS KMS key that
+        /// <p>The ID of the Amazon Web Services KMS key that
         /// is associated with this respository association.</p>
         /// </li>
         /// </ul>
@@ -2602,20 +2815,20 @@ impl RepositoryAssociation {
 /// <p>An object that contains:</p>
 /// <ul>
 /// <li>
-/// <p>The encryption option for a repository association. It is either owned by AWS
+/// <p>The encryption option for a repository association. It is either owned by Amazon Web Services
 /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
 /// </li>
 /// <li>
-/// <p>The ID of the AWS KMS key that
+/// <p>The ID of the Amazon Web Services KMS key that
 /// is associated with a respository association.</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyDetails {
-    /// <p>The ID of the AWS KMS key that is associated with a respository association.</p>
+    /// <p>The ID of the Amazon Web Services KMS key that is associated with a respository association.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The encryption option for a repository association. It is either owned by AWS
+    /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services
     /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
     pub encryption_option: std::option::Option<crate::model::EncryptionOption>,
 }
@@ -2637,7 +2850,7 @@ pub mod kms_key_details {
         pub(crate) encryption_option: std::option::Option<crate::model::EncryptionOption>,
     }
     impl Builder {
-        /// <p>The ID of the AWS KMS key that is associated with a respository association.</p>
+        /// <p>The ID of the Amazon Web Services KMS key that is associated with a respository association.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -2646,7 +2859,7 @@ pub mod kms_key_details {
             self.kms_key_id = input;
             self
         }
-        /// <p>The encryption option for a repository association. It is either owned by AWS
+        /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services
         /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
         pub fn encryption_option(mut self, input: crate::model::EncryptionOption) -> Self {
             self.encryption_option = Some(input);
@@ -2748,9 +2961,9 @@ pub struct RecommendationFeedback {
     /// The ID of the user that made the API call.
     /// </p>
     /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name (ARN). For
+    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
     /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
     /// </p>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>
@@ -2834,9 +3047,9 @@ pub mod recommendation_feedback {
         /// The ID of the user that made the API call.
         /// </p>
         /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name (ARN). For
+        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
         /// </p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -2913,9 +3126,9 @@ pub struct CodeReview {
     /// The name of the repository.
     /// </p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
     /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or AWS account ID.</p>
+    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>
     /// The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
@@ -3072,9 +3285,9 @@ pub mod code_review {
             self.repository_name = input;
             self
         }
-        /// <p>The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
         /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or AWS account ID.</p>
+        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
@@ -3337,13 +3550,8 @@ impl AsRef<str> for AnalysisType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metrics {
     /// <p>
-    /// Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions,
-    /// this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already
-    /// existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments
-    /// and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in
-    /// a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files,
-    /// <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of
-    /// code for a total of 2,725 lines of code.
+    /// <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened.
+    /// This does not include non-code lines such as comments and blank lines.
     /// </p>
     pub metered_lines_of_code_count: std::option::Option<i64>,
     /// <p>
@@ -3373,13 +3581,8 @@ pub mod metrics {
     }
     impl Builder {
         /// <p>
-        /// Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions,
-        /// this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already
-        /// existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments
-        /// and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in
-        /// a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files,
-        /// <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of
-        /// code for a total of 2,725 lines of code.
+        /// <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened.
+        /// This does not include non-code lines such as comments and blank lines.
         /// </p>
         pub fn metered_lines_of_code_count(mut self, input: i64) -> Self {
             self.metered_lines_of_code_count = Some(input);
@@ -3596,14 +3799,14 @@ impl RepositoryAnalysis {
 }
 
 /// <p>
-/// Information about an associated AWS CodeCommit repository or an associated repository that is managed
-/// by AWS CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object
+/// Information about an associated Amazon Web Services CodeCommit repository or an associated repository that is managed
+/// by Amazon Web Services CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object
 /// is not used if your source code is in an associated GitHub repository.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Repository {
-    /// <p>Information about an AWS CodeCommit repository.</p>
+    /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
     pub code_commit: std::option::Option<crate::model::CodeCommitRepository>,
     /// <p>
     /// Information about a Bitbucket repository.
@@ -3641,7 +3844,7 @@ pub mod repository {
         pub(crate) s3_bucket: std::option::Option<crate::model::S3Repository>,
     }
     impl Builder {
-        /// <p>Information about an AWS CodeCommit repository.</p>
+        /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
         pub fn code_commit(mut self, input: crate::model::CodeCommitRepository) -> Self {
             self.code_commit = Some(input);
             self
@@ -3792,18 +3995,18 @@ pub struct ThirdPartySourceRepository {
     /// </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>
-    /// The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+    /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
     /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
     /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
     /// <code>Connection</code>
     /// </a> in
-    /// the <i>AWS CodeStar Connections API Reference</i>.
+    /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
     /// </p>
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>
     /// The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository,
     /// this is the username for the account that owns the repository. For an S3 repository,
-    /// this can be the username or AWS account ID.
+    /// this can be the username or Amazon Web Services account ID.
     /// </p>
     pub owner: std::option::Option<std::string::String>,
 }
@@ -3839,12 +4042,12 @@ pub mod third_party_source_repository {
             self
         }
         /// <p>
-        /// The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+        /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
         /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
         /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
         /// <code>Connection</code>
         /// </a> in
-        /// the <i>AWS CodeStar Connections API Reference</i>.
+        /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
         /// </p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
@@ -3860,7 +4063,7 @@ pub mod third_party_source_repository {
         /// <p>
         /// The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository,
         /// this is the username for the account that owns the repository. For an S3 repository,
-        /// this can be the username or AWS account ID.
+        /// this can be the username or Amazon Web Services account ID.
         /// </p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
@@ -3887,14 +4090,14 @@ impl ThirdPartySourceRepository {
     }
 }
 
-/// <p>Information about an AWS CodeCommit repository. The CodeCommit repository must be in the same
-/// AWS Region and AWS account where its CodeGuru Reviewer code reviews are configured.</p>
+/// <p>Information about an Amazon Web Services CodeCommit repository. The CodeCommit repository must be in the same
+/// Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeCommitRepository {
-    /// <p>The name of the AWS CodeCommit repository. For more information, see
+    /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see
     /// <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a>
-    /// in the <i>AWS CodeCommit API Reference</i>.</p>
+    /// in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CodeCommitRepository {
@@ -3913,9 +4116,9 @@ pub mod code_commit_repository {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS CodeCommit repository. For more information, see
+        /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see
         /// <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a>
-        /// in the <i>AWS CodeCommit API Reference</i>.</p>
+        /// in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self

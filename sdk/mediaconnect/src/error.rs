@@ -3251,6 +3251,126 @@ impl std::error::Error for UpdateFlowMediaStreamError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct UpdateFlowOutputError {
+    pub kind: UpdateFlowOutputErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateFlowOutputErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateFlowOutputError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateFlowOutputErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateFlowOutputErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateFlowOutputErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateFlowOutputErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateFlowOutputErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateFlowOutputErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateFlowOutputErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateFlowOutputError {
+    fn code(&self) -> Option<&str> {
+        UpdateFlowOutputError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateFlowOutputError {
+    pub fn new(kind: UpdateFlowOutputErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateFlowOutputErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateFlowOutputErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFlowOutputErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, UpdateFlowOutputErrorKind::ForbiddenException(_))
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFlowOutputErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateFlowOutputErrorKind::NotFoundException(_))
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFlowOutputErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFlowOutputErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateFlowOutputError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateFlowOutputErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateFlowOutputErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateFlowOutputErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateFlowOutputErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateFlowOutputErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateFlowOutputErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateFlowOutputErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct UpdateFlowSourceError {
     pub kind: UpdateFlowSourceErrorKind,
     pub(crate) meta: smithy_types::Error,

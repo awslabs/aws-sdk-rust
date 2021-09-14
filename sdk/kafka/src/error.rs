@@ -3577,6 +3577,132 @@ impl std::error::Error for UpdateMonitoringError {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateSecurityError {
+    pub kind: UpdateSecurityErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateSecurityErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateSecurityError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateSecurityErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateSecurityErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateSecurityErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateSecurityErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateSecurityErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateSecurityErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateSecurityErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            UpdateSecurityErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateSecurityError {
+    fn code(&self) -> Option<&str> {
+        UpdateSecurityError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateSecurityError {
+    pub fn new(kind: UpdateSecurityErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateSecurityErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateSecurityErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateSecurityErrorKind::BadRequestException(_))
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, UpdateSecurityErrorKind::ForbiddenException(_))
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSecurityErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateSecurityErrorKind::NotFoundException(_))
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSecurityErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSecurityErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSecurityErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateSecurityError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateSecurityErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateSecurityErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateSecurityErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateSecurityErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateSecurityErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateSecurityErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateSecurityErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            UpdateSecurityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p>Returns information about an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3659,6 +3785,85 @@ impl UnauthorizedException {
 /// <p>Returns information about an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyRequestsException {
+    /// <p>The parameter that caused the error.</p>
+    pub invalid_parameter: std::option::Option<std::string::String>,
+    /// <p>The description of the error.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TooManyRequestsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TooManyRequestsException");
+        formatter.field("invalid_parameter", &self.invalid_parameter);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TooManyRequestsException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyRequestsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyRequestsException")?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyRequestsException {}
+/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+pub mod too_many_requests_exception {
+    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) invalid_parameter: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The parameter that caused the error.</p>
+        pub fn invalid_parameter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invalid_parameter = Some(input.into());
+            self
+        }
+        pub fn set_invalid_parameter(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invalid_parameter = input;
+            self
+        }
+        /// <p>The description of the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+        pub fn build(self) -> crate::error::TooManyRequestsException {
+            crate::error::TooManyRequestsException {
+                invalid_parameter: self.invalid_parameter,
+                message: self.message,
+            }
+        }
+    }
+}
+impl TooManyRequestsException {
+    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
+        crate::error::too_many_requests_exception::Builder::default()
+    }
+}
+
+/// <p>Returns information about an error.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
     /// <p>The parameter that caused the error.</p>
     pub invalid_parameter: std::option::Option<std::string::String>,
@@ -3681,8 +3886,8 @@ impl ServiceUnavailableException {
 impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
@@ -3738,6 +3943,85 @@ impl ServiceUnavailableException {
 /// <p>Returns information about an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NotFoundException {
+    /// <p>The parameter that caused the error.</p>
+    pub invalid_parameter: std::option::Option<std::string::String>,
+    /// <p>The description of the error.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for NotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NotFoundException");
+        formatter.field("invalid_parameter", &self.invalid_parameter);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl NotFoundException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NotFoundException")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NotFoundException {}
+/// See [`NotFoundException`](crate::error::NotFoundException)
+pub mod not_found_exception {
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) invalid_parameter: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The parameter that caused the error.</p>
+        pub fn invalid_parameter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invalid_parameter = Some(input.into());
+            self
+        }
+        pub fn set_invalid_parameter(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invalid_parameter = input;
+            self
+        }
+        /// <p>The description of the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException)
+        pub fn build(self) -> crate::error::NotFoundException {
+            crate::error::NotFoundException {
+                invalid_parameter: self.invalid_parameter,
+                message: self.message,
+            }
+        }
+    }
+}
+impl NotFoundException {
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException)
+    pub fn builder() -> crate::error::not_found_exception::Builder {
+        crate::error::not_found_exception::Builder::default()
+    }
+}
+
+/// <p>Returns information about an error.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerErrorException {
     /// <p>The parameter that caused the error.</p>
     pub invalid_parameter: std::option::Option<std::string::String>,
@@ -3760,8 +4044,8 @@ impl InternalServerErrorException {
 impl std::fmt::Display for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerErrorException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -3839,8 +4123,8 @@ impl ForbiddenException {
 impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ForbiddenException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -3918,8 +4202,8 @@ impl BadRequestException {
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -3969,164 +4253,6 @@ impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException)
     pub fn builder() -> crate::error::bad_request_exception::Builder {
         crate::error::bad_request_exception::Builder::default()
-    }
-}
-
-/// <p>Returns information about an error.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotFoundException {
-    /// <p>The parameter that caused the error.</p>
-    pub invalid_parameter: std::option::Option<std::string::String>,
-    /// <p>The description of the error.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("invalid_parameter", &self.invalid_parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl NotFoundException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotFoundException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NotFoundException {}
-/// See [`NotFoundException`](crate::error::NotFoundException)
-pub mod not_found_exception {
-    /// A builder for [`NotFoundException`](crate::error::NotFoundException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) invalid_parameter: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The parameter that caused the error.</p>
-        pub fn invalid_parameter(mut self, input: impl Into<std::string::String>) -> Self {
-            self.invalid_parameter = Some(input.into());
-            self
-        }
-        pub fn set_invalid_parameter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invalid_parameter = input;
-            self
-        }
-        /// <p>The description of the error.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException)
-        pub fn build(self) -> crate::error::NotFoundException {
-            crate::error::NotFoundException {
-                invalid_parameter: self.invalid_parameter,
-                message: self.message,
-            }
-        }
-    }
-}
-impl NotFoundException {
-    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException)
-    pub fn builder() -> crate::error::not_found_exception::Builder {
-        crate::error::not_found_exception::Builder::default()
-    }
-}
-
-/// <p>Returns information about an error.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TooManyRequestsException {
-    /// <p>The parameter that caused the error.</p>
-    pub invalid_parameter: std::option::Option<std::string::String>,
-    /// <p>The description of the error.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsException");
-        formatter.field("invalid_parameter", &self.invalid_parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl TooManyRequestsException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyRequestsException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyRequestsException {}
-/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
-pub mod too_many_requests_exception {
-    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) invalid_parameter: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The parameter that caused the error.</p>
-        pub fn invalid_parameter(mut self, input: impl Into<std::string::String>) -> Self {
-            self.invalid_parameter = Some(input.into());
-            self
-        }
-        pub fn set_invalid_parameter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invalid_parameter = input;
-            self
-        }
-        /// <p>The description of the error.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException)
-        pub fn build(self) -> crate::error::TooManyRequestsException {
-            crate::error::TooManyRequestsException {
-                invalid_parameter: self.invalid_parameter,
-                message: self.message,
-            }
-        }
-    }
-}
-impl TooManyRequestsException {
-    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException)
-    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
-        crate::error::too_many_requests_exception::Builder::default()
     }
 }
 

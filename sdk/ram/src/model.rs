@@ -7,9 +7,10 @@ pub struct ResourceShare {
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource share.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the resource share.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
     pub owning_account_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether principals outside your AWS organization can be associated with a resource share.</p>
+    /// <p>Indicates whether principals outside your organization in Organizations can be associated
+    /// with a resource share.</p>
     pub allow_external_principals: std::option::Option<bool>,
     /// <p>The status of the resource share.</p>
     pub status: std::option::Option<crate::model::ResourceShareStatus>,
@@ -25,22 +26,21 @@ pub struct ResourceShare {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an AWS Identity
-    /// and Access Management (AWS IAM) policy attached to a resource. These resource shares are
-    /// visible only to the AWS account that created it. They cannot be modified in
-    /// AWS RAM.</p>
+    /// <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an
+    /// Amazon Web Services Identity and Access Management (Amazon Web Services IAM) policy attached to a resource.
+    /// These resource shares are visible only to the Amazon Web Services account that created it. They cannot
+    /// be modified in RAM.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process
-    /// of being promoted. For more information, see
-    /// <a>PromoteResourceShareCreatedFromPolicy</a>.</p>
+    /// <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being
+    /// promoted. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM using the console or
-    /// APIs. These resource shares are visible to all principals. They can be modified
-    /// in AWS RAM.</p>
+    /// <code>STANDARD</code> - Indicates that the resource share was created in RAM using the
+    /// console or APIs. These resource shares are visible to all principals. They can
+    /// be modified in RAM.</p>
     /// </li>
     /// </ul>
     pub feature_set: std::option::Option<crate::model::ResourceShareFeatureSet>,
@@ -100,7 +100,7 @@ pub mod resource_share {
             self.name = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the resource share.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
         pub fn owning_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owning_account_id = Some(input.into());
             self
@@ -112,7 +112,8 @@ pub mod resource_share {
             self.owning_account_id = input;
             self
         }
-        /// <p>Indicates whether principals outside your AWS organization can be associated with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated
+        /// with a resource share.</p>
         pub fn allow_external_principals(mut self, input: bool) -> Self {
             self.allow_external_principals = Some(input);
             self
@@ -186,22 +187,21 @@ pub mod resource_share {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an AWS Identity
-        /// and Access Management (AWS IAM) policy attached to a resource. These resource shares are
-        /// visible only to the AWS account that created it. They cannot be modified in
-        /// AWS RAM.</p>
+        /// <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an
+        /// Amazon Web Services Identity and Access Management (Amazon Web Services IAM) policy attached to a resource.
+        /// These resource shares are visible only to the Amazon Web Services account that created it. They cannot
+        /// be modified in RAM.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process
-        /// of being promoted. For more information, see
-        /// <a>PromoteResourceShareCreatedFromPolicy</a>.</p>
+        /// <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being
+        /// promoted. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM using the console or
-        /// APIs. These resource shares are visible to all principals. They can be modified
-        /// in AWS RAM.</p>
+        /// <code>STANDARD</code> - Indicates that the resource share was created in RAM using the
+        /// console or APIs. These resource shares are visible to all principals. They can
+        /// be modified in RAM.</p>
         /// </li>
         /// </ul>
         pub fn feature_set(mut self, input: crate::model::ResourceShareFeatureSet) -> Self {
@@ -422,20 +422,20 @@ pub struct ResourceShareInvitation {
     pub resource_share_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that sent the invitation.</p>
+    /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
     pub sender_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that received the invitation.</p>
+    /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
     pub receiver_account_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the invitation was sent.</p>
     pub invitation_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>The status of the invitation.</p>
     pub status: std::option::Option<crate::model::ResourceShareInvitationStatus>,
-    /// <p>To view the resources associated with a pending resource share invitation, use
-    /// <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+    /// <p>To view the resources associated with a pending resource share invitation, use <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
     /// ListPendingInvitationResources</a>.</p>
     pub resource_share_associations:
         std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+    /// invitation.</p>
     pub receiver_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceShareInvitation {
@@ -516,7 +516,7 @@ pub mod resource_share_invitation {
             self.resource_share_arn = input;
             self
         }
-        /// <p>The ID of the AWS account that sent the invitation.</p>
+        /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
         pub fn sender_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sender_account_id = Some(input.into());
             self
@@ -528,7 +528,7 @@ pub mod resource_share_invitation {
             self.sender_account_id = input;
             self
         }
-        /// <p>The ID of the AWS account that received the invitation.</p>
+        /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
         pub fn receiver_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.receiver_account_id = Some(input.into());
             self
@@ -580,7 +580,8 @@ pub mod resource_share_invitation {
             self.resource_share_associations = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+        /// invitation.</p>
         pub fn receiver_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.receiver_arn = Some(input.into());
             self
@@ -620,9 +621,25 @@ pub struct ResourceShareAssociation {
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource share.</p>
     pub resource_share_name: std::option::Option<std::string::String>,
-    /// <p>The associated entity. For resource associations, this is the ARN of the resource.
-    /// For principal associations, this is the ID of an AWS account or the ARN of an OU or
-    /// organization from AWS Organizations.</p>
+    /// <p>The associated entity. For resource associations, this is the Amazon Resource Name
+    /// (ARN) of the resource. For principal associations, this is one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an organization in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM role</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM user</p>
+    /// </li>
+    /// </ul>
     pub associated_entity: std::option::Option<std::string::String>,
     /// <p>The association type.</p>
     pub association_type: std::option::Option<crate::model::ResourceShareAssociationType>,
@@ -634,7 +651,8 @@ pub struct ResourceShareAssociation {
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time when the association was last updated.</p>
     pub last_updated_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the resource share.</p>
+    /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
+    /// Amazon Web Services account that owns the resource share.</p>
     pub external: std::option::Option<bool>,
 }
 impl std::fmt::Debug for ResourceShareAssociation {
@@ -694,9 +712,25 @@ pub mod resource_share_association {
             self.resource_share_name = input;
             self
         }
-        /// <p>The associated entity. For resource associations, this is the ARN of the resource.
-        /// For principal associations, this is the ID of an AWS account or the ARN of an OU or
-        /// organization from AWS Organizations.</p>
+        /// <p>The associated entity. For resource associations, this is the Amazon Resource Name
+        /// (ARN) of the resource. For principal associations, this is one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>An Amazon Web Services account ID</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an organization in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM role</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM user</p>
+        /// </li>
+        /// </ul>
         pub fn associated_entity(mut self, input: impl Into<std::string::String>) -> Self {
             self.associated_entity = Some(input.into());
             self
@@ -771,7 +805,8 @@ pub mod resource_share_association {
             self.last_updated_time = input;
             self
         }
-        /// <p>Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the resource share.</p>
+        /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
+        /// Amazon Web Services account that owns the resource share.</p>
         pub fn external(mut self, input: bool) -> Self {
             self.external = Some(input);
             self
@@ -974,13 +1009,14 @@ impl AsRef<str> for ResourceShareInvitationStatus {
     }
 }
 
-/// <p>Information about the shareable resource types and the AWS services to which they belong.</p>
+/// <p>Information about the shareable resource types and the Amazon Web Services services to which they
+/// belong.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNameAndResourceType {
     /// <p>The shareable resource types.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The name of the AWS services to which the resources belong.</p>
+    /// <p>The name of the Amazon Web Services services to which the resources belong.</p>
     pub service_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceNameAndResourceType {
@@ -1013,7 +1049,7 @@ pub mod service_name_and_resource_type {
             self.resource_type = input;
             self
         }
-        /// <p>The name of the AWS services to which the resources belong.</p>
+        /// <p>The name of the Amazon Web Services services to which the resources belong.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_name = Some(input.into());
             self
@@ -1042,11 +1078,12 @@ impl ServiceNameAndResourceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceSharePermissionSummary {
-    /// <p>The ARN of the permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of the permission.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The identifier for the version of the permission.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the version of the permission is set to the default version for this permission.</p>
+    /// <p>Specifies whether the version of the permission is set to the default version for this
+    /// permission.</p>
     pub default_version: std::option::Option<bool>,
     /// <p>The name of the permission.</p>
     pub name: std::option::Option<std::string::String>,
@@ -1058,7 +1095,8 @@ pub struct ResourceSharePermissionSummary {
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The date and time when the permission was last updated.</p>
     pub last_updated_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Specifies whether the version of the permission is set to the default version for this resource type.</p>
+    /// <p>Specifies whether the version of the permission is set to the default version for this
+    /// resource type.</p>
     pub is_resource_type_default: std::option::Option<bool>,
 }
 impl std::fmt::Debug for ResourceSharePermissionSummary {
@@ -1093,7 +1131,7 @@ pub mod resource_share_permission_summary {
         pub(crate) is_resource_type_default: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ARN of the permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the permission.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -1111,7 +1149,8 @@ pub mod resource_share_permission_summary {
             self.version = input;
             self
         }
-        /// <p>Specifies whether the version of the permission is set to the default version for this permission.</p>
+        /// <p>Specifies whether the version of the permission is set to the default version for this
+        /// permission.</p>
         pub fn default_version(mut self, input: bool) -> Self {
             self.default_version = Some(input);
             self
@@ -1174,7 +1213,8 @@ pub mod resource_share_permission_summary {
             self.last_updated_time = input;
             self
         }
-        /// <p>Specifies whether the version of the permission is set to the default version for this resource type.</p>
+        /// <p>Specifies whether the version of the permission is set to the default version for this
+        /// resource type.</p>
         pub fn is_resource_type_default(mut self, input: bool) -> Self {
             self.is_resource_type_default = Some(input);
             self
@@ -1216,8 +1256,8 @@ pub struct Resource {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the resource group. This value is returned only if the resource is a resource
-    /// group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource group. This value is returned only if
+    /// the resource is a resource group.</p>
     pub resource_group_arn: std::option::Option<std::string::String>,
     /// <p>The status of the resource.</p>
     pub status: std::option::Option<crate::model::ResourceStatus>,
@@ -1288,8 +1328,8 @@ pub mod resource {
             self.resource_share_arn = input;
             self
         }
-        /// <p>The ARN of the resource group. This value is returned only if the resource is a resource
-        /// group.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource group. This value is returned only if
+        /// the resource is a resource group.</p>
         pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_group_arn = Some(input.into());
             self
@@ -1488,7 +1528,7 @@ impl AsRef<str> for ResourceOwner {
     }
 }
 
-/// <p>Describes a principal for use with AWS Resource Access Manager.</p>
+/// <p>Describes a principal for use with Resource Access Manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Principal {
@@ -1500,7 +1540,8 @@ pub struct Principal {
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time when the association was last updated.</p>
     pub last_updated_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the resource share.</p>
+    /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
+    /// Amazon Web Services account that owns the resource share.</p>
     pub external: std::option::Option<bool>,
 }
 impl std::fmt::Debug for Principal {
@@ -1572,7 +1613,8 @@ pub mod principal {
             self.last_updated_time = input;
             self
         }
-        /// <p>Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the resource share.</p>
+        /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
+        /// Amazon Web Services account that owns the resource share.</p>
         pub fn external(mut self, input: bool) -> Self {
             self.external = Some(input);
             self
@@ -1665,29 +1707,31 @@ impl TagFilter {
     }
 }
 
-/// <p>Information about an AWS RAM permission.</p>
+/// <p>Information about an RAM permission.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceSharePermissionDetail {
-    /// <p>The ARN of the permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of the permission.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The identifier for the version of the permission.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the version of the permission is set to the default version for this permission.</p>
+    /// <p>Specifies whether the version of the permission is set to the default version for this
+    /// permission.</p>
     pub default_version: std::option::Option<bool>,
     /// <p>The name of the permission.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The resource type to which the permission applies.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether
-    /// the actions are allowed or denied. The <code>actions</code> list the API actions to
-    /// which the principal is granted or denied access.</p>
+    /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates
+    /// whether the actions are allowed or denied. The <code>actions</code> list the API actions
+    /// to which the principal is granted or denied access.</p>
     pub permission: std::option::Option<std::string::String>,
     /// <p>The date and time when the permission was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The date and time when the permission was last updated.</p>
     pub last_updated_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Specifies whether the version of the permission is set to the default version for this resource type.</p>
+    /// <p>Specifies whether the version of the permission is set to the default version for this
+    /// resource type.</p>
     pub is_resource_type_default: std::option::Option<bool>,
 }
 impl std::fmt::Debug for ResourceSharePermissionDetail {
@@ -1722,7 +1766,7 @@ pub mod resource_share_permission_detail {
         pub(crate) is_resource_type_default: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ARN of the permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the permission.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -1740,7 +1784,8 @@ pub mod resource_share_permission_detail {
             self.version = input;
             self
         }
-        /// <p>Specifies whether the version of the permission is set to the default version for this permission.</p>
+        /// <p>Specifies whether the version of the permission is set to the default version for this
+        /// permission.</p>
         pub fn default_version(mut self, input: bool) -> Self {
             self.default_version = Some(input);
             self
@@ -1770,9 +1815,9 @@ pub mod resource_share_permission_detail {
             self.resource_type = input;
             self
         }
-        /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether
-        /// the actions are allowed or denied. The <code>actions</code> list the API actions to
-        /// which the principal is granted or denied access.</p>
+        /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates
+        /// whether the actions are allowed or denied. The <code>actions</code> list the API actions
+        /// to which the principal is granted or denied access.</p>
         pub fn permission(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission = Some(input.into());
             self
@@ -1805,7 +1850,8 @@ pub mod resource_share_permission_detail {
             self.last_updated_time = input;
             self
         }
-        /// <p>Specifies whether the version of the permission is set to the default version for this resource type.</p>
+        /// <p>Specifies whether the version of the permission is set to the default version for this
+        /// resource type.</p>
         pub fn is_resource_type_default(mut self, input: bool) -> Self {
             self.is_resource_type_default = Some(input);
             self

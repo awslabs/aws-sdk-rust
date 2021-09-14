@@ -22,7 +22,7 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -36,7 +36,7 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -50,7 +50,7 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -64,7 +64,7 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -78,7 +78,7 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -103,11 +103,7 @@ pub fn parse_list_realtime_contact_analysis_segments_response(
         let mut output =
             crate::output::list_realtime_contact_analysis_segments_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_realtime_contact_analysis_segments(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_realtime_contact_analysis_segments(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
         output.build()
     })
 }

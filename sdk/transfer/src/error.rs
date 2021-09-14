@@ -126,6 +126,7 @@ pub enum CreateServerErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     InvalidRequestException(crate::error::InvalidRequestException),
     ResourceExistsException(crate::error::ResourceExistsException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -138,6 +139,7 @@ impl std::fmt::Display for CreateServerError {
             CreateServerErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
             CreateServerErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             CreateServerErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
+            CreateServerErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateServerErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             CreateServerErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateServerErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -206,6 +208,12 @@ impl CreateServerError {
             CreateServerErrorKind::ResourceExistsException(_)
         )
     }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServerErrorKind::ResourceNotFoundException(_)
+        )
+    }
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -223,6 +231,7 @@ impl std::error::Error for CreateServerError {
             CreateServerErrorKind::InternalServiceError(_inner) => Some(_inner),
             CreateServerErrorKind::InvalidRequestException(_inner) => Some(_inner),
             CreateServerErrorKind::ResourceExistsException(_inner) => Some(_inner),
+            CreateServerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateServerErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateServerErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateServerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -334,6 +343,126 @@ impl std::error::Error for CreateUserError {
             CreateUserErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateWorkflowError {
+    pub kind: CreateWorkflowErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateWorkflowErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServiceError(crate::error::InternalServiceError),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceExistsException(crate::error::ResourceExistsException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateWorkflowError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateWorkflowErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateWorkflowErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            CreateWorkflowErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateWorkflowErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
+            CreateWorkflowErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateWorkflowErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateWorkflowErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateWorkflowError {
+    fn code(&self) -> Option<&str> {
+        CreateWorkflowError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateWorkflowError {
+    pub fn new(kind: CreateWorkflowErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateWorkflowErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateWorkflowErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkflowErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, CreateWorkflowErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkflowErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkflowErrorKind::ResourceExistsException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkflowErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateWorkflowErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for CreateWorkflowError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateWorkflowErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateWorkflowErrorKind::InternalServiceError(_inner) => Some(_inner),
+            CreateWorkflowErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateWorkflowErrorKind::ResourceExistsException(_inner) => Some(_inner),
+            CreateWorkflowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateWorkflowErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateWorkflowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -775,6 +904,120 @@ impl std::error::Error for DeleteUserError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeleteWorkflowError {
+    pub kind: DeleteWorkflowErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteWorkflowErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServiceError(crate::error::InternalServiceError),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteWorkflowError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteWorkflowErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteWorkflowErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DeleteWorkflowErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteWorkflowErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteWorkflowErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteWorkflowErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteWorkflowError {
+    fn code(&self) -> Option<&str> {
+        DeleteWorkflowError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteWorkflowError {
+    pub fn new(kind: DeleteWorkflowErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteWorkflowErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteWorkflowErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWorkflowErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, DeleteWorkflowErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWorkflowErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWorkflowErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWorkflowErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteWorkflowError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteWorkflowErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteWorkflowErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DeleteWorkflowErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteWorkflowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteWorkflowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteWorkflowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeAccessError {
     pub kind: DescribeAccessErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -874,6 +1117,114 @@ impl std::error::Error for DescribeAccessError {
             DescribeAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAccessErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeExecutionError {
+    pub kind: DescribeExecutionErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeExecutionErrorKind {
+    InternalServiceError(crate::error::InternalServiceError),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeExecutionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeExecutionErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DescribeExecutionErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeExecutionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeExecutionErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeExecutionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeExecutionError {
+    fn code(&self) -> Option<&str> {
+        DescribeExecutionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeExecutionError {
+    pub fn new(kind: DescribeExecutionErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeExecutionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeExecutionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeExecutionErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeExecutionErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeExecutionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeExecutionErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeExecutionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeExecutionErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DescribeExecutionErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeExecutionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeExecutionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1198,6 +1549,114 @@ impl std::error::Error for DescribeUserError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DescribeWorkflowError {
+    pub kind: DescribeWorkflowErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeWorkflowErrorKind {
+    InternalServiceError(crate::error::InternalServiceError),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeWorkflowError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeWorkflowErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DescribeWorkflowErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeWorkflowErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeWorkflowErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeWorkflowErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeWorkflowError {
+    fn code(&self) -> Option<&str> {
+        DescribeWorkflowError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeWorkflowError {
+    pub fn new(kind: DescribeWorkflowErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeWorkflowErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeWorkflowErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWorkflowErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWorkflowErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWorkflowErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWorkflowErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeWorkflowError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeWorkflowErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DescribeWorkflowErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeWorkflowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeWorkflowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeWorkflowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct ImportSshPublicKeyError {
     pub kind: ImportSshPublicKeyErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -1432,6 +1891,120 @@ impl std::error::Error for ListAccessesError {
             ListAccessesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAccessesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListAccessesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListExecutionsError {
+    pub kind: ListExecutionsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListExecutionsErrorKind {
+    InternalServiceError(crate::error::InternalServiceError),
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListExecutionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListExecutionsErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ListExecutionsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListExecutionsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListExecutionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListExecutionsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListExecutionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListExecutionsError {
+    fn code(&self) -> Option<&str> {
+        ListExecutionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListExecutionsError {
+    pub fn new(kind: ListExecutionsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListExecutionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListExecutionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, ListExecutionsErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListExecutionsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListExecutionsErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListExecutionsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListExecutionsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListExecutionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListExecutionsErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ListExecutionsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListExecutionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListExecutionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListExecutionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListExecutionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1855,6 +2428,237 @@ impl std::error::Error for ListUsersError {
             ListUsersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListUsersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListUsersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListWorkflowsError {
+    pub kind: ListWorkflowsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListWorkflowsErrorKind {
+    InternalServiceError(crate::error::InternalServiceError),
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListWorkflowsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListWorkflowsErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ListWorkflowsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListWorkflowsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListWorkflowsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListWorkflowsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListWorkflowsError {
+    fn code(&self) -> Option<&str> {
+        ListWorkflowsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListWorkflowsError {
+    pub fn new(kind: ListWorkflowsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListWorkflowsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListWorkflowsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, ListWorkflowsErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListWorkflowsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListWorkflowsErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListWorkflowsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListWorkflowsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListWorkflowsErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ListWorkflowsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListWorkflowsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListWorkflowsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListWorkflowsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SendWorkflowStepStateError {
+    pub kind: SendWorkflowStepStateErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SendWorkflowStepStateErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServiceError(crate::error::InternalServiceError),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SendWorkflowStepStateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SendWorkflowStepStateErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SendWorkflowStepStateErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            SendWorkflowStepStateErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            SendWorkflowStepStateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            SendWorkflowStepStateErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            SendWorkflowStepStateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SendWorkflowStepStateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for SendWorkflowStepStateError {
+    fn code(&self) -> Option<&str> {
+        SendWorkflowStepStateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SendWorkflowStepStateError {
+    pub fn new(kind: SendWorkflowStepStateErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SendWorkflowStepStateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SendWorkflowStepStateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendWorkflowStepStateErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendWorkflowStepStateErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendWorkflowStepStateErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendWorkflowStepStateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendWorkflowStepStateErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendWorkflowStepStateErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for SendWorkflowStepStateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SendWorkflowStepStateErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SendWorkflowStepStateErrorKind::InternalServiceError(_inner) => Some(_inner),
+            SendWorkflowStepStateErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            SendWorkflowStepStateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SendWorkflowStepStateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            SendWorkflowStepStateErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SendWorkflowStepStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3175,7 +3979,7 @@ impl ResourceExistsException {
     }
 }
 
-/// <p>This exception is thrown when the <code>UpdatServer</code> is called for a file transfer
+/// <p>This exception is thrown when the <code>UpdateServer</code> is called for a file transfer
 /// protocol-enabled server that has VPC as the endpoint type and the server's
 /// <code>VpcEndpointID</code> is not in the available state.</p>
 #[non_exhaustive]

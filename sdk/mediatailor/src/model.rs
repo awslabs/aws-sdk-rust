@@ -678,6 +678,73 @@ impl DashPlaylistSettings {
     }
 }
 
+/// <p>Slate VOD source configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SlateSource {
+    /// <p>The name of the source location where the slate VOD source is stored.</p>
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
+    pub vod_source_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for SlateSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SlateSource");
+        formatter.field("source_location_name", &self.source_location_name);
+        formatter.field("vod_source_name", &self.vod_source_name);
+        formatter.finish()
+    }
+}
+/// See [`SlateSource`](crate::model::SlateSource)
+pub mod slate_source {
+    /// A builder for [`SlateSource`](crate::model::SlateSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) vod_source_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the source location where the slate VOD source is stored.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
+        pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vod_source_name = Some(input.into());
+            self
+        }
+        pub fn set_vod_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vod_source_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SlateSource`](crate::model::SlateSource)
+        pub fn build(self) -> crate::model::SlateSource {
+            crate::model::SlateSource {
+                source_location_name: self.source_location_name,
+                vod_source_name: self.vod_source_name,
+            }
+        }
+    }
+}
+impl SlateSource {
+    /// Creates a new builder-style object to manufacture [`SlateSource`](crate::model::SlateSource)
+    pub fn builder() -> crate::model::slate_source::Builder {
+        crate::model::slate_source::Builder::default()
+    }
+}
+
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -728,7 +795,7 @@ impl AsRef<str> for ChannelState {
     }
 }
 
-/// <p>The ouput configuration for this channel.</p>
+/// <p>The output configuration for this channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestOutputItem {
@@ -2223,11 +2290,13 @@ pub struct Channel {
     pub channel_state: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the channel was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule. You must configure FillerSlate if your channel uses an LINEAR PlaybackMode.</p>
+    pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
-    /// <p>The type of playback mode for this channel. Possible values: ONCE or LOOP.</p>
+    /// <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
     pub playback_mode: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the channel.</p>
     pub tags:
@@ -2240,6 +2309,7 @@ impl std::fmt::Debug for Channel {
         formatter.field("channel_name", &self.channel_name);
         formatter.field("channel_state", &self.channel_state);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("filler_slate", &self.filler_slate);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("outputs", &self.outputs);
         formatter.field("playback_mode", &self.playback_mode);
@@ -2257,6 +2327,7 @@ pub mod channel {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_state: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
         pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
         pub(crate) playback_mode: std::option::Option<std::string::String>,
@@ -2307,6 +2378,18 @@ pub mod channel {
             self.creation_time = input;
             self
         }
+        /// <p>Contains information about the slate used to fill gaps between programs in the schedule. You must configure FillerSlate if your channel uses an LINEAR PlaybackMode.</p>
+        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
+            self.filler_slate = Some(input);
+            self
+        }
+        pub fn set_filler_slate(
+            mut self,
+            input: std::option::Option<crate::model::SlateSource>,
+        ) -> Self {
+            self.filler_slate = input;
+            self
+        }
         /// <p>The timestamp of when the channel was last modified.</p>
         pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
@@ -2332,7 +2415,7 @@ pub mod channel {
             self.outputs = input;
             self
         }
-        /// <p>The type of playback mode for this channel. Possible values: ONCE or LOOP.</p>
+        /// <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
         pub fn playback_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.playback_mode = Some(input.into());
             self
@@ -2370,6 +2453,7 @@ pub mod channel {
                 channel_name: self.channel_name,
                 channel_state: self.channel_state,
                 creation_time: self.creation_time,
+                filler_slate: self.filler_slate,
                 last_modified_time: self.last_modified_time,
                 outputs: self.outputs,
                 playback_mode: self.playback_mode,
@@ -2514,6 +2598,8 @@ pub struct ScheduleEntry {
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The schedule's ad break properties.</p>
     pub schedule_ad_breaks: std::option::Option<std::vec::Vec<crate::model::ScheduleAdBreak>>,
+    /// <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+    pub schedule_entry_type: std::option::Option<crate::model::ScheduleEntryType>,
     /// <p>The name of the source location.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name of the VOD source.</p>
@@ -2531,6 +2617,7 @@ impl std::fmt::Debug for ScheduleEntry {
         formatter.field("channel_name", &self.channel_name);
         formatter.field("program_name", &self.program_name);
         formatter.field("schedule_ad_breaks", &self.schedule_ad_breaks);
+        formatter.field("schedule_entry_type", &self.schedule_entry_type);
         formatter.field("source_location_name", &self.source_location_name);
         formatter.field("vod_source_name", &self.vod_source_name);
         formatter.finish()
@@ -2549,6 +2636,7 @@ pub mod schedule_entry {
         pub(crate) program_name: std::option::Option<std::string::String>,
         pub(crate) schedule_ad_breaks:
             std::option::Option<std::vec::Vec<crate::model::ScheduleAdBreak>>,
+        pub(crate) schedule_entry_type: std::option::Option<crate::model::ScheduleEntryType>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
     }
@@ -2617,6 +2705,18 @@ pub mod schedule_entry {
             self.schedule_ad_breaks = input;
             self
         }
+        /// <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+        pub fn schedule_entry_type(mut self, input: crate::model::ScheduleEntryType) -> Self {
+            self.schedule_entry_type = Some(input);
+            self
+        }
+        pub fn set_schedule_entry_type(
+            mut self,
+            input: std::option::Option<crate::model::ScheduleEntryType>,
+        ) -> Self {
+            self.schedule_entry_type = input;
+            self
+        }
         /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
@@ -2650,6 +2750,7 @@ pub mod schedule_entry {
                 channel_name: self.channel_name,
                 program_name: self.program_name,
                 schedule_ad_breaks: self.schedule_ad_breaks,
+                schedule_entry_type: self.schedule_entry_type,
                 source_location_name: self.source_location_name,
                 vod_source_name: self.vod_source_name,
             }
@@ -2660,6 +2761,56 @@ impl ScheduleEntry {
     /// Creates a new builder-style object to manufacture [`ScheduleEntry`](crate::model::ScheduleEntry)
     pub fn builder() -> crate::model::schedule_entry::Builder {
         crate::model::schedule_entry::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScheduleEntryType {
+    FillerSlate,
+    Program,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ScheduleEntryType {
+    fn from(s: &str) -> Self {
+        match s {
+            "FILLER_SLATE" => ScheduleEntryType::FillerSlate,
+            "PROGRAM" => ScheduleEntryType::Program,
+            other => ScheduleEntryType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ScheduleEntryType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScheduleEntryType::from(s))
+    }
+}
+impl ScheduleEntryType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScheduleEntryType::FillerSlate => "FILLER_SLATE",
+            ScheduleEntryType::Program => "PROGRAM",
+            ScheduleEntryType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FILLER_SLATE", "PROGRAM"]
+    }
+}
+impl AsRef<str> for ScheduleEntryType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2948,73 +3099,6 @@ impl SpliceInsertMessage {
     }
 }
 
-/// <p>Slate VOD source configuration.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SlateSource {
-    /// <p>The name of the source location where the slate VOD source is stored.</p>
-    pub source_location_name: std::option::Option<std::string::String>,
-    /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
-    pub vod_source_name: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SlateSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlateSource");
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("vod_source_name", &self.vod_source_name);
-        formatter.finish()
-    }
-}
-/// See [`SlateSource`](crate::model::SlateSource)
-pub mod slate_source {
-    /// A builder for [`SlateSource`](crate::model::SlateSource)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) source_location_name: std::option::Option<std::string::String>,
-        pub(crate) vod_source_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the source location where the slate VOD source is stored.</p>
-        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.source_location_name = Some(input.into());
-            self
-        }
-        pub fn set_source_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_name = input;
-            self
-        }
-        /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
-        pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vod_source_name = Some(input.into());
-            self
-        }
-        pub fn set_vod_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vod_source_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`SlateSource`](crate::model::SlateSource)
-        pub fn build(self) -> crate::model::SlateSource {
-            crate::model::SlateSource {
-                source_location_name: self.source_location_name,
-                vod_source_name: self.vod_source_name,
-            }
-        }
-    }
-}
-impl SlateSource {
-    /// Creates a new builder-style object to manufacture [`SlateSource`](crate::model::SlateSource)
-    pub fn builder() -> crate::model::slate_source::Builder {
-        crate::model::slate_source::Builder::default()
-    }
-}
-
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3116,11 +3200,13 @@ impl ScheduleConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transition {
-    /// <p>The position where this program will be inserted relative to the RelativeProgram. Possible values are: AFTER_PROGRAM, and BEFORE_PROGRAM.</p>
+    /// <p>The position where this program will be inserted relative to the RelativePosition.</p>
     pub relative_position: std::option::Option<crate::model::RelativePosition>,
     /// <p>The name of the program that this program will be inserted next to, as defined by RelativePosition.</p>
     pub relative_program: std::option::Option<std::string::String>,
-    /// <p>When the program should be played. RELATIVE means that programs will be played back-to-back.</p>
+    /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
+    pub scheduled_start_time_millis: i64,
+    /// <p>Defines when the program plays in the schedule. You can set the value to ABSOLUTE or RELATIVE.</p> <p>ABSOLUTE - The program plays at a specific wall clock time. This setting can only be used for channels using the LINEAR PlaybackMode.</p> <p>Note the following considerations when using ABSOLUTE transitions:</p> <p>If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor truncates the preceding program on a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor plays the FillerSlate you configured for your linear channel.</p> <p>RELATIVE - The program is inserted into the schedule either before or after a program that you specify via RelativePosition.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Transition {
@@ -3128,6 +3214,10 @@ impl std::fmt::Debug for Transition {
         let mut formatter = f.debug_struct("Transition");
         formatter.field("relative_position", &self.relative_position);
         formatter.field("relative_program", &self.relative_program);
+        formatter.field(
+            "scheduled_start_time_millis",
+            &self.scheduled_start_time_millis,
+        );
         formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
@@ -3140,10 +3230,11 @@ pub mod transition {
     pub struct Builder {
         pub(crate) relative_position: std::option::Option<crate::model::RelativePosition>,
         pub(crate) relative_program: std::option::Option<std::string::String>,
+        pub(crate) scheduled_start_time_millis: std::option::Option<i64>,
         pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The position where this program will be inserted relative to the RelativeProgram. Possible values are: AFTER_PROGRAM, and BEFORE_PROGRAM.</p>
+        /// <p>The position where this program will be inserted relative to the RelativePosition.</p>
         pub fn relative_position(mut self, input: crate::model::RelativePosition) -> Self {
             self.relative_position = Some(input);
             self
@@ -3167,7 +3258,16 @@ pub mod transition {
             self.relative_program = input;
             self
         }
-        /// <p>When the program should be played. RELATIVE means that programs will be played back-to-back.</p>
+        /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
+        pub fn scheduled_start_time_millis(mut self, input: i64) -> Self {
+            self.scheduled_start_time_millis = Some(input);
+            self
+        }
+        pub fn set_scheduled_start_time_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.scheduled_start_time_millis = input;
+            self
+        }
+        /// <p>Defines when the program plays in the schedule. You can set the value to ABSOLUTE or RELATIVE.</p> <p>ABSOLUTE - The program plays at a specific wall clock time. This setting can only be used for channels using the LINEAR PlaybackMode.</p> <p>Note the following considerations when using ABSOLUTE transitions:</p> <p>If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor truncates the preceding program on a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor plays the FillerSlate you configured for your linear channel.</p> <p>RELATIVE - The program is inserted into the schedule either before or after a program that you specify via RelativePosition.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
@@ -3181,6 +3281,7 @@ pub mod transition {
             crate::model::Transition {
                 relative_position: self.relative_position,
                 relative_program: self.relative_program,
+                scheduled_start_time_millis: self.scheduled_start_time_millis.unwrap_or_default(),
                 r#type: self.r#type,
             }
         }
@@ -3254,6 +3355,7 @@ impl AsRef<str> for RelativePosition {
     std::hash::Hash,
 )]
 pub enum PlaybackMode {
+    Linear,
     Loop,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3261,6 +3363,7 @@ pub enum PlaybackMode {
 impl std::convert::From<&str> for PlaybackMode {
     fn from(s: &str) -> Self {
         match s {
+            "LINEAR" => PlaybackMode::Linear,
             "LOOP" => PlaybackMode::Loop,
             other => PlaybackMode::Unknown(other.to_owned()),
         }
@@ -3276,12 +3379,13 @@ impl std::str::FromStr for PlaybackMode {
 impl PlaybackMode {
     pub fn as_str(&self) -> &str {
         match self {
+            PlaybackMode::Linear => "LINEAR",
             PlaybackMode::Loop => "LOOP",
             PlaybackMode::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["LOOP"]
+        &["LINEAR", "LOOP"]
     }
 }
 impl AsRef<str> for PlaybackMode {

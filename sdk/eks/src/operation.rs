@@ -351,6 +351,34 @@ impl smithy_http::response::ParseStrictResponse for DeleteNodegroup {
     }
 }
 
+/// <p>Deregisters a connected cluster to remove it from the Amazon EKS control plane.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeregisterCluster {
+    _private: (),
+}
+impl DeregisterCluster {
+    /// Creates a new builder-style object to manufacture [`DeregisterClusterInput`](crate::input::DeregisterClusterInput)
+    pub fn builder() -> crate::input::deregister_cluster_input::Builder {
+        crate::input::deregister_cluster_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeregisterCluster {
+    type Output = std::result::Result<
+        crate::output::DeregisterClusterOutput,
+        crate::error::DeregisterClusterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_deregister_cluster_error(response)
+        } else {
+            crate::operation_deser::parse_deregister_cluster_response(response)
+        }
+    }
+}
+
 /// <p>Describes an Amazon EKS add-on.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAddon {
@@ -773,6 +801,42 @@ impl smithy_http::response::ParseStrictResponse for ListUpdates {
             crate::operation_deser::parse_list_updates_error(response)
         } else {
             crate::operation_deser::parse_list_updates_response(response)
+        }
+    }
+}
+
+/// <p>Connects a Kubernetes cluster to the Amazon EKS control plane. </p>
+/// <p>Any Kubernetes cluster can be connected to the Amazon EKS control plane to view current information about the cluster and its nodes.
+/// </p>
+/// <p>Cluster connection requires two steps. First, send a <code>
+/// <a>RegisterClusterRequest</a>
+/// </code> to add it to the Amazon EKS control plane.</p>
+/// <p>Second, a <a href="https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml">Manifest</a> containing the <code>activationID</code> and <code>activationCode</code> must be applied to the Kubernetes cluster through it's native provider to provide visibility.</p>
+/// <p>After the Manifest is updated and applied, then the connected cluster is visible to the Amazon EKS control plane. If the Manifest is not applied within a set amount of time,
+/// then the connected cluster will no longer be visible and must be deregistered. See <a>DeregisterCluster</a>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RegisterCluster {
+    _private: (),
+}
+impl RegisterCluster {
+    /// Creates a new builder-style object to manufacture [`RegisterClusterInput`](crate::input::RegisterClusterInput)
+    pub fn builder() -> crate::input::register_cluster_input::Builder {
+        crate::input::register_cluster_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for RegisterCluster {
+    type Output = std::result::Result<
+        crate::output::RegisterClusterOutput,
+        crate::error::RegisterClusterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_register_cluster_error(response)
+        } else {
+            crate::operation_deser::parse_register_cluster_response(response)
         }
     }
 }

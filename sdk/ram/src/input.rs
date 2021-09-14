@@ -70,10 +70,8 @@ impl AcceptResourceShareInvitationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_accept_resource_share_invitation(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_accept_resource_share_invitation(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -134,8 +132,11 @@ impl AcceptResourceShareInvitationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -143,7 +144,11 @@ impl AcceptResourceShareInvitationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -248,7 +253,10 @@ impl AssociateResourceShareInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_associate_resource_share(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_associate_resource_share(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -312,8 +320,11 @@ impl AssociateResourceShareInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -321,7 +332,11 @@ impl AssociateResourceShareInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -356,7 +371,8 @@ pub mod associate_resource_share_permission_input {
             self.resource_share_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with the resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
+        /// resource share.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_arn = Some(input.into());
             self
@@ -369,8 +385,8 @@ pub mod associate_resource_share_permission_input {
             self
         }
         /// <p>Indicates whether the permission should replace the permissions that are currently
-        /// associated with the resource share. Use <code>true</code> to replace the current permissions.
-        /// Use <code>false</code> to add the permission to the current permission.</p>
+        /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
+        /// <code>false</code> to add the permission to the current permission.</p>
         pub fn replace(mut self, input: bool) -> Self {
             self.replace = Some(input);
             self
@@ -388,7 +404,7 @@ pub mod associate_resource_share_permission_input {
             self.client_token = input;
             self
         }
-        /// <p>The version of the AWS RAM permissions to associate with the resource share.</p>
+        /// <p>The version of the RAM permissions to associate with the resource share.</p>
         pub fn permission_version(mut self, input: i32) -> Self {
             self.permission_version = Some(input);
             self
@@ -436,12 +452,8 @@ impl AssociateResourceSharePermissionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_associate_resource_share_permission(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_associate_resource_share_permission(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -502,8 +514,11 @@ impl AssociateResourceSharePermissionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -511,7 +526,11 @@ impl AssociateResourceSharePermissionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -584,7 +603,8 @@ pub mod create_resource_share_input {
             self.tags = input;
             self
         }
-        /// <p>Indicates whether principals outside your AWS organization can be associated with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated
+        /// with a resource share.</p>
         pub fn allow_external_principals(mut self, input: bool) -> Self {
             self.allow_external_principals = Some(input);
             self
@@ -654,7 +674,10 @@ impl CreateResourceShareInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_resource_share(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_resource_share(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -718,8 +741,11 @@ impl CreateResourceShareInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -727,7 +753,11 @@ impl CreateResourceShareInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -876,8 +906,11 @@ impl DeleteResourceShareInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -885,7 +918,11 @@ impl DeleteResourceShareInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -991,10 +1028,9 @@ impl DisassociateResourceShareInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_disassociate_resource_share(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_disassociate_resource_share(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1055,8 +1091,11 @@ impl DisassociateResourceShareInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1064,7 +1103,11 @@ impl DisassociateResourceShareInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1097,7 +1140,7 @@ pub mod disassociate_resource_share_permission_input {
             self.resource_share_arn = input;
             self
         }
-        /// <p>The ARN of the permission to disassociate from the resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_arn = Some(input.into());
             self
@@ -1156,12 +1199,8 @@ impl DisassociateResourceSharePermissionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_disassociate_resource_share_permission(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_disassociate_resource_share_permission(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1222,8 +1261,11 @@ impl DisassociateResourceSharePermissionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1231,7 +1273,11 @@ impl DisassociateResourceSharePermissionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1341,8 +1387,11 @@ impl EnableSharingWithAwsOrganizationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1350,7 +1399,11 @@ impl EnableSharingWithAwsOrganizationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1370,7 +1423,7 @@ pub mod get_permission_input {
         pub(crate) permission_version: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ARN of the permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the permission.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_arn = Some(input.into());
             self
@@ -1424,9 +1477,10 @@ impl GetPermissionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_permission(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_permission(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1487,8 +1541,11 @@ impl GetPermissionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1496,7 +1553,11 @@ impl GetPermissionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1595,7 +1656,10 @@ impl GetResourcePoliciesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_resource_policies(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_resource_policies(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1659,8 +1723,11 @@ impl GetResourcePoliciesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1668,7 +1735,11 @@ impl GetResourcePoliciesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1696,8 +1767,8 @@ pub mod get_resource_share_associations_input {
     }
     impl Builder {
         /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list
-        /// the resources that are associated with the specified resource share.</p>
+        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
+        /// that are associated with the specified resource share.</p>
         pub fn association_type(
             mut self,
             input: crate::model::ResourceShareAssociationType,
@@ -1725,8 +1796,8 @@ pub mod get_resource_share_associations_input {
             self.resource_share_arns = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the
-        /// association type is <code>PRINCIPAL</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
+        /// the association type is <code>PRINCIPAL</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -1820,10 +1891,8 @@ impl GetResourceShareAssociationsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_resource_share_associations(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_resource_share_associations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1884,8 +1953,11 @@ impl GetResourceShareAssociationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1893,7 +1965,11 @@ impl GetResourceShareAssociationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2002,10 +2078,8 @@ impl GetResourceShareInvitationsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_resource_share_invitations(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_resource_share_invitations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2066,8 +2140,11 @@ impl GetResourceShareInvitationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2075,7 +2152,11 @@ impl GetResourceShareInvitationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2179,7 +2260,8 @@ pub mod get_resource_shares_input {
             self.max_results = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
+        /// resource share.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_arn = Some(input.into());
             self
@@ -2231,7 +2313,10 @@ impl GetResourceSharesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_resource_shares(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_resource_shares(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2295,8 +2380,11 @@ impl GetResourceSharesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2304,7 +2392,11 @@ impl GetResourceSharesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2396,10 +2488,8 @@ impl ListPendingInvitationResourcesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_pending_invitation_resources(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_pending_invitation_resources(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2460,8 +2550,11 @@ impl ListPendingInvitationResourcesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2469,7 +2562,11 @@ impl ListPendingInvitationResourcesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2557,9 +2654,11 @@ impl ListPermissionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_permissions(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_permissions(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2620,8 +2719,11 @@ impl ListPermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2629,7 +2731,11 @@ impl ListPermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2689,7 +2795,7 @@ pub mod list_principals_input {
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
         /// </p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -2773,9 +2879,11 @@ impl ListPrincipalsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_principals(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_principals(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2836,8 +2944,11 @@ impl ListPrincipalsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2845,7 +2956,11 @@ impl ListPrincipalsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2892,7 +3007,7 @@ pub mod list_resources_input {
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
         /// </p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -2988,9 +3103,10 @@ impl ListResourcesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_resources(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3051,8 +3167,11 @@ impl ListResourcesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3060,7 +3179,11 @@ impl ListResourcesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3149,10 +3272,8 @@ impl ListResourceSharePermissionsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_resource_share_permissions(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_resource_share_permissions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3213,8 +3334,11 @@ impl ListResourceSharePermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3222,7 +3346,11 @@ impl ListResourceSharePermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3295,7 +3423,10 @@ impl ListResourceTypesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_resource_types(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_resource_types(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3359,8 +3490,11 @@ impl ListResourceTypesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3368,7 +3502,11 @@ impl ListResourceTypesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3387,7 +3525,7 @@ pub mod promote_resource_share_created_from_policy_input {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the resource share to promote.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_arn = Some(input.into());
             self
@@ -3506,8 +3644,11 @@ impl PromoteResourceShareCreatedFromPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3515,7 +3656,11 @@ impl PromoteResourceShareCreatedFromPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3595,10 +3740,8 @@ impl RejectResourceShareInvitationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_reject_resource_share_invitation(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_reject_resource_share_invitation(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3659,8 +3802,11 @@ impl RejectResourceShareInvitationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3668,7 +3814,11 @@ impl RejectResourceShareInvitationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3746,9 +3896,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3806,8 +3957,11 @@ impl TagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3815,7 +3969,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3893,9 +4051,10 @@ impl UntagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3956,8 +4115,11 @@ impl UntagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3965,7 +4127,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4008,7 +4174,8 @@ pub mod update_resource_share_input {
             self.name = input;
             self
         }
-        /// <p>Indicates whether principals outside your AWS organization can be associated with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated
+        /// with a resource share.</p>
         pub fn allow_external_principals(mut self, input: bool) -> Self {
             self.allow_external_principals = Some(input);
             self
@@ -4062,7 +4229,10 @@ impl UpdateResourceShareInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_resource_share(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_resource_share(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4126,8 +4296,11 @@ impl UpdateResourceShareInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4135,7 +4308,11 @@ impl UpdateResourceShareInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4152,7 +4329,8 @@ pub struct UpdateResourceShareInput {
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource share.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether principals outside your AWS organization can be associated with a resource share.</p>
+    /// <p>Indicates whether principals outside your organization in Organizations can be associated
+    /// with a resource share.</p>
     pub allow_external_principals: std::option::Option<bool>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
@@ -4225,7 +4403,7 @@ impl std::fmt::Debug for RejectResourceShareInvitationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PromoteResourceShareCreatedFromPolicyInput {
-    /// <p>The ARN of the resource share to promote.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PromoteResourceShareCreatedFromPolicyInput {
@@ -4283,10 +4461,10 @@ pub struct ListResourcesInput {
     /// <p>The principal.</p>
     pub principal: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
-    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
+    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
     /// </p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARN) of the resources.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4320,7 +4498,7 @@ pub struct ListPrincipalsInput {
     /// <p>The principals.</p>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The resource type.</p>
-    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
+    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
     /// </p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
@@ -4394,7 +4572,7 @@ impl std::fmt::Debug for ListPendingInvitationResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceSharesInput {
-    /// <p>The ARNs of the resource shares.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the resource share.</p>
     pub resource_share_status: std::option::Option<crate::model::ResourceShareStatus>,
@@ -4409,7 +4587,8 @@ pub struct GetResourceSharesInput {
     /// <p>The maximum number of results to return with a single call.
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
+    /// resource share.</p>
     pub permission_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetResourceSharesInput {
@@ -4458,13 +4637,13 @@ impl std::fmt::Debug for GetResourceShareInvitationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceShareAssociationsInput {
     /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-    /// associated with the specified resource share. Specify <code>RESOURCE</code> to list
-    /// the resources that are associated with the specified resource share.</p>
+    /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
+    /// that are associated with the specified resource share.</p>
     pub association_type: std::option::Option<crate::model::ResourceShareAssociationType>,
     /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the
-    /// association type is <code>PRINCIPAL</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
+    /// the association type is <code>PRINCIPAL</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The principal. You cannot specify this parameter if the association type is
     /// <code>RESOURCE</code>.</p>
@@ -4494,7 +4673,7 @@ impl std::fmt::Debug for GetResourceShareAssociationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePoliciesInput {
-    /// <p>The Amazon Resource Names (ARN) of the resources.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The principal.</p>
     pub principal: std::option::Option<std::string::String>,
@@ -4518,7 +4697,7 @@ impl std::fmt::Debug for GetResourcePoliciesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionInput {
-    /// <p>The ARN of the permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of the permission.</p>
     pub permission_arn: std::option::Option<std::string::String>,
     /// <p>The identifier for the version of the permission.</p>
     pub permission_version: std::option::Option<i32>,
@@ -4547,7 +4726,7 @@ impl std::fmt::Debug for EnableSharingWithAwsOrganizationInput {
 pub struct DisassociateResourceSharePermissionInput {
     /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the permission to disassociate from the resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
     pub permission_arn: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
@@ -4607,20 +4786,43 @@ impl std::fmt::Debug for DeleteResourceShareInput {
 pub struct CreateResourceShareInput {
     /// <p>The name of the resource share.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARN) of the resources to associate with the resource share.</p>
+    /// <p>The ARNs of the resources to associate with the resource share.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The principals to associate with the resource share. The possible values are IDs of AWS accounts,
-    /// the ARN of an OU or organization from AWS Organizations.</p>
+    /// <p>The principals to associate with the resource share. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID</p>
+    /// </li>
+    /// <li>
+    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM role</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM user</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
+    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+    /// Guide</i>.</p>
+    /// </note>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Indicates whether principals outside your AWS organization can be associated with a resource share.</p>
+    /// <p>Indicates whether principals outside your organization in Organizations can be associated
+    /// with a resource share.</p>
     pub allow_external_principals: std::option::Option<bool>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The ARNs of the permissions to associate with the resource share. If you do not specify an ARN
-    /// for the permission, AWS RAM automatically attaches the default version of the permission
-    /// for each resource type.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
+    /// do not specify an ARN for the permission, RAM automatically attaches the default
+    /// version of the permission for each resource type. Only one permission can be associated
+    /// with each resource type in a resource share.</p>
     pub permission_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for CreateResourceShareInput {
@@ -4642,15 +4844,16 @@ impl std::fmt::Debug for CreateResourceShareInput {
 pub struct AssociateResourceSharePermissionInput {
     /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with the resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
+    /// resource share.</p>
     pub permission_arn: std::option::Option<std::string::String>,
     /// <p>Indicates whether the permission should replace the permissions that are currently
-    /// associated with the resource share. Use <code>true</code> to replace the current permissions.
-    /// Use <code>false</code> to add the permission to the current permission.</p>
+    /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
+    /// <code>false</code> to add the permission to the current permission.</p>
     pub replace: std::option::Option<bool>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The version of the AWS RAM permissions to associate with the resource share.</p>
+    /// <p>The version of the RAM permissions to associate with the resource share.</p>
     pub permission_version: std::option::Option<i32>,
 }
 impl std::fmt::Debug for AssociateResourceSharePermissionInput {
@@ -4670,11 +4873,31 @@ impl std::fmt::Debug for AssociateResourceSharePermissionInput {
 pub struct AssociateResourceShareInput {
     /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARN) of the resources.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The principals to associate with the resource share. The possible values are IDs of
-    /// AWS accounts, and the ARNs of organizational units (OU) or organizations from AWS
-    /// Organizations.</p>
+    /// <p>The principals to associate with the resource share. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID</p>
+    /// </li>
+    /// <li>
+    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM role</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM user</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
+    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+    /// Guide</i>.</p>
+    /// </note>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,

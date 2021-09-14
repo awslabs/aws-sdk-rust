@@ -15,15 +15,23 @@ use aws_types::region::Region;
 /// This provider will attempt to load AWS shared configuration, then read the `region` property
 /// from the active profile.
 ///
-/// Example:
+/// # Examples
 ///
+/// **Loads "us-west-2" as the region
 /// ```ini
-/// # `~/.aws/config
 /// [default]
 /// region = us-west-2
 /// ```
 ///
-/// This provider is part of the [default provider chain](crate::default_provider::region).
+/// **Loads `us-east-1` as the region _if and only if_ the `AWS_PROFILE` environment variable is set
+/// to `other`.
+///
+/// ```ini
+/// [profile other]
+/// region = us-east-1
+/// ```
+///
+/// This provider is part of the [default region provider chain](crate::default_provider::region).
 #[derive(Debug, Default)]
 pub struct ProfileFileRegionProvider {
     fs: Fs,

@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -123,7 +123,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -162,7 +162,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_savings_plan(
+pub fn deser_operation_crate_operation_create_savings_plan(
     input: &[u8],
     mut builder: crate::output::create_savings_plan_output::Builder,
 ) -> Result<crate::output::create_savings_plan_output::Builder, smithy_json::deserialize::Error> {
@@ -201,7 +201,7 @@ pub fn deser_operation_create_savings_plan(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_savings_plan_rates(
+pub fn deser_operation_crate_operation_describe_savings_plan_rates(
     input: &[u8],
     mut builder: crate::output::describe_savings_plan_rates_output::Builder,
 ) -> Result<
@@ -234,7 +234,7 @@ pub fn deser_operation_describe_savings_plan_rates(
                     }
                     "searchResults" => {
                         builder = builder.set_search_results(
-                            crate::json_deser::deser_list_savings_plan_rate_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_savingsplans_savings_plan_rate_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -255,7 +255,7 @@ pub fn deser_operation_describe_savings_plan_rates(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_savings_plans(
+pub fn deser_operation_crate_operation_describe_savings_plans(
     input: &[u8],
     mut builder: crate::output::describe_savings_plans_output::Builder,
 ) -> Result<crate::output::describe_savings_plans_output::Builder, smithy_json::deserialize::Error>
@@ -279,7 +279,7 @@ pub fn deser_operation_describe_savings_plans(
                     }
                     "savingsPlans" => {
                         builder = builder.set_savings_plans(
-                            crate::json_deser::deser_list_savings_plan_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_savingsplans_savings_plan_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -300,7 +300,7 @@ pub fn deser_operation_describe_savings_plans(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_savings_plans_offering_rates(
+pub fn deser_operation_crate_operation_describe_savings_plans_offering_rates(
     input: &[u8],
     mut builder: crate::output::describe_savings_plans_offering_rates_output::Builder,
 ) -> Result<
@@ -326,7 +326,7 @@ pub fn deser_operation_describe_savings_plans_offering_rates(
                     }
                     "searchResults" => {
                         builder = builder.set_search_results(
-                            crate::json_deser::deser_list_savings_plan_offering_rates_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_savingsplans_savings_plan_offering_rates_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -347,7 +347,7 @@ pub fn deser_operation_describe_savings_plans_offering_rates(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_savings_plans_offerings(
+pub fn deser_operation_crate_operation_describe_savings_plans_offerings(
     input: &[u8],
     mut builder: crate::output::describe_savings_plans_offerings_output::Builder,
 ) -> Result<
@@ -373,7 +373,7 @@ pub fn deser_operation_describe_savings_plans_offerings(
                     }
                     "searchResults" => {
                         builder = builder.set_search_results(
-                            crate::json_deser::deser_list_savings_plan_offerings_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_savingsplans_savings_plan_offerings_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -394,7 +394,7 @@ pub fn deser_operation_describe_savings_plans_offerings(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -410,7 +410,11 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_savingsplans_tag_map(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -439,7 +443,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_savings_plan_rate_list<'a, I>(
+pub fn deser_list_com_amazonaws_savingsplans_savings_plan_rate_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SavingsPlanRate>>, smithy_json::deserialize::Error>
 where
@@ -458,7 +462,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_savings_plan_rate(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_savings_plan_rate(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -474,7 +481,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_savings_plan_list<'a, I>(
+pub fn deser_list_com_amazonaws_savingsplans_savings_plan_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SavingsPlan>>, smithy_json::deserialize::Error>
 where
@@ -493,7 +500,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_savings_plan(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_savings_plan(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -509,7 +517,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_savings_plan_offering_rates_list<'a, I>(
+pub fn deser_list_com_amazonaws_savingsplans_savings_plan_offering_rates_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SavingsPlanOfferingRate>>,
@@ -532,7 +540,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_savings_plan_offering_rate(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_savings_plan_offering_rate(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -548,7 +557,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_savings_plan_offerings_list<'a, I>(
+pub fn deser_list_com_amazonaws_savingsplans_savings_plan_offerings_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SavingsPlanOffering>>, smithy_json::deserialize::Error>
 where
@@ -568,7 +577,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_savings_plan_offering(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_savings_plan_offering(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -584,7 +595,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_tag_map<'a, I>(
+pub fn deser_map_com_amazonaws_savingsplans_tag_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -627,7 +638,7 @@ where
     }
 }
 
-pub fn deser_structure_savings_plan_rate<'a, I>(
+pub fn deser_structure_crate_model_savings_plan_rate<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlanRate>, smithy_json::deserialize::Error>
 where
@@ -727,9 +738,7 @@ where
                             }
                             "properties" => {
                                 builder = builder.set_properties(
-                                    crate::json_deser::deser_list_savings_plan_rate_property_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_savingsplans_savings_plan_rate_property_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -750,7 +759,7 @@ where
     }
 }
 
-pub fn deser_structure_savings_plan<'a, I>(
+pub fn deser_structure_crate_model_savings_plan<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlan>, smithy_json::deserialize::Error>
 where
@@ -881,9 +890,7 @@ where
                             }
                             "productTypes" => {
                                 builder = builder.set_product_types(
-                                    crate::json_deser::deser_list_savings_plan_product_type_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_savingsplans_savings_plan_product_type_list(tokens)?
                                 );
                             }
                             "currency" => {
@@ -934,8 +941,9 @@ where
                                 );
                             }
                             "tags" => {
-                                builder =
-                                    builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_map_com_amazonaws_savingsplans_tag_map(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -955,7 +963,7 @@ where
     }
 }
 
-pub fn deser_structure_savings_plan_offering_rate<'a, I>(
+pub fn deser_structure_crate_model_savings_plan_offering_rate<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlanOfferingRate>, smithy_json::deserialize::Error>
 where
@@ -975,7 +983,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "savingsPlanOffering" => {
                                 builder = builder.set_savings_plan_offering(
-                                    crate::json_deser::deser_structure_parent_savings_plan_offering(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_parent_savings_plan_offering(tokens)?
                                 );
                             }
                             "rate" => {
@@ -1048,7 +1056,7 @@ where
                             }
                             "properties" => {
                                 builder = builder.set_properties(
-                                    crate::json_deser::deser_list_savings_plan_offering_rate_property_list(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_savingsplans_savings_plan_offering_rate_property_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1069,7 +1077,7 @@ where
     }
 }
 
-pub fn deser_structure_savings_plan_offering<'a, I>(
+pub fn deser_structure_crate_model_savings_plan_offering<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlanOffering>, smithy_json::deserialize::Error>
 where
@@ -1098,9 +1106,7 @@ where
                             }
                             "productTypes" => {
                                 builder = builder.set_product_types(
-                                    crate::json_deser::deser_list_savings_plan_product_type_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_savingsplans_savings_plan_product_type_list(tokens)?
                                 );
                             }
                             "planType" => {
@@ -1187,7 +1193,7 @@ where
                             }
                             "properties" => {
                                 builder = builder.set_properties(
-                                    crate::json_deser::deser_list_savings_plan_offering_property_list(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_savingsplans_savings_plan_offering_property_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1209,7 +1215,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_savings_plan_rate_property_list<'a, I>(
+pub fn deser_list_com_amazonaws_savingsplans_savings_plan_rate_property_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SavingsPlanRateProperty>>,
@@ -1232,7 +1238,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_savings_plan_rate_property(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_savings_plan_rate_property(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1248,7 +1255,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_savings_plan_product_type_list<'a, I>(
+pub fn deser_list_com_amazonaws_savingsplans_savings_plan_product_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
@@ -1292,7 +1299,7 @@ where
     }
 }
 
-pub fn deser_structure_parent_savings_plan_offering<'a, I>(
+pub fn deser_structure_crate_model_parent_savings_plan_offering<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ParentSavingsPlanOffering>, smithy_json::deserialize::Error>
 where
@@ -1393,7 +1400,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_savings_plan_offering_rate_property_list<'a, I>(
+pub fn deser_list_com_amazonaws_savingsplans_savings_plan_offering_rate_property_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SavingsPlanOfferingRateProperty>>,
@@ -1416,9 +1423,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_savings_plan_offering_rate_property(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_savings_plan_offering_rate_property(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1434,7 +1440,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_savings_plan_offering_property_list<'a, I>(
+pub fn deser_list_com_amazonaws_savingsplans_savings_plan_offering_property_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SavingsPlanOfferingProperty>>,
@@ -1457,9 +1463,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_savings_plan_offering_property(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_savings_plan_offering_property(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1474,7 +1479,7 @@ where
     }
 }
 
-pub fn deser_structure_savings_plan_rate_property<'a, I>(
+pub fn deser_structure_crate_model_savings_plan_rate_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlanRateProperty>, smithy_json::deserialize::Error>
 where
@@ -1534,7 +1539,7 @@ where
     }
 }
 
-pub fn deser_structure_savings_plan_offering_rate_property<'a, I>(
+pub fn deser_structure_crate_model_savings_plan_offering_rate_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlanOfferingRateProperty>, smithy_json::deserialize::Error>
 where
@@ -1588,7 +1593,7 @@ where
     }
 }
 
-pub fn deser_structure_savings_plan_offering_property<'a, I>(
+pub fn deser_structure_crate_model_savings_plan_offering_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SavingsPlanOfferingProperty>, smithy_json::deserialize::Error>
 where

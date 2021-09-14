@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_exception::Builder,
 ) -> Result<crate::error::internal_exception::Builder, smithy_json::deserialize::Error> {
@@ -51,7 +51,7 @@ pub fn deser_structure_internal_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_input_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_input_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_input_exception::Builder,
 ) -> Result<crate::error::invalid_input_exception::Builder, smithy_json::deserialize::Error> {
@@ -104,7 +104,7 @@ pub fn deser_structure_invalid_input_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -157,7 +157,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -203,7 +203,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_associate_s3_resources(
+pub fn deser_operation_crate_operation_associate_s3_resources(
     input: &[u8],
     mut builder: crate::output::associate_s3_resources_output::Builder,
 ) -> Result<crate::output::associate_s3_resources_output::Builder, smithy_json::deserialize::Error>
@@ -220,7 +220,9 @@ pub fn deser_operation_associate_s3_resources(
                 match key.to_unescaped()?.as_ref() {
                     "failedS3Resources" => {
                         builder = builder.set_failed_s3_resources(
-                            crate::json_deser::deser_list_failed_s3_resources(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_macie_failed_s3_resources(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -241,7 +243,7 @@ pub fn deser_operation_associate_s3_resources(
     Ok(builder)
 }
 
-pub fn deser_operation_disassociate_s3_resources(
+pub fn deser_operation_crate_operation_disassociate_s3_resources(
     input: &[u8],
     mut builder: crate::output::disassociate_s3_resources_output::Builder,
 ) -> Result<crate::output::disassociate_s3_resources_output::Builder, smithy_json::deserialize::Error>
@@ -258,7 +260,9 @@ pub fn deser_operation_disassociate_s3_resources(
                 match key.to_unescaped()?.as_ref() {
                     "failedS3Resources" => {
                         builder = builder.set_failed_s3_resources(
-                            crate::json_deser::deser_list_failed_s3_resources(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_macie_failed_s3_resources(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -279,7 +283,7 @@ pub fn deser_operation_disassociate_s3_resources(
     Ok(builder)
 }
 
-pub fn deser_operation_list_member_accounts(
+pub fn deser_operation_crate_operation_list_member_accounts(
     input: &[u8],
     mut builder: crate::output::list_member_accounts_output::Builder,
 ) -> Result<crate::output::list_member_accounts_output::Builder, smithy_json::deserialize::Error> {
@@ -295,7 +299,9 @@ pub fn deser_operation_list_member_accounts(
                 match key.to_unescaped()?.as_ref() {
                     "memberAccounts" => {
                         builder = builder.set_member_accounts(
-                            crate::json_deser::deser_list_member_accounts(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_macie_member_accounts(
+                                tokens,
+                            )?,
                         );
                     }
                     "nextToken" => {
@@ -323,7 +329,7 @@ pub fn deser_operation_list_member_accounts(
     Ok(builder)
 }
 
-pub fn deser_operation_list_s3_resources(
+pub fn deser_operation_crate_operation_list_s3_resources(
     input: &[u8],
     mut builder: crate::output::list_s3_resources_output::Builder,
 ) -> Result<crate::output::list_s3_resources_output::Builder, smithy_json::deserialize::Error> {
@@ -339,7 +345,7 @@ pub fn deser_operation_list_s3_resources(
                 match key.to_unescaped()?.as_ref() {
                     "s3Resources" => {
                         builder = builder.set_s3_resources(
-                            crate::json_deser::deser_list_s3_resources_classification(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_macie_s3_resources_classification(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -367,7 +373,7 @@ pub fn deser_operation_list_s3_resources(
     Ok(builder)
 }
 
-pub fn deser_operation_update_s3_resources(
+pub fn deser_operation_crate_operation_update_s3_resources(
     input: &[u8],
     mut builder: crate::output::update_s3_resources_output::Builder,
 ) -> Result<crate::output::update_s3_resources_output::Builder, smithy_json::deserialize::Error> {
@@ -383,7 +389,9 @@ pub fn deser_operation_update_s3_resources(
                 match key.to_unescaped()?.as_ref() {
                     "failedS3Resources" => {
                         builder = builder.set_failed_s3_resources(
-                            crate::json_deser::deser_list_failed_s3_resources(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_macie_failed_s3_resources(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -413,7 +421,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_failed_s3_resources<'a, I>(
+pub fn deser_list_com_amazonaws_macie_failed_s3_resources<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::FailedS3Resource>>, smithy_json::deserialize::Error>
 where
@@ -432,7 +440,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_failed_s3_resource(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_failed_s3_resource(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -448,7 +459,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_member_accounts<'a, I>(
+pub fn deser_list_com_amazonaws_macie_member_accounts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MemberAccount>>, smithy_json::deserialize::Error>
 where
@@ -467,7 +478,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_member_account(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_member_account(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -483,7 +495,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_s3_resources_classification<'a, I>(
+pub fn deser_list_com_amazonaws_macie_s3_resources_classification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::S3ResourceClassification>>,
@@ -506,7 +518,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_s3_resource_classification(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_s3_resource_classification(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -521,7 +534,7 @@ where
     }
 }
 
-pub fn deser_structure_failed_s3_resource<'a, I>(
+pub fn deser_structure_crate_model_failed_s3_resource<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FailedS3Resource>, smithy_json::deserialize::Error>
 where
@@ -541,7 +554,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "failedItem" => {
                                 builder = builder.set_failed_item(
-                                    crate::json_deser::deser_structure_s3_resource(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_s3_resource(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "errorCode" => {
@@ -580,7 +595,7 @@ where
     }
 }
 
-pub fn deser_structure_member_account<'a, I>(
+pub fn deser_structure_crate_model_member_account<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MemberAccount>, smithy_json::deserialize::Error>
 where
@@ -625,7 +640,7 @@ where
     }
 }
 
-pub fn deser_structure_s3_resource_classification<'a, I>(
+pub fn deser_structure_crate_model_s3_resource_classification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3ResourceClassification>, smithy_json::deserialize::Error>
 where
@@ -663,7 +678,7 @@ where
                             }
                             "classificationType" => {
                                 builder = builder.set_classification_type(
-                                    crate::json_deser::deser_structure_classification_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_classification_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -684,7 +699,7 @@ where
     }
 }
 
-pub fn deser_structure_s3_resource<'a, I>(
+pub fn deser_structure_crate_model_s3_resource<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3Resource>, smithy_json::deserialize::Error>
 where
@@ -738,7 +753,7 @@ where
     }
 }
 
-pub fn deser_structure_classification_type<'a, I>(
+pub fn deser_structure_crate_model_classification_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ClassificationType>, smithy_json::deserialize::Error>
 where

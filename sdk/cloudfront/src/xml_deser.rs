@@ -6,7 +6,7 @@ pub fn parse_http_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_access_denied_xml_err(
+pub fn deser_structure_crate_error_access_denied_xml_err(
     inp: &[u8],
     mut builder: crate::error::access_denied::Builder,
 ) -> Result<crate::error::access_denied::Builder, smithy_xml::decode::XmlError> {
@@ -39,7 +39,7 @@ pub fn deser_structure_access_denied_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_illegal_update_xml_err(
+pub fn deser_structure_crate_error_illegal_update_xml_err(
     inp: &[u8],
     mut builder: crate::error::illegal_update::Builder,
 ) -> Result<crate::error::illegal_update::Builder, smithy_xml::decode::XmlError> {
@@ -72,7 +72,7 @@ pub fn deser_structure_illegal_update_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_argument_xml_err(
+pub fn deser_structure_crate_error_invalid_argument_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_argument::Builder,
 ) -> Result<crate::error::invalid_argument::Builder, smithy_xml::decode::XmlError> {
@@ -105,7 +105,7 @@ pub fn deser_structure_invalid_argument_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_distribution_xml_err(
+pub fn deser_structure_crate_error_no_such_distribution_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_distribution::Builder,
 ) -> Result<crate::error::no_such_distribution::Builder, smithy_xml::decode::XmlError> {
@@ -138,7 +138,7 @@ pub fn deser_structure_no_such_distribution_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_distribution_cnam_es_xml_err(
+pub fn deser_structure_crate_error_too_many_distribution_cnam_es_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_distribution_cnam_es::Builder,
 ) -> Result<crate::error::too_many_distribution_cnam_es::Builder, smithy_xml::decode::XmlError> {
@@ -171,7 +171,7 @@ pub fn deser_structure_too_many_distribution_cnam_es_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_policy_already_exists_xml_err(
+pub fn deser_structure_crate_error_cache_policy_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_policy_already_exists::Builder,
 ) -> Result<crate::error::cache_policy_already_exists::Builder, smithy_xml::decode::XmlError> {
@@ -204,7 +204,7 @@ pub fn deser_structure_cache_policy_already_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_inconsistent_quantities_xml_err(
+pub fn deser_structure_crate_error_inconsistent_quantities_xml_err(
     inp: &[u8],
     mut builder: crate::error::inconsistent_quantities::Builder,
 ) -> Result<crate::error::inconsistent_quantities::Builder, smithy_xml::decode::XmlError> {
@@ -237,7 +237,7 @@ pub fn deser_structure_inconsistent_quantities_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_cache_policies_xml_err(
+pub fn deser_structure_crate_error_too_many_cache_policies_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_cache_policies::Builder,
 ) -> Result<crate::error::too_many_cache_policies::Builder, smithy_xml::decode::XmlError> {
@@ -270,7 +270,7 @@ pub fn deser_structure_too_many_cache_policies_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_cookies_in_cache_policy_xml_err(
+pub fn deser_structure_crate_error_too_many_cookies_in_cache_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_cookies_in_cache_policy::Builder,
 ) -> Result<crate::error::too_many_cookies_in_cache_policy::Builder, smithy_xml::decode::XmlError> {
@@ -303,7 +303,7 @@ pub fn deser_structure_too_many_cookies_in_cache_policy_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_headers_in_cache_policy_xml_err(
+pub fn deser_structure_crate_error_too_many_headers_in_cache_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_headers_in_cache_policy::Builder,
 ) -> Result<crate::error::too_many_headers_in_cache_policy::Builder, smithy_xml::decode::XmlError> {
@@ -336,7 +336,7 @@ pub fn deser_structure_too_many_headers_in_cache_policy_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_query_strings_in_cache_policy_xml_err(
+pub fn deser_structure_crate_error_too_many_query_strings_in_cache_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_query_strings_in_cache_policy::Builder,
 ) -> Result<
@@ -372,7 +372,7 @@ pub fn deser_structure_too_many_query_strings_in_cache_policy_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cloud_front_origin_access_identity_already_exists_xml_err(
+pub fn deser_structure_crate_error_cloud_front_origin_access_identity_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::cloud_front_origin_access_identity_already_exists::Builder,
 ) -> Result<
@@ -408,7 +408,7 @@ pub fn deser_structure_cloud_front_origin_access_identity_already_exists_xml_err
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_missing_body_xml_err(
+pub fn deser_structure_crate_error_missing_body_xml_err(
     inp: &[u8],
     mut builder: crate::error::missing_body::Builder,
 ) -> Result<crate::error::missing_body::Builder, smithy_xml::decode::XmlError> {
@@ -441,7 +441,7 @@ pub fn deser_structure_missing_body_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_cloud_front_origin_access_identities_xml_err(
+pub fn deser_structure_crate_error_too_many_cloud_front_origin_access_identities_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_cloud_front_origin_access_identities::Builder,
 ) -> Result<
@@ -477,7 +477,7 @@ pub fn deser_structure_too_many_cloud_front_origin_access_identities_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cname_already_exists_xml_err(
+pub fn deser_structure_crate_error_cname_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::cname_already_exists::Builder,
 ) -> Result<crate::error::cname_already_exists::Builder, smithy_xml::decode::XmlError> {
@@ -510,7 +510,7 @@ pub fn deser_structure_cname_already_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_distribution_already_exists_xml_err(
+pub fn deser_structure_crate_error_distribution_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::distribution_already_exists::Builder,
 ) -> Result<crate::error::distribution_already_exists::Builder, smithy_xml::decode::XmlError> {
@@ -543,7 +543,7 @@ pub fn deser_structure_distribution_already_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(
+pub fn deser_structure_crate_error_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(
     inp: &[u8],
     mut builder: crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder,
 ) -> Result<
@@ -579,7 +579,7 @@ pub fn deser_structure_illegal_field_level_encryption_config_association_with_ca
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_default_root_object_xml_err(
+pub fn deser_structure_crate_error_invalid_default_root_object_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_default_root_object::Builder,
 ) -> Result<crate::error::invalid_default_root_object::Builder, smithy_xml::decode::XmlError> {
@@ -612,7 +612,7 @@ pub fn deser_structure_invalid_default_root_object_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_error_code_xml_err(
+pub fn deser_structure_crate_error_invalid_error_code_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_error_code::Builder,
 ) -> Result<crate::error::invalid_error_code::Builder, smithy_xml::decode::XmlError> {
@@ -645,7 +645,7 @@ pub fn deser_structure_invalid_error_code_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_forward_cookies_xml_err(
+pub fn deser_structure_crate_error_invalid_forward_cookies_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_forward_cookies::Builder,
 ) -> Result<crate::error::invalid_forward_cookies::Builder, smithy_xml::decode::XmlError> {
@@ -678,7 +678,7 @@ pub fn deser_structure_invalid_forward_cookies_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_function_association_xml_err(
+pub fn deser_structure_crate_error_invalid_function_association_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_function_association::Builder,
 ) -> Result<crate::error::invalid_function_association::Builder, smithy_xml::decode::XmlError> {
@@ -711,7 +711,7 @@ pub fn deser_structure_invalid_function_association_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_geo_restriction_parameter_xml_err(
+pub fn deser_structure_crate_error_invalid_geo_restriction_parameter_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_geo_restriction_parameter::Builder,
 ) -> Result<crate::error::invalid_geo_restriction_parameter::Builder, smithy_xml::decode::XmlError>
@@ -745,7 +745,7 @@ pub fn deser_structure_invalid_geo_restriction_parameter_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_headers_for_s3_origin_xml_err(
+pub fn deser_structure_crate_error_invalid_headers_for_s3_origin_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_headers_for_s3_origin::Builder,
 ) -> Result<crate::error::invalid_headers_for_s3_origin::Builder, smithy_xml::decode::XmlError> {
@@ -778,7 +778,7 @@ pub fn deser_structure_invalid_headers_for_s3_origin_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_lambda_function_association_xml_err(
+pub fn deser_structure_crate_error_invalid_lambda_function_association_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_lambda_function_association::Builder,
 ) -> Result<crate::error::invalid_lambda_function_association::Builder, smithy_xml::decode::XmlError>
@@ -812,7 +812,7 @@ pub fn deser_structure_invalid_lambda_function_association_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_location_code_xml_err(
+pub fn deser_structure_crate_error_invalid_location_code_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_location_code::Builder,
 ) -> Result<crate::error::invalid_location_code::Builder, smithy_xml::decode::XmlError> {
@@ -845,7 +845,7 @@ pub fn deser_structure_invalid_location_code_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_minimum_protocol_version_xml_err(
+pub fn deser_structure_crate_error_invalid_minimum_protocol_version_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_minimum_protocol_version::Builder,
 ) -> Result<crate::error::invalid_minimum_protocol_version::Builder, smithy_xml::decode::XmlError> {
@@ -878,7 +878,7 @@ pub fn deser_structure_invalid_minimum_protocol_version_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_origin_xml_err(
+pub fn deser_structure_crate_error_invalid_origin_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_origin::Builder,
 ) -> Result<crate::error::invalid_origin::Builder, smithy_xml::decode::XmlError> {
@@ -911,7 +911,7 @@ pub fn deser_structure_invalid_origin_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_origin_access_identity_xml_err(
+pub fn deser_structure_crate_error_invalid_origin_access_identity_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_origin_access_identity::Builder,
 ) -> Result<crate::error::invalid_origin_access_identity::Builder, smithy_xml::decode::XmlError> {
@@ -944,7 +944,7 @@ pub fn deser_structure_invalid_origin_access_identity_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_origin_keepalive_timeout_xml_err(
+pub fn deser_structure_crate_error_invalid_origin_keepalive_timeout_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_origin_keepalive_timeout::Builder,
 ) -> Result<crate::error::invalid_origin_keepalive_timeout::Builder, smithy_xml::decode::XmlError> {
@@ -977,7 +977,7 @@ pub fn deser_structure_invalid_origin_keepalive_timeout_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_origin_read_timeout_xml_err(
+pub fn deser_structure_crate_error_invalid_origin_read_timeout_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_origin_read_timeout::Builder,
 ) -> Result<crate::error::invalid_origin_read_timeout::Builder, smithy_xml::decode::XmlError> {
@@ -1010,7 +1010,7 @@ pub fn deser_structure_invalid_origin_read_timeout_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_protocol_settings_xml_err(
+pub fn deser_structure_crate_error_invalid_protocol_settings_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_protocol_settings::Builder,
 ) -> Result<crate::error::invalid_protocol_settings::Builder, smithy_xml::decode::XmlError> {
@@ -1043,7 +1043,7 @@ pub fn deser_structure_invalid_protocol_settings_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_query_string_parameters_xml_err(
+pub fn deser_structure_crate_error_invalid_query_string_parameters_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_query_string_parameters::Builder,
 ) -> Result<crate::error::invalid_query_string_parameters::Builder, smithy_xml::decode::XmlError> {
@@ -1076,7 +1076,7 @@ pub fn deser_structure_invalid_query_string_parameters_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_relative_path_xml_err(
+pub fn deser_structure_crate_error_invalid_relative_path_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_relative_path::Builder,
 ) -> Result<crate::error::invalid_relative_path::Builder, smithy_xml::decode::XmlError> {
@@ -1109,7 +1109,7 @@ pub fn deser_structure_invalid_relative_path_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_required_protocol_xml_err(
+pub fn deser_structure_crate_error_invalid_required_protocol_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_required_protocol::Builder,
 ) -> Result<crate::error::invalid_required_protocol::Builder, smithy_xml::decode::XmlError> {
@@ -1142,7 +1142,7 @@ pub fn deser_structure_invalid_required_protocol_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_response_code_xml_err(
+pub fn deser_structure_crate_error_invalid_response_code_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_response_code::Builder,
 ) -> Result<crate::error::invalid_response_code::Builder, smithy_xml::decode::XmlError> {
@@ -1175,7 +1175,7 @@ pub fn deser_structure_invalid_response_code_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_ttl_order_xml_err(
+pub fn deser_structure_crate_error_invalid_ttl_order_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_ttl_order::Builder,
 ) -> Result<crate::error::invalid_ttl_order::Builder, smithy_xml::decode::XmlError> {
@@ -1208,7 +1208,7 @@ pub fn deser_structure_invalid_ttl_order_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_viewer_certificate_xml_err(
+pub fn deser_structure_crate_error_invalid_viewer_certificate_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_viewer_certificate::Builder,
 ) -> Result<crate::error::invalid_viewer_certificate::Builder, smithy_xml::decode::XmlError> {
@@ -1241,7 +1241,7 @@ pub fn deser_structure_invalid_viewer_certificate_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_web_acl_id_xml_err(
+pub fn deser_structure_crate_error_invalid_web_acl_id_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_web_acl_id::Builder,
 ) -> Result<crate::error::invalid_web_acl_id::Builder, smithy_xml::decode::XmlError> {
@@ -1274,7 +1274,7 @@ pub fn deser_structure_invalid_web_acl_id_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_cache_policy_xml_err(
+pub fn deser_structure_crate_error_no_such_cache_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_cache_policy::Builder,
 ) -> Result<crate::error::no_such_cache_policy::Builder, smithy_xml::decode::XmlError> {
@@ -1307,7 +1307,7 @@ pub fn deser_structure_no_such_cache_policy_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_field_level_encryption_config_xml_err(
+pub fn deser_structure_crate_error_no_such_field_level_encryption_config_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_field_level_encryption_config::Builder,
 ) -> Result<
@@ -1343,7 +1343,7 @@ pub fn deser_structure_no_such_field_level_encryption_config_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_origin_xml_err(
+pub fn deser_structure_crate_error_no_such_origin_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_origin::Builder,
 ) -> Result<crate::error::no_such_origin::Builder, smithy_xml::decode::XmlError> {
@@ -1376,7 +1376,7 @@ pub fn deser_structure_no_such_origin_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_origin_request_policy_xml_err(
+pub fn deser_structure_crate_error_no_such_origin_request_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_origin_request_policy::Builder,
 ) -> Result<crate::error::no_such_origin_request_policy::Builder, smithy_xml::decode::XmlError> {
@@ -1409,7 +1409,7 @@ pub fn deser_structure_no_such_origin_request_policy_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_realtime_log_config_xml_err(
+pub fn deser_structure_crate_error_no_such_realtime_log_config_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_realtime_log_config::Builder,
 ) -> Result<crate::error::no_such_realtime_log_config::Builder, smithy_xml::decode::XmlError> {
@@ -1442,7 +1442,7 @@ pub fn deser_structure_no_such_realtime_log_config_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_realtime_log_config_owner_mismatch_xml_err(
+pub fn deser_structure_crate_error_realtime_log_config_owner_mismatch_xml_err(
     inp: &[u8],
     mut builder: crate::error::realtime_log_config_owner_mismatch::Builder,
 ) -> Result<crate::error::realtime_log_config_owner_mismatch::Builder, smithy_xml::decode::XmlError>
@@ -1476,7 +1476,7 @@ pub fn deser_structure_realtime_log_config_owner_mismatch_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_cache_behaviors_xml_err(
+pub fn deser_structure_crate_error_too_many_cache_behaviors_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_cache_behaviors::Builder,
 ) -> Result<crate::error::too_many_cache_behaviors::Builder, smithy_xml::decode::XmlError> {
@@ -1509,7 +1509,7 @@ pub fn deser_structure_too_many_cache_behaviors_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_certificates_xml_err(
+pub fn deser_structure_crate_error_too_many_certificates_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_certificates::Builder,
 ) -> Result<crate::error::too_many_certificates::Builder, smithy_xml::decode::XmlError> {
@@ -1542,7 +1542,7 @@ pub fn deser_structure_too_many_certificates_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_cookie_names_in_white_list_xml_err(
+pub fn deser_structure_crate_error_too_many_cookie_names_in_white_list_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_cookie_names_in_white_list::Builder,
 ) -> Result<crate::error::too_many_cookie_names_in_white_list::Builder, smithy_xml::decode::XmlError>
@@ -1576,7 +1576,7 @@ pub fn deser_structure_too_many_cookie_names_in_white_list_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_distributions_xml_err(
+pub fn deser_structure_crate_error_too_many_distributions_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_distributions::Builder,
 ) -> Result<crate::error::too_many_distributions::Builder, smithy_xml::decode::XmlError> {
@@ -1609,7 +1609,7 @@ pub fn deser_structure_too_many_distributions_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_distributions_associated_to_cache_policy_xml_err(
+pub fn deser_structure_crate_error_too_many_distributions_associated_to_cache_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_distributions_associated_to_cache_policy::Builder,
 ) -> Result<
@@ -1645,7 +1645,7 @@ pub fn deser_structure_too_many_distributions_associated_to_cache_policy_xml_err
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_distributions_associated_to_field_level_encryption_config_xml_err(
+pub fn deser_structure_crate_error_too_many_distributions_associated_to_field_level_encryption_config_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder,
 ) -> Result<
@@ -1681,7 +1681,7 @@ pub fn deser_structure_too_many_distributions_associated_to_field_level_encrypti
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_distributions_associated_to_key_group_xml_err(
+pub fn deser_structure_crate_error_too_many_distributions_associated_to_key_group_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_distributions_associated_to_key_group::Builder,
 ) -> Result<
@@ -1717,7 +1717,7 @@ pub fn deser_structure_too_many_distributions_associated_to_key_group_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_distributions_associated_to_origin_request_policy_xml_err(
+pub fn deser_structure_crate_error_too_many_distributions_associated_to_origin_request_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_distributions_associated_to_origin_request_policy::Builder,
 ) -> Result<
@@ -1753,7 +1753,7 @@ pub fn deser_structure_too_many_distributions_associated_to_origin_request_polic
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_distributions_with_function_associations_xml_err(
+pub fn deser_structure_crate_error_too_many_distributions_with_function_associations_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_distributions_with_function_associations::Builder,
 ) -> Result<
@@ -1789,7 +1789,7 @@ pub fn deser_structure_too_many_distributions_with_function_associations_xml_err
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_distributions_with_lambda_associations_xml_err(
+pub fn deser_structure_crate_error_too_many_distributions_with_lambda_associations_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_distributions_with_lambda_associations::Builder,
 ) -> Result<
@@ -1825,7 +1825,7 @@ pub fn deser_structure_too_many_distributions_with_lambda_associations_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_distributions_with_single_function_arn_xml_err(
+pub fn deser_structure_crate_error_too_many_distributions_with_single_function_arn_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_distributions_with_single_function_arn::Builder,
 ) -> Result<
@@ -1861,7 +1861,7 @@ pub fn deser_structure_too_many_distributions_with_single_function_arn_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_function_associations_xml_err(
+pub fn deser_structure_crate_error_too_many_function_associations_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_function_associations::Builder,
 ) -> Result<crate::error::too_many_function_associations::Builder, smithy_xml::decode::XmlError> {
@@ -1894,7 +1894,7 @@ pub fn deser_structure_too_many_function_associations_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_headers_in_forwarded_values_xml_err(
+pub fn deser_structure_crate_error_too_many_headers_in_forwarded_values_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_headers_in_forwarded_values::Builder,
 ) -> Result<crate::error::too_many_headers_in_forwarded_values::Builder, smithy_xml::decode::XmlError>
@@ -1928,7 +1928,7 @@ pub fn deser_structure_too_many_headers_in_forwarded_values_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_key_groups_associated_to_distribution_xml_err(
+pub fn deser_structure_crate_error_too_many_key_groups_associated_to_distribution_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_key_groups_associated_to_distribution::Builder,
 ) -> Result<
@@ -1964,7 +1964,7 @@ pub fn deser_structure_too_many_key_groups_associated_to_distribution_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_lambda_function_associations_xml_err(
+pub fn deser_structure_crate_error_too_many_lambda_function_associations_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_lambda_function_associations::Builder,
 ) -> Result<
@@ -2000,7 +2000,7 @@ pub fn deser_structure_too_many_lambda_function_associations_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_origin_custom_headers_xml_err(
+pub fn deser_structure_crate_error_too_many_origin_custom_headers_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_origin_custom_headers::Builder,
 ) -> Result<crate::error::too_many_origin_custom_headers::Builder, smithy_xml::decode::XmlError> {
@@ -2033,7 +2033,7 @@ pub fn deser_structure_too_many_origin_custom_headers_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_origin_groups_per_distribution_xml_err(
+pub fn deser_structure_crate_error_too_many_origin_groups_per_distribution_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_origin_groups_per_distribution::Builder,
 ) -> Result<
@@ -2069,7 +2069,7 @@ pub fn deser_structure_too_many_origin_groups_per_distribution_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_origins_xml_err(
+pub fn deser_structure_crate_error_too_many_origins_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_origins::Builder,
 ) -> Result<crate::error::too_many_origins::Builder, smithy_xml::decode::XmlError> {
@@ -2102,7 +2102,7 @@ pub fn deser_structure_too_many_origins_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_query_string_parameters_xml_err(
+pub fn deser_structure_crate_error_too_many_query_string_parameters_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_query_string_parameters::Builder,
 ) -> Result<crate::error::too_many_query_string_parameters::Builder, smithy_xml::decode::XmlError> {
@@ -2135,7 +2135,7 @@ pub fn deser_structure_too_many_query_string_parameters_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_trusted_signers_xml_err(
+pub fn deser_structure_crate_error_too_many_trusted_signers_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_trusted_signers::Builder,
 ) -> Result<crate::error::too_many_trusted_signers::Builder, smithy_xml::decode::XmlError> {
@@ -2168,7 +2168,7 @@ pub fn deser_structure_too_many_trusted_signers_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_trusted_key_group_does_not_exist_xml_err(
+pub fn deser_structure_crate_error_trusted_key_group_does_not_exist_xml_err(
     inp: &[u8],
     mut builder: crate::error::trusted_key_group_does_not_exist::Builder,
 ) -> Result<crate::error::trusted_key_group_does_not_exist::Builder, smithy_xml::decode::XmlError> {
@@ -2201,7 +2201,7 @@ pub fn deser_structure_trusted_key_group_does_not_exist_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_trusted_signer_does_not_exist_xml_err(
+pub fn deser_structure_crate_error_trusted_signer_does_not_exist_xml_err(
     inp: &[u8],
     mut builder: crate::error::trusted_signer_does_not_exist::Builder,
 ) -> Result<crate::error::trusted_signer_does_not_exist::Builder, smithy_xml::decode::XmlError> {
@@ -2234,7 +2234,7 @@ pub fn deser_structure_trusted_signer_does_not_exist_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_tagging_xml_err(
+pub fn deser_structure_crate_error_invalid_tagging_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_tagging::Builder,
 ) -> Result<crate::error::invalid_tagging::Builder, smithy_xml::decode::XmlError> {
@@ -2267,7 +2267,7 @@ pub fn deser_structure_invalid_tagging_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_field_level_encryption_config_already_exists_xml_err(
+pub fn deser_structure_crate_error_field_level_encryption_config_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::field_level_encryption_config_already_exists::Builder,
 ) -> Result<
@@ -2303,7 +2303,7 @@ pub fn deser_structure_field_level_encryption_config_already_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_field_level_encryption_profile_xml_err(
+pub fn deser_structure_crate_error_no_such_field_level_encryption_profile_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_field_level_encryption_profile::Builder,
 ) -> Result<
@@ -2339,7 +2339,7 @@ pub fn deser_structure_no_such_field_level_encryption_profile_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_query_arg_profile_empty_xml_err(
+pub fn deser_structure_crate_error_query_arg_profile_empty_xml_err(
     inp: &[u8],
     mut builder: crate::error::query_arg_profile_empty::Builder,
 ) -> Result<crate::error::query_arg_profile_empty::Builder, smithy_xml::decode::XmlError> {
@@ -2372,7 +2372,7 @@ pub fn deser_structure_query_arg_profile_empty_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_field_level_encryption_configs_xml_err(
+pub fn deser_structure_crate_error_too_many_field_level_encryption_configs_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_field_level_encryption_configs::Builder,
 ) -> Result<
@@ -2408,7 +2408,7 @@ pub fn deser_structure_too_many_field_level_encryption_configs_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_field_level_encryption_content_type_profiles_xml_err(
+pub fn deser_structure_crate_error_too_many_field_level_encryption_content_type_profiles_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_field_level_encryption_content_type_profiles::Builder,
 ) -> Result<
@@ -2444,7 +2444,7 @@ pub fn deser_structure_too_many_field_level_encryption_content_type_profiles_xml
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_field_level_encryption_query_arg_profiles_xml_err(
+pub fn deser_structure_crate_error_too_many_field_level_encryption_query_arg_profiles_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_field_level_encryption_query_arg_profiles::Builder,
 ) -> Result<
@@ -2480,7 +2480,7 @@ pub fn deser_structure_too_many_field_level_encryption_query_arg_profiles_xml_er
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_field_level_encryption_profile_already_exists_xml_err(
+pub fn deser_structure_crate_error_field_level_encryption_profile_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::field_level_encryption_profile_already_exists::Builder,
 ) -> Result<
@@ -2516,7 +2516,7 @@ pub fn deser_structure_field_level_encryption_profile_already_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_field_level_encryption_profile_size_exceeded_xml_err(
+pub fn deser_structure_crate_error_field_level_encryption_profile_size_exceeded_xml_err(
     inp: &[u8],
     mut builder: crate::error::field_level_encryption_profile_size_exceeded::Builder,
 ) -> Result<
@@ -2552,7 +2552,7 @@ pub fn deser_structure_field_level_encryption_profile_size_exceeded_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_public_key_xml_err(
+pub fn deser_structure_crate_error_no_such_public_key_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_public_key::Builder,
 ) -> Result<crate::error::no_such_public_key::Builder, smithy_xml::decode::XmlError> {
@@ -2585,7 +2585,7 @@ pub fn deser_structure_no_such_public_key_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_field_level_encryption_encryption_entities_xml_err(
+pub fn deser_structure_crate_error_too_many_field_level_encryption_encryption_entities_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_field_level_encryption_encryption_entities::Builder,
 ) -> Result<
@@ -2621,7 +2621,7 @@ pub fn deser_structure_too_many_field_level_encryption_encryption_entities_xml_e
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_field_level_encryption_field_patterns_xml_err(
+pub fn deser_structure_crate_error_too_many_field_level_encryption_field_patterns_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_field_level_encryption_field_patterns::Builder,
 ) -> Result<
@@ -2657,7 +2657,7 @@ pub fn deser_structure_too_many_field_level_encryption_field_patterns_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_field_level_encryption_profiles_xml_err(
+pub fn deser_structure_crate_error_too_many_field_level_encryption_profiles_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_field_level_encryption_profiles::Builder,
 ) -> Result<
@@ -2693,7 +2693,7 @@ pub fn deser_structure_too_many_field_level_encryption_profiles_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_function_already_exists_xml_err(
+pub fn deser_structure_crate_error_function_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::function_already_exists::Builder,
 ) -> Result<crate::error::function_already_exists::Builder, smithy_xml::decode::XmlError> {
@@ -2726,7 +2726,7 @@ pub fn deser_structure_function_already_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_function_size_limit_exceeded_xml_err(
+pub fn deser_structure_crate_error_function_size_limit_exceeded_xml_err(
     inp: &[u8],
     mut builder: crate::error::function_size_limit_exceeded::Builder,
 ) -> Result<crate::error::function_size_limit_exceeded::Builder, smithy_xml::decode::XmlError> {
@@ -2759,7 +2759,7 @@ pub fn deser_structure_function_size_limit_exceeded_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_functions_xml_err(
+pub fn deser_structure_crate_error_too_many_functions_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_functions::Builder,
 ) -> Result<crate::error::too_many_functions::Builder, smithy_xml::decode::XmlError> {
@@ -2792,7 +2792,7 @@ pub fn deser_structure_too_many_functions_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_unsupported_operation_xml_err(
+pub fn deser_structure_crate_error_unsupported_operation_xml_err(
     inp: &[u8],
     mut builder: crate::error::unsupported_operation::Builder,
 ) -> Result<crate::error::unsupported_operation::Builder, smithy_xml::decode::XmlError> {
@@ -2825,7 +2825,7 @@ pub fn deser_structure_unsupported_operation_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_batch_too_large_xml_err(
+pub fn deser_structure_crate_error_batch_too_large_xml_err(
     inp: &[u8],
     mut builder: crate::error::batch_too_large::Builder,
 ) -> Result<crate::error::batch_too_large::Builder, smithy_xml::decode::XmlError> {
@@ -2858,7 +2858,7 @@ pub fn deser_structure_batch_too_large_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_invalidations_in_progress_xml_err(
+pub fn deser_structure_crate_error_too_many_invalidations_in_progress_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_invalidations_in_progress::Builder,
 ) -> Result<crate::error::too_many_invalidations_in_progress::Builder, smithy_xml::decode::XmlError>
@@ -2892,7 +2892,7 @@ pub fn deser_structure_too_many_invalidations_in_progress_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_key_group_already_exists_xml_err(
+pub fn deser_structure_crate_error_key_group_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::key_group_already_exists::Builder,
 ) -> Result<crate::error::key_group_already_exists::Builder, smithy_xml::decode::XmlError> {
@@ -2925,7 +2925,7 @@ pub fn deser_structure_key_group_already_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_key_groups_xml_err(
+pub fn deser_structure_crate_error_too_many_key_groups_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_key_groups::Builder,
 ) -> Result<crate::error::too_many_key_groups::Builder, smithy_xml::decode::XmlError> {
@@ -2958,7 +2958,7 @@ pub fn deser_structure_too_many_key_groups_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_public_keys_in_key_group_xml_err(
+pub fn deser_structure_crate_error_too_many_public_keys_in_key_group_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_public_keys_in_key_group::Builder,
 ) -> Result<crate::error::too_many_public_keys_in_key_group::Builder, smithy_xml::decode::XmlError>
@@ -2992,7 +2992,7 @@ pub fn deser_structure_too_many_public_keys_in_key_group_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_origin_request_policy_already_exists_xml_err(
+pub fn deser_structure_crate_error_origin_request_policy_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::origin_request_policy_already_exists::Builder,
 ) -> Result<crate::error::origin_request_policy_already_exists::Builder, smithy_xml::decode::XmlError>
@@ -3026,7 +3026,7 @@ pub fn deser_structure_origin_request_policy_already_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_cookies_in_origin_request_policy_xml_err(
+pub fn deser_structure_crate_error_too_many_cookies_in_origin_request_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_cookies_in_origin_request_policy::Builder,
 ) -> Result<
@@ -3062,7 +3062,7 @@ pub fn deser_structure_too_many_cookies_in_origin_request_policy_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_headers_in_origin_request_policy_xml_err(
+pub fn deser_structure_crate_error_too_many_headers_in_origin_request_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_headers_in_origin_request_policy::Builder,
 ) -> Result<
@@ -3098,7 +3098,7 @@ pub fn deser_structure_too_many_headers_in_origin_request_policy_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_origin_request_policies_xml_err(
+pub fn deser_structure_crate_error_too_many_origin_request_policies_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_origin_request_policies::Builder,
 ) -> Result<crate::error::too_many_origin_request_policies::Builder, smithy_xml::decode::XmlError> {
@@ -3131,7 +3131,7 @@ pub fn deser_structure_too_many_origin_request_policies_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_query_strings_in_origin_request_policy_xml_err(
+pub fn deser_structure_crate_error_too_many_query_strings_in_origin_request_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_query_strings_in_origin_request_policy::Builder,
 ) -> Result<
@@ -3167,7 +3167,7 @@ pub fn deser_structure_too_many_query_strings_in_origin_request_policy_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_public_key_already_exists_xml_err(
+pub fn deser_structure_crate_error_public_key_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::public_key_already_exists::Builder,
 ) -> Result<crate::error::public_key_already_exists::Builder, smithy_xml::decode::XmlError> {
@@ -3200,7 +3200,7 @@ pub fn deser_structure_public_key_already_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_public_keys_xml_err(
+pub fn deser_structure_crate_error_too_many_public_keys_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_public_keys::Builder,
 ) -> Result<crate::error::too_many_public_keys::Builder, smithy_xml::decode::XmlError> {
@@ -3233,7 +3233,7 @@ pub fn deser_structure_too_many_public_keys_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_realtime_log_config_already_exists_xml_err(
+pub fn deser_structure_crate_error_realtime_log_config_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::realtime_log_config_already_exists::Builder,
 ) -> Result<crate::error::realtime_log_config_already_exists::Builder, smithy_xml::decode::XmlError>
@@ -3267,7 +3267,7 @@ pub fn deser_structure_realtime_log_config_already_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_realtime_log_configs_xml_err(
+pub fn deser_structure_crate_error_too_many_realtime_log_configs_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_realtime_log_configs::Builder,
 ) -> Result<crate::error::too_many_realtime_log_configs::Builder, smithy_xml::decode::XmlError> {
@@ -3300,7 +3300,7 @@ pub fn deser_structure_too_many_realtime_log_configs_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_realtime_log_config(
+pub fn deser_operation_crate_operation_create_realtime_log_config(
     inp: &[u8],
     mut builder: crate::output::create_realtime_log_config_output::Builder,
 ) -> Result<crate::output::create_realtime_log_config_output::Builder, smithy_xml::decode::XmlError>
@@ -3319,10 +3319,10 @@ pub fn deser_operation_create_realtime_log_config(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("RealtimeLogConfig") /* RealtimeLogConfig com.amazonaws.cloudfront#CreateRealtimeLogConfigOutput$RealtimeLogConfig */ =>  {
+            s if s.matches("RealtimeLogConfig") /* RealtimeLogConfig com.amazonaws.cloudfront.synthetic#CreateRealtimeLogConfigOutput$RealtimeLogConfig */ =>  {
                 let var_98 =
                     Some(
-                        crate::xml_deser::deser_structure_realtime_log_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_realtime_log_config(&mut tag)
                         ?
                     )
                 ;
@@ -3336,7 +3336,7 @@ pub fn deser_operation_create_realtime_log_config(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_streaming_distribution_already_exists_xml_err(
+pub fn deser_structure_crate_error_streaming_distribution_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::streaming_distribution_already_exists::Builder,
 ) -> Result<
@@ -3372,7 +3372,7 @@ pub fn deser_structure_streaming_distribution_already_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_streaming_distribution_cnam_es_xml_err(
+pub fn deser_structure_crate_error_too_many_streaming_distribution_cnam_es_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_streaming_distribution_cnam_es::Builder,
 ) -> Result<
@@ -3408,7 +3408,7 @@ pub fn deser_structure_too_many_streaming_distribution_cnam_es_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_streaming_distributions_xml_err(
+pub fn deser_structure_crate_error_too_many_streaming_distributions_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_streaming_distributions::Builder,
 ) -> Result<crate::error::too_many_streaming_distributions::Builder, smithy_xml::decode::XmlError> {
@@ -3441,7 +3441,7 @@ pub fn deser_structure_too_many_streaming_distributions_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_policy_in_use_xml_err(
+pub fn deser_structure_crate_error_cache_policy_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_policy_in_use::Builder,
 ) -> Result<crate::error::cache_policy_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -3474,7 +3474,7 @@ pub fn deser_structure_cache_policy_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_illegal_delete_xml_err(
+pub fn deser_structure_crate_error_illegal_delete_xml_err(
     inp: &[u8],
     mut builder: crate::error::illegal_delete::Builder,
 ) -> Result<crate::error::illegal_delete::Builder, smithy_xml::decode::XmlError> {
@@ -3507,7 +3507,7 @@ pub fn deser_structure_illegal_delete_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_if_match_version_xml_err(
+pub fn deser_structure_crate_error_invalid_if_match_version_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_if_match_version::Builder,
 ) -> Result<crate::error::invalid_if_match_version::Builder, smithy_xml::decode::XmlError> {
@@ -3540,7 +3540,7 @@ pub fn deser_structure_invalid_if_match_version_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_precondition_failed_xml_err(
+pub fn deser_structure_crate_error_precondition_failed_xml_err(
     inp: &[u8],
     mut builder: crate::error::precondition_failed::Builder,
 ) -> Result<crate::error::precondition_failed::Builder, smithy_xml::decode::XmlError> {
@@ -3573,7 +3573,7 @@ pub fn deser_structure_precondition_failed_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cloud_front_origin_access_identity_in_use_xml_err(
+pub fn deser_structure_crate_error_cloud_front_origin_access_identity_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::cloud_front_origin_access_identity_in_use::Builder,
 ) -> Result<
@@ -3609,7 +3609,7 @@ pub fn deser_structure_cloud_front_origin_access_identity_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_cloud_front_origin_access_identity_xml_err(
+pub fn deser_structure_crate_error_no_such_cloud_front_origin_access_identity_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_cloud_front_origin_access_identity::Builder,
 ) -> Result<
@@ -3645,7 +3645,7 @@ pub fn deser_structure_no_such_cloud_front_origin_access_identity_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_distribution_not_disabled_xml_err(
+pub fn deser_structure_crate_error_distribution_not_disabled_xml_err(
     inp: &[u8],
     mut builder: crate::error::distribution_not_disabled::Builder,
 ) -> Result<crate::error::distribution_not_disabled::Builder, smithy_xml::decode::XmlError> {
@@ -3678,7 +3678,7 @@ pub fn deser_structure_distribution_not_disabled_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_field_level_encryption_config_in_use_xml_err(
+pub fn deser_structure_crate_error_field_level_encryption_config_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::field_level_encryption_config_in_use::Builder,
 ) -> Result<crate::error::field_level_encryption_config_in_use::Builder, smithy_xml::decode::XmlError>
@@ -3712,7 +3712,7 @@ pub fn deser_structure_field_level_encryption_config_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_field_level_encryption_profile_in_use_xml_err(
+pub fn deser_structure_crate_error_field_level_encryption_profile_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::field_level_encryption_profile_in_use::Builder,
 ) -> Result<
@@ -3748,7 +3748,7 @@ pub fn deser_structure_field_level_encryption_profile_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_function_in_use_xml_err(
+pub fn deser_structure_crate_error_function_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::function_in_use::Builder,
 ) -> Result<crate::error::function_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -3781,7 +3781,7 @@ pub fn deser_structure_function_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_function_exists_xml_err(
+pub fn deser_structure_crate_error_no_such_function_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_function_exists::Builder,
 ) -> Result<crate::error::no_such_function_exists::Builder, smithy_xml::decode::XmlError> {
@@ -3814,7 +3814,7 @@ pub fn deser_structure_no_such_function_exists_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_resource_xml_err(
+pub fn deser_structure_crate_error_no_such_resource_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_resource::Builder,
 ) -> Result<crate::error::no_such_resource::Builder, smithy_xml::decode::XmlError> {
@@ -3847,7 +3847,7 @@ pub fn deser_structure_no_such_resource_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_resource_in_use_xml_err(
+pub fn deser_structure_crate_error_resource_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::resource_in_use::Builder,
 ) -> Result<crate::error::resource_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -3880,7 +3880,7 @@ pub fn deser_structure_resource_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_origin_request_policy_in_use_xml_err(
+pub fn deser_structure_crate_error_origin_request_policy_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::origin_request_policy_in_use::Builder,
 ) -> Result<crate::error::origin_request_policy_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -3913,7 +3913,7 @@ pub fn deser_structure_origin_request_policy_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_public_key_in_use_xml_err(
+pub fn deser_structure_crate_error_public_key_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::public_key_in_use::Builder,
 ) -> Result<crate::error::public_key_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -3946,7 +3946,7 @@ pub fn deser_structure_public_key_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_realtime_log_config_in_use_xml_err(
+pub fn deser_structure_crate_error_realtime_log_config_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::realtime_log_config_in_use::Builder,
 ) -> Result<crate::error::realtime_log_config_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -3979,7 +3979,7 @@ pub fn deser_structure_realtime_log_config_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_streaming_distribution_xml_err(
+pub fn deser_structure_crate_error_no_such_streaming_distribution_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_streaming_distribution::Builder,
 ) -> Result<crate::error::no_such_streaming_distribution::Builder, smithy_xml::decode::XmlError> {
@@ -4012,7 +4012,7 @@ pub fn deser_structure_no_such_streaming_distribution_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_streaming_distribution_not_disabled_xml_err(
+pub fn deser_structure_crate_error_streaming_distribution_not_disabled_xml_err(
     inp: &[u8],
     mut builder: crate::error::streaming_distribution_not_disabled::Builder,
 ) -> Result<crate::error::streaming_distribution_not_disabled::Builder, smithy_xml::decode::XmlError>
@@ -4046,7 +4046,7 @@ pub fn deser_structure_streaming_distribution_not_disabled_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_invalidation_xml_err(
+pub fn deser_structure_crate_error_no_such_invalidation_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_invalidation::Builder,
 ) -> Result<crate::error::no_such_invalidation::Builder, smithy_xml::decode::XmlError> {
@@ -4079,7 +4079,7 @@ pub fn deser_structure_no_such_invalidation_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_get_realtime_log_config(
+pub fn deser_operation_crate_operation_get_realtime_log_config(
     inp: &[u8],
     mut builder: crate::output::get_realtime_log_config_output::Builder,
 ) -> Result<crate::output::get_realtime_log_config_output::Builder, smithy_xml::decode::XmlError> {
@@ -4097,10 +4097,10 @@ pub fn deser_operation_get_realtime_log_config(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("RealtimeLogConfig") /* RealtimeLogConfig com.amazonaws.cloudfront#GetRealtimeLogConfigOutput$RealtimeLogConfig */ =>  {
+            s if s.matches("RealtimeLogConfig") /* RealtimeLogConfig com.amazonaws.cloudfront.synthetic#GetRealtimeLogConfigOutput$RealtimeLogConfig */ =>  {
                 let var_121 =
                     Some(
-                        crate::xml_deser::deser_structure_realtime_log_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_realtime_log_config(&mut tag)
                         ?
                     )
                 ;
@@ -4114,7 +4114,7 @@ pub fn deser_operation_get_realtime_log_config(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_test_function_failed_xml_err(
+pub fn deser_structure_crate_error_test_function_failed_xml_err(
     inp: &[u8],
     mut builder: crate::error::test_function_failed::Builder,
 ) -> Result<crate::error::test_function_failed::Builder, smithy_xml::decode::XmlError> {
@@ -4147,7 +4147,7 @@ pub fn deser_structure_test_function_failed_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cannot_change_immutable_public_key_fields_xml_err(
+pub fn deser_structure_crate_error_cannot_change_immutable_public_key_fields_xml_err(
     inp: &[u8],
     mut builder: crate::error::cannot_change_immutable_public_key_fields::Builder,
 ) -> Result<
@@ -4183,7 +4183,7 @@ pub fn deser_structure_cannot_change_immutable_public_key_fields_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_realtime_log_config(
+pub fn deser_operation_crate_operation_update_realtime_log_config(
     inp: &[u8],
     mut builder: crate::output::update_realtime_log_config_output::Builder,
 ) -> Result<crate::output::update_realtime_log_config_output::Builder, smithy_xml::decode::XmlError>
@@ -4202,10 +4202,10 @@ pub fn deser_operation_update_realtime_log_config(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("RealtimeLogConfig") /* RealtimeLogConfig com.amazonaws.cloudfront#UpdateRealtimeLogConfigOutput$RealtimeLogConfig */ =>  {
+            s if s.matches("RealtimeLogConfig") /* RealtimeLogConfig com.amazonaws.cloudfront.synthetic#UpdateRealtimeLogConfigOutput$RealtimeLogConfig */ =>  {
                 let var_124 =
                     Some(
-                        crate::xml_deser::deser_structure_realtime_log_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_realtime_log_config(&mut tag)
                         ?
                     )
                 ;
@@ -4218,7 +4218,7 @@ pub fn deser_operation_update_realtime_log_config(
     Ok(builder)
 }
 
-pub fn deser_member_create_cache_policy_output_cache_policy(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_cache_policy_output_cache_policy(
     inp: &[u8],
 ) -> Result<crate::model::CachePolicy, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4232,10 +4232,10 @@ pub fn deser_member_create_cache_policy_output_cache_policy(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_cache_policy(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_cache_policy(&mut decoder)
 }
 
-pub fn deser_member_create_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(
     inp: &[u8],
 ) -> Result<crate::model::CloudFrontOriginAccessIdentity, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4249,10 +4249,10 @@ pub fn deser_member_create_cloud_front_origin_access_identity_output_cloud_front
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_cloud_front_origin_access_identity(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_cloud_front_origin_access_identity(&mut decoder)
 }
 
-pub fn deser_member_create_distribution_output_distribution(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_distribution_output_distribution(
     inp: &[u8],
 ) -> Result<crate::model::Distribution, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4266,10 +4266,10 @@ pub fn deser_member_create_distribution_output_distribution(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_distribution(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_distribution(&mut decoder)
 }
 
-pub fn deser_member_create_distribution_with_tags_output_distribution(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_distribution_with_tags_output_distribution(
     inp: &[u8],
 ) -> Result<crate::model::Distribution, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4283,10 +4283,10 @@ pub fn deser_member_create_distribution_with_tags_output_distribution(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_distribution(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_distribution(&mut decoder)
 }
 
-pub fn deser_member_create_field_level_encryption_config_output_field_level_encryption(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_config_output_field_level_encryption(
     inp: &[u8],
 ) -> Result<crate::model::FieldLevelEncryption, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4300,10 +4300,10 @@ pub fn deser_member_create_field_level_encryption_config_output_field_level_encr
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_field_level_encryption(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_field_level_encryption(&mut decoder)
 }
 
-pub fn deser_member_create_field_level_encryption_profile_output_field_level_encryption_profile(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_profile_output_field_level_encryption_profile(
     inp: &[u8],
 ) -> Result<crate::model::FieldLevelEncryptionProfile, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4317,10 +4317,10 @@ pub fn deser_member_create_field_level_encryption_profile_output_field_level_enc
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_field_level_encryption_profile(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_field_level_encryption_profile(&mut decoder)
 }
 
-pub fn deser_member_create_function_output_function_summary(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_function_output_function_summary(
     inp: &[u8],
 ) -> Result<crate::model::FunctionSummary, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4334,10 +4334,10 @@ pub fn deser_member_create_function_output_function_summary(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_function_summary(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_function_summary(&mut decoder)
 }
 
-pub fn deser_member_create_invalidation_output_invalidation(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_invalidation_output_invalidation(
     inp: &[u8],
 ) -> Result<crate::model::Invalidation, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4351,10 +4351,10 @@ pub fn deser_member_create_invalidation_output_invalidation(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_invalidation(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_invalidation(&mut decoder)
 }
 
-pub fn deser_member_create_key_group_output_key_group(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_key_group_output_key_group(
     inp: &[u8],
 ) -> Result<crate::model::KeyGroup, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4368,10 +4368,10 @@ pub fn deser_member_create_key_group_output_key_group(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_key_group(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_key_group(&mut decoder)
 }
 
-pub fn deser_member_create_monitoring_subscription_output_monitoring_subscription(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_monitoring_subscription_output_monitoring_subscription(
     inp: &[u8],
 ) -> Result<crate::model::MonitoringSubscription, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4385,10 +4385,10 @@ pub fn deser_member_create_monitoring_subscription_output_monitoring_subscriptio
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_monitoring_subscription(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_monitoring_subscription(&mut decoder)
 }
 
-pub fn deser_member_create_origin_request_policy_output_origin_request_policy(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_origin_request_policy_output_origin_request_policy(
     inp: &[u8],
 ) -> Result<crate::model::OriginRequestPolicy, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4402,10 +4402,10 @@ pub fn deser_member_create_origin_request_policy_output_origin_request_policy(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_origin_request_policy(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_origin_request_policy(&mut decoder)
 }
 
-pub fn deser_member_create_public_key_output_public_key(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_public_key_output_public_key(
     inp: &[u8],
 ) -> Result<crate::model::PublicKey, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4419,10 +4419,10 @@ pub fn deser_member_create_public_key_output_public_key(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_public_key(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_public_key(&mut decoder)
 }
 
-pub fn deser_member_create_streaming_distribution_output_streaming_distribution(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_output_streaming_distribution(
     inp: &[u8],
 ) -> Result<crate::model::StreamingDistribution, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4436,10 +4436,10 @@ pub fn deser_member_create_streaming_distribution_output_streaming_distribution(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_streaming_distribution(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_streaming_distribution(&mut decoder)
 }
 
-pub fn deser_member_create_streaming_distribution_with_tags_output_streaming_distribution(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_with_tags_output_streaming_distribution(
     inp: &[u8],
 ) -> Result<crate::model::StreamingDistribution, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4453,10 +4453,10 @@ pub fn deser_member_create_streaming_distribution_with_tags_output_streaming_dis
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_streaming_distribution(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_streaming_distribution(&mut decoder)
 }
 
-pub fn deser_member_describe_function_output_function_summary(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_describe_function_output_function_summary(
     inp: &[u8],
 ) -> Result<crate::model::FunctionSummary, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4470,10 +4470,10 @@ pub fn deser_member_describe_function_output_function_summary(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_function_summary(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_function_summary(&mut decoder)
 }
 
-pub fn deser_member_get_cache_policy_output_cache_policy(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_cache_policy_output_cache_policy(
     inp: &[u8],
 ) -> Result<crate::model::CachePolicy, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4487,10 +4487,10 @@ pub fn deser_member_get_cache_policy_output_cache_policy(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_cache_policy(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_cache_policy(&mut decoder)
 }
 
-pub fn deser_member_get_cache_policy_config_output_cache_policy_config(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_cache_policy_config_output_cache_policy_config(
     inp: &[u8],
 ) -> Result<crate::model::CachePolicyConfig, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4504,10 +4504,10 @@ pub fn deser_member_get_cache_policy_config_output_cache_policy_config(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_cache_policy_config(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_cache_policy_config(&mut decoder)
 }
 
-pub fn deser_member_get_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(
     inp: &[u8],
 ) -> Result<crate::model::CloudFrontOriginAccessIdentity, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4521,10 +4521,10 @@ pub fn deser_member_get_cloud_front_origin_access_identity_output_cloud_front_or
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_cloud_front_origin_access_identity(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_cloud_front_origin_access_identity(&mut decoder)
 }
 
-pub fn deser_member_get_cloud_front_origin_access_identity_config_output_cloud_front_origin_access_identity_config(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_cloud_front_origin_access_identity_config_output_cloud_front_origin_access_identity_config(
     inp: &[u8],
 ) -> Result<crate::model::CloudFrontOriginAccessIdentityConfig, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4538,10 +4538,12 @@ pub fn deser_member_get_cloud_front_origin_access_identity_config_output_cloud_f
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_cloud_front_origin_access_identity_config(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_cloud_front_origin_access_identity_config(
+        &mut decoder,
+    )
 }
 
-pub fn deser_member_get_distribution_output_distribution(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_distribution_output_distribution(
     inp: &[u8],
 ) -> Result<crate::model::Distribution, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4555,10 +4557,10 @@ pub fn deser_member_get_distribution_output_distribution(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_distribution(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_distribution(&mut decoder)
 }
 
-pub fn deser_member_get_distribution_config_output_distribution_config(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_distribution_config_output_distribution_config(
     inp: &[u8],
 ) -> Result<crate::model::DistributionConfig, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4572,10 +4574,10 @@ pub fn deser_member_get_distribution_config_output_distribution_config(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_distribution_config(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_distribution_config(&mut decoder)
 }
 
-pub fn deser_member_get_field_level_encryption_output_field_level_encryption(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_field_level_encryption_output_field_level_encryption(
     inp: &[u8],
 ) -> Result<crate::model::FieldLevelEncryption, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4589,10 +4591,10 @@ pub fn deser_member_get_field_level_encryption_output_field_level_encryption(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_field_level_encryption(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_field_level_encryption(&mut decoder)
 }
 
-pub fn deser_member_get_field_level_encryption_config_output_field_level_encryption_config(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_field_level_encryption_config_output_field_level_encryption_config(
     inp: &[u8],
 ) -> Result<crate::model::FieldLevelEncryptionConfig, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4606,10 +4608,10 @@ pub fn deser_member_get_field_level_encryption_config_output_field_level_encrypt
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_field_level_encryption_config(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_field_level_encryption_config(&mut decoder)
 }
 
-pub fn deser_member_get_field_level_encryption_profile_output_field_level_encryption_profile(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_field_level_encryption_profile_output_field_level_encryption_profile(
     inp: &[u8],
 ) -> Result<crate::model::FieldLevelEncryptionProfile, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4623,10 +4625,10 @@ pub fn deser_member_get_field_level_encryption_profile_output_field_level_encryp
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_field_level_encryption_profile(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_field_level_encryption_profile(&mut decoder)
 }
 
-pub fn deser_member_get_field_level_encryption_profile_config_output_field_level_encryption_profile_config(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_field_level_encryption_profile_config_output_field_level_encryption_profile_config(
     inp: &[u8],
 ) -> Result<crate::model::FieldLevelEncryptionProfileConfig, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4640,10 +4642,12 @@ pub fn deser_member_get_field_level_encryption_profile_config_output_field_level
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_field_level_encryption_profile_config(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_field_level_encryption_profile_config(
+        &mut decoder,
+    )
 }
 
-pub fn deser_member_get_invalidation_output_invalidation(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_invalidation_output_invalidation(
     inp: &[u8],
 ) -> Result<crate::model::Invalidation, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4657,10 +4661,10 @@ pub fn deser_member_get_invalidation_output_invalidation(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_invalidation(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_invalidation(&mut decoder)
 }
 
-pub fn deser_member_get_key_group_output_key_group(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_key_group_output_key_group(
     inp: &[u8],
 ) -> Result<crate::model::KeyGroup, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4674,10 +4678,10 @@ pub fn deser_member_get_key_group_output_key_group(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_key_group(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_key_group(&mut decoder)
 }
 
-pub fn deser_member_get_key_group_config_output_key_group_config(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_key_group_config_output_key_group_config(
     inp: &[u8],
 ) -> Result<crate::model::KeyGroupConfig, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4691,10 +4695,10 @@ pub fn deser_member_get_key_group_config_output_key_group_config(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_key_group_config(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_key_group_config(&mut decoder)
 }
 
-pub fn deser_member_get_monitoring_subscription_output_monitoring_subscription(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_monitoring_subscription_output_monitoring_subscription(
     inp: &[u8],
 ) -> Result<crate::model::MonitoringSubscription, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4708,10 +4712,10 @@ pub fn deser_member_get_monitoring_subscription_output_monitoring_subscription(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_monitoring_subscription(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_monitoring_subscription(&mut decoder)
 }
 
-pub fn deser_member_get_origin_request_policy_output_origin_request_policy(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_origin_request_policy_output_origin_request_policy(
     inp: &[u8],
 ) -> Result<crate::model::OriginRequestPolicy, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4725,10 +4729,10 @@ pub fn deser_member_get_origin_request_policy_output_origin_request_policy(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_origin_request_policy(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_origin_request_policy(&mut decoder)
 }
 
-pub fn deser_member_get_origin_request_policy_config_output_origin_request_policy_config(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_origin_request_policy_config_output_origin_request_policy_config(
     inp: &[u8],
 ) -> Result<crate::model::OriginRequestPolicyConfig, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4742,10 +4746,10 @@ pub fn deser_member_get_origin_request_policy_config_output_origin_request_polic
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_origin_request_policy_config(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_origin_request_policy_config(&mut decoder)
 }
 
-pub fn deser_member_get_public_key_output_public_key(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_public_key_output_public_key(
     inp: &[u8],
 ) -> Result<crate::model::PublicKey, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4759,10 +4763,10 @@ pub fn deser_member_get_public_key_output_public_key(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_public_key(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_public_key(&mut decoder)
 }
 
-pub fn deser_member_get_public_key_config_output_public_key_config(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_public_key_config_output_public_key_config(
     inp: &[u8],
 ) -> Result<crate::model::PublicKeyConfig, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4776,10 +4780,10 @@ pub fn deser_member_get_public_key_config_output_public_key_config(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_public_key_config(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_public_key_config(&mut decoder)
 }
 
-pub fn deser_member_get_streaming_distribution_output_streaming_distribution(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_streaming_distribution_output_streaming_distribution(
     inp: &[u8],
 ) -> Result<crate::model::StreamingDistribution, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4793,10 +4797,10 @@ pub fn deser_member_get_streaming_distribution_output_streaming_distribution(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_streaming_distribution(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_streaming_distribution(&mut decoder)
 }
 
-pub fn deser_member_get_streaming_distribution_config_output_streaming_distribution_config(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_get_streaming_distribution_config_output_streaming_distribution_config(
     inp: &[u8],
 ) -> Result<crate::model::StreamingDistributionConfig, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4810,10 +4814,10 @@ pub fn deser_member_get_streaming_distribution_config_output_streaming_distribut
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_streaming_distribution_config(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_streaming_distribution_config(&mut decoder)
 }
 
-pub fn deser_member_list_cache_policies_output_cache_policy_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_cache_policies_output_cache_policy_list(
     inp: &[u8],
 ) -> Result<crate::model::CachePolicyList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4827,10 +4831,10 @@ pub fn deser_member_list_cache_policies_output_cache_policy_list(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_cache_policy_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_cache_policy_list(&mut decoder)
 }
 
-pub fn deser_member_list_cloud_front_origin_access_identities_output_cloud_front_origin_access_identity_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_cloud_front_origin_access_identities_output_cloud_front_origin_access_identity_list(
     inp: &[u8],
 ) -> Result<crate::model::CloudFrontOriginAccessIdentityList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4844,10 +4848,12 @@ pub fn deser_member_list_cloud_front_origin_access_identities_output_cloud_front
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_cloud_front_origin_access_identity_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_cloud_front_origin_access_identity_list(
+        &mut decoder,
+    )
 }
 
-pub fn deser_member_list_conflicting_aliases_output_conflicting_aliases_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_conflicting_aliases_output_conflicting_aliases_list(
     inp: &[u8],
 ) -> Result<crate::model::ConflictingAliasesList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4861,10 +4867,10 @@ pub fn deser_member_list_conflicting_aliases_output_conflicting_aliases_list(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_conflicting_aliases_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_conflicting_aliases_list(&mut decoder)
 }
 
-pub fn deser_member_list_distributions_output_distribution_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_output_distribution_list(
     inp: &[u8],
 ) -> Result<crate::model::DistributionList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4878,10 +4884,10 @@ pub fn deser_member_list_distributions_output_distribution_list(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_distribution_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_distribution_list(&mut decoder)
 }
 
-pub fn deser_member_list_distributions_by_cache_policy_id_output_distribution_id_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_by_cache_policy_id_output_distribution_id_list(
     inp: &[u8],
 ) -> Result<crate::model::DistributionIdList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4895,10 +4901,10 @@ pub fn deser_member_list_distributions_by_cache_policy_id_output_distribution_id
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_distribution_id_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_distribution_id_list(&mut decoder)
 }
 
-pub fn deser_member_list_distributions_by_key_group_output_distribution_id_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_by_key_group_output_distribution_id_list(
     inp: &[u8],
 ) -> Result<crate::model::DistributionIdList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4912,10 +4918,10 @@ pub fn deser_member_list_distributions_by_key_group_output_distribution_id_list(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_distribution_id_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_distribution_id_list(&mut decoder)
 }
 
-pub fn deser_member_list_distributions_by_origin_request_policy_id_output_distribution_id_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_by_origin_request_policy_id_output_distribution_id_list(
     inp: &[u8],
 ) -> Result<crate::model::DistributionIdList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4929,10 +4935,10 @@ pub fn deser_member_list_distributions_by_origin_request_policy_id_output_distri
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_distribution_id_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_distribution_id_list(&mut decoder)
 }
 
-pub fn deser_member_list_distributions_by_realtime_log_config_output_distribution_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_by_realtime_log_config_output_distribution_list(
     inp: &[u8],
 ) -> Result<crate::model::DistributionList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4946,10 +4952,10 @@ pub fn deser_member_list_distributions_by_realtime_log_config_output_distributio
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_distribution_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_distribution_list(&mut decoder)
 }
 
-pub fn deser_member_list_distributions_by_web_acl_id_output_distribution_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_by_web_acl_id_output_distribution_list(
     inp: &[u8],
 ) -> Result<crate::model::DistributionList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4963,10 +4969,10 @@ pub fn deser_member_list_distributions_by_web_acl_id_output_distribution_list(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_distribution_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_distribution_list(&mut decoder)
 }
 
-pub fn deser_member_list_field_level_encryption_configs_output_field_level_encryption_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_field_level_encryption_configs_output_field_level_encryption_list(
     inp: &[u8],
 ) -> Result<crate::model::FieldLevelEncryptionList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4980,10 +4986,10 @@ pub fn deser_member_list_field_level_encryption_configs_output_field_level_encry
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_field_level_encryption_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_field_level_encryption_list(&mut decoder)
 }
 
-pub fn deser_member_list_field_level_encryption_profiles_output_field_level_encryption_profile_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_field_level_encryption_profiles_output_field_level_encryption_profile_list(
     inp: &[u8],
 ) -> Result<crate::model::FieldLevelEncryptionProfileList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -4997,10 +5003,10 @@ pub fn deser_member_list_field_level_encryption_profiles_output_field_level_encr
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_field_level_encryption_profile_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_field_level_encryption_profile_list(&mut decoder)
 }
 
-pub fn deser_member_list_functions_output_function_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_functions_output_function_list(
     inp: &[u8],
 ) -> Result<crate::model::FunctionList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5014,10 +5020,10 @@ pub fn deser_member_list_functions_output_function_list(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_function_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_function_list(&mut decoder)
 }
 
-pub fn deser_member_list_invalidations_output_invalidation_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_invalidations_output_invalidation_list(
     inp: &[u8],
 ) -> Result<crate::model::InvalidationList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5031,10 +5037,10 @@ pub fn deser_member_list_invalidations_output_invalidation_list(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_invalidation_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_invalidation_list(&mut decoder)
 }
 
-pub fn deser_member_list_key_groups_output_key_group_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_key_groups_output_key_group_list(
     inp: &[u8],
 ) -> Result<crate::model::KeyGroupList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5048,10 +5054,10 @@ pub fn deser_member_list_key_groups_output_key_group_list(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_key_group_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_key_group_list(&mut decoder)
 }
 
-pub fn deser_member_list_origin_request_policies_output_origin_request_policy_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_origin_request_policies_output_origin_request_policy_list(
     inp: &[u8],
 ) -> Result<crate::model::OriginRequestPolicyList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5065,10 +5071,10 @@ pub fn deser_member_list_origin_request_policies_output_origin_request_policy_li
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_origin_request_policy_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_origin_request_policy_list(&mut decoder)
 }
 
-pub fn deser_member_list_public_keys_output_public_key_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_public_keys_output_public_key_list(
     inp: &[u8],
 ) -> Result<crate::model::PublicKeyList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5082,10 +5088,10 @@ pub fn deser_member_list_public_keys_output_public_key_list(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_public_key_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_public_key_list(&mut decoder)
 }
 
-pub fn deser_member_list_realtime_log_configs_output_realtime_log_configs(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_realtime_log_configs_output_realtime_log_configs(
     inp: &[u8],
 ) -> Result<crate::model::RealtimeLogConfigs, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5099,10 +5105,10 @@ pub fn deser_member_list_realtime_log_configs_output_realtime_log_configs(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_realtime_log_configs(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_realtime_log_configs(&mut decoder)
 }
 
-pub fn deser_member_list_streaming_distributions_output_streaming_distribution_list(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_streaming_distributions_output_streaming_distribution_list(
     inp: &[u8],
 ) -> Result<crate::model::StreamingDistributionList, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5116,10 +5122,10 @@ pub fn deser_member_list_streaming_distributions_output_streaming_distribution_l
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_streaming_distribution_list(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_streaming_distribution_list(&mut decoder)
 }
 
-pub fn deser_member_list_tags_for_resource_output_tags(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_list_tags_for_resource_output_tags(
     inp: &[u8],
 ) -> Result<crate::model::Tags, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5133,10 +5139,10 @@ pub fn deser_member_list_tags_for_resource_output_tags(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_tags(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_tags(&mut decoder)
 }
 
-pub fn deser_member_publish_function_output_function_summary(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_publish_function_output_function_summary(
     inp: &[u8],
 ) -> Result<crate::model::FunctionSummary, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5150,10 +5156,10 @@ pub fn deser_member_publish_function_output_function_summary(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_function_summary(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_function_summary(&mut decoder)
 }
 
-pub fn deser_member_test_function_output_test_result(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_test_function_output_test_result(
     inp: &[u8],
 ) -> Result<crate::model::TestResult, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5167,10 +5173,10 @@ pub fn deser_member_test_function_output_test_result(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_test_result(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_test_result(&mut decoder)
 }
 
-pub fn deser_member_update_cache_policy_output_cache_policy(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_update_cache_policy_output_cache_policy(
     inp: &[u8],
 ) -> Result<crate::model::CachePolicy, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5184,10 +5190,10 @@ pub fn deser_member_update_cache_policy_output_cache_policy(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_cache_policy(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_cache_policy(&mut decoder)
 }
 
-pub fn deser_member_update_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_update_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(
     inp: &[u8],
 ) -> Result<crate::model::CloudFrontOriginAccessIdentity, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5201,10 +5207,10 @@ pub fn deser_member_update_cloud_front_origin_access_identity_output_cloud_front
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_cloud_front_origin_access_identity(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_cloud_front_origin_access_identity(&mut decoder)
 }
 
-pub fn deser_member_update_distribution_output_distribution(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_update_distribution_output_distribution(
     inp: &[u8],
 ) -> Result<crate::model::Distribution, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5218,10 +5224,10 @@ pub fn deser_member_update_distribution_output_distribution(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_distribution(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_distribution(&mut decoder)
 }
 
-pub fn deser_member_update_field_level_encryption_config_output_field_level_encryption(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_config_output_field_level_encryption(
     inp: &[u8],
 ) -> Result<crate::model::FieldLevelEncryption, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5235,10 +5241,10 @@ pub fn deser_member_update_field_level_encryption_config_output_field_level_encr
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_field_level_encryption(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_field_level_encryption(&mut decoder)
 }
 
-pub fn deser_member_update_field_level_encryption_profile_output_field_level_encryption_profile(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_profile_output_field_level_encryption_profile(
     inp: &[u8],
 ) -> Result<crate::model::FieldLevelEncryptionProfile, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5252,10 +5258,10 @@ pub fn deser_member_update_field_level_encryption_profile_output_field_level_enc
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_field_level_encryption_profile(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_field_level_encryption_profile(&mut decoder)
 }
 
-pub fn deser_member_update_function_output_function_summary(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_update_function_output_function_summary(
     inp: &[u8],
 ) -> Result<crate::model::FunctionSummary, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5269,10 +5275,10 @@ pub fn deser_member_update_function_output_function_summary(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_function_summary(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_function_summary(&mut decoder)
 }
 
-pub fn deser_member_update_key_group_output_key_group(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_update_key_group_output_key_group(
     inp: &[u8],
 ) -> Result<crate::model::KeyGroup, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5286,10 +5292,10 @@ pub fn deser_member_update_key_group_output_key_group(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_key_group(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_key_group(&mut decoder)
 }
 
-pub fn deser_member_update_origin_request_policy_output_origin_request_policy(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_update_origin_request_policy_output_origin_request_policy(
     inp: &[u8],
 ) -> Result<crate::model::OriginRequestPolicy, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5303,10 +5309,10 @@ pub fn deser_member_update_origin_request_policy_output_origin_request_policy(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_origin_request_policy(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_origin_request_policy(&mut decoder)
 }
 
-pub fn deser_member_update_public_key_output_public_key(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_update_public_key_output_public_key(
     inp: &[u8],
 ) -> Result<crate::model::PublicKey, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5320,10 +5326,10 @@ pub fn deser_member_update_public_key_output_public_key(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_public_key(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_public_key(&mut decoder)
 }
 
-pub fn deser_member_update_streaming_distribution_output_streaming_distribution(
+pub fn deser_member_com_amazonaws_cloudfront_synthetic_update_streaming_distribution_output_streaming_distribution(
     inp: &[u8],
 ) -> Result<crate::model::StreamingDistribution, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -5337,10 +5343,10 @@ pub fn deser_member_update_streaming_distribution_output_streaming_distribution(
             start_el
         )));
     }
-    crate::xml_deser::deser_structure_streaming_distribution(&mut decoder)
+    crate::xml_deser::deser_structure_crate_model_streaming_distribution(&mut decoder)
 }
 
-pub fn deser_structure_realtime_log_config(
+pub fn deser_structure_crate_model_realtime_log_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RealtimeLogConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5391,7 +5397,7 @@ pub fn deser_structure_realtime_log_config(
             s if s.matches("EndPoints") /* EndPoints com.amazonaws.cloudfront#RealtimeLogConfig$EndPoints */ =>  {
                 let var_128 =
                     Some(
-                        crate::xml_deser::deser_list_end_point_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_end_point_list(&mut tag)
                         ?
                     )
                 ;
@@ -5401,7 +5407,7 @@ pub fn deser_structure_realtime_log_config(
             s if s.matches("Fields") /* Fields com.amazonaws.cloudfront#RealtimeLogConfig$Fields */ =>  {
                 let var_129 =
                     Some(
-                        crate::xml_deser::deser_list_field_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_field_list(&mut tag)
                         ?
                     )
                 ;
@@ -5414,7 +5420,7 @@ pub fn deser_structure_realtime_log_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_policy(
+pub fn deser_structure_crate_model_cache_policy(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CachePolicy, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5451,7 +5457,7 @@ pub fn deser_structure_cache_policy(
             s if s.matches("CachePolicyConfig") /* CachePolicyConfig com.amazonaws.cloudfront#CachePolicy$CachePolicyConfig */ =>  {
                 let var_132 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_policy_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_policy_config(&mut tag)
                         ?
                     )
                 ;
@@ -5464,7 +5470,7 @@ pub fn deser_structure_cache_policy(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cloud_front_origin_access_identity(
+pub fn deser_structure_crate_model_cloud_front_origin_access_identity(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CloudFrontOriginAccessIdentity, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5500,7 +5506,7 @@ pub fn deser_structure_cloud_front_origin_access_identity(
             s if s.matches("CloudFrontOriginAccessIdentityConfig") /* CloudFrontOriginAccessIdentityConfig com.amazonaws.cloudfront#CloudFrontOriginAccessIdentity$CloudFrontOriginAccessIdentityConfig */ =>  {
                 let var_135 =
                     Some(
-                        crate::xml_deser::deser_structure_cloud_front_origin_access_identity_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cloud_front_origin_access_identity_config(&mut tag)
                         ?
                     )
                 ;
@@ -5513,7 +5519,7 @@ pub fn deser_structure_cloud_front_origin_access_identity(
     Ok(builder.build())
 }
 
-pub fn deser_structure_distribution(
+pub fn deser_structure_crate_model_distribution(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Distribution, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5604,7 +5610,7 @@ pub fn deser_structure_distribution(
             s if s.matches("ActiveTrustedSigners") /* ActiveTrustedSigners com.amazonaws.cloudfront#Distribution$ActiveTrustedSigners */ =>  {
                 let var_142 =
                     Some(
-                        crate::xml_deser::deser_structure_active_trusted_signers(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_active_trusted_signers(&mut tag)
                         ?
                     )
                 ;
@@ -5614,7 +5620,7 @@ pub fn deser_structure_distribution(
             s if s.matches("ActiveTrustedKeyGroups") /* ActiveTrustedKeyGroups com.amazonaws.cloudfront#Distribution$ActiveTrustedKeyGroups */ =>  {
                 let var_143 =
                     Some(
-                        crate::xml_deser::deser_structure_active_trusted_key_groups(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_active_trusted_key_groups(&mut tag)
                         ?
                     )
                 ;
@@ -5624,7 +5630,7 @@ pub fn deser_structure_distribution(
             s if s.matches("DistributionConfig") /* DistributionConfig com.amazonaws.cloudfront#Distribution$DistributionConfig */ =>  {
                 let var_144 =
                     Some(
-                        crate::xml_deser::deser_structure_distribution_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_distribution_config(&mut tag)
                         ?
                     )
                 ;
@@ -5634,7 +5640,7 @@ pub fn deser_structure_distribution(
             s if s.matches("AliasICPRecordals") /* AliasICPRecordals com.amazonaws.cloudfront#Distribution$AliasICPRecordals */ =>  {
                 let var_145 =
                     Some(
-                        crate::xml_deser::deser_list_alias_icp_recordals(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_alias_icp_recordals(&mut tag)
                         ?
                     )
                 ;
@@ -5647,7 +5653,7 @@ pub fn deser_structure_distribution(
     Ok(builder.build())
 }
 
-pub fn deser_structure_field_level_encryption(
+pub fn deser_structure_crate_model_field_level_encryption(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FieldLevelEncryption, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5684,7 +5690,7 @@ pub fn deser_structure_field_level_encryption(
             s if s.matches("FieldLevelEncryptionConfig") /* FieldLevelEncryptionConfig com.amazonaws.cloudfront#FieldLevelEncryption$FieldLevelEncryptionConfig */ =>  {
                 let var_148 =
                     Some(
-                        crate::xml_deser::deser_structure_field_level_encryption_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_field_level_encryption_config(&mut tag)
                         ?
                     )
                 ;
@@ -5697,7 +5703,7 @@ pub fn deser_structure_field_level_encryption(
     Ok(builder.build())
 }
 
-pub fn deser_structure_field_level_encryption_profile(
+pub fn deser_structure_crate_model_field_level_encryption_profile(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FieldLevelEncryptionProfile, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5734,7 +5740,7 @@ pub fn deser_structure_field_level_encryption_profile(
             s if s.matches("FieldLevelEncryptionProfileConfig") /* FieldLevelEncryptionProfileConfig com.amazonaws.cloudfront#FieldLevelEncryptionProfile$FieldLevelEncryptionProfileConfig */ =>  {
                 let var_151 =
                     Some(
-                        crate::xml_deser::deser_structure_field_level_encryption_profile_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_field_level_encryption_profile_config(&mut tag)
                         ?
                     )
                 ;
@@ -5747,7 +5753,7 @@ pub fn deser_structure_field_level_encryption_profile(
     Ok(builder.build())
 }
 
-pub fn deser_structure_function_summary(
+pub fn deser_structure_crate_model_function_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FunctionSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5783,7 +5789,7 @@ pub fn deser_structure_function_summary(
             s if s.matches("FunctionConfig") /* FunctionConfig com.amazonaws.cloudfront#FunctionSummary$FunctionConfig */ =>  {
                 let var_154 =
                     Some(
-                        crate::xml_deser::deser_structure_function_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_function_config(&mut tag)
                         ?
                     )
                 ;
@@ -5793,7 +5799,7 @@ pub fn deser_structure_function_summary(
             s if s.matches("FunctionMetadata") /* FunctionMetadata com.amazonaws.cloudfront#FunctionSummary$FunctionMetadata */ =>  {
                 let var_155 =
                     Some(
-                        crate::xml_deser::deser_structure_function_metadata(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_function_metadata(&mut tag)
                         ?
                     )
                 ;
@@ -5806,7 +5812,7 @@ pub fn deser_structure_function_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_invalidation(
+pub fn deser_structure_crate_model_invalidation(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Invalidation, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5856,7 +5862,7 @@ pub fn deser_structure_invalidation(
             s if s.matches("InvalidationBatch") /* InvalidationBatch com.amazonaws.cloudfront#Invalidation$InvalidationBatch */ =>  {
                 let var_159 =
                     Some(
-                        crate::xml_deser::deser_structure_invalidation_batch(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_invalidation_batch(&mut tag)
                         ?
                     )
                 ;
@@ -5869,7 +5875,7 @@ pub fn deser_structure_invalidation(
     Ok(builder.build())
 }
 
-pub fn deser_structure_key_group(
+pub fn deser_structure_crate_model_key_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::KeyGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5906,7 +5912,7 @@ pub fn deser_structure_key_group(
             s if s.matches("KeyGroupConfig") /* KeyGroupConfig com.amazonaws.cloudfront#KeyGroup$KeyGroupConfig */ =>  {
                 let var_162 =
                     Some(
-                        crate::xml_deser::deser_structure_key_group_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_key_group_config(&mut tag)
                         ?
                     )
                 ;
@@ -5919,7 +5925,7 @@ pub fn deser_structure_key_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_monitoring_subscription(
+pub fn deser_structure_crate_model_monitoring_subscription(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::MonitoringSubscription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5929,7 +5935,7 @@ pub fn deser_structure_monitoring_subscription(
             s if s.matches("RealtimeMetricsSubscriptionConfig") /* RealtimeMetricsSubscriptionConfig com.amazonaws.cloudfront#MonitoringSubscription$RealtimeMetricsSubscriptionConfig */ =>  {
                 let var_163 =
                     Some(
-                        crate::xml_deser::deser_structure_realtime_metrics_subscription_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_realtime_metrics_subscription_config(&mut tag)
                         ?
                     )
                 ;
@@ -5942,7 +5948,7 @@ pub fn deser_structure_monitoring_subscription(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origin_request_policy(
+pub fn deser_structure_crate_model_origin_request_policy(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginRequestPolicy, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5979,7 +5985,7 @@ pub fn deser_structure_origin_request_policy(
             s if s.matches("OriginRequestPolicyConfig") /* OriginRequestPolicyConfig com.amazonaws.cloudfront#OriginRequestPolicy$OriginRequestPolicyConfig */ =>  {
                 let var_166 =
                     Some(
-                        crate::xml_deser::deser_structure_origin_request_policy_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origin_request_policy_config(&mut tag)
                         ?
                     )
                 ;
@@ -5992,7 +5998,7 @@ pub fn deser_structure_origin_request_policy(
     Ok(builder.build())
 }
 
-pub fn deser_structure_public_key(
+pub fn deser_structure_crate_model_public_key(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PublicKey, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6029,7 +6035,7 @@ pub fn deser_structure_public_key(
             s if s.matches("PublicKeyConfig") /* PublicKeyConfig com.amazonaws.cloudfront#PublicKey$PublicKeyConfig */ =>  {
                 let var_169 =
                     Some(
-                        crate::xml_deser::deser_structure_public_key_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_public_key_config(&mut tag)
                         ?
                     )
                 ;
@@ -6042,7 +6048,7 @@ pub fn deser_structure_public_key(
     Ok(builder.build())
 }
 
-pub fn deser_structure_streaming_distribution(
+pub fn deser_structure_crate_model_streaming_distribution(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StreamingDistribution, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6118,7 +6124,7 @@ pub fn deser_structure_streaming_distribution(
             s if s.matches("ActiveTrustedSigners") /* ActiveTrustedSigners com.amazonaws.cloudfront#StreamingDistribution$ActiveTrustedSigners */ =>  {
                 let var_175 =
                     Some(
-                        crate::xml_deser::deser_structure_active_trusted_signers(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_active_trusted_signers(&mut tag)
                         ?
                     )
                 ;
@@ -6128,7 +6134,7 @@ pub fn deser_structure_streaming_distribution(
             s if s.matches("StreamingDistributionConfig") /* StreamingDistributionConfig com.amazonaws.cloudfront#StreamingDistribution$StreamingDistributionConfig */ =>  {
                 let var_176 =
                     Some(
-                        crate::xml_deser::deser_structure_streaming_distribution_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_streaming_distribution_config(&mut tag)
                         ?
                     )
                 ;
@@ -6141,7 +6147,7 @@ pub fn deser_structure_streaming_distribution(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_policy_config(
+pub fn deser_structure_crate_model_cache_policy_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CachePolicyConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6222,7 +6228,7 @@ pub fn deser_structure_cache_policy_config(
             s if s.matches("ParametersInCacheKeyAndForwardedToOrigin") /* ParametersInCacheKeyAndForwardedToOrigin com.amazonaws.cloudfront#CachePolicyConfig$ParametersInCacheKeyAndForwardedToOrigin */ =>  {
                 let var_182 =
                     Some(
-                        crate::xml_deser::deser_structure_parameters_in_cache_key_and_forwarded_to_origin(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_parameters_in_cache_key_and_forwarded_to_origin(&mut tag)
                         ?
                     )
                 ;
@@ -6235,7 +6241,7 @@ pub fn deser_structure_cache_policy_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cloud_front_origin_access_identity_config(
+pub fn deser_structure_crate_model_cloud_front_origin_access_identity_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CloudFrontOriginAccessIdentityConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6274,7 +6280,7 @@ pub fn deser_structure_cloud_front_origin_access_identity_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_distribution_config(
+pub fn deser_structure_crate_model_distribution_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DistributionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6297,7 +6303,7 @@ pub fn deser_structure_distribution_config(
             s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#DistributionConfig$Aliases */ =>  {
                 let var_186 =
                     Some(
-                        crate::xml_deser::deser_structure_aliases(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_aliases(&mut tag)
                         ?
                     )
                 ;
@@ -6320,7 +6326,7 @@ pub fn deser_structure_distribution_config(
             s if s.matches("Origins") /* Origins com.amazonaws.cloudfront#DistributionConfig$Origins */ =>  {
                 let var_188 =
                     Some(
-                        crate::xml_deser::deser_structure_origins(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origins(&mut tag)
                         ?
                     )
                 ;
@@ -6330,7 +6336,7 @@ pub fn deser_structure_distribution_config(
             s if s.matches("OriginGroups") /* OriginGroups com.amazonaws.cloudfront#DistributionConfig$OriginGroups */ =>  {
                 let var_189 =
                     Some(
-                        crate::xml_deser::deser_structure_origin_groups(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origin_groups(&mut tag)
                         ?
                     )
                 ;
@@ -6340,7 +6346,7 @@ pub fn deser_structure_distribution_config(
             s if s.matches("DefaultCacheBehavior") /* DefaultCacheBehavior com.amazonaws.cloudfront#DistributionConfig$DefaultCacheBehavior */ =>  {
                 let var_190 =
                     Some(
-                        crate::xml_deser::deser_structure_default_cache_behavior(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_default_cache_behavior(&mut tag)
                         ?
                     )
                 ;
@@ -6350,7 +6356,7 @@ pub fn deser_structure_distribution_config(
             s if s.matches("CacheBehaviors") /* CacheBehaviors com.amazonaws.cloudfront#DistributionConfig$CacheBehaviors */ =>  {
                 let var_191 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_behaviors(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_behaviors(&mut tag)
                         ?
                     )
                 ;
@@ -6360,7 +6366,7 @@ pub fn deser_structure_distribution_config(
             s if s.matches("CustomErrorResponses") /* CustomErrorResponses com.amazonaws.cloudfront#DistributionConfig$CustomErrorResponses */ =>  {
                 let var_192 =
                     Some(
-                        crate::xml_deser::deser_structure_custom_error_responses(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_custom_error_responses(&mut tag)
                         ?
                     )
                 ;
@@ -6383,7 +6389,7 @@ pub fn deser_structure_distribution_config(
             s if s.matches("Logging") /* Logging com.amazonaws.cloudfront#DistributionConfig$Logging */ =>  {
                 let var_194 =
                     Some(
-                        crate::xml_deser::deser_structure_logging_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_logging_config(&mut tag)
                         ?
                     )
                 ;
@@ -6422,7 +6428,7 @@ pub fn deser_structure_distribution_config(
             s if s.matches("ViewerCertificate") /* ViewerCertificate com.amazonaws.cloudfront#DistributionConfig$ViewerCertificate */ =>  {
                 let var_197 =
                     Some(
-                        crate::xml_deser::deser_structure_viewer_certificate(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_viewer_certificate(&mut tag)
                         ?
                     )
                 ;
@@ -6432,7 +6438,7 @@ pub fn deser_structure_distribution_config(
             s if s.matches("Restrictions") /* Restrictions com.amazonaws.cloudfront#DistributionConfig$Restrictions */ =>  {
                 let var_198 =
                     Some(
-                        crate::xml_deser::deser_structure_restrictions(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_restrictions(&mut tag)
                         ?
                     )
                 ;
@@ -6487,7 +6493,7 @@ pub fn deser_structure_distribution_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_field_level_encryption_config(
+pub fn deser_structure_crate_model_field_level_encryption_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FieldLevelEncryptionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6523,7 +6529,7 @@ pub fn deser_structure_field_level_encryption_config(
             s if s.matches("QueryArgProfileConfig") /* QueryArgProfileConfig com.amazonaws.cloudfront#FieldLevelEncryptionConfig$QueryArgProfileConfig */ =>  {
                 let var_204 =
                     Some(
-                        crate::xml_deser::deser_structure_query_arg_profile_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_query_arg_profile_config(&mut tag)
                         ?
                     )
                 ;
@@ -6533,7 +6539,7 @@ pub fn deser_structure_field_level_encryption_config(
             s if s.matches("ContentTypeProfileConfig") /* ContentTypeProfileConfig com.amazonaws.cloudfront#FieldLevelEncryptionConfig$ContentTypeProfileConfig */ =>  {
                 let var_205 =
                     Some(
-                        crate::xml_deser::deser_structure_content_type_profile_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_content_type_profile_config(&mut tag)
                         ?
                     )
                 ;
@@ -6546,7 +6552,7 @@ pub fn deser_structure_field_level_encryption_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_field_level_encryption_profile_config(
+pub fn deser_structure_crate_model_field_level_encryption_profile_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FieldLevelEncryptionProfileConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6595,7 +6601,7 @@ pub fn deser_structure_field_level_encryption_profile_config(
             s if s.matches("EncryptionEntities") /* EncryptionEntities com.amazonaws.cloudfront#FieldLevelEncryptionProfileConfig$EncryptionEntities */ =>  {
                 let var_209 =
                     Some(
-                        crate::xml_deser::deser_structure_encryption_entities(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_encryption_entities(&mut tag)
                         ?
                     )
                 ;
@@ -6608,7 +6614,7 @@ pub fn deser_structure_field_level_encryption_profile_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_key_group_config(
+pub fn deser_structure_crate_model_key_group_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::KeyGroupConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6631,7 +6637,7 @@ pub fn deser_structure_key_group_config(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#KeyGroupConfig$Items */ =>  {
                 let var_211 =
                     Some(
-                        crate::xml_deser::deser_list_public_key_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_public_key_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -6657,7 +6663,7 @@ pub fn deser_structure_key_group_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origin_request_policy_config(
+pub fn deser_structure_crate_model_origin_request_policy_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginRequestPolicyConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6693,7 +6699,7 @@ pub fn deser_structure_origin_request_policy_config(
             s if s.matches("HeadersConfig") /* HeadersConfig com.amazonaws.cloudfront#OriginRequestPolicyConfig$HeadersConfig */ =>  {
                 let var_215 =
                     Some(
-                        crate::xml_deser::deser_structure_origin_request_policy_headers_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origin_request_policy_headers_config(&mut tag)
                         ?
                     )
                 ;
@@ -6703,7 +6709,7 @@ pub fn deser_structure_origin_request_policy_config(
             s if s.matches("CookiesConfig") /* CookiesConfig com.amazonaws.cloudfront#OriginRequestPolicyConfig$CookiesConfig */ =>  {
                 let var_216 =
                     Some(
-                        crate::xml_deser::deser_structure_origin_request_policy_cookies_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origin_request_policy_cookies_config(&mut tag)
                         ?
                     )
                 ;
@@ -6713,7 +6719,7 @@ pub fn deser_structure_origin_request_policy_config(
             s if s.matches("QueryStringsConfig") /* QueryStringsConfig com.amazonaws.cloudfront#OriginRequestPolicyConfig$QueryStringsConfig */ =>  {
                 let var_217 =
                     Some(
-                        crate::xml_deser::deser_structure_origin_request_policy_query_strings_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origin_request_policy_query_strings_config(&mut tag)
                         ?
                     )
                 ;
@@ -6726,7 +6732,7 @@ pub fn deser_structure_origin_request_policy_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_public_key_config(
+pub fn deser_structure_crate_model_public_key_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PublicKeyConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6791,7 +6797,7 @@ pub fn deser_structure_public_key_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_streaming_distribution_config(
+pub fn deser_structure_crate_model_streaming_distribution_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StreamingDistributionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6814,7 +6820,7 @@ pub fn deser_structure_streaming_distribution_config(
             s if s.matches("S3Origin") /* S3Origin com.amazonaws.cloudfront#StreamingDistributionConfig$S3Origin */ =>  {
                 let var_223 =
                     Some(
-                        crate::xml_deser::deser_structure_s3_origin(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_s3_origin(&mut tag)
                         ?
                     )
                 ;
@@ -6824,7 +6830,7 @@ pub fn deser_structure_streaming_distribution_config(
             s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#StreamingDistributionConfig$Aliases */ =>  {
                 let var_224 =
                     Some(
-                        crate::xml_deser::deser_structure_aliases(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_aliases(&mut tag)
                         ?
                     )
                 ;
@@ -6847,7 +6853,7 @@ pub fn deser_structure_streaming_distribution_config(
             s if s.matches("Logging") /* Logging com.amazonaws.cloudfront#StreamingDistributionConfig$Logging */ =>  {
                 let var_226 =
                     Some(
-                        crate::xml_deser::deser_structure_streaming_logging_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_streaming_logging_config(&mut tag)
                         ?
                     )
                 ;
@@ -6857,7 +6863,7 @@ pub fn deser_structure_streaming_distribution_config(
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#StreamingDistributionConfig$TrustedSigners */ =>  {
                 let var_227 =
                     Some(
-                        crate::xml_deser::deser_structure_trusted_signers(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_trusted_signers(&mut tag)
                         ?
                     )
                 ;
@@ -6899,7 +6905,7 @@ pub fn deser_structure_streaming_distribution_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_policy_list(
+pub fn deser_structure_crate_model_cache_policy_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CachePolicyList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6952,7 +6958,7 @@ pub fn deser_structure_cache_policy_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CachePolicyList$Items */ =>  {
                 let var_233 =
                     Some(
-                        crate::xml_deser::deser_list_cache_policy_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_cache_policy_summary_list(&mut tag)
                         ?
                     )
                 ;
@@ -6965,7 +6971,7 @@ pub fn deser_structure_cache_policy_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cloud_front_origin_access_identity_list(
+pub fn deser_structure_crate_model_cloud_front_origin_access_identity_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CloudFrontOriginAccessIdentityList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7046,7 +7052,7 @@ pub fn deser_structure_cloud_front_origin_access_identity_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CloudFrontOriginAccessIdentityList$Items */ =>  {
                 let var_239 =
                     Some(
-                        crate::xml_deser::deser_list_cloud_front_origin_access_identity_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_cloud_front_origin_access_identity_summary_list(&mut tag)
                         ?
                     )
                 ;
@@ -7059,7 +7065,7 @@ pub fn deser_structure_cloud_front_origin_access_identity_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_conflicting_aliases_list(
+pub fn deser_structure_crate_model_conflicting_aliases_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ConflictingAliasesList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7112,7 +7118,7 @@ pub fn deser_structure_conflicting_aliases_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#ConflictingAliasesList$Items */ =>  {
                 let var_243 =
                     Some(
-                        crate::xml_deser::deser_list_conflicting_aliases(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_conflicting_aliases(&mut tag)
                         ?
                     )
                 ;
@@ -7125,7 +7131,7 @@ pub fn deser_structure_conflicting_aliases_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_distribution_list(
+pub fn deser_structure_crate_model_distribution_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DistributionList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7206,7 +7212,7 @@ pub fn deser_structure_distribution_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#DistributionList$Items */ =>  {
                 let var_249 =
                     Some(
-                        crate::xml_deser::deser_list_distribution_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_distribution_summary_list(&mut tag)
                         ?
                     )
                 ;
@@ -7219,7 +7225,7 @@ pub fn deser_structure_distribution_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_distribution_id_list(
+pub fn deser_structure_crate_model_distribution_id_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DistributionIdList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7300,7 +7306,7 @@ pub fn deser_structure_distribution_id_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#DistributionIdList$Items */ =>  {
                 let var_255 =
                     Some(
-                        crate::xml_deser::deser_list_distribution_id_list_summary(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_distribution_id_list_summary(&mut tag)
                         ?
                     )
                 ;
@@ -7313,7 +7319,7 @@ pub fn deser_structure_distribution_id_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_field_level_encryption_list(
+pub fn deser_structure_crate_model_field_level_encryption_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FieldLevelEncryptionList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7366,7 +7372,7 @@ pub fn deser_structure_field_level_encryption_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#FieldLevelEncryptionList$Items */ =>  {
                 let var_259 =
                     Some(
-                        crate::xml_deser::deser_list_field_level_encryption_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_field_level_encryption_summary_list(&mut tag)
                         ?
                     )
                 ;
@@ -7379,7 +7385,7 @@ pub fn deser_structure_field_level_encryption_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_field_level_encryption_profile_list(
+pub fn deser_structure_crate_model_field_level_encryption_profile_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FieldLevelEncryptionProfileList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7432,7 +7438,7 @@ pub fn deser_structure_field_level_encryption_profile_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#FieldLevelEncryptionProfileList$Items */ =>  {
                 let var_263 =
                     Some(
-                        crate::xml_deser::deser_list_field_level_encryption_profile_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_field_level_encryption_profile_summary_list(&mut tag)
                         ?
                     )
                 ;
@@ -7445,7 +7451,7 @@ pub fn deser_structure_field_level_encryption_profile_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_function_list(
+pub fn deser_structure_crate_model_function_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FunctionList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7498,7 +7504,7 @@ pub fn deser_structure_function_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#FunctionList$Items */ =>  {
                 let var_267 =
                     Some(
-                        crate::xml_deser::deser_list_function_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_function_summary_list(&mut tag)
                         ?
                     )
                 ;
@@ -7511,7 +7517,7 @@ pub fn deser_structure_function_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_invalidation_list(
+pub fn deser_structure_crate_model_invalidation_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InvalidationList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7592,7 +7598,7 @@ pub fn deser_structure_invalidation_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#InvalidationList$Items */ =>  {
                 let var_273 =
                     Some(
-                        crate::xml_deser::deser_list_invalidation_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_invalidation_summary_list(&mut tag)
                         ?
                     )
                 ;
@@ -7605,7 +7611,7 @@ pub fn deser_structure_invalidation_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_key_group_list(
+pub fn deser_structure_crate_model_key_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::KeyGroupList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7658,7 +7664,7 @@ pub fn deser_structure_key_group_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#KeyGroupList$Items */ =>  {
                 let var_277 =
                     Some(
-                        crate::xml_deser::deser_list_key_group_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_key_group_summary_list(&mut tag)
                         ?
                     )
                 ;
@@ -7671,7 +7677,7 @@ pub fn deser_structure_key_group_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origin_request_policy_list(
+pub fn deser_structure_crate_model_origin_request_policy_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginRequestPolicyList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7724,7 +7730,7 @@ pub fn deser_structure_origin_request_policy_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#OriginRequestPolicyList$Items */ =>  {
                 let var_281 =
                     Some(
-                        crate::xml_deser::deser_list_origin_request_policy_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_origin_request_policy_summary_list(&mut tag)
                         ?
                     )
                 ;
@@ -7737,7 +7743,7 @@ pub fn deser_structure_origin_request_policy_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_public_key_list(
+pub fn deser_structure_crate_model_public_key_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PublicKeyList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7790,7 +7796,7 @@ pub fn deser_structure_public_key_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#PublicKeyList$Items */ =>  {
                 let var_285 =
                     Some(
-                        crate::xml_deser::deser_list_public_key_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_public_key_summary_list(&mut tag)
                         ?
                     )
                 ;
@@ -7803,7 +7809,7 @@ pub fn deser_structure_public_key_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_realtime_log_configs(
+pub fn deser_structure_crate_model_realtime_log_configs(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RealtimeLogConfigs, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7828,7 +7834,7 @@ pub fn deser_structure_realtime_log_configs(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#RealtimeLogConfigs$Items */ =>  {
                 let var_287 =
                     Some(
-                        crate::xml_deser::deser_list_realtime_log_config_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_realtime_log_config_list(&mut tag)
                         ?
                     )
                 ;
@@ -7882,7 +7888,7 @@ pub fn deser_structure_realtime_log_configs(
     Ok(builder.build())
 }
 
-pub fn deser_structure_streaming_distribution_list(
+pub fn deser_structure_crate_model_streaming_distribution_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StreamingDistributionList, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7963,7 +7969,7 @@ pub fn deser_structure_streaming_distribution_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#StreamingDistributionList$Items */ =>  {
                 let var_296 =
                     Some(
-                        crate::xml_deser::deser_list_streaming_distribution_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_streaming_distribution_summary_list(&mut tag)
                         ?
                     )
                 ;
@@ -7976,7 +7982,7 @@ pub fn deser_structure_streaming_distribution_list(
     Ok(builder.build())
 }
 
-pub fn deser_structure_tags(
+pub fn deser_structure_crate_model_tags(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Tags, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7986,7 +7992,7 @@ pub fn deser_structure_tags(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#Tags$Items */ =>  {
                 let var_297 =
                     Some(
-                        crate::xml_deser::deser_list_tag_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_tag_list(&mut tag)
                         ?
                     )
                 ;
@@ -7999,7 +8005,7 @@ pub fn deser_structure_tags(
     Ok(builder.build())
 }
 
-pub fn deser_structure_test_result(
+pub fn deser_structure_crate_model_test_result(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TestResult, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8009,7 +8015,7 @@ pub fn deser_structure_test_result(
             s if s.matches("FunctionSummary") /* FunctionSummary com.amazonaws.cloudfront#TestResult$FunctionSummary */ =>  {
                 let var_298 =
                     Some(
-                        crate::xml_deser::deser_structure_function_summary(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_function_summary(&mut tag)
                         ?
                     )
                 ;
@@ -8032,7 +8038,7 @@ pub fn deser_structure_test_result(
             s if s.matches("FunctionExecutionLogs") /* FunctionExecutionLogs com.amazonaws.cloudfront#TestResult$FunctionExecutionLogs */ =>  {
                 let var_300 =
                     Some(
-                        crate::xml_deser::deser_list_function_execution_log_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_function_execution_log_list(&mut tag)
                         ?
                     )
                 ;
@@ -8071,7 +8077,7 @@ pub fn deser_structure_test_result(
     Ok(builder.build())
 }
 
-pub fn deser_list_end_point_list(
+pub fn deser_list_com_amazonaws_cloudfront_end_point_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::EndPoint>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8079,7 +8085,7 @@ pub fn deser_list_end_point_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudfront#EndPointList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_end_point(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_end_point(&mut tag)
                     ?
                 );
             }
@@ -8090,7 +8096,7 @@ pub fn deser_list_end_point_list(
     Ok(out)
 }
 
-pub fn deser_list_field_list(
+pub fn deser_list_com_amazonaws_cloudfront_field_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8112,7 +8118,7 @@ pub fn deser_list_field_list(
     Ok(out)
 }
 
-pub fn deser_structure_active_trusted_signers(
+pub fn deser_structure_crate_model_active_trusted_signers(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ActiveTrustedSigners, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8152,7 +8158,7 @@ pub fn deser_structure_active_trusted_signers(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#ActiveTrustedSigners$Items */ =>  {
                 let var_305 =
                     Some(
-                        crate::xml_deser::deser_list_signer_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_signer_list(&mut tag)
                         ?
                     )
                 ;
@@ -8165,7 +8171,7 @@ pub fn deser_structure_active_trusted_signers(
     Ok(builder.build())
 }
 
-pub fn deser_structure_active_trusted_key_groups(
+pub fn deser_structure_crate_model_active_trusted_key_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ActiveTrustedKeyGroups, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8205,7 +8211,7 @@ pub fn deser_structure_active_trusted_key_groups(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#ActiveTrustedKeyGroups$Items */ =>  {
                 let var_308 =
                     Some(
-                        crate::xml_deser::deser_list_kg_key_pair_ids_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_kg_key_pair_ids_list(&mut tag)
                         ?
                     )
                 ;
@@ -8218,7 +8224,7 @@ pub fn deser_structure_active_trusted_key_groups(
     Ok(builder.build())
 }
 
-pub fn deser_list_alias_icp_recordals(
+pub fn deser_list_com_amazonaws_cloudfront_alias_icp_recordals(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AliasIcpRecordal>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8226,7 +8232,7 @@ pub fn deser_list_alias_icp_recordals(
         match tag.start_el() {
             s if s.matches("AliasICPRecordal") /* member com.amazonaws.cloudfront#AliasICPRecordals$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_alias_icp_recordal(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_alias_icp_recordal(&mut tag)
                     ?
                 );
             }
@@ -8237,7 +8243,7 @@ pub fn deser_list_alias_icp_recordals(
     Ok(out)
 }
 
-pub fn deser_structure_function_config(
+pub fn deser_structure_crate_model_function_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FunctionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8277,7 +8283,7 @@ pub fn deser_structure_function_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_function_metadata(
+pub fn deser_structure_crate_model_function_metadata(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FunctionMetadata, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8345,7 +8351,7 @@ pub fn deser_structure_function_metadata(
     Ok(builder.build())
 }
 
-pub fn deser_structure_invalidation_batch(
+pub fn deser_structure_crate_model_invalidation_batch(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InvalidationBatch, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8355,7 +8361,7 @@ pub fn deser_structure_invalidation_batch(
             s if s.matches("Paths") /* Paths com.amazonaws.cloudfront#InvalidationBatch$Paths */ =>  {
                 let var_315 =
                     Some(
-                        crate::xml_deser::deser_structure_paths(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_paths(&mut tag)
                         ?
                     )
                 ;
@@ -8381,7 +8387,7 @@ pub fn deser_structure_invalidation_batch(
     Ok(builder.build())
 }
 
-pub fn deser_structure_realtime_metrics_subscription_config(
+pub fn deser_structure_crate_model_realtime_metrics_subscription_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RealtimeMetricsSubscriptionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8408,7 +8414,7 @@ pub fn deser_structure_realtime_metrics_subscription_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_parameters_in_cache_key_and_forwarded_to_origin(
+pub fn deser_structure_crate_model_parameters_in_cache_key_and_forwarded_to_origin(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ParametersInCacheKeyAndForwardedToOrigin, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8448,7 +8454,7 @@ pub fn deser_structure_parameters_in_cache_key_and_forwarded_to_origin(
             s if s.matches("HeadersConfig") /* HeadersConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$HeadersConfig */ =>  {
                 let var_320 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_policy_headers_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_policy_headers_config(&mut tag)
                         ?
                     )
                 ;
@@ -8458,7 +8464,7 @@ pub fn deser_structure_parameters_in_cache_key_and_forwarded_to_origin(
             s if s.matches("CookiesConfig") /* CookiesConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$CookiesConfig */ =>  {
                 let var_321 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_policy_cookies_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_policy_cookies_config(&mut tag)
                         ?
                     )
                 ;
@@ -8468,7 +8474,7 @@ pub fn deser_structure_parameters_in_cache_key_and_forwarded_to_origin(
             s if s.matches("QueryStringsConfig") /* QueryStringsConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$QueryStringsConfig */ =>  {
                 let var_322 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_policy_query_strings_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_policy_query_strings_config(&mut tag)
                         ?
                     )
                 ;
@@ -8481,7 +8487,7 @@ pub fn deser_structure_parameters_in_cache_key_and_forwarded_to_origin(
     Ok(builder.build())
 }
 
-pub fn deser_structure_aliases(
+pub fn deser_structure_crate_model_aliases(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Aliases, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8506,7 +8512,7 @@ pub fn deser_structure_aliases(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#Aliases$Items */ =>  {
                 let var_324 =
                     Some(
-                        crate::xml_deser::deser_list_alias_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_alias_list(&mut tag)
                         ?
                     )
                 ;
@@ -8519,7 +8525,7 @@ pub fn deser_structure_aliases(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origins(
+pub fn deser_structure_crate_model_origins(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Origins, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8544,7 +8550,7 @@ pub fn deser_structure_origins(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#Origins$Items */ =>  {
                 let var_326 =
                     Some(
-                        crate::xml_deser::deser_list_origin_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_origin_list(&mut tag)
                         ?
                     )
                 ;
@@ -8557,7 +8563,7 @@ pub fn deser_structure_origins(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origin_groups(
+pub fn deser_structure_crate_model_origin_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginGroups, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8582,7 +8588,7 @@ pub fn deser_structure_origin_groups(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#OriginGroups$Items */ =>  {
                 let var_328 =
                     Some(
-                        crate::xml_deser::deser_list_origin_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_origin_group_list(&mut tag)
                         ?
                     )
                 ;
@@ -8595,7 +8601,7 @@ pub fn deser_structure_origin_groups(
     Ok(builder.build())
 }
 
-pub fn deser_structure_default_cache_behavior(
+pub fn deser_structure_crate_model_default_cache_behavior(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DefaultCacheBehavior, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8618,7 +8624,7 @@ pub fn deser_structure_default_cache_behavior(
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#DefaultCacheBehavior$TrustedSigners */ =>  {
                 let var_330 =
                     Some(
-                        crate::xml_deser::deser_structure_trusted_signers(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_trusted_signers(&mut tag)
                         ?
                     )
                 ;
@@ -8628,7 +8634,7 @@ pub fn deser_structure_default_cache_behavior(
             s if s.matches("TrustedKeyGroups") /* TrustedKeyGroups com.amazonaws.cloudfront#DefaultCacheBehavior$TrustedKeyGroups */ =>  {
                 let var_331 =
                     Some(
-                        crate::xml_deser::deser_structure_trusted_key_groups(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_trusted_key_groups(&mut tag)
                         ?
                     )
                 ;
@@ -8652,7 +8658,7 @@ pub fn deser_structure_default_cache_behavior(
             s if s.matches("AllowedMethods") /* AllowedMethods com.amazonaws.cloudfront#DefaultCacheBehavior$AllowedMethods */ =>  {
                 let var_333 =
                     Some(
-                        crate::xml_deser::deser_structure_allowed_methods(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_allowed_methods(&mut tag)
                         ?
                     )
                 ;
@@ -8692,7 +8698,7 @@ pub fn deser_structure_default_cache_behavior(
             s if s.matches("LambdaFunctionAssociations") /* LambdaFunctionAssociations com.amazonaws.cloudfront#DefaultCacheBehavior$LambdaFunctionAssociations */ =>  {
                 let var_336 =
                     Some(
-                        crate::xml_deser::deser_structure_lambda_function_associations(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_lambda_function_associations(&mut tag)
                         ?
                     )
                 ;
@@ -8702,7 +8708,7 @@ pub fn deser_structure_default_cache_behavior(
             s if s.matches("FunctionAssociations") /* FunctionAssociations com.amazonaws.cloudfront#DefaultCacheBehavior$FunctionAssociations */ =>  {
                 let var_337 =
                     Some(
-                        crate::xml_deser::deser_structure_function_associations(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_function_associations(&mut tag)
                         ?
                     )
                 ;
@@ -8764,7 +8770,7 @@ pub fn deser_structure_default_cache_behavior(
             s if s.matches("ForwardedValues") /* ForwardedValues com.amazonaws.cloudfront#DefaultCacheBehavior$ForwardedValues */ =>  {
                 let var_342 =
                     Some(
-                        crate::xml_deser::deser_structure_forwarded_values(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_forwarded_values(&mut tag)
                         ?
                     )
                 ;
@@ -8822,7 +8828,7 @@ pub fn deser_structure_default_cache_behavior(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_behaviors(
+pub fn deser_structure_crate_model_cache_behaviors(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheBehaviors, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8847,7 +8853,7 @@ pub fn deser_structure_cache_behaviors(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CacheBehaviors$Items */ =>  {
                 let var_347 =
                     Some(
-                        crate::xml_deser::deser_list_cache_behavior_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_cache_behavior_list(&mut tag)
                         ?
                     )
                 ;
@@ -8860,7 +8866,7 @@ pub fn deser_structure_cache_behaviors(
     Ok(builder.build())
 }
 
-pub fn deser_structure_custom_error_responses(
+pub fn deser_structure_crate_model_custom_error_responses(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CustomErrorResponses, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8885,7 +8891,7 @@ pub fn deser_structure_custom_error_responses(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CustomErrorResponses$Items */ =>  {
                 let var_349 =
                     Some(
-                        crate::xml_deser::deser_list_custom_error_response_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_custom_error_response_list(&mut tag)
                         ?
                     )
                 ;
@@ -8898,7 +8904,7 @@ pub fn deser_structure_custom_error_responses(
     Ok(builder.build())
 }
 
-pub fn deser_structure_logging_config(
+pub fn deser_structure_crate_model_logging_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoggingConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8967,7 +8973,7 @@ pub fn deser_structure_logging_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_viewer_certificate(
+pub fn deser_structure_crate_model_viewer_certificate(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ViewerCertificate, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9076,7 +9082,7 @@ pub fn deser_structure_viewer_certificate(
     Ok(builder.build())
 }
 
-pub fn deser_structure_restrictions(
+pub fn deser_structure_crate_model_restrictions(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Restrictions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9086,7 +9092,7 @@ pub fn deser_structure_restrictions(
             s if s.matches("GeoRestriction") /* GeoRestriction com.amazonaws.cloudfront#Restrictions$GeoRestriction */ =>  {
                 let var_361 =
                     Some(
-                        crate::xml_deser::deser_structure_geo_restriction(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_geo_restriction(&mut tag)
                         ?
                     )
                 ;
@@ -9099,7 +9105,7 @@ pub fn deser_structure_restrictions(
     Ok(builder.build())
 }
 
-pub fn deser_structure_query_arg_profile_config(
+pub fn deser_structure_crate_model_query_arg_profile_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::QueryArgProfileConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9124,7 +9130,7 @@ pub fn deser_structure_query_arg_profile_config(
             s if s.matches("QueryArgProfiles") /* QueryArgProfiles com.amazonaws.cloudfront#QueryArgProfileConfig$QueryArgProfiles */ =>  {
                 let var_363 =
                     Some(
-                        crate::xml_deser::deser_structure_query_arg_profiles(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_query_arg_profiles(&mut tag)
                         ?
                     )
                 ;
@@ -9137,7 +9143,7 @@ pub fn deser_structure_query_arg_profile_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_content_type_profile_config(
+pub fn deser_structure_crate_model_content_type_profile_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ContentTypeProfileConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9162,7 +9168,7 @@ pub fn deser_structure_content_type_profile_config(
             s if s.matches("ContentTypeProfiles") /* ContentTypeProfiles com.amazonaws.cloudfront#ContentTypeProfileConfig$ContentTypeProfiles */ =>  {
                 let var_365 =
                     Some(
-                        crate::xml_deser::deser_structure_content_type_profiles(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_content_type_profiles(&mut tag)
                         ?
                     )
                 ;
@@ -9175,7 +9181,7 @@ pub fn deser_structure_content_type_profile_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_encryption_entities(
+pub fn deser_structure_crate_model_encryption_entities(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EncryptionEntities, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9200,7 +9206,7 @@ pub fn deser_structure_encryption_entities(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#EncryptionEntities$Items */ =>  {
                 let var_367 =
                     Some(
-                        crate::xml_deser::deser_list_encryption_entity_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_encryption_entity_list(&mut tag)
                         ?
                     )
                 ;
@@ -9213,7 +9219,7 @@ pub fn deser_structure_encryption_entities(
     Ok(builder.build())
 }
 
-pub fn deser_list_public_key_id_list(
+pub fn deser_list_com_amazonaws_cloudfront_public_key_id_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9235,7 +9241,7 @@ pub fn deser_list_public_key_id_list(
     Ok(out)
 }
 
-pub fn deser_structure_origin_request_policy_headers_config(
+pub fn deser_structure_crate_model_origin_request_policy_headers_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginRequestPolicyHeadersConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9259,7 +9265,7 @@ pub fn deser_structure_origin_request_policy_headers_config(
             s if s.matches("Headers") /* Headers com.amazonaws.cloudfront#OriginRequestPolicyHeadersConfig$Headers */ =>  {
                 let var_369 =
                     Some(
-                        crate::xml_deser::deser_structure_headers(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_headers(&mut tag)
                         ?
                     )
                 ;
@@ -9272,7 +9278,7 @@ pub fn deser_structure_origin_request_policy_headers_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origin_request_policy_cookies_config(
+pub fn deser_structure_crate_model_origin_request_policy_cookies_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginRequestPolicyCookiesConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9296,7 +9302,7 @@ pub fn deser_structure_origin_request_policy_cookies_config(
             s if s.matches("Cookies") /* Cookies com.amazonaws.cloudfront#OriginRequestPolicyCookiesConfig$Cookies */ =>  {
                 let var_371 =
                     Some(
-                        crate::xml_deser::deser_structure_cookie_names(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cookie_names(&mut tag)
                         ?
                     )
                 ;
@@ -9309,7 +9315,7 @@ pub fn deser_structure_origin_request_policy_cookies_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origin_request_policy_query_strings_config(
+pub fn deser_structure_crate_model_origin_request_policy_query_strings_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginRequestPolicyQueryStringsConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9333,7 +9339,7 @@ pub fn deser_structure_origin_request_policy_query_strings_config(
             s if s.matches("QueryStrings") /* QueryStrings com.amazonaws.cloudfront#OriginRequestPolicyQueryStringsConfig$QueryStrings */ =>  {
                 let var_373 =
                     Some(
-                        crate::xml_deser::deser_structure_query_string_names(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_query_string_names(&mut tag)
                         ?
                     )
                 ;
@@ -9346,7 +9352,7 @@ pub fn deser_structure_origin_request_policy_query_strings_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_s3_origin(
+pub fn deser_structure_crate_model_s3_origin(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::S3Origin, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9385,7 +9391,7 @@ pub fn deser_structure_s3_origin(
     Ok(builder.build())
 }
 
-pub fn deser_structure_streaming_logging_config(
+pub fn deser_structure_crate_model_streaming_logging_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StreamingLoggingConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9439,7 +9445,7 @@ pub fn deser_structure_streaming_logging_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_trusted_signers(
+pub fn deser_structure_crate_model_trusted_signers(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TrustedSigners, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9479,7 +9485,7 @@ pub fn deser_structure_trusted_signers(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#TrustedSigners$Items */ =>  {
                 let var_381 =
                     Some(
-                        crate::xml_deser::deser_list_aws_account_number_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_aws_account_number_list(&mut tag)
                         ?
                     )
                 ;
@@ -9492,7 +9498,7 @@ pub fn deser_structure_trusted_signers(
     Ok(builder.build())
 }
 
-pub fn deser_list_cache_policy_summary_list(
+pub fn deser_list_com_amazonaws_cloudfront_cache_policy_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CachePolicySummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9500,7 +9506,7 @@ pub fn deser_list_cache_policy_summary_list(
         match tag.start_el() {
             s if s.matches("CachePolicySummary") /* member com.amazonaws.cloudfront#CachePolicySummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_policy_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_policy_summary(&mut tag)
                     ?
                 );
             }
@@ -9511,7 +9517,7 @@ pub fn deser_list_cache_policy_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_cloud_front_origin_access_identity_summary_list(
+pub fn deser_list_com_amazonaws_cloudfront_cloud_front_origin_access_identity_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::vec::Vec<crate::model::CloudFrontOriginAccessIdentitySummary>,
@@ -9522,7 +9528,7 @@ pub fn deser_list_cloud_front_origin_access_identity_summary_list(
         match tag.start_el() {
             s if s.matches("CloudFrontOriginAccessIdentitySummary") /* member com.amazonaws.cloudfront#CloudFrontOriginAccessIdentitySummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cloud_front_origin_access_identity_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cloud_front_origin_access_identity_summary(&mut tag)
                     ?
                 );
             }
@@ -9533,7 +9539,7 @@ pub fn deser_list_cloud_front_origin_access_identity_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_conflicting_aliases(
+pub fn deser_list_com_amazonaws_cloudfront_conflicting_aliases(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ConflictingAlias>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9541,7 +9547,7 @@ pub fn deser_list_conflicting_aliases(
         match tag.start_el() {
             s if s.matches("ConflictingAlias") /* member com.amazonaws.cloudfront#ConflictingAliases$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_conflicting_alias(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_conflicting_alias(&mut tag)
                     ?
                 );
             }
@@ -9552,7 +9558,7 @@ pub fn deser_list_conflicting_aliases(
     Ok(out)
 }
 
-pub fn deser_list_distribution_summary_list(
+pub fn deser_list_com_amazonaws_cloudfront_distribution_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DistributionSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9560,7 +9566,7 @@ pub fn deser_list_distribution_summary_list(
         match tag.start_el() {
             s if s.matches("DistributionSummary") /* member com.amazonaws.cloudfront#DistributionSummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_distribution_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_distribution_summary(&mut tag)
                     ?
                 );
             }
@@ -9571,7 +9577,7 @@ pub fn deser_list_distribution_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_distribution_id_list_summary(
+pub fn deser_list_com_amazonaws_cloudfront_distribution_id_list_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9593,7 +9599,7 @@ pub fn deser_list_distribution_id_list_summary(
     Ok(out)
 }
 
-pub fn deser_list_field_level_encryption_summary_list(
+pub fn deser_list_com_amazonaws_cloudfront_field_level_encryption_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::FieldLevelEncryptionSummary>, smithy_xml::decode::XmlError>
 {
@@ -9602,7 +9608,7 @@ pub fn deser_list_field_level_encryption_summary_list(
         match tag.start_el() {
             s if s.matches("FieldLevelEncryptionSummary") /* member com.amazonaws.cloudfront#FieldLevelEncryptionSummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_field_level_encryption_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_field_level_encryption_summary(&mut tag)
                     ?
                 );
             }
@@ -9613,7 +9619,7 @@ pub fn deser_list_field_level_encryption_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_field_level_encryption_profile_summary_list(
+pub fn deser_list_com_amazonaws_cloudfront_field_level_encryption_profile_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::vec::Vec<crate::model::FieldLevelEncryptionProfileSummary>,
@@ -9624,7 +9630,7 @@ pub fn deser_list_field_level_encryption_profile_summary_list(
         match tag.start_el() {
             s if s.matches("FieldLevelEncryptionProfileSummary") /* member com.amazonaws.cloudfront#FieldLevelEncryptionProfileSummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_field_level_encryption_profile_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_field_level_encryption_profile_summary(&mut tag)
                     ?
                 );
             }
@@ -9635,7 +9641,7 @@ pub fn deser_list_field_level_encryption_profile_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_function_summary_list(
+pub fn deser_list_com_amazonaws_cloudfront_function_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::FunctionSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9643,7 +9649,7 @@ pub fn deser_list_function_summary_list(
         match tag.start_el() {
             s if s.matches("FunctionSummary") /* member com.amazonaws.cloudfront#FunctionSummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_function_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_function_summary(&mut tag)
                     ?
                 );
             }
@@ -9654,7 +9660,7 @@ pub fn deser_list_function_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_invalidation_summary_list(
+pub fn deser_list_com_amazonaws_cloudfront_invalidation_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::InvalidationSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9662,7 +9668,7 @@ pub fn deser_list_invalidation_summary_list(
         match tag.start_el() {
             s if s.matches("InvalidationSummary") /* member com.amazonaws.cloudfront#InvalidationSummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_invalidation_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_invalidation_summary(&mut tag)
                     ?
                 );
             }
@@ -9673,7 +9679,7 @@ pub fn deser_list_invalidation_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_key_group_summary_list(
+pub fn deser_list_com_amazonaws_cloudfront_key_group_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::KeyGroupSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9681,7 +9687,7 @@ pub fn deser_list_key_group_summary_list(
         match tag.start_el() {
             s if s.matches("KeyGroupSummary") /* member com.amazonaws.cloudfront#KeyGroupSummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_key_group_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_key_group_summary(&mut tag)
                     ?
                 );
             }
@@ -9692,7 +9698,7 @@ pub fn deser_list_key_group_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_origin_request_policy_summary_list(
+pub fn deser_list_com_amazonaws_cloudfront_origin_request_policy_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::OriginRequestPolicySummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9700,7 +9706,7 @@ pub fn deser_list_origin_request_policy_summary_list(
         match tag.start_el() {
             s if s.matches("OriginRequestPolicySummary") /* member com.amazonaws.cloudfront#OriginRequestPolicySummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_origin_request_policy_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_origin_request_policy_summary(&mut tag)
                     ?
                 );
             }
@@ -9711,7 +9717,7 @@ pub fn deser_list_origin_request_policy_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_public_key_summary_list(
+pub fn deser_list_com_amazonaws_cloudfront_public_key_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PublicKeySummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9719,7 +9725,7 @@ pub fn deser_list_public_key_summary_list(
         match tag.start_el() {
             s if s.matches("PublicKeySummary") /* member com.amazonaws.cloudfront#PublicKeySummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_public_key_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_public_key_summary(&mut tag)
                     ?
                 );
             }
@@ -9730,7 +9736,7 @@ pub fn deser_list_public_key_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_realtime_log_config_list(
+pub fn deser_list_com_amazonaws_cloudfront_realtime_log_config_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::RealtimeLogConfig>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9738,7 +9744,7 @@ pub fn deser_list_realtime_log_config_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudfront#RealtimeLogConfigList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_realtime_log_config(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_realtime_log_config(&mut tag)
                     ?
                 );
             }
@@ -9749,7 +9755,7 @@ pub fn deser_list_realtime_log_config_list(
     Ok(out)
 }
 
-pub fn deser_list_streaming_distribution_summary_list(
+pub fn deser_list_com_amazonaws_cloudfront_streaming_distribution_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::StreamingDistributionSummary>, smithy_xml::decode::XmlError>
 {
@@ -9758,7 +9764,7 @@ pub fn deser_list_streaming_distribution_summary_list(
         match tag.start_el() {
             s if s.matches("StreamingDistributionSummary") /* member com.amazonaws.cloudfront#StreamingDistributionSummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_streaming_distribution_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_streaming_distribution_summary(&mut tag)
                     ?
                 );
             }
@@ -9769,7 +9775,7 @@ pub fn deser_list_streaming_distribution_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_tag_list(
+pub fn deser_list_com_amazonaws_cloudfront_tag_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9777,7 +9783,7 @@ pub fn deser_list_tag_list(
         match tag.start_el() {
             s if s.matches("Tag") /* member com.amazonaws.cloudfront#TagList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_tag(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_tag(&mut tag)
                     ?
                 );
             }
@@ -9788,7 +9794,7 @@ pub fn deser_list_tag_list(
     Ok(out)
 }
 
-pub fn deser_list_function_execution_log_list(
+pub fn deser_list_com_amazonaws_cloudfront_function_execution_log_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9810,7 +9816,7 @@ pub fn deser_list_function_execution_log_list(
     Ok(out)
 }
 
-pub fn deser_structure_end_point(
+pub fn deser_structure_crate_model_end_point(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EndPoint, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9833,7 +9839,7 @@ pub fn deser_structure_end_point(
             s if s.matches("KinesisStreamConfig") /* KinesisStreamConfig com.amazonaws.cloudfront#EndPoint$KinesisStreamConfig */ =>  {
                 let var_383 =
                     Some(
-                        crate::xml_deser::deser_structure_kinesis_stream_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_kinesis_stream_config(&mut tag)
                         ?
                     )
                 ;
@@ -9846,7 +9852,7 @@ pub fn deser_structure_end_point(
     Ok(builder.build())
 }
 
-pub fn deser_list_signer_list(
+pub fn deser_list_com_amazonaws_cloudfront_signer_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Signer>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9854,7 +9860,7 @@ pub fn deser_list_signer_list(
         match tag.start_el() {
             s if s.matches("Signer") /* member com.amazonaws.cloudfront#SignerList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_signer(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_signer(&mut tag)
                     ?
                 );
             }
@@ -9865,7 +9871,7 @@ pub fn deser_list_signer_list(
     Ok(out)
 }
 
-pub fn deser_list_kg_key_pair_ids_list(
+pub fn deser_list_com_amazonaws_cloudfront_kg_key_pair_ids_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::KgKeyPairIds>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9873,7 +9879,7 @@ pub fn deser_list_kg_key_pair_ids_list(
         match tag.start_el() {
             s if s.matches("KeyGroup") /* member com.amazonaws.cloudfront#KGKeyPairIdsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_kg_key_pair_ids(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_kg_key_pair_ids(&mut tag)
                     ?
                 );
             }
@@ -9884,7 +9890,7 @@ pub fn deser_list_kg_key_pair_ids_list(
     Ok(out)
 }
 
-pub fn deser_structure_alias_icp_recordal(
+pub fn deser_structure_crate_model_alias_icp_recordal(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AliasIcpRecordal, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9924,7 +9930,7 @@ pub fn deser_structure_alias_icp_recordal(
     Ok(builder.build())
 }
 
-pub fn deser_structure_paths(
+pub fn deser_structure_crate_model_paths(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Paths, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9949,7 +9955,7 @@ pub fn deser_structure_paths(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#Paths$Items */ =>  {
                 let var_387 =
                     Some(
-                        crate::xml_deser::deser_list_path_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_path_list(&mut tag)
                         ?
                     )
                 ;
@@ -9962,7 +9968,7 @@ pub fn deser_structure_paths(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_policy_headers_config(
+pub fn deser_structure_crate_model_cache_policy_headers_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CachePolicyHeadersConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9986,7 +9992,7 @@ pub fn deser_structure_cache_policy_headers_config(
             s if s.matches("Headers") /* Headers com.amazonaws.cloudfront#CachePolicyHeadersConfig$Headers */ =>  {
                 let var_389 =
                     Some(
-                        crate::xml_deser::deser_structure_headers(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_headers(&mut tag)
                         ?
                     )
                 ;
@@ -9999,7 +10005,7 @@ pub fn deser_structure_cache_policy_headers_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_policy_cookies_config(
+pub fn deser_structure_crate_model_cache_policy_cookies_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CachePolicyCookiesConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10023,7 +10029,7 @@ pub fn deser_structure_cache_policy_cookies_config(
             s if s.matches("Cookies") /* Cookies com.amazonaws.cloudfront#CachePolicyCookiesConfig$Cookies */ =>  {
                 let var_391 =
                     Some(
-                        crate::xml_deser::deser_structure_cookie_names(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cookie_names(&mut tag)
                         ?
                     )
                 ;
@@ -10036,7 +10042,7 @@ pub fn deser_structure_cache_policy_cookies_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_policy_query_strings_config(
+pub fn deser_structure_crate_model_cache_policy_query_strings_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CachePolicyQueryStringsConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10060,7 +10066,7 @@ pub fn deser_structure_cache_policy_query_strings_config(
             s if s.matches("QueryStrings") /* QueryStrings com.amazonaws.cloudfront#CachePolicyQueryStringsConfig$QueryStrings */ =>  {
                 let var_393 =
                     Some(
-                        crate::xml_deser::deser_structure_query_string_names(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_query_string_names(&mut tag)
                         ?
                     )
                 ;
@@ -10073,7 +10079,7 @@ pub fn deser_structure_cache_policy_query_strings_config(
     Ok(builder.build())
 }
 
-pub fn deser_list_alias_list(
+pub fn deser_list_com_amazonaws_cloudfront_alias_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10095,7 +10101,7 @@ pub fn deser_list_alias_list(
     Ok(out)
 }
 
-pub fn deser_list_origin_list(
+pub fn deser_list_com_amazonaws_cloudfront_origin_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Origin>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10103,7 +10109,7 @@ pub fn deser_list_origin_list(
         match tag.start_el() {
             s if s.matches("Origin") /* member com.amazonaws.cloudfront#OriginList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_origin(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_origin(&mut tag)
                     ?
                 );
             }
@@ -10114,7 +10120,7 @@ pub fn deser_list_origin_list(
     Ok(out)
 }
 
-pub fn deser_list_origin_group_list(
+pub fn deser_list_com_amazonaws_cloudfront_origin_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::OriginGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10122,7 +10128,7 @@ pub fn deser_list_origin_group_list(
         match tag.start_el() {
             s if s.matches("OriginGroup") /* member com.amazonaws.cloudfront#OriginGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_origin_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_origin_group(&mut tag)
                     ?
                 );
             }
@@ -10133,7 +10139,7 @@ pub fn deser_list_origin_group_list(
     Ok(out)
 }
 
-pub fn deser_structure_trusted_key_groups(
+pub fn deser_structure_crate_model_trusted_key_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TrustedKeyGroups, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10173,7 +10179,7 @@ pub fn deser_structure_trusted_key_groups(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#TrustedKeyGroups$Items */ =>  {
                 let var_396 =
                     Some(
-                        crate::xml_deser::deser_list_trusted_key_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_trusted_key_group_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -10186,7 +10192,7 @@ pub fn deser_structure_trusted_key_groups(
     Ok(builder.build())
 }
 
-pub fn deser_structure_allowed_methods(
+pub fn deser_structure_crate_model_allowed_methods(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AllowedMethods, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10211,7 +10217,7 @@ pub fn deser_structure_allowed_methods(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#AllowedMethods$Items */ =>  {
                 let var_398 =
                     Some(
-                        crate::xml_deser::deser_list_methods_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_methods_list(&mut tag)
                         ?
                     )
                 ;
@@ -10221,7 +10227,7 @@ pub fn deser_structure_allowed_methods(
             s if s.matches("CachedMethods") /* CachedMethods com.amazonaws.cloudfront#AllowedMethods$CachedMethods */ =>  {
                 let var_399 =
                     Some(
-                        crate::xml_deser::deser_structure_cached_methods(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cached_methods(&mut tag)
                         ?
                     )
                 ;
@@ -10234,7 +10240,7 @@ pub fn deser_structure_allowed_methods(
     Ok(builder.build())
 }
 
-pub fn deser_structure_lambda_function_associations(
+pub fn deser_structure_crate_model_lambda_function_associations(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LambdaFunctionAssociations, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10259,7 +10265,7 @@ pub fn deser_structure_lambda_function_associations(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#LambdaFunctionAssociations$Items */ =>  {
                 let var_401 =
                     Some(
-                        crate::xml_deser::deser_list_lambda_function_association_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_lambda_function_association_list(&mut tag)
                         ?
                     )
                 ;
@@ -10272,7 +10278,7 @@ pub fn deser_structure_lambda_function_associations(
     Ok(builder.build())
 }
 
-pub fn deser_structure_function_associations(
+pub fn deser_structure_crate_model_function_associations(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FunctionAssociations, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10297,7 +10303,7 @@ pub fn deser_structure_function_associations(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#FunctionAssociations$Items */ =>  {
                 let var_403 =
                     Some(
-                        crate::xml_deser::deser_list_function_association_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_function_association_list(&mut tag)
                         ?
                     )
                 ;
@@ -10310,7 +10316,7 @@ pub fn deser_structure_function_associations(
     Ok(builder.build())
 }
 
-pub fn deser_structure_forwarded_values(
+pub fn deser_structure_crate_model_forwarded_values(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ForwardedValues, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10335,7 +10341,7 @@ pub fn deser_structure_forwarded_values(
             s if s.matches("Cookies") /* Cookies com.amazonaws.cloudfront#ForwardedValues$Cookies */ =>  {
                 let var_405 =
                     Some(
-                        crate::xml_deser::deser_structure_cookie_preference(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cookie_preference(&mut tag)
                         ?
                     )
                 ;
@@ -10345,7 +10351,7 @@ pub fn deser_structure_forwarded_values(
             s if s.matches("Headers") /* Headers com.amazonaws.cloudfront#ForwardedValues$Headers */ =>  {
                 let var_406 =
                     Some(
-                        crate::xml_deser::deser_structure_headers(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_headers(&mut tag)
                         ?
                     )
                 ;
@@ -10355,7 +10361,7 @@ pub fn deser_structure_forwarded_values(
             s if s.matches("QueryStringCacheKeys") /* QueryStringCacheKeys com.amazonaws.cloudfront#ForwardedValues$QueryStringCacheKeys */ =>  {
                 let var_407 =
                     Some(
-                        crate::xml_deser::deser_structure_query_string_cache_keys(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_query_string_cache_keys(&mut tag)
                         ?
                     )
                 ;
@@ -10368,7 +10374,7 @@ pub fn deser_structure_forwarded_values(
     Ok(builder.build())
 }
 
-pub fn deser_list_cache_behavior_list(
+pub fn deser_list_com_amazonaws_cloudfront_cache_behavior_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CacheBehavior>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10376,7 +10382,7 @@ pub fn deser_list_cache_behavior_list(
         match tag.start_el() {
             s if s.matches("CacheBehavior") /* member com.amazonaws.cloudfront#CacheBehaviorList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_behavior(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_behavior(&mut tag)
                     ?
                 );
             }
@@ -10387,7 +10393,7 @@ pub fn deser_list_cache_behavior_list(
     Ok(out)
 }
 
-pub fn deser_list_custom_error_response_list(
+pub fn deser_list_com_amazonaws_cloudfront_custom_error_response_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CustomErrorResponse>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10395,7 +10401,7 @@ pub fn deser_list_custom_error_response_list(
         match tag.start_el() {
             s if s.matches("CustomErrorResponse") /* member com.amazonaws.cloudfront#CustomErrorResponseList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_custom_error_response(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_custom_error_response(&mut tag)
                     ?
                 );
             }
@@ -10406,7 +10412,7 @@ pub fn deser_list_custom_error_response_list(
     Ok(out)
 }
 
-pub fn deser_structure_geo_restriction(
+pub fn deser_structure_crate_model_geo_restriction(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::GeoRestriction, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10445,7 +10451,7 @@ pub fn deser_structure_geo_restriction(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#GeoRestriction$Items */ =>  {
                 let var_410 =
                     Some(
-                        crate::xml_deser::deser_list_location_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_location_list(&mut tag)
                         ?
                     )
                 ;
@@ -10458,7 +10464,7 @@ pub fn deser_structure_geo_restriction(
     Ok(builder.build())
 }
 
-pub fn deser_structure_query_arg_profiles(
+pub fn deser_structure_crate_model_query_arg_profiles(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::QueryArgProfiles, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10483,7 +10489,7 @@ pub fn deser_structure_query_arg_profiles(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#QueryArgProfiles$Items */ =>  {
                 let var_412 =
                     Some(
-                        crate::xml_deser::deser_list_query_arg_profile_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_query_arg_profile_list(&mut tag)
                         ?
                     )
                 ;
@@ -10496,7 +10502,7 @@ pub fn deser_structure_query_arg_profiles(
     Ok(builder.build())
 }
 
-pub fn deser_structure_content_type_profiles(
+pub fn deser_structure_crate_model_content_type_profiles(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ContentTypeProfiles, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10521,7 +10527,7 @@ pub fn deser_structure_content_type_profiles(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#ContentTypeProfiles$Items */ =>  {
                 let var_414 =
                     Some(
-                        crate::xml_deser::deser_list_content_type_profile_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_content_type_profile_list(&mut tag)
                         ?
                     )
                 ;
@@ -10534,7 +10540,7 @@ pub fn deser_structure_content_type_profiles(
     Ok(builder.build())
 }
 
-pub fn deser_list_encryption_entity_list(
+pub fn deser_list_com_amazonaws_cloudfront_encryption_entity_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::EncryptionEntity>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10542,7 +10548,7 @@ pub fn deser_list_encryption_entity_list(
         match tag.start_el() {
             s if s.matches("EncryptionEntity") /* member com.amazonaws.cloudfront#EncryptionEntityList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_encryption_entity(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_encryption_entity(&mut tag)
                     ?
                 );
             }
@@ -10553,7 +10559,7 @@ pub fn deser_list_encryption_entity_list(
     Ok(out)
 }
 
-pub fn deser_structure_headers(
+pub fn deser_structure_crate_model_headers(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Headers, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10578,7 +10584,7 @@ pub fn deser_structure_headers(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#Headers$Items */ =>  {
                 let var_416 =
                     Some(
-                        crate::xml_deser::deser_list_header_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_header_list(&mut tag)
                         ?
                     )
                 ;
@@ -10591,7 +10597,7 @@ pub fn deser_structure_headers(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cookie_names(
+pub fn deser_structure_crate_model_cookie_names(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CookieNames, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10616,7 +10622,7 @@ pub fn deser_structure_cookie_names(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CookieNames$Items */ =>  {
                 let var_418 =
                     Some(
-                        crate::xml_deser::deser_list_cookie_name_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_cookie_name_list(&mut tag)
                         ?
                     )
                 ;
@@ -10629,7 +10635,7 @@ pub fn deser_structure_cookie_names(
     Ok(builder.build())
 }
 
-pub fn deser_structure_query_string_names(
+pub fn deser_structure_crate_model_query_string_names(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::QueryStringNames, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10654,7 +10660,7 @@ pub fn deser_structure_query_string_names(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#QueryStringNames$Items */ =>  {
                 let var_420 =
                     Some(
-                        crate::xml_deser::deser_list_query_string_names_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_query_string_names_list(&mut tag)
                         ?
                     )
                 ;
@@ -10667,7 +10673,7 @@ pub fn deser_structure_query_string_names(
     Ok(builder.build())
 }
 
-pub fn deser_list_aws_account_number_list(
+pub fn deser_list_com_amazonaws_cloudfront_aws_account_number_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10689,7 +10695,7 @@ pub fn deser_list_aws_account_number_list(
     Ok(out)
 }
 
-pub fn deser_structure_cache_policy_summary(
+pub fn deser_structure_crate_model_cache_policy_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CachePolicySummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10713,7 +10719,7 @@ pub fn deser_structure_cache_policy_summary(
             s if s.matches("CachePolicy") /* CachePolicy com.amazonaws.cloudfront#CachePolicySummary$CachePolicy */ =>  {
                 let var_422 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_policy(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_policy(&mut tag)
                         ?
                     )
                 ;
@@ -10726,7 +10732,7 @@ pub fn deser_structure_cache_policy_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cloud_front_origin_access_identity_summary(
+pub fn deser_structure_crate_model_cloud_front_origin_access_identity_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CloudFrontOriginAccessIdentitySummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10778,7 +10784,7 @@ pub fn deser_structure_cloud_front_origin_access_identity_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_conflicting_alias(
+pub fn deser_structure_crate_model_conflicting_alias(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ConflictingAlias, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10830,7 +10836,7 @@ pub fn deser_structure_conflicting_alias(
     Ok(builder.build())
 }
 
-pub fn deser_structure_distribution_summary(
+pub fn deser_structure_crate_model_distribution_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DistributionSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10906,7 +10912,7 @@ pub fn deser_structure_distribution_summary(
             s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#DistributionSummary$Aliases */ =>  {
                 let var_434 =
                     Some(
-                        crate::xml_deser::deser_structure_aliases(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_aliases(&mut tag)
                         ?
                     )
                 ;
@@ -10916,7 +10922,7 @@ pub fn deser_structure_distribution_summary(
             s if s.matches("Origins") /* Origins com.amazonaws.cloudfront#DistributionSummary$Origins */ =>  {
                 let var_435 =
                     Some(
-                        crate::xml_deser::deser_structure_origins(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origins(&mut tag)
                         ?
                     )
                 ;
@@ -10926,7 +10932,7 @@ pub fn deser_structure_distribution_summary(
             s if s.matches("OriginGroups") /* OriginGroups com.amazonaws.cloudfront#DistributionSummary$OriginGroups */ =>  {
                 let var_436 =
                     Some(
-                        crate::xml_deser::deser_structure_origin_groups(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origin_groups(&mut tag)
                         ?
                     )
                 ;
@@ -10936,7 +10942,7 @@ pub fn deser_structure_distribution_summary(
             s if s.matches("DefaultCacheBehavior") /* DefaultCacheBehavior com.amazonaws.cloudfront#DistributionSummary$DefaultCacheBehavior */ =>  {
                 let var_437 =
                     Some(
-                        crate::xml_deser::deser_structure_default_cache_behavior(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_default_cache_behavior(&mut tag)
                         ?
                     )
                 ;
@@ -10946,7 +10952,7 @@ pub fn deser_structure_distribution_summary(
             s if s.matches("CacheBehaviors") /* CacheBehaviors com.amazonaws.cloudfront#DistributionSummary$CacheBehaviors */ =>  {
                 let var_438 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_behaviors(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_behaviors(&mut tag)
                         ?
                     )
                 ;
@@ -10956,7 +10962,7 @@ pub fn deser_structure_distribution_summary(
             s if s.matches("CustomErrorResponses") /* CustomErrorResponses com.amazonaws.cloudfront#DistributionSummary$CustomErrorResponses */ =>  {
                 let var_439 =
                     Some(
-                        crate::xml_deser::deser_structure_custom_error_responses(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_custom_error_responses(&mut tag)
                         ?
                     )
                 ;
@@ -11008,7 +11014,7 @@ pub fn deser_structure_distribution_summary(
             s if s.matches("ViewerCertificate") /* ViewerCertificate com.amazonaws.cloudfront#DistributionSummary$ViewerCertificate */ =>  {
                 let var_443 =
                     Some(
-                        crate::xml_deser::deser_structure_viewer_certificate(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_viewer_certificate(&mut tag)
                         ?
                     )
                 ;
@@ -11018,7 +11024,7 @@ pub fn deser_structure_distribution_summary(
             s if s.matches("Restrictions") /* Restrictions com.amazonaws.cloudfront#DistributionSummary$Restrictions */ =>  {
                 let var_444 =
                     Some(
-                        crate::xml_deser::deser_structure_restrictions(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_restrictions(&mut tag)
                         ?
                     )
                 ;
@@ -11070,7 +11076,7 @@ pub fn deser_structure_distribution_summary(
             s if s.matches("AliasICPRecordals") /* AliasICPRecordals com.amazonaws.cloudfront#DistributionSummary$AliasICPRecordals */ =>  {
                 let var_448 =
                     Some(
-                        crate::xml_deser::deser_list_alias_icp_recordals(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_alias_icp_recordals(&mut tag)
                         ?
                     )
                 ;
@@ -11083,7 +11089,7 @@ pub fn deser_structure_distribution_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_field_level_encryption_summary(
+pub fn deser_structure_crate_model_field_level_encryption_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FieldLevelEncryptionSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11133,7 +11139,7 @@ pub fn deser_structure_field_level_encryption_summary(
             s if s.matches("QueryArgProfileConfig") /* QueryArgProfileConfig com.amazonaws.cloudfront#FieldLevelEncryptionSummary$QueryArgProfileConfig */ =>  {
                 let var_452 =
                     Some(
-                        crate::xml_deser::deser_structure_query_arg_profile_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_query_arg_profile_config(&mut tag)
                         ?
                     )
                 ;
@@ -11143,7 +11149,7 @@ pub fn deser_structure_field_level_encryption_summary(
             s if s.matches("ContentTypeProfileConfig") /* ContentTypeProfileConfig com.amazonaws.cloudfront#FieldLevelEncryptionSummary$ContentTypeProfileConfig */ =>  {
                 let var_453 =
                     Some(
-                        crate::xml_deser::deser_structure_content_type_profile_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_content_type_profile_config(&mut tag)
                         ?
                     )
                 ;
@@ -11156,7 +11162,7 @@ pub fn deser_structure_field_level_encryption_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_field_level_encryption_profile_summary(
+pub fn deser_structure_crate_model_field_level_encryption_profile_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FieldLevelEncryptionProfileSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11206,7 +11212,7 @@ pub fn deser_structure_field_level_encryption_profile_summary(
             s if s.matches("EncryptionEntities") /* EncryptionEntities com.amazonaws.cloudfront#FieldLevelEncryptionProfileSummary$EncryptionEntities */ =>  {
                 let var_457 =
                     Some(
-                        crate::xml_deser::deser_structure_encryption_entities(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_encryption_entities(&mut tag)
                         ?
                     )
                 ;
@@ -11232,7 +11238,7 @@ pub fn deser_structure_field_level_encryption_profile_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_invalidation_summary(
+pub fn deser_structure_crate_model_invalidation_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InvalidationSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11285,7 +11291,7 @@ pub fn deser_structure_invalidation_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_key_group_summary(
+pub fn deser_structure_crate_model_key_group_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::KeyGroupSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11295,7 +11301,7 @@ pub fn deser_structure_key_group_summary(
             s if s.matches("KeyGroup") /* KeyGroup com.amazonaws.cloudfront#KeyGroupSummary$KeyGroup */ =>  {
                 let var_462 =
                     Some(
-                        crate::xml_deser::deser_structure_key_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_key_group(&mut tag)
                         ?
                     )
                 ;
@@ -11308,7 +11314,7 @@ pub fn deser_structure_key_group_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origin_request_policy_summary(
+pub fn deser_structure_crate_model_origin_request_policy_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginRequestPolicySummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11332,7 +11338,7 @@ pub fn deser_structure_origin_request_policy_summary(
             s if s.matches("OriginRequestPolicy") /* OriginRequestPolicy com.amazonaws.cloudfront#OriginRequestPolicySummary$OriginRequestPolicy */ =>  {
                 let var_464 =
                     Some(
-                        crate::xml_deser::deser_structure_origin_request_policy(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origin_request_policy(&mut tag)
                         ?
                     )
                 ;
@@ -11345,7 +11351,7 @@ pub fn deser_structure_origin_request_policy_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_public_key_summary(
+pub fn deser_structure_crate_model_public_key_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PublicKeySummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11424,7 +11430,7 @@ pub fn deser_structure_public_key_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_streaming_distribution_summary(
+pub fn deser_structure_crate_model_streaming_distribution_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StreamingDistributionSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11500,7 +11506,7 @@ pub fn deser_structure_streaming_distribution_summary(
             s if s.matches("S3Origin") /* S3Origin com.amazonaws.cloudfront#StreamingDistributionSummary$S3Origin */ =>  {
                 let var_475 =
                     Some(
-                        crate::xml_deser::deser_structure_s3_origin(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_s3_origin(&mut tag)
                         ?
                     )
                 ;
@@ -11510,7 +11516,7 @@ pub fn deser_structure_streaming_distribution_summary(
             s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#StreamingDistributionSummary$Aliases */ =>  {
                 let var_476 =
                     Some(
-                        crate::xml_deser::deser_structure_aliases(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_aliases(&mut tag)
                         ?
                     )
                 ;
@@ -11520,7 +11526,7 @@ pub fn deser_structure_streaming_distribution_summary(
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#StreamingDistributionSummary$TrustedSigners */ =>  {
                 let var_477 =
                     Some(
-                        crate::xml_deser::deser_structure_trusted_signers(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_trusted_signers(&mut tag)
                         ?
                     )
                 ;
@@ -11575,7 +11581,7 @@ pub fn deser_structure_streaming_distribution_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_tag(
+pub fn deser_structure_crate_model_tag(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Tag, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11614,7 +11620,7 @@ pub fn deser_structure_tag(
     Ok(builder.build())
 }
 
-pub fn deser_structure_kinesis_stream_config(
+pub fn deser_structure_crate_model_kinesis_stream_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::KinesisStreamConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11653,7 +11659,7 @@ pub fn deser_structure_kinesis_stream_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_signer(
+pub fn deser_structure_crate_model_signer(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Signer, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11676,7 +11682,7 @@ pub fn deser_structure_signer(
             s if s.matches("KeyPairIds") /* KeyPairIds com.amazonaws.cloudfront#Signer$KeyPairIds */ =>  {
                 let var_486 =
                     Some(
-                        crate::xml_deser::deser_structure_key_pair_ids(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_key_pair_ids(&mut tag)
                         ?
                     )
                 ;
@@ -11689,7 +11695,7 @@ pub fn deser_structure_signer(
     Ok(builder.build())
 }
 
-pub fn deser_structure_kg_key_pair_ids(
+pub fn deser_structure_crate_model_kg_key_pair_ids(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::KgKeyPairIds, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11712,7 +11718,7 @@ pub fn deser_structure_kg_key_pair_ids(
             s if s.matches("KeyPairIds") /* KeyPairIds com.amazonaws.cloudfront#KGKeyPairIds$KeyPairIds */ =>  {
                 let var_488 =
                     Some(
-                        crate::xml_deser::deser_structure_key_pair_ids(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_key_pair_ids(&mut tag)
                         ?
                     )
                 ;
@@ -11725,7 +11731,7 @@ pub fn deser_structure_kg_key_pair_ids(
     Ok(builder.build())
 }
 
-pub fn deser_list_path_list(
+pub fn deser_list_com_amazonaws_cloudfront_path_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -11747,7 +11753,7 @@ pub fn deser_list_path_list(
     Ok(out)
 }
 
-pub fn deser_structure_origin(
+pub fn deser_structure_crate_model_origin(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Origin, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11796,7 +11802,7 @@ pub fn deser_structure_origin(
             s if s.matches("CustomHeaders") /* CustomHeaders com.amazonaws.cloudfront#Origin$CustomHeaders */ =>  {
                 let var_492 =
                     Some(
-                        crate::xml_deser::deser_structure_custom_headers(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_custom_headers(&mut tag)
                         ?
                     )
                 ;
@@ -11806,7 +11812,7 @@ pub fn deser_structure_origin(
             s if s.matches("S3OriginConfig") /* S3OriginConfig com.amazonaws.cloudfront#Origin$S3OriginConfig */ =>  {
                 let var_493 =
                     Some(
-                        crate::xml_deser::deser_structure_s3_origin_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_s3_origin_config(&mut tag)
                         ?
                     )
                 ;
@@ -11816,7 +11822,7 @@ pub fn deser_structure_origin(
             s if s.matches("CustomOriginConfig") /* CustomOriginConfig com.amazonaws.cloudfront#Origin$CustomOriginConfig */ =>  {
                 let var_494 =
                     Some(
-                        crate::xml_deser::deser_structure_custom_origin_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_custom_origin_config(&mut tag)
                         ?
                     )
                 ;
@@ -11856,7 +11862,7 @@ pub fn deser_structure_origin(
             s if s.matches("OriginShield") /* OriginShield com.amazonaws.cloudfront#Origin$OriginShield */ =>  {
                 let var_497 =
                     Some(
-                        crate::xml_deser::deser_structure_origin_shield(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origin_shield(&mut tag)
                         ?
                     )
                 ;
@@ -11869,7 +11875,7 @@ pub fn deser_structure_origin(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origin_group(
+pub fn deser_structure_crate_model_origin_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11892,7 +11898,7 @@ pub fn deser_structure_origin_group(
             s if s.matches("FailoverCriteria") /* FailoverCriteria com.amazonaws.cloudfront#OriginGroup$FailoverCriteria */ =>  {
                 let var_499 =
                     Some(
-                        crate::xml_deser::deser_structure_origin_group_failover_criteria(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origin_group_failover_criteria(&mut tag)
                         ?
                     )
                 ;
@@ -11902,7 +11908,7 @@ pub fn deser_structure_origin_group(
             s if s.matches("Members") /* Members com.amazonaws.cloudfront#OriginGroup$Members */ =>  {
                 let var_500 =
                     Some(
-                        crate::xml_deser::deser_structure_origin_group_members(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origin_group_members(&mut tag)
                         ?
                     )
                 ;
@@ -11915,7 +11921,7 @@ pub fn deser_structure_origin_group(
     Ok(builder.build())
 }
 
-pub fn deser_list_trusted_key_group_id_list(
+pub fn deser_list_com_amazonaws_cloudfront_trusted_key_group_id_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -11937,7 +11943,7 @@ pub fn deser_list_trusted_key_group_id_list(
     Ok(out)
 }
 
-pub fn deser_list_methods_list(
+pub fn deser_list_com_amazonaws_cloudfront_methods_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Method>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -11960,7 +11966,7 @@ pub fn deser_list_methods_list(
     Ok(out)
 }
 
-pub fn deser_structure_cached_methods(
+pub fn deser_structure_crate_model_cached_methods(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CachedMethods, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11985,7 +11991,7 @@ pub fn deser_structure_cached_methods(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CachedMethods$Items */ =>  {
                 let var_502 =
                     Some(
-                        crate::xml_deser::deser_list_methods_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_methods_list(&mut tag)
                         ?
                     )
                 ;
@@ -11998,7 +12004,7 @@ pub fn deser_structure_cached_methods(
     Ok(builder.build())
 }
 
-pub fn deser_list_lambda_function_association_list(
+pub fn deser_list_com_amazonaws_cloudfront_lambda_function_association_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LambdaFunctionAssociation>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -12006,7 +12012,7 @@ pub fn deser_list_lambda_function_association_list(
         match tag.start_el() {
             s if s.matches("LambdaFunctionAssociation") /* member com.amazonaws.cloudfront#LambdaFunctionAssociationList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_lambda_function_association(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_lambda_function_association(&mut tag)
                     ?
                 );
             }
@@ -12017,7 +12023,7 @@ pub fn deser_list_lambda_function_association_list(
     Ok(out)
 }
 
-pub fn deser_list_function_association_list(
+pub fn deser_list_com_amazonaws_cloudfront_function_association_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::FunctionAssociation>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -12025,7 +12031,7 @@ pub fn deser_list_function_association_list(
         match tag.start_el() {
             s if s.matches("FunctionAssociation") /* member com.amazonaws.cloudfront#FunctionAssociationList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_function_association(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_function_association(&mut tag)
                     ?
                 );
             }
@@ -12036,7 +12042,7 @@ pub fn deser_list_function_association_list(
     Ok(out)
 }
 
-pub fn deser_structure_cookie_preference(
+pub fn deser_structure_crate_model_cookie_preference(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CookiePreference, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12060,7 +12066,7 @@ pub fn deser_structure_cookie_preference(
             s if s.matches("WhitelistedNames") /* WhitelistedNames com.amazonaws.cloudfront#CookiePreference$WhitelistedNames */ =>  {
                 let var_504 =
                     Some(
-                        crate::xml_deser::deser_structure_cookie_names(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cookie_names(&mut tag)
                         ?
                     )
                 ;
@@ -12073,7 +12079,7 @@ pub fn deser_structure_cookie_preference(
     Ok(builder.build())
 }
 
-pub fn deser_structure_query_string_cache_keys(
+pub fn deser_structure_crate_model_query_string_cache_keys(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::QueryStringCacheKeys, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12098,7 +12104,7 @@ pub fn deser_structure_query_string_cache_keys(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#QueryStringCacheKeys$Items */ =>  {
                 let var_506 =
                     Some(
-                        crate::xml_deser::deser_list_query_string_cache_keys_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_query_string_cache_keys_list(&mut tag)
                         ?
                     )
                 ;
@@ -12111,7 +12117,7 @@ pub fn deser_structure_query_string_cache_keys(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_behavior(
+pub fn deser_structure_crate_model_cache_behavior(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheBehavior, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12147,7 +12153,7 @@ pub fn deser_structure_cache_behavior(
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#CacheBehavior$TrustedSigners */ =>  {
                 let var_509 =
                     Some(
-                        crate::xml_deser::deser_structure_trusted_signers(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_trusted_signers(&mut tag)
                         ?
                     )
                 ;
@@ -12157,7 +12163,7 @@ pub fn deser_structure_cache_behavior(
             s if s.matches("TrustedKeyGroups") /* TrustedKeyGroups com.amazonaws.cloudfront#CacheBehavior$TrustedKeyGroups */ =>  {
                 let var_510 =
                     Some(
-                        crate::xml_deser::deser_structure_trusted_key_groups(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_trusted_key_groups(&mut tag)
                         ?
                     )
                 ;
@@ -12181,7 +12187,7 @@ pub fn deser_structure_cache_behavior(
             s if s.matches("AllowedMethods") /* AllowedMethods com.amazonaws.cloudfront#CacheBehavior$AllowedMethods */ =>  {
                 let var_512 =
                     Some(
-                        crate::xml_deser::deser_structure_allowed_methods(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_allowed_methods(&mut tag)
                         ?
                     )
                 ;
@@ -12221,7 +12227,7 @@ pub fn deser_structure_cache_behavior(
             s if s.matches("LambdaFunctionAssociations") /* LambdaFunctionAssociations com.amazonaws.cloudfront#CacheBehavior$LambdaFunctionAssociations */ =>  {
                 let var_515 =
                     Some(
-                        crate::xml_deser::deser_structure_lambda_function_associations(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_lambda_function_associations(&mut tag)
                         ?
                     )
                 ;
@@ -12231,7 +12237,7 @@ pub fn deser_structure_cache_behavior(
             s if s.matches("FunctionAssociations") /* FunctionAssociations com.amazonaws.cloudfront#CacheBehavior$FunctionAssociations */ =>  {
                 let var_516 =
                     Some(
-                        crate::xml_deser::deser_structure_function_associations(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_function_associations(&mut tag)
                         ?
                     )
                 ;
@@ -12293,7 +12299,7 @@ pub fn deser_structure_cache_behavior(
             s if s.matches("ForwardedValues") /* ForwardedValues com.amazonaws.cloudfront#CacheBehavior$ForwardedValues */ =>  {
                 let var_521 =
                     Some(
-                        crate::xml_deser::deser_structure_forwarded_values(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_forwarded_values(&mut tag)
                         ?
                     )
                 ;
@@ -12351,7 +12357,7 @@ pub fn deser_structure_cache_behavior(
     Ok(builder.build())
 }
 
-pub fn deser_structure_custom_error_response(
+pub fn deser_structure_crate_model_custom_error_response(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CustomErrorResponse, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12420,7 +12426,7 @@ pub fn deser_structure_custom_error_response(
     Ok(builder.build())
 }
 
-pub fn deser_list_location_list(
+pub fn deser_list_com_amazonaws_cloudfront_location_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -12442,7 +12448,7 @@ pub fn deser_list_location_list(
     Ok(out)
 }
 
-pub fn deser_list_query_arg_profile_list(
+pub fn deser_list_com_amazonaws_cloudfront_query_arg_profile_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::QueryArgProfile>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -12450,7 +12456,7 @@ pub fn deser_list_query_arg_profile_list(
         match tag.start_el() {
             s if s.matches("QueryArgProfile") /* member com.amazonaws.cloudfront#QueryArgProfileList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_query_arg_profile(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_query_arg_profile(&mut tag)
                     ?
                 );
             }
@@ -12461,7 +12467,7 @@ pub fn deser_list_query_arg_profile_list(
     Ok(out)
 }
 
-pub fn deser_list_content_type_profile_list(
+pub fn deser_list_com_amazonaws_cloudfront_content_type_profile_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ContentTypeProfile>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -12469,7 +12475,7 @@ pub fn deser_list_content_type_profile_list(
         match tag.start_el() {
             s if s.matches("ContentTypeProfile") /* member com.amazonaws.cloudfront#ContentTypeProfileList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_content_type_profile(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_content_type_profile(&mut tag)
                     ?
                 );
             }
@@ -12480,7 +12486,7 @@ pub fn deser_list_content_type_profile_list(
     Ok(out)
 }
 
-pub fn deser_structure_encryption_entity(
+pub fn deser_structure_crate_model_encryption_entity(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EncryptionEntity, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12516,7 +12522,7 @@ pub fn deser_structure_encryption_entity(
             s if s.matches("FieldPatterns") /* FieldPatterns com.amazonaws.cloudfront#EncryptionEntity$FieldPatterns */ =>  {
                 let var_531 =
                     Some(
-                        crate::xml_deser::deser_structure_field_patterns(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_field_patterns(&mut tag)
                         ?
                     )
                 ;
@@ -12529,7 +12535,7 @@ pub fn deser_structure_encryption_entity(
     Ok(builder.build())
 }
 
-pub fn deser_list_header_list(
+pub fn deser_list_com_amazonaws_cloudfront_header_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -12551,7 +12557,7 @@ pub fn deser_list_header_list(
     Ok(out)
 }
 
-pub fn deser_list_cookie_name_list(
+pub fn deser_list_com_amazonaws_cloudfront_cookie_name_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -12573,7 +12579,7 @@ pub fn deser_list_cookie_name_list(
     Ok(out)
 }
 
-pub fn deser_list_query_string_names_list(
+pub fn deser_list_com_amazonaws_cloudfront_query_string_names_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -12595,7 +12601,7 @@ pub fn deser_list_query_string_names_list(
     Ok(out)
 }
 
-pub fn deser_structure_key_pair_ids(
+pub fn deser_structure_crate_model_key_pair_ids(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::KeyPairIds, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12620,7 +12626,7 @@ pub fn deser_structure_key_pair_ids(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#KeyPairIds$Items */ =>  {
                 let var_533 =
                     Some(
-                        crate::xml_deser::deser_list_key_pair_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_key_pair_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -12633,7 +12639,7 @@ pub fn deser_structure_key_pair_ids(
     Ok(builder.build())
 }
 
-pub fn deser_structure_custom_headers(
+pub fn deser_structure_crate_model_custom_headers(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CustomHeaders, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12658,7 +12664,7 @@ pub fn deser_structure_custom_headers(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CustomHeaders$Items */ =>  {
                 let var_535 =
                     Some(
-                        crate::xml_deser::deser_list_origin_custom_headers_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_origin_custom_headers_list(&mut tag)
                         ?
                     )
                 ;
@@ -12671,7 +12677,7 @@ pub fn deser_structure_custom_headers(
     Ok(builder.build())
 }
 
-pub fn deser_structure_s3_origin_config(
+pub fn deser_structure_crate_model_s3_origin_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::S3OriginConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12697,7 +12703,7 @@ pub fn deser_structure_s3_origin_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_custom_origin_config(
+pub fn deser_structure_crate_model_custom_origin_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CustomOriginConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12751,7 +12757,7 @@ pub fn deser_structure_custom_origin_config(
             s if s.matches("OriginSslProtocols") /* OriginSslProtocols com.amazonaws.cloudfront#CustomOriginConfig$OriginSslProtocols */ =>  {
                 let var_540 =
                     Some(
-                        crate::xml_deser::deser_structure_origin_ssl_protocols(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_origin_ssl_protocols(&mut tag)
                         ?
                     )
                 ;
@@ -12794,7 +12800,7 @@ pub fn deser_structure_custom_origin_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origin_shield(
+pub fn deser_structure_crate_model_origin_shield(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginShield, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12835,7 +12841,7 @@ pub fn deser_structure_origin_shield(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origin_group_failover_criteria(
+pub fn deser_structure_crate_model_origin_group_failover_criteria(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginGroupFailoverCriteria, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12845,7 +12851,7 @@ pub fn deser_structure_origin_group_failover_criteria(
             s if s.matches("StatusCodes") /* StatusCodes com.amazonaws.cloudfront#OriginGroupFailoverCriteria$StatusCodes */ =>  {
                 let var_545 =
                     Some(
-                        crate::xml_deser::deser_structure_status_codes(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_status_codes(&mut tag)
                         ?
                     )
                 ;
@@ -12858,7 +12864,7 @@ pub fn deser_structure_origin_group_failover_criteria(
     Ok(builder.build())
 }
 
-pub fn deser_structure_origin_group_members(
+pub fn deser_structure_crate_model_origin_group_members(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginGroupMembers, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12883,7 +12889,7 @@ pub fn deser_structure_origin_group_members(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#OriginGroupMembers$Items */ =>  {
                 let var_547 =
                     Some(
-                        crate::xml_deser::deser_list_origin_group_member_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_origin_group_member_list(&mut tag)
                         ?
                     )
                 ;
@@ -12896,7 +12902,7 @@ pub fn deser_structure_origin_group_members(
     Ok(builder.build())
 }
 
-pub fn deser_structure_lambda_function_association(
+pub fn deser_structure_crate_model_lambda_function_association(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LambdaFunctionAssociation, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12951,7 +12957,7 @@ pub fn deser_structure_lambda_function_association(
     Ok(builder.build())
 }
 
-pub fn deser_structure_function_association(
+pub fn deser_structure_crate_model_function_association(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FunctionAssociation, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -12991,7 +12997,7 @@ pub fn deser_structure_function_association(
     Ok(builder.build())
 }
 
-pub fn deser_list_query_string_cache_keys_list(
+pub fn deser_list_com_amazonaws_cloudfront_query_string_cache_keys_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -13013,7 +13019,7 @@ pub fn deser_list_query_string_cache_keys_list(
     Ok(out)
 }
 
-pub fn deser_structure_query_arg_profile(
+pub fn deser_structure_crate_model_query_arg_profile(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::QueryArgProfile, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -13052,7 +13058,7 @@ pub fn deser_structure_query_arg_profile(
     Ok(builder.build())
 }
 
-pub fn deser_structure_content_type_profile(
+pub fn deser_structure_crate_model_content_type_profile(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ContentTypeProfile, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -13105,7 +13111,7 @@ pub fn deser_structure_content_type_profile(
     Ok(builder.build())
 }
 
-pub fn deser_structure_field_patterns(
+pub fn deser_structure_crate_model_field_patterns(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FieldPatterns, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -13130,7 +13136,7 @@ pub fn deser_structure_field_patterns(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#FieldPatterns$Items */ =>  {
                 let var_559 =
                     Some(
-                        crate::xml_deser::deser_list_field_pattern_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_field_pattern_list(&mut tag)
                         ?
                     )
                 ;
@@ -13143,7 +13149,7 @@ pub fn deser_structure_field_patterns(
     Ok(builder.build())
 }
 
-pub fn deser_list_key_pair_id_list(
+pub fn deser_list_com_amazonaws_cloudfront_key_pair_id_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -13165,7 +13171,7 @@ pub fn deser_list_key_pair_id_list(
     Ok(out)
 }
 
-pub fn deser_list_origin_custom_headers_list(
+pub fn deser_list_com_amazonaws_cloudfront_origin_custom_headers_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::OriginCustomHeader>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -13173,7 +13179,7 @@ pub fn deser_list_origin_custom_headers_list(
         match tag.start_el() {
             s if s.matches("OriginCustomHeader") /* member com.amazonaws.cloudfront#OriginCustomHeadersList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_origin_custom_header(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_origin_custom_header(&mut tag)
                     ?
                 );
             }
@@ -13184,7 +13190,7 @@ pub fn deser_list_origin_custom_headers_list(
     Ok(out)
 }
 
-pub fn deser_structure_origin_ssl_protocols(
+pub fn deser_structure_crate_model_origin_ssl_protocols(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginSslProtocols, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -13209,7 +13215,7 @@ pub fn deser_structure_origin_ssl_protocols(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#OriginSslProtocols$Items */ =>  {
                 let var_561 =
                     Some(
-                        crate::xml_deser::deser_list_ssl_protocols_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_ssl_protocols_list(&mut tag)
                         ?
                     )
                 ;
@@ -13222,7 +13228,7 @@ pub fn deser_structure_origin_ssl_protocols(
     Ok(builder.build())
 }
 
-pub fn deser_structure_status_codes(
+pub fn deser_structure_crate_model_status_codes(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StatusCodes, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -13247,7 +13253,7 @@ pub fn deser_structure_status_codes(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#StatusCodes$Items */ =>  {
                 let var_563 =
                     Some(
-                        crate::xml_deser::deser_list_status_code_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudfront_status_code_list(&mut tag)
                         ?
                     )
                 ;
@@ -13260,7 +13266,7 @@ pub fn deser_structure_status_codes(
     Ok(builder.build())
 }
 
-pub fn deser_list_origin_group_member_list(
+pub fn deser_list_com_amazonaws_cloudfront_origin_group_member_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::OriginGroupMember>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -13268,7 +13274,7 @@ pub fn deser_list_origin_group_member_list(
         match tag.start_el() {
             s if s.matches("OriginGroupMember") /* member com.amazonaws.cloudfront#OriginGroupMemberList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_origin_group_member(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_origin_group_member(&mut tag)
                     ?
                 );
             }
@@ -13279,7 +13285,7 @@ pub fn deser_list_origin_group_member_list(
     Ok(out)
 }
 
-pub fn deser_list_field_pattern_list(
+pub fn deser_list_com_amazonaws_cloudfront_field_pattern_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -13301,7 +13307,7 @@ pub fn deser_list_field_pattern_list(
     Ok(out)
 }
 
-pub fn deser_structure_origin_custom_header(
+pub fn deser_structure_crate_model_origin_custom_header(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginCustomHeader, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -13340,7 +13346,7 @@ pub fn deser_structure_origin_custom_header(
     Ok(builder.build())
 }
 
-pub fn deser_list_ssl_protocols_list(
+pub fn deser_list_com_amazonaws_cloudfront_ssl_protocols_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::SslProtocol>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -13363,7 +13369,7 @@ pub fn deser_list_ssl_protocols_list(
     Ok(out)
 }
 
-pub fn deser_list_status_code_list(
+pub fn deser_list_com_amazonaws_cloudfront_status_code_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<i32>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -13387,7 +13393,7 @@ pub fn deser_list_status_code_list(
     Ok(out)
 }
 
-pub fn deser_structure_origin_group_member(
+pub fn deser_structure_crate_model_origin_group_member(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OriginGroupMember, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]

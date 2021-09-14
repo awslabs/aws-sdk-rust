@@ -6,7 +6,7 @@ pub fn parse_http_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_cluster_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_cluster_not_found_fault::Builder,
 ) -> Result<crate::error::cache_cluster_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -39,7 +39,7 @@ pub fn deser_structure_cache_cluster_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_parameter_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_parameter_group_not_found_fault::Builder,
 ) -> Result<
@@ -75,7 +75,7 @@ pub fn deser_structure_cache_parameter_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_security_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_security_group_not_found_fault::Builder,
 ) -> Result<crate::error::cache_security_group_not_found_fault::Builder, smithy_xml::decode::XmlError>
@@ -109,7 +109,7 @@ pub fn deser_structure_cache_security_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_subnet_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_subnet_group_not_found_fault::Builder,
 ) -> Result<crate::error::cache_subnet_group_not_found_fault::Builder, smithy_xml::decode::XmlError>
@@ -143,7 +143,7 @@ pub fn deser_structure_cache_subnet_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_arn_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_arn_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_arn_fault::Builder,
 ) -> Result<crate::error::invalid_arn_fault::Builder, smithy_xml::decode::XmlError> {
@@ -176,7 +176,7 @@ pub fn deser_structure_invalid_arn_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_replication_group_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_replication_group_state_fault::Builder,
 ) -> Result<
@@ -212,7 +212,7 @@ pub fn deser_structure_invalid_replication_group_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_replication_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_replication_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::replication_group_not_found_fault::Builder,
 ) -> Result<crate::error::replication_group_not_found_fault::Builder, smithy_xml::decode::XmlError>
@@ -246,7 +246,7 @@ pub fn deser_structure_replication_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_reserved_cache_node_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_reserved_cache_node_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::reserved_cache_node_not_found_fault::Builder,
 ) -> Result<crate::error::reserved_cache_node_not_found_fault::Builder, smithy_xml::decode::XmlError>
@@ -280,7 +280,7 @@ pub fn deser_structure_reserved_cache_node_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_snapshot_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_snapshot_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::snapshot_not_found_fault::Builder,
 ) -> Result<crate::error::snapshot_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -313,7 +313,7 @@ pub fn deser_structure_snapshot_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_tag_quota_per_resource_exceeded_xml_err(
+pub fn deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(
     inp: &[u8],
     mut builder: crate::error::tag_quota_per_resource_exceeded::Builder,
 ) -> Result<crate::error::tag_quota_per_resource_exceeded::Builder, smithy_xml::decode::XmlError> {
@@ -346,7 +346,7 @@ pub fn deser_structure_tag_quota_per_resource_exceeded_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_user_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_user_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::user_group_not_found_fault::Builder,
 ) -> Result<crate::error::user_group_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -379,7 +379,7 @@ pub fn deser_structure_user_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_user_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_user_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::user_not_found_fault::Builder,
 ) -> Result<crate::error::user_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -412,7 +412,7 @@ pub fn deser_structure_user_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_add_tags_to_resource(
+pub fn deser_operation_crate_operation_add_tags_to_resource(
     inp: &[u8],
     mut builder: crate::output::add_tags_to_resource_output::Builder,
 ) -> Result<crate::output::add_tags_to_resource_output::Builder, smithy_xml::decode::XmlError> {
@@ -438,10 +438,10 @@ pub fn deser_operation_add_tags_to_resource(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TagList") /* TagList com.amazonaws.elasticache#AddTagsToResourceOutput$TagList */ =>  {
+            s if s.matches("TagList") /* TagList com.amazonaws.elasticache.synthetic#AddTagsToResourceOutput$TagList */ =>  {
                 let var_13 =
                     Some(
-                        crate::xml_deser::deser_list_tag_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_tag_list(&mut tag)
                         ?
                     )
                 ;
@@ -460,7 +460,7 @@ pub fn deser_operation_add_tags_to_resource(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_authorization_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_authorization_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::authorization_already_exists_fault::Builder,
 ) -> Result<crate::error::authorization_already_exists_fault::Builder, smithy_xml::decode::XmlError>
@@ -494,7 +494,7 @@ pub fn deser_structure_authorization_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_cache_security_group_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_cache_security_group_state_fault::Builder,
 ) -> Result<
@@ -530,7 +530,7 @@ pub fn deser_structure_invalid_cache_security_group_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_parameter_combination_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_parameter_combination_exception::Builder,
 ) -> Result<
@@ -566,7 +566,7 @@ pub fn deser_structure_invalid_parameter_combination_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_parameter_value_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_parameter_value_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_parameter_value_exception::Builder,
 ) -> Result<crate::error::invalid_parameter_value_exception::Builder, smithy_xml::decode::XmlError>
@@ -600,7 +600,7 @@ pub fn deser_structure_invalid_parameter_value_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_authorize_cache_security_group_ingress(
+pub fn deser_operation_crate_operation_authorize_cache_security_group_ingress(
     inp: &[u8],
     mut builder: crate::output::authorize_cache_security_group_ingress_output::Builder,
 ) -> Result<
@@ -629,10 +629,10 @@ pub fn deser_operation_authorize_cache_security_group_ingress(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheSecurityGroup") /* CacheSecurityGroup com.amazonaws.elasticache#AuthorizeCacheSecurityGroupIngressOutput$CacheSecurityGroup */ =>  {
+            s if s.matches("CacheSecurityGroup") /* CacheSecurityGroup com.amazonaws.elasticache.synthetic#AuthorizeCacheSecurityGroupIngressOutput$CacheSecurityGroup */ =>  {
                 let var_18 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_security_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_security_group(&mut tag)
                         ?
                     )
                 ;
@@ -651,7 +651,7 @@ pub fn deser_operation_authorize_cache_security_group_ingress(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_service_update_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_service_update_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::service_update_not_found_fault::Builder,
 ) -> Result<crate::error::service_update_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -684,7 +684,7 @@ pub fn deser_structure_service_update_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_batch_apply_update_action(
+pub fn deser_operation_crate_operation_batch_apply_update_action(
     inp: &[u8],
     mut builder: crate::output::batch_apply_update_action_output::Builder,
 ) -> Result<crate::output::batch_apply_update_action_output::Builder, smithy_xml::decode::XmlError>
@@ -711,20 +711,20 @@ pub fn deser_operation_batch_apply_update_action(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ProcessedUpdateActions") /* ProcessedUpdateActions com.amazonaws.elasticache#BatchApplyUpdateActionOutput$ProcessedUpdateActions */ =>  {
+            s if s.matches("ProcessedUpdateActions") /* ProcessedUpdateActions com.amazonaws.elasticache.synthetic#BatchApplyUpdateActionOutput$ProcessedUpdateActions */ =>  {
                 let var_20 =
                     Some(
-                        crate::xml_deser::deser_list_processed_update_action_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_processed_update_action_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_processed_update_actions(var_20);
             }
             ,
-            s if s.matches("UnprocessedUpdateActions") /* UnprocessedUpdateActions com.amazonaws.elasticache#BatchApplyUpdateActionOutput$UnprocessedUpdateActions */ =>  {
+            s if s.matches("UnprocessedUpdateActions") /* UnprocessedUpdateActions com.amazonaws.elasticache.synthetic#BatchApplyUpdateActionOutput$UnprocessedUpdateActions */ =>  {
                 let var_21 =
                     Some(
-                        crate::xml_deser::deser_list_unprocessed_update_action_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_unprocessed_update_action_list(&mut tag)
                         ?
                     )
                 ;
@@ -743,7 +743,7 @@ pub fn deser_operation_batch_apply_update_action(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_batch_stop_update_action(
+pub fn deser_operation_crate_operation_batch_stop_update_action(
     inp: &[u8],
     mut builder: crate::output::batch_stop_update_action_output::Builder,
 ) -> Result<crate::output::batch_stop_update_action_output::Builder, smithy_xml::decode::XmlError> {
@@ -769,20 +769,20 @@ pub fn deser_operation_batch_stop_update_action(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ProcessedUpdateActions") /* ProcessedUpdateActions com.amazonaws.elasticache#BatchStopUpdateActionOutput$ProcessedUpdateActions */ =>  {
+            s if s.matches("ProcessedUpdateActions") /* ProcessedUpdateActions com.amazonaws.elasticache.synthetic#BatchStopUpdateActionOutput$ProcessedUpdateActions */ =>  {
                 let var_22 =
                     Some(
-                        crate::xml_deser::deser_list_processed_update_action_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_processed_update_action_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_processed_update_actions(var_22);
             }
             ,
-            s if s.matches("UnprocessedUpdateActions") /* UnprocessedUpdateActions com.amazonaws.elasticache#BatchStopUpdateActionOutput$UnprocessedUpdateActions */ =>  {
+            s if s.matches("UnprocessedUpdateActions") /* UnprocessedUpdateActions com.amazonaws.elasticache.synthetic#BatchStopUpdateActionOutput$UnprocessedUpdateActions */ =>  {
                 let var_23 =
                     Some(
-                        crate::xml_deser::deser_list_unprocessed_update_action_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_unprocessed_update_action_list(&mut tag)
                         ?
                     )
                 ;
@@ -801,7 +801,7 @@ pub fn deser_operation_batch_stop_update_action(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_replication_group_not_under_migration_fault_xml_err(
+pub fn deser_structure_crate_error_replication_group_not_under_migration_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::replication_group_not_under_migration_fault::Builder,
 ) -> Result<
@@ -837,7 +837,7 @@ pub fn deser_structure_replication_group_not_under_migration_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_complete_migration(
+pub fn deser_operation_crate_operation_complete_migration(
     inp: &[u8],
     mut builder: crate::output::complete_migration_output::Builder,
 ) -> Result<crate::output::complete_migration_output::Builder, smithy_xml::decode::XmlError> {
@@ -863,10 +863,10 @@ pub fn deser_operation_complete_migration(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache#CompleteMigrationOutput$ReplicationGroup */ =>  {
+            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#CompleteMigrationOutput$ReplicationGroup */ =>  {
                 let var_25 =
                     Some(
-                        crate::xml_deser::deser_structure_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -885,7 +885,7 @@ pub fn deser_operation_complete_migration(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_snapshot_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_snapshot_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_snapshot_state_fault::Builder,
 ) -> Result<crate::error::invalid_snapshot_state_fault::Builder, smithy_xml::decode::XmlError> {
@@ -918,7 +918,7 @@ pub fn deser_structure_invalid_snapshot_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_snapshot_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_snapshot_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::snapshot_already_exists_fault::Builder,
 ) -> Result<crate::error::snapshot_already_exists_fault::Builder, smithy_xml::decode::XmlError> {
@@ -951,7 +951,7 @@ pub fn deser_structure_snapshot_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_snapshot_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::snapshot_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::snapshot_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError> {
@@ -984,7 +984,7 @@ pub fn deser_structure_snapshot_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_copy_snapshot(
+pub fn deser_operation_crate_operation_copy_snapshot(
     inp: &[u8],
     mut builder: crate::output::copy_snapshot_output::Builder,
 ) -> Result<crate::output::copy_snapshot_output::Builder, smithy_xml::decode::XmlError> {
@@ -1010,10 +1010,10 @@ pub fn deser_operation_copy_snapshot(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Snapshot") /* Snapshot com.amazonaws.elasticache#CopySnapshotOutput$Snapshot */ =>  {
+            s if s.matches("Snapshot") /* Snapshot com.amazonaws.elasticache.synthetic#CopySnapshotOutput$Snapshot */ =>  {
                 let var_29 =
                     Some(
-                        crate::xml_deser::deser_structure_snapshot(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_snapshot(&mut tag)
                         ?
                     )
                 ;
@@ -1032,7 +1032,7 @@ pub fn deser_operation_copy_snapshot(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_cluster_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_cache_cluster_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_cluster_already_exists_fault::Builder,
 ) -> Result<crate::error::cache_cluster_already_exists_fault::Builder, smithy_xml::decode::XmlError>
@@ -1066,7 +1066,7 @@ pub fn deser_structure_cache_cluster_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cluster_quota_for_customer_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cluster_quota_for_customer_exceeded_fault::Builder,
 ) -> Result<
@@ -1102,7 +1102,7 @@ pub fn deser_structure_cluster_quota_for_customer_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_insufficient_cache_cluster_capacity_fault_xml_err(
+pub fn deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::insufficient_cache_cluster_capacity_fault::Builder,
 ) -> Result<
@@ -1138,7 +1138,7 @@ pub fn deser_structure_insufficient_cache_cluster_capacity_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_vpc_network_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_vpc_network_state_fault::Builder,
 ) -> Result<crate::error::invalid_vpc_network_state_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1171,7 +1171,7 @@ pub fn deser_structure_invalid_vpc_network_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_node_quota_for_cluster_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_node_quota_for_cluster_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::node_quota_for_cluster_exceeded_fault::Builder,
 ) -> Result<
@@ -1207,7 +1207,7 @@ pub fn deser_structure_node_quota_for_cluster_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_node_quota_for_customer_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::node_quota_for_customer_exceeded_fault::Builder,
 ) -> Result<
@@ -1243,7 +1243,7 @@ pub fn deser_structure_node_quota_for_customer_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_cache_cluster(
+pub fn deser_operation_crate_operation_create_cache_cluster(
     inp: &[u8],
     mut builder: crate::output::create_cache_cluster_output::Builder,
 ) -> Result<crate::output::create_cache_cluster_output::Builder, smithy_xml::decode::XmlError> {
@@ -1269,10 +1269,10 @@ pub fn deser_operation_create_cache_cluster(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache#CreateCacheClusterOutput$CacheCluster */ =>  {
+            s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache.synthetic#CreateCacheClusterOutput$CacheCluster */ =>  {
                 let var_36 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -1291,7 +1291,7 @@ pub fn deser_operation_create_cache_cluster(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_parameter_group_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_cache_parameter_group_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_parameter_group_already_exists_fault::Builder,
 ) -> Result<
@@ -1327,7 +1327,7 @@ pub fn deser_structure_cache_parameter_group_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_parameter_group_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_cache_parameter_group_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_parameter_group_quota_exceeded_fault::Builder,
 ) -> Result<
@@ -1363,7 +1363,7 @@ pub fn deser_structure_cache_parameter_group_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_cache_parameter_group_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_cache_parameter_group_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_cache_parameter_group_state_fault::Builder,
 ) -> Result<
@@ -1399,7 +1399,7 @@ pub fn deser_structure_invalid_cache_parameter_group_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_cache_parameter_group(
+pub fn deser_operation_crate_operation_create_cache_parameter_group(
     inp: &[u8],
     mut builder: crate::output::create_cache_parameter_group_output::Builder,
 ) -> Result<crate::output::create_cache_parameter_group_output::Builder, smithy_xml::decode::XmlError>
@@ -1426,10 +1426,10 @@ pub fn deser_operation_create_cache_parameter_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheParameterGroup") /* CacheParameterGroup com.amazonaws.elasticache#CreateCacheParameterGroupOutput$CacheParameterGroup */ =>  {
+            s if s.matches("CacheParameterGroup") /* CacheParameterGroup com.amazonaws.elasticache.synthetic#CreateCacheParameterGroupOutput$CacheParameterGroup */ =>  {
                 let var_40 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_parameter_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_parameter_group(&mut tag)
                         ?
                     )
                 ;
@@ -1448,7 +1448,7 @@ pub fn deser_operation_create_cache_parameter_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_security_group_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_cache_security_group_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_security_group_already_exists_fault::Builder,
 ) -> Result<
@@ -1484,7 +1484,7 @@ pub fn deser_structure_cache_security_group_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_security_group_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_cache_security_group_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_security_group_quota_exceeded_fault::Builder,
 ) -> Result<
@@ -1520,7 +1520,7 @@ pub fn deser_structure_cache_security_group_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_cache_security_group(
+pub fn deser_operation_crate_operation_create_cache_security_group(
     inp: &[u8],
     mut builder: crate::output::create_cache_security_group_output::Builder,
 ) -> Result<crate::output::create_cache_security_group_output::Builder, smithy_xml::decode::XmlError>
@@ -1547,10 +1547,10 @@ pub fn deser_operation_create_cache_security_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheSecurityGroup") /* CacheSecurityGroup com.amazonaws.elasticache#CreateCacheSecurityGroupOutput$CacheSecurityGroup */ =>  {
+            s if s.matches("CacheSecurityGroup") /* CacheSecurityGroup com.amazonaws.elasticache.synthetic#CreateCacheSecurityGroupOutput$CacheSecurityGroup */ =>  {
                 let var_43 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_security_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_security_group(&mut tag)
                         ?
                     )
                 ;
@@ -1569,7 +1569,7 @@ pub fn deser_operation_create_cache_security_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_subnet_group_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_cache_subnet_group_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_subnet_group_already_exists_fault::Builder,
 ) -> Result<
@@ -1605,7 +1605,7 @@ pub fn deser_structure_cache_subnet_group_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_subnet_group_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_cache_subnet_group_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_subnet_group_quota_exceeded_fault::Builder,
 ) -> Result<
@@ -1641,7 +1641,7 @@ pub fn deser_structure_cache_subnet_group_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_subnet_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_cache_subnet_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_subnet_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::cache_subnet_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError>
@@ -1675,7 +1675,7 @@ pub fn deser_structure_cache_subnet_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_subnet_xml_err(
+pub fn deser_structure_crate_error_invalid_subnet_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_subnet::Builder,
 ) -> Result<crate::error::invalid_subnet::Builder, smithy_xml::decode::XmlError> {
@@ -1708,7 +1708,7 @@ pub fn deser_structure_invalid_subnet_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_subnet_not_allowed_fault_xml_err(
+pub fn deser_structure_crate_error_subnet_not_allowed_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::subnet_not_allowed_fault::Builder,
 ) -> Result<crate::error::subnet_not_allowed_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1741,7 +1741,7 @@ pub fn deser_structure_subnet_not_allowed_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_cache_subnet_group(
+pub fn deser_operation_crate_operation_create_cache_subnet_group(
     inp: &[u8],
     mut builder: crate::output::create_cache_subnet_group_output::Builder,
 ) -> Result<crate::output::create_cache_subnet_group_output::Builder, smithy_xml::decode::XmlError>
@@ -1768,10 +1768,10 @@ pub fn deser_operation_create_cache_subnet_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheSubnetGroup") /* CacheSubnetGroup com.amazonaws.elasticache#CreateCacheSubnetGroupOutput$CacheSubnetGroup */ =>  {
+            s if s.matches("CacheSubnetGroup") /* CacheSubnetGroup com.amazonaws.elasticache.synthetic#CreateCacheSubnetGroupOutput$CacheSubnetGroup */ =>  {
                 let var_49 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_subnet_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_subnet_group(&mut tag)
                         ?
                     )
                 ;
@@ -1790,7 +1790,7 @@ pub fn deser_operation_create_cache_subnet_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_global_replication_group_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_global_replication_group_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::global_replication_group_already_exists_fault::Builder,
 ) -> Result<
@@ -1826,7 +1826,7 @@ pub fn deser_structure_global_replication_group_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_service_linked_role_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::service_linked_role_not_found_fault::Builder,
 ) -> Result<crate::error::service_linked_role_not_found_fault::Builder, smithy_xml::decode::XmlError>
@@ -1860,7 +1860,7 @@ pub fn deser_structure_service_linked_role_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_global_replication_group(
+pub fn deser_operation_crate_operation_create_global_replication_group(
     inp: &[u8],
     mut builder: crate::output::create_global_replication_group_output::Builder,
 ) -> Result<
@@ -1889,10 +1889,10 @@ pub fn deser_operation_create_global_replication_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache#CreateGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
+            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#CreateGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
                 let var_52 =
                     Some(
-                        crate::xml_deser::deser_structure_global_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -1911,7 +1911,7 @@ pub fn deser_operation_create_global_replication_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_global_replication_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::global_replication_group_not_found_fault::Builder,
 ) -> Result<
@@ -1947,7 +1947,7 @@ pub fn deser_structure_global_replication_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_cache_cluster_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_cache_cluster_state_fault::Builder,
 ) -> Result<crate::error::invalid_cache_cluster_state_fault::Builder, smithy_xml::decode::XmlError>
@@ -1981,7 +1981,7 @@ pub fn deser_structure_invalid_cache_cluster_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_global_replication_group_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_global_replication_group_state_fault::Builder,
 ) -> Result<
@@ -2017,7 +2017,7 @@ pub fn deser_structure_invalid_global_replication_group_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_user_group_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_user_group_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_user_group_state_fault::Builder,
 ) -> Result<crate::error::invalid_user_group_state_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2050,7 +2050,7 @@ pub fn deser_structure_invalid_user_group_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_node_groups_per_replication_group_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_node_groups_per_replication_group_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder,
 ) -> Result<
@@ -2086,7 +2086,7 @@ pub fn deser_structure_node_groups_per_replication_group_quota_exceeded_fault_xm
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_replication_group_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_replication_group_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::replication_group_already_exists_fault::Builder,
 ) -> Result<
@@ -2122,7 +2122,7 @@ pub fn deser_structure_replication_group_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_replication_group(
+pub fn deser_operation_crate_operation_create_replication_group(
     inp: &[u8],
     mut builder: crate::output::create_replication_group_output::Builder,
 ) -> Result<crate::output::create_replication_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -2148,10 +2148,10 @@ pub fn deser_operation_create_replication_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache#CreateReplicationGroupOutput$ReplicationGroup */ =>  {
+            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#CreateReplicationGroupOutput$ReplicationGroup */ =>  {
                 let var_59 =
                     Some(
-                        crate::xml_deser::deser_structure_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -2170,7 +2170,7 @@ pub fn deser_operation_create_replication_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_snapshot_feature_not_supported_fault_xml_err(
+pub fn deser_structure_crate_error_snapshot_feature_not_supported_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::snapshot_feature_not_supported_fault::Builder,
 ) -> Result<crate::error::snapshot_feature_not_supported_fault::Builder, smithy_xml::decode::XmlError>
@@ -2204,7 +2204,7 @@ pub fn deser_structure_snapshot_feature_not_supported_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_snapshot(
+pub fn deser_operation_crate_operation_create_snapshot(
     inp: &[u8],
     mut builder: crate::output::create_snapshot_output::Builder,
 ) -> Result<crate::output::create_snapshot_output::Builder, smithy_xml::decode::XmlError> {
@@ -2230,10 +2230,10 @@ pub fn deser_operation_create_snapshot(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Snapshot") /* Snapshot com.amazonaws.elasticache#CreateSnapshotOutput$Snapshot */ =>  {
+            s if s.matches("Snapshot") /* Snapshot com.amazonaws.elasticache.synthetic#CreateSnapshotOutput$Snapshot */ =>  {
                 let var_61 =
                     Some(
-                        crate::xml_deser::deser_structure_snapshot(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_snapshot(&mut tag)
                         ?
                     )
                 ;
@@ -2252,7 +2252,7 @@ pub fn deser_operation_create_snapshot(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_duplicate_user_name_fault_xml_err(
+pub fn deser_structure_crate_error_duplicate_user_name_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::duplicate_user_name_fault::Builder,
 ) -> Result<crate::error::duplicate_user_name_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2285,7 +2285,7 @@ pub fn deser_structure_duplicate_user_name_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_user_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_user_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::user_already_exists_fault::Builder,
 ) -> Result<crate::error::user_already_exists_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2318,7 +2318,7 @@ pub fn deser_structure_user_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_user_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_user_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::user_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::user_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2351,7 +2351,7 @@ pub fn deser_structure_user_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_user(
+pub fn deser_operation_crate_operation_create_user(
     inp: &[u8],
     mut builder: crate::output::create_user_output::Builder,
 ) -> Result<crate::output::create_user_output::Builder, smithy_xml::decode::XmlError> {
@@ -2377,7 +2377,7 @@ pub fn deser_operation_create_user(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("UserId") /* UserId com.amazonaws.elasticache#CreateUserOutput$UserId */ =>  {
+            s if s.matches("UserId") /* UserId com.amazonaws.elasticache.synthetic#CreateUserOutput$UserId */ =>  {
                 let var_65 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2390,7 +2390,7 @@ pub fn deser_operation_create_user(
                 builder = builder.set_user_id(var_65);
             }
             ,
-            s if s.matches("UserName") /* UserName com.amazonaws.elasticache#CreateUserOutput$UserName */ =>  {
+            s if s.matches("UserName") /* UserName com.amazonaws.elasticache.synthetic#CreateUserOutput$UserName */ =>  {
                 let var_66 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2403,7 +2403,7 @@ pub fn deser_operation_create_user(
                 builder = builder.set_user_name(var_66);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache#CreateUserOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#CreateUserOutput$Status */ =>  {
                 let var_67 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2416,7 +2416,7 @@ pub fn deser_operation_create_user(
                 builder = builder.set_status(var_67);
             }
             ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#CreateUserOutput$Engine */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#CreateUserOutput$Engine */ =>  {
                 let var_68 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2429,7 +2429,7 @@ pub fn deser_operation_create_user(
                 builder = builder.set_engine(var_68);
             }
             ,
-            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache#CreateUserOutput$AccessString */ =>  {
+            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache.synthetic#CreateUserOutput$AccessString */ =>  {
                 let var_69 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2442,27 +2442,27 @@ pub fn deser_operation_create_user(
                 builder = builder.set_access_string(var_69);
             }
             ,
-            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache#CreateUserOutput$UserGroupIds */ =>  {
+            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache.synthetic#CreateUserOutput$UserGroupIds */ =>  {
                 let var_70 =
                     Some(
-                        crate::xml_deser::deser_list_user_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_user_group_ids(var_70);
             }
             ,
-            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache#CreateUserOutput$Authentication */ =>  {
+            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache.synthetic#CreateUserOutput$Authentication */ =>  {
                 let var_71 =
                     Some(
-                        crate::xml_deser::deser_structure_authentication(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_authentication(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_authentication(var_71);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#CreateUserOutput$ARN */ =>  {
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#CreateUserOutput$ARN */ =>  {
                 let var_72 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2487,7 +2487,7 @@ pub fn deser_operation_create_user(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_default_user_required_xml_err(
+pub fn deser_structure_crate_error_default_user_required_xml_err(
     inp: &[u8],
     mut builder: crate::error::default_user_required::Builder,
 ) -> Result<crate::error::default_user_required::Builder, smithy_xml::decode::XmlError> {
@@ -2520,7 +2520,7 @@ pub fn deser_structure_default_user_required_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_user_group_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_user_group_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::user_group_already_exists_fault::Builder,
 ) -> Result<crate::error::user_group_already_exists_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2553,7 +2553,7 @@ pub fn deser_structure_user_group_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_user_group_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_user_group_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::user_group_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::user_group_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2586,7 +2586,7 @@ pub fn deser_structure_user_group_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_user_group(
+pub fn deser_operation_crate_operation_create_user_group(
     inp: &[u8],
     mut builder: crate::output::create_user_group_output::Builder,
 ) -> Result<crate::output::create_user_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -2612,7 +2612,7 @@ pub fn deser_operation_create_user_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache#CreateUserGroupOutput$UserGroupId */ =>  {
+            s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$UserGroupId */ =>  {
                 let var_76 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2625,7 +2625,7 @@ pub fn deser_operation_create_user_group(
                 builder = builder.set_user_group_id(var_76);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache#CreateUserGroupOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$Status */ =>  {
                 let var_77 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2638,7 +2638,7 @@ pub fn deser_operation_create_user_group(
                 builder = builder.set_status(var_77);
             }
             ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#CreateUserGroupOutput$Engine */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$Engine */ =>  {
                 let var_78 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2651,37 +2651,37 @@ pub fn deser_operation_create_user_group(
                 builder = builder.set_engine(var_78);
             }
             ,
-            s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache#CreateUserGroupOutput$UserIds */ =>  {
+            s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$UserIds */ =>  {
                 let var_79 =
                     Some(
-                        crate::xml_deser::deser_list_user_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_user_ids(var_79);
             }
             ,
-            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache#CreateUserGroupOutput$PendingChanges */ =>  {
+            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$PendingChanges */ =>  {
                 let var_80 =
                     Some(
-                        crate::xml_deser::deser_structure_user_group_pending_changes(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_pending_changes(var_80);
             }
             ,
-            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache#CreateUserGroupOutput$ReplicationGroups */ =>  {
+            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$ReplicationGroups */ =>  {
                 let var_81 =
                     Some(
-                        crate::xml_deser::deser_list_ug_replication_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_replication_groups(var_81);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#CreateUserGroupOutput$ARN */ =>  {
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$ARN */ =>  {
                 let var_82 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2706,7 +2706,7 @@ pub fn deser_operation_create_user_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_decrease_node_groups_in_global_replication_group(
+pub fn deser_operation_crate_operation_decrease_node_groups_in_global_replication_group(
     inp: &[u8],
     mut builder: crate::output::decrease_node_groups_in_global_replication_group_output::Builder,
 ) -> Result<
@@ -2732,10 +2732,10 @@ pub fn deser_operation_decrease_node_groups_in_global_replication_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache#DecreaseNodeGroupsInGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
+            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#DecreaseNodeGroupsInGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
                 let var_83 =
                     Some(
-                        crate::xml_deser::deser_structure_global_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -2754,7 +2754,7 @@ pub fn deser_operation_decrease_node_groups_in_global_replication_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_operation_fault_xml_err(
+pub fn deser_structure_crate_error_no_operation_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_operation_fault::Builder,
 ) -> Result<crate::error::no_operation_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2787,7 +2787,7 @@ pub fn deser_structure_no_operation_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_decrease_replica_count(
+pub fn deser_operation_crate_operation_decrease_replica_count(
     inp: &[u8],
     mut builder: crate::output::decrease_replica_count_output::Builder,
 ) -> Result<crate::output::decrease_replica_count_output::Builder, smithy_xml::decode::XmlError> {
@@ -2813,10 +2813,10 @@ pub fn deser_operation_decrease_replica_count(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache#DecreaseReplicaCountOutput$ReplicationGroup */ =>  {
+            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#DecreaseReplicaCountOutput$ReplicationGroup */ =>  {
                 let var_85 =
                     Some(
-                        crate::xml_deser::deser_structure_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -2835,7 +2835,7 @@ pub fn deser_operation_decrease_replica_count(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_cache_cluster(
+pub fn deser_operation_crate_operation_delete_cache_cluster(
     inp: &[u8],
     mut builder: crate::output::delete_cache_cluster_output::Builder,
 ) -> Result<crate::output::delete_cache_cluster_output::Builder, smithy_xml::decode::XmlError> {
@@ -2861,10 +2861,10 @@ pub fn deser_operation_delete_cache_cluster(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache#DeleteCacheClusterOutput$CacheCluster */ =>  {
+            s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache.synthetic#DeleteCacheClusterOutput$CacheCluster */ =>  {
                 let var_86 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -2883,7 +2883,7 @@ pub fn deser_operation_delete_cache_cluster(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cache_subnet_group_in_use_xml_err(
+pub fn deser_structure_crate_error_cache_subnet_group_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::cache_subnet_group_in_use::Builder,
 ) -> Result<crate::error::cache_subnet_group_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -2916,7 +2916,7 @@ pub fn deser_structure_cache_subnet_group_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_global_replication_group(
+pub fn deser_operation_crate_operation_delete_global_replication_group(
     inp: &[u8],
     mut builder: crate::output::delete_global_replication_group_output::Builder,
 ) -> Result<
@@ -2945,10 +2945,10 @@ pub fn deser_operation_delete_global_replication_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache#DeleteGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
+            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#DeleteGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
                 let var_88 =
                     Some(
-                        crate::xml_deser::deser_structure_global_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -2967,7 +2967,7 @@ pub fn deser_operation_delete_global_replication_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_replication_group(
+pub fn deser_operation_crate_operation_delete_replication_group(
     inp: &[u8],
     mut builder: crate::output::delete_replication_group_output::Builder,
 ) -> Result<crate::output::delete_replication_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -2993,10 +2993,10 @@ pub fn deser_operation_delete_replication_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache#DeleteReplicationGroupOutput$ReplicationGroup */ =>  {
+            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#DeleteReplicationGroupOutput$ReplicationGroup */ =>  {
                 let var_89 =
                     Some(
-                        crate::xml_deser::deser_structure_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -3015,7 +3015,7 @@ pub fn deser_operation_delete_replication_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_snapshot(
+pub fn deser_operation_crate_operation_delete_snapshot(
     inp: &[u8],
     mut builder: crate::output::delete_snapshot_output::Builder,
 ) -> Result<crate::output::delete_snapshot_output::Builder, smithy_xml::decode::XmlError> {
@@ -3041,10 +3041,10 @@ pub fn deser_operation_delete_snapshot(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Snapshot") /* Snapshot com.amazonaws.elasticache#DeleteSnapshotOutput$Snapshot */ =>  {
+            s if s.matches("Snapshot") /* Snapshot com.amazonaws.elasticache.synthetic#DeleteSnapshotOutput$Snapshot */ =>  {
                 let var_90 =
                     Some(
-                        crate::xml_deser::deser_structure_snapshot(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_snapshot(&mut tag)
                         ?
                     )
                 ;
@@ -3063,7 +3063,7 @@ pub fn deser_operation_delete_snapshot(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_default_user_associated_to_user_group_fault_xml_err(
+pub fn deser_structure_crate_error_default_user_associated_to_user_group_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::default_user_associated_to_user_group_fault::Builder,
 ) -> Result<
@@ -3099,7 +3099,7 @@ pub fn deser_structure_default_user_associated_to_user_group_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_user_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_user_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_user_state_fault::Builder,
 ) -> Result<crate::error::invalid_user_state_fault::Builder, smithy_xml::decode::XmlError> {
@@ -3132,7 +3132,7 @@ pub fn deser_structure_invalid_user_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_user(
+pub fn deser_operation_crate_operation_delete_user(
     inp: &[u8],
     mut builder: crate::output::delete_user_output::Builder,
 ) -> Result<crate::output::delete_user_output::Builder, smithy_xml::decode::XmlError> {
@@ -3158,7 +3158,7 @@ pub fn deser_operation_delete_user(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("UserId") /* UserId com.amazonaws.elasticache#DeleteUserOutput$UserId */ =>  {
+            s if s.matches("UserId") /* UserId com.amazonaws.elasticache.synthetic#DeleteUserOutput$UserId */ =>  {
                 let var_93 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3171,7 +3171,7 @@ pub fn deser_operation_delete_user(
                 builder = builder.set_user_id(var_93);
             }
             ,
-            s if s.matches("UserName") /* UserName com.amazonaws.elasticache#DeleteUserOutput$UserName */ =>  {
+            s if s.matches("UserName") /* UserName com.amazonaws.elasticache.synthetic#DeleteUserOutput$UserName */ =>  {
                 let var_94 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3184,7 +3184,7 @@ pub fn deser_operation_delete_user(
                 builder = builder.set_user_name(var_94);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache#DeleteUserOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#DeleteUserOutput$Status */ =>  {
                 let var_95 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3197,7 +3197,7 @@ pub fn deser_operation_delete_user(
                 builder = builder.set_status(var_95);
             }
             ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#DeleteUserOutput$Engine */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#DeleteUserOutput$Engine */ =>  {
                 let var_96 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3210,7 +3210,7 @@ pub fn deser_operation_delete_user(
                 builder = builder.set_engine(var_96);
             }
             ,
-            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache#DeleteUserOutput$AccessString */ =>  {
+            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache.synthetic#DeleteUserOutput$AccessString */ =>  {
                 let var_97 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3223,27 +3223,27 @@ pub fn deser_operation_delete_user(
                 builder = builder.set_access_string(var_97);
             }
             ,
-            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache#DeleteUserOutput$UserGroupIds */ =>  {
+            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache.synthetic#DeleteUserOutput$UserGroupIds */ =>  {
                 let var_98 =
                     Some(
-                        crate::xml_deser::deser_list_user_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_user_group_ids(var_98);
             }
             ,
-            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache#DeleteUserOutput$Authentication */ =>  {
+            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache.synthetic#DeleteUserOutput$Authentication */ =>  {
                 let var_99 =
                     Some(
-                        crate::xml_deser::deser_structure_authentication(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_authentication(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_authentication(var_99);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#DeleteUserOutput$ARN */ =>  {
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#DeleteUserOutput$ARN */ =>  {
                 let var_100 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3268,7 +3268,7 @@ pub fn deser_operation_delete_user(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_user_group(
+pub fn deser_operation_crate_operation_delete_user_group(
     inp: &[u8],
     mut builder: crate::output::delete_user_group_output::Builder,
 ) -> Result<crate::output::delete_user_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -3294,7 +3294,7 @@ pub fn deser_operation_delete_user_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache#DeleteUserGroupOutput$UserGroupId */ =>  {
+            s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$UserGroupId */ =>  {
                 let var_101 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3307,7 +3307,7 @@ pub fn deser_operation_delete_user_group(
                 builder = builder.set_user_group_id(var_101);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache#DeleteUserGroupOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$Status */ =>  {
                 let var_102 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3320,7 +3320,7 @@ pub fn deser_operation_delete_user_group(
                 builder = builder.set_status(var_102);
             }
             ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#DeleteUserGroupOutput$Engine */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$Engine */ =>  {
                 let var_103 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3333,37 +3333,37 @@ pub fn deser_operation_delete_user_group(
                 builder = builder.set_engine(var_103);
             }
             ,
-            s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache#DeleteUserGroupOutput$UserIds */ =>  {
+            s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$UserIds */ =>  {
                 let var_104 =
                     Some(
-                        crate::xml_deser::deser_list_user_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_user_ids(var_104);
             }
             ,
-            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache#DeleteUserGroupOutput$PendingChanges */ =>  {
+            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$PendingChanges */ =>  {
                 let var_105 =
                     Some(
-                        crate::xml_deser::deser_structure_user_group_pending_changes(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_pending_changes(var_105);
             }
             ,
-            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache#DeleteUserGroupOutput$ReplicationGroups */ =>  {
+            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$ReplicationGroups */ =>  {
                 let var_106 =
                     Some(
-                        crate::xml_deser::deser_list_ug_replication_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_replication_groups(var_106);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#DeleteUserGroupOutput$ARN */ =>  {
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$ARN */ =>  {
                 let var_107 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3388,7 +3388,7 @@ pub fn deser_operation_delete_user_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_cache_clusters(
+pub fn deser_operation_crate_operation_describe_cache_clusters(
     inp: &[u8],
     mut builder: crate::output::describe_cache_clusters_output::Builder,
 ) -> Result<crate::output::describe_cache_clusters_output::Builder, smithy_xml::decode::XmlError> {
@@ -3414,7 +3414,7 @@ pub fn deser_operation_describe_cache_clusters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeCacheClustersOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheClustersOutput$Marker */ =>  {
                 let var_108 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3427,10 +3427,10 @@ pub fn deser_operation_describe_cache_clusters(
                 builder = builder.set_marker(var_108);
             }
             ,
-            s if s.matches("CacheClusters") /* CacheClusters com.amazonaws.elasticache#DescribeCacheClustersOutput$CacheClusters */ =>  {
+            s if s.matches("CacheClusters") /* CacheClusters com.amazonaws.elasticache.synthetic#DescribeCacheClustersOutput$CacheClusters */ =>  {
                 let var_109 =
                     Some(
-                        crate::xml_deser::deser_list_cache_cluster_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_cluster_list(&mut tag)
                         ?
                     )
                 ;
@@ -3449,7 +3449,7 @@ pub fn deser_operation_describe_cache_clusters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_cache_engine_versions(
+pub fn deser_operation_crate_operation_describe_cache_engine_versions(
     inp: &[u8],
     mut builder: crate::output::describe_cache_engine_versions_output::Builder,
 ) -> Result<
@@ -3478,7 +3478,7 @@ pub fn deser_operation_describe_cache_engine_versions(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeCacheEngineVersionsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheEngineVersionsOutput$Marker */ =>  {
                 let var_110 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3491,10 +3491,10 @@ pub fn deser_operation_describe_cache_engine_versions(
                 builder = builder.set_marker(var_110);
             }
             ,
-            s if s.matches("CacheEngineVersions") /* CacheEngineVersions com.amazonaws.elasticache#DescribeCacheEngineVersionsOutput$CacheEngineVersions */ =>  {
+            s if s.matches("CacheEngineVersions") /* CacheEngineVersions com.amazonaws.elasticache.synthetic#DescribeCacheEngineVersionsOutput$CacheEngineVersions */ =>  {
                 let var_111 =
                     Some(
-                        crate::xml_deser::deser_list_cache_engine_version_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_engine_version_list(&mut tag)
                         ?
                     )
                 ;
@@ -3513,7 +3513,7 @@ pub fn deser_operation_describe_cache_engine_versions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_cache_parameter_groups(
+pub fn deser_operation_crate_operation_describe_cache_parameter_groups(
     inp: &[u8],
     mut builder: crate::output::describe_cache_parameter_groups_output::Builder,
 ) -> Result<
@@ -3542,7 +3542,7 @@ pub fn deser_operation_describe_cache_parameter_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeCacheParameterGroupsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheParameterGroupsOutput$Marker */ =>  {
                 let var_112 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3555,10 +3555,10 @@ pub fn deser_operation_describe_cache_parameter_groups(
                 builder = builder.set_marker(var_112);
             }
             ,
-            s if s.matches("CacheParameterGroups") /* CacheParameterGroups com.amazonaws.elasticache#DescribeCacheParameterGroupsOutput$CacheParameterGroups */ =>  {
+            s if s.matches("CacheParameterGroups") /* CacheParameterGroups com.amazonaws.elasticache.synthetic#DescribeCacheParameterGroupsOutput$CacheParameterGroups */ =>  {
                 let var_113 =
                     Some(
-                        crate::xml_deser::deser_list_cache_parameter_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_parameter_group_list(&mut tag)
                         ?
                     )
                 ;
@@ -3577,7 +3577,7 @@ pub fn deser_operation_describe_cache_parameter_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_cache_parameters(
+pub fn deser_operation_crate_operation_describe_cache_parameters(
     inp: &[u8],
     mut builder: crate::output::describe_cache_parameters_output::Builder,
 ) -> Result<crate::output::describe_cache_parameters_output::Builder, smithy_xml::decode::XmlError>
@@ -3604,7 +3604,7 @@ pub fn deser_operation_describe_cache_parameters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeCacheParametersOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheParametersOutput$Marker */ =>  {
                 let var_114 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3617,20 +3617,20 @@ pub fn deser_operation_describe_cache_parameters(
                 builder = builder.set_marker(var_114);
             }
             ,
-            s if s.matches("Parameters") /* Parameters com.amazonaws.elasticache#DescribeCacheParametersOutput$Parameters */ =>  {
+            s if s.matches("Parameters") /* Parameters com.amazonaws.elasticache.synthetic#DescribeCacheParametersOutput$Parameters */ =>  {
                 let var_115 =
                     Some(
-                        crate::xml_deser::deser_list_parameters_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_parameters_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_parameters(var_115);
             }
             ,
-            s if s.matches("CacheNodeTypeSpecificParameters") /* CacheNodeTypeSpecificParameters com.amazonaws.elasticache#DescribeCacheParametersOutput$CacheNodeTypeSpecificParameters */ =>  {
+            s if s.matches("CacheNodeTypeSpecificParameters") /* CacheNodeTypeSpecificParameters com.amazonaws.elasticache.synthetic#DescribeCacheParametersOutput$CacheNodeTypeSpecificParameters */ =>  {
                 let var_116 =
                     Some(
-                        crate::xml_deser::deser_list_cache_node_type_specific_parameters_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_type_specific_parameters_list(&mut tag)
                         ?
                     )
                 ;
@@ -3649,7 +3649,7 @@ pub fn deser_operation_describe_cache_parameters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_cache_security_groups(
+pub fn deser_operation_crate_operation_describe_cache_security_groups(
     inp: &[u8],
     mut builder: crate::output::describe_cache_security_groups_output::Builder,
 ) -> Result<
@@ -3678,7 +3678,7 @@ pub fn deser_operation_describe_cache_security_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeCacheSecurityGroupsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheSecurityGroupsOutput$Marker */ =>  {
                 let var_117 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3691,10 +3691,10 @@ pub fn deser_operation_describe_cache_security_groups(
                 builder = builder.set_marker(var_117);
             }
             ,
-            s if s.matches("CacheSecurityGroups") /* CacheSecurityGroups com.amazonaws.elasticache#DescribeCacheSecurityGroupsOutput$CacheSecurityGroups */ =>  {
+            s if s.matches("CacheSecurityGroups") /* CacheSecurityGroups com.amazonaws.elasticache.synthetic#DescribeCacheSecurityGroupsOutput$CacheSecurityGroups */ =>  {
                 let var_118 =
                     Some(
-                        crate::xml_deser::deser_list_cache_security_groups(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_security_groups(&mut tag)
                         ?
                     )
                 ;
@@ -3713,7 +3713,7 @@ pub fn deser_operation_describe_cache_security_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_cache_subnet_groups(
+pub fn deser_operation_crate_operation_describe_cache_subnet_groups(
     inp: &[u8],
     mut builder: crate::output::describe_cache_subnet_groups_output::Builder,
 ) -> Result<crate::output::describe_cache_subnet_groups_output::Builder, smithy_xml::decode::XmlError>
@@ -3740,7 +3740,7 @@ pub fn deser_operation_describe_cache_subnet_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeCacheSubnetGroupsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheSubnetGroupsOutput$Marker */ =>  {
                 let var_119 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3753,10 +3753,10 @@ pub fn deser_operation_describe_cache_subnet_groups(
                 builder = builder.set_marker(var_119);
             }
             ,
-            s if s.matches("CacheSubnetGroups") /* CacheSubnetGroups com.amazonaws.elasticache#DescribeCacheSubnetGroupsOutput$CacheSubnetGroups */ =>  {
+            s if s.matches("CacheSubnetGroups") /* CacheSubnetGroups com.amazonaws.elasticache.synthetic#DescribeCacheSubnetGroupsOutput$CacheSubnetGroups */ =>  {
                 let var_120 =
                     Some(
-                        crate::xml_deser::deser_list_cache_subnet_groups(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_subnet_groups(&mut tag)
                         ?
                     )
                 ;
@@ -3775,7 +3775,7 @@ pub fn deser_operation_describe_cache_subnet_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_engine_default_parameters(
+pub fn deser_operation_crate_operation_describe_engine_default_parameters(
     inp: &[u8],
     mut builder: crate::output::describe_engine_default_parameters_output::Builder,
 ) -> Result<
@@ -3804,10 +3804,10 @@ pub fn deser_operation_describe_engine_default_parameters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EngineDefaults") /* EngineDefaults com.amazonaws.elasticache#DescribeEngineDefaultParametersOutput$EngineDefaults */ =>  {
+            s if s.matches("EngineDefaults") /* EngineDefaults com.amazonaws.elasticache.synthetic#DescribeEngineDefaultParametersOutput$EngineDefaults */ =>  {
                 let var_121 =
                     Some(
-                        crate::xml_deser::deser_structure_engine_defaults(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_engine_defaults(&mut tag)
                         ?
                     )
                 ;
@@ -3826,7 +3826,7 @@ pub fn deser_operation_describe_engine_default_parameters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_events(
+pub fn deser_operation_crate_operation_describe_events(
     inp: &[u8],
     mut builder: crate::output::describe_events_output::Builder,
 ) -> Result<crate::output::describe_events_output::Builder, smithy_xml::decode::XmlError> {
@@ -3852,7 +3852,7 @@ pub fn deser_operation_describe_events(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeEventsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeEventsOutput$Marker */ =>  {
                 let var_122 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3865,10 +3865,10 @@ pub fn deser_operation_describe_events(
                 builder = builder.set_marker(var_122);
             }
             ,
-            s if s.matches("Events") /* Events com.amazonaws.elasticache#DescribeEventsOutput$Events */ =>  {
+            s if s.matches("Events") /* Events com.amazonaws.elasticache.synthetic#DescribeEventsOutput$Events */ =>  {
                 let var_123 =
                     Some(
-                        crate::xml_deser::deser_list_event_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_event_list(&mut tag)
                         ?
                     )
                 ;
@@ -3887,7 +3887,7 @@ pub fn deser_operation_describe_events(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_global_replication_groups(
+pub fn deser_operation_crate_operation_describe_global_replication_groups(
     inp: &[u8],
     mut builder: crate::output::describe_global_replication_groups_output::Builder,
 ) -> Result<
@@ -3916,7 +3916,7 @@ pub fn deser_operation_describe_global_replication_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeGlobalReplicationGroupsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeGlobalReplicationGroupsOutput$Marker */ =>  {
                 let var_124 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3929,10 +3929,10 @@ pub fn deser_operation_describe_global_replication_groups(
                 builder = builder.set_marker(var_124);
             }
             ,
-            s if s.matches("GlobalReplicationGroups") /* GlobalReplicationGroups com.amazonaws.elasticache#DescribeGlobalReplicationGroupsOutput$GlobalReplicationGroups */ =>  {
+            s if s.matches("GlobalReplicationGroups") /* GlobalReplicationGroups com.amazonaws.elasticache.synthetic#DescribeGlobalReplicationGroupsOutput$GlobalReplicationGroups */ =>  {
                 let var_125 =
                     Some(
-                        crate::xml_deser::deser_list_global_replication_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_global_replication_group_list(&mut tag)
                         ?
                     )
                 ;
@@ -3951,7 +3951,7 @@ pub fn deser_operation_describe_global_replication_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_replication_groups(
+pub fn deser_operation_crate_operation_describe_replication_groups(
     inp: &[u8],
     mut builder: crate::output::describe_replication_groups_output::Builder,
 ) -> Result<crate::output::describe_replication_groups_output::Builder, smithy_xml::decode::XmlError>
@@ -3978,7 +3978,7 @@ pub fn deser_operation_describe_replication_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeReplicationGroupsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeReplicationGroupsOutput$Marker */ =>  {
                 let var_126 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3991,10 +3991,10 @@ pub fn deser_operation_describe_replication_groups(
                 builder = builder.set_marker(var_126);
             }
             ,
-            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache#DescribeReplicationGroupsOutput$ReplicationGroups */ =>  {
+            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#DescribeReplicationGroupsOutput$ReplicationGroups */ =>  {
                 let var_127 =
                     Some(
-                        crate::xml_deser::deser_list_replication_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_replication_group_list(&mut tag)
                         ?
                     )
                 ;
@@ -4013,7 +4013,7 @@ pub fn deser_operation_describe_replication_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_reserved_cache_nodes(
+pub fn deser_operation_crate_operation_describe_reserved_cache_nodes(
     inp: &[u8],
     mut builder: crate::output::describe_reserved_cache_nodes_output::Builder,
 ) -> Result<
@@ -4042,7 +4042,7 @@ pub fn deser_operation_describe_reserved_cache_nodes(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeReservedCacheNodesOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeReservedCacheNodesOutput$Marker */ =>  {
                 let var_128 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4055,10 +4055,10 @@ pub fn deser_operation_describe_reserved_cache_nodes(
                 builder = builder.set_marker(var_128);
             }
             ,
-            s if s.matches("ReservedCacheNodes") /* ReservedCacheNodes com.amazonaws.elasticache#DescribeReservedCacheNodesOutput$ReservedCacheNodes */ =>  {
+            s if s.matches("ReservedCacheNodes") /* ReservedCacheNodes com.amazonaws.elasticache.synthetic#DescribeReservedCacheNodesOutput$ReservedCacheNodes */ =>  {
                 let var_129 =
                     Some(
-                        crate::xml_deser::deser_list_reserved_cache_node_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_reserved_cache_node_list(&mut tag)
                         ?
                     )
                 ;
@@ -4077,7 +4077,7 @@ pub fn deser_operation_describe_reserved_cache_nodes(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_reserved_cache_nodes_offering_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_reserved_cache_nodes_offering_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::reserved_cache_nodes_offering_not_found_fault::Builder,
 ) -> Result<
@@ -4113,7 +4113,7 @@ pub fn deser_structure_reserved_cache_nodes_offering_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_reserved_cache_nodes_offerings(
+pub fn deser_operation_crate_operation_describe_reserved_cache_nodes_offerings(
     inp: &[u8],
     mut builder: crate::output::describe_reserved_cache_nodes_offerings_output::Builder,
 ) -> Result<
@@ -4142,7 +4142,7 @@ pub fn deser_operation_describe_reserved_cache_nodes_offerings(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeReservedCacheNodesOfferingsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeReservedCacheNodesOfferingsOutput$Marker */ =>  {
                 let var_131 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4155,10 +4155,10 @@ pub fn deser_operation_describe_reserved_cache_nodes_offerings(
                 builder = builder.set_marker(var_131);
             }
             ,
-            s if s.matches("ReservedCacheNodesOfferings") /* ReservedCacheNodesOfferings com.amazonaws.elasticache#DescribeReservedCacheNodesOfferingsOutput$ReservedCacheNodesOfferings */ =>  {
+            s if s.matches("ReservedCacheNodesOfferings") /* ReservedCacheNodesOfferings com.amazonaws.elasticache.synthetic#DescribeReservedCacheNodesOfferingsOutput$ReservedCacheNodesOfferings */ =>  {
                 let var_132 =
                     Some(
-                        crate::xml_deser::deser_list_reserved_cache_nodes_offering_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_reserved_cache_nodes_offering_list(&mut tag)
                         ?
                     )
                 ;
@@ -4177,7 +4177,7 @@ pub fn deser_operation_describe_reserved_cache_nodes_offerings(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_service_updates(
+pub fn deser_operation_crate_operation_describe_service_updates(
     inp: &[u8],
     mut builder: crate::output::describe_service_updates_output::Builder,
 ) -> Result<crate::output::describe_service_updates_output::Builder, smithy_xml::decode::XmlError> {
@@ -4203,7 +4203,7 @@ pub fn deser_operation_describe_service_updates(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeServiceUpdatesOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeServiceUpdatesOutput$Marker */ =>  {
                 let var_133 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4216,10 +4216,10 @@ pub fn deser_operation_describe_service_updates(
                 builder = builder.set_marker(var_133);
             }
             ,
-            s if s.matches("ServiceUpdates") /* ServiceUpdates com.amazonaws.elasticache#DescribeServiceUpdatesOutput$ServiceUpdates */ =>  {
+            s if s.matches("ServiceUpdates") /* ServiceUpdates com.amazonaws.elasticache.synthetic#DescribeServiceUpdatesOutput$ServiceUpdates */ =>  {
                 let var_134 =
                     Some(
-                        crate::xml_deser::deser_list_service_update_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_service_update_list(&mut tag)
                         ?
                     )
                 ;
@@ -4238,7 +4238,7 @@ pub fn deser_operation_describe_service_updates(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_snapshots(
+pub fn deser_operation_crate_operation_describe_snapshots(
     inp: &[u8],
     mut builder: crate::output::describe_snapshots_output::Builder,
 ) -> Result<crate::output::describe_snapshots_output::Builder, smithy_xml::decode::XmlError> {
@@ -4264,7 +4264,7 @@ pub fn deser_operation_describe_snapshots(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeSnapshotsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeSnapshotsOutput$Marker */ =>  {
                 let var_135 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4277,10 +4277,10 @@ pub fn deser_operation_describe_snapshots(
                 builder = builder.set_marker(var_135);
             }
             ,
-            s if s.matches("Snapshots") /* Snapshots com.amazonaws.elasticache#DescribeSnapshotsOutput$Snapshots */ =>  {
+            s if s.matches("Snapshots") /* Snapshots com.amazonaws.elasticache.synthetic#DescribeSnapshotsOutput$Snapshots */ =>  {
                 let var_136 =
                     Some(
-                        crate::xml_deser::deser_list_snapshot_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_snapshot_list(&mut tag)
                         ?
                     )
                 ;
@@ -4299,7 +4299,7 @@ pub fn deser_operation_describe_snapshots(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_update_actions(
+pub fn deser_operation_crate_operation_describe_update_actions(
     inp: &[u8],
     mut builder: crate::output::describe_update_actions_output::Builder,
 ) -> Result<crate::output::describe_update_actions_output::Builder, smithy_xml::decode::XmlError> {
@@ -4325,7 +4325,7 @@ pub fn deser_operation_describe_update_actions(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeUpdateActionsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeUpdateActionsOutput$Marker */ =>  {
                 let var_137 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4338,10 +4338,10 @@ pub fn deser_operation_describe_update_actions(
                 builder = builder.set_marker(var_137);
             }
             ,
-            s if s.matches("UpdateActions") /* UpdateActions com.amazonaws.elasticache#DescribeUpdateActionsOutput$UpdateActions */ =>  {
+            s if s.matches("UpdateActions") /* UpdateActions com.amazonaws.elasticache.synthetic#DescribeUpdateActionsOutput$UpdateActions */ =>  {
                 let var_138 =
                     Some(
-                        crate::xml_deser::deser_list_update_action_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_update_action_list(&mut tag)
                         ?
                     )
                 ;
@@ -4360,7 +4360,7 @@ pub fn deser_operation_describe_update_actions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_user_groups(
+pub fn deser_operation_crate_operation_describe_user_groups(
     inp: &[u8],
     mut builder: crate::output::describe_user_groups_output::Builder,
 ) -> Result<crate::output::describe_user_groups_output::Builder, smithy_xml::decode::XmlError> {
@@ -4386,17 +4386,17 @@ pub fn deser_operation_describe_user_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("UserGroups") /* UserGroups com.amazonaws.elasticache#DescribeUserGroupsOutput$UserGroups */ =>  {
+            s if s.matches("UserGroups") /* UserGroups com.amazonaws.elasticache.synthetic#DescribeUserGroupsOutput$UserGroups */ =>  {
                 let var_139 =
                     Some(
-                        crate::xml_deser::deser_list_user_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_user_groups(var_139);
             }
             ,
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeUserGroupsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeUserGroupsOutput$Marker */ =>  {
                 let var_140 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4421,7 +4421,7 @@ pub fn deser_operation_describe_user_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_users(
+pub fn deser_operation_crate_operation_describe_users(
     inp: &[u8],
     mut builder: crate::output::describe_users_output::Builder,
 ) -> Result<crate::output::describe_users_output::Builder, smithy_xml::decode::XmlError> {
@@ -4447,17 +4447,17 @@ pub fn deser_operation_describe_users(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Users") /* Users com.amazonaws.elasticache#DescribeUsersOutput$Users */ =>  {
+            s if s.matches("Users") /* Users com.amazonaws.elasticache.synthetic#DescribeUsersOutput$Users */ =>  {
                 let var_141 =
                     Some(
-                        crate::xml_deser::deser_list_user_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_users(var_141);
             }
             ,
-            s if s.matches("Marker") /* Marker com.amazonaws.elasticache#DescribeUsersOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeUsersOutput$Marker */ =>  {
                 let var_142 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4482,7 +4482,7 @@ pub fn deser_operation_describe_users(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_disassociate_global_replication_group(
+pub fn deser_operation_crate_operation_disassociate_global_replication_group(
     inp: &[u8],
     mut builder: crate::output::disassociate_global_replication_group_output::Builder,
 ) -> Result<
@@ -4511,10 +4511,10 @@ pub fn deser_operation_disassociate_global_replication_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache#DisassociateGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
+            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#DisassociateGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
                 let var_143 =
                     Some(
-                        crate::xml_deser::deser_structure_global_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -4533,7 +4533,7 @@ pub fn deser_operation_disassociate_global_replication_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_failover_global_replication_group(
+pub fn deser_operation_crate_operation_failover_global_replication_group(
     inp: &[u8],
     mut builder: crate::output::failover_global_replication_group_output::Builder,
 ) -> Result<
@@ -4562,10 +4562,10 @@ pub fn deser_operation_failover_global_replication_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache#FailoverGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
+            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#FailoverGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
                 let var_144 =
                     Some(
-                        crate::xml_deser::deser_structure_global_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -4584,7 +4584,7 @@ pub fn deser_operation_failover_global_replication_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_increase_node_groups_in_global_replication_group(
+pub fn deser_operation_crate_operation_increase_node_groups_in_global_replication_group(
     inp: &[u8],
     mut builder: crate::output::increase_node_groups_in_global_replication_group_output::Builder,
 ) -> Result<
@@ -4610,10 +4610,10 @@ pub fn deser_operation_increase_node_groups_in_global_replication_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache#IncreaseNodeGroupsInGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
+            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#IncreaseNodeGroupsInGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
                 let var_145 =
                     Some(
-                        crate::xml_deser::deser_structure_global_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -4632,7 +4632,7 @@ pub fn deser_operation_increase_node_groups_in_global_replication_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_kms_key_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_kms_key_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_kms_key_fault::Builder,
 ) -> Result<crate::error::invalid_kms_key_fault::Builder, smithy_xml::decode::XmlError> {
@@ -4665,7 +4665,7 @@ pub fn deser_structure_invalid_kms_key_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_increase_replica_count(
+pub fn deser_operation_crate_operation_increase_replica_count(
     inp: &[u8],
     mut builder: crate::output::increase_replica_count_output::Builder,
 ) -> Result<crate::output::increase_replica_count_output::Builder, smithy_xml::decode::XmlError> {
@@ -4691,10 +4691,10 @@ pub fn deser_operation_increase_replica_count(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache#IncreaseReplicaCountOutput$ReplicationGroup */ =>  {
+            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#IncreaseReplicaCountOutput$ReplicationGroup */ =>  {
                 let var_147 =
                     Some(
-                        crate::xml_deser::deser_structure_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -4713,7 +4713,7 @@ pub fn deser_operation_increase_replica_count(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_allowed_node_type_modifications(
+pub fn deser_operation_crate_operation_list_allowed_node_type_modifications(
     inp: &[u8],
     mut builder: crate::output::list_allowed_node_type_modifications_output::Builder,
 ) -> Result<
@@ -4742,20 +4742,20 @@ pub fn deser_operation_list_allowed_node_type_modifications(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ScaleUpModifications") /* ScaleUpModifications com.amazonaws.elasticache#ListAllowedNodeTypeModificationsOutput$ScaleUpModifications */ =>  {
+            s if s.matches("ScaleUpModifications") /* ScaleUpModifications com.amazonaws.elasticache.synthetic#ListAllowedNodeTypeModificationsOutput$ScaleUpModifications */ =>  {
                 let var_148 =
                     Some(
-                        crate::xml_deser::deser_list_node_type_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_node_type_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_scale_up_modifications(var_148);
             }
             ,
-            s if s.matches("ScaleDownModifications") /* ScaleDownModifications com.amazonaws.elasticache#ListAllowedNodeTypeModificationsOutput$ScaleDownModifications */ =>  {
+            s if s.matches("ScaleDownModifications") /* ScaleDownModifications com.amazonaws.elasticache.synthetic#ListAllowedNodeTypeModificationsOutput$ScaleDownModifications */ =>  {
                 let var_149 =
                     Some(
-                        crate::xml_deser::deser_list_node_type_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_node_type_list(&mut tag)
                         ?
                     )
                 ;
@@ -4774,7 +4774,7 @@ pub fn deser_operation_list_allowed_node_type_modifications(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     inp: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_xml::decode::XmlError> {
@@ -4800,10 +4800,10 @@ pub fn deser_operation_list_tags_for_resource(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TagList") /* TagList com.amazonaws.elasticache#ListTagsForResourceOutput$TagList */ =>  {
+            s if s.matches("TagList") /* TagList com.amazonaws.elasticache.synthetic#ListTagsForResourceOutput$TagList */ =>  {
                 let var_150 =
                     Some(
-                        crate::xml_deser::deser_list_tag_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_tag_list(&mut tag)
                         ?
                     )
                 ;
@@ -4822,7 +4822,7 @@ pub fn deser_operation_list_tags_for_resource(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_cache_cluster(
+pub fn deser_operation_crate_operation_modify_cache_cluster(
     inp: &[u8],
     mut builder: crate::output::modify_cache_cluster_output::Builder,
 ) -> Result<crate::output::modify_cache_cluster_output::Builder, smithy_xml::decode::XmlError> {
@@ -4848,10 +4848,10 @@ pub fn deser_operation_modify_cache_cluster(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache#ModifyCacheClusterOutput$CacheCluster */ =>  {
+            s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache.synthetic#ModifyCacheClusterOutput$CacheCluster */ =>  {
                 let var_151 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -4870,7 +4870,7 @@ pub fn deser_operation_modify_cache_cluster(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_cache_parameter_group(
+pub fn deser_operation_crate_operation_modify_cache_parameter_group(
     inp: &[u8],
     mut builder: crate::output::modify_cache_parameter_group_output::Builder,
 ) -> Result<crate::output::modify_cache_parameter_group_output::Builder, smithy_xml::decode::XmlError>
@@ -4897,7 +4897,7 @@ pub fn deser_operation_modify_cache_parameter_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheParameterGroupName") /* CacheParameterGroupName com.amazonaws.elasticache#ModifyCacheParameterGroupOutput$CacheParameterGroupName */ =>  {
+            s if s.matches("CacheParameterGroupName") /* CacheParameterGroupName com.amazonaws.elasticache.synthetic#ModifyCacheParameterGroupOutput$CacheParameterGroupName */ =>  {
                 let var_152 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4922,7 +4922,7 @@ pub fn deser_operation_modify_cache_parameter_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_subnet_in_use_xml_err(
+pub fn deser_structure_crate_error_subnet_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::subnet_in_use::Builder,
 ) -> Result<crate::error::subnet_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -4955,7 +4955,7 @@ pub fn deser_structure_subnet_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_cache_subnet_group(
+pub fn deser_operation_crate_operation_modify_cache_subnet_group(
     inp: &[u8],
     mut builder: crate::output::modify_cache_subnet_group_output::Builder,
 ) -> Result<crate::output::modify_cache_subnet_group_output::Builder, smithy_xml::decode::XmlError>
@@ -4982,10 +4982,10 @@ pub fn deser_operation_modify_cache_subnet_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheSubnetGroup") /* CacheSubnetGroup com.amazonaws.elasticache#ModifyCacheSubnetGroupOutput$CacheSubnetGroup */ =>  {
+            s if s.matches("CacheSubnetGroup") /* CacheSubnetGroup com.amazonaws.elasticache.synthetic#ModifyCacheSubnetGroupOutput$CacheSubnetGroup */ =>  {
                 let var_154 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_subnet_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_subnet_group(&mut tag)
                         ?
                     )
                 ;
@@ -5004,7 +5004,7 @@ pub fn deser_operation_modify_cache_subnet_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_global_replication_group(
+pub fn deser_operation_crate_operation_modify_global_replication_group(
     inp: &[u8],
     mut builder: crate::output::modify_global_replication_group_output::Builder,
 ) -> Result<
@@ -5033,10 +5033,10 @@ pub fn deser_operation_modify_global_replication_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache#ModifyGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
+            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#ModifyGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
                 let var_155 =
                     Some(
-                        crate::xml_deser::deser_structure_global_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -5055,7 +5055,7 @@ pub fn deser_operation_modify_global_replication_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_replication_group(
+pub fn deser_operation_crate_operation_modify_replication_group(
     inp: &[u8],
     mut builder: crate::output::modify_replication_group_output::Builder,
 ) -> Result<crate::output::modify_replication_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -5081,10 +5081,10 @@ pub fn deser_operation_modify_replication_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache#ModifyReplicationGroupOutput$ReplicationGroup */ =>  {
+            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#ModifyReplicationGroupOutput$ReplicationGroup */ =>  {
                 let var_156 =
                     Some(
-                        crate::xml_deser::deser_structure_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -5103,7 +5103,7 @@ pub fn deser_operation_modify_replication_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_replication_group_shard_configuration(
+pub fn deser_operation_crate_operation_modify_replication_group_shard_configuration(
     inp: &[u8],
     mut builder: crate::output::modify_replication_group_shard_configuration_output::Builder,
 ) -> Result<
@@ -5132,10 +5132,10 @@ pub fn deser_operation_modify_replication_group_shard_configuration(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache#ModifyReplicationGroupShardConfigurationOutput$ReplicationGroup */ =>  {
+            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#ModifyReplicationGroupShardConfigurationOutput$ReplicationGroup */ =>  {
                 let var_157 =
                     Some(
-                        crate::xml_deser::deser_structure_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -5154,7 +5154,7 @@ pub fn deser_operation_modify_replication_group_shard_configuration(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_user(
+pub fn deser_operation_crate_operation_modify_user(
     inp: &[u8],
     mut builder: crate::output::modify_user_output::Builder,
 ) -> Result<crate::output::modify_user_output::Builder, smithy_xml::decode::XmlError> {
@@ -5180,7 +5180,7 @@ pub fn deser_operation_modify_user(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("UserId") /* UserId com.amazonaws.elasticache#ModifyUserOutput$UserId */ =>  {
+            s if s.matches("UserId") /* UserId com.amazonaws.elasticache.synthetic#ModifyUserOutput$UserId */ =>  {
                 let var_158 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5193,7 +5193,7 @@ pub fn deser_operation_modify_user(
                 builder = builder.set_user_id(var_158);
             }
             ,
-            s if s.matches("UserName") /* UserName com.amazonaws.elasticache#ModifyUserOutput$UserName */ =>  {
+            s if s.matches("UserName") /* UserName com.amazonaws.elasticache.synthetic#ModifyUserOutput$UserName */ =>  {
                 let var_159 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5206,7 +5206,7 @@ pub fn deser_operation_modify_user(
                 builder = builder.set_user_name(var_159);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache#ModifyUserOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#ModifyUserOutput$Status */ =>  {
                 let var_160 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5219,7 +5219,7 @@ pub fn deser_operation_modify_user(
                 builder = builder.set_status(var_160);
             }
             ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#ModifyUserOutput$Engine */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#ModifyUserOutput$Engine */ =>  {
                 let var_161 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5232,7 +5232,7 @@ pub fn deser_operation_modify_user(
                 builder = builder.set_engine(var_161);
             }
             ,
-            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache#ModifyUserOutput$AccessString */ =>  {
+            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache.synthetic#ModifyUserOutput$AccessString */ =>  {
                 let var_162 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5245,27 +5245,27 @@ pub fn deser_operation_modify_user(
                 builder = builder.set_access_string(var_162);
             }
             ,
-            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache#ModifyUserOutput$UserGroupIds */ =>  {
+            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache.synthetic#ModifyUserOutput$UserGroupIds */ =>  {
                 let var_163 =
                     Some(
-                        crate::xml_deser::deser_list_user_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_user_group_ids(var_163);
             }
             ,
-            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache#ModifyUserOutput$Authentication */ =>  {
+            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache.synthetic#ModifyUserOutput$Authentication */ =>  {
                 let var_164 =
                     Some(
-                        crate::xml_deser::deser_structure_authentication(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_authentication(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_authentication(var_164);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#ModifyUserOutput$ARN */ =>  {
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#ModifyUserOutput$ARN */ =>  {
                 let var_165 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5290,7 +5290,7 @@ pub fn deser_operation_modify_user(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_user_group(
+pub fn deser_operation_crate_operation_modify_user_group(
     inp: &[u8],
     mut builder: crate::output::modify_user_group_output::Builder,
 ) -> Result<crate::output::modify_user_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -5316,7 +5316,7 @@ pub fn deser_operation_modify_user_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache#ModifyUserGroupOutput$UserGroupId */ =>  {
+            s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$UserGroupId */ =>  {
                 let var_166 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5329,7 +5329,7 @@ pub fn deser_operation_modify_user_group(
                 builder = builder.set_user_group_id(var_166);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache#ModifyUserGroupOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$Status */ =>  {
                 let var_167 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5342,7 +5342,7 @@ pub fn deser_operation_modify_user_group(
                 builder = builder.set_status(var_167);
             }
             ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#ModifyUserGroupOutput$Engine */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$Engine */ =>  {
                 let var_168 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5355,37 +5355,37 @@ pub fn deser_operation_modify_user_group(
                 builder = builder.set_engine(var_168);
             }
             ,
-            s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache#ModifyUserGroupOutput$UserIds */ =>  {
+            s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$UserIds */ =>  {
                 let var_169 =
                     Some(
-                        crate::xml_deser::deser_list_user_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_user_ids(var_169);
             }
             ,
-            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache#ModifyUserGroupOutput$PendingChanges */ =>  {
+            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$PendingChanges */ =>  {
                 let var_170 =
                     Some(
-                        crate::xml_deser::deser_structure_user_group_pending_changes(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_pending_changes(var_170);
             }
             ,
-            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache#ModifyUserGroupOutput$ReplicationGroups */ =>  {
+            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$ReplicationGroups */ =>  {
                 let var_171 =
                     Some(
-                        crate::xml_deser::deser_list_ug_replication_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_replication_groups(var_171);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#ModifyUserGroupOutput$ARN */ =>  {
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$ARN */ =>  {
                 let var_172 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5410,7 +5410,7 @@ pub fn deser_operation_modify_user_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_reserved_cache_node_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_reserved_cache_node_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::reserved_cache_node_already_exists_fault::Builder,
 ) -> Result<
@@ -5446,7 +5446,7 @@ pub fn deser_structure_reserved_cache_node_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_reserved_cache_node_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_reserved_cache_node_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::reserved_cache_node_quota_exceeded_fault::Builder,
 ) -> Result<
@@ -5482,7 +5482,7 @@ pub fn deser_structure_reserved_cache_node_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_purchase_reserved_cache_nodes_offering(
+pub fn deser_operation_crate_operation_purchase_reserved_cache_nodes_offering(
     inp: &[u8],
     mut builder: crate::output::purchase_reserved_cache_nodes_offering_output::Builder,
 ) -> Result<
@@ -5511,10 +5511,10 @@ pub fn deser_operation_purchase_reserved_cache_nodes_offering(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ReservedCacheNode") /* ReservedCacheNode com.amazonaws.elasticache#PurchaseReservedCacheNodesOfferingOutput$ReservedCacheNode */ =>  {
+            s if s.matches("ReservedCacheNode") /* ReservedCacheNode com.amazonaws.elasticache.synthetic#PurchaseReservedCacheNodesOfferingOutput$ReservedCacheNode */ =>  {
                 let var_175 =
                     Some(
-                        crate::xml_deser::deser_structure_reserved_cache_node(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_reserved_cache_node(&mut tag)
                         ?
                     )
                 ;
@@ -5533,7 +5533,7 @@ pub fn deser_operation_purchase_reserved_cache_nodes_offering(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_rebalance_slots_in_global_replication_group(
+pub fn deser_operation_crate_operation_rebalance_slots_in_global_replication_group(
     inp: &[u8],
     mut builder: crate::output::rebalance_slots_in_global_replication_group_output::Builder,
 ) -> Result<
@@ -5562,10 +5562,10 @@ pub fn deser_operation_rebalance_slots_in_global_replication_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache#RebalanceSlotsInGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
+            s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#RebalanceSlotsInGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
                 let var_176 =
                     Some(
-                        crate::xml_deser::deser_structure_global_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -5584,7 +5584,7 @@ pub fn deser_operation_rebalance_slots_in_global_replication_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_reboot_cache_cluster(
+pub fn deser_operation_crate_operation_reboot_cache_cluster(
     inp: &[u8],
     mut builder: crate::output::reboot_cache_cluster_output::Builder,
 ) -> Result<crate::output::reboot_cache_cluster_output::Builder, smithy_xml::decode::XmlError> {
@@ -5610,10 +5610,10 @@ pub fn deser_operation_reboot_cache_cluster(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache#RebootCacheClusterOutput$CacheCluster */ =>  {
+            s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache.synthetic#RebootCacheClusterOutput$CacheCluster */ =>  {
                 let var_177 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -5632,7 +5632,7 @@ pub fn deser_operation_reboot_cache_cluster(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_tag_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_tag_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::tag_not_found_fault::Builder,
 ) -> Result<crate::error::tag_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -5665,7 +5665,7 @@ pub fn deser_structure_tag_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_remove_tags_from_resource(
+pub fn deser_operation_crate_operation_remove_tags_from_resource(
     inp: &[u8],
     mut builder: crate::output::remove_tags_from_resource_output::Builder,
 ) -> Result<crate::output::remove_tags_from_resource_output::Builder, smithy_xml::decode::XmlError>
@@ -5692,10 +5692,10 @@ pub fn deser_operation_remove_tags_from_resource(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TagList") /* TagList com.amazonaws.elasticache#RemoveTagsFromResourceOutput$TagList */ =>  {
+            s if s.matches("TagList") /* TagList com.amazonaws.elasticache.synthetic#RemoveTagsFromResourceOutput$TagList */ =>  {
                 let var_179 =
                     Some(
-                        crate::xml_deser::deser_list_tag_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_tag_list(&mut tag)
                         ?
                     )
                 ;
@@ -5714,7 +5714,7 @@ pub fn deser_operation_remove_tags_from_resource(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_reset_cache_parameter_group(
+pub fn deser_operation_crate_operation_reset_cache_parameter_group(
     inp: &[u8],
     mut builder: crate::output::reset_cache_parameter_group_output::Builder,
 ) -> Result<crate::output::reset_cache_parameter_group_output::Builder, smithy_xml::decode::XmlError>
@@ -5741,7 +5741,7 @@ pub fn deser_operation_reset_cache_parameter_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheParameterGroupName") /* CacheParameterGroupName com.amazonaws.elasticache#ResetCacheParameterGroupOutput$CacheParameterGroupName */ =>  {
+            s if s.matches("CacheParameterGroupName") /* CacheParameterGroupName com.amazonaws.elasticache.synthetic#ResetCacheParameterGroupOutput$CacheParameterGroupName */ =>  {
                 let var_180 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5766,7 +5766,7 @@ pub fn deser_operation_reset_cache_parameter_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_authorization_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_authorization_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::authorization_not_found_fault::Builder,
 ) -> Result<crate::error::authorization_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -5799,7 +5799,7 @@ pub fn deser_structure_authorization_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_revoke_cache_security_group_ingress(
+pub fn deser_operation_crate_operation_revoke_cache_security_group_ingress(
     inp: &[u8],
     mut builder: crate::output::revoke_cache_security_group_ingress_output::Builder,
 ) -> Result<
@@ -5828,10 +5828,10 @@ pub fn deser_operation_revoke_cache_security_group_ingress(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("CacheSecurityGroup") /* CacheSecurityGroup com.amazonaws.elasticache#RevokeCacheSecurityGroupIngressOutput$CacheSecurityGroup */ =>  {
+            s if s.matches("CacheSecurityGroup") /* CacheSecurityGroup com.amazonaws.elasticache.synthetic#RevokeCacheSecurityGroupIngressOutput$CacheSecurityGroup */ =>  {
                 let var_182 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_security_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_security_group(&mut tag)
                         ?
                     )
                 ;
@@ -5850,7 +5850,7 @@ pub fn deser_operation_revoke_cache_security_group_ingress(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_replication_group_already_under_migration_fault_xml_err(
+pub fn deser_structure_crate_error_replication_group_already_under_migration_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::replication_group_already_under_migration_fault::Builder,
 ) -> Result<
@@ -5886,7 +5886,7 @@ pub fn deser_structure_replication_group_already_under_migration_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_start_migration(
+pub fn deser_operation_crate_operation_start_migration(
     inp: &[u8],
     mut builder: crate::output::start_migration_output::Builder,
 ) -> Result<crate::output::start_migration_output::Builder, smithy_xml::decode::XmlError> {
@@ -5912,10 +5912,10 @@ pub fn deser_operation_start_migration(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache#StartMigrationOutput$ReplicationGroup */ =>  {
+            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#StartMigrationOutput$ReplicationGroup */ =>  {
                 let var_184 =
                     Some(
-                        crate::xml_deser::deser_structure_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -5934,7 +5934,7 @@ pub fn deser_operation_start_migration(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_api_call_rate_for_customer_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_api_call_rate_for_customer_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::api_call_rate_for_customer_exceeded_fault::Builder,
 ) -> Result<
@@ -5970,7 +5970,7 @@ pub fn deser_structure_api_call_rate_for_customer_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_node_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_node_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::node_group_not_found_fault::Builder,
 ) -> Result<crate::error::node_group_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -6003,7 +6003,7 @@ pub fn deser_structure_node_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_test_failover_not_available_fault_xml_err(
+pub fn deser_structure_crate_error_test_failover_not_available_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::test_failover_not_available_fault::Builder,
 ) -> Result<crate::error::test_failover_not_available_fault::Builder, smithy_xml::decode::XmlError>
@@ -6037,7 +6037,7 @@ pub fn deser_structure_test_failover_not_available_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_test_failover(
+pub fn deser_operation_crate_operation_test_failover(
     inp: &[u8],
     mut builder: crate::output::test_failover_output::Builder,
 ) -> Result<crate::output::test_failover_output::Builder, smithy_xml::decode::XmlError> {
@@ -6063,10 +6063,10 @@ pub fn deser_operation_test_failover(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache#TestFailoverOutput$ReplicationGroup */ =>  {
+            s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#TestFailoverOutput$ReplicationGroup */ =>  {
                 let var_188 =
                     Some(
-                        crate::xml_deser::deser_structure_replication_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
@@ -6084,7 +6084,7 @@ pub fn deser_operation_test_failover(
     Ok(builder)
 }
 
-pub fn deser_list_tag_list(
+pub fn deser_list_com_amazonaws_elasticache_tag_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6092,7 +6092,7 @@ pub fn deser_list_tag_list(
         match tag.start_el() {
             s if s.matches("Tag") /* member com.amazonaws.elasticache#TagList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_tag(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_tag(&mut tag)
                     ?
                 );
             }
@@ -6103,7 +6103,7 @@ pub fn deser_list_tag_list(
     Ok(out)
 }
 
-pub fn deser_structure_cache_security_group(
+pub fn deser_structure_crate_model_cache_security_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheSecurityGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6152,7 +6152,7 @@ pub fn deser_structure_cache_security_group(
             s if s.matches("EC2SecurityGroups") /* EC2SecurityGroups com.amazonaws.elasticache#CacheSecurityGroup$EC2SecurityGroups */ =>  {
                 let var_192 =
                     Some(
-                        crate::xml_deser::deser_list_ec2_security_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ec2_security_group_list(&mut tag)
                         ?
                     )
                 ;
@@ -6178,7 +6178,7 @@ pub fn deser_structure_cache_security_group(
     Ok(builder.build())
 }
 
-pub fn deser_list_processed_update_action_list(
+pub fn deser_list_com_amazonaws_elasticache_processed_update_action_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ProcessedUpdateAction>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6186,7 +6186,7 @@ pub fn deser_list_processed_update_action_list(
         match tag.start_el() {
             s if s.matches("ProcessedUpdateAction") /* member com.amazonaws.elasticache#ProcessedUpdateActionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_processed_update_action(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_processed_update_action(&mut tag)
                     ?
                 );
             }
@@ -6197,7 +6197,7 @@ pub fn deser_list_processed_update_action_list(
     Ok(out)
 }
 
-pub fn deser_list_unprocessed_update_action_list(
+pub fn deser_list_com_amazonaws_elasticache_unprocessed_update_action_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::UnprocessedUpdateAction>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6205,7 +6205,7 @@ pub fn deser_list_unprocessed_update_action_list(
         match tag.start_el() {
             s if s.matches("UnprocessedUpdateAction") /* member com.amazonaws.elasticache#UnprocessedUpdateActionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_unprocessed_update_action(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_unprocessed_update_action(&mut tag)
                     ?
                 );
             }
@@ -6216,7 +6216,7 @@ pub fn deser_list_unprocessed_update_action_list(
     Ok(out)
 }
 
-pub fn deser_structure_replication_group(
+pub fn deser_structure_crate_model_replication_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ReplicationGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6252,7 +6252,7 @@ pub fn deser_structure_replication_group(
             s if s.matches("GlobalReplicationGroupInfo") /* GlobalReplicationGroupInfo com.amazonaws.elasticache#ReplicationGroup$GlobalReplicationGroupInfo */ =>  {
                 let var_196 =
                     Some(
-                        crate::xml_deser::deser_structure_global_replication_group_info(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_global_replication_group_info(&mut tag)
                         ?
                     )
                 ;
@@ -6275,7 +6275,7 @@ pub fn deser_structure_replication_group(
             s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.elasticache#ReplicationGroup$PendingModifiedValues */ =>  {
                 let var_198 =
                     Some(
-                        crate::xml_deser::deser_structure_replication_group_pending_modified_values(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_replication_group_pending_modified_values(&mut tag)
                         ?
                     )
                 ;
@@ -6285,7 +6285,7 @@ pub fn deser_structure_replication_group(
             s if s.matches("MemberClusters") /* MemberClusters com.amazonaws.elasticache#ReplicationGroup$MemberClusters */ =>  {
                 let var_199 =
                     Some(
-                        crate::xml_deser::deser_list_cluster_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cluster_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -6295,7 +6295,7 @@ pub fn deser_structure_replication_group(
             s if s.matches("NodeGroups") /* NodeGroups com.amazonaws.elasticache#ReplicationGroup$NodeGroups */ =>  {
                 let var_200 =
                     Some(
-                        crate::xml_deser::deser_list_node_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_node_group_list(&mut tag)
                         ?
                     )
                 ;
@@ -6346,7 +6346,7 @@ pub fn deser_structure_replication_group(
             s if s.matches("ConfigurationEndpoint") /* ConfigurationEndpoint com.amazonaws.elasticache#ReplicationGroup$ConfigurationEndpoint */ =>  {
                 let var_204 =
                     Some(
-                        crate::xml_deser::deser_structure_endpoint(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
                         ?
                     )
                 ;
@@ -6471,7 +6471,7 @@ pub fn deser_structure_replication_group(
             s if s.matches("MemberClustersOutpostArns") /* MemberClustersOutpostArns com.amazonaws.elasticache#ReplicationGroup$MemberClustersOutpostArns */ =>  {
                 let var_213 =
                     Some(
-                        crate::xml_deser::deser_list_replication_group_outpost_arn_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_replication_group_outpost_arn_list(&mut tag)
                         ?
                     )
                 ;
@@ -6507,7 +6507,7 @@ pub fn deser_structure_replication_group(
             s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache#ReplicationGroup$UserGroupIds */ =>  {
                 let var_216 =
                     Some(
-                        crate::xml_deser::deser_list_user_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -6517,7 +6517,7 @@ pub fn deser_structure_replication_group(
             s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#ReplicationGroup$LogDeliveryConfigurations */ =>  {
                 let var_217 =
                     Some(
-                        crate::xml_deser::deser_list_log_delivery_configuration_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_log_delivery_configuration_list(&mut tag)
                         ?
                     )
                 ;
@@ -6544,7 +6544,7 @@ pub fn deser_structure_replication_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_snapshot(
+pub fn deser_structure_crate_model_snapshot(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Snapshot, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6878,7 +6878,7 @@ pub fn deser_structure_snapshot(
             s if s.matches("NodeSnapshots") /* NodeSnapshots com.amazonaws.elasticache#Snapshot$NodeSnapshots */ =>  {
                 let var_243 =
                     Some(
-                        crate::xml_deser::deser_list_node_snapshot_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_node_snapshot_list(&mut tag)
                         ?
                     )
                 ;
@@ -6917,7 +6917,7 @@ pub fn deser_structure_snapshot(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_cluster(
+pub fn deser_structure_crate_model_cache_cluster(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheCluster, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6940,7 +6940,7 @@ pub fn deser_structure_cache_cluster(
             s if s.matches("ConfigurationEndpoint") /* ConfigurationEndpoint com.amazonaws.elasticache#CacheCluster$ConfigurationEndpoint */ =>  {
                 let var_247 =
                     Some(
-                        crate::xml_deser::deser_structure_endpoint(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
                         ?
                     )
                 ;
@@ -7083,7 +7083,7 @@ pub fn deser_structure_cache_cluster(
             s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.elasticache#CacheCluster$PendingModifiedValues */ =>  {
                 let var_258 =
                     Some(
-                        crate::xml_deser::deser_structure_pending_modified_values(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_pending_modified_values(&mut tag)
                         ?
                     )
                 ;
@@ -7093,7 +7093,7 @@ pub fn deser_structure_cache_cluster(
             s if s.matches("NotificationConfiguration") /* NotificationConfiguration com.amazonaws.elasticache#CacheCluster$NotificationConfiguration */ =>  {
                 let var_259 =
                     Some(
-                        crate::xml_deser::deser_structure_notification_configuration(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_notification_configuration(&mut tag)
                         ?
                     )
                 ;
@@ -7103,7 +7103,7 @@ pub fn deser_structure_cache_cluster(
             s if s.matches("CacheSecurityGroups") /* CacheSecurityGroups com.amazonaws.elasticache#CacheCluster$CacheSecurityGroups */ =>  {
                 let var_260 =
                     Some(
-                        crate::xml_deser::deser_list_cache_security_group_membership_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_security_group_membership_list(&mut tag)
                         ?
                     )
                 ;
@@ -7113,7 +7113,7 @@ pub fn deser_structure_cache_cluster(
             s if s.matches("CacheParameterGroup") /* CacheParameterGroup com.amazonaws.elasticache#CacheCluster$CacheParameterGroup */ =>  {
                 let var_261 =
                     Some(
-                        crate::xml_deser::deser_structure_cache_parameter_group_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cache_parameter_group_status(&mut tag)
                         ?
                     )
                 ;
@@ -7136,7 +7136,7 @@ pub fn deser_structure_cache_cluster(
             s if s.matches("CacheNodes") /* CacheNodes com.amazonaws.elasticache#CacheCluster$CacheNodes */ =>  {
                 let var_263 =
                     Some(
-                        crate::xml_deser::deser_list_cache_node_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_list(&mut tag)
                         ?
                     )
                 ;
@@ -7161,7 +7161,7 @@ pub fn deser_structure_cache_cluster(
             s if s.matches("SecurityGroups") /* SecurityGroups com.amazonaws.elasticache#CacheCluster$SecurityGroups */ =>  {
                 let var_265 =
                     Some(
-                        crate::xml_deser::deser_list_security_group_membership_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_security_group_membership_list(&mut tag)
                         ?
                     )
                 ;
@@ -7299,7 +7299,7 @@ pub fn deser_structure_cache_cluster(
             s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#CacheCluster$LogDeliveryConfigurations */ =>  {
                 let var_275 =
                     Some(
-                        crate::xml_deser::deser_list_log_delivery_configuration_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_log_delivery_configuration_list(&mut tag)
                         ?
                     )
                 ;
@@ -7312,7 +7312,7 @@ pub fn deser_structure_cache_cluster(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_parameter_group(
+pub fn deser_structure_crate_model_cache_parameter_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheParameterGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7392,7 +7392,7 @@ pub fn deser_structure_cache_parameter_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_subnet_group(
+pub fn deser_structure_crate_model_cache_subnet_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheSubnetGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7441,7 +7441,7 @@ pub fn deser_structure_cache_subnet_group(
             s if s.matches("Subnets") /* Subnets com.amazonaws.elasticache#CacheSubnetGroup$Subnets */ =>  {
                 let var_284 =
                     Some(
-                        crate::xml_deser::deser_list_subnet_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_subnet_list(&mut tag)
                         ?
                     )
                 ;
@@ -7467,7 +7467,7 @@ pub fn deser_structure_cache_subnet_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_global_replication_group(
+pub fn deser_structure_crate_model_global_replication_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::GlobalReplicationGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7555,7 +7555,7 @@ pub fn deser_structure_global_replication_group(
             s if s.matches("Members") /* Members com.amazonaws.elasticache#GlobalReplicationGroup$Members */ =>  {
                 let var_292 =
                     Some(
-                        crate::xml_deser::deser_list_global_replication_group_member_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_global_replication_group_member_list(&mut tag)
                         ?
                     )
                 ;
@@ -7580,7 +7580,7 @@ pub fn deser_structure_global_replication_group(
             s if s.matches("GlobalNodeGroups") /* GlobalNodeGroups com.amazonaws.elasticache#GlobalReplicationGroup$GlobalNodeGroups */ =>  {
                 let var_294 =
                     Some(
-                        crate::xml_deser::deser_list_global_node_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_global_node_group_list(&mut tag)
                         ?
                     )
                 ;
@@ -7651,7 +7651,7 @@ pub fn deser_structure_global_replication_group(
     Ok(builder.build())
 }
 
-pub fn deser_list_user_group_id_list(
+pub fn deser_list_com_amazonaws_elasticache_user_group_id_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7673,7 +7673,7 @@ pub fn deser_list_user_group_id_list(
     Ok(out)
 }
 
-pub fn deser_structure_authentication(
+pub fn deser_structure_crate_model_authentication(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Authentication, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7715,7 +7715,7 @@ pub fn deser_structure_authentication(
     Ok(builder.build())
 }
 
-pub fn deser_list_user_id_list(
+pub fn deser_list_com_amazonaws_elasticache_user_id_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7737,7 +7737,7 @@ pub fn deser_list_user_id_list(
     Ok(out)
 }
 
-pub fn deser_structure_user_group_pending_changes(
+pub fn deser_structure_crate_model_user_group_pending_changes(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::UserGroupPendingChanges, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7747,7 +7747,7 @@ pub fn deser_structure_user_group_pending_changes(
             s if s.matches("UserIdsToRemove") /* UserIdsToRemove com.amazonaws.elasticache#UserGroupPendingChanges$UserIdsToRemove */ =>  {
                 let var_301 =
                     Some(
-                        crate::xml_deser::deser_list_user_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -7757,7 +7757,7 @@ pub fn deser_structure_user_group_pending_changes(
             s if s.matches("UserIdsToAdd") /* UserIdsToAdd com.amazonaws.elasticache#UserGroupPendingChanges$UserIdsToAdd */ =>  {
                 let var_302 =
                     Some(
-                        crate::xml_deser::deser_list_user_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -7770,7 +7770,7 @@ pub fn deser_structure_user_group_pending_changes(
     Ok(builder.build())
 }
 
-pub fn deser_list_ug_replication_group_id_list(
+pub fn deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7792,7 +7792,7 @@ pub fn deser_list_ug_replication_group_id_list(
     Ok(out)
 }
 
-pub fn deser_list_cache_cluster_list(
+pub fn deser_list_com_amazonaws_elasticache_cache_cluster_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CacheCluster>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7800,7 +7800,7 @@ pub fn deser_list_cache_cluster_list(
         match tag.start_el() {
             s if s.matches("CacheCluster") /* member com.amazonaws.elasticache#CacheClusterList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_cluster(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_cluster(&mut tag)
                     ?
                 );
             }
@@ -7811,7 +7811,7 @@ pub fn deser_list_cache_cluster_list(
     Ok(out)
 }
 
-pub fn deser_list_cache_engine_version_list(
+pub fn deser_list_com_amazonaws_elasticache_cache_engine_version_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CacheEngineVersion>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7819,7 +7819,7 @@ pub fn deser_list_cache_engine_version_list(
         match tag.start_el() {
             s if s.matches("CacheEngineVersion") /* member com.amazonaws.elasticache#CacheEngineVersionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_engine_version(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_engine_version(&mut tag)
                     ?
                 );
             }
@@ -7830,7 +7830,7 @@ pub fn deser_list_cache_engine_version_list(
     Ok(out)
 }
 
-pub fn deser_list_cache_parameter_group_list(
+pub fn deser_list_com_amazonaws_elasticache_cache_parameter_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CacheParameterGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7838,7 +7838,7 @@ pub fn deser_list_cache_parameter_group_list(
         match tag.start_el() {
             s if s.matches("CacheParameterGroup") /* member com.amazonaws.elasticache#CacheParameterGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_parameter_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_parameter_group(&mut tag)
                     ?
                 );
             }
@@ -7849,7 +7849,7 @@ pub fn deser_list_cache_parameter_group_list(
     Ok(out)
 }
 
-pub fn deser_list_parameters_list(
+pub fn deser_list_com_amazonaws_elasticache_parameters_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Parameter>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7857,7 +7857,7 @@ pub fn deser_list_parameters_list(
         match tag.start_el() {
             s if s.matches("Parameter") /* member com.amazonaws.elasticache#ParametersList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_parameter(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_parameter(&mut tag)
                     ?
                 );
             }
@@ -7868,7 +7868,7 @@ pub fn deser_list_parameters_list(
     Ok(out)
 }
 
-pub fn deser_list_cache_node_type_specific_parameters_list(
+pub fn deser_list_com_amazonaws_elasticache_cache_node_type_specific_parameters_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>, smithy_xml::decode::XmlError>
 {
@@ -7877,7 +7877,7 @@ pub fn deser_list_cache_node_type_specific_parameters_list(
         match tag.start_el() {
             s if s.matches("CacheNodeTypeSpecificParameter") /* member com.amazonaws.elasticache#CacheNodeTypeSpecificParametersList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_node_type_specific_parameter(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_node_type_specific_parameter(&mut tag)
                     ?
                 );
             }
@@ -7888,7 +7888,7 @@ pub fn deser_list_cache_node_type_specific_parameters_list(
     Ok(out)
 }
 
-pub fn deser_list_cache_security_groups(
+pub fn deser_list_com_amazonaws_elasticache_cache_security_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CacheSecurityGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7896,7 +7896,7 @@ pub fn deser_list_cache_security_groups(
         match tag.start_el() {
             s if s.matches("CacheSecurityGroup") /* member com.amazonaws.elasticache#CacheSecurityGroups$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_security_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_security_group(&mut tag)
                     ?
                 );
             }
@@ -7907,7 +7907,7 @@ pub fn deser_list_cache_security_groups(
     Ok(out)
 }
 
-pub fn deser_list_cache_subnet_groups(
+pub fn deser_list_com_amazonaws_elasticache_cache_subnet_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CacheSubnetGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7915,7 +7915,7 @@ pub fn deser_list_cache_subnet_groups(
         match tag.start_el() {
             s if s.matches("CacheSubnetGroup") /* member com.amazonaws.elasticache#CacheSubnetGroups$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_subnet_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_subnet_group(&mut tag)
                     ?
                 );
             }
@@ -7926,7 +7926,7 @@ pub fn deser_list_cache_subnet_groups(
     Ok(out)
 }
 
-pub fn deser_structure_engine_defaults(
+pub fn deser_structure_crate_model_engine_defaults(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EngineDefaults, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7962,7 +7962,7 @@ pub fn deser_structure_engine_defaults(
             s if s.matches("Parameters") /* Parameters com.amazonaws.elasticache#EngineDefaults$Parameters */ =>  {
                 let var_305 =
                     Some(
-                        crate::xml_deser::deser_list_parameters_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_parameters_list(&mut tag)
                         ?
                     )
                 ;
@@ -7972,7 +7972,7 @@ pub fn deser_structure_engine_defaults(
             s if s.matches("CacheNodeTypeSpecificParameters") /* CacheNodeTypeSpecificParameters com.amazonaws.elasticache#EngineDefaults$CacheNodeTypeSpecificParameters */ =>  {
                 let var_306 =
                     Some(
-                        crate::xml_deser::deser_list_cache_node_type_specific_parameters_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_type_specific_parameters_list(&mut tag)
                         ?
                     )
                 ;
@@ -7985,7 +7985,7 @@ pub fn deser_structure_engine_defaults(
     Ok(builder.build())
 }
 
-pub fn deser_list_event_list(
+pub fn deser_list_com_amazonaws_elasticache_event_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Event>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7993,7 +7993,7 @@ pub fn deser_list_event_list(
         match tag.start_el() {
             s if s.matches("Event") /* member com.amazonaws.elasticache#EventList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_event(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_event(&mut tag)
                     ?
                 );
             }
@@ -8004,7 +8004,7 @@ pub fn deser_list_event_list(
     Ok(out)
 }
 
-pub fn deser_list_global_replication_group_list(
+pub fn deser_list_com_amazonaws_elasticache_global_replication_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::GlobalReplicationGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8012,7 +8012,7 @@ pub fn deser_list_global_replication_group_list(
         match tag.start_el() {
             s if s.matches("GlobalReplicationGroup") /* member com.amazonaws.elasticache#GlobalReplicationGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_global_replication_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                     ?
                 );
             }
@@ -8023,7 +8023,7 @@ pub fn deser_list_global_replication_group_list(
     Ok(out)
 }
 
-pub fn deser_list_replication_group_list(
+pub fn deser_list_com_amazonaws_elasticache_replication_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ReplicationGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8031,7 +8031,7 @@ pub fn deser_list_replication_group_list(
         match tag.start_el() {
             s if s.matches("ReplicationGroup") /* member com.amazonaws.elasticache#ReplicationGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_replication_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                     ?
                 );
             }
@@ -8042,7 +8042,7 @@ pub fn deser_list_replication_group_list(
     Ok(out)
 }
 
-pub fn deser_list_reserved_cache_node_list(
+pub fn deser_list_com_amazonaws_elasticache_reserved_cache_node_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ReservedCacheNode>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8050,7 +8050,7 @@ pub fn deser_list_reserved_cache_node_list(
         match tag.start_el() {
             s if s.matches("ReservedCacheNode") /* member com.amazonaws.elasticache#ReservedCacheNodeList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_reserved_cache_node(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_reserved_cache_node(&mut tag)
                     ?
                 );
             }
@@ -8061,7 +8061,7 @@ pub fn deser_list_reserved_cache_node_list(
     Ok(out)
 }
 
-pub fn deser_list_reserved_cache_nodes_offering_list(
+pub fn deser_list_com_amazonaws_elasticache_reserved_cache_nodes_offering_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ReservedCacheNodesOffering>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8069,7 +8069,7 @@ pub fn deser_list_reserved_cache_nodes_offering_list(
         match tag.start_el() {
             s if s.matches("ReservedCacheNodesOffering") /* member com.amazonaws.elasticache#ReservedCacheNodesOfferingList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_reserved_cache_nodes_offering(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_reserved_cache_nodes_offering(&mut tag)
                     ?
                 );
             }
@@ -8080,7 +8080,7 @@ pub fn deser_list_reserved_cache_nodes_offering_list(
     Ok(out)
 }
 
-pub fn deser_list_service_update_list(
+pub fn deser_list_com_amazonaws_elasticache_service_update_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ServiceUpdate>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8088,7 +8088,7 @@ pub fn deser_list_service_update_list(
         match tag.start_el() {
             s if s.matches("ServiceUpdate") /* member com.amazonaws.elasticache#ServiceUpdateList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_service_update(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_service_update(&mut tag)
                     ?
                 );
             }
@@ -8099,7 +8099,7 @@ pub fn deser_list_service_update_list(
     Ok(out)
 }
 
-pub fn deser_list_snapshot_list(
+pub fn deser_list_com_amazonaws_elasticache_snapshot_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Snapshot>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8107,7 +8107,7 @@ pub fn deser_list_snapshot_list(
         match tag.start_el() {
             s if s.matches("Snapshot") /* member com.amazonaws.elasticache#SnapshotList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_snapshot(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_snapshot(&mut tag)
                     ?
                 );
             }
@@ -8118,7 +8118,7 @@ pub fn deser_list_snapshot_list(
     Ok(out)
 }
 
-pub fn deser_list_update_action_list(
+pub fn deser_list_com_amazonaws_elasticache_update_action_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::UpdateAction>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8126,7 +8126,7 @@ pub fn deser_list_update_action_list(
         match tag.start_el() {
             s if s.matches("UpdateAction") /* member com.amazonaws.elasticache#UpdateActionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_update_action(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_update_action(&mut tag)
                     ?
                 );
             }
@@ -8137,7 +8137,7 @@ pub fn deser_list_update_action_list(
     Ok(out)
 }
 
-pub fn deser_list_user_group_list(
+pub fn deser_list_com_amazonaws_elasticache_user_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::UserGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8145,7 +8145,7 @@ pub fn deser_list_user_group_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticache#UserGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_user_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_user_group(&mut tag)
                     ?
                 );
             }
@@ -8156,7 +8156,7 @@ pub fn deser_list_user_group_list(
     Ok(out)
 }
 
-pub fn deser_list_user_list(
+pub fn deser_list_com_amazonaws_elasticache_user_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::User>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8164,7 +8164,7 @@ pub fn deser_list_user_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticache#UserList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_user(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_user(&mut tag)
                     ?
                 );
             }
@@ -8175,7 +8175,7 @@ pub fn deser_list_user_list(
     Ok(out)
 }
 
-pub fn deser_list_node_type_list(
+pub fn deser_list_com_amazonaws_elasticache_node_type_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8197,7 +8197,7 @@ pub fn deser_list_node_type_list(
     Ok(out)
 }
 
-pub fn deser_structure_reserved_cache_node(
+pub fn deser_structure_crate_model_reserved_cache_node(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ReservedCacheNode, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8359,7 +8359,7 @@ pub fn deser_structure_reserved_cache_node(
             s if s.matches("RecurringCharges") /* RecurringCharges com.amazonaws.elasticache#ReservedCacheNode$RecurringCharges */ =>  {
                 let var_318 =
                     Some(
-                        crate::xml_deser::deser_list_recurring_charge_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_recurring_charge_list(&mut tag)
                         ?
                     )
                 ;
@@ -8385,7 +8385,7 @@ pub fn deser_structure_reserved_cache_node(
     Ok(builder.build())
 }
 
-pub fn deser_structure_tag(
+pub fn deser_structure_crate_model_tag(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Tag, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8424,7 +8424,7 @@ pub fn deser_structure_tag(
     Ok(builder.build())
 }
 
-pub fn deser_list_ec2_security_group_list(
+pub fn deser_list_com_amazonaws_elasticache_ec2_security_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Ec2SecurityGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8432,7 +8432,7 @@ pub fn deser_list_ec2_security_group_list(
         match tag.start_el() {
             s if s.matches("EC2SecurityGroup") /* member com.amazonaws.elasticache#EC2SecurityGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_ec2_security_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_ec2_security_group(&mut tag)
                     ?
                 );
             }
@@ -8443,7 +8443,7 @@ pub fn deser_list_ec2_security_group_list(
     Ok(out)
 }
 
-pub fn deser_structure_processed_update_action(
+pub fn deser_structure_crate_model_processed_update_action(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ProcessedUpdateAction, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8509,7 +8509,7 @@ pub fn deser_structure_processed_update_action(
     Ok(builder.build())
 }
 
-pub fn deser_structure_unprocessed_update_action(
+pub fn deser_structure_crate_model_unprocessed_update_action(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::UnprocessedUpdateAction, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8587,7 +8587,7 @@ pub fn deser_structure_unprocessed_update_action(
     Ok(builder.build())
 }
 
-pub fn deser_structure_global_replication_group_info(
+pub fn deser_structure_crate_model_global_replication_group_info(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::GlobalReplicationGroupInfo, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8626,7 +8626,7 @@ pub fn deser_structure_global_replication_group_info(
     Ok(builder.build())
 }
 
-pub fn deser_structure_replication_group_pending_modified_values(
+pub fn deser_structure_crate_model_replication_group_pending_modified_values(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ReplicationGroupPendingModifiedValues, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8663,7 +8663,7 @@ pub fn deser_structure_replication_group_pending_modified_values(
             s if s.matches("Resharding") /* Resharding com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$Resharding */ =>  {
                 let var_335 =
                     Some(
-                        crate::xml_deser::deser_structure_resharding_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_resharding_status(&mut tag)
                         ?
                     )
                 ;
@@ -8687,7 +8687,7 @@ pub fn deser_structure_replication_group_pending_modified_values(
             s if s.matches("UserGroups") /* UserGroups com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$UserGroups */ =>  {
                 let var_337 =
                     Some(
-                        crate::xml_deser::deser_structure_user_groups_update_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_user_groups_update_status(&mut tag)
                         ?
                     )
                 ;
@@ -8697,7 +8697,7 @@ pub fn deser_structure_replication_group_pending_modified_values(
             s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$LogDeliveryConfigurations */ =>  {
                 let var_338 =
                     Some(
-                        crate::xml_deser::deser_list_pending_log_delivery_configuration_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_pending_log_delivery_configuration_list(&mut tag)
                         ?
                     )
                 ;
@@ -8710,7 +8710,7 @@ pub fn deser_structure_replication_group_pending_modified_values(
     Ok(builder.build())
 }
 
-pub fn deser_list_cluster_id_list(
+pub fn deser_list_com_amazonaws_elasticache_cluster_id_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8732,7 +8732,7 @@ pub fn deser_list_cluster_id_list(
     Ok(out)
 }
 
-pub fn deser_list_node_group_list(
+pub fn deser_list_com_amazonaws_elasticache_node_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::NodeGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8740,7 +8740,7 @@ pub fn deser_list_node_group_list(
         match tag.start_el() {
             s if s.matches("NodeGroup") /* member com.amazonaws.elasticache#NodeGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_node_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_node_group(&mut tag)
                     ?
                 );
             }
@@ -8751,7 +8751,7 @@ pub fn deser_list_node_group_list(
     Ok(out)
 }
 
-pub fn deser_structure_endpoint(
+pub fn deser_structure_crate_model_endpoint(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Endpoint, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8792,7 +8792,7 @@ pub fn deser_structure_endpoint(
     Ok(builder.build())
 }
 
-pub fn deser_list_replication_group_outpost_arn_list(
+pub fn deser_list_com_amazonaws_elasticache_replication_group_outpost_arn_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8814,7 +8814,7 @@ pub fn deser_list_replication_group_outpost_arn_list(
     Ok(out)
 }
 
-pub fn deser_list_log_delivery_configuration_list(
+pub fn deser_list_com_amazonaws_elasticache_log_delivery_configuration_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LogDeliveryConfiguration>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8822,7 +8822,7 @@ pub fn deser_list_log_delivery_configuration_list(
         match tag.start_el() {
             s if s.matches("LogDeliveryConfiguration") /* member com.amazonaws.elasticache#LogDeliveryConfigurationList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_log_delivery_configuration(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_log_delivery_configuration(&mut tag)
                     ?
                 );
             }
@@ -8833,7 +8833,7 @@ pub fn deser_list_log_delivery_configuration_list(
     Ok(out)
 }
 
-pub fn deser_list_node_snapshot_list(
+pub fn deser_list_com_amazonaws_elasticache_node_snapshot_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::NodeSnapshot>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8841,7 +8841,7 @@ pub fn deser_list_node_snapshot_list(
         match tag.start_el() {
             s if s.matches("NodeSnapshot") /* member com.amazonaws.elasticache#NodeSnapshotList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_node_snapshot(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_node_snapshot(&mut tag)
                     ?
                 );
             }
@@ -8852,7 +8852,7 @@ pub fn deser_list_node_snapshot_list(
     Ok(out)
 }
 
-pub fn deser_structure_pending_modified_values(
+pub fn deser_structure_crate_model_pending_modified_values(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PendingModifiedValues, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8877,7 +8877,7 @@ pub fn deser_structure_pending_modified_values(
             s if s.matches("CacheNodeIdsToRemove") /* CacheNodeIdsToRemove com.amazonaws.elasticache#PendingModifiedValues$CacheNodeIdsToRemove */ =>  {
                 let var_342 =
                     Some(
-                        crate::xml_deser::deser_list_cache_node_ids_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_ids_list(&mut tag)
                         ?
                     )
                 ;
@@ -8927,7 +8927,7 @@ pub fn deser_structure_pending_modified_values(
             s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#PendingModifiedValues$LogDeliveryConfigurations */ =>  {
                 let var_346 =
                     Some(
-                        crate::xml_deser::deser_list_pending_log_delivery_configuration_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_pending_log_delivery_configuration_list(&mut tag)
                         ?
                     )
                 ;
@@ -8940,7 +8940,7 @@ pub fn deser_structure_pending_modified_values(
     Ok(builder.build())
 }
 
-pub fn deser_structure_notification_configuration(
+pub fn deser_structure_crate_model_notification_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::NotificationConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8979,7 +8979,7 @@ pub fn deser_structure_notification_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_list_cache_security_group_membership_list(
+pub fn deser_list_com_amazonaws_elasticache_cache_security_group_membership_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CacheSecurityGroupMembership>, smithy_xml::decode::XmlError>
 {
@@ -8988,7 +8988,7 @@ pub fn deser_list_cache_security_group_membership_list(
         match tag.start_el() {
             s if s.matches("CacheSecurityGroup") /* member com.amazonaws.elasticache#CacheSecurityGroupMembershipList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_security_group_membership(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_security_group_membership(&mut tag)
                     ?
                 );
             }
@@ -8999,7 +8999,7 @@ pub fn deser_list_cache_security_group_membership_list(
     Ok(out)
 }
 
-pub fn deser_structure_cache_parameter_group_status(
+pub fn deser_structure_crate_model_cache_parameter_group_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheParameterGroupStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9035,7 +9035,7 @@ pub fn deser_structure_cache_parameter_group_status(
             s if s.matches("CacheNodeIdsToReboot") /* CacheNodeIdsToReboot com.amazonaws.elasticache#CacheParameterGroupStatus$CacheNodeIdsToReboot */ =>  {
                 let var_351 =
                     Some(
-                        crate::xml_deser::deser_list_cache_node_ids_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_ids_list(&mut tag)
                         ?
                     )
                 ;
@@ -9048,7 +9048,7 @@ pub fn deser_structure_cache_parameter_group_status(
     Ok(builder.build())
 }
 
-pub fn deser_list_cache_node_list(
+pub fn deser_list_com_amazonaws_elasticache_cache_node_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CacheNode>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9056,7 +9056,7 @@ pub fn deser_list_cache_node_list(
         match tag.start_el() {
             s if s.matches("CacheNode") /* member com.amazonaws.elasticache#CacheNodeList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_node(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_node(&mut tag)
                     ?
                 );
             }
@@ -9067,7 +9067,7 @@ pub fn deser_list_cache_node_list(
     Ok(out)
 }
 
-pub fn deser_list_security_group_membership_list(
+pub fn deser_list_com_amazonaws_elasticache_security_group_membership_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::SecurityGroupMembership>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9075,7 +9075,7 @@ pub fn deser_list_security_group_membership_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticache#SecurityGroupMembershipList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_security_group_membership(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_security_group_membership(&mut tag)
                     ?
                 );
             }
@@ -9086,7 +9086,7 @@ pub fn deser_list_security_group_membership_list(
     Ok(out)
 }
 
-pub fn deser_list_subnet_list(
+pub fn deser_list_com_amazonaws_elasticache_subnet_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Subnet>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9094,7 +9094,7 @@ pub fn deser_list_subnet_list(
         match tag.start_el() {
             s if s.matches("Subnet") /* member com.amazonaws.elasticache#SubnetList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_subnet(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_subnet(&mut tag)
                     ?
                 );
             }
@@ -9105,7 +9105,7 @@ pub fn deser_list_subnet_list(
     Ok(out)
 }
 
-pub fn deser_list_global_replication_group_member_list(
+pub fn deser_list_com_amazonaws_elasticache_global_replication_group_member_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::GlobalReplicationGroupMember>, smithy_xml::decode::XmlError>
 {
@@ -9114,7 +9114,7 @@ pub fn deser_list_global_replication_group_member_list(
         match tag.start_el() {
             s if s.matches("GlobalReplicationGroupMember") /* member com.amazonaws.elasticache#GlobalReplicationGroupMemberList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_global_replication_group_member(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_global_replication_group_member(&mut tag)
                     ?
                 );
             }
@@ -9125,7 +9125,7 @@ pub fn deser_list_global_replication_group_member_list(
     Ok(out)
 }
 
-pub fn deser_list_global_node_group_list(
+pub fn deser_list_com_amazonaws_elasticache_global_node_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::GlobalNodeGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9133,7 +9133,7 @@ pub fn deser_list_global_node_group_list(
         match tag.start_el() {
             s if s.matches("GlobalNodeGroup") /* member com.amazonaws.elasticache#GlobalNodeGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_global_node_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_global_node_group(&mut tag)
                     ?
                 );
             }
@@ -9144,7 +9144,7 @@ pub fn deser_list_global_node_group_list(
     Ok(out)
 }
 
-pub fn deser_structure_cache_engine_version(
+pub fn deser_structure_crate_model_cache_engine_version(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheEngineVersion, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9222,7 +9222,7 @@ pub fn deser_structure_cache_engine_version(
     Ok(builder.build())
 }
 
-pub fn deser_structure_parameter(
+pub fn deser_structure_crate_model_parameter(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Parameter, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9355,7 +9355,7 @@ pub fn deser_structure_parameter(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_node_type_specific_parameter(
+pub fn deser_structure_crate_model_cache_node_type_specific_parameter(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheNodeTypeSpecificParameter, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9458,7 +9458,7 @@ pub fn deser_structure_cache_node_type_specific_parameter(
             s if s.matches("CacheNodeTypeSpecificValues") /* CacheNodeTypeSpecificValues com.amazonaws.elasticache#CacheNodeTypeSpecificParameter$CacheNodeTypeSpecificValues */ =>  {
                 let var_373 =
                     Some(
-                        crate::xml_deser::deser_list_cache_node_type_specific_value_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_type_specific_value_list(&mut tag)
                         ?
                     )
                 ;
@@ -9485,7 +9485,7 @@ pub fn deser_structure_cache_node_type_specific_parameter(
     Ok(builder.build())
 }
 
-pub fn deser_structure_event(
+pub fn deser_structure_crate_model_event(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Event, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9552,7 +9552,7 @@ pub fn deser_structure_event(
     Ok(builder.build())
 }
 
-pub fn deser_structure_reserved_cache_nodes_offering(
+pub fn deser_structure_crate_model_reserved_cache_nodes_offering(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ReservedCacheNodesOffering, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9659,7 +9659,7 @@ pub fn deser_structure_reserved_cache_nodes_offering(
             s if s.matches("RecurringCharges") /* RecurringCharges com.amazonaws.elasticache#ReservedCacheNodesOffering$RecurringCharges */ =>  {
                 let var_386 =
                     Some(
-                        crate::xml_deser::deser_list_recurring_charge_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_recurring_charge_list(&mut tag)
                         ?
                     )
                 ;
@@ -9672,7 +9672,7 @@ pub fn deser_structure_reserved_cache_nodes_offering(
     Ok(builder.build())
 }
 
-pub fn deser_structure_service_update(
+pub fn deser_structure_crate_model_service_update(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ServiceUpdate, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9849,7 +9849,7 @@ pub fn deser_structure_service_update(
     Ok(builder.build())
 }
 
-pub fn deser_structure_update_action(
+pub fn deser_structure_crate_model_update_action(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::UpdateAction, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10037,7 +10037,7 @@ pub fn deser_structure_update_action(
             s if s.matches("NodeGroupUpdateStatus") /* NodeGroupUpdateStatus com.amazonaws.elasticache#UpdateAction$NodeGroupUpdateStatus */ =>  {
                 let var_412 =
                     Some(
-                        crate::xml_deser::deser_list_node_group_update_status_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_node_group_update_status_list(&mut tag)
                         ?
                     )
                 ;
@@ -10047,7 +10047,7 @@ pub fn deser_structure_update_action(
             s if s.matches("CacheNodeUpdateStatus") /* CacheNodeUpdateStatus com.amazonaws.elasticache#UpdateAction$CacheNodeUpdateStatus */ =>  {
                 let var_413 =
                     Some(
-                        crate::xml_deser::deser_list_cache_node_update_status_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_update_status_list(&mut tag)
                         ?
                     )
                 ;
@@ -10086,7 +10086,7 @@ pub fn deser_structure_update_action(
     Ok(builder.build())
 }
 
-pub fn deser_structure_user_group(
+pub fn deser_structure_crate_model_user_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::UserGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10135,7 +10135,7 @@ pub fn deser_structure_user_group(
             s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache#UserGroup$UserIds */ =>  {
                 let var_419 =
                     Some(
-                        crate::xml_deser::deser_list_user_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -10145,7 +10145,7 @@ pub fn deser_structure_user_group(
             s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache#UserGroup$PendingChanges */ =>  {
                 let var_420 =
                     Some(
-                        crate::xml_deser::deser_structure_user_group_pending_changes(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
                         ?
                     )
                 ;
@@ -10155,7 +10155,7 @@ pub fn deser_structure_user_group(
             s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache#UserGroup$ReplicationGroups */ =>  {
                 let var_421 =
                     Some(
-                        crate::xml_deser::deser_list_ug_replication_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -10181,7 +10181,7 @@ pub fn deser_structure_user_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_user(
+pub fn deser_structure_crate_model_user(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::User, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10256,7 +10256,7 @@ pub fn deser_structure_user(
             s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache#User$UserGroupIds */ =>  {
                 let var_428 =
                     Some(
-                        crate::xml_deser::deser_list_user_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -10266,7 +10266,7 @@ pub fn deser_structure_user(
             s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache#User$Authentication */ =>  {
                 let var_429 =
                     Some(
-                        crate::xml_deser::deser_structure_authentication(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_authentication(&mut tag)
                         ?
                     )
                 ;
@@ -10292,7 +10292,7 @@ pub fn deser_structure_user(
     Ok(builder.build())
 }
 
-pub fn deser_list_recurring_charge_list(
+pub fn deser_list_com_amazonaws_elasticache_recurring_charge_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::RecurringCharge>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10300,7 +10300,7 @@ pub fn deser_list_recurring_charge_list(
         match tag.start_el() {
             s if s.matches("RecurringCharge") /* member com.amazonaws.elasticache#RecurringChargeList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_recurring_charge(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_recurring_charge(&mut tag)
                     ?
                 );
             }
@@ -10311,7 +10311,7 @@ pub fn deser_list_recurring_charge_list(
     Ok(out)
 }
 
-pub fn deser_structure_ec2_security_group(
+pub fn deser_structure_crate_model_ec2_security_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Ec2SecurityGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10363,7 +10363,7 @@ pub fn deser_structure_ec2_security_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_resharding_status(
+pub fn deser_structure_crate_model_resharding_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ReshardingStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10373,7 +10373,7 @@ pub fn deser_structure_resharding_status(
             s if s.matches("SlotMigration") /* SlotMigration com.amazonaws.elasticache#ReshardingStatus$SlotMigration */ =>  {
                 let var_434 =
                     Some(
-                        crate::xml_deser::deser_structure_slot_migration(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_slot_migration(&mut tag)
                         ?
                     )
                 ;
@@ -10386,7 +10386,7 @@ pub fn deser_structure_resharding_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_user_groups_update_status(
+pub fn deser_structure_crate_model_user_groups_update_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::UserGroupsUpdateStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10396,7 +10396,7 @@ pub fn deser_structure_user_groups_update_status(
             s if s.matches("UserGroupIdsToAdd") /* UserGroupIdsToAdd com.amazonaws.elasticache#UserGroupsUpdateStatus$UserGroupIdsToAdd */ =>  {
                 let var_435 =
                     Some(
-                        crate::xml_deser::deser_list_user_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -10406,7 +10406,7 @@ pub fn deser_structure_user_groups_update_status(
             s if s.matches("UserGroupIdsToRemove") /* UserGroupIdsToRemove com.amazonaws.elasticache#UserGroupsUpdateStatus$UserGroupIdsToRemove */ =>  {
                 let var_436 =
                     Some(
-                        crate::xml_deser::deser_list_user_group_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -10419,7 +10419,7 @@ pub fn deser_structure_user_groups_update_status(
     Ok(builder.build())
 }
 
-pub fn deser_list_pending_log_delivery_configuration_list(
+pub fn deser_list_com_amazonaws_elasticache_pending_log_delivery_configuration_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::vec::Vec<crate::model::PendingLogDeliveryConfiguration>,
@@ -10430,7 +10430,7 @@ pub fn deser_list_pending_log_delivery_configuration_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticache#PendingLogDeliveryConfigurationList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_pending_log_delivery_configuration(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_pending_log_delivery_configuration(&mut tag)
                     ?
                 );
             }
@@ -10441,7 +10441,7 @@ pub fn deser_list_pending_log_delivery_configuration_list(
     Ok(out)
 }
 
-pub fn deser_structure_node_group(
+pub fn deser_structure_crate_model_node_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::NodeGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10477,7 +10477,7 @@ pub fn deser_structure_node_group(
             s if s.matches("PrimaryEndpoint") /* PrimaryEndpoint com.amazonaws.elasticache#NodeGroup$PrimaryEndpoint */ =>  {
                 let var_439 =
                     Some(
-                        crate::xml_deser::deser_structure_endpoint(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
                         ?
                     )
                 ;
@@ -10487,7 +10487,7 @@ pub fn deser_structure_node_group(
             s if s.matches("ReaderEndpoint") /* ReaderEndpoint com.amazonaws.elasticache#NodeGroup$ReaderEndpoint */ =>  {
                 let var_440 =
                     Some(
-                        crate::xml_deser::deser_structure_endpoint(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
                         ?
                     )
                 ;
@@ -10510,7 +10510,7 @@ pub fn deser_structure_node_group(
             s if s.matches("NodeGroupMembers") /* NodeGroupMembers com.amazonaws.elasticache#NodeGroup$NodeGroupMembers */ =>  {
                 let var_442 =
                     Some(
-                        crate::xml_deser::deser_list_node_group_member_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_node_group_member_list(&mut tag)
                         ?
                     )
                 ;
@@ -10523,7 +10523,7 @@ pub fn deser_structure_node_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_log_delivery_configuration(
+pub fn deser_structure_crate_model_log_delivery_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LogDeliveryConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10561,7 +10561,7 @@ pub fn deser_structure_log_delivery_configuration(
             s if s.matches("DestinationDetails") /* DestinationDetails com.amazonaws.elasticache#LogDeliveryConfiguration$DestinationDetails */ =>  {
                 let var_445 =
                     Some(
-                        crate::xml_deser::deser_structure_destination_details(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_destination_details(&mut tag)
                         ?
                     )
                 ;
@@ -10615,7 +10615,7 @@ pub fn deser_structure_log_delivery_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_structure_node_snapshot(
+pub fn deser_structure_crate_model_node_snapshot(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::NodeSnapshot, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10664,7 +10664,7 @@ pub fn deser_structure_node_snapshot(
             s if s.matches("NodeGroupConfiguration") /* NodeGroupConfiguration com.amazonaws.elasticache#NodeSnapshot$NodeGroupConfiguration */ =>  {
                 let var_452 =
                     Some(
-                        crate::xml_deser::deser_structure_node_group_configuration(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_node_group_configuration(&mut tag)
                         ?
                     )
                 ;
@@ -10718,7 +10718,7 @@ pub fn deser_structure_node_snapshot(
     Ok(builder.build())
 }
 
-pub fn deser_list_cache_node_ids_list(
+pub fn deser_list_com_amazonaws_elasticache_cache_node_ids_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10740,7 +10740,7 @@ pub fn deser_list_cache_node_ids_list(
     Ok(out)
 }
 
-pub fn deser_structure_cache_security_group_membership(
+pub fn deser_structure_crate_model_cache_security_group_membership(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheSecurityGroupMembership, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10779,7 +10779,7 @@ pub fn deser_structure_cache_security_group_membership(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_node(
+pub fn deser_structure_crate_model_cache_node(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheNode, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10829,7 +10829,7 @@ pub fn deser_structure_cache_node(
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.elasticache#CacheNode$Endpoint */ =>  {
                 let var_461 =
                     Some(
-                        crate::xml_deser::deser_structure_endpoint(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
                         ?
                     )
                 ;
@@ -10894,7 +10894,7 @@ pub fn deser_structure_cache_node(
     Ok(builder.build())
 }
 
-pub fn deser_structure_security_group_membership(
+pub fn deser_structure_crate_model_security_group_membership(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SecurityGroupMembership, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10933,7 +10933,7 @@ pub fn deser_structure_security_group_membership(
     Ok(builder.build())
 }
 
-pub fn deser_structure_subnet(
+pub fn deser_structure_crate_model_subnet(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Subnet, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10956,7 +10956,7 @@ pub fn deser_structure_subnet(
             s if s.matches("SubnetAvailabilityZone") /* SubnetAvailabilityZone com.amazonaws.elasticache#Subnet$SubnetAvailabilityZone */ =>  {
                 let var_469 =
                     Some(
-                        crate::xml_deser::deser_structure_availability_zone(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_availability_zone(&mut tag)
                         ?
                     )
                 ;
@@ -10966,7 +10966,7 @@ pub fn deser_structure_subnet(
             s if s.matches("SubnetOutpost") /* SubnetOutpost com.amazonaws.elasticache#Subnet$SubnetOutpost */ =>  {
                 let var_470 =
                     Some(
-                        crate::xml_deser::deser_structure_subnet_outpost(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_subnet_outpost(&mut tag)
                         ?
                     )
                 ;
@@ -10979,7 +10979,7 @@ pub fn deser_structure_subnet(
     Ok(builder.build())
 }
 
-pub fn deser_structure_global_replication_group_member(
+pub fn deser_structure_crate_model_global_replication_group_member(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::GlobalReplicationGroupMember, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11058,7 +11058,7 @@ pub fn deser_structure_global_replication_group_member(
     Ok(builder.build())
 }
 
-pub fn deser_structure_global_node_group(
+pub fn deser_structure_crate_model_global_node_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::GlobalNodeGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11097,7 +11097,7 @@ pub fn deser_structure_global_node_group(
     Ok(builder.build())
 }
 
-pub fn deser_list_cache_node_type_specific_value_list(
+pub fn deser_list_com_amazonaws_elasticache_cache_node_type_specific_value_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CacheNodeTypeSpecificValue>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -11105,7 +11105,7 @@ pub fn deser_list_cache_node_type_specific_value_list(
         match tag.start_el() {
             s if s.matches("CacheNodeTypeSpecificValue") /* member com.amazonaws.elasticache#CacheNodeTypeSpecificValueList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_node_type_specific_value(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_node_type_specific_value(&mut tag)
                     ?
                 );
             }
@@ -11116,7 +11116,7 @@ pub fn deser_list_cache_node_type_specific_value_list(
     Ok(out)
 }
 
-pub fn deser_list_node_group_update_status_list(
+pub fn deser_list_com_amazonaws_elasticache_node_group_update_status_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::NodeGroupUpdateStatus>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -11124,7 +11124,7 @@ pub fn deser_list_node_group_update_status_list(
         match tag.start_el() {
             s if s.matches("NodeGroupUpdateStatus") /* member com.amazonaws.elasticache#NodeGroupUpdateStatusList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_node_group_update_status(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_node_group_update_status(&mut tag)
                     ?
                 );
             }
@@ -11135,7 +11135,7 @@ pub fn deser_list_node_group_update_status_list(
     Ok(out)
 }
 
-pub fn deser_list_cache_node_update_status_list(
+pub fn deser_list_com_amazonaws_elasticache_cache_node_update_status_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CacheNodeUpdateStatus>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -11143,7 +11143,7 @@ pub fn deser_list_cache_node_update_status_list(
         match tag.start_el() {
             s if s.matches("CacheNodeUpdateStatus") /* member com.amazonaws.elasticache#CacheNodeUpdateStatusList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cache_node_update_status(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cache_node_update_status(&mut tag)
                     ?
                 );
             }
@@ -11154,7 +11154,7 @@ pub fn deser_list_cache_node_update_status_list(
     Ok(out)
 }
 
-pub fn deser_structure_recurring_charge(
+pub fn deser_structure_crate_model_recurring_charge(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RecurringCharge, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11195,7 +11195,7 @@ pub fn deser_structure_recurring_charge(
     Ok(builder.build())
 }
 
-pub fn deser_structure_slot_migration(
+pub fn deser_structure_crate_model_slot_migration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SlotMigration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11223,7 +11223,7 @@ pub fn deser_structure_slot_migration(
     Ok(builder.build())
 }
 
-pub fn deser_structure_pending_log_delivery_configuration(
+pub fn deser_structure_crate_model_pending_log_delivery_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PendingLogDeliveryConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11261,7 +11261,7 @@ pub fn deser_structure_pending_log_delivery_configuration(
             s if s.matches("DestinationDetails") /* DestinationDetails com.amazonaws.elasticache#PendingLogDeliveryConfiguration$DestinationDetails */ =>  {
                 let var_483 =
                     Some(
-                        crate::xml_deser::deser_structure_destination_details(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_destination_details(&mut tag)
                         ?
                     )
                 ;
@@ -11288,7 +11288,7 @@ pub fn deser_structure_pending_log_delivery_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_list_node_group_member_list(
+pub fn deser_list_com_amazonaws_elasticache_node_group_member_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::NodeGroupMember>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -11296,7 +11296,7 @@ pub fn deser_list_node_group_member_list(
         match tag.start_el() {
             s if s.matches("NodeGroupMember") /* member com.amazonaws.elasticache#NodeGroupMemberList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_node_group_member(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_node_group_member(&mut tag)
                     ?
                 );
             }
@@ -11307,7 +11307,7 @@ pub fn deser_list_node_group_member_list(
     Ok(out)
 }
 
-pub fn deser_structure_destination_details(
+pub fn deser_structure_crate_model_destination_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DestinationDetails, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11317,7 +11317,7 @@ pub fn deser_structure_destination_details(
             s if s.matches("CloudWatchLogsDetails") /* CloudWatchLogsDetails com.amazonaws.elasticache#DestinationDetails$CloudWatchLogsDetails */ =>  {
                 let var_485 =
                     Some(
-                        crate::xml_deser::deser_structure_cloud_watch_logs_destination_details(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cloud_watch_logs_destination_details(&mut tag)
                         ?
                     )
                 ;
@@ -11327,7 +11327,7 @@ pub fn deser_structure_destination_details(
             s if s.matches("KinesisFirehoseDetails") /* KinesisFirehoseDetails com.amazonaws.elasticache#DestinationDetails$KinesisFirehoseDetails */ =>  {
                 let var_486 =
                     Some(
-                        crate::xml_deser::deser_structure_kinesis_firehose_destination_details(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_kinesis_firehose_destination_details(&mut tag)
                         ?
                     )
                 ;
@@ -11340,7 +11340,7 @@ pub fn deser_structure_destination_details(
     Ok(builder.build())
 }
 
-pub fn deser_structure_node_group_configuration(
+pub fn deser_structure_crate_model_node_group_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::NodeGroupConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11404,7 +11404,7 @@ pub fn deser_structure_node_group_configuration(
             s if s.matches("ReplicaAvailabilityZones") /* ReplicaAvailabilityZones com.amazonaws.elasticache#NodeGroupConfiguration$ReplicaAvailabilityZones */ =>  {
                 let var_491 =
                     Some(
-                        crate::xml_deser::deser_list_availability_zones_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_availability_zones_list(&mut tag)
                         ?
                     )
                 ;
@@ -11427,7 +11427,7 @@ pub fn deser_structure_node_group_configuration(
             s if s.matches("ReplicaOutpostArns") /* ReplicaOutpostArns com.amazonaws.elasticache#NodeGroupConfiguration$ReplicaOutpostArns */ =>  {
                 let var_493 =
                     Some(
-                        crate::xml_deser::deser_list_outpost_arns_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_outpost_arns_list(&mut tag)
                         ?
                     )
                 ;
@@ -11440,7 +11440,7 @@ pub fn deser_structure_node_group_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_structure_availability_zone(
+pub fn deser_structure_crate_model_availability_zone(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AvailabilityZone, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11466,7 +11466,7 @@ pub fn deser_structure_availability_zone(
     Ok(builder.build())
 }
 
-pub fn deser_structure_subnet_outpost(
+pub fn deser_structure_crate_model_subnet_outpost(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SubnetOutpost, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11492,7 +11492,7 @@ pub fn deser_structure_subnet_outpost(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_node_type_specific_value(
+pub fn deser_structure_crate_model_cache_node_type_specific_value(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheNodeTypeSpecificValue, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11531,7 +11531,7 @@ pub fn deser_structure_cache_node_type_specific_value(
     Ok(builder.build())
 }
 
-pub fn deser_structure_node_group_update_status(
+pub fn deser_structure_crate_model_node_group_update_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::NodeGroupUpdateStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11554,7 +11554,7 @@ pub fn deser_structure_node_group_update_status(
             s if s.matches("NodeGroupMemberUpdateStatus") /* NodeGroupMemberUpdateStatus com.amazonaws.elasticache#NodeGroupUpdateStatus$NodeGroupMemberUpdateStatus */ =>  {
                 let var_499 =
                     Some(
-                        crate::xml_deser::deser_list_node_group_member_update_status_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_node_group_member_update_status_list(&mut tag)
                         ?
                     )
                 ;
@@ -11567,7 +11567,7 @@ pub fn deser_structure_node_group_update_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cache_node_update_status(
+pub fn deser_structure_crate_model_cache_node_update_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CacheNodeUpdateStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11691,7 +11691,7 @@ pub fn deser_structure_cache_node_update_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_node_group_member(
+pub fn deser_structure_crate_model_node_group_member(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::NodeGroupMember, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11727,7 +11727,7 @@ pub fn deser_structure_node_group_member(
             s if s.matches("ReadEndpoint") /* ReadEndpoint com.amazonaws.elasticache#NodeGroupMember$ReadEndpoint */ =>  {
                 let var_510 =
                     Some(
-                        crate::xml_deser::deser_structure_endpoint(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
                         ?
                     )
                 ;
@@ -11779,7 +11779,7 @@ pub fn deser_structure_node_group_member(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cloud_watch_logs_destination_details(
+pub fn deser_structure_crate_model_cloud_watch_logs_destination_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CloudWatchLogsDestinationDetails, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11805,7 +11805,7 @@ pub fn deser_structure_cloud_watch_logs_destination_details(
     Ok(builder.build())
 }
 
-pub fn deser_structure_kinesis_firehose_destination_details(
+pub fn deser_structure_crate_model_kinesis_firehose_destination_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::KinesisFirehoseDestinationDetails, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11831,7 +11831,7 @@ pub fn deser_structure_kinesis_firehose_destination_details(
     Ok(builder.build())
 }
 
-pub fn deser_list_availability_zones_list(
+pub fn deser_list_com_amazonaws_elasticache_availability_zones_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -11853,7 +11853,7 @@ pub fn deser_list_availability_zones_list(
     Ok(out)
 }
 
-pub fn deser_list_outpost_arns_list(
+pub fn deser_list_com_amazonaws_elasticache_outpost_arns_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -11875,7 +11875,7 @@ pub fn deser_list_outpost_arns_list(
     Ok(out)
 }
 
-pub fn deser_list_node_group_member_update_status_list(
+pub fn deser_list_com_amazonaws_elasticache_node_group_member_update_status_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::NodeGroupMemberUpdateStatus>, smithy_xml::decode::XmlError>
 {
@@ -11884,7 +11884,7 @@ pub fn deser_list_node_group_member_update_status_list(
         match tag.start_el() {
             s if s.matches("NodeGroupMemberUpdateStatus") /* member com.amazonaws.elasticache#NodeGroupMemberUpdateStatusList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_node_group_member_update_status(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_node_group_member_update_status(&mut tag)
                     ?
                 );
             }
@@ -11895,7 +11895,7 @@ pub fn deser_list_node_group_member_update_status_list(
     Ok(out)
 }
 
-pub fn deser_structure_node_group_member_update_status(
+pub fn deser_structure_crate_model_node_group_member_update_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::NodeGroupMemberUpdateStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]

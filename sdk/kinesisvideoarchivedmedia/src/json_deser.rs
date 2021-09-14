@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_client_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_client_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::client_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::client_limit_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -45,7 +45,7 @@ pub fn deser_structure_client_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_argument_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_argument_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_argument_exception::Builder,
 ) -> Result<crate::error::invalid_argument_exception::Builder, smithy_json::deserialize::Error> {
@@ -84,7 +84,7 @@ pub fn deser_structure_invalid_argument_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_codec_private_data_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_codec_private_data_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_codec_private_data_exception::Builder,
 ) -> Result<
@@ -126,7 +126,7 @@ pub fn deser_structure_invalid_codec_private_data_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_media_frame_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_media_frame_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_media_frame_exception::Builder,
 ) -> Result<crate::error::invalid_media_frame_exception::Builder, smithy_json::deserialize::Error> {
@@ -165,7 +165,7 @@ pub fn deser_structure_invalid_media_frame_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_missing_codec_private_data_exceptionjson_err(
+pub fn deser_structure_crate_error_missing_codec_private_data_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::missing_codec_private_data_exception::Builder,
 ) -> Result<
@@ -207,7 +207,7 @@ pub fn deser_structure_missing_codec_private_data_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_no_data_retention_exceptionjson_err(
+pub fn deser_structure_crate_error_no_data_retention_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::no_data_retention_exception::Builder,
 ) -> Result<crate::error::no_data_retention_exception::Builder, smithy_json::deserialize::Error> {
@@ -246,7 +246,7 @@ pub fn deser_structure_no_data_retention_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_not_authorized_exceptionjson_err(
+pub fn deser_structure_crate_error_not_authorized_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::not_authorized_exception::Builder,
 ) -> Result<crate::error::not_authorized_exception::Builder, smithy_json::deserialize::Error> {
@@ -285,7 +285,7 @@ pub fn deser_structure_not_authorized_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -324,7 +324,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_stream_media_type_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_stream_media_type_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_stream_media_type_exception::Builder,
 ) -> Result<
@@ -366,7 +366,7 @@ pub fn deser_structure_unsupported_stream_media_type_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_dash_streaming_session_url(
+pub fn deser_operation_crate_operation_get_dash_streaming_session_url(
     input: &[u8],
     mut builder: crate::output::get_dash_streaming_session_url_output::Builder,
 ) -> Result<
@@ -408,7 +408,7 @@ pub fn deser_operation_get_dash_streaming_session_url(
     Ok(builder)
 }
 
-pub fn deser_operation_get_hls_streaming_session_url(
+pub fn deser_operation_crate_operation_get_hls_streaming_session_url(
     input: &[u8],
     mut builder: crate::output::get_hls_streaming_session_url_output::Builder,
 ) -> Result<
@@ -450,7 +450,7 @@ pub fn deser_operation_get_hls_streaming_session_url(
     Ok(builder)
 }
 
-pub fn deser_operation_list_fragments(
+pub fn deser_operation_crate_operation_list_fragments(
     input: &[u8],
     mut builder: crate::output::list_fragments_output::Builder,
 ) -> Result<crate::output::list_fragments_output::Builder, smithy_json::deserialize::Error> {
@@ -465,8 +465,9 @@ pub fn deser_operation_list_fragments(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Fragments" => {
-                        builder = builder
-                            .set_fragments(crate::json_deser::deser_list_fragment_list(tokens)?);
+                        builder = builder.set_fragments(
+                            crate::json_deser::deser_list_com_amazonaws_kinesisvideoarchivedmedia_fragment_list(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -502,7 +503,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_fragment_list<'a, I>(
+pub fn deser_list_com_amazonaws_kinesisvideoarchivedmedia_fragment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Fragment>>, smithy_json::deserialize::Error>
 where
@@ -521,7 +522,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_fragment(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_fragment(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -536,7 +538,7 @@ where
     }
 }
 
-pub fn deser_structure_fragment<'a, I>(
+pub fn deser_structure_crate_model_fragment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Fragment>, smithy_json::deserialize::Error>
 where

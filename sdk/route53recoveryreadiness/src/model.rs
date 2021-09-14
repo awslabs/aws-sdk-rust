@@ -383,6 +383,87 @@ impl NlbResource {
     }
 }
 
+/// A collection of rules used in a readiness check
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRulesOutput {
+    /// The resource type the rule applies to.
+    pub resource_type: std::option::Option<std::string::String>,
+    /// A description of the rule
+    pub rule_description: std::option::Option<std::string::String>,
+    /// The Rule's ID.
+    pub rule_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListRulesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListRulesOutput");
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("rule_description", &self.rule_description);
+        formatter.field("rule_id", &self.rule_id);
+        formatter.finish()
+    }
+}
+/// See [`ListRulesOutput`](crate::model::ListRulesOutput)
+pub mod list_rules_output {
+    /// A builder for [`ListRulesOutput`](crate::model::ListRulesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) rule_description: std::option::Option<std::string::String>,
+        pub(crate) rule_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// The resource type the rule applies to.
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// A description of the rule
+        pub fn rule_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_description = Some(input.into());
+            self
+        }
+        pub fn set_rule_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_description = input;
+            self
+        }
+        /// The Rule's ID.
+        pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_id = Some(input.into());
+            self
+        }
+        pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRulesOutput`](crate::model::ListRulesOutput)
+        pub fn build(self) -> crate::model::ListRulesOutput {
+            crate::model::ListRulesOutput {
+                resource_type: self.resource_type,
+                rule_description: self.rule_description,
+                rule_id: self.rule_id,
+            }
+        }
+    }
+}
+impl ListRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::model::ListRulesOutput)
+    pub fn builder() -> crate::model::list_rules_output::Builder {
+        crate::model::list_rules_output::Builder::default()
+    }
+}
+
 /// A collection of resources of the same type
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

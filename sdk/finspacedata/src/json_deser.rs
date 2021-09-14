@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_changeset(
+pub fn deser_operation_crate_operation_create_changeset(
     input: &[u8],
     mut builder: crate::output::create_changeset_output::Builder,
 ) -> Result<crate::output::create_changeset_output::Builder, smithy_json::deserialize::Error> {
@@ -216,7 +216,7 @@ pub fn deser_operation_create_changeset(
                 match key.to_unescaped()?.as_ref() {
                     "changeset" => {
                         builder = builder.set_changeset(
-                            crate::json_deser::deser_structure_changeset_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_changeset_info(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -237,7 +237,7 @@ pub fn deser_operation_create_changeset(
     Ok(builder)
 }
 
-pub fn deser_operation_get_programmatic_access_credentials(
+pub fn deser_operation_crate_operation_get_programmatic_access_credentials(
     input: &[u8],
     mut builder: crate::output::get_programmatic_access_credentials_output::Builder,
 ) -> Result<
@@ -256,7 +256,7 @@ pub fn deser_operation_get_programmatic_access_credentials(
                 match key.to_unescaped()?.as_ref() {
                     "credentials" => {
                         builder = builder.set_credentials(
-                            crate::json_deser::deser_structure_credentials(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_credentials(tokens)?,
                         );
                     }
                     "durationInMinutes" => {
@@ -283,7 +283,7 @@ pub fn deser_operation_get_programmatic_access_credentials(
     Ok(builder)
 }
 
-pub fn deser_operation_get_working_location(
+pub fn deser_operation_crate_operation_get_working_location(
     input: &[u8],
     mut builder: crate::output::get_working_location_output::Builder,
 ) -> Result<crate::output::get_working_location_output::Builder, smithy_json::deserialize::Error> {
@@ -344,7 +344,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_changeset_info<'a, I>(
+pub fn deser_structure_crate_model_changeset_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ChangesetInfo>, smithy_json::deserialize::Error>
 where
@@ -415,7 +415,7 @@ where
                             }
                             "sourceParams" => {
                                 builder = builder.set_source_params(
-                                    crate::json_deser::deser_map_string_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_finspacedata_string_map(tokens)?
                                 );
                             }
                             "formatType" => {
@@ -432,7 +432,7 @@ where
                             }
                             "formatParams" => {
                                 builder = builder.set_format_params(
-                                    crate::json_deser::deser_map_string_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_finspacedata_string_map(tokens)?
                                 );
                             }
                             "createTimestamp" => {
@@ -458,12 +458,14 @@ where
                             }
                             "errorInfo" => {
                                 builder = builder.set_error_info(
-                                    crate::json_deser::deser_structure_error_info(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_error_info(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "changesetLabels" => {
                                 builder = builder.set_changeset_labels(
-                                    crate::json_deser::deser_map_string_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_finspacedata_string_map(tokens)?
                                 );
                             }
                             "updatesChangesetId" => {
@@ -502,7 +504,7 @@ where
     }
 }
 
-pub fn deser_structure_credentials<'a, I>(
+pub fn deser_structure_crate_model_credentials<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Credentials>, smithy_json::deserialize::Error>
 where
@@ -566,7 +568,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_string_map<'a, I>(
+pub fn deser_map_com_amazonaws_finspacedata_string_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -609,7 +611,7 @@ where
     }
 }
 
-pub fn deser_structure_error_info<'a, I>(
+pub fn deser_structure_crate_model_error_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ErrorInfo>, smithy_json::deserialize::Error>
 where

@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_service_errorjson_err(
+pub fn deser_structure_crate_error_internal_service_errorjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_error::Builder,
 ) -> Result<crate::error::internal_service_error::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_service_errorjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_argument_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_argument_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_argument_exception::Builder,
 ) -> Result<crate::error::invalid_argument_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_invalid_argument_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_not_authorized_exceptionjson_err(
+pub fn deser_structure_crate_error_not_authorized_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::not_authorized_exception::Builder,
 ) -> Result<crate::error::not_authorized_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_not_authorized_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_dimension_keys(
+pub fn deser_operation_crate_operation_describe_dimension_keys(
     input: &[u8],
     mut builder: crate::output::describe_dimension_keys_output::Builder,
 ) -> Result<crate::output::describe_dimension_keys_output::Builder, smithy_json::deserialize::Error>
@@ -155,12 +155,12 @@ pub fn deser_operation_describe_dimension_keys(
                     }
                     "PartitionKeys" => {
                         builder = builder.set_partition_keys(
-                            crate::json_deser::deser_list_response_partition_key_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_pi_response_partition_key_list(tokens)?
                         );
                     }
                     "Keys" => {
                         builder = builder.set_keys(
-                            crate::json_deser::deser_list_dimension_key_description_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_pi_dimension_key_description_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -188,7 +188,7 @@ pub fn deser_operation_describe_dimension_keys(
     Ok(builder)
 }
 
-pub fn deser_operation_get_dimension_key_details(
+pub fn deser_operation_crate_operation_get_dimension_key_details(
     input: &[u8],
     mut builder: crate::output::get_dimension_key_details_output::Builder,
 ) -> Result<crate::output::get_dimension_key_details_output::Builder, smithy_json::deserialize::Error>
@@ -205,7 +205,7 @@ pub fn deser_operation_get_dimension_key_details(
                 match key.to_unescaped()?.as_ref() {
                     "Dimensions" => {
                         builder = builder.set_dimensions(
-                            crate::json_deser::deser_list_dimension_key_detail_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_pi_dimension_key_detail_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -226,7 +226,7 @@ pub fn deser_operation_get_dimension_key_details(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resource_metrics(
+pub fn deser_operation_crate_operation_get_resource_metrics(
     input: &[u8],
     mut builder: crate::output::get_resource_metrics_output::Builder,
 ) -> Result<crate::output::get_resource_metrics_output::Builder, smithy_json::deserialize::Error> {
@@ -265,7 +265,7 @@ pub fn deser_operation_get_resource_metrics(
                     }
                     "MetricList" => {
                         builder = builder.set_metric_list(
-                            crate::json_deser::deser_list_metric_key_data_points_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_pi_metric_key_data_points_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -302,7 +302,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_response_partition_key_list<'a, I>(
+pub fn deser_list_com_amazonaws_pi_response_partition_key_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ResponsePartitionKey>>,
@@ -325,7 +325,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_response_partition_key(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_response_partition_key(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -341,7 +343,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_dimension_key_description_list<'a, I>(
+pub fn deser_list_com_amazonaws_pi_dimension_key_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::DimensionKeyDescription>>,
@@ -364,7 +366,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_dimension_key_description(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_dimension_key_description(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -380,7 +383,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_dimension_key_detail_list<'a, I>(
+pub fn deser_list_com_amazonaws_pi_dimension_key_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DimensionKeyDetail>>, smithy_json::deserialize::Error>
 where
@@ -400,7 +403,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_dimension_key_detail(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_dimension_key_detail(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -416,7 +421,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_metric_key_data_points_list<'a, I>(
+pub fn deser_list_com_amazonaws_pi_metric_key_data_points_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MetricKeyDataPoints>>, smithy_json::deserialize::Error>
 where
@@ -436,7 +441,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_metric_key_data_points(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_metric_key_data_points(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -451,7 +458,7 @@ where
     }
 }
 
-pub fn deser_structure_response_partition_key<'a, I>(
+pub fn deser_structure_crate_model_response_partition_key<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResponsePartitionKey>, smithy_json::deserialize::Error>
 where
@@ -471,7 +478,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Dimensions" => {
                                 builder = builder.set_dimensions(
-                                    crate::json_deser::deser_map_dimension_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_pi_dimension_map(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -492,7 +501,7 @@ where
     }
 }
 
-pub fn deser_structure_dimension_key_description<'a, I>(
+pub fn deser_structure_crate_model_dimension_key_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DimensionKeyDescription>, smithy_json::deserialize::Error>
 where
@@ -512,7 +521,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Dimensions" => {
                                 builder = builder.set_dimensions(
-                                    crate::json_deser::deser_map_dimension_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_pi_dimension_map(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "Total" => {
@@ -525,7 +536,7 @@ where
                             }
                             "Partitions" => {
                                 builder = builder.set_partitions(
-                                    crate::json_deser::deser_list_metric_values_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_pi_metric_values_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -546,7 +557,7 @@ where
     }
 }
 
-pub fn deser_structure_dimension_key_detail<'a, I>(
+pub fn deser_structure_crate_model_dimension_key_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DimensionKeyDetail>, smithy_json::deserialize::Error>
 where
@@ -612,7 +623,7 @@ where
     }
 }
 
-pub fn deser_structure_metric_key_data_points<'a, I>(
+pub fn deser_structure_crate_model_metric_key_data_points<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MetricKeyDataPoints>, smithy_json::deserialize::Error>
 where
@@ -632,12 +643,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Key" => {
                                 builder = builder.set_key(
-                                    crate::json_deser::deser_structure_response_resource_metric_key(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_response_resource_metric_key(tokens)?
                                 );
                             }
                             "DataPoints" => {
                                 builder = builder.set_data_points(
-                                    crate::json_deser::deser_list_data_points_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_pi_data_points_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -659,7 +670,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_dimension_map<'a, I>(
+pub fn deser_map_com_amazonaws_pi_dimension_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -703,7 +714,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_metric_values_list<'a, I>(
+pub fn deser_list_com_amazonaws_pi_metric_values_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<f64>>, smithy_json::deserialize::Error>
 where
@@ -739,7 +750,7 @@ where
     }
 }
 
-pub fn deser_structure_response_resource_metric_key<'a, I>(
+pub fn deser_structure_crate_model_response_resource_metric_key<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResponseResourceMetricKey>, smithy_json::deserialize::Error>
 where
@@ -768,7 +779,9 @@ where
                             }
                             "Dimensions" => {
                                 builder = builder.set_dimensions(
-                                    crate::json_deser::deser_map_dimension_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_pi_dimension_map(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -790,7 +803,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_data_points_list<'a, I>(
+pub fn deser_list_com_amazonaws_pi_data_points_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DataPoint>>, smithy_json::deserialize::Error>
 where
@@ -809,7 +822,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_data_point(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_data_point(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -824,7 +838,7 @@ where
     }
 }
 
-pub fn deser_structure_data_point<'a, I>(
+pub fn deser_structure_crate_model_data_point<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DataPoint>, smithy_json::deserialize::Error>
 where

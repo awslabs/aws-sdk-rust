@@ -23,11 +23,7 @@ pub fn parse_add_attachments_to_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::attachment_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_attachment_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_attachment_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -44,11 +40,7 @@ pub fn parse_add_attachments_to_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::attachment_set_expired::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_attachment_set_expiredjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_attachment_set_expiredjson_err(response.body().as_ref(), output).map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -65,12 +57,7 @@ pub fn parse_add_attachments_to_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::attachment_set_id_not_found::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_attachment_set_id_not_foundjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_attachment_set_id_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -88,7 +75,7 @@ pub fn parse_add_attachments_to_set_error(
                     let mut output =
                         crate::error::attachment_set_size_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_attachment_set_size_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_attachment_set_size_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -105,11 +92,7 @@ pub fn parse_add_attachments_to_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -133,7 +116,7 @@ pub fn parse_add_attachments_to_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_attachments_to_set_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_add_attachments_to_set(
+        output = crate::json_deser::deser_operation_crate_operation_add_attachments_to_set(
             response.body().as_ref(),
             output,
         )
@@ -170,11 +153,7 @@ pub fn parse_add_communication_to_case_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::attachment_set_expired::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_attachment_set_expiredjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_attachment_set_expiredjson_err(response.body().as_ref(), output).map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -191,12 +170,7 @@ pub fn parse_add_communication_to_case_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::attachment_set_id_not_found::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_attachment_set_id_not_foundjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_attachment_set_id_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -205,27 +179,25 @@ pub fn parse_add_communication_to_case_error(
                 tmp
             }),
         },
-        "CaseIdNotFound" => crate::error::AddCommunicationToCaseError {
-            meta: generic,
-            kind: crate::error::AddCommunicationToCaseErrorKind::CaseIdNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CaseIdNotFound" => {
+            crate::error::AddCommunicationToCaseError {
+                meta: generic,
+                kind: crate::error::AddCommunicationToCaseErrorKind::CaseIdNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::case_id_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_case_id_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::case_id_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_case_id_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerError" => crate::error::AddCommunicationToCaseError {
             meta: generic,
             kind: crate::error::AddCommunicationToCaseErrorKind::InternalServerError({
@@ -234,11 +206,7 @@ pub fn parse_add_communication_to_case_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -262,7 +230,7 @@ pub fn parse_add_communication_to_case_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_communication_to_case_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_add_communication_to_case(
+        output = crate::json_deser::deser_operation_crate_operation_add_communication_to_case(
             response.body().as_ref(),
             output,
         )
@@ -292,11 +260,7 @@ pub fn parse_create_case_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::attachment_set_expired::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_attachment_set_expiredjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateCaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_attachment_set_expiredjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -313,12 +277,7 @@ pub fn parse_create_case_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::attachment_set_id_not_found::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_attachment_set_id_not_foundjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::CreateCaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_attachment_set_id_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -327,26 +286,23 @@ pub fn parse_create_case_error(
                 tmp
             }),
         },
-        "CaseCreationLimitExceeded" => {
-            crate::error::CreateCaseError {
-                meta: generic,
-                kind: crate::error::CreateCaseErrorKind::CaseCreationLimitExceeded({
+        "CaseCreationLimitExceeded" => crate::error::CreateCaseError {
+            meta: generic,
+            kind: crate::error::CreateCaseErrorKind::CaseCreationLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::case_creation_limit_exceeded::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_case_creation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCaseError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::case_creation_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_case_creation_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCaseError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServerError" => crate::error::CreateCaseError {
             meta: generic,
             kind: crate::error::CreateCaseErrorKind::InternalServerError({
@@ -355,11 +311,7 @@ pub fn parse_create_case_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateCaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -380,8 +332,11 @@ pub fn parse_create_case_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_case_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_case(response.body().as_ref(), output)
-            .map_err(crate::error::CreateCaseError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_case(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateCaseError::unhandled)?;
         output.build()
     })
 }
@@ -410,11 +365,7 @@ pub fn parse_describe_attachment_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::attachment_id_not_found::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_attachment_id_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAttachmentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_attachment_id_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAttachmentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -432,7 +383,7 @@ pub fn parse_describe_attachment_error(
                     let mut output =
                         crate::error::describe_attachment_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_describe_attachment_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAttachmentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_describe_attachment_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAttachmentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -449,11 +400,7 @@ pub fn parse_describe_attachment_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAttachmentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAttachmentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -477,7 +424,7 @@ pub fn parse_describe_attachment_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_attachment_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_attachment(
+        output = crate::json_deser::deser_operation_crate_operation_describe_attachment(
             response.body().as_ref(),
             output,
         )
@@ -499,27 +446,25 @@ pub fn parse_describe_cases_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CaseIdNotFound" => crate::error::DescribeCasesError {
-            meta: generic,
-            kind: crate::error::DescribeCasesErrorKind::CaseIdNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CaseIdNotFound" => {
+            crate::error::DescribeCasesError {
+                meta: generic,
+                kind: crate::error::DescribeCasesErrorKind::CaseIdNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::case_id_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_case_id_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeCasesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::case_id_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_case_id_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeCasesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerError" => crate::error::DescribeCasesError {
             meta: generic,
             kind: crate::error::DescribeCasesErrorKind::InternalServerError({
@@ -528,11 +473,7 @@ pub fn parse_describe_cases_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeCasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeCasesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -553,9 +494,11 @@ pub fn parse_describe_cases_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_cases_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_cases(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeCasesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_cases(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeCasesError::unhandled)?;
         output.build()
     })
 }
@@ -580,27 +523,25 @@ pub fn parse_describe_communications_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CaseIdNotFound" => crate::error::DescribeCommunicationsError {
-            meta: generic,
-            kind: crate::error::DescribeCommunicationsErrorKind::CaseIdNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CaseIdNotFound" => {
+            crate::error::DescribeCommunicationsError {
+                meta: generic,
+                kind: crate::error::DescribeCommunicationsErrorKind::CaseIdNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::case_id_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_case_id_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeCommunicationsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::case_id_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_case_id_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeCommunicationsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerError" => crate::error::DescribeCommunicationsError {
             meta: generic,
             kind: crate::error::DescribeCommunicationsErrorKind::InternalServerError({
@@ -609,11 +550,7 @@ pub fn parse_describe_communications_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeCommunicationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeCommunicationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -637,7 +574,7 @@ pub fn parse_describe_communications_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_communications_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_communications(
+        output = crate::json_deser::deser_operation_crate_operation_describe_communications(
             response.body().as_ref(),
             output,
         )
@@ -668,11 +605,7 @@ pub fn parse_describe_services_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeServicesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServicesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -694,9 +627,11 @@ pub fn parse_describe_services_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_services_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_services(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeServicesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_services(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeServicesError::unhandled)?;
         output.build()
     })
 }
@@ -729,11 +664,7 @@ pub fn parse_describe_severity_levels_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeSeverityLevelsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSeverityLevelsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -757,7 +688,7 @@ pub fn parse_describe_severity_levels_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_severity_levels_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_severity_levels(
+        output = crate::json_deser::deser_operation_crate_operation_describe_severity_levels(
             response.body().as_ref(),
             output,
         )
@@ -791,7 +722,7 @@ pub fn parse_describe_trusted_advisor_check_refresh_statuses_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -817,12 +748,7 @@ pub fn parse_describe_trusted_advisor_check_refresh_statuses_response(
             crate::output::describe_trusted_advisor_check_refresh_statuses_output::Builder::default(
             );
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_trusted_advisor_check_refresh_statuses(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_trusted_advisor_check_refresh_statuses(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError::unhandled)?;
         output.build()
     })
 }
@@ -853,11 +779,7 @@ pub fn parse_describe_trusted_advisor_check_result_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTrustedAdvisorCheckResultError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorCheckResultError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -882,11 +804,7 @@ pub fn parse_describe_trusted_advisor_check_result_response(
         let mut output =
             crate::output::describe_trusted_advisor_check_result_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_trusted_advisor_check_result(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTrustedAdvisorCheckResultError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_trusted_advisor_check_result(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorCheckResultError::unhandled)?;
         output.build()
     })
 }
@@ -919,11 +837,7 @@ pub fn parse_describe_trusted_advisor_checks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTrustedAdvisorChecksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorChecksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -947,11 +861,12 @@ pub fn parse_describe_trusted_advisor_checks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_trusted_advisor_checks_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_trusted_advisor_checks(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTrustedAdvisorChecksError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_trusted_advisor_checks(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeTrustedAdvisorChecksError::unhandled)?;
         output.build()
     })
 }
@@ -974,29 +889,25 @@ pub fn parse_describe_trusted_advisor_check_summaries_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => {
-            crate::error::DescribeTrustedAdvisorCheckSummariesError {
-                meta: generic,
-                kind:
-                    crate::error::DescribeTrustedAdvisorCheckSummariesErrorKind::InternalServerError(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]
-                                let mut output =
-                                    crate::error::internal_server_error::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorCheckSummariesError::unhandled)?;
-                                output.build()
-                            };
-                            if (&tmp.message).is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InternalServerError" => crate::error::DescribeTrustedAdvisorCheckSummariesError {
+            meta: generic,
+            kind: crate::error::DescribeTrustedAdvisorCheckSummariesErrorKind::InternalServerError(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_server_error::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorCheckSummariesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         _ => crate::error::DescribeTrustedAdvisorCheckSummariesError::generic(generic),
     })
 }
@@ -1013,11 +924,7 @@ pub fn parse_describe_trusted_advisor_check_summaries_response(
         let mut output =
             crate::output::describe_trusted_advisor_check_summaries_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_trusted_advisor_check_summaries(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTrustedAdvisorCheckSummariesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_trusted_advisor_check_summaries(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorCheckSummariesError::unhandled)?;
         output.build()
     })
 }
@@ -1050,11 +957,7 @@ pub fn parse_refresh_trusted_advisor_check_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RefreshTrustedAdvisorCheckError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::RefreshTrustedAdvisorCheckError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1078,7 +981,7 @@ pub fn parse_refresh_trusted_advisor_check_response(
         #[allow(unused_mut)]
         let mut output = crate::output::refresh_trusted_advisor_check_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_refresh_trusted_advisor_check(
+        output = crate::json_deser::deser_operation_crate_operation_refresh_trusted_advisor_check(
             response.body().as_ref(),
             output,
         )
@@ -1100,27 +1003,25 @@ pub fn parse_resolve_case_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CaseIdNotFound" => crate::error::ResolveCaseError {
-            meta: generic,
-            kind: crate::error::ResolveCaseErrorKind::CaseIdNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CaseIdNotFound" => {
+            crate::error::ResolveCaseError {
+                meta: generic,
+                kind: crate::error::ResolveCaseErrorKind::CaseIdNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::case_id_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_case_id_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ResolveCaseError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::case_id_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_case_id_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveCaseError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerError" => crate::error::ResolveCaseError {
             meta: generic,
             kind: crate::error::ResolveCaseErrorKind::InternalServerError({
@@ -1129,11 +1030,7 @@ pub fn parse_resolve_case_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ResolveCaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveCaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1154,8 +1051,11 @@ pub fn parse_resolve_case_response(
         #[allow(unused_mut)]
         let mut output = crate::output::resolve_case_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_resolve_case(response.body().as_ref(), output)
-            .map_err(crate::error::ResolveCaseError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_resolve_case(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ResolveCaseError::unhandled)?;
         output.build()
     })
 }

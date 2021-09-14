@@ -2958,6 +2958,177 @@ impl std::error::Error for CreateDynamicThingGroupError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CreateFleetMetricError {
+    pub kind: CreateFleetMetricErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateFleetMetricErrorKind {
+    IndexNotReadyException(crate::error::IndexNotReadyException),
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidAggregationException(crate::error::InvalidAggregationException),
+    InvalidQueryException(crate::error::InvalidQueryException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottlingException(crate::error::ThrottlingException),
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateFleetMetricError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateFleetMetricErrorKind::IndexNotReadyException(_inner) => _inner.fmt(f),
+            CreateFleetMetricErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            CreateFleetMetricErrorKind::InvalidAggregationException(_inner) => _inner.fmt(f),
+            CreateFleetMetricErrorKind::InvalidQueryException(_inner) => _inner.fmt(f),
+            CreateFleetMetricErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateFleetMetricErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateFleetMetricErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateFleetMetricErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateFleetMetricErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateFleetMetricErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateFleetMetricErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            CreateFleetMetricErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateFleetMetricError {
+    fn code(&self) -> Option<&str> {
+        CreateFleetMetricError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateFleetMetricError {
+    pub fn new(kind: CreateFleetMetricErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateFleetMetricErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateFleetMetricErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_index_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetMetricErrorKind::IndexNotReadyException(_)
+        )
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetMetricErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_aggregation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetMetricErrorKind::InvalidAggregationException(_)
+        )
+    }
+    pub fn is_invalid_query_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetMetricErrorKind::InvalidQueryException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetMetricErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetMetricErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetMetricErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetMetricErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetMetricErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetMetricErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetMetricErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for CreateFleetMetricError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateFleetMetricErrorKind::IndexNotReadyException(_inner) => Some(_inner),
+            CreateFleetMetricErrorKind::InternalFailureException(_inner) => Some(_inner),
+            CreateFleetMetricErrorKind::InvalidAggregationException(_inner) => Some(_inner),
+            CreateFleetMetricErrorKind::InvalidQueryException(_inner) => Some(_inner),
+            CreateFleetMetricErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateFleetMetricErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateFleetMetricErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateFleetMetricErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateFleetMetricErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateFleetMetricErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateFleetMetricErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            CreateFleetMetricErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct CreateJobError {
     pub kind: CreateJobErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -6529,6 +6700,132 @@ impl std::error::Error for DeleteDynamicThingGroupError {
             DeleteDynamicThingGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteDynamicThingGroupErrorKind::VersionConflictException(_inner) => Some(_inner),
             DeleteDynamicThingGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteFleetMetricError {
+    pub kind: DeleteFleetMetricErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteFleetMetricErrorKind {
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottlingException(crate::error::ThrottlingException),
+    UnauthorizedException(crate::error::UnauthorizedException),
+    VersionConflictException(crate::error::VersionConflictException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteFleetMetricError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteFleetMetricErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            DeleteFleetMetricErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteFleetMetricErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteFleetMetricErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteFleetMetricErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DeleteFleetMetricErrorKind::VersionConflictException(_inner) => _inner.fmt(f),
+            DeleteFleetMetricErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteFleetMetricError {
+    fn code(&self) -> Option<&str> {
+        DeleteFleetMetricError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteFleetMetricError {
+    pub fn new(kind: DeleteFleetMetricErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteFleetMetricErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteFleetMetricErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFleetMetricErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFleetMetricErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFleetMetricErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFleetMetricErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFleetMetricErrorKind::UnauthorizedException(_)
+        )
+    }
+    pub fn is_version_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFleetMetricErrorKind::VersionConflictException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteFleetMetricError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteFleetMetricErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DeleteFleetMetricErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteFleetMetricErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteFleetMetricErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteFleetMetricErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DeleteFleetMetricErrorKind::VersionConflictException(_inner) => Some(_inner),
+            DeleteFleetMetricErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -10926,6 +11223,132 @@ impl std::error::Error for DescribeEventConfigurationsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DescribeFleetMetricError {
+    pub kind: DescribeFleetMetricErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeFleetMetricErrorKind {
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottlingException(crate::error::ThrottlingException),
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeFleetMetricError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeFleetMetricErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            DescribeFleetMetricErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeFleetMetricErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeFleetMetricErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeFleetMetricErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeFleetMetricErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DescribeFleetMetricErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeFleetMetricError {
+    fn code(&self) -> Option<&str> {
+        DescribeFleetMetricError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeFleetMetricError {
+    pub fn new(kind: DescribeFleetMetricErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeFleetMetricErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeFleetMetricErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFleetMetricErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFleetMetricErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFleetMetricErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFleetMetricErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFleetMetricErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFleetMetricErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeFleetMetricError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeFleetMetricErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DescribeFleetMetricErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeFleetMetricErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeFleetMetricErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeFleetMetricErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeFleetMetricErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DescribeFleetMetricErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeIndexError {
     pub kind: DescribeIndexErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -13507,6 +13930,159 @@ impl std::error::Error for GetBehaviorModelTrainingSummariesError {
             }
             GetBehaviorModelTrainingSummariesErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetBehaviorModelTrainingSummariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetBucketsAggregationError {
+    pub kind: GetBucketsAggregationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetBucketsAggregationErrorKind {
+    IndexNotReadyException(crate::error::IndexNotReadyException),
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidAggregationException(crate::error::InvalidAggregationException),
+    InvalidQueryException(crate::error::InvalidQueryException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottlingException(crate::error::ThrottlingException),
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetBucketsAggregationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetBucketsAggregationErrorKind::IndexNotReadyException(_inner) => _inner.fmt(f),
+            GetBucketsAggregationErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            GetBucketsAggregationErrorKind::InvalidAggregationException(_inner) => _inner.fmt(f),
+            GetBucketsAggregationErrorKind::InvalidQueryException(_inner) => _inner.fmt(f),
+            GetBucketsAggregationErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            GetBucketsAggregationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetBucketsAggregationErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            GetBucketsAggregationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetBucketsAggregationErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            GetBucketsAggregationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetBucketsAggregationError {
+    fn code(&self) -> Option<&str> {
+        GetBucketsAggregationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetBucketsAggregationError {
+    pub fn new(kind: GetBucketsAggregationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetBucketsAggregationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetBucketsAggregationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_index_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketsAggregationErrorKind::IndexNotReadyException(_)
+        )
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketsAggregationErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_aggregation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketsAggregationErrorKind::InvalidAggregationException(_)
+        )
+    }
+    pub fn is_invalid_query_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketsAggregationErrorKind::InvalidQueryException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketsAggregationErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketsAggregationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketsAggregationErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketsAggregationErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBucketsAggregationErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for GetBucketsAggregationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetBucketsAggregationErrorKind::IndexNotReadyException(_inner) => Some(_inner),
+            GetBucketsAggregationErrorKind::InternalFailureException(_inner) => Some(_inner),
+            GetBucketsAggregationErrorKind::InvalidAggregationException(_inner) => Some(_inner),
+            GetBucketsAggregationErrorKind::InvalidQueryException(_inner) => Some(_inner),
+            GetBucketsAggregationErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            GetBucketsAggregationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetBucketsAggregationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            GetBucketsAggregationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetBucketsAggregationErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            GetBucketsAggregationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -17055,6 +17631,123 @@ impl std::error::Error for ListDomainConfigurationsError {
             ListDomainConfigurationsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListDomainConfigurationsErrorKind::UnauthorizedException(_inner) => Some(_inner),
             ListDomainConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListFleetMetricsError {
+    pub kind: ListFleetMetricsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListFleetMetricsErrorKind {
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottlingException(crate::error::ThrottlingException),
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListFleetMetricsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListFleetMetricsErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            ListFleetMetricsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListFleetMetricsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListFleetMetricsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListFleetMetricsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            ListFleetMetricsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListFleetMetricsError {
+    fn code(&self) -> Option<&str> {
+        ListFleetMetricsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListFleetMetricsError {
+    pub fn new(kind: ListFleetMetricsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListFleetMetricsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListFleetMetricsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFleetMetricsErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFleetMetricsErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFleetMetricsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFleetMetricsErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFleetMetricsErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for ListFleetMetricsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListFleetMetricsErrorKind::InternalFailureException(_inner) => Some(_inner),
+            ListFleetMetricsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListFleetMetricsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListFleetMetricsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListFleetMetricsErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            ListFleetMetricsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -25406,6 +26099,168 @@ impl std::error::Error for UpdateEventConfigurationsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct UpdateFleetMetricError {
+    pub kind: UpdateFleetMetricErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateFleetMetricErrorKind {
+    IndexNotReadyException(crate::error::IndexNotReadyException),
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidAggregationException(crate::error::InvalidAggregationException),
+    InvalidQueryException(crate::error::InvalidQueryException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottlingException(crate::error::ThrottlingException),
+    UnauthorizedException(crate::error::UnauthorizedException),
+    VersionConflictException(crate::error::VersionConflictException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateFleetMetricError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateFleetMetricErrorKind::IndexNotReadyException(_inner) => _inner.fmt(f),
+            UpdateFleetMetricErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            UpdateFleetMetricErrorKind::InvalidAggregationException(_inner) => _inner.fmt(f),
+            UpdateFleetMetricErrorKind::InvalidQueryException(_inner) => _inner.fmt(f),
+            UpdateFleetMetricErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateFleetMetricErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateFleetMetricErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateFleetMetricErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateFleetMetricErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            UpdateFleetMetricErrorKind::VersionConflictException(_inner) => _inner.fmt(f),
+            UpdateFleetMetricErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateFleetMetricError {
+    fn code(&self) -> Option<&str> {
+        UpdateFleetMetricError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateFleetMetricError {
+    pub fn new(kind: UpdateFleetMetricErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateFleetMetricErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateFleetMetricErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_index_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFleetMetricErrorKind::IndexNotReadyException(_)
+        )
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFleetMetricErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_aggregation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFleetMetricErrorKind::InvalidAggregationException(_)
+        )
+    }
+    pub fn is_invalid_query_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFleetMetricErrorKind::InvalidQueryException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFleetMetricErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFleetMetricErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFleetMetricErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFleetMetricErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFleetMetricErrorKind::UnauthorizedException(_)
+        )
+    }
+    pub fn is_version_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFleetMetricErrorKind::VersionConflictException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateFleetMetricError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateFleetMetricErrorKind::IndexNotReadyException(_inner) => Some(_inner),
+            UpdateFleetMetricErrorKind::InternalFailureException(_inner) => Some(_inner),
+            UpdateFleetMetricErrorKind::InvalidAggregationException(_inner) => Some(_inner),
+            UpdateFleetMetricErrorKind::InvalidQueryException(_inner) => Some(_inner),
+            UpdateFleetMetricErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateFleetMetricErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateFleetMetricErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateFleetMetricErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateFleetMetricErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            UpdateFleetMetricErrorKind::VersionConflictException(_inner) => Some(_inner),
+            UpdateFleetMetricErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct UpdateIndexingConfigurationError {
     pub kind: UpdateIndexingConfigurationErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -27527,6 +28382,128 @@ impl InvalidQueryException {
     }
 }
 
+/// <p>The aggregation is invalid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidAggregationException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidAggregationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidAggregationException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidAggregationException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidAggregationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidAggregationException")?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidAggregationException {}
+/// See [`InvalidAggregationException`](crate::error::InvalidAggregationException)
+pub mod invalid_aggregation_exception {
+    /// A builder for [`InvalidAggregationException`](crate::error::InvalidAggregationException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidAggregationException`](crate::error::InvalidAggregationException)
+        pub fn build(self) -> crate::error::InvalidAggregationException {
+            crate::error::InvalidAggregationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidAggregationException {
+    /// Creates a new builder-style object to manufacture [`InvalidAggregationException`](crate::error::InvalidAggregationException)
+    pub fn builder() -> crate::error::invalid_aggregation_exception::Builder {
+        crate::error::invalid_aggregation_exception::Builder::default()
+    }
+}
+
+/// <p>The index is not ready.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IndexNotReadyException {
+    /// <p>The message for the exception.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for IndexNotReadyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IndexNotReadyException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl IndexNotReadyException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for IndexNotReadyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "IndexNotReadyException")?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for IndexNotReadyException {}
+/// See [`IndexNotReadyException`](crate::error::IndexNotReadyException)
+pub mod index_not_ready_exception {
+    /// A builder for [`IndexNotReadyException`](crate::error::IndexNotReadyException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The message for the exception.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IndexNotReadyException`](crate::error::IndexNotReadyException)
+        pub fn build(self) -> crate::error::IndexNotReadyException {
+            crate::error::IndexNotReadyException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl IndexNotReadyException {
+    /// Creates a new builder-style object to manufacture [`IndexNotReadyException`](crate::error::IndexNotReadyException)
+    pub fn builder() -> crate::error::index_not_ready_exception::Builder {
+        crate::error::index_not_ready_exception::Builder::default()
+    }
+}
+
 /// <p>The certificate is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -27549,8 +28526,8 @@ impl CertificateValidationException {
 impl std::fmt::Display for CertificateValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateValidationException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -27611,8 +28588,8 @@ impl CertificateStateException {
 impl std::fmt::Display for CertificateStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateStateException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -27673,8 +28650,8 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -27736,8 +28713,8 @@ impl TransferConflictException {
 impl std::fmt::Display for TransferConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TransferConflictException")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -27798,8 +28775,8 @@ impl InvalidResponseException {
 impl std::fmt::Display for InvalidResponseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResponseException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -27861,8 +28838,8 @@ impl TaskAlreadyExistsException {
 impl std::fmt::Display for TaskAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TaskAlreadyExistsException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -27922,8 +28899,8 @@ impl NotConfiguredException {
 impl std::fmt::Display for NotConfiguredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotConfiguredException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -27990,8 +28967,8 @@ impl ResourceAlreadyExistsException {
 impl std::fmt::Display for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceAlreadyExistsException")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -28052,68 +29029,6 @@ impl ResourceAlreadyExistsException {
     }
 }
 
-/// <p>The index is not ready.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct IndexNotReadyException {
-    /// <p>The message for the exception.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IndexNotReadyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexNotReadyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl IndexNotReadyException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for IndexNotReadyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IndexNotReadyException")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for IndexNotReadyException {}
-/// See [`IndexNotReadyException`](crate::error::IndexNotReadyException)
-pub mod index_not_ready_exception {
-    /// A builder for [`IndexNotReadyException`](crate::error::IndexNotReadyException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The message for the exception.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`IndexNotReadyException`](crate::error::IndexNotReadyException)
-        pub fn build(self) -> crate::error::IndexNotReadyException {
-            crate::error::IndexNotReadyException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl IndexNotReadyException {
-    /// Creates a new builder-style object to manufacture [`IndexNotReadyException`](crate::error::IndexNotReadyException)
-    pub fn builder() -> crate::error::index_not_ready_exception::Builder {
-        crate::error::index_not_ready_exception::Builder::default()
-    }
-}
-
 /// <p>The Rule-SQL expression can't be parsed correctly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -28136,8 +29051,8 @@ impl SqlParseException {
 impl std::fmt::Display for SqlParseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SqlParseException")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -28199,8 +29114,8 @@ impl TransferAlreadyCompletedException {
 impl std::fmt::Display for TransferAlreadyCompletedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TransferAlreadyCompletedException")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -28261,8 +29176,8 @@ impl ResourceRegistrationFailureException {
 impl std::fmt::Display for ResourceRegistrationFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceRegistrationFailureException")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -28325,8 +29240,8 @@ impl CertificateConflictException {
 impl std::fmt::Display for CertificateConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateConflictException")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -28387,8 +29302,8 @@ impl RegistrationCodeValidationException {
 impl std::fmt::Display for RegistrationCodeValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RegistrationCodeValidationException")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -28424,66 +29339,6 @@ impl RegistrationCodeValidationException {
     /// Creates a new builder-style object to manufacture [`RegistrationCodeValidationException`](crate::error::RegistrationCodeValidationException)
     pub fn builder() -> crate::error::registration_code_validation_exception::Builder {
         crate::error::registration_code_validation_exception::Builder::default()
-    }
-}
-
-/// <p>The aggregation is invalid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidAggregationException {
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAggregationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAggregationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InvalidAggregationException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidAggregationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidAggregationException")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidAggregationException {}
-/// See [`InvalidAggregationException`](crate::error::InvalidAggregationException)
-pub mod invalid_aggregation_exception {
-    /// A builder for [`InvalidAggregationException`](crate::error::InvalidAggregationException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InvalidAggregationException`](crate::error::InvalidAggregationException)
-        pub fn build(self) -> crate::error::InvalidAggregationException {
-            crate::error::InvalidAggregationException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InvalidAggregationException {
-    /// Creates a new builder-style object to manufacture [`InvalidAggregationException`](crate::error::InvalidAggregationException)
-    pub fn builder() -> crate::error::invalid_aggregation_exception::Builder {
-        crate::error::invalid_aggregation_exception::Builder::default()
     }
 }
 

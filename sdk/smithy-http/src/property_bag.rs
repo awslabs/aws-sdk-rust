@@ -68,7 +68,7 @@ impl PropertyBag {
     ///
     /// If a value of this type already existed, it will be returned.
     ///
-    /// # Example
+    /// # Examples
     ///
     /// ```
     /// # use smithy_http::property_bag::PropertyBag;
@@ -95,7 +95,7 @@ impl PropertyBag {
 
     /// Get a reference to a type previously inserted on this `PropertyBag`.
     ///
-    /// # Example
+    /// # Examples
     ///
     /// ```
     /// # use smithy_http::property_bag::PropertyBag;
@@ -113,7 +113,7 @@ impl PropertyBag {
 
     /// Get a mutable reference to a type previously inserted on this `PropertyBag`.
     ///
-    /// # Example
+    /// # Examples
     ///
     /// ```
     /// # use smithy_http::property_bag::PropertyBag;
@@ -133,7 +133,7 @@ impl PropertyBag {
     ///
     /// If a value of this type existed, it will be returned.
     ///
-    /// # Example
+    /// # Examples
     ///
     /// ```
     /// # use smithy_http::property_bag::PropertyBag;
@@ -153,7 +153,7 @@ impl PropertyBag {
 
     /// Clear the `PropertyBag` of all inserted extensions.
     ///
-    /// # Example
+    /// # Examples
     ///
     /// ```
     /// # use smithy_http::property_bag::PropertyBag;

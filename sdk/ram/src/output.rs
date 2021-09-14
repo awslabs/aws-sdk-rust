@@ -236,7 +236,7 @@ impl PromoteResourceShareCreatedFromPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceTypesOutput {
-    /// <p>The shareable resource types supported by AWS RAM.</p>
+    /// <p>The shareable resource types supported by RAM.</p>
     pub resource_types:
         std::option::Option<std::vec::Vec<crate::model::ServiceNameAndResourceType>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

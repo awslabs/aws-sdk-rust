@@ -173,6 +173,9 @@ where
     pub fn update_monitoring(&self) -> fluent_builders::UpdateMonitoring<C, M, R> {
         fluent_builders::UpdateMonitoring::new(self.handle.clone())
     }
+    pub fn update_security(&self) -> fluent_builders::UpdateSecurity<C, M, R> {
+        fluent_builders::UpdateSecurity::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
@@ -2401,6 +2404,96 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::LoggingInfo>,
         ) -> Self {
             self.inner = self.inner.set_logging_info(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateSecurity<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_security_input::Builder,
+    }
+    impl<C, M, R> UpdateSecurity<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSecurityOutput,
+            smithy_http::result::SdkError<crate::error::UpdateSecurityError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateSecurityInputOperationOutputAlias,
+                crate::output::UpdateSecurityOutput,
+                crate::error::UpdateSecurityError,
+                crate::input::UpdateSecurityInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Includes all client authentication related information.</p>
+        pub fn client_authentication(mut self, inp: crate::model::ClientAuthentication) -> Self {
+            self.inner = self.inner.client_authentication(inp);
+            self
+        }
+        pub fn set_client_authentication(
+            mut self,
+            input: std::option::Option<crate::model::ClientAuthentication>,
+        ) -> Self {
+            self.inner = self.inner.set_client_authentication(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(inp);
+            self
+        }
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cluster_arn(input);
+            self
+        }
+        /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(inp);
+            self
+        }
+        pub fn set_current_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_current_version(input);
+            self
+        }
+        /// <p>Includes all encryption-related information.</p>
+        pub fn encryption_info(mut self, inp: crate::model::EncryptionInfo) -> Self {
+            self.inner = self.inner.encryption_info(inp);
+            self
+        }
+        pub fn set_encryption_info(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionInfo>,
+        ) -> Self {
+            self.inner = self.inner.set_encryption_info(input);
             self
         }
     }

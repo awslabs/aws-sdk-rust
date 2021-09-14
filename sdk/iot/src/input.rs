@@ -157,8 +157,11 @@ impl AcceptCertificateTransferInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -166,7 +169,11 @@ impl AcceptCertificateTransferInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -266,10 +273,9 @@ impl AddThingToBillingGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_add_thing_to_billing_group(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_add_thing_to_billing_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -331,8 +337,11 @@ impl AddThingToBillingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -340,7 +349,11 @@ impl AddThingToBillingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -454,7 +467,10 @@ impl AddThingToThingGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_add_thing_to_thing_group(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_add_thing_to_thing_group(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -518,8 +534,11 @@ impl AddThingToThingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -527,7 +546,11 @@ impl AddThingToThingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -581,7 +604,7 @@ pub mod associate_targets_with_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -634,10 +657,9 @@ impl AssociateTargetsWithJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_associate_targets_with_job(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_associate_targets_with_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -719,8 +741,11 @@ impl AssociateTargetsWithJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -728,7 +753,11 @@ impl AssociateTargetsWithJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -799,9 +828,10 @@ impl AttachPolicyInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_attach_policy(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_attach_policy(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -878,8 +908,11 @@ impl AttachPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -887,7 +920,11 @@ impl AttachPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1065,8 +1102,11 @@ impl AttachPrincipalPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1074,7 +1114,11 @@ impl AttachPrincipalPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1245,8 +1289,11 @@ impl AttachSecurityProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1254,7 +1301,11 @@ impl AttachSecurityProfileInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1433,8 +1484,11 @@ impl AttachThingPrincipalInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1442,7 +1496,11 @@ impl AttachThingPrincipalInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1585,8 +1643,11 @@ impl CancelAuditMitigationActionsTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1594,7 +1655,11 @@ impl CancelAuditMitigationActionsTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1733,8 +1798,11 @@ impl CancelAuditTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1742,7 +1810,11 @@ impl CancelAuditTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1889,8 +1961,11 @@ impl CancelCertificateTransferInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1898,7 +1973,11 @@ impl CancelCertificateTransferInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2043,8 +2122,11 @@ impl CancelDetectMitigationActionsTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2052,7 +2134,11 @@ impl CancelDetectMitigationActionsTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2149,8 +2235,8 @@ impl CancelJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_cancel_job(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_cancel_job(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -2233,8 +2319,11 @@ impl CancelJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2242,7 +2331,11 @@ impl CancelJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2371,7 +2464,10 @@ impl CancelJobExecutionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_cancel_job_execution(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_cancel_job_execution(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2481,8 +2577,11 @@ impl CancelJobExecutionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2490,7 +2589,11 @@ impl CancelJobExecutionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2599,8 +2702,11 @@ impl ClearDefaultAuthorizerInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2608,7 +2714,11 @@ impl ClearDefaultAuthorizerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2754,8 +2864,11 @@ impl ConfirmTopicRuleDestinationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2763,7 +2876,11 @@ impl ConfirmTopicRuleDestinationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2902,7 +3019,10 @@ impl CreateAuditSuppressionInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_audit_suppression(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_audit_suppression(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2966,8 +3086,11 @@ impl CreateAuditSuppressionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2975,7 +3098,11 @@ impl CreateAuditSuppressionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3082,7 +3209,7 @@ pub mod create_authorizer_input {
             self.tags = input;
             self
         }
-        /// <p>Specifies whether AWS IoT validates the token signature in an authorization request.</p>
+        /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
         pub fn signing_disabled(mut self, input: bool) -> Self {
             self.signing_disabled = Some(input);
             self
@@ -3130,9 +3257,11 @@ impl CreateAuthorizerInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_authorizer(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_authorizer(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3213,8 +3342,11 @@ impl CreateAuthorizerInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3222,7 +3354,11 @@ impl CreateAuthorizerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3319,7 +3455,10 @@ impl CreateBillingGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_billing_group(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_billing_group(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3403,8 +3542,11 @@ impl CreateBillingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3412,7 +3554,11 @@ impl CreateBillingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3491,10 +3637,9 @@ impl CreateCertificateFromCsrInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_certificate_from_csr(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_certificate_from_csr(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3565,8 +3710,11 @@ impl CreateCertificateFromCsrInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3574,7 +3722,11 @@ impl CreateCertificateFromCsrInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3653,7 +3805,7 @@ pub mod create_custom_metric_input {
         /// metric must have a unique client request token. If you try to create a new custom metric that
         /// already exists with a different token,
         /// an exception
-        /// occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+        /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -3705,7 +3857,10 @@ impl CreateCustomMetricInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_custom_metric(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_custom_metric(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3789,8 +3944,11 @@ impl CreateCustomMetricInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3798,7 +3956,11 @@ impl CreateCustomMetricInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3866,7 +4028,8 @@ pub mod create_dimension_input {
             self.tags = input;
             self
         }
-        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
+        /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -3918,9 +4081,11 @@ impl CreateDimensionInput {
             }
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_dimension(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_dimension(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3996,8 +4161,11 @@ impl CreateDimensionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4005,7 +4173,11 @@ impl CreateDimensionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4065,7 +4237,7 @@ pub mod create_domain_configuration_input {
             self
         }
         /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
-        /// This value is not required for AWS-managed domains.</p>
+        /// This value is not required for Amazon Web Services-managed domains.</p>
         pub fn validation_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.validation_certificate_arn = Some(input.into());
             self
@@ -4091,7 +4263,7 @@ pub mod create_domain_configuration_input {
         }
         /// <p>The type of service delivered by the endpoint.</p>
         /// <note>
-        /// <p>AWS IoT Core currently supports only the <code>DATA</code> service type.</p>
+        /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
         /// </note>
         pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
             self.service_type = Some(input);
@@ -4157,10 +4329,9 @@ impl CreateDomainConfigurationInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_domain_configuration(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_domain_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4241,8 +4412,11 @@ impl CreateDomainConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4250,7 +4424,11 @@ impl CreateDomainConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4300,7 +4478,7 @@ pub mod create_dynamic_thing_group_input {
         }
         /// <p>The dynamic thing group index name.</p>
         /// <note>
-        /// <p>Currently one index is supported: "AWS_Things".</p>
+        /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
@@ -4388,10 +4566,9 @@ impl CreateDynamicThingGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_dynamic_thing_group(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_dynamic_thing_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4472,8 +4649,11 @@ impl CreateDynamicThingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4481,13 +4661,297 @@ impl CreateDynamicThingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateDynamicThingGroupInput`](crate::input::CreateDynamicThingGroupInput)
     pub fn builder() -> crate::input::create_dynamic_thing_group_input::Builder {
         crate::input::create_dynamic_thing_group_input::Builder::default()
+    }
+}
+
+/// See [`CreateFleetMetricInput`](crate::input::CreateFleetMetricInput)
+pub mod create_fleet_metric_input {
+    /// A builder for [`CreateFleetMetricInput`](crate::input::CreateFleetMetricInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+        pub(crate) query_string: std::option::Option<std::string::String>,
+        pub(crate) aggregation_type: std::option::Option<crate::model::AggregationType>,
+        pub(crate) period: std::option::Option<i32>,
+        pub(crate) aggregation_field: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) query_version: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) unit: std::option::Option<crate::model::FleetMetricUnit>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the fleet metric to create.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The search query string.</p>
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_string = Some(input.into());
+            self
+        }
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_string = input;
+            self
+        }
+        /// <p>The type of the aggregation query.</p>
+        pub fn aggregation_type(mut self, input: crate::model::AggregationType) -> Self {
+            self.aggregation_type = Some(input);
+            self
+        }
+        pub fn set_aggregation_type(
+            mut self,
+            input: std::option::Option<crate::model::AggregationType>,
+        ) -> Self {
+            self.aggregation_type = input;
+            self
+        }
+        /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+        pub fn period(mut self, input: i32) -> Self {
+            self.period = Some(input);
+            self
+        }
+        pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.period = input;
+            self
+        }
+        /// <p>The field to aggregate.</p>
+        pub fn aggregation_field(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aggregation_field = Some(input.into());
+            self
+        }
+        pub fn set_aggregation_field(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aggregation_field = input;
+            self
+        }
+        /// <p>The fleet metric description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The query version.</p>
+        pub fn query_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_version = Some(input.into());
+            self
+        }
+        pub fn set_query_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.query_version = input;
+            self
+        }
+        /// <p>The name of the index to search.</p>
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
+            self
+        }
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
+        /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+        pub fn unit(mut self, input: crate::model::FleetMetricUnit) -> Self {
+            self.unit = Some(input);
+            self
+        }
+        pub fn set_unit(
+            mut self,
+            input: std::option::Option<crate::model::FleetMetricUnit>,
+        ) -> Self {
+            self.unit = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFleetMetricInput`](crate::input::CreateFleetMetricInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateFleetMetricInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateFleetMetricInput {
+                metric_name: self.metric_name,
+                query_string: self.query_string,
+                aggregation_type: self.aggregation_type,
+                period: self.period,
+                aggregation_field: self.aggregation_field,
+                description: self.description,
+                query_version: self.query_version,
+                index_name: self.index_name,
+                unit: self.unit,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateFleetMetricInputOperationOutputAlias = crate::operation::CreateFleetMetric;
+#[doc(hidden)]
+pub type CreateFleetMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateFleetMetricInput {
+    /// Consumes the builder and constructs an Operation<[`CreateFleetMetric`](crate::operation::CreateFleetMetric)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateFleetMetric,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_fleet_metric(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateFleetMetric::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateFleetMetric",
+                "iot",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_27 = &self.metric_name;
+        let input_27 =
+            input_27
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "metric_name",
+                    details: "cannot be empty or unset",
+                })?;
+        let metric_name = smithy_http::label::fmt_string(input_27, false);
+        if metric_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "metric_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/fleet-metric/{metricName}",
+            metricName = metric_name
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("PUT").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateFleetMetricInput`](crate::input::CreateFleetMetricInput)
+    pub fn builder() -> crate::input::create_fleet_metric_input::Builder {
+        crate::input::create_fleet_metric_input::Builder::default()
     }
 }
 
@@ -4513,7 +4977,7 @@ pub mod create_job_input {
         pub(crate) job_template_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A job identifier which must be unique for your AWS account. We recommend using a UUID. Alpha-numeric
+        /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
         /// characters, "-" and "_" are valid for use here.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
@@ -4657,7 +5121,7 @@ pub mod create_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -4728,8 +5192,8 @@ impl CreateJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_create_job(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -4770,15 +5234,15 @@ impl CreateJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_27 = &self.job_id;
-        let input_27 =
-            input_27
+        let input_28 = &self.job_id;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_27, false);
+        let job_id = smithy_http::label::fmt_string(input_28, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -4802,8 +5266,11 @@ impl CreateJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4811,7 +5278,11 @@ impl CreateJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5009,7 +5480,10 @@ impl CreateJobTemplateInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_job_template(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_job_template(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -5056,15 +5530,15 @@ impl CreateJobTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_28 = &self.job_template_id;
-        let input_28 =
-            input_28
+        let input_29 = &self.job_template_id;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_template_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_template_id = smithy_http::label::fmt_string(input_28, false);
+        let job_template_id = smithy_http::label::fmt_string(input_29, false);
         if job_template_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_template_id",
@@ -5093,8 +5567,11 @@ impl CreateJobTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5102,7 +5579,11 @@ impl CreateJobTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5235,8 +5716,11 @@ impl CreateKeysAndCertificateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5244,7 +5728,11 @@ impl CreateKeysAndCertificateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5345,7 +5833,10 @@ impl CreateMitigationActionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_mitigation_action(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_mitigation_action(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -5392,15 +5883,15 @@ impl CreateMitigationActionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_29 = &self.action_name;
-        let input_29 =
-            input_29
+        let input_30 = &self.action_name;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "action_name",
                     details: "cannot be empty or unset",
                 })?;
-        let action_name = smithy_http::label::fmt_string(input_29, false);
+        let action_name = smithy_http::label::fmt_string(input_30, false);
         if action_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "action_name",
@@ -5429,8 +5920,11 @@ impl CreateMitigationActionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5438,7 +5932,11 @@ impl CreateMitigationActionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5606,7 +6104,7 @@ pub mod create_ota_update_input {
             self.files = input;
             self
         }
-        /// <p>The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and AWS Code Signing resources
+        /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
         /// to create an OTA update job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
@@ -5693,9 +6191,11 @@ impl CreateOtaUpdateInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_ota_update(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_ota_update(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5739,15 +6239,15 @@ impl CreateOtaUpdateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_30 = &self.ota_update_id;
-        let input_30 =
-            input_30
+        let input_31 = &self.ota_update_id;
+        let input_31 =
+            input_31
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "ota_update_id",
                     details: "cannot be empty or unset",
                 })?;
-        let ota_update_id = smithy_http::label::fmt_string(input_30, false);
+        let ota_update_id = smithy_http::label::fmt_string(input_31, false);
         if ota_update_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "ota_update_id",
@@ -5776,8 +6276,11 @@ impl CreateOtaUpdateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5785,7 +6288,11 @@ impl CreateOtaUpdateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5875,9 +6382,10 @@ impl CreatePolicyInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_policy(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_policy(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5918,15 +6426,15 @@ impl CreatePolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_31 = &self.policy_name;
-        let input_31 =
-            input_31
+        let input_32 = &self.policy_name;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_name = smithy_http::label::fmt_string(input_31, false);
+        let policy_name = smithy_http::label::fmt_string(input_32, false);
         if policy_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_name",
@@ -5951,8 +6459,11 @@ impl CreatePolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5960,7 +6471,11 @@ impl CreatePolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6049,7 +6564,10 @@ impl CreatePolicyVersionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_policy_version(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_policy_version(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -6096,15 +6614,15 @@ impl CreatePolicyVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_32 = &self.policy_name;
-        let input_32 =
-            input_32
+        let input_33 = &self.policy_name;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_name = smithy_http::label::fmt_string(input_32, false);
+        let policy_name = smithy_http::label::fmt_string(input_33, false);
         if policy_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_name",
@@ -6143,8 +6661,11 @@ impl CreatePolicyVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6152,7 +6673,11 @@ impl CreatePolicyVersionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6261,15 +6786,15 @@ impl CreateProvisioningClaimInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_33 = &self.template_name;
-        let input_33 =
-            input_33
+        let input_34 = &self.template_name;
+        let input_34 =
+            input_34
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
                     details: "cannot be empty or unset",
                 })?;
-        let template_name = smithy_http::label::fmt_string(input_33, false);
+        let template_name = smithy_http::label::fmt_string(input_34, false);
         if template_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_name",
@@ -6298,8 +6823,11 @@ impl CreateProvisioningClaimInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6307,7 +6835,11 @@ impl CreateProvisioningClaimInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6453,10 +6985,8 @@ impl CreateProvisioningTemplateInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_provisioning_template(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_provisioning_template(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6517,8 +7047,11 @@ impl CreateProvisioningTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6526,7 +7059,11 @@ impl CreateProvisioningTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6617,12 +7154,8 @@ impl CreateProvisioningTemplateVersionInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_provisioning_template_version(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_provisioning_template_version(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6666,15 +7199,15 @@ impl CreateProvisioningTemplateVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_34 = &self.template_name;
-        let input_34 =
-            input_34
+        let input_35 = &self.template_name;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
                     details: "cannot be empty or unset",
                 })?;
-        let template_name = smithy_http::label::fmt_string(input_34, false);
+        let template_name = smithy_http::label::fmt_string(input_35, false);
         if template_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_name",
@@ -6713,8 +7246,11 @@ impl CreateProvisioningTemplateVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6722,7 +7258,11 @@ impl CreateProvisioningTemplateVersionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6763,7 +7303,7 @@ pub mod create_role_alias_input {
             self.role_arn = input;
             self
         }
-        /// <p>How long (in seconds) the credentials will be valid.</p>
+        /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
         pub fn credential_duration_seconds(mut self, input: i32) -> Self {
             self.credential_duration_seconds = Some(input);
             self
@@ -6821,9 +7361,11 @@ impl CreateRoleAliasInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_role_alias(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_role_alias(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -6867,15 +7409,15 @@ impl CreateRoleAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_35 = &self.role_alias;
-        let input_35 =
-            input_35
+        let input_36 = &self.role_alias;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "role_alias",
                     details: "cannot be empty or unset",
                 })?;
-        let role_alias = smithy_http::label::fmt_string(input_35, false);
+        let role_alias = smithy_http::label::fmt_string(input_36, false);
         if role_alias.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "role_alias",
@@ -6900,8 +7442,11 @@ impl CreateRoleAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6909,7 +7454,11 @@ impl CreateRoleAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7058,7 +7607,10 @@ impl CreateScheduledAuditInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_scheduled_audit(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_scheduled_audit(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -7105,15 +7657,15 @@ impl CreateScheduledAuditInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_36 = &self.scheduled_audit_name;
-        let input_36 =
-            input_36
+        let input_37 = &self.scheduled_audit_name;
+        let input_37 =
+            input_37
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "scheduled_audit_name",
                     details: "cannot be empty or unset",
                 })?;
-        let scheduled_audit_name = smithy_http::label::fmt_string(input_36, false);
+        let scheduled_audit_name = smithy_http::label::fmt_string(input_37, false);
         if scheduled_audit_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "scheduled_audit_name",
@@ -7142,8 +7694,11 @@ impl CreateScheduledAuditInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7151,7 +7706,11 @@ impl CreateScheduledAuditInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7323,7 +7882,10 @@ impl CreateSecurityProfileInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_security_profile(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_security_profile(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -7370,15 +7932,15 @@ impl CreateSecurityProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_37 = &self.security_profile_name;
-        let input_37 =
-            input_37
+        let input_38 = &self.security_profile_name;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "security_profile_name",
                     details: "cannot be empty or unset",
                 })?;
-        let security_profile_name = smithy_http::label::fmt_string(input_37, false);
+        let security_profile_name = smithy_http::label::fmt_string(input_38, false);
         if security_profile_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "security_profile_name",
@@ -7407,8 +7969,11 @@ impl CreateSecurityProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7416,7 +7981,11 @@ impl CreateSecurityProfileInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7528,9 +8097,10 @@ impl CreateStreamInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_stream(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_stream(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -7571,15 +8141,15 @@ impl CreateStreamInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_38 = &self.stream_id;
-        let input_38 =
-            input_38
+        let input_39 = &self.stream_id;
+        let input_39 =
+            input_39
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "stream_id",
                     details: "cannot be empty or unset",
                 })?;
-        let stream_id = smithy_http::label::fmt_string(input_38, false);
+        let stream_id = smithy_http::label::fmt_string(input_39, false);
         if stream_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "stream_id",
@@ -7604,8 +8174,11 @@ impl CreateStreamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7613,7 +8186,11 @@ impl CreateStreamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7721,9 +8298,10 @@ impl CreateThingInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_thing(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_thing(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -7764,15 +8342,15 @@ impl CreateThingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_39 = &self.thing_name;
-        let input_39 =
-            input_39
+        let input_40 = &self.thing_name;
+        let input_40 =
+            input_40
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_name = smithy_http::label::fmt_string(input_39, false);
+        let thing_name = smithy_http::label::fmt_string(input_40, false);
         if thing_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_name",
@@ -7797,8 +8375,11 @@ impl CreateThingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7806,7 +8387,11 @@ impl CreateThingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7913,10 +8498,11 @@ impl CreateThingGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_thing_group(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_thing_group(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -7960,15 +8546,15 @@ impl CreateThingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_40 = &self.thing_group_name;
-        let input_40 =
-            input_40
+        let input_41 = &self.thing_group_name;
+        let input_41 =
+            input_41
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_group_name = smithy_http::label::fmt_string(input_40, false);
+        let thing_group_name = smithy_http::label::fmt_string(input_41, false);
         if thing_group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_group_name",
@@ -7997,8 +8583,11 @@ impl CreateThingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8006,7 +8595,11 @@ impl CreateThingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8101,9 +8694,11 @@ impl CreateThingTypeInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_thing_type(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_thing_type(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8147,15 +8742,15 @@ impl CreateThingTypeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_41 = &self.thing_type_name;
-        let input_41 =
-            input_41
+        let input_42 = &self.thing_type_name;
+        let input_42 =
+            input_42
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_type_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_type_name = smithy_http::label::fmt_string(input_41, false);
+        let thing_type_name = smithy_http::label::fmt_string(input_42, false);
         if thing_type_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_type_name",
@@ -8184,8 +8779,11 @@ impl CreateThingTypeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8193,7 +8791,11 @@ impl CreateThingTypeInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8332,15 +8934,15 @@ impl CreateTopicRuleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_42 = &self.rule_name;
-        let input_42 =
-            input_42
+        let input_43 = &self.rule_name;
+        let input_43 =
+            input_43
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "rule_name",
                     details: "cannot be empty or unset",
                 })?;
-        let rule_name = smithy_http::label::fmt_string(input_42, false);
+        let rule_name = smithy_http::label::fmt_string(input_43, false);
         if rule_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "rule_name",
@@ -8355,11 +8957,11 @@ impl CreateTopicRuleInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_43) = &self.tags {
-            let formatted_44 = AsRef::<str>::as_ref(inner_43);
-            if !formatted_44.is_empty() {
+        if let Some(inner_44) = &self.tags {
+            let formatted_45 = AsRef::<str>::as_ref(inner_44);
+            if !formatted_45.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_44;
+                let header_value = formatted_45;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -8390,8 +8992,11 @@ impl CreateTopicRuleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8399,7 +9004,11 @@ impl CreateTopicRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8469,10 +9078,8 @@ impl CreateTopicRuleDestinationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_topic_rule_destination(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_topic_rule_destination(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -8533,8 +9140,11 @@ impl CreateTopicRuleDestinationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8542,7 +9152,11 @@ impl CreateTopicRuleDestinationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8675,8 +9289,11 @@ impl DeleteAccountAuditConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8684,7 +9301,11 @@ impl DeleteAccountAuditConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8762,7 +9383,10 @@ impl DeleteAuditSuppressionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_audit_suppression(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_audit_suppression(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -8826,8 +9450,11 @@ impl DeleteAuditSuppressionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8835,7 +9462,11 @@ impl DeleteAuditSuppressionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8943,15 +9574,15 @@ impl DeleteAuthorizerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_45 = &self.authorizer_name;
-        let input_45 =
-            input_45
+        let input_46 = &self.authorizer_name;
+        let input_46 =
+            input_46
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "authorizer_name",
                     details: "cannot be empty or unset",
                 })?;
-        let authorizer_name = smithy_http::label::fmt_string(input_45, false);
+        let authorizer_name = smithy_http::label::fmt_string(input_46, false);
         if authorizer_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "authorizer_name",
@@ -8980,8 +9611,11 @@ impl DeleteAuthorizerInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8989,7 +9623,11 @@ impl DeleteAuthorizerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9111,15 +9749,15 @@ impl DeleteBillingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_46 = &self.billing_group_name;
-        let input_46 =
-            input_46
+        let input_47 = &self.billing_group_name;
+        let input_47 =
+            input_47
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "billing_group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let billing_group_name = smithy_http::label::fmt_string(input_46, false);
+        let billing_group_name = smithy_http::label::fmt_string(input_47, false);
         if billing_group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "billing_group_name",
@@ -9136,10 +9774,10 @@ impl DeleteBillingGroupInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_47) = &self.expected_version {
+        if let Some(inner_48) = &self.expected_version {
             query.push_kv(
                 "expectedVersion",
-                &smithy_types::primitive::Encoder::from(*inner_47).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_48).encode(),
             );
         }
     }
@@ -9158,8 +9796,11 @@ impl DeleteBillingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9167,7 +9808,11 @@ impl DeleteBillingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9276,15 +9921,15 @@ impl DeleteCaCertificateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_48 = &self.certificate_id;
-        let input_48 =
-            input_48
+        let input_49 = &self.certificate_id;
+        let input_49 =
+            input_49
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
                     details: "cannot be empty or unset",
                 })?;
-        let certificate_id = smithy_http::label::fmt_string(input_48, false);
+        let certificate_id = smithy_http::label::fmt_string(input_49, false);
         if certificate_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "certificate_id",
@@ -9313,8 +9958,11 @@ impl DeleteCaCertificateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9322,7 +9970,11 @@ impl DeleteCaCertificateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9443,15 +10095,15 @@ impl DeleteCertificateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_49 = &self.certificate_id;
-        let input_49 =
-            input_49
+        let input_50 = &self.certificate_id;
+        let input_50 =
+            input_50
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
                     details: "cannot be empty or unset",
                 })?;
-        let certificate_id = smithy_http::label::fmt_string(input_49, false);
+        let certificate_id = smithy_http::label::fmt_string(input_50, false);
         if certificate_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "certificate_id",
@@ -9490,8 +10142,11 @@ impl DeleteCertificateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9499,7 +10154,11 @@ impl DeleteCertificateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9606,15 +10265,15 @@ impl DeleteCustomMetricInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_50 = &self.metric_name;
-        let input_50 =
-            input_50
+        let input_51 = &self.metric_name;
+        let input_51 =
+            input_51
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "metric_name",
                     details: "cannot be empty or unset",
                 })?;
-        let metric_name = smithy_http::label::fmt_string(input_50, false);
+        let metric_name = smithy_http::label::fmt_string(input_51, false);
         if metric_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "metric_name",
@@ -9643,8 +10302,11 @@ impl DeleteCustomMetricInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9652,7 +10314,11 @@ impl DeleteCustomMetricInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9755,15 +10421,15 @@ impl DeleteDimensionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_51 = &self.name;
-        let input_51 =
-            input_51
+        let input_52 = &self.name;
+        let input_52 =
+            input_52
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_51, false);
+        let name = smithy_http::label::fmt_string(input_52, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -9787,8 +10453,11 @@ impl DeleteDimensionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9796,7 +10465,11 @@ impl DeleteDimensionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9905,15 +10578,15 @@ impl DeleteDomainConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_52 = &self.domain_configuration_name;
-        let input_52 =
-            input_52
+        let input_53 = &self.domain_configuration_name;
+        let input_53 =
+            input_53
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "domain_configuration_name",
                     details: "cannot be empty or unset",
                 })?;
-        let domain_configuration_name = smithy_http::label::fmt_string(input_52, false);
+        let domain_configuration_name = smithy_http::label::fmt_string(input_53, false);
         if domain_configuration_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "domain_configuration_name",
@@ -9942,8 +10615,11 @@ impl DeleteDomainConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9951,7 +10627,11 @@ impl DeleteDomainConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10071,15 +10751,15 @@ impl DeleteDynamicThingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_53 = &self.thing_group_name;
-        let input_53 =
-            input_53
+        let input_54 = &self.thing_group_name;
+        let input_54 =
+            input_54
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_group_name = smithy_http::label::fmt_string(input_53, false);
+        let thing_group_name = smithy_http::label::fmt_string(input_54, false);
         if thing_group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_group_name",
@@ -10096,10 +10776,10 @@ impl DeleteDynamicThingGroupInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_54) = &self.expected_version {
+        if let Some(inner_55) = &self.expected_version {
             query.push_kv(
                 "expectedVersion",
-                &smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_55).encode(),
             );
         }
     }
@@ -10118,8 +10798,11 @@ impl DeleteDynamicThingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10127,13 +10810,196 @@ impl DeleteDynamicThingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteDynamicThingGroupInput`](crate::input::DeleteDynamicThingGroupInput)
     pub fn builder() -> crate::input::delete_dynamic_thing_group_input::Builder {
         crate::input::delete_dynamic_thing_group_input::Builder::default()
+    }
+}
+
+/// See [`DeleteFleetMetricInput`](crate::input::DeleteFleetMetricInput)
+pub mod delete_fleet_metric_input {
+    /// A builder for [`DeleteFleetMetricInput`](crate::input::DeleteFleetMetricInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+        pub(crate) expected_version: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The name of the fleet metric to delete.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The expected version of the fleet metric to delete.</p>
+        pub fn expected_version(mut self, input: i64) -> Self {
+            self.expected_version = Some(input);
+            self
+        }
+        pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.expected_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteFleetMetricInput`](crate::input::DeleteFleetMetricInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteFleetMetricInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteFleetMetricInput {
+                metric_name: self.metric_name,
+                expected_version: self.expected_version,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteFleetMetricInputOperationOutputAlias = crate::operation::DeleteFleetMetric;
+#[doc(hidden)]
+pub type DeleteFleetMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteFleetMetricInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteFleetMetric`](crate::operation::DeleteFleetMetric)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteFleetMetric,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteFleetMetric::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteFleetMetric",
+                "iot",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_56 = &self.metric_name;
+        let input_56 =
+            input_56
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "metric_name",
+                    details: "cannot be empty or unset",
+                })?;
+        let metric_name = smithy_http::label::fmt_string(input_56, false);
+        if metric_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "metric_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/fleet-metric/{metricName}",
+            metricName = metric_name
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    fn uri_query(&self, mut output: &mut String) {
+        let mut query = smithy_http::query::Writer::new(&mut output);
+        if let Some(inner_57) = &self.expected_version {
+            query.push_kv(
+                "expectedVersion",
+                &smithy_types::primitive::Encoder::from(*inner_57).encode(),
+            );
+        }
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        self.uri_query(&mut uri);
+        Ok(builder.method("DELETE").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteFleetMetricInput`](crate::input::DeleteFleetMetricInput)
+    pub fn builder() -> crate::input::delete_fleet_metric_input::Builder {
+        crate::input::delete_fleet_metric_input::Builder::default()
     }
 }
 
@@ -10178,7 +11044,7 @@ pub mod delete_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -10266,15 +11132,15 @@ impl DeleteJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_55 = &self.job_id;
-        let input_55 =
-            input_55
+        let input_58 = &self.job_id;
+        let input_58 =
+            input_58
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_55, false);
+        let job_id = smithy_http::label::fmt_string(input_58, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -10292,8 +11158,8 @@ impl DeleteJobInput {
                 &smithy_types::primitive::Encoder::from(self.force).encode(),
             );
         }
-        if let Some(inner_56) = &self.namespace_id {
-            query.push_kv("namespaceId", &smithy_http::query::fmt_string(&inner_56));
+        if let Some(inner_59) = &self.namespace_id {
+            query.push_kv("namespaceId", &smithy_http::query::fmt_string(&inner_59));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10311,8 +11177,11 @@ impl DeleteJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10320,7 +11189,11 @@ impl DeleteJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10390,7 +11263,7 @@ pub mod delete_job_execution_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -10487,45 +11360,45 @@ impl DeleteJobExecutionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_57 = &self.thing_name;
-        let input_57 =
-            input_57
+        let input_60 = &self.thing_name;
+        let input_60 =
+            input_60
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_name = smithy_http::label::fmt_string(input_57, false);
+        let thing_name = smithy_http::label::fmt_string(input_60, false);
         if thing_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_name",
                 details: "cannot be empty or unset",
             });
         }
-        let input_58 = &self.job_id;
-        let input_58 =
-            input_58
+        let input_61 = &self.job_id;
+        let input_61 =
+            input_61
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_58, false);
+        let job_id = smithy_http::label::fmt_string(input_61, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_59 = &self.execution_number;
-        let input_59 =
-            input_59
+        let input_62 = &self.execution_number;
+        let input_62 =
+            input_62
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "execution_number",
                     details: "cannot be empty or unset",
                 })?;
-        let mut execution_number_encoder = smithy_types::primitive::Encoder::from(*input_59);
+        let mut execution_number_encoder = smithy_types::primitive::Encoder::from(*input_62);
         let execution_number = execution_number_encoder.encode();
         if execution_number.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
@@ -10551,8 +11424,8 @@ impl DeleteJobExecutionInput {
                 &smithy_types::primitive::Encoder::from(self.force).encode(),
             );
         }
-        if let Some(inner_60) = &self.namespace_id {
-            query.push_kv("namespaceId", &smithy_http::query::fmt_string(&inner_60));
+        if let Some(inner_63) = &self.namespace_id {
+            query.push_kv("namespaceId", &smithy_http::query::fmt_string(&inner_63));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10570,8 +11443,11 @@ impl DeleteJobExecutionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10579,7 +11455,11 @@ impl DeleteJobExecutionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10687,15 +11567,15 @@ impl DeleteJobTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_61 = &self.job_template_id;
-        let input_61 =
-            input_61
+        let input_64 = &self.job_template_id;
+        let input_64 =
+            input_64
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_template_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_template_id = smithy_http::label::fmt_string(input_61, false);
+        let job_template_id = smithy_http::label::fmt_string(input_64, false);
         if job_template_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_template_id",
@@ -10724,8 +11604,11 @@ impl DeleteJobTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10733,7 +11616,11 @@ impl DeleteJobTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10838,15 +11725,15 @@ impl DeleteMitigationActionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_62 = &self.action_name;
-        let input_62 =
-            input_62
+        let input_65 = &self.action_name;
+        let input_65 =
+            input_65
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "action_name",
                     details: "cannot be empty or unset",
                 })?;
-        let action_name = smithy_http::label::fmt_string(input_62, false);
+        let action_name = smithy_http::label::fmt_string(input_65, false);
         if action_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "action_name",
@@ -10875,8 +11762,11 @@ impl DeleteMitigationActionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10884,7 +11774,11 @@ impl DeleteMitigationActionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10927,7 +11821,7 @@ pub mod delete_ota_update_input {
             self.delete_stream = input;
             self
         }
-        /// <p>When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
+        /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
         /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
         pub fn force_delete_aws_job(mut self, input: bool) -> Self {
             self.force_delete_aws_job = Some(input);
@@ -11016,15 +11910,15 @@ impl DeleteOtaUpdateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_63 = &self.ota_update_id;
-        let input_63 =
-            input_63
+        let input_66 = &self.ota_update_id;
+        let input_66 =
+            input_66
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "ota_update_id",
                     details: "cannot be empty or unset",
                 })?;
-        let ota_update_id = smithy_http::label::fmt_string(input_63, false);
+        let ota_update_id = smithy_http::label::fmt_string(input_66, false);
         if ota_update_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "ota_update_id",
@@ -11069,8 +11963,11 @@ impl DeleteOtaUpdateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11078,7 +11975,11 @@ impl DeleteOtaUpdateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11178,15 +12079,15 @@ impl DeletePolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_64 = &self.policy_name;
-        let input_64 =
-            input_64
+        let input_67 = &self.policy_name;
+        let input_67 =
+            input_67
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_name = smithy_http::label::fmt_string(input_64, false);
+        let policy_name = smithy_http::label::fmt_string(input_67, false);
         if policy_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_name",
@@ -11211,8 +12112,11 @@ impl DeletePolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11220,7 +12124,11 @@ impl DeletePolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11339,30 +12247,30 @@ impl DeletePolicyVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_65 = &self.policy_name;
-        let input_65 =
-            input_65
+        let input_68 = &self.policy_name;
+        let input_68 =
+            input_68
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_name = smithy_http::label::fmt_string(input_65, false);
+        let policy_name = smithy_http::label::fmt_string(input_68, false);
         if policy_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_name",
                 details: "cannot be empty or unset",
             });
         }
-        let input_66 = &self.policy_version_id;
-        let input_66 =
-            input_66
+        let input_69 = &self.policy_version_id;
+        let input_69 =
+            input_69
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_version_id",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_version_id = smithy_http::label::fmt_string(input_66, false);
+        let policy_version_id = smithy_http::label::fmt_string(input_69, false);
         if policy_version_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_version_id",
@@ -11392,8 +12300,11 @@ impl DeletePolicyVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11401,7 +12312,11 @@ impl DeletePolicyVersionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11510,15 +12425,15 @@ impl DeleteProvisioningTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_67 = &self.template_name;
-        let input_67 =
-            input_67
+        let input_70 = &self.template_name;
+        let input_70 =
+            input_70
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
                     details: "cannot be empty or unset",
                 })?;
-        let template_name = smithy_http::label::fmt_string(input_67, false);
+        let template_name = smithy_http::label::fmt_string(input_70, false);
         if template_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_name",
@@ -11547,8 +12462,11 @@ impl DeleteProvisioningTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11556,7 +12474,11 @@ impl DeleteProvisioningTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11676,30 +12598,30 @@ impl DeleteProvisioningTemplateVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_68 = &self.template_name;
-        let input_68 =
-            input_68
+        let input_71 = &self.template_name;
+        let input_71 =
+            input_71
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
                     details: "cannot be empty or unset",
                 })?;
-        let template_name = smithy_http::label::fmt_string(input_68, false);
+        let template_name = smithy_http::label::fmt_string(input_71, false);
         if template_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_name",
                 details: "cannot be empty or unset",
             });
         }
-        let input_69 = &self.version_id;
-        let input_69 =
-            input_69
+        let input_72 = &self.version_id;
+        let input_72 =
+            input_72
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "version_id",
                     details: "cannot be empty or unset",
                 })?;
-        let mut version_id_encoder = smithy_types::primitive::Encoder::from(*input_69);
+        let mut version_id_encoder = smithy_types::primitive::Encoder::from(*input_72);
         let version_id = version_id_encoder.encode();
         if version_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
@@ -11730,8 +12652,11 @@ impl DeleteProvisioningTemplateVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11739,7 +12664,11 @@ impl DeleteProvisioningTemplateVersionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11848,8 +12777,11 @@ impl DeleteRegistrationCodeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11857,7 +12789,11 @@ impl DeleteRegistrationCodeInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11962,15 +12898,15 @@ impl DeleteRoleAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_70 = &self.role_alias;
-        let input_70 =
-            input_70
+        let input_73 = &self.role_alias;
+        let input_73 =
+            input_73
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "role_alias",
                     details: "cannot be empty or unset",
                 })?;
-        let role_alias = smithy_http::label::fmt_string(input_70, false);
+        let role_alias = smithy_http::label::fmt_string(input_73, false);
         if role_alias.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "role_alias",
@@ -11995,8 +12931,11 @@ impl DeleteRoleAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12004,7 +12943,11 @@ impl DeleteRoleAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12112,15 +13055,15 @@ impl DeleteScheduledAuditInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_71 = &self.scheduled_audit_name;
-        let input_71 =
-            input_71
+        let input_74 = &self.scheduled_audit_name;
+        let input_74 =
+            input_74
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "scheduled_audit_name",
                     details: "cannot be empty or unset",
                 })?;
-        let scheduled_audit_name = smithy_http::label::fmt_string(input_71, false);
+        let scheduled_audit_name = smithy_http::label::fmt_string(input_74, false);
         if scheduled_audit_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "scheduled_audit_name",
@@ -12149,8 +13092,11 @@ impl DeleteScheduledAuditInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12158,7 +13104,11 @@ impl DeleteScheduledAuditInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12279,15 +13229,15 @@ impl DeleteSecurityProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_72 = &self.security_profile_name;
-        let input_72 =
-            input_72
+        let input_75 = &self.security_profile_name;
+        let input_75 =
+            input_75
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "security_profile_name",
                     details: "cannot be empty or unset",
                 })?;
-        let security_profile_name = smithy_http::label::fmt_string(input_72, false);
+        let security_profile_name = smithy_http::label::fmt_string(input_75, false);
         if security_profile_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "security_profile_name",
@@ -12304,10 +13254,10 @@ impl DeleteSecurityProfileInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_73) = &self.expected_version {
+        if let Some(inner_76) = &self.expected_version {
             query.push_kv(
                 "expectedVersion",
-                &smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_76).encode(),
             );
         }
     }
@@ -12326,8 +13276,11 @@ impl DeleteSecurityProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12335,7 +13288,11 @@ impl DeleteSecurityProfileInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12435,15 +13392,15 @@ impl DeleteStreamInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_74 = &self.stream_id;
-        let input_74 =
-            input_74
+        let input_77 = &self.stream_id;
+        let input_77 =
+            input_77
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "stream_id",
                     details: "cannot be empty or unset",
                 })?;
-        let stream_id = smithy_http::label::fmt_string(input_74, false);
+        let stream_id = smithy_http::label::fmt_string(input_77, false);
         if stream_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "stream_id",
@@ -12468,8 +13425,11 @@ impl DeleteStreamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12477,7 +13437,11 @@ impl DeleteStreamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12591,15 +13555,15 @@ impl DeleteThingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_75 = &self.thing_name;
-        let input_75 =
-            input_75
+        let input_78 = &self.thing_name;
+        let input_78 =
+            input_78
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_name = smithy_http::label::fmt_string(input_75, false);
+        let thing_name = smithy_http::label::fmt_string(input_78, false);
         if thing_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_name",
@@ -12612,10 +13576,10 @@ impl DeleteThingInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_76) = &self.expected_version {
+        if let Some(inner_79) = &self.expected_version {
             query.push_kv(
                 "expectedVersion",
-                &smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_79).encode(),
             );
         }
     }
@@ -12634,8 +13598,11 @@ impl DeleteThingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12643,7 +13610,11 @@ impl DeleteThingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12762,15 +13733,15 @@ impl DeleteThingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_77 = &self.thing_group_name;
-        let input_77 =
-            input_77
+        let input_80 = &self.thing_group_name;
+        let input_80 =
+            input_80
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_group_name = smithy_http::label::fmt_string(input_77, false);
+        let thing_group_name = smithy_http::label::fmt_string(input_80, false);
         if thing_group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_group_name",
@@ -12787,10 +13758,10 @@ impl DeleteThingGroupInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_78) = &self.expected_version {
+        if let Some(inner_81) = &self.expected_version {
             query.push_kv(
                 "expectedVersion",
-                &smithy_types::primitive::Encoder::from(*inner_78).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_81).encode(),
             );
         }
     }
@@ -12809,8 +13780,11 @@ impl DeleteThingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12818,7 +13792,11 @@ impl DeleteThingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12926,15 +13904,15 @@ impl DeleteThingTypeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_79 = &self.thing_type_name;
-        let input_79 =
-            input_79
+        let input_82 = &self.thing_type_name;
+        let input_82 =
+            input_82
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_type_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_type_name = smithy_http::label::fmt_string(input_79, false);
+        let thing_type_name = smithy_http::label::fmt_string(input_82, false);
         if thing_type_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_type_name",
@@ -12963,8 +13941,11 @@ impl DeleteThingTypeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12972,7 +13953,11 @@ impl DeleteThingTypeInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13077,15 +14062,15 @@ impl DeleteTopicRuleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_80 = &self.rule_name;
-        let input_80 =
-            input_80
+        let input_83 = &self.rule_name;
+        let input_83 =
+            input_83
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "rule_name",
                     details: "cannot be empty or unset",
                 })?;
-        let rule_name = smithy_http::label::fmt_string(input_80, false);
+        let rule_name = smithy_http::label::fmt_string(input_83, false);
         if rule_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "rule_name",
@@ -13110,8 +14095,11 @@ impl DeleteTopicRuleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13119,7 +14107,11 @@ impl DeleteTopicRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13223,15 +14215,15 @@ impl DeleteTopicRuleDestinationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_81 = &self.arn;
-        let input_81 =
-            input_81
+        let input_84 = &self.arn;
+        let input_84 =
+            input_84
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "arn",
                     details: "cannot be empty or unset",
                 })?;
-        let arn = smithy_http::label::fmt_string(input_81, true);
+        let arn = smithy_http::label::fmt_string(input_84, true);
         if arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "arn",
@@ -13255,8 +14247,11 @@ impl DeleteTopicRuleDestinationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13264,7 +14259,11 @@ impl DeleteTopicRuleDestinationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13389,11 +14388,11 @@ impl DeleteV2LoggingLevelInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_82) = &self.target_type {
-            query.push_kv("targetType", &smithy_http::query::fmt_string(&inner_82));
+        if let Some(inner_85) = &self.target_type {
+            query.push_kv("targetType", &smithy_http::query::fmt_string(&inner_85));
         }
-        if let Some(inner_83) = &self.target_name {
-            query.push_kv("targetName", &smithy_http::query::fmt_string(&inner_83));
+        if let Some(inner_86) = &self.target_name {
+            query.push_kv("targetName", &smithy_http::query::fmt_string(&inner_86));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -13411,8 +14410,11 @@ impl DeleteV2LoggingLevelInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13420,7 +14422,11 @@ impl DeleteV2LoggingLevelInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13496,7 +14502,10 @@ impl DeprecateThingTypeInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_deprecate_thing_type(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_deprecate_thing_type(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -13543,15 +14552,15 @@ impl DeprecateThingTypeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_84 = &self.thing_type_name;
-        let input_84 =
-            input_84
+        let input_87 = &self.thing_type_name;
+        let input_87 =
+            input_87
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_type_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_type_name = smithy_http::label::fmt_string(input_84, false);
+        let thing_type_name = smithy_http::label::fmt_string(input_87, false);
         if thing_type_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_type_name",
@@ -13580,8 +14589,11 @@ impl DeprecateThingTypeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13589,7 +14601,11 @@ impl DeprecateThingTypeInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13699,8 +14715,11 @@ impl DescribeAccountAuditConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13708,7 +14727,11 @@ impl DescribeAccountAuditConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13813,15 +14836,15 @@ impl DescribeAuditFindingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_85 = &self.finding_id;
-        let input_85 =
-            input_85
+        let input_88 = &self.finding_id;
+        let input_88 =
+            input_88
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "finding_id",
                     details: "cannot be empty or unset",
                 })?;
-        let finding_id = smithy_http::label::fmt_string(input_85, false);
+        let finding_id = smithy_http::label::fmt_string(input_88, false);
         if finding_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "finding_id",
@@ -13850,8 +14873,11 @@ impl DescribeAuditFindingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13859,7 +14885,11 @@ impl DescribeAuditFindingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13965,15 +14995,15 @@ impl DescribeAuditMitigationActionsTaskInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_86 = &self.task_id;
-        let input_86 =
-            input_86
+        let input_89 = &self.task_id;
+        let input_89 =
+            input_89
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
                     details: "cannot be empty or unset",
                 })?;
-        let task_id = smithy_http::label::fmt_string(input_86, false);
+        let task_id = smithy_http::label::fmt_string(input_89, false);
         if task_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "task_id",
@@ -14002,8 +15032,11 @@ impl DescribeAuditMitigationActionsTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14011,7 +15044,11 @@ impl DescribeAuditMitigationActionsTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14090,10 +15127,9 @@ impl DescribeAuditSuppressionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_audit_suppression(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_audit_suppression(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -14154,8 +15190,11 @@ impl DescribeAuditSuppressionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14163,7 +15202,11 @@ impl DescribeAuditSuppressionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14268,15 +15311,15 @@ impl DescribeAuditTaskInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_87 = &self.task_id;
-        let input_87 =
-            input_87
+        let input_90 = &self.task_id;
+        let input_90 =
+            input_90
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
                     details: "cannot be empty or unset",
                 })?;
-        let task_id = smithy_http::label::fmt_string(input_87, false);
+        let task_id = smithy_http::label::fmt_string(input_90, false);
         if task_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "task_id",
@@ -14301,8 +15344,11 @@ impl DescribeAuditTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14310,7 +15356,11 @@ impl DescribeAuditTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14418,15 +15468,15 @@ impl DescribeAuthorizerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_88 = &self.authorizer_name;
-        let input_88 =
-            input_88
+        let input_91 = &self.authorizer_name;
+        let input_91 =
+            input_91
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "authorizer_name",
                     details: "cannot be empty or unset",
                 })?;
-        let authorizer_name = smithy_http::label::fmt_string(input_88, false);
+        let authorizer_name = smithy_http::label::fmt_string(input_91, false);
         if authorizer_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "authorizer_name",
@@ -14455,8 +15505,11 @@ impl DescribeAuthorizerInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14464,7 +15517,11 @@ impl DescribeAuthorizerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14572,15 +15629,15 @@ impl DescribeBillingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_89 = &self.billing_group_name;
-        let input_89 =
-            input_89
+        let input_92 = &self.billing_group_name;
+        let input_92 =
+            input_92
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "billing_group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let billing_group_name = smithy_http::label::fmt_string(input_89, false);
+        let billing_group_name = smithy_http::label::fmt_string(input_92, false);
         if billing_group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "billing_group_name",
@@ -14609,8 +15666,11 @@ impl DescribeBillingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14618,7 +15678,11 @@ impl DescribeBillingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14726,15 +15790,15 @@ impl DescribeCaCertificateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_90 = &self.certificate_id;
-        let input_90 =
-            input_90
+        let input_93 = &self.certificate_id;
+        let input_93 =
+            input_93
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
                     details: "cannot be empty or unset",
                 })?;
-        let certificate_id = smithy_http::label::fmt_string(input_90, false);
+        let certificate_id = smithy_http::label::fmt_string(input_93, false);
         if certificate_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "certificate_id",
@@ -14763,8 +15827,11 @@ impl DescribeCaCertificateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14772,7 +15839,11 @@ impl DescribeCaCertificateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14881,15 +15952,15 @@ impl DescribeCertificateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_91 = &self.certificate_id;
-        let input_91 =
-            input_91
+        let input_94 = &self.certificate_id;
+        let input_94 =
+            input_94
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
                     details: "cannot be empty or unset",
                 })?;
-        let certificate_id = smithy_http::label::fmt_string(input_91, false);
+        let certificate_id = smithy_http::label::fmt_string(input_94, false);
         if certificate_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "certificate_id",
@@ -14918,8 +15989,11 @@ impl DescribeCertificateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14927,7 +16001,11 @@ impl DescribeCertificateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15034,15 +16112,15 @@ impl DescribeCustomMetricInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_92 = &self.metric_name;
-        let input_92 =
-            input_92
+        let input_95 = &self.metric_name;
+        let input_95 =
+            input_95
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "metric_name",
                     details: "cannot be empty or unset",
                 })?;
-        let metric_name = smithy_http::label::fmt_string(input_92, false);
+        let metric_name = smithy_http::label::fmt_string(input_95, false);
         if metric_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "metric_name",
@@ -15071,8 +16149,11 @@ impl DescribeCustomMetricInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15080,7 +16161,11 @@ impl DescribeCustomMetricInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15190,8 +16275,11 @@ impl DescribeDefaultAuthorizerInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15199,7 +16287,11 @@ impl DescribeDefaultAuthorizerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15308,15 +16400,15 @@ impl DescribeDetectMitigationActionsTaskInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_93 = &self.task_id;
-        let input_93 =
-            input_93
+        let input_96 = &self.task_id;
+        let input_96 =
+            input_96
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
                     details: "cannot be empty or unset",
                 })?;
-        let task_id = smithy_http::label::fmt_string(input_93, false);
+        let task_id = smithy_http::label::fmt_string(input_96, false);
         if task_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "task_id",
@@ -15345,8 +16437,11 @@ impl DescribeDetectMitigationActionsTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15354,7 +16449,11 @@ impl DescribeDetectMitigationActionsTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15457,15 +16556,15 @@ impl DescribeDimensionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_94 = &self.name;
-        let input_94 =
-            input_94
+        let input_97 = &self.name;
+        let input_97 =
+            input_97
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_94, false);
+        let name = smithy_http::label::fmt_string(input_97, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -15489,8 +16588,11 @@ impl DescribeDimensionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15498,7 +16600,11 @@ impl DescribeDimensionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15607,15 +16713,15 @@ impl DescribeDomainConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_95 = &self.domain_configuration_name;
-        let input_95 =
-            input_95
+        let input_98 = &self.domain_configuration_name;
+        let input_98 =
+            input_98
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "domain_configuration_name",
                     details: "cannot be empty or unset",
                 })?;
-        let domain_configuration_name = smithy_http::label::fmt_string(input_95, false);
+        let domain_configuration_name = smithy_http::label::fmt_string(input_98, false);
         if domain_configuration_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "domain_configuration_name",
@@ -15644,8 +16750,11 @@ impl DescribeDomainConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15653,7 +16762,11 @@ impl DescribeDomainConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15688,14 +16801,14 @@ pub mod describe_endpoint_input {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API
+        /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
         /// endpoint.</p>
         /// </li>
         /// </ul>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
+        /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
         /// endpoint.</p>
         /// </li>
         /// </ul>
@@ -15794,8 +16907,8 @@ impl DescribeEndpointInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_96) = &self.endpoint_type {
-            query.push_kv("endpointType", &smithy_http::query::fmt_string(&inner_96));
+        if let Some(inner_99) = &self.endpoint_type {
+            query.push_kv("endpointType", &smithy_http::query::fmt_string(&inner_99));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -15813,8 +16926,11 @@ impl DescribeEndpointInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15822,7 +16938,11 @@ impl DescribeEndpointInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15932,8 +17052,11 @@ impl DescribeEventConfigurationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15941,13 +17064,175 @@ impl DescribeEventConfigurationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeEventConfigurationsInput`](crate::input::DescribeEventConfigurationsInput)
     pub fn builder() -> crate::input::describe_event_configurations_input::Builder {
         crate::input::describe_event_configurations_input::Builder::default()
+    }
+}
+
+/// See [`DescribeFleetMetricInput`](crate::input::DescribeFleetMetricInput)
+pub mod describe_fleet_metric_input {
+    /// A builder for [`DescribeFleetMetricInput`](crate::input::DescribeFleetMetricInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the fleet metric to describe.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetMetricInput`](crate::input::DescribeFleetMetricInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeFleetMetricInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeFleetMetricInput {
+                metric_name: self.metric_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeFleetMetricInputOperationOutputAlias = crate::operation::DescribeFleetMetric;
+#[doc(hidden)]
+pub type DescribeFleetMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeFleetMetricInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeFleetMetric`](crate::operation::DescribeFleetMetric)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeFleetMetric,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeFleetMetric::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeFleetMetric",
+                "iot",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_100 = &self.metric_name;
+        let input_100 =
+            input_100
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "metric_name",
+                    details: "cannot be empty or unset",
+                })?;
+        let metric_name = smithy_http::label::fmt_string(input_100, false);
+        if metric_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "metric_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/fleet-metric/{metricName}",
+            metricName = metric_name
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("GET").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeFleetMetricInput`](crate::input::DescribeFleetMetricInput)
+    pub fn builder() -> crate::input::describe_fleet_metric_input::Builder {
+        crate::input::describe_fleet_metric_input::Builder::default()
     }
 }
 
@@ -16044,15 +17329,15 @@ impl DescribeIndexInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_97 = &self.index_name;
-        let input_97 =
-            input_97
+        let input_101 = &self.index_name;
+        let input_101 =
+            input_101
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
                     details: "cannot be empty or unset",
                 })?;
-        let index_name = smithy_http::label::fmt_string(input_97, false);
+        let index_name = smithy_http::label::fmt_string(input_101, false);
         if index_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "index_name",
@@ -16077,8 +17362,11 @@ impl DescribeIndexInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16086,7 +17374,11 @@ impl DescribeIndexInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16186,15 +17478,15 @@ impl DescribeJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_98 = &self.job_id;
-        let input_98 =
-            input_98
+        let input_102 = &self.job_id;
+        let input_102 =
+            input_102
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_98, false);
+        let job_id = smithy_http::label::fmt_string(input_102, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -16218,8 +17510,11 @@ impl DescribeJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16227,7 +17522,11 @@ impl DescribeJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16355,30 +17654,30 @@ impl DescribeJobExecutionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_99 = &self.thing_name;
-        let input_99 =
-            input_99
+        let input_103 = &self.thing_name;
+        let input_103 =
+            input_103
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_name = smithy_http::label::fmt_string(input_99, false);
+        let thing_name = smithy_http::label::fmt_string(input_103, false);
         if thing_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_name",
                 details: "cannot be empty or unset",
             });
         }
-        let input_100 = &self.job_id;
-        let input_100 =
-            input_100
+        let input_104 = &self.job_id;
+        let input_104 =
+            input_104
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_100, false);
+        let job_id = smithy_http::label::fmt_string(input_104, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -16396,10 +17695,10 @@ impl DescribeJobExecutionInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_101) = &self.execution_number {
+        if let Some(inner_105) = &self.execution_number {
             query.push_kv(
                 "executionNumber",
-                &smithy_types::primitive::Encoder::from(*inner_101).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_105).encode(),
             );
         }
     }
@@ -16418,8 +17717,11 @@ impl DescribeJobExecutionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16427,7 +17729,11 @@ impl DescribeJobExecutionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16535,15 +17841,15 @@ impl DescribeJobTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_102 = &self.job_template_id;
-        let input_102 =
-            input_102
+        let input_106 = &self.job_template_id;
+        let input_106 =
+            input_106
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_template_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_template_id = smithy_http::label::fmt_string(input_102, false);
+        let job_template_id = smithy_http::label::fmt_string(input_106, false);
         if job_template_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_template_id",
@@ -16572,8 +17878,11 @@ impl DescribeJobTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16581,7 +17890,11 @@ impl DescribeJobTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16687,15 +18000,15 @@ impl DescribeMitigationActionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_103 = &self.action_name;
-        let input_103 =
-            input_103
+        let input_107 = &self.action_name;
+        let input_107 =
+            input_107
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "action_name",
                     details: "cannot be empty or unset",
                 })?;
-        let action_name = smithy_http::label::fmt_string(input_103, false);
+        let action_name = smithy_http::label::fmt_string(input_107, false);
         if action_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "action_name",
@@ -16724,8 +18037,11 @@ impl DescribeMitigationActionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16733,7 +18049,11 @@ impl DescribeMitigationActionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16842,15 +18162,15 @@ impl DescribeProvisioningTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_104 = &self.template_name;
-        let input_104 =
-            input_104
+        let input_108 = &self.template_name;
+        let input_108 =
+            input_108
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
                     details: "cannot be empty or unset",
                 })?;
-        let template_name = smithy_http::label::fmt_string(input_104, false);
+        let template_name = smithy_http::label::fmt_string(input_108, false);
         if template_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_name",
@@ -16879,8 +18199,11 @@ impl DescribeProvisioningTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16888,7 +18211,11 @@ impl DescribeProvisioningTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17009,30 +18336,30 @@ impl DescribeProvisioningTemplateVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_105 = &self.template_name;
-        let input_105 =
-            input_105
+        let input_109 = &self.template_name;
+        let input_109 =
+            input_109
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
                     details: "cannot be empty or unset",
                 })?;
-        let template_name = smithy_http::label::fmt_string(input_105, false);
+        let template_name = smithy_http::label::fmt_string(input_109, false);
         if template_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_name",
                 details: "cannot be empty or unset",
             });
         }
-        let input_106 = &self.version_id;
-        let input_106 =
-            input_106
+        let input_110 = &self.version_id;
+        let input_110 =
+            input_110
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "version_id",
                     details: "cannot be empty or unset",
                 })?;
-        let mut version_id_encoder = smithy_types::primitive::Encoder::from(*input_106);
+        let mut version_id_encoder = smithy_types::primitive::Encoder::from(*input_110);
         let version_id = version_id_encoder.encode();
         if version_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
@@ -17063,8 +18390,11 @@ impl DescribeProvisioningTemplateVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17072,7 +18402,11 @@ impl DescribeProvisioningTemplateVersionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17177,15 +18511,15 @@ impl DescribeRoleAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_107 = &self.role_alias;
-        let input_107 =
-            input_107
+        let input_111 = &self.role_alias;
+        let input_111 =
+            input_111
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "role_alias",
                     details: "cannot be empty or unset",
                 })?;
-        let role_alias = smithy_http::label::fmt_string(input_107, false);
+        let role_alias = smithy_http::label::fmt_string(input_111, false);
         if role_alias.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "role_alias",
@@ -17210,8 +18544,11 @@ impl DescribeRoleAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17219,7 +18556,11 @@ impl DescribeRoleAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17327,15 +18668,15 @@ impl DescribeScheduledAuditInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_108 = &self.scheduled_audit_name;
-        let input_108 =
-            input_108
+        let input_112 = &self.scheduled_audit_name;
+        let input_112 =
+            input_112
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "scheduled_audit_name",
                     details: "cannot be empty or unset",
                 })?;
-        let scheduled_audit_name = smithy_http::label::fmt_string(input_108, false);
+        let scheduled_audit_name = smithy_http::label::fmt_string(input_112, false);
         if scheduled_audit_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "scheduled_audit_name",
@@ -17364,8 +18705,11 @@ impl DescribeScheduledAuditInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17373,7 +18717,11 @@ impl DescribeScheduledAuditInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17483,15 +18831,15 @@ impl DescribeSecurityProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_109 = &self.security_profile_name;
-        let input_109 =
-            input_109
+        let input_113 = &self.security_profile_name;
+        let input_113 =
+            input_113
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "security_profile_name",
                     details: "cannot be empty or unset",
                 })?;
-        let security_profile_name = smithy_http::label::fmt_string(input_109, false);
+        let security_profile_name = smithy_http::label::fmt_string(input_113, false);
         if security_profile_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "security_profile_name",
@@ -17520,8 +18868,11 @@ impl DescribeSecurityProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17529,7 +18880,11 @@ impl DescribeSecurityProfileInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17634,15 +18989,15 @@ impl DescribeStreamInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_110 = &self.stream_id;
-        let input_110 =
-            input_110
+        let input_114 = &self.stream_id;
+        let input_114 =
+            input_114
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "stream_id",
                     details: "cannot be empty or unset",
                 })?;
-        let stream_id = smithy_http::label::fmt_string(input_110, false);
+        let stream_id = smithy_http::label::fmt_string(input_114, false);
         if stream_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "stream_id",
@@ -17667,8 +19022,11 @@ impl DescribeStreamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17676,7 +19034,11 @@ impl DescribeStreamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17779,15 +19141,15 @@ impl DescribeThingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_111 = &self.thing_name;
-        let input_111 =
-            input_111
+        let input_115 = &self.thing_name;
+        let input_115 =
+            input_115
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_name = smithy_http::label::fmt_string(input_111, false);
+        let thing_name = smithy_http::label::fmt_string(input_115, false);
         if thing_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_name",
@@ -17812,8 +19174,11 @@ impl DescribeThingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17821,7 +19186,11 @@ impl DescribeThingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17929,15 +19298,15 @@ impl DescribeThingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_112 = &self.thing_group_name;
-        let input_112 =
-            input_112
+        let input_116 = &self.thing_group_name;
+        let input_116 =
+            input_116
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_group_name = smithy_http::label::fmt_string(input_112, false);
+        let thing_group_name = smithy_http::label::fmt_string(input_116, false);
         if thing_group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_group_name",
@@ -17966,8 +19335,11 @@ impl DescribeThingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17975,7 +19347,11 @@ impl DescribeThingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18081,15 +19457,15 @@ impl DescribeThingRegistrationTaskInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_113 = &self.task_id;
-        let input_113 =
-            input_113
+        let input_117 = &self.task_id;
+        let input_117 =
+            input_117
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
                     details: "cannot be empty or unset",
                 })?;
-        let task_id = smithy_http::label::fmt_string(input_113, false);
+        let task_id = smithy_http::label::fmt_string(input_117, false);
         if task_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "task_id",
@@ -18118,8 +19494,11 @@ impl DescribeThingRegistrationTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18127,7 +19506,11 @@ impl DescribeThingRegistrationTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18235,15 +19618,15 @@ impl DescribeThingTypeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_114 = &self.thing_type_name;
-        let input_114 =
-            input_114
+        let input_118 = &self.thing_type_name;
+        let input_118 =
+            input_118
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_type_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_type_name = smithy_http::label::fmt_string(input_114, false);
+        let thing_type_name = smithy_http::label::fmt_string(input_118, false);
         if thing_type_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_type_name",
@@ -18272,8 +19655,11 @@ impl DescribeThingTypeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18281,7 +19667,11 @@ impl DescribeThingTypeInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18352,9 +19742,10 @@ impl DetachPolicyInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_detach_policy(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_detach_policy(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -18395,15 +19786,15 @@ impl DetachPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_115 = &self.policy_name;
-        let input_115 =
-            input_115
+        let input_119 = &self.policy_name;
+        let input_119 =
+            input_119
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_name = smithy_http::label::fmt_string(input_115, false);
+        let policy_name = smithy_http::label::fmt_string(input_119, false);
         if policy_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_name",
@@ -18432,8 +19823,11 @@ impl DetachPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18441,7 +19835,11 @@ impl DetachPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18558,15 +19956,15 @@ impl DetachPrincipalPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_116 = &self.policy_name;
-        let input_116 =
-            input_116
+        let input_120 = &self.policy_name;
+        let input_120 =
+            input_120
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_name = smithy_http::label::fmt_string(input_116, false);
+        let policy_name = smithy_http::label::fmt_string(input_120, false);
         if policy_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_name",
@@ -18585,11 +19983,11 @@ impl DetachPrincipalPolicyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_117) = &self.principal {
-            let formatted_118 = AsRef::<str>::as_ref(inner_117);
-            if !formatted_118.is_empty() {
+        if let Some(inner_121) = &self.principal {
+            let formatted_122 = AsRef::<str>::as_ref(inner_121);
+            if !formatted_122.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_118;
+                let header_value = formatted_122;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -18620,8 +20018,11 @@ impl DetachPrincipalPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18629,7 +20030,11 @@ impl DetachPrincipalPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18754,15 +20159,15 @@ impl DetachSecurityProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_119 = &self.security_profile_name;
-        let input_119 =
-            input_119
+        let input_123 = &self.security_profile_name;
+        let input_123 =
+            input_123
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "security_profile_name",
                     details: "cannot be empty or unset",
                 })?;
-        let security_profile_name = smithy_http::label::fmt_string(input_119, false);
+        let security_profile_name = smithy_http::label::fmt_string(input_123, false);
         if security_profile_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "security_profile_name",
@@ -18779,10 +20184,10 @@ impl DetachSecurityProfileInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_120) = &self.security_profile_target_arn {
+        if let Some(inner_124) = &self.security_profile_target_arn {
             query.push_kv(
                 "securityProfileTargetArn",
-                &smithy_http::query::fmt_string(&inner_120),
+                &smithy_http::query::fmt_string(&inner_124),
             );
         }
     }
@@ -18801,8 +20206,11 @@ impl DetachSecurityProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18810,7 +20218,11 @@ impl DetachSecurityProfileInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18928,15 +20340,15 @@ impl DetachThingPrincipalInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_121 = &self.thing_name;
-        let input_121 =
-            input_121
+        let input_125 = &self.thing_name;
+        let input_125 =
+            input_125
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_name = smithy_http::label::fmt_string(input_121, false);
+        let thing_name = smithy_http::label::fmt_string(input_125, false);
         if thing_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_name",
@@ -18955,11 +20367,11 @@ impl DetachThingPrincipalInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_122) = &self.principal {
-            let formatted_123 = AsRef::<str>::as_ref(inner_122);
-            if !formatted_123.is_empty() {
+        if let Some(inner_126) = &self.principal {
+            let formatted_127 = AsRef::<str>::as_ref(inner_126);
+            if !formatted_127.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_123;
+                let header_value = formatted_127;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -18990,8 +20402,11 @@ impl DetachThingPrincipalInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18999,7 +20414,11 @@ impl DetachThingPrincipalInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19104,15 +20523,15 @@ impl DisableTopicRuleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_124 = &self.rule_name;
-        let input_124 =
-            input_124
+        let input_128 = &self.rule_name;
+        let input_128 =
+            input_128
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "rule_name",
                     details: "cannot be empty or unset",
                 })?;
-        let rule_name = smithy_http::label::fmt_string(input_124, false);
+        let rule_name = smithy_http::label::fmt_string(input_128, false);
         if rule_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "rule_name",
@@ -19137,8 +20556,11 @@ impl DisableTopicRuleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19146,7 +20568,11 @@ impl DisableTopicRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19251,15 +20677,15 @@ impl EnableTopicRuleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_125 = &self.rule_name;
-        let input_125 =
-            input_125
+        let input_129 = &self.rule_name;
+        let input_129 =
+            input_129
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "rule_name",
                     details: "cannot be empty or unset",
                 })?;
-        let rule_name = smithy_http::label::fmt_string(input_125, false);
+        let rule_name = smithy_http::label::fmt_string(input_129, false);
         if rule_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "rule_name",
@@ -19284,8 +20710,11 @@ impl EnableTopicRuleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19293,7 +20722,11 @@ impl EnableTopicRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19435,20 +20868,20 @@ impl GetBehaviorModelTrainingSummariesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_126) = &self.security_profile_name {
+        if let Some(inner_130) = &self.security_profile_name {
             query.push_kv(
                 "securityProfileName",
-                &smithy_http::query::fmt_string(&inner_126),
+                &smithy_http::query::fmt_string(&inner_130),
             );
         }
-        if let Some(inner_127) = &self.max_results {
+        if let Some(inner_131) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_127).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_131).encode(),
             );
         }
-        if let Some(inner_128) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_128));
+        if let Some(inner_132) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_132));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19466,8 +20899,11 @@ impl GetBehaviorModelTrainingSummariesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19475,13 +20911,218 @@ impl GetBehaviorModelTrainingSummariesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetBehaviorModelTrainingSummariesInput`](crate::input::GetBehaviorModelTrainingSummariesInput)
     pub fn builder() -> crate::input::get_behavior_model_training_summaries_input::Builder {
         crate::input::get_behavior_model_training_summaries_input::Builder::default()
+    }
+}
+
+/// See [`GetBucketsAggregationInput`](crate::input::GetBucketsAggregationInput)
+pub mod get_buckets_aggregation_input {
+    /// A builder for [`GetBucketsAggregationInput`](crate::input::GetBucketsAggregationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) query_string: std::option::Option<std::string::String>,
+        pub(crate) aggregation_field: std::option::Option<std::string::String>,
+        pub(crate) query_version: std::option::Option<std::string::String>,
+        pub(crate) buckets_aggregation_type:
+            std::option::Option<crate::model::BucketsAggregationType>,
+    }
+    impl Builder {
+        /// <p>The name of the index to search.</p>
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
+            self
+        }
+        /// <p>The search query string.</p>
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_string = Some(input.into());
+            self
+        }
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_string = input;
+            self
+        }
+        /// <p>The aggregation field.</p>
+        pub fn aggregation_field(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aggregation_field = Some(input.into());
+            self
+        }
+        pub fn set_aggregation_field(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aggregation_field = input;
+            self
+        }
+        /// <p>The version of the query.</p>
+        pub fn query_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_version = Some(input.into());
+            self
+        }
+        pub fn set_query_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.query_version = input;
+            self
+        }
+        /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+        pub fn buckets_aggregation_type(
+            mut self,
+            input: crate::model::BucketsAggregationType,
+        ) -> Self {
+            self.buckets_aggregation_type = Some(input);
+            self
+        }
+        pub fn set_buckets_aggregation_type(
+            mut self,
+            input: std::option::Option<crate::model::BucketsAggregationType>,
+        ) -> Self {
+            self.buckets_aggregation_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBucketsAggregationInput`](crate::input::GetBucketsAggregationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetBucketsAggregationInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetBucketsAggregationInput {
+                index_name: self.index_name,
+                query_string: self.query_string,
+                aggregation_field: self.aggregation_field,
+                query_version: self.query_version,
+                buckets_aggregation_type: self.buckets_aggregation_type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetBucketsAggregationInputOperationOutputAlias = crate::operation::GetBucketsAggregation;
+#[doc(hidden)]
+pub type GetBucketsAggregationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetBucketsAggregationInput {
+    /// Consumes the builder and constructs an Operation<[`GetBucketsAggregation`](crate::operation::GetBucketsAggregation)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetBucketsAggregation,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_buckets_aggregation(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetBucketsAggregation::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetBucketsAggregation",
+                "iot",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/indices/buckets").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetBucketsAggregationInput`](crate::input::GetBucketsAggregationInput)
+    pub fn builder() -> crate::input::get_buckets_aggregation_input::Builder {
+        crate::input::get_buckets_aggregation_input::Builder::default()
     }
 }
 
@@ -19506,7 +21147,7 @@ pub mod get_cardinality_input {
             self.index_name = input;
             self
         }
-        /// <p>The search query.</p>
+        /// <p>The search query string.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_string = Some(input.into());
             self
@@ -19575,9 +21216,11 @@ impl GetCardinalityInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_cardinality(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_cardinality(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -19638,8 +21281,11 @@ impl GetCardinalityInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19647,7 +21293,11 @@ impl GetCardinalityInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19733,7 +21383,10 @@ impl GetEffectivePoliciesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_effective_policies(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_effective_policies(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -19785,8 +21438,8 @@ impl GetEffectivePoliciesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_129) = &self.thing_name {
-            query.push_kv("thingName", &smithy_http::query::fmt_string(&inner_129));
+        if let Some(inner_133) = &self.thing_name {
+            query.push_kv("thingName", &smithy_http::query::fmt_string(&inner_133));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19804,8 +21457,11 @@ impl GetEffectivePoliciesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19813,7 +21469,11 @@ impl GetEffectivePoliciesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19923,8 +21583,11 @@ impl GetIndexingConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19932,7 +21595,11 @@ impl GetIndexingConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20037,15 +21704,15 @@ impl GetJobDocumentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_130 = &self.job_id;
-        let input_130 =
-            input_130
+        let input_134 = &self.job_id;
+        let input_134 =
+            input_134
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_130, false);
+        let job_id = smithy_http::label::fmt_string(input_134, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -20070,8 +21737,11 @@ impl GetJobDocumentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20079,7 +21749,11 @@ impl GetJobDocumentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20188,8 +21862,11 @@ impl GetLoggingOptionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20197,7 +21874,11 @@ impl GetLoggingOptionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20300,15 +21981,15 @@ impl GetOtaUpdateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_131 = &self.ota_update_id;
-        let input_131 =
-            input_131
+        let input_135 = &self.ota_update_id;
+        let input_135 =
+            input_135
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "ota_update_id",
                     details: "cannot be empty or unset",
                 })?;
-        let ota_update_id = smithy_http::label::fmt_string(input_131, false);
+        let ota_update_id = smithy_http::label::fmt_string(input_135, false);
         if ota_update_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "ota_update_id",
@@ -20337,8 +22018,11 @@ impl GetOtaUpdateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20346,7 +22030,11 @@ impl GetOtaUpdateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20378,7 +22066,7 @@ pub mod get_percentiles_input {
             self.index_name = input;
             self
         }
-        /// <p>The query string.</p>
+        /// <p>The search query string.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_string = Some(input.into());
             self
@@ -20458,9 +22146,11 @@ impl GetPercentilesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_percentiles(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_percentiles(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -20521,8 +22211,11 @@ impl GetPercentilesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20530,7 +22223,11 @@ impl GetPercentilesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20628,15 +22325,15 @@ impl GetPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_132 = &self.policy_name;
-        let input_132 =
-            input_132
+        let input_136 = &self.policy_name;
+        let input_136 =
+            input_136
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_name = smithy_http::label::fmt_string(input_132, false);
+        let policy_name = smithy_http::label::fmt_string(input_136, false);
         if policy_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_name",
@@ -20661,8 +22358,11 @@ impl GetPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20670,7 +22370,11 @@ impl GetPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20789,30 +22493,30 @@ impl GetPolicyVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_133 = &self.policy_name;
-        let input_133 =
-            input_133
+        let input_137 = &self.policy_name;
+        let input_137 =
+            input_137
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_name = smithy_http::label::fmt_string(input_133, false);
+        let policy_name = smithy_http::label::fmt_string(input_137, false);
         if policy_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_name",
                 details: "cannot be empty or unset",
             });
         }
-        let input_134 = &self.policy_version_id;
-        let input_134 =
-            input_134
+        let input_138 = &self.policy_version_id;
+        let input_138 =
+            input_138
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_version_id",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_version_id = smithy_http::label::fmt_string(input_134, false);
+        let policy_version_id = smithy_http::label::fmt_string(input_138, false);
         if policy_version_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_version_id",
@@ -20842,8 +22546,11 @@ impl GetPolicyVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20851,7 +22558,11 @@ impl GetPolicyVersionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20960,8 +22671,11 @@ impl GetRegistrationCodeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20969,7 +22683,11 @@ impl GetRegistrationCodeInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21001,7 +22719,7 @@ pub mod get_statistics_input {
             self
         }
         /// <p>The query used to search. You can specify "*" for the query string to get the count of all
-        /// indexed things in your AWS account.</p>
+        /// indexed things in your Amazon Web Services account.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_string = Some(input.into());
             self
@@ -21069,9 +22787,10 @@ impl GetStatisticsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_statistics(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_statistics(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -21132,8 +22851,11 @@ impl GetStatisticsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21141,7 +22863,11 @@ impl GetStatisticsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21241,15 +22967,15 @@ impl GetTopicRuleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_135 = &self.rule_name;
-        let input_135 =
-            input_135
+        let input_139 = &self.rule_name;
+        let input_139 =
+            input_139
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "rule_name",
                     details: "cannot be empty or unset",
                 })?;
-        let rule_name = smithy_http::label::fmt_string(input_135, false);
+        let rule_name = smithy_http::label::fmt_string(input_139, false);
         if rule_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "rule_name",
@@ -21274,8 +23000,11 @@ impl GetTopicRuleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21283,7 +23012,11 @@ impl GetTopicRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21387,15 +23120,15 @@ impl GetTopicRuleDestinationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_136 = &self.arn;
-        let input_136 =
-            input_136
+        let input_140 = &self.arn;
+        let input_140 =
+            input_140
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "arn",
                     details: "cannot be empty or unset",
                 })?;
-        let arn = smithy_http::label::fmt_string(input_136, true);
+        let arn = smithy_http::label::fmt_string(input_140, true);
         if arn.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "arn",
@@ -21419,8 +23152,11 @@ impl GetTopicRuleDestinationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21428,7 +23164,11 @@ impl GetTopicRuleDestinationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21537,8 +23277,11 @@ impl GetV2LoggingOptionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21546,7 +23289,11 @@ impl GetV2LoggingOptionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21721,34 +23468,34 @@ impl ListActiveViolationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_137) = &self.thing_name {
-            query.push_kv("thingName", &smithy_http::query::fmt_string(&inner_137));
+        if let Some(inner_141) = &self.thing_name {
+            query.push_kv("thingName", &smithy_http::query::fmt_string(&inner_141));
         }
-        if let Some(inner_138) = &self.security_profile_name {
+        if let Some(inner_142) = &self.security_profile_name {
             query.push_kv(
                 "securityProfileName",
-                &smithy_http::query::fmt_string(&inner_138),
+                &smithy_http::query::fmt_string(&inner_142),
             );
         }
-        if let Some(inner_139) = &self.behavior_criteria_type {
+        if let Some(inner_143) = &self.behavior_criteria_type {
             query.push_kv(
                 "behaviorCriteriaType",
-                &smithy_http::query::fmt_string(&inner_139),
+                &smithy_http::query::fmt_string(&inner_143),
             );
         }
-        if let Some(inner_140) = &self.list_suppressed_alerts {
+        if let Some(inner_144) = &self.list_suppressed_alerts {
             query.push_kv(
                 "listSuppressedAlerts",
-                &smithy_types::primitive::Encoder::from(*inner_140).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_144).encode(),
             );
         }
-        if let Some(inner_141) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_141));
+        if let Some(inner_145) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_145));
         }
-        if let Some(inner_142) = &self.max_results {
+        if let Some(inner_146) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_142).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_146).encode(),
             );
         }
     }
@@ -21767,8 +23514,11 @@ impl ListActiveViolationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21776,7 +23526,11 @@ impl ListActiveViolationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21914,15 +23668,15 @@ impl ListAttachedPoliciesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_143 = &self.target;
-        let input_143 =
-            input_143
+        let input_147 = &self.target;
+        let input_147 =
+            input_147
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "target",
                     details: "cannot be empty or unset",
                 })?;
-        let target = smithy_http::label::fmt_string(input_143, false);
+        let target = smithy_http::label::fmt_string(input_147, false);
         if target.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "target",
@@ -21941,13 +23695,13 @@ impl ListAttachedPoliciesInput {
                 &smithy_types::primitive::Encoder::from(self.recursive).encode(),
             );
         }
-        if let Some(inner_144) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_144));
+        if let Some(inner_148) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_148));
         }
-        if let Some(inner_145) = &self.page_size {
+        if let Some(inner_149) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_145).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_149).encode(),
             );
         }
     }
@@ -21966,8 +23720,11 @@ impl ListAttachedPoliciesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21975,7 +23732,11 @@ impl ListAttachedPoliciesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22121,7 +23882,10 @@ impl ListAuditFindingsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_audit_findings(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_audit_findings(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -22185,8 +23949,11 @@ impl ListAuditFindingsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22194,7 +23961,11 @@ impl ListAuditFindingsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22357,23 +24128,23 @@ impl ListAuditMitigationActionsExecutionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_146) = &self.task_id {
-            query.push_kv("taskId", &smithy_http::query::fmt_string(&inner_146));
+        if let Some(inner_150) = &self.task_id {
+            query.push_kv("taskId", &smithy_http::query::fmt_string(&inner_150));
         }
-        if let Some(inner_147) = &self.action_status {
-            query.push_kv("actionStatus", &smithy_http::query::fmt_string(&inner_147));
+        if let Some(inner_151) = &self.action_status {
+            query.push_kv("actionStatus", &smithy_http::query::fmt_string(&inner_151));
         }
-        if let Some(inner_148) = &self.finding_id {
-            query.push_kv("findingId", &smithy_http::query::fmt_string(&inner_148));
+        if let Some(inner_152) = &self.finding_id {
+            query.push_kv("findingId", &smithy_http::query::fmt_string(&inner_152));
         }
-        if let Some(inner_149) = &self.max_results {
+        if let Some(inner_153) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_149).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_153).encode(),
             );
         }
-        if let Some(inner_150) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_150));
+        if let Some(inner_154) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_154));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -22391,8 +24162,11 @@ impl ListAuditMitigationActionsExecutionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22400,7 +24174,11 @@ impl ListAuditMitigationActionsExecutionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22586,38 +24364,38 @@ impl ListAuditMitigationActionsTasksInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_151) = &self.audit_task_id {
-            query.push_kv("auditTaskId", &smithy_http::query::fmt_string(&inner_151));
+        if let Some(inner_155) = &self.audit_task_id {
+            query.push_kv("auditTaskId", &smithy_http::query::fmt_string(&inner_155));
         }
-        if let Some(inner_152) = &self.finding_id {
-            query.push_kv("findingId", &smithy_http::query::fmt_string(&inner_152));
+        if let Some(inner_156) = &self.finding_id {
+            query.push_kv("findingId", &smithy_http::query::fmt_string(&inner_156));
         }
-        if let Some(inner_153) = &self.task_status {
-            query.push_kv("taskStatus", &smithy_http::query::fmt_string(&inner_153));
+        if let Some(inner_157) = &self.task_status {
+            query.push_kv("taskStatus", &smithy_http::query::fmt_string(&inner_157));
         }
-        if let Some(inner_154) = &self.max_results {
+        if let Some(inner_158) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_154).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_158).encode(),
             );
         }
-        if let Some(inner_155) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_155));
+        if let Some(inner_159) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_159));
         }
-        if let Some(inner_156) = &self.start_time {
+        if let Some(inner_160) = &self.start_time {
             query.push_kv(
                 "startTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_156,
+                    inner_160,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_157) = &self.end_time {
+        if let Some(inner_161) = &self.end_time {
             query.push_kv(
                 "endTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_157,
+                    inner_161,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
@@ -22638,8 +24416,11 @@ impl ListAuditMitigationActionsTasksInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22647,7 +24428,11 @@ impl ListAuditMitigationActionsTasksInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22764,7 +24549,10 @@ impl ListAuditSuppressionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_audit_suppressions(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_audit_suppressions(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -22828,8 +24616,11 @@ impl ListAuditSuppressionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22837,7 +24628,11 @@ impl ListAuditSuppressionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23012,37 +24807,37 @@ impl ListAuditTasksInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_158) = &self.start_time {
+        if let Some(inner_162) = &self.start_time {
             query.push_kv(
                 "startTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_158,
+                    inner_162,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_159) = &self.end_time {
+        if let Some(inner_163) = &self.end_time {
             query.push_kv(
                 "endTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_159,
+                    inner_163,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_160) = &self.task_type {
-            query.push_kv("taskType", &smithy_http::query::fmt_string(&inner_160));
+        if let Some(inner_164) = &self.task_type {
+            query.push_kv("taskType", &smithy_http::query::fmt_string(&inner_164));
         }
-        if let Some(inner_161) = &self.task_status {
-            query.push_kv("taskStatus", &smithy_http::query::fmt_string(&inner_161));
+        if let Some(inner_165) = &self.task_status {
+            query.push_kv("taskStatus", &smithy_http::query::fmt_string(&inner_165));
         }
-        if let Some(inner_162) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_162));
+        if let Some(inner_166) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_166));
         }
-        if let Some(inner_163) = &self.max_results {
+        if let Some(inner_167) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_163).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_167).encode(),
             );
         }
     }
@@ -23061,8 +24856,11 @@ impl ListAuditTasksInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23070,7 +24868,11 @@ impl ListAuditTasksInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23216,14 +25018,14 @@ impl ListAuthorizersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_164) = &self.page_size {
+        if let Some(inner_168) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_164).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_168).encode(),
             );
         }
-        if let Some(inner_165) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_165));
+        if let Some(inner_169) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_169));
         }
         if self.ascending_order {
             query.push_kv(
@@ -23231,8 +25033,8 @@ impl ListAuthorizersInput {
                 &smithy_types::primitive::Encoder::from(self.ascending_order).encode(),
             );
         }
-        if let Some(inner_166) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_166));
+        if let Some(inner_170) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_170));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -23250,8 +25052,11 @@ impl ListAuthorizersInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23259,7 +25064,11 @@ impl ListAuthorizersInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23396,19 +25205,19 @@ impl ListBillingGroupsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_167) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_167));
+        if let Some(inner_171) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_171));
         }
-        if let Some(inner_168) = &self.max_results {
+        if let Some(inner_172) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_168).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_172).encode(),
             );
         }
-        if let Some(inner_169) = &self.name_prefix_filter {
+        if let Some(inner_173) = &self.name_prefix_filter {
             query.push_kv(
                 "namePrefixFilter",
-                &smithy_http::query::fmt_string(&inner_169),
+                &smithy_http::query::fmt_string(&inner_173),
             );
         }
     }
@@ -23427,8 +25236,11 @@ impl ListBillingGroupsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23436,7 +25248,11 @@ impl ListBillingGroupsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23568,14 +25384,14 @@ impl ListCaCertificatesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_170) = &self.page_size {
+        if let Some(inner_174) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_170).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_174).encode(),
             );
         }
-        if let Some(inner_171) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_171));
+        if let Some(inner_175) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_175));
         }
         if self.ascending_order {
             query.push_kv(
@@ -23599,8 +25415,11 @@ impl ListCaCertificatesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23608,7 +25427,11 @@ impl ListCaCertificatesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23741,14 +25564,14 @@ impl ListCertificatesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_172) = &self.page_size {
+        if let Some(inner_176) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_172).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_176).encode(),
             );
         }
-        if let Some(inner_173) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_173));
+        if let Some(inner_177) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_177));
         }
         if self.ascending_order {
             query.push_kv(
@@ -23772,8 +25595,11 @@ impl ListCertificatesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23781,7 +25607,11 @@ impl ListCertificatesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23924,15 +25754,15 @@ impl ListCertificatesByCaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_174 = &self.ca_certificate_id;
-        let input_174 =
-            input_174
+        let input_178 = &self.ca_certificate_id;
+        let input_178 =
+            input_178
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "ca_certificate_id",
                     details: "cannot be empty or unset",
                 })?;
-        let ca_certificate_id = smithy_http::label::fmt_string(input_174, false);
+        let ca_certificate_id = smithy_http::label::fmt_string(input_178, false);
         if ca_certificate_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "ca_certificate_id",
@@ -23949,14 +25779,14 @@ impl ListCertificatesByCaInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_175) = &self.page_size {
+        if let Some(inner_179) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_175).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_179).encode(),
             );
         }
-        if let Some(inner_176) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_176));
+        if let Some(inner_180) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_180));
         }
         if self.ascending_order {
             query.push_kv(
@@ -23980,8 +25810,11 @@ impl ListCertificatesByCaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23989,7 +25822,11 @@ impl ListCertificatesByCaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24114,13 +25951,13 @@ impl ListCustomMetricsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_177) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_177));
+        if let Some(inner_181) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_181));
         }
-        if let Some(inner_178) = &self.max_results {
+        if let Some(inner_182) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_178).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_182).encode(),
             );
         }
     }
@@ -24139,8 +25976,11 @@ impl ListCustomMetricsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24148,7 +25988,11 @@ impl ListCustomMetricsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24341,41 +26185,41 @@ impl ListDetectMitigationActionsExecutionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_179) = &self.task_id {
-            query.push_kv("taskId", &smithy_http::query::fmt_string(&inner_179));
+        if let Some(inner_183) = &self.task_id {
+            query.push_kv("taskId", &smithy_http::query::fmt_string(&inner_183));
         }
-        if let Some(inner_180) = &self.violation_id {
-            query.push_kv("violationId", &smithy_http::query::fmt_string(&inner_180));
+        if let Some(inner_184) = &self.violation_id {
+            query.push_kv("violationId", &smithy_http::query::fmt_string(&inner_184));
         }
-        if let Some(inner_181) = &self.thing_name {
-            query.push_kv("thingName", &smithy_http::query::fmt_string(&inner_181));
+        if let Some(inner_185) = &self.thing_name {
+            query.push_kv("thingName", &smithy_http::query::fmt_string(&inner_185));
         }
-        if let Some(inner_182) = &self.start_time {
+        if let Some(inner_186) = &self.start_time {
             query.push_kv(
                 "startTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_182,
+                    inner_186,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_183) = &self.end_time {
+        if let Some(inner_187) = &self.end_time {
             query.push_kv(
                 "endTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_183,
+                    inner_187,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_184) = &self.max_results {
+        if let Some(inner_188) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_184).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_188).encode(),
             );
         }
-        if let Some(inner_185) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_185));
+        if let Some(inner_189) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_189));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -24393,8 +26237,11 @@ impl ListDetectMitigationActionsExecutionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24402,7 +26249,11 @@ impl ListDetectMitigationActionsExecutionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24553,29 +26404,29 @@ impl ListDetectMitigationActionsTasksInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_186) = &self.max_results {
+        if let Some(inner_190) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_186).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_190).encode(),
             );
         }
-        if let Some(inner_187) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_187));
+        if let Some(inner_191) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_191));
         }
-        if let Some(inner_188) = &self.start_time {
+        if let Some(inner_192) = &self.start_time {
             query.push_kv(
                 "startTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_188,
+                    inner_192,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_189) = &self.end_time {
+        if let Some(inner_193) = &self.end_time {
             query.push_kv(
                 "endTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_189,
+                    inner_193,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
@@ -24596,8 +26447,11 @@ impl ListDetectMitigationActionsTasksInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24605,7 +26459,11 @@ impl ListDetectMitigationActionsTasksInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24726,13 +26584,13 @@ impl ListDimensionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_190) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_190));
+        if let Some(inner_194) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_194));
         }
-        if let Some(inner_191) = &self.max_results {
+        if let Some(inner_195) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_191).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_195).encode(),
             );
         }
     }
@@ -24751,8 +26609,11 @@ impl ListDimensionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24760,7 +26621,11 @@ impl ListDimensionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24896,17 +26761,17 @@ impl ListDomainConfigurationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_192) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_192));
+        if let Some(inner_196) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_196));
         }
-        if let Some(inner_193) = &self.page_size {
+        if let Some(inner_197) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_193).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_197).encode(),
             );
         }
-        if let Some(inner_194) = &self.service_type {
-            query.push_kv("serviceType", &smithy_http::query::fmt_string(&inner_194));
+        if let Some(inner_198) = &self.service_type {
+            query.push_kv("serviceType", &smithy_http::query::fmt_string(&inner_198));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -24924,8 +26789,11 @@ impl ListDomainConfigurationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24933,13 +26801,180 @@ impl ListDomainConfigurationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListDomainConfigurationsInput`](crate::input::ListDomainConfigurationsInput)
     pub fn builder() -> crate::input::list_domain_configurations_input::Builder {
         crate::input::list_domain_configurations_input::Builder::default()
+    }
+}
+
+/// See [`ListFleetMetricsInput`](crate::input::ListFleetMetricsInput)
+pub mod list_fleet_metrics_input {
+    /// A builder for [`ListFleetMetricsInput`](crate::input::ListFleetMetricsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
+        /// otherwise <code>null</code> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListFleetMetricsInput`](crate::input::ListFleetMetricsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListFleetMetricsInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListFleetMetricsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListFleetMetricsInputOperationOutputAlias = crate::operation::ListFleetMetrics;
+#[doc(hidden)]
+pub type ListFleetMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListFleetMetricsInput {
+    /// Consumes the builder and constructs an Operation<[`ListFleetMetrics`](crate::operation::ListFleetMetrics)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListFleetMetrics,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListFleetMetrics::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListFleetMetrics",
+                "iot",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/fleet-metrics").expect("formatting should succeed");
+        Ok(())
+    }
+    fn uri_query(&self, mut output: &mut String) {
+        let mut query = smithy_http::query::Writer::new(&mut output);
+        if let Some(inner_199) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_199));
+        }
+        if let Some(inner_200) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_200).encode(),
+            );
+        }
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        self.uri_query(&mut uri);
+        Ok(builder.method("GET").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListFleetMetricsInput`](crate::input::ListFleetMetricsInput)
+    pub fn builder() -> crate::input::list_fleet_metrics_input::Builder {
+        crate::input::list_fleet_metrics_input::Builder::default()
     }
 }
 
@@ -25050,13 +27085,13 @@ impl ListIndicesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_195) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_195));
+        if let Some(inner_201) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_201));
         }
-        if let Some(inner_196) = &self.max_results {
+        if let Some(inner_202) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_196).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_202).encode(),
             );
         }
     }
@@ -25075,8 +27110,11 @@ impl ListIndicesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -25084,7 +27122,11 @@ impl ListIndicesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -25226,15 +27268,15 @@ impl ListJobExecutionsForJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_197 = &self.job_id;
-        let input_197 =
-            input_197
+        let input_203 = &self.job_id;
+        let input_203 =
+            input_203
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_197, false);
+        let job_id = smithy_http::label::fmt_string(input_203, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -25246,17 +27288,17 @@ impl ListJobExecutionsForJobInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_198) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_198));
+        if let Some(inner_204) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_204));
         }
-        if let Some(inner_199) = &self.max_results {
+        if let Some(inner_205) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_199).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_205).encode(),
             );
         }
-        if let Some(inner_200) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_200));
+        if let Some(inner_206) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_206));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -25274,8 +27316,11 @@ impl ListJobExecutionsForJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -25283,7 +27328,11 @@ impl ListJobExecutionsForJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -25328,7 +27377,7 @@ pub mod list_job_executions_for_thing_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -25444,15 +27493,15 @@ impl ListJobExecutionsForThingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_201 = &self.thing_name;
-        let input_201 =
-            input_201
+        let input_207 = &self.thing_name;
+        let input_207 =
+            input_207
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_name = smithy_http::label::fmt_string(input_201, false);
+        let thing_name = smithy_http::label::fmt_string(input_207, false);
         if thing_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_name",
@@ -25465,20 +27514,20 @@ impl ListJobExecutionsForThingInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_202) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_202));
+        if let Some(inner_208) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_208));
         }
-        if let Some(inner_203) = &self.namespace_id {
-            query.push_kv("namespaceId", &smithy_http::query::fmt_string(&inner_203));
+        if let Some(inner_209) = &self.namespace_id {
+            query.push_kv("namespaceId", &smithy_http::query::fmt_string(&inner_209));
         }
-        if let Some(inner_204) = &self.max_results {
+        if let Some(inner_210) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_204).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_210).encode(),
             );
         }
-        if let Some(inner_205) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_205));
+        if let Some(inner_211) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_211));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -25496,8 +27545,11 @@ impl ListJobExecutionsForThingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -25505,7 +27557,11 @@ impl ListJobExecutionsForThingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -25597,7 +27653,7 @@ pub mod list_jobs_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -25694,35 +27750,35 @@ impl ListJobsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_206) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_206));
+        if let Some(inner_212) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_212));
         }
-        if let Some(inner_207) = &self.target_selection {
+        if let Some(inner_213) = &self.target_selection {
             query.push_kv(
                 "targetSelection",
-                &smithy_http::query::fmt_string(&inner_207),
+                &smithy_http::query::fmt_string(&inner_213),
             );
         }
-        if let Some(inner_208) = &self.max_results {
+        if let Some(inner_214) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_208).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_214).encode(),
             );
         }
-        if let Some(inner_209) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_209));
+        if let Some(inner_215) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_215));
         }
-        if let Some(inner_210) = &self.thing_group_name {
+        if let Some(inner_216) = &self.thing_group_name {
             query.push_kv(
                 "thingGroupName",
-                &smithy_http::query::fmt_string(&inner_210),
+                &smithy_http::query::fmt_string(&inner_216),
             );
         }
-        if let Some(inner_211) = &self.thing_group_id {
-            query.push_kv("thingGroupId", &smithy_http::query::fmt_string(&inner_211));
+        if let Some(inner_217) = &self.thing_group_id {
+            query.push_kv("thingGroupId", &smithy_http::query::fmt_string(&inner_217));
         }
-        if let Some(inner_212) = &self.namespace_id {
-            query.push_kv("namespaceId", &smithy_http::query::fmt_string(&inner_212));
+        if let Some(inner_218) = &self.namespace_id {
+            query.push_kv("namespaceId", &smithy_http::query::fmt_string(&inner_218));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -25740,8 +27796,11 @@ impl ListJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -25749,7 +27808,11 @@ impl ListJobsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -25870,14 +27933,14 @@ impl ListJobTemplatesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_213) = &self.max_results {
+        if let Some(inner_219) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_213).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_219).encode(),
             );
         }
-        if let Some(inner_214) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_214));
+        if let Some(inner_220) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_220));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -25895,8 +27958,11 @@ impl ListJobTemplatesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -25904,7 +27970,11 @@ impl ListJobTemplatesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -26039,17 +28109,17 @@ impl ListMitigationActionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_215) = &self.action_type {
-            query.push_kv("actionType", &smithy_http::query::fmt_string(&inner_215));
+        if let Some(inner_221) = &self.action_type {
+            query.push_kv("actionType", &smithy_http::query::fmt_string(&inner_221));
         }
-        if let Some(inner_216) = &self.max_results {
+        if let Some(inner_222) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_216).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_222).encode(),
             );
         }
-        if let Some(inner_217) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_217));
+        if let Some(inner_223) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_223));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -26067,8 +28137,11 @@ impl ListMitigationActionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -26076,7 +28149,11 @@ impl ListMitigationActionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -26211,19 +28288,19 @@ impl ListOtaUpdatesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_218) = &self.max_results {
+        if let Some(inner_224) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_218).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_224).encode(),
             );
         }
-        if let Some(inner_219) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_219));
+        if let Some(inner_225) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_225));
         }
-        if let Some(inner_220) = &self.ota_update_status {
+        if let Some(inner_226) = &self.ota_update_status {
             query.push_kv(
                 "otaUpdateStatus",
-                &smithy_http::query::fmt_string(&inner_220),
+                &smithy_http::query::fmt_string(&inner_226),
             );
         }
     }
@@ -26242,8 +28319,11 @@ impl ListOtaUpdatesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -26251,7 +28331,11 @@ impl ListOtaUpdatesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -26385,14 +28469,14 @@ impl ListOutgoingCertificatesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_221) = &self.page_size {
+        if let Some(inner_227) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_221).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_227).encode(),
             );
         }
-        if let Some(inner_222) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_222));
+        if let Some(inner_228) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_228));
         }
         if self.ascending_order {
             query.push_kv(
@@ -26416,8 +28500,11 @@ impl ListOutgoingCertificatesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -26425,7 +28512,11 @@ impl ListOutgoingCertificatesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -26553,13 +28644,13 @@ impl ListPoliciesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_223) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_223));
+        if let Some(inner_229) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_229));
         }
-        if let Some(inner_224) = &self.page_size {
+        if let Some(inner_230) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_224).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_230).encode(),
             );
         }
         if self.ascending_order {
@@ -26584,8 +28675,11 @@ impl ListPoliciesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -26593,7 +28687,11 @@ impl ListPoliciesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -26739,11 +28837,11 @@ impl ListPolicyPrincipalsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_225) = &self.policy_name {
-            let formatted_226 = AsRef::<str>::as_ref(inner_225);
-            if !formatted_226.is_empty() {
+        if let Some(inner_231) = &self.policy_name {
+            let formatted_232 = AsRef::<str>::as_ref(inner_231);
+            if !formatted_232.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_226;
+                let header_value = formatted_232;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26761,13 +28859,13 @@ impl ListPolicyPrincipalsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_227) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_227));
+        if let Some(inner_233) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_233));
         }
-        if let Some(inner_228) = &self.page_size {
+        if let Some(inner_234) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_228).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_234).encode(),
             );
         }
         if self.ascending_order {
@@ -26793,8 +28891,11 @@ impl ListPolicyPrincipalsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -26802,7 +28903,11 @@ impl ListPolicyPrincipalsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -26907,15 +29012,15 @@ impl ListPolicyVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_229 = &self.policy_name;
-        let input_229 =
-            input_229
+        let input_235 = &self.policy_name;
+        let input_235 =
+            input_235
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_name = smithy_http::label::fmt_string(input_229, false);
+        let policy_name = smithy_http::label::fmt_string(input_235, false);
         if policy_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_name",
@@ -26944,8 +29049,11 @@ impl ListPolicyVersionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -26953,7 +29061,11 @@ impl ListPolicyVersionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -27099,11 +29211,11 @@ impl ListPrincipalPoliciesInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_230) = &self.principal {
-            let formatted_231 = AsRef::<str>::as_ref(inner_230);
-            if !formatted_231.is_empty() {
+        if let Some(inner_236) = &self.principal {
+            let formatted_237 = AsRef::<str>::as_ref(inner_236);
+            if !formatted_237.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_231;
+                let header_value = formatted_237;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27121,13 +29233,13 @@ impl ListPrincipalPoliciesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_232) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_232));
+        if let Some(inner_238) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_238));
         }
-        if let Some(inner_233) = &self.page_size {
+        if let Some(inner_239) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_233).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_239).encode(),
             );
         }
         if self.ascending_order {
@@ -27153,8 +29265,11 @@ impl ListPrincipalPoliciesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -27162,7 +29277,11 @@ impl ListPrincipalPoliciesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -27298,11 +29417,11 @@ impl ListPrincipalThingsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_234) = &self.principal {
-            let formatted_235 = AsRef::<str>::as_ref(inner_234);
-            if !formatted_235.is_empty() {
+        if let Some(inner_240) = &self.principal {
+            let formatted_241 = AsRef::<str>::as_ref(inner_240);
+            if !formatted_241.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_235;
+                let header_value = formatted_241;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27320,13 +29439,13 @@ impl ListPrincipalThingsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_236) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_236));
+        if let Some(inner_242) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_242));
         }
-        if let Some(inner_237) = &self.max_results {
+        if let Some(inner_243) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_237).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_243).encode(),
             );
         }
     }
@@ -27346,8 +29465,11 @@ impl ListPrincipalThingsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -27355,7 +29477,11 @@ impl ListPrincipalThingsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -27477,14 +29603,14 @@ impl ListProvisioningTemplatesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_238) = &self.max_results {
+        if let Some(inner_244) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_238).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_244).encode(),
             );
         }
-        if let Some(inner_239) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_239));
+        if let Some(inner_245) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_245));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -27502,8 +29628,11 @@ impl ListProvisioningTemplatesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -27511,7 +29640,11 @@ impl ListProvisioningTemplatesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -27642,15 +29775,15 @@ impl ListProvisioningTemplateVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_240 = &self.template_name;
-        let input_240 =
-            input_240
+        let input_246 = &self.template_name;
+        let input_246 =
+            input_246
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
                     details: "cannot be empty or unset",
                 })?;
-        let template_name = smithy_http::label::fmt_string(input_240, false);
+        let template_name = smithy_http::label::fmt_string(input_246, false);
         if template_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_name",
@@ -27667,14 +29800,14 @@ impl ListProvisioningTemplateVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_241) = &self.max_results {
+        if let Some(inner_247) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_241).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_247).encode(),
             );
         }
-        if let Some(inner_242) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_242));
+        if let Some(inner_248) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_248));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -27692,8 +29825,11 @@ impl ListProvisioningTemplateVersionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -27701,7 +29837,11 @@ impl ListProvisioningTemplateVersionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -27833,14 +29973,14 @@ impl ListRoleAliasesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_243) = &self.page_size {
+        if let Some(inner_249) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_243).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_249).encode(),
             );
         }
-        if let Some(inner_244) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_244));
+        if let Some(inner_250) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_250));
         }
         if self.ascending_order {
             query.push_kv(
@@ -27864,8 +30004,11 @@ impl ListRoleAliasesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -27873,7 +30016,11 @@ impl ListRoleAliasesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -27994,13 +30141,13 @@ impl ListScheduledAuditsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_245) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_245));
+        if let Some(inner_251) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_251));
         }
-        if let Some(inner_246) = &self.max_results {
+        if let Some(inner_252) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_246).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_252).encode(),
             );
         }
     }
@@ -28019,8 +30166,11 @@ impl ListScheduledAuditsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -28028,7 +30178,11 @@ impl ListScheduledAuditsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -28177,20 +30331,20 @@ impl ListSecurityProfilesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_247) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_247));
+        if let Some(inner_253) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_253));
         }
-        if let Some(inner_248) = &self.max_results {
+        if let Some(inner_254) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_248).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_254).encode(),
             );
         }
-        if let Some(inner_249) = &self.dimension_name {
-            query.push_kv("dimensionName", &smithy_http::query::fmt_string(&inner_249));
+        if let Some(inner_255) = &self.dimension_name {
+            query.push_kv("dimensionName", &smithy_http::query::fmt_string(&inner_255));
         }
-        if let Some(inner_250) = &self.metric_name {
-            query.push_kv("metricName", &smithy_http::query::fmt_string(&inner_250));
+        if let Some(inner_256) = &self.metric_name {
+            query.push_kv("metricName", &smithy_http::query::fmt_string(&inner_256));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -28208,8 +30362,11 @@ impl ListSecurityProfilesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -28217,7 +30374,11 @@ impl ListSecurityProfilesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -28367,13 +30528,13 @@ impl ListSecurityProfilesForTargetInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_251) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_251));
+        if let Some(inner_257) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_257));
         }
-        if let Some(inner_252) = &self.max_results {
+        if let Some(inner_258) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_252).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_258).encode(),
             );
         }
         if self.recursive {
@@ -28382,10 +30543,10 @@ impl ListSecurityProfilesForTargetInput {
                 &smithy_types::primitive::Encoder::from(self.recursive).encode(),
             );
         }
-        if let Some(inner_253) = &self.security_profile_target_arn {
+        if let Some(inner_259) = &self.security_profile_target_arn {
             query.push_kv(
                 "securityProfileTargetArn",
-                &smithy_http::query::fmt_string(&inner_253),
+                &smithy_http::query::fmt_string(&inner_259),
             );
         }
     }
@@ -28404,8 +30565,11 @@ impl ListSecurityProfilesForTargetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -28413,7 +30577,11 @@ impl ListSecurityProfilesForTargetInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -28540,14 +30708,14 @@ impl ListStreamsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_254) = &self.max_results {
+        if let Some(inner_260) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_254).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_260).encode(),
             );
         }
-        if let Some(inner_255) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_255));
+        if let Some(inner_261) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_261));
         }
         if self.ascending_order {
             query.push_kv(
@@ -28571,8 +30739,11 @@ impl ListStreamsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -28580,7 +30751,11 @@ impl ListStreamsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -28703,11 +30878,11 @@ impl ListTagsForResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_256) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_256));
+        if let Some(inner_262) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_262));
         }
-        if let Some(inner_257) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_257));
+        if let Some(inner_263) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_263));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -28725,8 +30900,11 @@ impl ListTagsForResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -28734,7 +30912,11 @@ impl ListTagsForResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -28861,15 +31043,15 @@ impl ListTargetsForPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_258 = &self.policy_name;
-        let input_258 =
-            input_258
+        let input_264 = &self.policy_name;
+        let input_264 =
+            input_264
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_name = smithy_http::label::fmt_string(input_258, false);
+        let policy_name = smithy_http::label::fmt_string(input_264, false);
         if policy_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_name",
@@ -28886,13 +31068,13 @@ impl ListTargetsForPolicyInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_259) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_259));
+        if let Some(inner_265) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_265));
         }
-        if let Some(inner_260) = &self.page_size {
+        if let Some(inner_266) = &self.page_size {
             query.push_kv(
                 "pageSize",
-                &smithy_types::primitive::Encoder::from(*inner_260).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_266).encode(),
             );
         }
     }
@@ -28911,8 +31093,11 @@ impl ListTargetsForPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -28920,7 +31105,11 @@ impl ListTargetsForPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -29051,15 +31240,15 @@ impl ListTargetsForSecurityProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_261 = &self.security_profile_name;
-        let input_261 =
-            input_261
+        let input_267 = &self.security_profile_name;
+        let input_267 =
+            input_267
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "security_profile_name",
                     details: "cannot be empty or unset",
                 })?;
-        let security_profile_name = smithy_http::label::fmt_string(input_261, false);
+        let security_profile_name = smithy_http::label::fmt_string(input_267, false);
         if security_profile_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "security_profile_name",
@@ -29076,13 +31265,13 @@ impl ListTargetsForSecurityProfileInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_262) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_262));
+        if let Some(inner_268) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_268));
         }
-        if let Some(inner_263) = &self.max_results {
+        if let Some(inner_269) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_263).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_269).encode(),
             );
         }
     }
@@ -29101,8 +31290,11 @@ impl ListTargetsForSecurityProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -29110,7 +31302,11 @@ impl ListTargetsForSecurityProfileInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -29269,28 +31465,28 @@ impl ListThingGroupsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_264) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_264));
+        if let Some(inner_270) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_270));
         }
-        if let Some(inner_265) = &self.max_results {
+        if let Some(inner_271) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_265).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_271).encode(),
             );
         }
-        if let Some(inner_266) = &self.parent_group {
-            query.push_kv("parentGroup", &smithy_http::query::fmt_string(&inner_266));
+        if let Some(inner_272) = &self.parent_group {
+            query.push_kv("parentGroup", &smithy_http::query::fmt_string(&inner_272));
         }
-        if let Some(inner_267) = &self.name_prefix_filter {
+        if let Some(inner_273) = &self.name_prefix_filter {
             query.push_kv(
                 "namePrefixFilter",
-                &smithy_http::query::fmt_string(&inner_267),
+                &smithy_http::query::fmt_string(&inner_273),
             );
         }
-        if let Some(inner_268) = &self.recursive {
+        if let Some(inner_274) = &self.recursive {
             query.push_kv(
                 "recursive",
-                &smithy_types::primitive::Encoder::from(*inner_268).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_274).encode(),
             );
         }
     }
@@ -29309,8 +31505,11 @@ impl ListThingGroupsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -29318,7 +31517,11 @@ impl ListThingGroupsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -29448,15 +31651,15 @@ impl ListThingGroupsForThingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_269 = &self.thing_name;
-        let input_269 =
-            input_269
+        let input_275 = &self.thing_name;
+        let input_275 =
+            input_275
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_name = smithy_http::label::fmt_string(input_269, false);
+        let thing_name = smithy_http::label::fmt_string(input_275, false);
         if thing_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_name",
@@ -29473,13 +31676,13 @@ impl ListThingGroupsForThingInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_270) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_270));
+        if let Some(inner_276) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_276));
         }
-        if let Some(inner_271) = &self.max_results {
+        if let Some(inner_277) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_271).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_277).encode(),
             );
         }
     }
@@ -29498,8 +31701,11 @@ impl ListThingGroupsForThingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -29507,7 +31713,11 @@ impl ListThingGroupsForThingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -29636,15 +31846,15 @@ impl ListThingPrincipalsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_272 = &self.thing_name;
-        let input_272 =
-            input_272
+        let input_278 = &self.thing_name;
+        let input_278 =
+            input_278
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_name = smithy_http::label::fmt_string(input_272, false);
+        let thing_name = smithy_http::label::fmt_string(input_278, false);
         if thing_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_name",
@@ -29661,13 +31871,13 @@ impl ListThingPrincipalsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_273) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_273));
+        if let Some(inner_279) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_279));
         }
-        if let Some(inner_274) = &self.max_results {
+        if let Some(inner_280) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_274).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_280).encode(),
             );
         }
     }
@@ -29686,8 +31896,11 @@ impl ListThingPrincipalsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -29695,7 +31908,11 @@ impl ListThingPrincipalsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -29839,15 +32056,15 @@ impl ListThingRegistrationTaskReportsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_275 = &self.task_id;
-        let input_275 =
-            input_275
+        let input_281 = &self.task_id;
+        let input_281 =
+            input_281
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
                     details: "cannot be empty or unset",
                 })?;
-        let task_id = smithy_http::label::fmt_string(input_275, false);
+        let task_id = smithy_http::label::fmt_string(input_281, false);
         if task_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "task_id",
@@ -29864,16 +32081,16 @@ impl ListThingRegistrationTaskReportsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_276) = &self.report_type {
-            query.push_kv("reportType", &smithy_http::query::fmt_string(&inner_276));
+        if let Some(inner_282) = &self.report_type {
+            query.push_kv("reportType", &smithy_http::query::fmt_string(&inner_282));
         }
-        if let Some(inner_277) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_277));
+        if let Some(inner_283) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_283));
         }
-        if let Some(inner_278) = &self.max_results {
+        if let Some(inner_284) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_278).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_284).encode(),
             );
         }
     }
@@ -29892,8 +32109,11 @@ impl ListThingRegistrationTaskReportsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -29901,7 +32121,11 @@ impl ListThingRegistrationTaskReportsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -30036,17 +32260,17 @@ impl ListThingRegistrationTasksInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_279) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_279));
+        if let Some(inner_285) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_285));
         }
-        if let Some(inner_280) = &self.max_results {
+        if let Some(inner_286) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_280).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_286).encode(),
             );
         }
-        if let Some(inner_281) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_281));
+        if let Some(inner_287) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_287));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -30064,8 +32288,11 @@ impl ListThingRegistrationTasksInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -30073,7 +32300,11 @@ impl ListThingRegistrationTasksInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -30248,26 +32479,26 @@ impl ListThingsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_282) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_282));
+        if let Some(inner_288) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_288));
         }
-        if let Some(inner_283) = &self.max_results {
+        if let Some(inner_289) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_283).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_289).encode(),
             );
         }
-        if let Some(inner_284) = &self.attribute_name {
-            query.push_kv("attributeName", &smithy_http::query::fmt_string(&inner_284));
+        if let Some(inner_290) = &self.attribute_name {
+            query.push_kv("attributeName", &smithy_http::query::fmt_string(&inner_290));
         }
-        if let Some(inner_285) = &self.attribute_value {
+        if let Some(inner_291) = &self.attribute_value {
             query.push_kv(
                 "attributeValue",
-                &smithy_http::query::fmt_string(&inner_285),
+                &smithy_http::query::fmt_string(&inner_291),
             );
         }
-        if let Some(inner_286) = &self.thing_type_name {
-            query.push_kv("thingTypeName", &smithy_http::query::fmt_string(&inner_286));
+        if let Some(inner_292) = &self.thing_type_name {
+            query.push_kv("thingTypeName", &smithy_http::query::fmt_string(&inner_292));
         }
         if self.use_prefix_attribute_value {
             query.push_kv(
@@ -30291,8 +32522,11 @@ impl ListThingsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -30300,7 +32534,11 @@ impl ListThingsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -30433,15 +32671,15 @@ impl ListThingsInBillingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_287 = &self.billing_group_name;
-        let input_287 =
-            input_287
+        let input_293 = &self.billing_group_name;
+        let input_293 =
+            input_293
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "billing_group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let billing_group_name = smithy_http::label::fmt_string(input_287, false);
+        let billing_group_name = smithy_http::label::fmt_string(input_293, false);
         if billing_group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "billing_group_name",
@@ -30458,13 +32696,13 @@ impl ListThingsInBillingGroupInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_288) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_288));
+        if let Some(inner_294) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_294));
         }
-        if let Some(inner_289) = &self.max_results {
+        if let Some(inner_295) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_289).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_295).encode(),
             );
         }
     }
@@ -30483,8 +32721,11 @@ impl ListThingsInBillingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -30492,7 +32733,11 @@ impl ListThingsInBillingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -30636,15 +32881,15 @@ impl ListThingsInThingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_290 = &self.thing_group_name;
-        let input_290 =
-            input_290
+        let input_296 = &self.thing_group_name;
+        let input_296 =
+            input_296
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_group_name = smithy_http::label::fmt_string(input_290, false);
+        let thing_group_name = smithy_http::label::fmt_string(input_296, false);
         if thing_group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_group_name",
@@ -30667,13 +32912,13 @@ impl ListThingsInThingGroupInput {
                 &smithy_types::primitive::Encoder::from(self.recursive).encode(),
             );
         }
-        if let Some(inner_291) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_291));
+        if let Some(inner_297) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_297));
         }
-        if let Some(inner_292) = &self.max_results {
+        if let Some(inner_298) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_292).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_298).encode(),
             );
         }
     }
@@ -30692,8 +32937,11 @@ impl ListThingsInThingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -30701,7 +32949,11 @@ impl ListThingsInThingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -30838,17 +33090,17 @@ impl ListThingTypesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_293) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_293));
+        if let Some(inner_299) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_299));
         }
-        if let Some(inner_294) = &self.max_results {
+        if let Some(inner_300) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_294).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_300).encode(),
             );
         }
-        if let Some(inner_295) = &self.thing_type_name {
-            query.push_kv("thingTypeName", &smithy_http::query::fmt_string(&inner_295));
+        if let Some(inner_301) = &self.thing_type_name {
+            query.push_kv("thingTypeName", &smithy_http::query::fmt_string(&inner_301));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -30866,8 +33118,11 @@ impl ListThingTypesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -30875,7 +33130,11 @@ impl ListThingTypesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -30999,14 +33258,14 @@ impl ListTopicRuleDestinationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_296) = &self.max_results {
+        if let Some(inner_302) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_296).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_302).encode(),
             );
         }
-        if let Some(inner_297) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_297));
+        if let Some(inner_303) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_303));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -31024,8 +33283,11 @@ impl ListTopicRuleDestinationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -31033,7 +33295,11 @@ impl ListTopicRuleDestinationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -31178,22 +33444,22 @@ impl ListTopicRulesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_298) = &self.topic {
-            query.push_kv("topic", &smithy_http::query::fmt_string(&inner_298));
+        if let Some(inner_304) = &self.topic {
+            query.push_kv("topic", &smithy_http::query::fmt_string(&inner_304));
         }
-        if let Some(inner_299) = &self.max_results {
+        if let Some(inner_305) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_299).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_305).encode(),
             );
         }
-        if let Some(inner_300) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_300));
+        if let Some(inner_306) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_306));
         }
-        if let Some(inner_301) = &self.rule_disabled {
+        if let Some(inner_307) = &self.rule_disabled {
             query.push_kv(
                 "ruleDisabled",
-                &smithy_types::primitive::Encoder::from(*inner_301).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_307).encode(),
             );
         }
     }
@@ -31212,8 +33478,11 @@ impl ListTopicRulesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -31221,7 +33490,11 @@ impl ListTopicRulesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -31359,16 +33632,16 @@ impl ListV2LoggingLevelsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_302) = &self.target_type {
-            query.push_kv("targetType", &smithy_http::query::fmt_string(&inner_302));
+        if let Some(inner_308) = &self.target_type {
+            query.push_kv("targetType", &smithy_http::query::fmt_string(&inner_308));
         }
-        if let Some(inner_303) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_303));
+        if let Some(inner_309) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_309));
         }
-        if let Some(inner_304) = &self.max_results {
+        if let Some(inner_310) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_304).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_310).encode(),
             );
         }
     }
@@ -31387,8 +33660,11 @@ impl ListV2LoggingLevelsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -31396,7 +33672,11 @@ impl ListV2LoggingLevelsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -31593,52 +33873,52 @@ impl ListViolationEventsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_305) = &self.start_time {
+        if let Some(inner_311) = &self.start_time {
             query.push_kv(
                 "startTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_305,
+                    inner_311,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_306) = &self.end_time {
+        if let Some(inner_312) = &self.end_time {
             query.push_kv(
                 "endTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_306,
+                    inner_312,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_307) = &self.thing_name {
-            query.push_kv("thingName", &smithy_http::query::fmt_string(&inner_307));
+        if let Some(inner_313) = &self.thing_name {
+            query.push_kv("thingName", &smithy_http::query::fmt_string(&inner_313));
         }
-        if let Some(inner_308) = &self.security_profile_name {
+        if let Some(inner_314) = &self.security_profile_name {
             query.push_kv(
                 "securityProfileName",
-                &smithy_http::query::fmt_string(&inner_308),
+                &smithy_http::query::fmt_string(&inner_314),
             );
         }
-        if let Some(inner_309) = &self.behavior_criteria_type {
+        if let Some(inner_315) = &self.behavior_criteria_type {
             query.push_kv(
                 "behaviorCriteriaType",
-                &smithy_http::query::fmt_string(&inner_309),
+                &smithy_http::query::fmt_string(&inner_315),
             );
         }
-        if let Some(inner_310) = &self.list_suppressed_alerts {
+        if let Some(inner_316) = &self.list_suppressed_alerts {
             query.push_kv(
                 "listSuppressedAlerts",
-                &smithy_types::primitive::Encoder::from(*inner_310).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_316).encode(),
             );
         }
-        if let Some(inner_311) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_311));
+        if let Some(inner_317) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_317));
         }
-        if let Some(inner_312) = &self.max_results {
+        if let Some(inner_318) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_312).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_318).encode(),
             );
         }
     }
@@ -31657,8 +33937,11 @@ impl ListViolationEventsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -31666,7 +33949,11 @@ impl ListViolationEventsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -31796,7 +34083,10 @@ impl RegisterCaCertificateInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_register_ca_certificate(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_register_ca_certificate(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -31876,8 +34166,11 @@ impl RegisterCaCertificateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -31885,7 +34178,11 @@ impl RegisterCaCertificateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -31988,7 +34285,10 @@ impl RegisterCertificateInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_register_certificate(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_register_certificate(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -32040,10 +34340,10 @@ impl RegisterCertificateInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_313) = &self.set_as_active {
+        if let Some(inner_319) = &self.set_as_active {
             query.push_kv(
                 "setAsActive",
-                &smithy_types::primitive::Encoder::from(*inner_313).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_319).encode(),
             );
         }
     }
@@ -32062,8 +34362,11 @@ impl RegisterCertificateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -32071,7 +34374,11 @@ impl RegisterCertificateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -32151,10 +34458,8 @@ impl RegisterCertificateWithoutCaInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_register_certificate_without_ca(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_register_certificate_without_ca(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -32215,8 +34520,11 @@ impl RegisterCertificateWithoutCaInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -32224,7 +34532,11 @@ impl RegisterCertificateWithoutCaInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -32310,9 +34622,10 @@ impl RegisterThingInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_register_thing(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_register_thing(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -32373,8 +34686,11 @@ impl RegisterThingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -32382,7 +34698,11 @@ impl RegisterThingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -32462,10 +34782,9 @@ impl RejectCertificateTransferInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_reject_certificate_transfer(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_reject_certificate_transfer(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -32509,15 +34828,15 @@ impl RejectCertificateTransferInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_314 = &self.certificate_id;
-        let input_314 =
-            input_314
+        let input_320 = &self.certificate_id;
+        let input_320 =
+            input_320
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
                     details: "cannot be empty or unset",
                 })?;
-        let certificate_id = smithy_http::label::fmt_string(input_314, false);
+        let certificate_id = smithy_http::label::fmt_string(input_320, false);
         if certificate_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "certificate_id",
@@ -32546,8 +34865,11 @@ impl RejectCertificateTransferInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -32555,7 +34877,11 @@ impl RejectCertificateTransferInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -32657,10 +34983,8 @@ impl RemoveThingFromBillingGroupInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_remove_thing_from_billing_group(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_remove_thing_from_billing_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -32722,8 +35046,11 @@ impl RemoveThingFromBillingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -32731,7 +35058,11 @@ impl RemoveThingFromBillingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -32833,10 +35164,8 @@ impl RemoveThingFromThingGroupInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_remove_thing_from_thing_group(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_remove_thing_from_thing_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -32898,8 +35227,11 @@ impl RemoveThingFromThingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -32907,7 +35239,11 @@ impl RemoveThingFromThingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -33028,15 +35364,15 @@ impl ReplaceTopicRuleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_315 = &self.rule_name;
-        let input_315 =
-            input_315
+        let input_321 = &self.rule_name;
+        let input_321 =
+            input_321
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "rule_name",
                     details: "cannot be empty or unset",
                 })?;
-        let rule_name = smithy_http::label::fmt_string(input_315, false);
+        let rule_name = smithy_http::label::fmt_string(input_321, false);
         if rule_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "rule_name",
@@ -33061,8 +35397,11 @@ impl ReplaceTopicRuleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -33070,7 +35409,11 @@ impl ReplaceTopicRuleInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -33178,9 +35521,10 @@ impl SearchIndexInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_search_index(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_search_index(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -33238,8 +35582,11 @@ impl SearchIndexInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -33247,7 +35594,11 @@ impl SearchIndexInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -33311,7 +35662,10 @@ impl SetDefaultAuthorizerInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_set_default_authorizer(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_set_default_authorizer(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -33375,8 +35729,11 @@ impl SetDefaultAuthorizerInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -33384,7 +35741,11 @@ impl SetDefaultAuthorizerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -33504,30 +35865,30 @@ impl SetDefaultPolicyVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_316 = &self.policy_name;
-        let input_316 =
-            input_316
+        let input_322 = &self.policy_name;
+        let input_322 =
+            input_322
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_name = smithy_http::label::fmt_string(input_316, false);
+        let policy_name = smithy_http::label::fmt_string(input_322, false);
         if policy_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_name",
                 details: "cannot be empty or unset",
             });
         }
-        let input_317 = &self.policy_version_id;
-        let input_317 =
-            input_317
+        let input_323 = &self.policy_version_id;
+        let input_323 =
+            input_323
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "policy_version_id",
                     details: "cannot be empty or unset",
                 })?;
-        let policy_version_id = smithy_http::label::fmt_string(input_317, false);
+        let policy_version_id = smithy_http::label::fmt_string(input_323, false);
         if policy_version_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "policy_version_id",
@@ -33557,8 +35918,11 @@ impl SetDefaultPolicyVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -33566,7 +35930,11 @@ impl SetDefaultPolicyVersionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -33697,8 +36065,11 @@ impl SetLoggingOptionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -33706,7 +36077,11 @@ impl SetLoggingOptionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -33781,7 +36156,10 @@ impl SetV2LoggingLevelInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_set_v2_logging_level(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_set_v2_logging_level(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -33845,8 +36223,11 @@ impl SetV2LoggingLevelInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -33854,7 +36235,11 @@ impl SetV2LoggingLevelInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -33940,7 +36325,10 @@ impl SetV2LoggingOptionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_set_v2_logging_options(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_set_v2_logging_options(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -34004,8 +36392,11 @@ impl SetV2LoggingOptionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -34013,7 +36404,11 @@ impl SetV2LoggingOptionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -34133,12 +36528,8 @@ impl StartAuditMitigationActionsTaskInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_start_audit_mitigation_actions_task(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_start_audit_mitigation_actions_task(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -34182,15 +36573,15 @@ impl StartAuditMitigationActionsTaskInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_318 = &self.task_id;
-        let input_318 =
-            input_318
+        let input_324 = &self.task_id;
+        let input_324 =
+            input_324
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
                     details: "cannot be empty or unset",
                 })?;
-        let task_id = smithy_http::label::fmt_string(input_318, false);
+        let task_id = smithy_http::label::fmt_string(input_324, false);
         if task_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "task_id",
@@ -34219,8 +36610,11 @@ impl StartAuditMitigationActionsTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -34228,7 +36622,11 @@ impl StartAuditMitigationActionsTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -34335,7 +36733,7 @@ pub mod start_detect_mitigation_actions_task_input {
             self
         }
         /// <p>
-        /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
+        /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
         /// </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
@@ -34392,12 +36790,8 @@ impl StartDetectMitigationActionsTaskInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_start_detect_mitigation_actions_task(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_start_detect_mitigation_actions_task(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -34441,15 +36835,15 @@ impl StartDetectMitigationActionsTaskInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_319 = &self.task_id;
-        let input_319 =
-            input_319
+        let input_325 = &self.task_id;
+        let input_325 =
+            input_325
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
                     details: "cannot be empty or unset",
                 })?;
-        let task_id = smithy_http::label::fmt_string(input_319, false);
+        let task_id = smithy_http::label::fmt_string(input_325, false);
         if task_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "task_id",
@@ -34478,8 +36872,11 @@ impl StartDetectMitigationActionsTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -34487,7 +36884,11 @@ impl StartDetectMitigationActionsTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -34552,10 +36953,9 @@ impl StartOnDemandAuditTaskInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_start_on_demand_audit_task(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_start_on_demand_audit_task(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -34616,8 +37016,11 @@ impl StartOnDemandAuditTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -34625,7 +37028,11 @@ impl StartOnDemandAuditTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -34732,10 +37139,8 @@ impl StartThingRegistrationTaskInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_start_thing_registration_task(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_start_thing_registration_task(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -34796,8 +37201,11 @@ impl StartThingRegistrationTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -34805,7 +37213,11 @@ impl StartThingRegistrationTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -34911,15 +37323,15 @@ impl StopThingRegistrationTaskInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_320 = &self.task_id;
-        let input_320 =
-            input_320
+        let input_326 = &self.task_id;
+        let input_326 =
+            input_326
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
                     details: "cannot be empty or unset",
                 })?;
-        let task_id = smithy_http::label::fmt_string(input_320, false);
+        let task_id = smithy_http::label::fmt_string(input_326, false);
         if task_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "task_id",
@@ -34948,8 +37360,11 @@ impl StopThingRegistrationTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -34957,7 +37372,11 @@ impl StopThingRegistrationTaskInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -35032,9 +37451,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -35092,8 +37512,11 @@ impl TagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -35101,7 +37524,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -35232,10 +37659,11 @@ impl TestAuthorizationInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_test_authorization(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_test_authorization(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -35284,8 +37712,8 @@ impl TestAuthorizationInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_321) = &self.client_id {
-            query.push_kv("clientId", &smithy_http::query::fmt_string(&inner_321));
+        if let Some(inner_327) = &self.client_id {
+            query.push_kv("clientId", &smithy_http::query::fmt_string(&inner_327));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -35303,8 +37731,11 @@ impl TestAuthorizationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -35312,7 +37743,11 @@ impl TestAuthorizationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -35444,7 +37879,10 @@ impl TestInvokeAuthorizerInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_test_invoke_authorizer(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_test_invoke_authorizer(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -35491,15 +37929,15 @@ impl TestInvokeAuthorizerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_322 = &self.authorizer_name;
-        let input_322 =
-            input_322
+        let input_328 = &self.authorizer_name;
+        let input_328 =
+            input_328
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "authorizer_name",
                     details: "cannot be empty or unset",
                 })?;
-        let authorizer_name = smithy_http::label::fmt_string(input_322, false);
+        let authorizer_name = smithy_http::label::fmt_string(input_328, false);
         if authorizer_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "authorizer_name",
@@ -35528,8 +37966,11 @@ impl TestInvokeAuthorizerInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -35537,7 +37978,11 @@ impl TestInvokeAuthorizerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -35571,7 +38016,7 @@ pub mod transfer_certificate_input {
             self.certificate_id = input;
             self
         }
-        /// <p>The AWS account.</p>
+        /// <p>The Amazon Web Services account.</p>
         pub fn target_aws_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_aws_account = Some(input.into());
             self
@@ -35630,7 +38075,10 @@ impl TransferCertificateInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_transfer_certificate(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_transfer_certificate(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -35677,15 +38125,15 @@ impl TransferCertificateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_323 = &self.certificate_id;
-        let input_323 =
-            input_323
+        let input_329 = &self.certificate_id;
+        let input_329 =
+            input_329
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
                     details: "cannot be empty or unset",
                 })?;
-        let certificate_id = smithy_http::label::fmt_string(input_323, false);
+        let certificate_id = smithy_http::label::fmt_string(input_329, false);
         if certificate_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "certificate_id",
@@ -35702,10 +38150,10 @@ impl TransferCertificateInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_324) = &self.target_aws_account {
+        if let Some(inner_330) = &self.target_aws_account {
             query.push_kv(
                 "targetAwsAccount",
-                &smithy_http::query::fmt_string(&inner_324),
+                &smithy_http::query::fmt_string(&inner_330),
             );
         }
     }
@@ -35724,8 +38172,11 @@ impl TransferCertificateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -35733,7 +38184,11 @@ impl TransferCertificateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -35808,9 +38263,10 @@ impl UntagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -35871,8 +38327,11 @@ impl UntagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -35880,7 +38339,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -35913,7 +38376,7 @@ pub mod update_account_audit_configuration_input {
         /// (ARN)
         /// of the role that grants permission
         /// to
-        /// AWS IoT to access information about your devices, policies,
+        /// IoT to access information about your devices, policies,
         /// certificates,
         /// and other items as required when performing an audit.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -36008,10 +38471,8 @@ impl UpdateAccountAuditConfigurationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_account_audit_configuration(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_account_audit_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -36072,8 +38533,11 @@ impl UpdateAccountAuditConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -36081,7 +38545,11 @@ impl UpdateAccountAuditConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -36201,7 +38669,10 @@ impl UpdateAuditSuppressionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_audit_suppression(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_audit_suppression(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -36265,8 +38736,11 @@ impl UpdateAuditSuppressionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -36274,7 +38748,11 @@ impl UpdateAuditSuppressionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -36403,9 +38881,11 @@ impl UpdateAuthorizerInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_authorizer(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_authorizer(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -36449,15 +38929,15 @@ impl UpdateAuthorizerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_325 = &self.authorizer_name;
-        let input_325 =
-            input_325
+        let input_331 = &self.authorizer_name;
+        let input_331 =
+            input_331
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "authorizer_name",
                     details: "cannot be empty or unset",
                 })?;
-        let authorizer_name = smithy_http::label::fmt_string(input_325, false);
+        let authorizer_name = smithy_http::label::fmt_string(input_331, false);
         if authorizer_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "authorizer_name",
@@ -36486,8 +38966,11 @@ impl UpdateAuthorizerInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -36495,7 +38978,11 @@ impl UpdateAuthorizerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -36591,7 +39078,10 @@ impl UpdateBillingGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_billing_group(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_billing_group(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -36638,15 +39128,15 @@ impl UpdateBillingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_326 = &self.billing_group_name;
-        let input_326 =
-            input_326
+        let input_332 = &self.billing_group_name;
+        let input_332 =
+            input_332
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "billing_group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let billing_group_name = smithy_http::label::fmt_string(input_326, false);
+        let billing_group_name = smithy_http::label::fmt_string(input_332, false);
         if billing_group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "billing_group_name",
@@ -36675,8 +39165,11 @@ impl UpdateBillingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -36684,7 +39177,11 @@ impl UpdateBillingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -36809,7 +39306,10 @@ impl UpdateCaCertificateInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_ca_certificate(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_ca_certificate(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -36856,15 +39356,15 @@ impl UpdateCaCertificateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_327 = &self.certificate_id;
-        let input_327 =
-            input_327
+        let input_333 = &self.certificate_id;
+        let input_333 =
+            input_333
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
                     details: "cannot be empty or unset",
                 })?;
-        let certificate_id = smithy_http::label::fmt_string(input_327, false);
+        let certificate_id = smithy_http::label::fmt_string(input_333, false);
         if certificate_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "certificate_id",
@@ -36881,13 +39381,13 @@ impl UpdateCaCertificateInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_328) = &self.new_status {
-            query.push_kv("newStatus", &smithy_http::query::fmt_string(&inner_328));
+        if let Some(inner_334) = &self.new_status {
+            query.push_kv("newStatus", &smithy_http::query::fmt_string(&inner_334));
         }
-        if let Some(inner_329) = &self.new_auto_registration_status {
+        if let Some(inner_335) = &self.new_auto_registration_status {
             query.push_kv(
                 "newAutoRegistrationStatus",
-                &smithy_http::query::fmt_string(&inner_329),
+                &smithy_http::query::fmt_string(&inner_335),
             );
         }
     }
@@ -36906,8 +39406,11 @@ impl UpdateCaCertificateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -36915,7 +39418,11 @@ impl UpdateCaCertificateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -36951,7 +39458,7 @@ pub mod update_certificate_input {
         /// <p>The new status.</p>
         /// <p>
         /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
-        /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by AWS IoT. They
+        /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
         /// are not intended for developer use.</p>
         /// <p>
         /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
@@ -37045,15 +39552,15 @@ impl UpdateCertificateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_330 = &self.certificate_id;
-        let input_330 =
-            input_330
+        let input_336 = &self.certificate_id;
+        let input_336 =
+            input_336
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
                     details: "cannot be empty or unset",
                 })?;
-        let certificate_id = smithy_http::label::fmt_string(input_330, false);
+        let certificate_id = smithy_http::label::fmt_string(input_336, false);
         if certificate_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "certificate_id",
@@ -37070,8 +39577,8 @@ impl UpdateCertificateInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_331) = &self.new_status {
-            query.push_kv("newStatus", &smithy_http::query::fmt_string(&inner_331));
+        if let Some(inner_337) = &self.new_status {
+            query.push_kv("newStatus", &smithy_http::query::fmt_string(&inner_337));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -37089,8 +39596,11 @@ impl UpdateCertificateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -37098,7 +39608,11 @@ impl UpdateCertificateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -37178,7 +39692,10 @@ impl UpdateCustomMetricInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_custom_metric(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_custom_metric(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -37225,15 +39742,15 @@ impl UpdateCustomMetricInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_332 = &self.metric_name;
-        let input_332 =
-            input_332
+        let input_338 = &self.metric_name;
+        let input_338 =
+            input_338
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "metric_name",
                     details: "cannot be empty or unset",
                 })?;
-        let metric_name = smithy_http::label::fmt_string(input_332, false);
+        let metric_name = smithy_http::label::fmt_string(input_338, false);
         if metric_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "metric_name",
@@ -37262,8 +39779,11 @@ impl UpdateCustomMetricInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -37271,7 +39791,11 @@ impl UpdateCustomMetricInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -37347,9 +39871,11 @@ impl UpdateDimensionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_dimension(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_dimension(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -37393,15 +39919,15 @@ impl UpdateDimensionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_333 = &self.name;
-        let input_333 =
-            input_333
+        let input_339 = &self.name;
+        let input_339 =
+            input_339
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-        let name = smithy_http::label::fmt_string(input_333, false);
+        let name = smithy_http::label::fmt_string(input_339, false);
         if name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "name",
@@ -37425,8 +39951,11 @@ impl UpdateDimensionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -37434,7 +39963,11 @@ impl UpdateDimensionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -37542,10 +40075,9 @@ impl UpdateDomainConfigurationInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_domain_configuration(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_domain_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -37589,15 +40121,15 @@ impl UpdateDomainConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_334 = &self.domain_configuration_name;
-        let input_334 =
-            input_334
+        let input_340 = &self.domain_configuration_name;
+        let input_340 =
+            input_340
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "domain_configuration_name",
                     details: "cannot be empty or unset",
                 })?;
-        let domain_configuration_name = smithy_http::label::fmt_string(input_334, false);
+        let domain_configuration_name = smithy_http::label::fmt_string(input_340, false);
         if domain_configuration_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "domain_configuration_name",
@@ -37626,8 +40158,11 @@ impl UpdateDomainConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -37635,7 +40170,11 @@ impl UpdateDomainConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -37694,7 +40233,7 @@ pub mod update_dynamic_thing_group_input {
         }
         /// <p>The dynamic thing group index to update.</p>
         /// <note>
-        /// <p>Currently one index is supported: 'AWS_Things'.</p>
+        /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
@@ -37768,10 +40307,9 @@ impl UpdateDynamicThingGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_dynamic_thing_group(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_dynamic_thing_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -37815,15 +40353,15 @@ impl UpdateDynamicThingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_335 = &self.thing_group_name;
-        let input_335 =
-            input_335
+        let input_341 = &self.thing_group_name;
+        let input_341 =
+            input_341
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_group_name = smithy_http::label::fmt_string(input_335, false);
+        let thing_group_name = smithy_http::label::fmt_string(input_341, false);
         if thing_group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_group_name",
@@ -37852,8 +40390,11 @@ impl UpdateDynamicThingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -37861,7 +40402,11 @@ impl UpdateDynamicThingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -37935,10 +40480,9 @@ impl UpdateEventConfigurationsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_event_configurations(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_event_configurations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -37999,8 +40543,11 @@ impl UpdateEventConfigurationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38008,13 +40555,293 @@ impl UpdateEventConfigurationsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationsInput`](crate::input::UpdateEventConfigurationsInput)
     pub fn builder() -> crate::input::update_event_configurations_input::Builder {
         crate::input::update_event_configurations_input::Builder::default()
+    }
+}
+
+/// See [`UpdateFleetMetricInput`](crate::input::UpdateFleetMetricInput)
+pub mod update_fleet_metric_input {
+    /// A builder for [`UpdateFleetMetricInput`](crate::input::UpdateFleetMetricInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+        pub(crate) query_string: std::option::Option<std::string::String>,
+        pub(crate) aggregation_type: std::option::Option<crate::model::AggregationType>,
+        pub(crate) period: std::option::Option<i32>,
+        pub(crate) aggregation_field: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) query_version: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) unit: std::option::Option<crate::model::FleetMetricUnit>,
+        pub(crate) expected_version: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The name of the fleet metric to update.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The search query string.</p>
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_string = Some(input.into());
+            self
+        }
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_string = input;
+            self
+        }
+        /// <p>The type of the aggregation query.</p>
+        pub fn aggregation_type(mut self, input: crate::model::AggregationType) -> Self {
+            self.aggregation_type = Some(input);
+            self
+        }
+        pub fn set_aggregation_type(
+            mut self,
+            input: std::option::Option<crate::model::AggregationType>,
+        ) -> Self {
+            self.aggregation_type = input;
+            self
+        }
+        /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+        pub fn period(mut self, input: i32) -> Self {
+            self.period = Some(input);
+            self
+        }
+        pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.period = input;
+            self
+        }
+        /// <p>The field to aggregate.</p>
+        pub fn aggregation_field(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aggregation_field = Some(input.into());
+            self
+        }
+        pub fn set_aggregation_field(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aggregation_field = input;
+            self
+        }
+        /// <p>The description of the fleet metric.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The version of the query.</p>
+        pub fn query_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_version = Some(input.into());
+            self
+        }
+        pub fn set_query_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.query_version = input;
+            self
+        }
+        /// <p>The name of the index to search.</p>
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
+            self
+        }
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
+        /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+        pub fn unit(mut self, input: crate::model::FleetMetricUnit) -> Self {
+            self.unit = Some(input);
+            self
+        }
+        pub fn set_unit(
+            mut self,
+            input: std::option::Option<crate::model::FleetMetricUnit>,
+        ) -> Self {
+            self.unit = input;
+            self
+        }
+        /// <p>The expected version of the fleet metric record in the registry.</p>
+        pub fn expected_version(mut self, input: i64) -> Self {
+            self.expected_version = Some(input);
+            self
+        }
+        pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.expected_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFleetMetricInput`](crate::input::UpdateFleetMetricInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateFleetMetricInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateFleetMetricInput {
+                metric_name: self.metric_name,
+                query_string: self.query_string,
+                aggregation_type: self.aggregation_type,
+                period: self.period,
+                aggregation_field: self.aggregation_field,
+                description: self.description,
+                query_version: self.query_version,
+                index_name: self.index_name,
+                unit: self.unit,
+                expected_version: self.expected_version,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateFleetMetricInputOperationOutputAlias = crate::operation::UpdateFleetMetric;
+#[doc(hidden)]
+pub type UpdateFleetMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateFleetMetricInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateFleetMetric`](crate::operation::UpdateFleetMetric)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateFleetMetric,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_fleet_metric(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateFleetMetric::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateFleetMetric",
+                "iot",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_342 = &self.metric_name;
+        let input_342 =
+            input_342
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "metric_name",
+                    details: "cannot be empty or unset",
+                })?;
+        let metric_name = smithy_http::label::fmt_string(input_342, false);
+        if metric_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "metric_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/fleet-metric/{metricName}",
+            metricName = metric_name
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("PATCH").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateFleetMetricInput`](crate::input::UpdateFleetMetricInput)
+    pub fn builder() -> crate::input::update_fleet_metric_input::Builder {
+        crate::input::update_fleet_metric_input::Builder::default()
     }
 }
 
@@ -38096,10 +40923,8 @@ impl UpdateIndexingConfigurationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_indexing_configuration(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_indexing_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -38160,8 +40985,11 @@ impl UpdateIndexingConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38169,7 +40997,11 @@ impl UpdateIndexingConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -38266,7 +41098,7 @@ pub mod update_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -38319,8 +41151,8 @@ impl UpdateJobInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_update_job(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_update_job(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -38361,15 +41193,15 @@ impl UpdateJobInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_336 = &self.job_id;
-        let input_336 =
-            input_336
+        let input_343 = &self.job_id;
+        let input_343 =
+            input_343
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 })?;
-        let job_id = smithy_http::label::fmt_string(input_336, false);
+        let job_id = smithy_http::label::fmt_string(input_343, false);
         if job_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "job_id",
@@ -38381,8 +41213,8 @@ impl UpdateJobInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_337) = &self.namespace_id {
-            query.push_kv("namespaceId", &smithy_http::query::fmt_string(&inner_337));
+        if let Some(inner_344) = &self.namespace_id {
+            query.push_kv("namespaceId", &smithy_http::query::fmt_string(&inner_344));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -38400,8 +41232,11 @@ impl UpdateJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38409,7 +41244,11 @@ impl UpdateJobInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -38498,7 +41337,10 @@ impl UpdateMitigationActionInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_mitigation_action(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_mitigation_action(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -38545,15 +41387,15 @@ impl UpdateMitigationActionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_338 = &self.action_name;
-        let input_338 =
-            input_338
+        let input_345 = &self.action_name;
+        let input_345 =
+            input_345
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "action_name",
                     details: "cannot be empty or unset",
                 })?;
-        let action_name = smithy_http::label::fmt_string(input_338, false);
+        let action_name = smithy_http::label::fmt_string(input_345, false);
         if action_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "action_name",
@@ -38582,8 +41424,11 @@ impl UpdateMitigationActionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38591,7 +41436,11 @@ impl UpdateMitigationActionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -38733,10 +41582,8 @@ impl UpdateProvisioningTemplateInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_provisioning_template(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_provisioning_template(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -38780,15 +41627,15 @@ impl UpdateProvisioningTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_339 = &self.template_name;
-        let input_339 =
-            input_339
+        let input_346 = &self.template_name;
+        let input_346 =
+            input_346
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
                     details: "cannot be empty or unset",
                 })?;
-        let template_name = smithy_http::label::fmt_string(input_339, false);
+        let template_name = smithy_http::label::fmt_string(input_346, false);
         if template_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "template_name",
@@ -38817,8 +41664,11 @@ impl UpdateProvisioningTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38826,7 +41676,11 @@ impl UpdateProvisioningTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -38909,9 +41763,11 @@ impl UpdateRoleAliasInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_role_alias(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_role_alias(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -38955,15 +41811,15 @@ impl UpdateRoleAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_340 = &self.role_alias;
-        let input_340 =
-            input_340
+        let input_347 = &self.role_alias;
+        let input_347 =
+            input_347
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "role_alias",
                     details: "cannot be empty or unset",
                 })?;
-        let role_alias = smithy_http::label::fmt_string(input_340, false);
+        let role_alias = smithy_http::label::fmt_string(input_347, false);
         if role_alias.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "role_alias",
@@ -38988,8 +41844,11 @@ impl UpdateRoleAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38997,7 +41856,11 @@ impl UpdateRoleAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -39128,7 +41991,10 @@ impl UpdateScheduledAuditInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_scheduled_audit(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_scheduled_audit(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -39175,15 +42041,15 @@ impl UpdateScheduledAuditInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_341 = &self.scheduled_audit_name;
-        let input_341 =
-            input_341
+        let input_348 = &self.scheduled_audit_name;
+        let input_348 =
+            input_348
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "scheduled_audit_name",
                     details: "cannot be empty or unset",
                 })?;
-        let scheduled_audit_name = smithy_http::label::fmt_string(input_341, false);
+        let scheduled_audit_name = smithy_http::label::fmt_string(input_348, false);
         if scheduled_audit_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "scheduled_audit_name",
@@ -39212,8 +42078,11 @@ impl UpdateScheduledAuditInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -39221,7 +42090,11 @@ impl UpdateScheduledAuditInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -39433,7 +42306,10 @@ impl UpdateSecurityProfileInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_security_profile(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_security_profile(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -39480,15 +42356,15 @@ impl UpdateSecurityProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_342 = &self.security_profile_name;
-        let input_342 =
-            input_342
+        let input_349 = &self.security_profile_name;
+        let input_349 =
+            input_349
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "security_profile_name",
                     details: "cannot be empty or unset",
                 })?;
-        let security_profile_name = smithy_http::label::fmt_string(input_342, false);
+        let security_profile_name = smithy_http::label::fmt_string(input_349, false);
         if security_profile_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "security_profile_name",
@@ -39505,10 +42381,10 @@ impl UpdateSecurityProfileInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_343) = &self.expected_version {
+        if let Some(inner_350) = &self.expected_version {
             query.push_kv(
                 "expectedVersion",
-                &smithy_types::primitive::Encoder::from(*inner_343).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_350).encode(),
             );
         }
     }
@@ -39527,8 +42403,11 @@ impl UpdateSecurityProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -39536,7 +42415,11 @@ impl UpdateSecurityProfileInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -39633,9 +42516,10 @@ impl UpdateStreamInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_stream(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_stream(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -39676,15 +42560,15 @@ impl UpdateStreamInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_344 = &self.stream_id;
-        let input_344 =
-            input_344
+        let input_351 = &self.stream_id;
+        let input_351 =
+            input_351
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "stream_id",
                     details: "cannot be empty or unset",
                 })?;
-        let stream_id = smithy_http::label::fmt_string(input_344, false);
+        let stream_id = smithy_http::label::fmt_string(input_351, false);
         if stream_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "stream_id",
@@ -39709,8 +42593,11 @@ impl UpdateStreamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -39718,7 +42605,11 @@ impl UpdateStreamInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -39839,9 +42730,10 @@ impl UpdateThingInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_thing(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_thing(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -39882,15 +42774,15 @@ impl UpdateThingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_345 = &self.thing_name;
-        let input_345 =
-            input_345
+        let input_352 = &self.thing_name;
+        let input_352 =
+            input_352
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_name = smithy_http::label::fmt_string(input_345, false);
+        let thing_name = smithy_http::label::fmt_string(input_352, false);
         if thing_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_name",
@@ -39915,8 +42807,11 @@ impl UpdateThingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -39924,7 +42819,11 @@ impl UpdateThingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -40014,10 +42913,11 @@ impl UpdateThingGroupInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_thing_group(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_thing_group(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -40061,15 +42961,15 @@ impl UpdateThingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_346 = &self.thing_group_name;
-        let input_346 =
-            input_346
+        let input_353 = &self.thing_group_name;
+        let input_353 =
+            input_353
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "thing_group_name",
                     details: "cannot be empty or unset",
                 })?;
-        let thing_group_name = smithy_http::label::fmt_string(input_346, false);
+        let thing_group_name = smithy_http::label::fmt_string(input_353, false);
         if thing_group_name.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "thing_group_name",
@@ -40098,8 +42998,11 @@ impl UpdateThingGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -40107,7 +43010,11 @@ impl UpdateThingGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -40214,10 +43121,8 @@ impl UpdateThingGroupsForThingInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_thing_groups_for_thing(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_thing_groups_for_thing(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -40279,8 +43184,11 @@ impl UpdateThingGroupsForThingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -40288,7 +43196,11 @@ impl UpdateThingGroupsForThingInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -40396,10 +43308,8 @@ impl UpdateTopicRuleDestinationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_topic_rule_destination(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_topic_rule_destination(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -40460,8 +43370,11 @@ impl UpdateTopicRuleDestinationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -40469,7 +43382,11 @@ impl UpdateTopicRuleDestinationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -40536,12 +43453,8 @@ impl ValidateSecurityProfileBehaviorsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_validate_security_profile_behaviors(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_validate_security_profile_behaviors(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -40602,8 +43515,11 @@ impl ValidateSecurityProfileBehaviorsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -40611,7 +43527,11 @@ impl ValidateSecurityProfileBehaviorsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -41004,7 +43924,7 @@ pub struct UpdateJobInput {
     /// If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
     /// contain the value in the following format.</p>
     /// <p>
     /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -41057,6 +43977,48 @@ impl std::fmt::Debug for UpdateIndexingConfigurationInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFleetMetricInput {
+    /// <p>The name of the fleet metric to update.</p>
+    pub metric_name: std::option::Option<std::string::String>,
+    /// <p>The search query string.</p>
+    pub query_string: std::option::Option<std::string::String>,
+    /// <p>The type of the aggregation query.</p>
+    pub aggregation_type: std::option::Option<crate::model::AggregationType>,
+    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    pub period: std::option::Option<i32>,
+    /// <p>The field to aggregate.</p>
+    pub aggregation_field: std::option::Option<std::string::String>,
+    /// <p>The description of the fleet metric.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The version of the query.</p>
+    pub query_version: std::option::Option<std::string::String>,
+    /// <p>The name of the index to search.</p>
+    pub index_name: std::option::Option<std::string::String>,
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
+    /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    pub unit: std::option::Option<crate::model::FleetMetricUnit>,
+    /// <p>The expected version of the fleet metric record in the registry.</p>
+    pub expected_version: std::option::Option<i64>,
+}
+impl std::fmt::Debug for UpdateFleetMetricInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFleetMetricInput");
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("query_string", &self.query_string);
+        formatter.field("aggregation_type", &self.aggregation_type);
+        formatter.field("period", &self.period);
+        formatter.field("aggregation_field", &self.aggregation_field);
+        formatter.field("description", &self.description);
+        formatter.field("query_version", &self.query_version);
+        formatter.field("index_name", &self.index_name);
+        formatter.field("unit", &self.unit);
+        formatter.field("expected_version", &self.expected_version);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventConfigurationsInput {
     /// <p>The new event configuration values.</p>
     pub event_configurations: std::option::Option<
@@ -41082,7 +44044,7 @@ pub struct UpdateDynamicThingGroupInput {
     pub expected_version: std::option::Option<i64>,
     /// <p>The dynamic thing group index to update.</p>
     /// <note>
-    /// <p>Currently one index is supported: 'AWS_Things'.</p>
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group search query string to update.</p>
@@ -41185,7 +44147,7 @@ pub struct UpdateCertificateInput {
     /// <p>The new status.</p>
     /// <p>
     /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
-    /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by AWS IoT. They
+    /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
     /// are not intended for developer use.</p>
     /// <p>
     /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
@@ -41328,7 +44290,7 @@ pub struct UpdateAccountAuditConfigurationInput {
     /// (ARN)
     /// of the role that grants permission
     /// to
-    /// AWS IoT to access information about your devices, policies,
+    /// IoT to access information about your devices, policies,
     /// certificates,
     /// and other items as required when performing an audit.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -41396,7 +44358,7 @@ pub struct TransferCertificateInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
     /// certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account.</p>
+    /// <p>The Amazon Web Services account.</p>
     pub target_aws_account: std::option::Option<std::string::String>,
     /// <p>The transfer message.</p>
     pub transfer_message: std::option::Option<std::string::String>,
@@ -41575,7 +44537,7 @@ pub struct StartDetectMitigationActionsTaskInput {
     /// </p>
     pub include_suppressed_alerts: std::option::Option<bool>,
     /// <p>
-    /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
+    /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
     /// </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
@@ -41609,7 +44571,7 @@ pub struct StartAuditMitigationActionsTaskInput {
     /// specific set of
     /// findings.</p>
     pub target: std::option::Option<crate::model::AuditMitigationActionsTaskTarget>,
-    /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your AWS account.</p>
+    /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
     pub audit_check_to_actions_mapping: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -42671,7 +45633,7 @@ pub struct ListJobsInput {
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
     pub thing_group_id: std::option::Option<std::string::String>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
     /// contain the value in the following format.</p>
     /// <p>
     /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -42703,7 +45665,7 @@ pub struct ListJobExecutionsForThingInput {
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
     /// contain the value in the following format.</p>
     /// <p>
     /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -42764,6 +45726,24 @@ pub struct ListIndicesInput {
 impl std::fmt::Debug for ListIndicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIndicesInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFleetMetricsInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
+    /// otherwise <code>null</code> to receive the first set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl std::fmt::Debug for ListFleetMetricsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListFleetMetricsInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
         formatter.finish()
@@ -43286,7 +46266,7 @@ pub struct GetStatisticsInput {
     /// <p>The name of the index to search. The default value is <code>AWS_Things</code>.</p>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The query used to search. You can specify "*" for the query string to get the count of all
-    /// indexed things in your AWS account.</p>
+    /// indexed things in your Amazon Web Services account.</p>
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The aggregation field name.</p>
     pub aggregation_field: std::option::Option<std::string::String>,
@@ -43353,7 +46333,7 @@ impl std::fmt::Debug for GetPolicyInput {
 pub struct GetPercentilesInput {
     /// <p>The name of the index to search.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The query string.</p>
+    /// <p>The search query string.</p>
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The field to aggregate.</p>
     pub aggregation_field: std::option::Option<std::string::String>,
@@ -43448,7 +46428,7 @@ impl std::fmt::Debug for GetEffectivePoliciesInput {
 pub struct GetCardinalityInput {
     /// <p>The name of the index to search.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The search query.</p>
+    /// <p>The search query string.</p>
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The field to aggregate.</p>
     pub aggregation_field: std::option::Option<std::string::String>,
@@ -43462,6 +46442,32 @@ impl std::fmt::Debug for GetCardinalityInput {
         formatter.field("query_string", &self.query_string);
         formatter.field("aggregation_field", &self.aggregation_field);
         formatter.field("query_version", &self.query_version);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBucketsAggregationInput {
+    /// <p>The name of the index to search.</p>
+    pub index_name: std::option::Option<std::string::String>,
+    /// <p>The search query string.</p>
+    pub query_string: std::option::Option<std::string::String>,
+    /// <p>The aggregation field.</p>
+    pub aggregation_field: std::option::Option<std::string::String>,
+    /// <p>The version of the query.</p>
+    pub query_version: std::option::Option<std::string::String>,
+    /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    pub buckets_aggregation_type: std::option::Option<crate::model::BucketsAggregationType>,
+}
+impl std::fmt::Debug for GetBucketsAggregationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBucketsAggregationInput");
+        formatter.field("index_name", &self.index_name);
+        formatter.field("query_string", &self.query_string);
+        formatter.field("aggregation_field", &self.aggregation_field);
+        formatter.field("query_version", &self.query_version);
+        formatter.field("buckets_aggregation_type", &self.buckets_aggregation_type);
         formatter.finish()
     }
 }
@@ -43823,6 +46829,20 @@ impl std::fmt::Debug for DescribeIndexInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetMetricInput {
+    /// <p>The name of the fleet metric to describe.</p>
+    pub metric_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeFleetMetricInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetMetricInput");
+        formatter.field("metric_name", &self.metric_name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventConfigurationsInput {}
 impl std::fmt::Debug for DescribeEventConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -43851,14 +46871,14 @@ pub struct DescribeEndpointInput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API
+    /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
     /// endpoint.</p>
     /// </li>
     /// </ul>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
+    /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
     /// endpoint.</p>
     /// </li>
     /// </ul>
@@ -44338,7 +47358,7 @@ pub struct DeleteOtaUpdateInput {
     /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted.
     /// Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
     pub delete_stream: bool,
-    /// <p>When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
+    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
     /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
     pub force_delete_aws_job: bool,
 }
@@ -44402,7 +47422,7 @@ pub struct DeleteJobExecutionInput {
     /// </note>
     pub force: bool,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
     /// contain the value in the following format.</p>
     /// <p>
     /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -44443,7 +47463,7 @@ pub struct DeleteJobInput {
     /// </note>
     pub force: bool,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
     /// contain the value in the following format.</p>
     /// <p>
     /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -44459,6 +47479,23 @@ impl std::fmt::Debug for DeleteJobInput {
         formatter.field("job_id", &self.job_id);
         formatter.field("force", &self.force);
         formatter.field("namespace_id", &self.namespace_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFleetMetricInput {
+    /// <p>The name of the fleet metric to delete.</p>
+    pub metric_name: std::option::Option<std::string::String>,
+    /// <p>The expected version of the fleet metric to delete.</p>
+    pub expected_version: std::option::Option<i64>,
+}
+impl std::fmt::Debug for DeleteFleetMetricInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFleetMetricInput");
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("expected_version", &self.expected_version);
         formatter.finish()
     }
 }
@@ -44879,7 +47916,7 @@ pub struct CreateRoleAliasInput {
     pub role_alias: std::option::Option<std::string::String>,
     /// <p>The role ARN.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>How long (in seconds) the credentials will be valid.</p>
+    /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
     pub credential_duration_seconds: std::option::Option<i32>,
     /// <p>Metadata which can be used to manage the role alias.</p>
     /// <note>
@@ -45064,7 +48101,7 @@ pub struct CreateOtaUpdateInput {
     pub aws_job_timeout_config: std::option::Option<crate::model::AwsJobTimeoutConfig>,
     /// <p>The files to be streamed by the OTA update.</p>
     pub files: std::option::Option<std::vec::Vec<crate::model::OtaUpdateFile>>,
-    /// <p>The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and AWS Code Signing resources
+    /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
     /// to create an OTA update job.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
@@ -45123,6 +48160,7 @@ impl std::fmt::Debug for CreateMitigationActionInput {
 }
 
 /// <p>The input for the CreateKeysAndCertificate operation.</p>
+/// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificateRequest</a> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeysAndCertificateInput {
@@ -45197,7 +48235,7 @@ impl std::fmt::Debug for CreateJobTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
-    /// <p>A job identifier which must be unique for your AWS account. We recommend using a UUID. Alpha-numeric
+    /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
     /// characters, "-" and "_" are valid for use here.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>A list of things and thing groups to which the job should be sent.</p>
@@ -45236,7 +48274,7 @@ pub struct CreateJobInput {
     /// <p>Metadata which can be used to manage the job.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
     /// contain the value in the following format.</p>
     /// <p>
     /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -45273,6 +48311,48 @@ impl std::fmt::Debug for CreateJobInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFleetMetricInput {
+    /// <p>The name of the fleet metric to create.</p>
+    pub metric_name: std::option::Option<std::string::String>,
+    /// <p>The search query string.</p>
+    pub query_string: std::option::Option<std::string::String>,
+    /// <p>The type of the aggregation query.</p>
+    pub aggregation_type: std::option::Option<crate::model::AggregationType>,
+    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    pub period: std::option::Option<i32>,
+    /// <p>The field to aggregate.</p>
+    pub aggregation_field: std::option::Option<std::string::String>,
+    /// <p>The fleet metric description.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The query version.</p>
+    pub query_version: std::option::Option<std::string::String>,
+    /// <p>The name of the index to search.</p>
+    pub index_name: std::option::Option<std::string::String>,
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
+    /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    pub unit: std::option::Option<crate::model::FleetMetricUnit>,
+    /// <p>Metadata, which can be used to manage the fleet metric.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for CreateFleetMetricInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFleetMetricInput");
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("query_string", &self.query_string);
+        formatter.field("aggregation_type", &self.aggregation_type);
+        formatter.field("period", &self.period);
+        formatter.field("aggregation_field", &self.aggregation_field);
+        formatter.field("description", &self.description);
+        formatter.field("query_version", &self.query_version);
+        formatter.field("index_name", &self.index_name);
+        formatter.field("unit", &self.unit);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDynamicThingGroupInput {
     /// <p>The dynamic thing group name to create.</p>
     pub thing_group_name: std::option::Option<std::string::String>,
@@ -45280,7 +48360,7 @@ pub struct CreateDynamicThingGroupInput {
     pub thing_group_properties: std::option::Option<crate::model::ThingGroupProperties>,
     /// <p>The dynamic thing group index name.</p>
     /// <note>
-    /// <p>Currently one index is supported: "AWS_Things".</p>
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group search query string.</p>
@@ -45315,17 +48395,17 @@ pub struct CreateDomainConfigurationInput {
     pub domain_configuration_name: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The ARNs of the certificates that AWS IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
-    /// This value is not required for AWS-managed domains.</p>
+    /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
+    /// This value is not required for Amazon Web Services-managed domains.</p>
     pub server_certificate_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
-    /// This value is not required for AWS-managed domains.</p>
+    /// This value is not required for Amazon Web Services-managed domains.</p>
     pub validation_certificate_arn: std::option::Option<std::string::String>,
     /// <p>An object that specifies the authorization service for a domain.</p>
     pub authorizer_config: std::option::Option<crate::model::AuthorizerConfig>,
     /// <p>The type of service delivered by the endpoint.</p>
     /// <note>
-    /// <p>AWS IoT Core currently supports only the <code>DATA</code> service type.</p>
+    /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub service_type: std::option::Option<crate::model::ServiceType>,
     /// <p>Metadata which can be used to manage the domain configuration.</p>
@@ -45367,7 +48447,8 @@ pub struct CreateDimensionInput {
     pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Metadata that can be used to manage the dimension.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
+    /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateDimensionInput {
@@ -45408,7 +48489,7 @@ pub struct CreateCustomMetricInput {
     /// metric must have a unique client request token. If you try to create a new custom metric that
     /// already exists with a different token,
     /// an exception
-    /// occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateCustomMetricInput {
@@ -45488,7 +48569,7 @@ pub struct CreateAuthorizerInput {
     /// "key1=value1&key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Specifies whether AWS IoT validates the token signature in an authorization request.</p>
+    /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub signing_disabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for CreateAuthorizerInput {
@@ -45783,7 +48864,7 @@ pub struct AssociateTargetsWithJobInput {
     /// <p>An optional comment string describing why the job was associated with the targets.</p>
     pub comment: std::option::Option<std::string::String>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
     /// contain the value in the following format.</p>
     /// <p>
     /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>

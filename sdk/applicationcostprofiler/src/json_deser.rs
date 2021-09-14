@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_report_definition(
+pub fn deser_operation_crate_operation_delete_report_definition(
     input: &[u8],
     mut builder: crate::output::delete_report_definition_output::Builder,
 ) -> Result<crate::output::delete_report_definition_output::Builder, smithy_json::deserialize::Error>
@@ -201,7 +201,7 @@ pub fn deser_operation_delete_report_definition(
     Ok(builder)
 }
 
-pub fn deser_operation_get_report_definition(
+pub fn deser_operation_crate_operation_get_report_definition(
     input: &[u8],
     mut builder: crate::output::get_report_definition_output::Builder,
 ) -> Result<crate::output::get_report_definition_output::Builder, smithy_json::deserialize::Error> {
@@ -225,7 +225,7 @@ pub fn deser_operation_get_report_definition(
                     }
                     "destinationS3Location" => {
                         builder = builder.set_destination_s3_location(
-                            crate::json_deser::deser_structure_s3_location(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_s3_location(tokens)?,
                         );
                     }
                     "format" => {
@@ -288,7 +288,7 @@ pub fn deser_operation_get_report_definition(
     Ok(builder)
 }
 
-pub fn deser_operation_import_application_usage(
+pub fn deser_operation_crate_operation_import_application_usage(
     input: &[u8],
     mut builder: crate::output::import_application_usage_output::Builder,
 ) -> Result<crate::output::import_application_usage_output::Builder, smithy_json::deserialize::Error>
@@ -328,7 +328,7 @@ pub fn deser_operation_import_application_usage(
     Ok(builder)
 }
 
-pub fn deser_operation_list_report_definitions(
+pub fn deser_operation_crate_operation_list_report_definitions(
     input: &[u8],
     mut builder: crate::output::list_report_definitions_output::Builder,
 ) -> Result<crate::output::list_report_definitions_output::Builder, smithy_json::deserialize::Error>
@@ -352,7 +352,7 @@ pub fn deser_operation_list_report_definitions(
                     }
                     "reportDefinitions" => {
                         builder = builder.set_report_definitions(
-                            crate::json_deser::deser_list_report_definition_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_applicationcostprofiler_report_definition_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -373,7 +373,7 @@ pub fn deser_operation_list_report_definitions(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -413,7 +413,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_put_report_definition(
+pub fn deser_operation_crate_operation_put_report_definition(
     input: &[u8],
     mut builder: crate::output::put_report_definition_output::Builder,
 ) -> Result<crate::output::put_report_definition_output::Builder, smithy_json::deserialize::Error> {
@@ -452,7 +452,7 @@ pub fn deser_operation_put_report_definition(
     Ok(builder)
 }
 
-pub fn deser_operation_update_report_definition(
+pub fn deser_operation_crate_operation_update_report_definition(
     input: &[u8],
     mut builder: crate::output::update_report_definition_output::Builder,
 ) -> Result<crate::output::update_report_definition_output::Builder, smithy_json::deserialize::Error>
@@ -500,7 +500,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_s3_location<'a, I>(
+pub fn deser_structure_crate_model_s3_location<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3Location>, smithy_json::deserialize::Error>
 where
@@ -555,7 +555,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_report_definition_list<'a, I>(
+pub fn deser_list_com_amazonaws_applicationcostprofiler_report_definition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ReportDefinition>>, smithy_json::deserialize::Error>
 where
@@ -574,7 +574,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_report_definition(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_report_definition(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -589,7 +592,7 @@ where
     }
 }
 
-pub fn deser_structure_report_definition<'a, I>(
+pub fn deser_structure_crate_model_report_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ReportDefinition>, smithy_json::deserialize::Error>
 where
@@ -652,7 +655,9 @@ where
                             }
                             "destinationS3Location" => {
                                 builder = builder.set_destination_s3_location(
-                                    crate::json_deser::deser_structure_s3_location(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_s3_location(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "createdAt" => {

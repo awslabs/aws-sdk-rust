@@ -6016,6 +6016,8 @@ pub struct StudioSummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
     pub url: std::option::Option<std::string::String>,
+    /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+    pub auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The time when the Amazon EMR Studio was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
 }
@@ -6027,6 +6029,7 @@ impl std::fmt::Debug for StudioSummary {
         formatter.field("vpc_id", &self.vpc_id);
         formatter.field("description", &self.description);
         formatter.field("url", &self.url);
+        formatter.field("auth_mode", &self.auth_mode);
         formatter.field("creation_time", &self.creation_time);
         formatter.finish()
     }
@@ -6042,6 +6045,7 @@ pub mod studio_summary {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) url: std::option::Option<std::string::String>,
+        pub(crate) auth_mode: std::option::Option<crate::model::AuthMode>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
@@ -6091,6 +6095,15 @@ pub mod studio_summary {
             self.url = input;
             self
         }
+        /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+        pub fn auth_mode(mut self, input: crate::model::AuthMode) -> Self {
+            self.auth_mode = Some(input);
+            self
+        }
+        pub fn set_auth_mode(mut self, input: std::option::Option<crate::model::AuthMode>) -> Self {
+            self.auth_mode = input;
+            self
+        }
         /// <p>The time when the Amazon EMR Studio was created.</p>
         pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
@@ -6111,6 +6124,7 @@ pub mod studio_summary {
                 vpc_id: self.vpc_id,
                 description: self.description,
                 url: self.url,
+                auth_mode: self.auth_mode,
                 creation_time: self.creation_time,
             }
         }
@@ -6120,6 +6134,56 @@ impl StudioSummary {
     /// Creates a new builder-style object to manufacture [`StudioSummary`](crate::model::StudioSummary)
     pub fn builder() -> crate::model::studio_summary::Builder {
         crate::model::studio_summary::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AuthMode {
+    Iam,
+    Sso,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AuthMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "IAM" => AuthMode::Iam,
+            "SSO" => AuthMode::Sso,
+            other => AuthMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AuthMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AuthMode::from(s))
+    }
+}
+impl AuthMode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AuthMode::Iam => "IAM",
+            AuthMode::Sso => "SSO",
+            AuthMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["IAM", "SSO"]
+    }
+}
+impl AsRef<str> for AuthMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -10524,8 +10588,7 @@ pub struct Studio {
     pub name: std::option::Option<std::string::String>,
     /// <p>The detailed description of the Amazon EMR Studio.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO) or
-    /// IAM.</p>
+    /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.</p>
     pub auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
     pub vpc_id: std::option::Option<std::string::String>,
@@ -10533,7 +10596,7 @@ pub struct Studio {
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the IAM role assumed by the Amazon EMR Studio.</p>
     pub service_role: std::option::Option<std::string::String>,
-    /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio.</p>
+    /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>
     pub user_role: std::option::Option<std::string::String>,
     /// <p>The ID of the Workspace security group associated with the Amazon EMR Studio. The
     /// Workspace security group allows outbound network traffic to resources in the Engine
@@ -10550,6 +10613,10 @@ pub struct Studio {
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
     /// files.</p>
     pub default_s3_location: std::option::Option<std::string::String>,
+    /// <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>
+    pub idp_auth_url: std::option::Option<std::string::String>,
+    /// <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+    pub idp_relay_state_parameter_name: std::option::Option<std::string::String>,
     /// <p>A list of tags associated with the Amazon EMR Studio.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -10573,6 +10640,11 @@ impl std::fmt::Debug for Studio {
         formatter.field("url", &self.url);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("default_s3_location", &self.default_s3_location);
+        formatter.field("idp_auth_url", &self.idp_auth_url);
+        formatter.field(
+            "idp_relay_state_parameter_name",
+            &self.idp_relay_state_parameter_name,
+        );
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -10597,6 +10669,8 @@ pub mod studio {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
         pub(crate) default_s3_location: std::option::Option<std::string::String>,
+        pub(crate) idp_auth_url: std::option::Option<std::string::String>,
+        pub(crate) idp_relay_state_parameter_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -10636,8 +10710,7 @@ pub mod studio {
             self.description = input;
             self
         }
-        /// <p>Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO) or
-        /// IAM.</p>
+        /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.</p>
         pub fn auth_mode(mut self, input: crate::model::AuthMode) -> Self {
             self.auth_mode = Some(input);
             self
@@ -10677,7 +10750,7 @@ pub mod studio {
             self.service_role = input;
             self
         }
-        /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio.</p>
+        /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>
         pub fn user_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_role = Some(input.into());
             self
@@ -10751,6 +10824,30 @@ pub mod studio {
             self.default_s3_location = input;
             self
         }
+        /// <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>
+        pub fn idp_auth_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.idp_auth_url = Some(input.into());
+            self
+        }
+        pub fn set_idp_auth_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.idp_auth_url = input;
+            self
+        }
+        /// <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+        pub fn idp_relay_state_parameter_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.idp_relay_state_parameter_name = Some(input.into());
+            self
+        }
+        pub fn set_idp_relay_state_parameter_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.idp_relay_state_parameter_name = input;
+            self
+        }
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
@@ -10781,6 +10878,8 @@ pub mod studio {
                 url: self.url,
                 creation_time: self.creation_time,
                 default_s3_location: self.default_s3_location,
+                idp_auth_url: self.idp_auth_url,
+                idp_relay_state_parameter_name: self.idp_relay_state_parameter_name,
                 tags: self.tags,
             }
         }
@@ -10790,56 +10889,6 @@ impl Studio {
     /// Creates a new builder-style object to manufacture [`Studio`](crate::model::Studio)
     pub fn builder() -> crate::model::studio::Builder {
         crate::model::studio::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum AuthMode {
-    Iam,
-    Sso,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for AuthMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "IAM" => AuthMode::Iam,
-            "SSO" => AuthMode::Sso,
-            other => AuthMode::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for AuthMode {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthMode::from(s))
-    }
-}
-impl AuthMode {
-    pub fn as_str(&self) -> &str {
-        match self {
-            AuthMode::Iam => "IAM",
-            AuthMode::Sso => "SSO",
-            AuthMode::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["IAM", "SSO"]
-    }
-}
-impl AsRef<str> for AuthMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -12847,7 +12896,7 @@ pub struct Cluster {
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
     /// <p>A list of tags associated with a cluster.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon Web Services resources on
+    /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
     /// your behalf.</p>
     pub service_role: std::option::Option<std::string::String>,
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value
@@ -13173,7 +13222,7 @@ pub mod cluster {
             self.tags = input;
             self
         }
-        /// <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon Web Services resources on
+        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
         /// your behalf.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());

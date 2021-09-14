@@ -686,10 +686,10 @@ pub struct UpdateIamPolicyAssignmentOutput {
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The ID of the assignment.</p>
     pub assignment_id: std::option::Option<std::string::String>,
-    /// <p>The ARN for the IAM policy applied to the QuickSight users and groups specified in this
+    /// <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups specified in this
     /// assignment.</p>
     pub policy_arn: std::option::Option<std::string::String>,
-    /// <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
+    /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
     pub identities: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -770,7 +770,7 @@ pub mod update_iam_policy_assignment_output {
             self.assignment_id = input;
             self
         }
-        /// <p>The ARN for the IAM policy applied to the QuickSight users and groups specified in this
+        /// <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups specified in this
         /// assignment.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
@@ -1140,7 +1140,7 @@ impl UpdateFolderOutput {
 pub struct UpdateDataSourcePermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub data_source_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -1181,7 +1181,7 @@ pub mod update_data_source_permissions_output {
             self.data_source_arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -1234,7 +1234,7 @@ impl UpdateDataSourcePermissionsOutput {
 pub struct UpdateDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The update status of the data source's last update.</p>
     pub update_status: std::option::Option<crate::model::ResourceStatus>,
@@ -1276,7 +1276,7 @@ pub mod update_data_source_output {
             self.arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -1343,7 +1343,7 @@ pub struct UpdateDataSetPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub data_set_arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-    /// Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -1382,7 +1382,7 @@ pub mod update_data_set_permissions_output {
             self
         }
         /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-        /// Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -1432,7 +1432,7 @@ impl UpdateDataSetPermissionsOutput {
 pub struct UpdateDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
     /// mode is SPICE.</p>
@@ -1480,7 +1480,7 @@ pub mod update_data_set_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -2146,14 +2146,14 @@ impl UpdateAccountSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountCustomizationOutput {
-    /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account;.</p>
+    /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that you want to update QuickSight customizations
+    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
     /// for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace associated with the customization that you're updating.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
+    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -2186,7 +2186,7 @@ pub mod update_account_customization_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account;.</p>
+        /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -2195,7 +2195,7 @@ pub mod update_account_customization_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that you want to update QuickSight customizations
+        /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
         /// for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -2217,7 +2217,7 @@ pub mod update_account_customization_output {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
+        /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
             self.account_customization = Some(input);
             self
@@ -3704,7 +3704,7 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamespacesOutput {
-    /// <p>The information about the namespaces in this Amazon Web Services account;. The response includes
+    /// <p>The information about the namespaces in this Amazon Web Services account. The response includes
     /// the namespace ARN, name, Amazon Web Services Region;, notification email address, creation status, and
     /// identity store.</p>
     pub namespaces: std::option::Option<std::vec::Vec<crate::model::NamespaceInfoV2>>,
@@ -3987,7 +3987,7 @@ impl ListIamPolicyAssignmentsForUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIamPolicyAssignmentsOutput {
-    /// <p>Information describing the IAM policy assignments.</p>
+    /// <p>Information describing the IAMpolicy assignments.</p>
     pub iam_policy_assignments:
         std::option::Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -4752,7 +4752,7 @@ impl ListDashboardVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardsOutput {
-    /// <p>A structure that contains all of the dashboards in your Amazon Web Services account;. This structure
+    /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure
     /// provides basic information about the dashboards.</p>
     pub dashboard_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -4946,7 +4946,7 @@ impl ListAnalysesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionEmbedUrlOutput {
     /// <p>A single-use URL that you can put into your server-side web page to embed your
-    /// QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an
+    /// Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an
     /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
     /// that is valid for 10 hours. </p>
     pub embed_url: std::option::Option<std::string::String>,
@@ -4976,7 +4976,7 @@ pub mod get_session_embed_url_output {
     }
     impl Builder {
         /// <p>A single-use URL that you can put into your server-side web page to embed your
-        /// QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an
+        /// Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an
         /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
         /// that is valid for 10 hours. </p>
         pub fn embed_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6004,7 +6004,7 @@ impl DescribeIngestionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIamPolicyAssignmentOutput {
-    /// <p>Information describing the IAM policy assignment.</p>
+    /// <p>Information describing the IAMpolicy assignment.</p>
     pub iam_policy_assignment: std::option::Option<crate::model::IamPolicyAssignment>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -6031,7 +6031,7 @@ pub mod describe_iam_policy_assignment_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Information describing the IAM policy assignment.</p>
+        /// <p>Information describing the IAMpolicy assignment.</p>
         pub fn iam_policy_assignment(mut self, input: crate::model::IamPolicyAssignment) -> Self {
             self.iam_policy_assignment = Some(input);
             self
@@ -6447,7 +6447,7 @@ impl DescribeFolderOutput {
 pub struct DescribeDataSourcePermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub data_source_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions on the data source.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -6493,7 +6493,7 @@ pub mod describe_data_source_permissions_output {
             self.data_source_arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -6637,7 +6637,7 @@ impl DescribeDataSourceOutput {
 pub struct DescribeDataSetPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub data_set_arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions on the dataset.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -6680,7 +6680,7 @@ pub mod describe_data_set_permissions_output {
             self.data_set_arn = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -7189,12 +7189,12 @@ impl DescribeAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountSettingsOutput {
-    /// <p>The QuickSight settings for this Amazon Web Services account;. This information includes the edition of Amazon
-    /// QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
-    /// QuickSight subscription. In the QuickSight console, the QuickSight subscription is sometimes
-    /// referred to as a QuickSight "account" even though it's technically not an account
-    /// by itself. Instead, it's a subscription to the QuickSight service for your Amazon Web Services account;. The
-    /// edition that you subscribe to applies to QuickSight in every Amazon Web Services Region; where you use it.</p>
+    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon
+    /// Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
+    /// Amazon QuickSight subscription. In the Amazon QuickSight console, the Amazon QuickSight subscription is sometimes
+    /// referred to as a Amazon QuickSight "account" even though it's technically not an account
+    /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The
+    /// edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region; where you use it.</p>
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -7221,12 +7221,12 @@ pub mod describe_account_settings_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The QuickSight settings for this Amazon Web Services account;. This information includes the edition of Amazon
-        /// QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
-        /// QuickSight subscription. In the QuickSight console, the QuickSight subscription is sometimes
-        /// referred to as a QuickSight "account" even though it's technically not an account
-        /// by itself. Instead, it's a subscription to the QuickSight service for your Amazon Web Services account;. The
-        /// edition that you subscribe to applies to QuickSight in every Amazon Web Services Region; where you use it.</p>
+        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon
+        /// Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
+        /// Amazon QuickSight subscription. In the Amazon QuickSight console, the Amazon QuickSight subscription is sometimes
+        /// referred to as a Amazon QuickSight "account" even though it's technically not an account
+        /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The
+        /// edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region; where you use it.</p>
         pub fn account_settings(mut self, input: crate::model::AccountSettings) -> Self {
             self.account_settings = Some(input);
             self
@@ -7276,13 +7276,13 @@ impl DescribeAccountSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountCustomizationOutput {
-    /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account;.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that you're describing.</p>
+    /// <p>The ID for the Amazon Web Services account that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The QuickSight namespace that you're describing. </p>
+    /// <p>The Amazon QuickSight namespace that you're describing. </p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations that exist in the current Amazon Web Services Region;. </p>
+    /// <p>The Amazon QuickSight customizations that exist in the current Amazon Web Services Region;. </p>
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -7315,7 +7315,7 @@ pub mod describe_account_customization_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account;.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -7324,7 +7324,7 @@ pub mod describe_account_customization_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that you're describing.</p>
+        /// <p>The ID for the Amazon Web Services account that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -7336,7 +7336,7 @@ pub mod describe_account_customization_output {
             self.aws_account_id = input;
             self
         }
-        /// <p>The QuickSight namespace that you're describing. </p>
+        /// <p>The Amazon QuickSight namespace that you're describing. </p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
@@ -7345,7 +7345,7 @@ pub mod describe_account_customization_output {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations that exist in the current Amazon Web Services Region;. </p>
+        /// <p>The Amazon QuickSight customizations that exist in the current Amazon Web Services Region;. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
             self.account_customization = Some(input);
             self
@@ -8305,7 +8305,7 @@ impl DeleteFolderOutput {
 pub struct DeleteDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source that you deleted.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -8343,7 +8343,7 @@ pub mod delete_data_source_output {
             self.arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -8396,7 +8396,7 @@ impl DeleteDataSourceOutput {
 pub struct DeleteDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -8434,7 +8434,7 @@ pub mod delete_data_set_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -9129,7 +9129,7 @@ impl CreateTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNamespaceOutput {
-    /// <p>The ARN of the QuickSight namespace you created. </p>
+    /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the new namespace that you created.</p>
     pub name: std::option::Option<std::string::String>,
@@ -9178,7 +9178,7 @@ pub mod create_namespace_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ARN of the QuickSight namespace you created. </p>
+        /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -9385,7 +9385,7 @@ impl CreateIngestionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIamPolicyAssignmentOutput {
-    /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account;.</p>
+    /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the assignment.</p>
     pub assignment_id: std::option::Option<std::string::String>,
@@ -9407,9 +9407,9 @@ pub struct CreateIamPolicyAssignmentOutput {
     /// </li>
     /// </ul>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
-    /// <p>The ARN for the IAM policy that is applied to the QuickSight users and groups specified in this assignment.</p>
+    /// <p>The ARN for the IAMpolicy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub policy_arn: std::option::Option<std::string::String>,
-    /// <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
+    /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
     pub identities: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -9448,7 +9448,7 @@ pub mod create_iam_policy_assignment_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account;.</p>
+        /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
         pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_name = Some(input.into());
             self
@@ -9500,7 +9500,7 @@ pub mod create_iam_policy_assignment_output {
             self.assignment_status = input;
             self
         }
-        /// <p>The ARN for the IAM policy that is applied to the QuickSight users and groups specified in this assignment.</p>
+        /// <p>The ARN for the IAMpolicy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
@@ -9889,7 +9889,7 @@ impl CreateFolderOutput {
 pub struct CreateDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The status of creating the data source.</p>
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
@@ -9931,7 +9931,7 @@ pub mod create_data_source_output {
             self.arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -9997,7 +9997,7 @@ impl CreateDataSourceOutput {
 pub struct CreateDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
     /// mode is SPICE.</p>
@@ -10045,7 +10045,7 @@ pub mod create_data_set_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -10344,13 +10344,13 @@ impl CreateAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountCustomizationOutput {
-    /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account;.</p>
+    /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that you want to customize QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace associated with the customization you're creating. </p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region;. </p>
+    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region;. </p>
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -10383,7 +10383,7 @@ pub mod create_account_customization_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account;.</p>
+        /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -10392,7 +10392,7 @@ pub mod create_account_customization_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that you want to customize QuickSight for.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -10413,7 +10413,7 @@ pub mod create_account_customization_output {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region;. </p>
+        /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region;. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
             self.account_customization = Some(input);
             self

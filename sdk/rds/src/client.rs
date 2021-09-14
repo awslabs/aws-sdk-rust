@@ -13779,11 +13779,7 @@ pub mod fluent_builders {
         /// <p>The amount of time, in seconds, that Aurora Serverless tries to find a scaling point
         /// to perform seamless scaling before enforcing the timeout action. The default is
         /// 300.</p>
-        /// <ul>
-        /// <li>
-        /// <p>Value must be from 10 through 600.</p>
-        /// </li>
-        /// </ul>
+        /// <p>Specify a value between 10 and 600 seconds.</p>
         pub fn seconds_before_timeout(mut self, inp: i32) -> Self {
             self.inner = self.inner.seconds_before_timeout(inp);
             self

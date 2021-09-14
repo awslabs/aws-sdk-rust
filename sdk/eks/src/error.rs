@@ -1218,6 +1218,117 @@ impl std::error::Error for DeleteNodegroupError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeregisterClusterError {
+    pub kind: DeregisterClusterErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeregisterClusterErrorKind {
+    ClientException(crate::error::ClientException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServerException(crate::error::ServerException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeregisterClusterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeregisterClusterErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeregisterClusterErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeregisterClusterErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeregisterClusterErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DeregisterClusterErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeregisterClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeregisterClusterError {
+    fn code(&self) -> Option<&str> {
+        DeregisterClusterError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeregisterClusterError {
+    pub fn new(kind: DeregisterClusterErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeregisterClusterErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeregisterClusterErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, DeregisterClusterErrorKind::ClientException(_))
+    }
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterClusterErrorKind::ResourceInUseException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterClusterErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, DeregisterClusterErrorKind::ServerException(_))
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterClusterErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DeregisterClusterError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeregisterClusterErrorKind::ClientException(_inner) => Some(_inner),
+            DeregisterClusterErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeregisterClusterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeregisterClusterErrorKind::ServerException(_inner) => Some(_inner),
+            DeregisterClusterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeregisterClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeAddonError {
     pub kind: DescribeAddonErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -2859,6 +2970,117 @@ impl std::error::Error for ListUpdatesError {
             ListUpdatesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListUpdatesErrorKind::ServerException(_inner) => Some(_inner),
             ListUpdatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RegisterClusterError {
+    pub kind: RegisterClusterErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RegisterClusterErrorKind {
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    ServerException(crate::error::ServerException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RegisterClusterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RegisterClusterErrorKind::ClientException(_inner) => _inner.fmt(f),
+            RegisterClusterErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            RegisterClusterErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
+            RegisterClusterErrorKind::ServerException(_inner) => _inner.fmt(f),
+            RegisterClusterErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            RegisterClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for RegisterClusterError {
+    fn code(&self) -> Option<&str> {
+        RegisterClusterError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RegisterClusterError {
+    pub fn new(kind: RegisterClusterErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RegisterClusterErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RegisterClusterErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, RegisterClusterErrorKind::ClientException(_))
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterClusterErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterClusterErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, RegisterClusterErrorKind::ServerException(_))
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterClusterErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for RegisterClusterError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RegisterClusterErrorKind::ClientException(_inner) => Some(_inner),
+            RegisterClusterErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            RegisterClusterErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
+            RegisterClusterErrorKind::ServerException(_inner) => Some(_inner),
+            RegisterClusterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            RegisterClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

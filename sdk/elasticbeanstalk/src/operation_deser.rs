@@ -28,7 +28,7 @@ pub fn parse_abort_environment_update_error(
                     let mut output =
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AbortEnvironmentUpdateError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AbortEnvironmentUpdateError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -81,7 +81,7 @@ pub fn parse_apply_environment_managed_action_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -95,7 +95,7 @@ pub fn parse_apply_environment_managed_action_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::managed_action_invalid_state_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_managed_action_invalid_state_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_managed_action_invalid_state_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -119,11 +119,12 @@ pub fn parse_apply_environment_managed_action_response(
         #[allow(unused_mut)]
         let mut output = crate::output::apply_environment_managed_action_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_apply_environment_managed_action(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_apply_environment_managed_action(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
         output.build()
     })
 }
@@ -151,7 +152,7 @@ pub fn parse_associate_environment_operations_role_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssociateEnvironmentOperationsRoleError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssociateEnvironmentOperationsRoleError::unhandled)?;
                     output.build()
                 }
             ;
@@ -203,7 +204,7 @@ pub fn parse_check_dns_availability_response(
         #[allow(unused_mut)]
         let mut output = crate::output::check_dns_availability_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_check_dns_availability(
+        output = crate::xml_deser::deser_operation_crate_operation_check_dns_availability(
             response.body().as_ref(),
             output,
         )
@@ -237,7 +238,7 @@ pub fn parse_compose_environments_error(
                     let mut output =
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -246,26 +247,24 @@ pub fn parse_compose_environments_error(
                 tmp
             }),
         },
-        "TooManyEnvironmentsException" => {
-            crate::error::ComposeEnvironmentsError {
-                meta: generic,
-                kind: crate::error::ComposeEnvironmentsErrorKind::TooManyEnvironmentsException({
+        "TooManyEnvironmentsException" => crate::error::ComposeEnvironmentsError {
+            meta: generic,
+            kind: crate::error::ComposeEnvironmentsErrorKind::TooManyEnvironmentsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::too_many_environments_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::too_many_environments_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ComposeEnvironmentsError::generic(generic),
     })
 }
@@ -281,7 +280,7 @@ pub fn parse_compose_environments_response(
         #[allow(unused_mut)]
         let mut output = crate::output::compose_environments_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_compose_environments(
+        output = crate::xml_deser::deser_operation_crate_operation_compose_environments(
             response.body().as_ref(),
             output,
         )
@@ -304,26 +303,24 @@ pub fn parse_create_application_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "TooManyApplicationsException" => {
-            crate::error::CreateApplicationError {
-                meta: generic,
-                kind: crate::error::CreateApplicationErrorKind::TooManyApplicationsException({
+        "TooManyApplicationsException" => crate::error::CreateApplicationError {
+            meta: generic,
+            kind: crate::error::CreateApplicationErrorKind::TooManyApplicationsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::too_many_applications_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_too_many_applications_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::too_many_applications_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_applications_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateApplicationError::generic(generic),
     })
 }
@@ -337,9 +334,11 @@ pub fn parse_create_application_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_application_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_application(response.body().as_ref(), output)
-                .map_err(crate::error::CreateApplicationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_application(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateApplicationError::unhandled)?;
         output.build()
     })
 }
@@ -369,7 +368,7 @@ pub fn parse_create_application_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::code_build_not_in_service_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_code_build_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_code_build_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -383,7 +382,7 @@ pub fn parse_create_application_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -397,7 +396,7 @@ pub fn parse_create_application_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::s3_location_not_in_service_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_s3_location_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_s3_location_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -411,7 +410,7 @@ pub fn parse_create_application_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_applications_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_applications_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_applications_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -425,7 +424,7 @@ pub fn parse_create_application_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_application_versions_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_application_versions_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_application_versions_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -449,7 +448,7 @@ pub fn parse_create_application_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_application_version_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_application_version(
+        output = crate::xml_deser::deser_operation_crate_operation_create_application_version(
             response.body().as_ref(),
             output,
         )
@@ -483,7 +482,7 @@ pub fn parse_create_configuration_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -497,7 +496,7 @@ pub fn parse_create_configuration_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -511,7 +510,7 @@ pub fn parse_create_configuration_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_configuration_templates_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_configuration_templates_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_configuration_templates_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -535,7 +534,7 @@ pub fn parse_create_configuration_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_configuration_template_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_configuration_template(
+        output = crate::xml_deser::deser_operation_crate_operation_create_configuration_template(
             response.body().as_ref(),
             output,
         )
@@ -567,7 +566,7 @@ pub fn parse_create_environment_error(
                     let mut output =
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -576,26 +575,24 @@ pub fn parse_create_environment_error(
                 tmp
             }),
         },
-        "TooManyEnvironmentsException" => {
-            crate::error::CreateEnvironmentError {
-                meta: generic,
-                kind: crate::error::CreateEnvironmentErrorKind::TooManyEnvironmentsException({
+        "TooManyEnvironmentsException" => crate::error::CreateEnvironmentError {
+            meta: generic,
+            kind: crate::error::CreateEnvironmentErrorKind::TooManyEnvironmentsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::too_many_environments_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::too_many_environments_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateEnvironmentError::generic(generic),
     })
 }
@@ -609,9 +606,11 @@ pub fn parse_create_environment_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_environment_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_environment(response.body().as_ref(), output)
-                .map_err(crate::error::CreateEnvironmentError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_environment(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateEnvironmentError::unhandled)?;
         output.build()
     })
 }
@@ -641,7 +640,7 @@ pub fn parse_create_platform_version_error(
                     let mut output =
                         crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -659,7 +658,7 @@ pub fn parse_create_platform_version_error(
                     let mut output =
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -676,12 +675,7 @@ pub fn parse_create_platform_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_platforms_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_too_many_platforms_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::CreatePlatformVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_platforms_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -705,7 +699,7 @@ pub fn parse_create_platform_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_platform_version_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_platform_version(
+        output = crate::xml_deser::deser_operation_crate_operation_create_platform_version(
             response.body().as_ref(),
             output,
         )
@@ -739,7 +733,7 @@ pub fn parse_create_storage_location_error(
                     let mut output =
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStorageLocationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStorageLocationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -757,7 +751,7 @@ pub fn parse_create_storage_location_error(
                     let mut output =
                         crate::error::s3_subscription_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_s3_subscription_required_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStorageLocationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_s3_subscription_required_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStorageLocationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -774,11 +768,7 @@ pub fn parse_create_storage_location_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_buckets_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStorageLocationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStorageLocationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -802,7 +792,7 @@ pub fn parse_create_storage_location_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_storage_location_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_storage_location(
+        output = crate::xml_deser::deser_operation_crate_operation_create_storage_location(
             response.body().as_ref(),
             output,
         )
@@ -825,26 +815,24 @@ pub fn parse_delete_application_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationInProgressFailure" => {
-            crate::error::DeleteApplicationError {
-                meta: generic,
-                kind: crate::error::DeleteApplicationErrorKind::OperationInProgressException({
+        "OperationInProgressFailure" => crate::error::DeleteApplicationError {
+            meta: generic,
+            kind: crate::error::DeleteApplicationErrorKind::OperationInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_in_progress_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteApplicationError::generic(generic),
     })
 }
@@ -887,7 +875,7 @@ pub fn parse_delete_application_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -901,7 +889,7 @@ pub fn parse_delete_application_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::operation_in_progress_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -915,7 +903,7 @@ pub fn parse_delete_application_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::s3_location_not_in_service_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_s3_location_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_s3_location_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -929,7 +917,7 @@ pub fn parse_delete_application_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::source_bundle_deletion_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_source_bundle_deletion_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_source_bundle_deletion_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -987,7 +975,7 @@ pub fn parse_delete_configuration_template_error(
                         let mut output =
                             crate::error::operation_in_progress_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationTemplateError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationTemplateError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1066,7 +1054,7 @@ pub fn parse_delete_platform_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1080,7 +1068,7 @@ pub fn parse_delete_platform_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1094,7 +1082,7 @@ pub fn parse_delete_platform_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::operation_in_progress_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1108,7 +1096,7 @@ pub fn parse_delete_platform_version_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::platform_version_still_referenced_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_platform_version_still_referenced_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_platform_version_still_referenced_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1132,7 +1120,7 @@ pub fn parse_delete_platform_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_platform_version_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_platform_version(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_platform_version(
             response.body().as_ref(),
             output,
         )
@@ -1171,7 +1159,7 @@ pub fn parse_describe_account_attributes_error(
                         let mut output =
                             crate::error::insufficient_privileges_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1196,7 +1184,7 @@ pub fn parse_describe_account_attributes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_account_attributes_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_account_attributes(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_account_attributes(
             response.body().as_ref(),
             output,
         )
@@ -1228,7 +1216,7 @@ pub fn parse_describe_applications_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_applications_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_applications(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_applications(
             response.body().as_ref(),
             output,
         )
@@ -1262,7 +1250,7 @@ pub fn parse_describe_application_versions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_application_versions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_application_versions(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_application_versions(
             response.body().as_ref(),
             output,
         )
@@ -1299,11 +1287,7 @@ pub fn parse_describe_configuration_options_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_buckets_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeConfigurationOptionsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationOptionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1327,7 +1311,7 @@ pub fn parse_describe_configuration_options_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_configuration_options_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_configuration_options(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_configuration_options(
             response.body().as_ref(),
             output,
         )
@@ -1364,11 +1348,7 @@ pub fn parse_describe_configuration_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_buckets_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeConfigurationSettingsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1392,7 +1372,7 @@ pub fn parse_describe_configuration_settings_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_configuration_settings_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_configuration_settings(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_configuration_settings(
             response.body().as_ref(),
             output,
         )
@@ -1433,7 +1413,7 @@ pub fn parse_describe_environment_health_error(
                                 crate::error::elastic_beanstalk_service_exception::Builder::default(
                                 );
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1451,11 +1431,7 @@ pub fn parse_describe_environment_health_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1479,7 +1455,7 @@ pub fn parse_describe_environment_health_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_environment_health_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_environment_health(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_environment_health(
             response.body().as_ref(),
             output,
         )
@@ -1513,7 +1489,7 @@ pub fn parse_describe_environment_managed_action_history_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentManagedActionHistoryError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentManagedActionHistoryError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1538,11 +1514,7 @@ pub fn parse_describe_environment_managed_action_history_response(
         let mut output =
             crate::output::describe_environment_managed_action_history_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_environment_managed_action_history(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeEnvironmentManagedActionHistoryError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_environment_managed_action_history(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentManagedActionHistoryError::unhandled)?;
         output.build()
     })
 }
@@ -1570,7 +1542,7 @@ pub fn parse_describe_environment_managed_actions_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentManagedActionsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentManagedActionsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1595,11 +1567,12 @@ pub fn parse_describe_environment_managed_actions_response(
         let mut output =
             crate::output::describe_environment_managed_actions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_environment_managed_actions(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeEnvironmentManagedActionsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_environment_managed_actions(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeEnvironmentManagedActionsError::unhandled)?;
         output.build()
     })
 }
@@ -1635,7 +1608,7 @@ pub fn parse_describe_environment_resources_error(
                             let mut output =
                                 crate::error::insufficient_privileges_exception::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentResourcesError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentResourcesError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1660,7 +1633,7 @@ pub fn parse_describe_environment_resources_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_environment_resources_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_environment_resources(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_environment_resources(
             response.body().as_ref(),
             output,
         )
@@ -1692,7 +1665,7 @@ pub fn parse_describe_environments_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_environments_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_environments(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_environments(
             response.body().as_ref(),
             output,
         )
@@ -1718,9 +1691,11 @@ pub fn parse_describe_events_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_events_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_events(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeEventsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_events(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeEventsError::unhandled)?;
         output.build()
     })
 }
@@ -1755,7 +1730,7 @@ pub fn parse_describe_instances_health_error(
                         let mut output =
                             crate::error::elastic_beanstalk_service_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1773,11 +1748,7 @@ pub fn parse_describe_instances_health_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1801,7 +1772,7 @@ pub fn parse_describe_instances_health_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instances_health_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_instances_health(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_instances_health(
             response.body().as_ref(),
             output,
         )
@@ -1840,7 +1811,7 @@ pub fn parse_describe_platform_version_error(
                         let mut output =
                             crate::error::elastic_beanstalk_service_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePlatformVersionError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePlatformVersionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1860,7 +1831,7 @@ pub fn parse_describe_platform_version_error(
                         let mut output =
                             crate::error::insufficient_privileges_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePlatformVersionError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePlatformVersionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1885,7 +1856,7 @@ pub fn parse_describe_platform_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_platform_version_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_platform_version(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_platform_version(
             response.body().as_ref(),
             output,
         )
@@ -1919,7 +1890,7 @@ pub fn parse_disassociate_environment_operations_role_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateEnvironmentOperationsRoleError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateEnvironmentOperationsRoleError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1973,7 +1944,7 @@ pub fn parse_list_available_solution_stacks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_available_solution_stacks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_available_solution_stacks(
+        output = crate::xml_deser::deser_operation_crate_operation_list_available_solution_stacks(
             response.body().as_ref(),
             output,
         )
@@ -2005,7 +1976,7 @@ pub fn parse_list_platform_branches_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_platform_branches_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_platform_branches(
+        output = crate::xml_deser::deser_operation_crate_operation_list_platform_branches(
             response.body().as_ref(),
             output,
         )
@@ -2039,7 +2010,7 @@ pub fn parse_list_platform_versions_error(
                     let mut output =
                         crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformVersionsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformVersionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2057,7 +2028,7 @@ pub fn parse_list_platform_versions_error(
                     let mut output =
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformVersionsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformVersionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2081,7 +2052,7 @@ pub fn parse_list_platform_versions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_platform_versions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_platform_versions(
+        output = crate::xml_deser::deser_operation_crate_operation_list_platform_versions(
             response.body().as_ref(),
             output,
         )
@@ -2115,7 +2086,7 @@ pub fn parse_list_tags_for_resource_error(
                     let mut output =
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2132,12 +2103,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2155,7 +2121,7 @@ pub fn parse_list_tags_for_resource_error(
                     let mut output =
                         crate::error::resource_type_not_supported_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_type_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_type_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2179,7 +2145,7 @@ pub fn parse_list_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_tags_for_resource(
+        output = crate::xml_deser::deser_operation_crate_operation_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
@@ -2213,7 +2179,7 @@ pub fn parse_rebuild_environment_error(
                     let mut output =
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RebuildEnvironmentError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RebuildEnvironmentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2314,7 +2280,7 @@ pub fn parse_retrieve_environment_info_response(
         #[allow(unused_mut)]
         let mut output = crate::output::retrieve_environment_info_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_retrieve_environment_info(
+        output = crate::xml_deser::deser_operation_crate_operation_retrieve_environment_info(
             response.body().as_ref(),
             output,
         )
@@ -2375,7 +2341,7 @@ pub fn parse_terminate_environment_error(
                     let mut output =
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateEnvironmentError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateEnvironmentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2399,7 +2365,7 @@ pub fn parse_terminate_environment_response(
         #[allow(unused_mut)]
         let mut output = crate::output::terminate_environment_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_terminate_environment(
+        output = crate::xml_deser::deser_operation_crate_operation_terminate_environment(
             response.body().as_ref(),
             output,
         )
@@ -2427,9 +2393,11 @@ pub fn parse_update_application_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_application_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_update_application(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateApplicationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_update_application(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateApplicationError::unhandled)?;
         output.build()
     })
 }
@@ -2457,7 +2425,7 @@ pub fn parse_update_application_resource_lifecycle_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationResourceLifecycleError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationResourceLifecycleError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2482,11 +2450,7 @@ pub fn parse_update_application_resource_lifecycle_response(
         let mut output =
             crate::output::update_application_resource_lifecycle_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_update_application_resource_lifecycle(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::UpdateApplicationResourceLifecycleError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_update_application_resource_lifecycle(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationResourceLifecycleError::unhandled)?;
         output.build()
     })
 }
@@ -2516,7 +2480,7 @@ pub fn parse_update_application_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_application_version_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_update_application_version(
+        output = crate::xml_deser::deser_operation_crate_operation_update_application_version(
             response.body().as_ref(),
             output,
         )
@@ -2556,7 +2520,7 @@ pub fn parse_update_configuration_template_error(
                             let mut output =
                                 crate::error::insufficient_privileges_exception::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -2574,11 +2538,7 @@ pub fn parse_update_configuration_template_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_buckets_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2602,7 +2562,7 @@ pub fn parse_update_configuration_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_configuration_template_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_update_configuration_template(
+        output = crate::xml_deser::deser_operation_crate_operation_update_configuration_template(
             response.body().as_ref(),
             output,
         )
@@ -2634,7 +2594,7 @@ pub fn parse_update_environment_error(
                     let mut output =
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnvironmentError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnvironmentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2651,11 +2611,7 @@ pub fn parse_update_environment_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_buckets_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateEnvironmentError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnvironmentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2677,9 +2633,11 @@ pub fn parse_update_environment_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_environment_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_update_environment(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateEnvironmentError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_update_environment(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateEnvironmentError::unhandled)?;
         output.build()
     })
 }
@@ -2709,7 +2667,7 @@ pub fn parse_update_tags_for_resource_error(
                     let mut output =
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2718,26 +2676,24 @@ pub fn parse_update_tags_for_resource_error(
                 tmp
             }),
         },
-        "OperationInProgressFailure" => {
-            crate::error::UpdateTagsForResourceError {
-                meta: generic,
-                kind: crate::error::UpdateTagsForResourceErrorKind::OperationInProgressException({
+        "OperationInProgressFailure" => crate::error::UpdateTagsForResourceError {
+            meta: generic,
+            kind: crate::error::UpdateTagsForResourceErrorKind::OperationInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_in_progress_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::UpdateTagsForResourceError {
             meta: generic,
             kind: crate::error::UpdateTagsForResourceErrorKind::ResourceNotFoundException({
@@ -2746,12 +2702,7 @@ pub fn parse_update_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2770,7 +2721,7 @@ pub fn parse_update_tags_for_resource_error(
                         let mut output =
                             crate::error::resource_type_not_supported_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_resource_type_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_resource_type_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2788,11 +2739,7 @@ pub fn parse_update_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_tags_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2845,7 +2792,7 @@ pub fn parse_validate_configuration_settings_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ValidateConfigurationSettingsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ValidateConfigurationSettingsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2859,7 +2806,7 @@ pub fn parse_validate_configuration_settings_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ValidateConfigurationSettingsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ValidateConfigurationSettingsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2883,7 +2830,7 @@ pub fn parse_validate_configuration_settings_response(
         #[allow(unused_mut)]
         let mut output = crate::output::validate_configuration_settings_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_validate_configuration_settings(
+        output = crate::xml_deser::deser_operation_crate_operation_validate_configuration_settings(
             response.body().as_ref(),
             output,
         )

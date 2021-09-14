@@ -229,7 +229,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the image layers to
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to
         /// check. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -311,7 +311,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the image to delete.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -395,8 +395,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the images to describe.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the images to
+        /// describe. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
             self
@@ -498,7 +498,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry to which to upload layers.
+        /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -714,7 +714,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -826,7 +826,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository to
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to
         /// delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -902,8 +902,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository policy to
-        /// delete. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy
+        /// to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
             self
@@ -970,8 +970,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository in which
-        /// to describe images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+        /// which to describe images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
             self
@@ -1096,9 +1096,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository in
-        /// which to describe the image scan findings for. If you do not specify a registry, the
-        /// default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+        /// which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
             self
@@ -1251,7 +1250,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repositories to be
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be
         /// described. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -1361,7 +1360,7 @@ pub mod fluent_builders {
         /// Appends an item to `registryIds`.
         ///
         /// To override the contents of this collection use [`set_registry_ids`](Self::set_registry_ids).
-        /// <p>A list of AWS account IDs that are associated with the registries for which to get
+        /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get
         /// AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_ids(inp);
@@ -1419,7 +1418,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the image layer to
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to
         /// download. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -1495,7 +1494,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -1562,7 +1561,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -1735,7 +1734,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -1802,8 +1801,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry to which you intend to upload layers.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload
+        /// layers. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
             self
@@ -1869,8 +1868,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository in which
-        /// to list images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+        /// which to list images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
             self
@@ -2037,8 +2036,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository in which
-        /// to put the image. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+        /// which to put the image. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
             self
@@ -2149,7 +2148,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository in
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
         /// which to update the image scanning configuration setting.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2235,8 +2234,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository in which
-        /// to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+        /// which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
             self
@@ -2318,7 +2317,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository. If you
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you
         /// do  not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -2513,7 +2512,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -2536,8 +2535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The JSON repository policy text to apply to the repository. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository
-        /// Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository
+        /// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn policy_text(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_text(inp);
             self
@@ -2602,7 +2601,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository in
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
         /// which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -2681,7 +2680,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
@@ -2903,7 +2902,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry to which you are uploading layer
+        /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer
         /// parts. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);

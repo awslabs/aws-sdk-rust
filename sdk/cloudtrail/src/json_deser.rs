@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_cloud_trail_arn_invalid_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_trail_arn_invalid_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_trail_arn_invalid_exception::Builder,
 ) -> Result<crate::error::cloud_trail_arn_invalid_exception::Builder, smithy_json::deserialize::Error>
@@ -45,7 +45,7 @@ pub fn deser_structure_cloud_trail_arn_invalid_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_tag_parameter_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_tag_parameter_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_tag_parameter_exception::Builder,
 ) -> Result<crate::error::invalid_tag_parameter_exception::Builder, smithy_json::deserialize::Error>
@@ -85,7 +85,7 @@ pub fn deser_structure_invalid_tag_parameter_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_trail_name_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_trail_name_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_trail_name_exception::Builder,
 ) -> Result<crate::error::invalid_trail_name_exception::Builder, smithy_json::deserialize::Error> {
@@ -124,7 +124,7 @@ pub fn deser_structure_invalid_trail_name_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_not_organization_master_account_exceptionjson_err(
+pub fn deser_structure_crate_error_not_organization_master_account_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::not_organization_master_account_exception::Builder,
 ) -> Result<
@@ -166,7 +166,7 @@ pub fn deser_structure_not_organization_master_account_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_operation_not_permitted_exceptionjson_err(
+pub fn deser_structure_crate_error_operation_not_permitted_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::operation_not_permitted_exception::Builder,
 ) -> Result<crate::error::operation_not_permitted_exception::Builder, smithy_json::deserialize::Error>
@@ -206,7 +206,7 @@ pub fn deser_structure_operation_not_permitted_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -245,7 +245,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_type_not_supported_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_type_not_supported_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_type_not_supported_exception::Builder,
 ) -> Result<
@@ -287,7 +287,7 @@ pub fn deser_structure_resource_type_not_supported_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_tags_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_tags_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::tags_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::tags_limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -326,7 +326,7 @@ pub fn deser_structure_tags_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_operation_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_operation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_operation_exception::Builder,
 ) -> Result<crate::error::unsupported_operation_exception::Builder, smithy_json::deserialize::Error>
@@ -366,7 +366,7 @@ pub fn deser_structure_unsupported_operation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_cloud_trail_access_not_enabled_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_trail_access_not_enabled_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_trail_access_not_enabled_exception::Builder,
 ) -> Result<
@@ -408,7 +408,7 @@ pub fn deser_structure_cloud_trail_access_not_enabled_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_cloud_trail_invalid_client_token_id_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_trail_invalid_client_token_id_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_trail_invalid_client_token_id_exception::Builder,
 ) -> Result<
@@ -450,7 +450,7 @@ pub fn deser_structure_cloud_trail_invalid_client_token_id_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_cloud_watch_logs_delivery_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_watch_logs_delivery_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_watch_logs_delivery_unavailable_exception::Builder,
 ) -> Result<
@@ -492,7 +492,7 @@ pub fn deser_structure_cloud_watch_logs_delivery_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_insufficient_dependency_service_access_permission_exceptionjson_err(
+pub fn deser_structure_crate_error_insufficient_dependency_service_access_permission_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::insufficient_dependency_service_access_permission_exception::Builder,
 ) -> Result<
@@ -534,7 +534,7 @@ pub fn deser_structure_insufficient_dependency_service_access_permission_excepti
     Ok(builder)
 }
 
-pub fn deser_structure_insufficient_encryption_policy_exceptionjson_err(
+pub fn deser_structure_crate_error_insufficient_encryption_policy_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::insufficient_encryption_policy_exception::Builder,
 ) -> Result<
@@ -576,7 +576,7 @@ pub fn deser_structure_insufficient_encryption_policy_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_insufficient_s3_bucket_policy_exceptionjson_err(
+pub fn deser_structure_crate_error_insufficient_s3_bucket_policy_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::insufficient_s3_bucket_policy_exception::Builder,
 ) -> Result<
@@ -618,7 +618,7 @@ pub fn deser_structure_insufficient_s3_bucket_policy_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_insufficient_sns_topic_policy_exceptionjson_err(
+pub fn deser_structure_crate_error_insufficient_sns_topic_policy_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::insufficient_sns_topic_policy_exception::Builder,
 ) -> Result<
@@ -660,7 +660,7 @@ pub fn deser_structure_insufficient_sns_topic_policy_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_cloud_watch_logs_log_group_arn_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_cloud_watch_logs_log_group_arn_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_cloud_watch_logs_log_group_arn_exception::Builder,
 ) -> Result<
@@ -702,7 +702,7 @@ pub fn deser_structure_invalid_cloud_watch_logs_log_group_arn_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_cloud_watch_logs_role_arn_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_cloud_watch_logs_role_arn_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_cloud_watch_logs_role_arn_exception::Builder,
 ) -> Result<
@@ -744,7 +744,7 @@ pub fn deser_structure_invalid_cloud_watch_logs_role_arn_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_kms_key_id_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_kms_key_id_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_kms_key_id_exception::Builder,
 ) -> Result<crate::error::invalid_kms_key_id_exception::Builder, smithy_json::deserialize::Error> {
@@ -783,7 +783,7 @@ pub fn deser_structure_invalid_kms_key_id_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_parameter_combination_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_parameter_combination_exception::Builder,
 ) -> Result<
@@ -825,7 +825,7 @@ pub fn deser_structure_invalid_parameter_combination_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_s3_bucket_name_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_s3_bucket_name_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_s3_bucket_name_exception::Builder,
 ) -> Result<crate::error::invalid_s3_bucket_name_exception::Builder, smithy_json::deserialize::Error>
@@ -865,7 +865,7 @@ pub fn deser_structure_invalid_s3_bucket_name_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_s3_prefix_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_s3_prefix_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_s3_prefix_exception::Builder,
 ) -> Result<crate::error::invalid_s3_prefix_exception::Builder, smithy_json::deserialize::Error> {
@@ -904,7 +904,7 @@ pub fn deser_structure_invalid_s3_prefix_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_sns_topic_name_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_sns_topic_name_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_sns_topic_name_exception::Builder,
 ) -> Result<crate::error::invalid_sns_topic_name_exception::Builder, smithy_json::deserialize::Error>
@@ -944,7 +944,7 @@ pub fn deser_structure_invalid_sns_topic_name_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_kms_exceptionjson_err(
+pub fn deser_structure_crate_error_kms_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::kms_exception::Builder,
 ) -> Result<crate::error::kms_exception::Builder, smithy_json::deserialize::Error> {
@@ -983,7 +983,7 @@ pub fn deser_structure_kms_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_kms_key_disabled_exceptionjson_err(
+pub fn deser_structure_crate_error_kms_key_disabled_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::kms_key_disabled_exception::Builder,
 ) -> Result<crate::error::kms_key_disabled_exception::Builder, smithy_json::deserialize::Error> {
@@ -1022,7 +1022,7 @@ pub fn deser_structure_kms_key_disabled_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_kms_key_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_kms_key_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::kms_key_not_found_exception::Builder,
 ) -> Result<crate::error::kms_key_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -1061,7 +1061,7 @@ pub fn deser_structure_kms_key_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_maximum_number_of_trails_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_maximum_number_of_trails_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::maximum_number_of_trails_exceeded_exception::Builder,
 ) -> Result<
@@ -1103,7 +1103,7 @@ pub fn deser_structure_maximum_number_of_trails_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_organization_not_in_all_features_mode_exceptionjson_err(
+pub fn deser_structure_crate_error_organization_not_in_all_features_mode_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::organization_not_in_all_features_mode_exception::Builder,
 ) -> Result<
@@ -1145,7 +1145,7 @@ pub fn deser_structure_organization_not_in_all_features_mode_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_organizations_not_in_use_exceptionjson_err(
+pub fn deser_structure_crate_error_organizations_not_in_use_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::organizations_not_in_use_exception::Builder,
 ) -> Result<
@@ -1187,7 +1187,7 @@ pub fn deser_structure_organizations_not_in_use_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_s3_bucket_does_not_exist_exceptionjson_err(
+pub fn deser_structure_crate_error_s3_bucket_does_not_exist_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::s3_bucket_does_not_exist_exception::Builder,
 ) -> Result<
@@ -1229,7 +1229,7 @@ pub fn deser_structure_s3_bucket_does_not_exist_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_trail_already_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_trail_already_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::trail_already_exists_exception::Builder,
 ) -> Result<crate::error::trail_already_exists_exception::Builder, smithy_json::deserialize::Error>
@@ -1269,7 +1269,7 @@ pub fn deser_structure_trail_already_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_trail_not_provided_exceptionjson_err(
+pub fn deser_structure_crate_error_trail_not_provided_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::trail_not_provided_exception::Builder,
 ) -> Result<crate::error::trail_not_provided_exception::Builder, smithy_json::deserialize::Error> {
@@ -1308,7 +1308,7 @@ pub fn deser_structure_trail_not_provided_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_trail(
+pub fn deser_operation_crate_operation_create_trail(
     input: &[u8],
     mut builder: crate::output::create_trail_output::Builder,
 ) -> Result<crate::output::create_trail_output::Builder, smithy_json::deserialize::Error> {
@@ -1423,7 +1423,7 @@ pub fn deser_operation_create_trail(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -1462,7 +1462,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_home_region_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_home_region_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_home_region_exception::Builder,
 ) -> Result<crate::error::invalid_home_region_exception::Builder, smithy_json::deserialize::Error> {
@@ -1501,7 +1501,7 @@ pub fn deser_structure_invalid_home_region_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_trail_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_trail_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::trail_not_found_exception::Builder,
 ) -> Result<crate::error::trail_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -1540,7 +1540,7 @@ pub fn deser_structure_trail_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_trails(
+pub fn deser_operation_crate_operation_describe_trails(
     input: &[u8],
     mut builder: crate::output::describe_trails_output::Builder,
 ) -> Result<crate::output::describe_trails_output::Builder, smithy_json::deserialize::Error> {
@@ -1555,8 +1555,11 @@ pub fn deser_operation_describe_trails(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "trailList" => {
-                        builder = builder
-                            .set_trail_list(crate::json_deser::deser_list_trail_list(tokens)?);
+                        builder = builder.set_trail_list(
+                            crate::json_deser::deser_list_com_amazonaws_cloudtrail_trail_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1576,7 +1579,7 @@ pub fn deser_operation_describe_trails(
     Ok(builder)
 }
 
-pub fn deser_operation_get_event_selectors(
+pub fn deser_operation_crate_operation_get_event_selectors(
     input: &[u8],
     mut builder: crate::output::get_event_selectors_output::Builder,
 ) -> Result<crate::output::get_event_selectors_output::Builder, smithy_json::deserialize::Error> {
@@ -1599,12 +1602,14 @@ pub fn deser_operation_get_event_selectors(
                     }
                     "EventSelectors" => {
                         builder = builder.set_event_selectors(
-                            crate::json_deser::deser_list_event_selectors(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudtrail_event_selectors(
+                                tokens,
+                            )?,
                         );
                     }
                     "AdvancedEventSelectors" => {
                         builder = builder.set_advanced_event_selectors(
-                            crate::json_deser::deser_list_advanced_event_selectors(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudtrail_advanced_event_selectors(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1625,7 +1630,7 @@ pub fn deser_operation_get_event_selectors(
     Ok(builder)
 }
 
-pub fn deser_structure_insight_not_enabled_exceptionjson_err(
+pub fn deser_structure_crate_error_insight_not_enabled_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::insight_not_enabled_exception::Builder,
 ) -> Result<crate::error::insight_not_enabled_exception::Builder, smithy_json::deserialize::Error> {
@@ -1664,7 +1669,7 @@ pub fn deser_structure_insight_not_enabled_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_insight_selectors(
+pub fn deser_operation_crate_operation_get_insight_selectors(
     input: &[u8],
     mut builder: crate::output::get_insight_selectors_output::Builder,
 ) -> Result<crate::output::get_insight_selectors_output::Builder, smithy_json::deserialize::Error> {
@@ -1687,7 +1692,7 @@ pub fn deser_operation_get_insight_selectors(
                     }
                     "InsightSelectors" => {
                         builder = builder.set_insight_selectors(
-                            crate::json_deser::deser_list_insight_selectors(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudtrail_insight_selectors(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1708,7 +1713,7 @@ pub fn deser_operation_get_insight_selectors(
     Ok(builder)
 }
 
-pub fn deser_operation_get_trail(
+pub fn deser_operation_crate_operation_get_trail(
     input: &[u8],
     mut builder: crate::output::get_trail_output::Builder,
 ) -> Result<crate::output::get_trail_output::Builder, smithy_json::deserialize::Error> {
@@ -1723,8 +1728,9 @@ pub fn deser_operation_get_trail(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Trail" => {
-                        builder =
-                            builder.set_trail(crate::json_deser::deser_structure_trail(tokens)?);
+                        builder = builder.set_trail(
+                            crate::json_deser::deser_structure_crate_model_trail(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1744,7 +1750,7 @@ pub fn deser_operation_get_trail(
     Ok(builder)
 }
 
-pub fn deser_operation_get_trail_status(
+pub fn deser_operation_crate_operation_get_trail_status(
     input: &[u8],
     mut builder: crate::output::get_trail_status_output::Builder,
 ) -> Result<crate::output::get_trail_status_output::Builder, smithy_json::deserialize::Error> {
@@ -1899,7 +1905,7 @@ pub fn deser_operation_get_trail_status(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_time_range_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_time_range_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_time_range_exception::Builder,
 ) -> Result<crate::error::invalid_time_range_exception::Builder, smithy_json::deserialize::Error> {
@@ -1938,7 +1944,7 @@ pub fn deser_structure_invalid_time_range_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_token_exception::Builder,
 ) -> Result<crate::error::invalid_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -1977,7 +1983,7 @@ pub fn deser_structure_invalid_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_public_keys(
+pub fn deser_operation_crate_operation_list_public_keys(
     input: &[u8],
     mut builder: crate::output::list_public_keys_output::Builder,
 ) -> Result<crate::output::list_public_keys_output::Builder, smithy_json::deserialize::Error> {
@@ -1993,7 +1999,9 @@ pub fn deser_operation_list_public_keys(
                 match key.to_unescaped()?.as_ref() {
                     "PublicKeyList" => {
                         builder = builder.set_public_key_list(
-                            crate::json_deser::deser_list_public_key_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudtrail_public_key_list(
+                                tokens,
+                            )?,
                         );
                     }
                     "NextToken" => {
@@ -2021,7 +2029,7 @@ pub fn deser_operation_list_public_keys(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags(
+pub fn deser_operation_crate_operation_list_tags(
     input: &[u8],
     mut builder: crate::output::list_tags_output::Builder,
 ) -> Result<crate::output::list_tags_output::Builder, smithy_json::deserialize::Error> {
@@ -2037,7 +2045,7 @@ pub fn deser_operation_list_tags(
                 match key.to_unescaped()?.as_ref() {
                     "ResourceTagList" => {
                         builder = builder.set_resource_tag_list(
-                            crate::json_deser::deser_list_resource_tag_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudtrail_resource_tag_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -2065,7 +2073,7 @@ pub fn deser_operation_list_tags(
     Ok(builder)
 }
 
-pub fn deser_operation_list_trails(
+pub fn deser_operation_crate_operation_list_trails(
     input: &[u8],
     mut builder: crate::output::list_trails_output::Builder,
 ) -> Result<crate::output::list_trails_output::Builder, smithy_json::deserialize::Error> {
@@ -2080,7 +2088,9 @@ pub fn deser_operation_list_trails(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Trails" => {
-                        builder = builder.set_trails(crate::json_deser::deser_list_trails(tokens)?);
+                        builder = builder.set_trails(
+                            crate::json_deser::deser_list_com_amazonaws_cloudtrail_trails(tokens)?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2107,7 +2117,7 @@ pub fn deser_operation_list_trails(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_event_category_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_event_category_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_event_category_exception::Builder,
 ) -> Result<crate::error::invalid_event_category_exception::Builder, smithy_json::deserialize::Error>
@@ -2147,7 +2157,7 @@ pub fn deser_structure_invalid_event_category_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_lookup_attributes_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_lookup_attributes_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_lookup_attributes_exception::Builder,
 ) -> Result<
@@ -2189,7 +2199,7 @@ pub fn deser_structure_invalid_lookup_attributes_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_max_results_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_max_results_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_max_results_exception::Builder,
 ) -> Result<crate::error::invalid_max_results_exception::Builder, smithy_json::deserialize::Error> {
@@ -2228,7 +2238,7 @@ pub fn deser_structure_invalid_max_results_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_next_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_next_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_next_token_exception::Builder,
 ) -> Result<crate::error::invalid_next_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -2267,7 +2277,7 @@ pub fn deser_structure_invalid_next_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_lookup_events(
+pub fn deser_operation_crate_operation_lookup_events(
     input: &[u8],
     mut builder: crate::output::lookup_events_output::Builder,
 ) -> Result<crate::output::lookup_events_output::Builder, smithy_json::deserialize::Error> {
@@ -2282,8 +2292,11 @@ pub fn deser_operation_lookup_events(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Events" => {
-                        builder =
-                            builder.set_events(crate::json_deser::deser_list_events_list(tokens)?);
+                        builder = builder.set_events(
+                            crate::json_deser::deser_list_com_amazonaws_cloudtrail_events_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2310,7 +2323,7 @@ pub fn deser_operation_lookup_events(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_event_selectors_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_event_selectors_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_event_selectors_exception::Builder,
 ) -> Result<crate::error::invalid_event_selectors_exception::Builder, smithy_json::deserialize::Error>
@@ -2350,7 +2363,7 @@ pub fn deser_structure_invalid_event_selectors_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_put_event_selectors(
+pub fn deser_operation_crate_operation_put_event_selectors(
     input: &[u8],
     mut builder: crate::output::put_event_selectors_output::Builder,
 ) -> Result<crate::output::put_event_selectors_output::Builder, smithy_json::deserialize::Error> {
@@ -2373,12 +2386,14 @@ pub fn deser_operation_put_event_selectors(
                     }
                     "EventSelectors" => {
                         builder = builder.set_event_selectors(
-                            crate::json_deser::deser_list_event_selectors(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudtrail_event_selectors(
+                                tokens,
+                            )?,
                         );
                     }
                     "AdvancedEventSelectors" => {
                         builder = builder.set_advanced_event_selectors(
-                            crate::json_deser::deser_list_advanced_event_selectors(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudtrail_advanced_event_selectors(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2399,7 +2414,7 @@ pub fn deser_operation_put_event_selectors(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_insight_selectors_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_insight_selectors_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_insight_selectors_exception::Builder,
 ) -> Result<
@@ -2441,7 +2456,7 @@ pub fn deser_structure_invalid_insight_selectors_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_put_insight_selectors(
+pub fn deser_operation_crate_operation_put_insight_selectors(
     input: &[u8],
     mut builder: crate::output::put_insight_selectors_output::Builder,
 ) -> Result<crate::output::put_insight_selectors_output::Builder, smithy_json::deserialize::Error> {
@@ -2464,7 +2479,7 @@ pub fn deser_operation_put_insight_selectors(
                     }
                     "InsightSelectors" => {
                         builder = builder.set_insight_selectors(
-                            crate::json_deser::deser_list_insight_selectors(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudtrail_insight_selectors(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2485,7 +2500,7 @@ pub fn deser_operation_put_insight_selectors(
     Ok(builder)
 }
 
-pub fn deser_operation_update_trail(
+pub fn deser_operation_crate_operation_update_trail(
     input: &[u8],
     mut builder: crate::output::update_trail_output::Builder,
 ) -> Result<crate::output::update_trail_output::Builder, smithy_json::deserialize::Error> {
@@ -2609,7 +2624,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_trail_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_trail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Trail>>, smithy_json::deserialize::Error>
 where
@@ -2628,7 +2643,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_trail(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_trail(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2644,7 +2659,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_event_selectors<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_event_selectors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EventSelector>>, smithy_json::deserialize::Error>
 where
@@ -2663,7 +2678,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_event_selector(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_event_selector(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2679,7 +2695,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_advanced_event_selectors<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_advanced_event_selectors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
@@ -2702,7 +2718,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_advanced_event_selector(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_advanced_event_selector(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2718,7 +2736,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_insight_selectors<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_insight_selectors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::InsightSelector>>, smithy_json::deserialize::Error>
 where
@@ -2737,7 +2755,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_insight_selector(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_insight_selector(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2752,7 +2773,7 @@ where
     }
 }
 
-pub fn deser_structure_trail<'a, I>(
+pub fn deser_structure_crate_model_trail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Trail>, smithy_json::deserialize::Error>
 where
@@ -2921,7 +2942,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_public_key_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_public_key_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PublicKey>>, smithy_json::deserialize::Error>
 where
@@ -2940,7 +2961,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_public_key(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_public_key(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2956,7 +2978,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resource_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_resource_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResourceTag>>, smithy_json::deserialize::Error>
 where
@@ -2975,7 +2997,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_resource_tag(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_resource_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2991,7 +3014,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_trails<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_trails<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TrailInfo>>, smithy_json::deserialize::Error>
 where
@@ -3010,7 +3033,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_trail_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_trail_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3026,7 +3050,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_events_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_events_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Event>>, smithy_json::deserialize::Error>
 where
@@ -3045,7 +3069,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_event(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_event(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3060,7 +3084,7 @@ where
     }
 }
 
-pub fn deser_structure_event_selector<'a, I>(
+pub fn deser_structure_crate_model_event_selector<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventSelector>, smithy_json::deserialize::Error>
 where
@@ -3099,14 +3123,12 @@ where
                             }
                             "DataResources" => {
                                 builder = builder.set_data_resources(
-                                    crate::json_deser::deser_list_data_resources(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_data_resources(tokens)?
                                 );
                             }
                             "ExcludeManagementEventSources" => {
                                 builder = builder.set_exclude_management_event_sources(
-                                    crate::json_deser::deser_list_exclude_management_event_sources(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_exclude_management_event_sources(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3127,7 +3149,7 @@ where
     }
 }
 
-pub fn deser_structure_advanced_event_selector<'a, I>(
+pub fn deser_structure_crate_model_advanced_event_selector<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AdvancedEventSelector>, smithy_json::deserialize::Error>
 where
@@ -3156,7 +3178,7 @@ where
                             }
                             "FieldSelectors" => {
                                 builder = builder.set_field_selectors(
-                                    crate::json_deser::deser_list_advanced_field_selectors(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_advanced_field_selectors(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3177,7 +3199,7 @@ where
     }
 }
 
-pub fn deser_structure_insight_selector<'a, I>(
+pub fn deser_structure_crate_model_insight_selector<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InsightSelector>, smithy_json::deserialize::Error>
 where
@@ -3225,7 +3247,7 @@ where
     }
 }
 
-pub fn deser_structure_public_key<'a, I>(
+pub fn deser_structure_crate_model_public_key<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PublicKey>, smithy_json::deserialize::Error>
 where
@@ -3293,7 +3315,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_tag<'a, I>(
+pub fn deser_structure_crate_model_resource_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceTag>, smithy_json::deserialize::Error>
 where
@@ -3322,7 +3344,7 @@ where
                             }
                             "TagsList" => {
                                 builder = builder.set_tags_list(
-                                    crate::json_deser::deser_list_tags_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_tags_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3343,7 +3365,7 @@ where
     }
 }
 
-pub fn deser_structure_trail_info<'a, I>(
+pub fn deser_structure_crate_model_trail_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TrailInfo>, smithy_json::deserialize::Error>
 where
@@ -3406,7 +3428,7 @@ where
     }
 }
 
-pub fn deser_structure_event<'a, I>(
+pub fn deser_structure_crate_model_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Event>, smithy_json::deserialize::Error>
 where
@@ -3488,7 +3510,7 @@ where
                             }
                             "Resources" => {
                                 builder = builder.set_resources(
-                                    crate::json_deser::deser_list_resource_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_resource_list(tokens)?
                                 );
                             }
                             "CloudTrailEvent" => {
@@ -3519,7 +3541,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_data_resources<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_data_resources<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DataResource>>, smithy_json::deserialize::Error>
 where
@@ -3538,7 +3560,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_data_resource(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_data_resource(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3554,7 +3577,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_exclude_management_event_sources<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_exclude_management_event_sources<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -3592,7 +3615,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_advanced_field_selectors<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_advanced_field_selectors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AdvancedFieldSelector>>,
@@ -3615,7 +3638,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_advanced_field_selector(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_advanced_field_selector(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3631,7 +3656,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tags_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_tags_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -3650,7 +3675,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3666,7 +3691,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resource_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_resource_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Resource>>, smithy_json::deserialize::Error>
 where
@@ -3685,7 +3710,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_resource(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_resource(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3700,7 +3726,7 @@ where
     }
 }
 
-pub fn deser_structure_data_resource<'a, I>(
+pub fn deser_structure_crate_model_data_resource<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DataResource>, smithy_json::deserialize::Error>
 where
@@ -3729,7 +3755,7 @@ where
                             }
                             "Values" => {
                                 builder = builder.set_values(
-                                    crate::json_deser::deser_list_data_resource_values(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_data_resource_values(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3750,7 +3776,7 @@ where
     }
 }
 
-pub fn deser_structure_advanced_field_selector<'a, I>(
+pub fn deser_structure_crate_model_advanced_field_selector<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AdvancedFieldSelector>, smithy_json::deserialize::Error>
 where
@@ -3778,31 +3804,33 @@ where
                                 );
                             }
                             "Equals" => {
-                                builder = builder
-                                    .set_equals(crate::json_deser::deser_list_operator(tokens)?);
+                                builder = builder.set_equals(
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_operator(tokens)?
+                                );
                             }
                             "StartsWith" => {
                                 builder = builder.set_starts_with(
-                                    crate::json_deser::deser_list_operator(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_operator(tokens)?
                                 );
                             }
                             "EndsWith" => {
-                                builder = builder
-                                    .set_ends_with(crate::json_deser::deser_list_operator(tokens)?);
+                                builder = builder.set_ends_with(
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_operator(tokens)?
+                                );
                             }
                             "NotEquals" => {
                                 builder = builder.set_not_equals(
-                                    crate::json_deser::deser_list_operator(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_operator(tokens)?
                                 );
                             }
                             "NotStartsWith" => {
                                 builder = builder.set_not_starts_with(
-                                    crate::json_deser::deser_list_operator(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_operator(tokens)?
                                 );
                             }
                             "NotEndsWith" => {
                                 builder = builder.set_not_ends_with(
-                                    crate::json_deser::deser_list_operator(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cloudtrail_operator(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3823,7 +3851,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -3877,7 +3905,7 @@ where
     }
 }
 
-pub fn deser_structure_resource<'a, I>(
+pub fn deser_structure_crate_model_resource<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Resource>, smithy_json::deserialize::Error>
 where
@@ -3932,7 +3960,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_data_resource_values<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_data_resource_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -3970,7 +3998,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_operator<'a, I>(
+pub fn deser_list_com_amazonaws_cloudtrail_operator<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where

@@ -32,7 +32,7 @@ impl Display for Error {
 /// Furthermore, once `const panic` stabilizes, we'll be able to make an invalid XmlName a compiler
 /// error.
 ///
-/// ## Example
+/// # Examples
 /// ```rust
 /// use smithy_xml::encode::XmlWriter;
 /// let mut s = String::new();

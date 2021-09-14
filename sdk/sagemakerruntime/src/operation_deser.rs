@@ -12,27 +12,25 @@ pub fn parse_invoke_endpoint_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailure" => crate::error::InvokeEndpointError {
-            meta: generic,
-            kind: crate::error::InvokeEndpointErrorKind::InternalFailure({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalFailure" => {
+            crate::error::InvokeEndpointError {
+                meta: generic,
+                kind: crate::error::InvokeEndpointErrorKind::InternalFailure({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failurejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::InvokeEndpointError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_failure::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_failurejson_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ModelError" => crate::error::InvokeEndpointError {
             meta: generic,
             kind: crate::error::InvokeEndpointErrorKind::ModelError({
@@ -41,7 +39,7 @@ pub fn parse_invoke_endpoint_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::model_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_model_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_model_errorjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -54,48 +52,44 @@ pub fn parse_invoke_endpoint_error(
                 tmp
             }),
         },
-        "ServiceUnavailable" => crate::error::InvokeEndpointError {
-            meta: generic,
-            kind: crate::error::InvokeEndpointErrorKind::ServiceUnavailable({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceUnavailable" => {
+            crate::error::InvokeEndpointError {
+                meta: generic,
+                kind: crate::error::InvokeEndpointErrorKind::ServiceUnavailable({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_unavailablejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::InvokeEndpointError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ValidationError" => crate::error::InvokeEndpointError {
-            meta: generic,
-            kind: crate::error::InvokeEndpointErrorKind::ValidationError({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_unavailable::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailablejson_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ValidationError" => {
+            crate::error::InvokeEndpointError {
+                meta: generic,
+                kind: crate::error::InvokeEndpointErrorKind::ValidationError({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_validation_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::InvokeEndpointError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_error::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_validation_errorjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::InvokeEndpointError::generic(generic),
     })
 }
@@ -151,69 +145,63 @@ pub fn parse_invoke_endpoint_async_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailure" => crate::error::InvokeEndpointAsyncError {
-            meta: generic,
-            kind: crate::error::InvokeEndpointAsyncErrorKind::InternalFailure({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalFailure" => {
+            crate::error::InvokeEndpointAsyncError {
+                meta: generic,
+                kind: crate::error::InvokeEndpointAsyncErrorKind::InternalFailure({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_failurejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailable" => crate::error::InvokeEndpointAsyncError {
-            meta: generic,
-            kind: crate::error::InvokeEndpointAsyncErrorKind::ServiceUnavailable({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_failure::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_failurejson_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailable" => {
+            crate::error::InvokeEndpointAsyncError {
+                meta: generic,
+                kind: crate::error::InvokeEndpointAsyncErrorKind::ServiceUnavailable({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_unavailablejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ValidationError" => crate::error::InvokeEndpointAsyncError {
-            meta: generic,
-            kind: crate::error::InvokeEndpointAsyncErrorKind::ValidationError({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_unavailable::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailablejson_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ValidationError" => {
+            crate::error::InvokeEndpointAsyncError {
+                meta: generic,
+                kind: crate::error::InvokeEndpointAsyncErrorKind::ValidationError({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_validation_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_error::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_validation_errorjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::InvokeEndpointAsyncError::generic(generic),
     })
 }
@@ -229,7 +217,7 @@ pub fn parse_invoke_endpoint_async_response(
         #[allow(unused_mut)]
         let mut output = crate::output::invoke_endpoint_async_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_invoke_endpoint_async(
+        output = crate::json_deser::deser_operation_crate_operation_invoke_endpoint_async(
             response.body().as_ref(),
             output,
         )

@@ -18,7 +18,7 @@ use std::sync::Arc;
 ///
 /// Simple abstraction enabling in-memory mocking of the file system
 ///
-/// # Example
+/// # Examples
 /// Construct a file system which delegates to `std::fs`:
 /// ```rust
 /// let fs = aws_types::os_shim_internal::Fs::real();
@@ -166,7 +166,7 @@ impl Env {
 
     /// Create a fake process environment from a slice of tuples.
     ///
-    /// # Example
+    /// # Examples
     /// ```rust
     /// use aws_types::os_shim_internal::Env;
     /// let mock_env = Env::from_slice(&[

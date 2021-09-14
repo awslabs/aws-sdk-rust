@@ -2949,7 +2949,7 @@ impl S3BucketDoesNotExistException {
     }
 }
 
-/// <p>This exception is thrown when the request is made from an AWS account that is not a member of an organization.
+/// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization.
 /// To make this request, sign in using the credentials of an account that belongs to an organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3012,7 +3012,7 @@ impl OrganizationsNotInUseException {
     }
 }
 
-/// <p>This exception is thrown when AWS Organizations is not configured to support all features. All features must be enabled in AWS Organization to support
+/// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support
 /// creating an organization trail. For more information, see
 /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
 #[non_exhaustive]
@@ -3138,8 +3138,8 @@ impl OperationNotPermittedException {
     }
 }
 
-/// <p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an
-/// organization in AWS Organizations. For more information, see
+/// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
+/// organization in Organizations. For more information, see
 /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3202,8 +3202,8 @@ impl NotOrganizationMasterAccountException {
     }
 }
 
-/// <p>This exception is thrown when the AWS KMS key does not exist, when the S3 bucket and the
-/// AWS KMS key are not in the same region, or when the AWS KMS key associated with the SNS
+/// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+/// KMS key are not in the same region, or when the KMS key associated with the Amazon SNS
 /// topic either does not exist or is not in the same region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3403,7 +3403,7 @@ impl KmsException {
 /// </li>
 /// <li>
 /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-/// and <code>my--namespace</code> are invalid.</p>
+/// and <code>my--namespace</code> are not valid.</p>
 /// </li>
 /// <li>
 /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
@@ -3718,7 +3718,7 @@ impl InvalidParameterCombinationException {
     }
 }
 
-/// <p>This exception is thrown when the KMS key ARN is invalid.</p>
+/// <p>This exception is thrown when the KMS key ARN is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKmsKeyIdException {
@@ -3862,7 +3862,7 @@ impl InvalidHomeRegionException {
 /// </li>
 /// <li>
 /// <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-/// parameter with a value of <code>read-only</code> is invalid.</p>
+/// parameter with a value of <code>read-only</code> is not valid.</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]
@@ -3988,7 +3988,7 @@ impl InvalidCloudWatchLogsRoleArnException {
     }
 }
 
-/// <p>This exception is thrown when the provided CloudWatch log group is not valid.</p>
+/// <p>This exception is thrown when the provided CloudWatch Logs log group is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCloudWatchLogsLogGroupArnException {
@@ -4050,7 +4050,7 @@ impl InvalidCloudWatchLogsLogGroupArnException {
     }
 }
 
-/// <p>This exception is thrown when the policy on the SNS topic is not sufficient.</p>
+/// <p>This exception is thrown when the policy on the Amazon SNS topic is not sufficient.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientSnsTopicPolicyException {
@@ -4365,8 +4365,9 @@ impl CloudWatchLogsDeliveryUnavailableException {
     }
 }
 
-/// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that
-/// is in a suspended AWS account.</p>
+/// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code.
+/// This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that
+/// is in a suspended Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailInvalidClientTokenIdException {
@@ -4428,8 +4429,8 @@ impl CloudTrailInvalidClientTokenIdException {
     }
 }
 
-/// <p>This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS Organizations. For more information,
-/// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other AWS Services</a>
+/// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information,
+/// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a>
 /// and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4679,7 +4680,7 @@ impl InvalidTagParameterException {
     }
 }
 
-/// <p>This exception is thrown when an operation is called with an invalid trail ARN. The format of a trail ARN is:</p>
+/// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
 /// <p>
 /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
 /// </p>
@@ -4810,7 +4811,7 @@ impl InvalidInsightSelectorsException {
     }
 }
 
-/// <p>Occurs if the timestamp values are invalid. Either the start time occurs after the end time or the time range is outside the range of possible values.</p>
+/// <p>Occurs if the timestamp values are not valid. Either the start time occurs after the end time, or the time range is outside the range of possible values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTimeRangeException {
@@ -4872,7 +4873,7 @@ impl InvalidTimeRangeException {
     }
 }
 
-/// <p>Invalid token or token that was previously used in a request with different parameters. This exception is thrown if the token is invalid.</p>
+/// <p>A token that is not valid, or a token that was previously used in a request with different parameters. This exception is thrown if the token is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
@@ -4934,7 +4935,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>This exception is thrown if the limit specified is invalid.</p>
+/// <p>This exception is thrown if the limit specified is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMaxResultsException {
@@ -4996,7 +4997,7 @@ impl InvalidMaxResultsException {
     }
 }
 
-/// <p>Occurs when an invalid lookup attribute is specified.</p>
+/// <p>Occurs when a lookup attribute is specified that is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLookupAttributesException {

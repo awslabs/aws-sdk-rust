@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -50,7 +50,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_input_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_input_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_input_exception::Builder,
 ) -> Result<crate::error::invalid_input_exception::Builder, smithy_json::deserialize::Error> {
@@ -95,7 +95,7 @@ pub fn deser_structure_invalid_input_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_tag_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_tag_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_tag_exception::Builder,
 ) -> Result<crate::error::invalid_tag_exception::Builder, smithy_json::deserialize::Error> {
@@ -134,7 +134,7 @@ pub fn deser_structure_invalid_tag_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -179,7 +179,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_tag_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_tag_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::tag_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::tag_limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -218,7 +218,7 @@ pub fn deser_structure_tag_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_add_tags(
+pub fn deser_operation_crate_operation_add_tags(
     input: &[u8],
     mut builder: crate::output::add_tags_output::Builder,
 ) -> Result<crate::output::add_tags_output::Builder, smithy_json::deserialize::Error> {
@@ -268,7 +268,7 @@ pub fn deser_operation_add_tags(
     Ok(builder)
 }
 
-pub fn deser_structure_idempotent_parameter_mismatch_exceptionjson_err(
+pub fn deser_structure_crate_error_idempotent_parameter_mismatch_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::idempotent_parameter_mismatch_exception::Builder,
 ) -> Result<
@@ -316,7 +316,7 @@ pub fn deser_structure_idempotent_parameter_mismatch_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_batch_prediction(
+pub fn deser_operation_crate_operation_create_batch_prediction(
     input: &[u8],
     mut builder: crate::output::create_batch_prediction_output::Builder,
 ) -> Result<crate::output::create_batch_prediction_output::Builder, smithy_json::deserialize::Error>
@@ -356,7 +356,7 @@ pub fn deser_operation_create_batch_prediction(
     Ok(builder)
 }
 
-pub fn deser_operation_create_data_source_from_rds(
+pub fn deser_operation_crate_operation_create_data_source_from_rds(
     input: &[u8],
     mut builder: crate::output::create_data_source_from_rds_output::Builder,
 ) -> Result<
@@ -398,7 +398,7 @@ pub fn deser_operation_create_data_source_from_rds(
     Ok(builder)
 }
 
-pub fn deser_operation_create_data_source_from_redshift(
+pub fn deser_operation_crate_operation_create_data_source_from_redshift(
     input: &[u8],
     mut builder: crate::output::create_data_source_from_redshift_output::Builder,
 ) -> Result<
@@ -440,7 +440,7 @@ pub fn deser_operation_create_data_source_from_redshift(
     Ok(builder)
 }
 
-pub fn deser_operation_create_data_source_from_s3(
+pub fn deser_operation_crate_operation_create_data_source_from_s3(
     input: &[u8],
     mut builder: crate::output::create_data_source_from_s3_output::Builder,
 ) -> Result<
@@ -482,7 +482,7 @@ pub fn deser_operation_create_data_source_from_s3(
     Ok(builder)
 }
 
-pub fn deser_operation_create_evaluation(
+pub fn deser_operation_crate_operation_create_evaluation(
     input: &[u8],
     mut builder: crate::output::create_evaluation_output::Builder,
 ) -> Result<crate::output::create_evaluation_output::Builder, smithy_json::deserialize::Error> {
@@ -521,7 +521,7 @@ pub fn deser_operation_create_evaluation(
     Ok(builder)
 }
 
-pub fn deser_operation_create_ml_model(
+pub fn deser_operation_crate_operation_create_ml_model(
     input: &[u8],
     mut builder: crate::output::create_ml_model_output::Builder,
 ) -> Result<crate::output::create_ml_model_output::Builder, smithy_json::deserialize::Error> {
@@ -560,7 +560,7 @@ pub fn deser_operation_create_ml_model(
     Ok(builder)
 }
 
-pub fn deser_operation_create_realtime_endpoint(
+pub fn deser_operation_crate_operation_create_realtime_endpoint(
     input: &[u8],
     mut builder: crate::output::create_realtime_endpoint_output::Builder,
 ) -> Result<crate::output::create_realtime_endpoint_output::Builder, smithy_json::deserialize::Error>
@@ -584,7 +584,9 @@ pub fn deser_operation_create_realtime_endpoint(
                     }
                     "RealtimeEndpointInfo" => {
                         builder = builder.set_realtime_endpoint_info(
-                            crate::json_deser::deser_structure_realtime_endpoint_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_realtime_endpoint_info(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -605,7 +607,7 @@ pub fn deser_operation_create_realtime_endpoint(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_batch_prediction(
+pub fn deser_operation_crate_operation_delete_batch_prediction(
     input: &[u8],
     mut builder: crate::output::delete_batch_prediction_output::Builder,
 ) -> Result<crate::output::delete_batch_prediction_output::Builder, smithy_json::deserialize::Error>
@@ -645,7 +647,7 @@ pub fn deser_operation_delete_batch_prediction(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_data_source(
+pub fn deser_operation_crate_operation_delete_data_source(
     input: &[u8],
     mut builder: crate::output::delete_data_source_output::Builder,
 ) -> Result<crate::output::delete_data_source_output::Builder, smithy_json::deserialize::Error> {
@@ -684,7 +686,7 @@ pub fn deser_operation_delete_data_source(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_evaluation(
+pub fn deser_operation_crate_operation_delete_evaluation(
     input: &[u8],
     mut builder: crate::output::delete_evaluation_output::Builder,
 ) -> Result<crate::output::delete_evaluation_output::Builder, smithy_json::deserialize::Error> {
@@ -723,7 +725,7 @@ pub fn deser_operation_delete_evaluation(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_ml_model(
+pub fn deser_operation_crate_operation_delete_ml_model(
     input: &[u8],
     mut builder: crate::output::delete_ml_model_output::Builder,
 ) -> Result<crate::output::delete_ml_model_output::Builder, smithy_json::deserialize::Error> {
@@ -762,7 +764,7 @@ pub fn deser_operation_delete_ml_model(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_realtime_endpoint(
+pub fn deser_operation_crate_operation_delete_realtime_endpoint(
     input: &[u8],
     mut builder: crate::output::delete_realtime_endpoint_output::Builder,
 ) -> Result<crate::output::delete_realtime_endpoint_output::Builder, smithy_json::deserialize::Error>
@@ -786,7 +788,9 @@ pub fn deser_operation_delete_realtime_endpoint(
                     }
                     "RealtimeEndpointInfo" => {
                         builder = builder.set_realtime_endpoint_info(
-                            crate::json_deser::deser_structure_realtime_endpoint_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_realtime_endpoint_info(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -807,7 +811,7 @@ pub fn deser_operation_delete_realtime_endpoint(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_tags(
+pub fn deser_operation_crate_operation_delete_tags(
     input: &[u8],
     mut builder: crate::output::delete_tags_output::Builder,
 ) -> Result<crate::output::delete_tags_output::Builder, smithy_json::deserialize::Error> {
@@ -857,7 +861,7 @@ pub fn deser_operation_delete_tags(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_batch_predictions(
+pub fn deser_operation_crate_operation_describe_batch_predictions(
     input: &[u8],
     mut builder: crate::output::describe_batch_predictions_output::Builder,
 ) -> Result<
@@ -875,8 +879,9 @@ pub fn deser_operation_describe_batch_predictions(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Results" => {
-                        builder = builder
-                            .set_results(crate::json_deser::deser_list_batch_predictions(tokens)?);
+                        builder = builder.set_results(
+                            crate::json_deser::deser_list_com_amazonaws_machinelearning_batch_predictions(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -903,7 +908,7 @@ pub fn deser_operation_describe_batch_predictions(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_data_sources(
+pub fn deser_operation_crate_operation_describe_data_sources(
     input: &[u8],
     mut builder: crate::output::describe_data_sources_output::Builder,
 ) -> Result<crate::output::describe_data_sources_output::Builder, smithy_json::deserialize::Error> {
@@ -918,8 +923,9 @@ pub fn deser_operation_describe_data_sources(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Results" => {
-                        builder = builder
-                            .set_results(crate::json_deser::deser_list_data_sources(tokens)?);
+                        builder = builder.set_results(
+                            crate::json_deser::deser_list_com_amazonaws_machinelearning_data_sources(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -946,7 +952,7 @@ pub fn deser_operation_describe_data_sources(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_evaluations(
+pub fn deser_operation_crate_operation_describe_evaluations(
     input: &[u8],
     mut builder: crate::output::describe_evaluations_output::Builder,
 ) -> Result<crate::output::describe_evaluations_output::Builder, smithy_json::deserialize::Error> {
@@ -961,8 +967,9 @@ pub fn deser_operation_describe_evaluations(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Results" => {
-                        builder =
-                            builder.set_results(crate::json_deser::deser_list_evaluations(tokens)?);
+                        builder = builder.set_results(
+                            crate::json_deser::deser_list_com_amazonaws_machinelearning_evaluations(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -989,7 +996,7 @@ pub fn deser_operation_describe_evaluations(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_ml_models(
+pub fn deser_operation_crate_operation_describe_ml_models(
     input: &[u8],
     mut builder: crate::output::describe_ml_models_output::Builder,
 ) -> Result<crate::output::describe_ml_models_output::Builder, smithy_json::deserialize::Error> {
@@ -1004,8 +1011,11 @@ pub fn deser_operation_describe_ml_models(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Results" => {
-                        builder =
-                            builder.set_results(crate::json_deser::deser_list_ml_models(tokens)?);
+                        builder = builder.set_results(
+                            crate::json_deser::deser_list_com_amazonaws_machinelearning_ml_models(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -1032,7 +1042,7 @@ pub fn deser_operation_describe_ml_models(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_tags(
+pub fn deser_operation_crate_operation_describe_tags(
     input: &[u8],
     mut builder: crate::output::describe_tags_output::Builder,
 ) -> Result<crate::output::describe_tags_output::Builder, smithy_json::deserialize::Error> {
@@ -1065,7 +1075,11 @@ pub fn deser_operation_describe_tags(
                         );
                     }
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_machinelearning_tag_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1085,7 +1099,7 @@ pub fn deser_operation_describe_tags(
     Ok(builder)
 }
 
-pub fn deser_operation_get_batch_prediction(
+pub fn deser_operation_crate_operation_get_batch_prediction(
     input: &[u8],
     mut builder: crate::output::get_batch_prediction_output::Builder,
 ) -> Result<crate::output::get_batch_prediction_output::Builder, smithy_json::deserialize::Error> {
@@ -1240,7 +1254,7 @@ pub fn deser_operation_get_batch_prediction(
     Ok(builder)
 }
 
-pub fn deser_operation_get_data_source(
+pub fn deser_operation_crate_operation_get_data_source(
     input: &[u8],
     mut builder: crate::output::get_data_source_output::Builder,
 ) -> Result<crate::output::get_data_source_output::Builder, smithy_json::deserialize::Error> {
@@ -1343,12 +1357,14 @@ pub fn deser_operation_get_data_source(
                     }
                     "RedshiftMetadata" => {
                         builder = builder.set_redshift_metadata(
-                            crate::json_deser::deser_structure_redshift_metadata(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_redshift_metadata(
+                                tokens,
+                            )?,
                         );
                     }
                     "RDSMetadata" => {
                         builder = builder.set_rds_metadata(
-                            crate::json_deser::deser_structure_rds_metadata(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_rds_metadata(tokens)?,
                         );
                     }
                     "RoleARN" => {
@@ -1410,7 +1426,7 @@ pub fn deser_operation_get_data_source(
     Ok(builder)
 }
 
-pub fn deser_operation_get_evaluation(
+pub fn deser_operation_crate_operation_get_evaluation(
     input: &[u8],
     mut builder: crate::output::get_evaluation_output::Builder,
 ) -> Result<crate::output::get_evaluation_output::Builder, smithy_json::deserialize::Error> {
@@ -1494,7 +1510,9 @@ pub fn deser_operation_get_evaluation(
                     }
                     "PerformanceMetrics" => {
                         builder = builder.set_performance_metrics(
-                            crate::json_deser::deser_structure_performance_metrics(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_performance_metrics(
+                                tokens,
+                            )?,
                         );
                     }
                     "LogUri" => {
@@ -1551,7 +1569,7 @@ pub fn deser_operation_get_evaluation(
     Ok(builder)
 }
 
-pub fn deser_operation_get_ml_model(
+pub fn deser_operation_crate_operation_get_ml_model(
     input: &[u8],
     mut builder: crate::output::get_ml_model_output::Builder,
 ) -> Result<crate::output::get_ml_model_output::Builder, smithy_json::deserialize::Error> {
@@ -1627,12 +1645,14 @@ pub fn deser_operation_get_ml_model(
                     }
                     "EndpointInfo" => {
                         builder = builder.set_endpoint_info(
-                            crate::json_deser::deser_structure_realtime_endpoint_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_realtime_endpoint_info(
+                                tokens,
+                            )?,
                         );
                     }
                     "TrainingParameters" => {
                         builder = builder.set_training_parameters(
-                            crate::json_deser::deser_map_training_parameters(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_machinelearning_training_parameters(tokens)?
                         );
                     }
                     "InputDataLocationS3" => {
@@ -1734,7 +1754,7 @@ pub fn deser_operation_get_ml_model(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -1779,7 +1799,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_predictor_not_mounted_exceptionjson_err(
+pub fn deser_structure_crate_error_predictor_not_mounted_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::predictor_not_mounted_exception::Builder,
 ) -> Result<crate::error::predictor_not_mounted_exception::Builder, smithy_json::deserialize::Error>
@@ -1819,7 +1839,7 @@ pub fn deser_structure_predictor_not_mounted_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_predict(
+pub fn deser_operation_crate_operation_predict(
     input: &[u8],
     mut builder: crate::output::predict_output::Builder,
 ) -> Result<crate::output::predict_output::Builder, smithy_json::deserialize::Error> {
@@ -1834,8 +1854,9 @@ pub fn deser_operation_predict(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Prediction" => {
-                        builder = builder
-                            .set_prediction(crate::json_deser::deser_structure_prediction(tokens)?);
+                        builder = builder.set_prediction(
+                            crate::json_deser::deser_structure_crate_model_prediction(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1855,7 +1876,7 @@ pub fn deser_operation_predict(
     Ok(builder)
 }
 
-pub fn deser_operation_update_batch_prediction(
+pub fn deser_operation_crate_operation_update_batch_prediction(
     input: &[u8],
     mut builder: crate::output::update_batch_prediction_output::Builder,
 ) -> Result<crate::output::update_batch_prediction_output::Builder, smithy_json::deserialize::Error>
@@ -1895,7 +1916,7 @@ pub fn deser_operation_update_batch_prediction(
     Ok(builder)
 }
 
-pub fn deser_operation_update_data_source(
+pub fn deser_operation_crate_operation_update_data_source(
     input: &[u8],
     mut builder: crate::output::update_data_source_output::Builder,
 ) -> Result<crate::output::update_data_source_output::Builder, smithy_json::deserialize::Error> {
@@ -1934,7 +1955,7 @@ pub fn deser_operation_update_data_source(
     Ok(builder)
 }
 
-pub fn deser_operation_update_evaluation(
+pub fn deser_operation_crate_operation_update_evaluation(
     input: &[u8],
     mut builder: crate::output::update_evaluation_output::Builder,
 ) -> Result<crate::output::update_evaluation_output::Builder, smithy_json::deserialize::Error> {
@@ -1973,7 +1994,7 @@ pub fn deser_operation_update_evaluation(
     Ok(builder)
 }
 
-pub fn deser_operation_update_ml_model(
+pub fn deser_operation_crate_operation_update_ml_model(
     input: &[u8],
     mut builder: crate::output::update_ml_model_output::Builder,
 ) -> Result<crate::output::update_ml_model_output::Builder, smithy_json::deserialize::Error> {
@@ -2020,7 +2041,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_realtime_endpoint_info<'a, I>(
+pub fn deser_structure_crate_model_realtime_endpoint_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RealtimeEndpointInfo>, smithy_json::deserialize::Error>
 where
@@ -2095,7 +2116,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_batch_predictions<'a, I>(
+pub fn deser_list_com_amazonaws_machinelearning_batch_predictions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::BatchPrediction>>, smithy_json::deserialize::Error>
 where
@@ -2114,7 +2135,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_batch_prediction(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_batch_prediction(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2130,7 +2154,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_data_sources<'a, I>(
+pub fn deser_list_com_amazonaws_machinelearning_data_sources<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DataSource>>, smithy_json::deserialize::Error>
 where
@@ -2149,7 +2173,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_data_source(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_data_source(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2165,7 +2190,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_evaluations<'a, I>(
+pub fn deser_list_com_amazonaws_machinelearning_evaluations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Evaluation>>, smithy_json::deserialize::Error>
 where
@@ -2184,7 +2209,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_evaluation(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_evaluation(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2200,7 +2226,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_ml_models<'a, I>(
+pub fn deser_list_com_amazonaws_machinelearning_ml_models<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MlModel>>, smithy_json::deserialize::Error>
 where
@@ -2219,7 +2245,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_ml_model(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_ml_model(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2235,7 +2262,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_machinelearning_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -2254,7 +2281,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2269,7 +2296,7 @@ where
     }
 }
 
-pub fn deser_structure_redshift_metadata<'a, I>(
+pub fn deser_structure_crate_model_redshift_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RedshiftMetadata>, smithy_json::deserialize::Error>
 where
@@ -2289,7 +2316,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "RedshiftDatabase" => {
                                 builder = builder.set_redshift_database(
-                                    crate::json_deser::deser_structure_redshift_database(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_redshift_database(tokens)?
                                 );
                             }
                             "DatabaseUserName" => {
@@ -2328,7 +2355,7 @@ where
     }
 }
 
-pub fn deser_structure_rds_metadata<'a, I>(
+pub fn deser_structure_crate_model_rds_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RdsMetadata>, smithy_json::deserialize::Error>
 where
@@ -2348,7 +2375,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Database" => {
                                 builder = builder.set_database(
-                                    crate::json_deser::deser_structure_rds_database(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_rds_database(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "DatabaseUserName" => {
@@ -2414,7 +2443,7 @@ where
     }
 }
 
-pub fn deser_structure_performance_metrics<'a, I>(
+pub fn deser_structure_crate_model_performance_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PerformanceMetrics>, smithy_json::deserialize::Error>
 where
@@ -2434,9 +2463,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Properties" => {
                                 builder = builder.set_properties(
-                                    crate::json_deser::deser_map_performance_metrics_properties(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_map_com_amazonaws_machinelearning_performance_metrics_properties(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2458,7 +2485,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_training_parameters<'a, I>(
+pub fn deser_map_com_amazonaws_machinelearning_training_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2501,7 +2528,7 @@ where
     }
 }
 
-pub fn deser_structure_prediction<'a, I>(
+pub fn deser_structure_crate_model_prediction<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Prediction>, smithy_json::deserialize::Error>
 where
@@ -2538,12 +2565,13 @@ where
                             }
                             "predictedScores" => {
                                 builder = builder.set_predicted_scores(
-                                    crate::json_deser::deser_map_score_value_per_label_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_machinelearning_score_value_per_label_map(tokens)?
                                 );
                             }
                             "details" => {
-                                builder = builder
-                                    .set_details(crate::json_deser::deser_map_details_map(tokens)?);
+                                builder = builder.set_details(
+                                    crate::json_deser::deser_map_com_amazonaws_machinelearning_details_map(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -2563,7 +2591,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_prediction<'a, I>(
+pub fn deser_structure_crate_model_batch_prediction<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchPrediction>, smithy_json::deserialize::Error>
 where
@@ -2739,7 +2767,7 @@ where
     }
 }
 
-pub fn deser_structure_data_source<'a, I>(
+pub fn deser_structure_crate_model_data_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DataSource>, smithy_json::deserialize::Error>
 where
@@ -2857,12 +2885,14 @@ where
                             }
                             "RedshiftMetadata" => {
                                 builder = builder.set_redshift_metadata(
-                                    crate::json_deser::deser_structure_redshift_metadata(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_redshift_metadata(tokens)?
                                 );
                             }
                             "RDSMetadata" => {
                                 builder = builder.set_rds_metadata(
-                                    crate::json_deser::deser_structure_rds_metadata(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_rds_metadata(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "RoleARN" => {
@@ -2923,7 +2953,7 @@ where
     }
 }
 
-pub fn deser_structure_evaluation<'a, I>(
+pub fn deser_structure_crate_model_evaluation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Evaluation>, smithy_json::deserialize::Error>
 where
@@ -3025,7 +3055,7 @@ where
                             }
                             "PerformanceMetrics" => {
                                 builder = builder.set_performance_metrics(
-                                    crate::json_deser::deser_structure_performance_metrics(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_performance_metrics(tokens)?
                                 );
                             }
                             "Message" => {
@@ -3079,7 +3109,7 @@ where
     }
 }
 
-pub fn deser_structure_ml_model<'a, I>(
+pub fn deser_structure_crate_model_ml_model<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MlModel>, smithy_json::deserialize::Error>
 where
@@ -3171,14 +3201,12 @@ where
                             }
                             "EndpointInfo" => {
                                 builder = builder.set_endpoint_info(
-                                    crate::json_deser::deser_structure_realtime_endpoint_info(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_realtime_endpoint_info(tokens)?
                                 );
                             }
                             "TrainingParameters" => {
                                 builder = builder.set_training_parameters(
-                                    crate::json_deser::deser_map_training_parameters(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_machinelearning_training_parameters(tokens)?
                                 );
                             }
                             "InputDataLocationS3" => {
@@ -3281,7 +3309,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -3335,7 +3363,7 @@ where
     }
 }
 
-pub fn deser_structure_redshift_database<'a, I>(
+pub fn deser_structure_crate_model_redshift_database<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RedshiftDatabase>, smithy_json::deserialize::Error>
 where
@@ -3389,7 +3417,7 @@ where
     }
 }
 
-pub fn deser_structure_rds_database<'a, I>(
+pub fn deser_structure_crate_model_rds_database<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RdsDatabase>, smithy_json::deserialize::Error>
 where
@@ -3444,7 +3472,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_performance_metrics_properties<'a, I>(
+pub fn deser_map_com_amazonaws_machinelearning_performance_metrics_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -3488,7 +3516,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_score_value_per_label_map<'a, I>(
+pub fn deser_map_com_amazonaws_machinelearning_score_value_per_label_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, f32>>,
@@ -3531,7 +3559,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_details_map<'a, I>(
+pub fn deser_map_com_amazonaws_machinelearning_details_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<crate::model::DetailsAttributes, std::string::String>>,

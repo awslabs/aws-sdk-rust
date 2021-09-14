@@ -97,7 +97,7 @@ pub struct ReplicationGroup {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the replication group.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The list of user group IDs that have access to the replication group.</p>
+    /// <p>The ID of the user group associated to the replication group.</p>
     pub user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Returns the destination, format and type of the logs. </p>
     pub log_delivery_configurations:
@@ -1547,7 +1547,7 @@ pub struct ReplicationGroupPendingModifiedValues {
     pub resharding: std::option::Option<crate::model::ReshardingStatus>,
     /// <p>The auth token status</p>
     pub auth_token_status: std::option::Option<crate::model::AuthTokenUpdateStatus>,
-    /// <p>The user groups being modified.</p>
+    /// <p>The user group being modified.</p>
     pub user_groups: std::option::Option<crate::model::UserGroupsUpdateStatus>,
     /// <p>The log delivery configurations being modified </p>
     pub log_delivery_configurations:
@@ -1636,7 +1636,7 @@ pub mod replication_group_pending_modified_values {
             self.auth_token_status = input;
             self
         }
-        /// <p>The user groups being modified.</p>
+        /// <p>The user group being modified.</p>
         pub fn user_groups(mut self, input: crate::model::UserGroupsUpdateStatus) -> Self {
             self.user_groups = Some(input);
             self
@@ -1788,9 +1788,9 @@ impl PendingLogDeliveryConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroupsUpdateStatus {
-    /// <p>The list of user group IDs to add.</p>
+    /// <p>The ID of the user group to add.</p>
     pub user_group_ids_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The list of user group IDs to remove.</p>
+    /// <p>The ID of the user group to remove.</p>
     pub user_group_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for UserGroupsUpdateStatus {
@@ -6805,7 +6805,7 @@ pub struct UserGroup {
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of updates being applied to the user groups.</p>
+    /// <p>A list of updates being applied to the user group.</p>
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
     pub replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6883,7 +6883,7 @@ pub mod user_group {
             self.user_ids = input;
             self
         }
-        /// <p>A list of updates being applied to the user groups.</p>
+        /// <p>A list of updates being applied to the user group.</p>
         pub fn pending_changes(mut self, input: crate::model::UserGroupPendingChanges) -> Self {
             self.pending_changes = Some(input);
             self

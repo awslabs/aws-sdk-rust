@@ -3877,7 +3877,7 @@ impl RepositoryNotFoundException {
 }
 
 /// <p>The operation did not succeed because it would have exceeded a service limit for your
-/// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service Quotas</a> in
+/// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in
 /// the Amazon Elastic Container Registry User Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3945,7 +3945,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsException {
     pub message: std::option::Option<std::string::String>,
-    /// <p>The error code returned by AWS KMS.</p>
+    /// <p>The error code returned by KMS.</p>
     pub kms_error: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsException {
@@ -3989,7 +3989,7 @@ pub mod kms_exception {
             self.message = input;
             self
         }
-        /// <p>The error code returned by AWS KMS.</p>
+        /// <p>The error code returned by KMS.</p>
         pub fn kms_error(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_error = Some(input.into());
             self

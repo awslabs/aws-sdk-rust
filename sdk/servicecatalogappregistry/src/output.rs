@@ -718,6 +718,52 @@ impl GetAttributeGroupOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetAssociatedResourceOutput {
+    /// <p>The resource associated with the application.</p>
+    pub resource: std::option::Option<crate::model::Resource>,
+}
+impl std::fmt::Debug for GetAssociatedResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetAssociatedResourceOutput");
+        formatter.field("resource", &self.resource);
+        formatter.finish()
+    }
+}
+/// See [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput)
+pub mod get_associated_resource_output {
+    /// A builder for [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource: std::option::Option<crate::model::Resource>,
+    }
+    impl Builder {
+        /// <p>The resource associated with the application.</p>
+        pub fn resource(mut self, input: crate::model::Resource) -> Self {
+            self.resource = Some(input);
+            self
+        }
+        pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
+            self.resource = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput)
+        pub fn build(self) -> crate::output::GetAssociatedResourceOutput {
+            crate::output::GetAssociatedResourceOutput {
+                resource: self.resource,
+            }
+        }
+    }
+}
+impl GetAssociatedResourceOutput {
+    /// Creates a new builder-style object to manufacture [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput)
+    pub fn builder() -> crate::output::get_associated_resource_output::Builder {
+        crate::output::get_associated_resource_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationOutput {
     /// <p>The identifier of the application.</p>
     pub id: std::option::Option<std::string::String>,
@@ -736,6 +782,8 @@ pub struct GetApplicationOutput {
     /// <p>Key-value pairs associated with the application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+    pub integrations: std::option::Option<crate::model::Integrations>,
 }
 impl std::fmt::Debug for GetApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -748,6 +796,7 @@ impl std::fmt::Debug for GetApplicationOutput {
         formatter.field("last_update_time", &self.last_update_time);
         formatter.field("associated_resource_count", &self.associated_resource_count);
         formatter.field("tags", &self.tags);
+        formatter.field("integrations", &self.integrations);
         formatter.finish()
     }
 }
@@ -767,6 +816,7 @@ pub mod get_application_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) integrations: std::option::Option<crate::model::Integrations>,
     }
     impl Builder {
         /// <p>The identifier of the application.</p>
@@ -857,6 +907,18 @@ pub mod get_application_output {
             self.tags = input;
             self
         }
+        /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+        pub fn integrations(mut self, input: crate::model::Integrations) -> Self {
+            self.integrations = Some(input);
+            self
+        }
+        pub fn set_integrations(
+            mut self,
+            input: std::option::Option<crate::model::Integrations>,
+        ) -> Self {
+            self.integrations = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::output::GetApplicationOutput)
         pub fn build(self) -> crate::output::GetApplicationOutput {
             crate::output::GetApplicationOutput {
@@ -868,6 +930,7 @@ pub mod get_application_output {
                 last_update_time: self.last_update_time,
                 associated_resource_count: self.associated_resource_count.unwrap_or_default(),
                 tags: self.tags,
+                integrations: self.integrations,
             }
         }
     }

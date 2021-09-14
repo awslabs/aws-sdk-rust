@@ -15,26 +15,24 @@ pub fn parse_get_ice_server_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClientLimitExceededException" => {
-            crate::error::GetIceServerConfigError {
-                meta: generic,
-                kind: crate::error::GetIceServerConfigErrorKind::ClientLimitExceededException({
+        "ClientLimitExceededException" => crate::error::GetIceServerConfigError {
+            meta: generic,
+            kind: crate::error::GetIceServerConfigErrorKind::ClientLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::client_limit_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetIceServerConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::client_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetIceServerConfigError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidArgumentException" => crate::error::GetIceServerConfigError {
             meta: generic,
             kind: crate::error::GetIceServerConfigErrorKind::InvalidArgumentException({
@@ -43,11 +41,7 @@ pub fn parse_get_ice_server_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_argument_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetIceServerConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetIceServerConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -64,11 +58,7 @@ pub fn parse_get_ice_server_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_client_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetIceServerConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetIceServerConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -85,11 +75,7 @@ pub fn parse_get_ice_server_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_authorized_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetIceServerConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetIceServerConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -98,26 +84,23 @@ pub fn parse_get_ice_server_config_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::GetIceServerConfigError {
-                meta: generic,
-                kind: crate::error::GetIceServerConfigErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetIceServerConfigError {
+            meta: generic,
+            kind: crate::error::GetIceServerConfigErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetIceServerConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetIceServerConfigError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "SessionExpiredException" => crate::error::GetIceServerConfigError {
             meta: generic,
             kind: crate::error::GetIceServerConfigErrorKind::SessionExpiredException({
@@ -126,11 +109,7 @@ pub fn parse_get_ice_server_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::session_expired_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_session_expired_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetIceServerConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_session_expired_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetIceServerConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -154,7 +133,7 @@ pub fn parse_get_ice_server_config_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_ice_server_config_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_ice_server_config(
+        output = crate::json_deser::deser_operation_crate_operation_get_ice_server_config(
             response.body().as_ref(),
             output,
         )
@@ -183,28 +162,24 @@ pub fn parse_send_alexa_offer_to_master_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClientLimitExceededException" => {
-            crate::error::SendAlexaOfferToMasterError {
-                meta: generic,
-                kind: crate::error::SendAlexaOfferToMasterErrorKind::ClientLimitExceededException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::client_limit_exceeded_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendAlexaOfferToMasterError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
+        "ClientLimitExceededException" => crate::error::SendAlexaOfferToMasterError {
+            meta: generic,
+            kind: crate::error::SendAlexaOfferToMasterErrorKind::ClientLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::client_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendAlexaOfferToMasterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidArgumentException" => crate::error::SendAlexaOfferToMasterError {
             meta: generic,
             kind: crate::error::SendAlexaOfferToMasterErrorKind::InvalidArgumentException({
@@ -213,11 +188,7 @@ pub fn parse_send_alexa_offer_to_master_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_argument_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendAlexaOfferToMasterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendAlexaOfferToMasterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -234,11 +205,7 @@ pub fn parse_send_alexa_offer_to_master_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_authorized_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendAlexaOfferToMasterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendAlexaOfferToMasterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -247,26 +214,23 @@ pub fn parse_send_alexa_offer_to_master_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::SendAlexaOfferToMasterError {
-                meta: generic,
-                kind: crate::error::SendAlexaOfferToMasterErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::SendAlexaOfferToMasterError {
+            meta: generic,
+            kind: crate::error::SendAlexaOfferToMasterErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendAlexaOfferToMasterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendAlexaOfferToMasterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::SendAlexaOfferToMasterError::generic(generic),
     })
 }
@@ -282,7 +246,7 @@ pub fn parse_send_alexa_offer_to_master_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_alexa_offer_to_master_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_send_alexa_offer_to_master(
+        output = crate::json_deser::deser_operation_crate_operation_send_alexa_offer_to_master(
             response.body().as_ref(),
             output,
         )

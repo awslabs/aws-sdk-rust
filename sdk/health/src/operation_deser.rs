@@ -24,7 +24,7 @@ pub fn parse_describe_affected_accounts_for_organization_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_pagination_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedAccountsForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedAccountsForOrganizationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -49,11 +49,7 @@ pub fn parse_describe_affected_accounts_for_organization_response(
         let mut output =
             crate::output::describe_affected_accounts_for_organization_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_affected_accounts_for_organization(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeAffectedAccountsForOrganizationError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_affected_accounts_for_organization(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedAccountsForOrganizationError::unhandled)?;
         output.build()
     })
 }
@@ -86,11 +82,7 @@ pub fn parse_describe_affected_entities_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_pagination_tokenjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -99,27 +91,25 @@ pub fn parse_describe_affected_entities_error(
                 tmp
             }),
         },
-        "UnsupportedLocale" => crate::error::DescribeAffectedEntitiesError {
-            meta: generic,
-            kind: crate::error::DescribeAffectedEntitiesErrorKind::UnsupportedLocale({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "UnsupportedLocale" => {
+            crate::error::DescribeAffectedEntitiesError {
+                meta: generic,
+                kind: crate::error::DescribeAffectedEntitiesErrorKind::UnsupportedLocale({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_locale::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_localejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::unsupported_locale::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_localejson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DescribeAffectedEntitiesError::generic(generic),
     })
 }
@@ -135,7 +125,7 @@ pub fn parse_describe_affected_entities_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_affected_entities_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_affected_entities(
+        output = crate::json_deser::deser_operation_crate_operation_describe_affected_entities(
             response.body().as_ref(),
             output,
         )
@@ -169,7 +159,7 @@ pub fn parse_describe_affected_entities_for_organization_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_pagination_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -183,7 +173,7 @@ pub fn parse_describe_affected_entities_for_organization_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::unsupported_locale::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_localejson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_localejson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -208,11 +198,7 @@ pub fn parse_describe_affected_entities_for_organization_response(
         let mut output =
             crate::output::describe_affected_entities_for_organization_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_affected_entities_for_organization(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_affected_entities_for_organization(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
         output.build()
     })
 }
@@ -242,7 +228,7 @@ pub fn parse_describe_entity_aggregates_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_entity_aggregates_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_entity_aggregates(
+        output = crate::json_deser::deser_operation_crate_operation_describe_entity_aggregates(
             response.body().as_ref(),
             output,
         )
@@ -279,11 +265,7 @@ pub fn parse_describe_event_aggregates_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_pagination_tokenjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeEventAggregatesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventAggregatesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -307,7 +289,7 @@ pub fn parse_describe_event_aggregates_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_event_aggregates_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_event_aggregates(
+        output = crate::json_deser::deser_operation_crate_operation_describe_event_aggregates(
             response.body().as_ref(),
             output,
         )
@@ -332,27 +314,25 @@ pub fn parse_describe_event_details_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "UnsupportedLocale" => crate::error::DescribeEventDetailsError {
-            meta: generic,
-            kind: crate::error::DescribeEventDetailsErrorKind::UnsupportedLocale({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "UnsupportedLocale" => {
+            crate::error::DescribeEventDetailsError {
+                meta: generic,
+                kind: crate::error::DescribeEventDetailsErrorKind::UnsupportedLocale({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_locale::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_localejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeEventDetailsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::unsupported_locale::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_localejson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventDetailsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DescribeEventDetailsError::generic(generic),
     })
 }
@@ -368,7 +348,7 @@ pub fn parse_describe_event_details_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_event_details_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_event_details(
+        output = crate::json_deser::deser_operation_crate_operation_describe_event_details(
             response.body().as_ref(),
             output,
         )
@@ -395,27 +375,27 @@ pub fn parse_describe_event_details_for_organization_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "UnsupportedLocale" => crate::error::DescribeEventDetailsForOrganizationError {
-            meta: generic,
-            kind: crate::error::DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_locale::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_localejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeEventDetailsForOrganizationError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+        "UnsupportedLocale" => {
+            crate::error::DescribeEventDetailsForOrganizationError {
+                meta: generic,
+                kind: crate::error::DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output = crate::error::unsupported_locale::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_unsupported_localejson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventDetailsForOrganizationError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
         _ => crate::error::DescribeEventDetailsForOrganizationError::generic(generic),
     })
 }
@@ -432,11 +412,7 @@ pub fn parse_describe_event_details_for_organization_response(
         let mut output =
             crate::output::describe_event_details_for_organization_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_event_details_for_organization(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeEventDetailsForOrganizationError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_event_details_for_organization(response.body().as_ref(), output).map_err(crate::error::DescribeEventDetailsForOrganizationError::unhandled)?;
         output.build()
     })
 }
@@ -462,11 +438,7 @@ pub fn parse_describe_events_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_pagination_tokenjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeEventsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -475,27 +447,25 @@ pub fn parse_describe_events_error(
                 tmp
             }),
         },
-        "UnsupportedLocale" => crate::error::DescribeEventsError {
-            meta: generic,
-            kind: crate::error::DescribeEventsErrorKind::UnsupportedLocale({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "UnsupportedLocale" => {
+            crate::error::DescribeEventsError {
+                meta: generic,
+                kind: crate::error::DescribeEventsErrorKind::UnsupportedLocale({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_locale::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_localejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeEventsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::unsupported_locale::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_localejson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DescribeEventsError::generic(generic),
     })
 }
@@ -508,9 +478,11 @@ pub fn parse_describe_events_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_events_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_events(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeEventsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_events(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeEventsError::unhandled)?;
         output.build()
     })
 }
@@ -543,11 +515,7 @@ pub fn parse_describe_events_for_organization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_pagination_tokenjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -556,27 +524,25 @@ pub fn parse_describe_events_for_organization_error(
                 tmp
             }),
         },
-        "UnsupportedLocale" => crate::error::DescribeEventsForOrganizationError {
-            meta: generic,
-            kind: crate::error::DescribeEventsForOrganizationErrorKind::UnsupportedLocale({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "UnsupportedLocale" => {
+            crate::error::DescribeEventsForOrganizationError {
+                meta: generic,
+                kind: crate::error::DescribeEventsForOrganizationErrorKind::UnsupportedLocale({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_locale::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_localejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::unsupported_locale::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_localejson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DescribeEventsForOrganizationError::generic(generic),
     })
 }
@@ -592,11 +558,12 @@ pub fn parse_describe_events_for_organization_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_events_for_organization_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_events_for_organization(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_events_for_organization(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
         output.build()
     })
 }
@@ -625,11 +592,7 @@ pub fn parse_describe_event_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_pagination_tokenjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeEventTypesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -638,27 +601,25 @@ pub fn parse_describe_event_types_error(
                 tmp
             }),
         },
-        "UnsupportedLocale" => crate::error::DescribeEventTypesError {
-            meta: generic,
-            kind: crate::error::DescribeEventTypesErrorKind::UnsupportedLocale({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "UnsupportedLocale" => {
+            crate::error::DescribeEventTypesError {
+                meta: generic,
+                kind: crate::error::DescribeEventTypesErrorKind::UnsupportedLocale({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_locale::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_localejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeEventTypesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::unsupported_locale::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_localejson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventTypesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DescribeEventTypesError::generic(generic),
     })
 }
@@ -674,7 +635,7 @@ pub fn parse_describe_event_types_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_event_types_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_event_types(
+        output = crate::json_deser::deser_operation_crate_operation_describe_event_types(
             response.body().as_ref(),
             output,
         )
@@ -708,12 +669,7 @@ pub fn parse_describe_health_service_status_for_organization_response(
             crate::output::describe_health_service_status_for_organization_output::Builder::default(
             );
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_health_service_status_for_organization(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DescribeHealthServiceStatusForOrganizationError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_health_service_status_for_organization(response.body().as_ref(), output).map_err(crate::error::DescribeHealthServiceStatusForOrganizationError::unhandled)?;
         output.build()
     })
 }
@@ -743,7 +699,7 @@ pub fn parse_disable_health_service_access_for_organization_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisableHealthServiceAccessForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisableHealthServiceAccessForOrganizationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -798,7 +754,7 @@ pub fn parse_enable_health_service_access_for_organization_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::EnableHealthServiceAccessForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::EnableHealthServiceAccessForOrganizationError::unhandled)?;
                     output.build()
                 }
             ;

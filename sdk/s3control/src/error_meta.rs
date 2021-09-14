@@ -112,6 +112,24 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateMultiRegionAccessPointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateMultiRegionAccessPointError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateMultiRegionAccessPointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::DeleteAccessPointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -274,6 +292,24 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteMultiRegionAccessPointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteMultiRegionAccessPointError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteMultiRegionAccessPointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::DeletePublicAccessBlockError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -351,6 +387,32 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        smithy_http::result::SdkError<
+            crate::error::DescribeMultiRegionAccessPointOperationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<
+            crate::error::DescribeMultiRegionAccessPointOperationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeMultiRegionAccessPointOperationErrorKind::Unhandled(
+                    inner,
+                ) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -577,6 +639,64 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetMultiRegionAccessPointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointPolicyError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetMultiRegionAccessPointPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointPolicyStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<
+            crate::error::GetMultiRegionAccessPointPolicyStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetMultiRegionAccessPointPolicyStatusErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::GetPublicAccessBlockError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -683,6 +803,24 @@ where
                     Error::InvalidRequestException(inner)
                 }
                 crate::error::ListJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListMultiRegionAccessPointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListMultiRegionAccessPointsError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListMultiRegionAccessPointsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -852,6 +990,24 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::PutJobTaggingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::PutMultiRegionAccessPointPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::PutMultiRegionAccessPointPolicyError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutMultiRegionAccessPointPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

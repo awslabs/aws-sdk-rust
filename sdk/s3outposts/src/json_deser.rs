@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_endpoint(
+pub fn deser_operation_crate_operation_create_endpoint(
     input: &[u8],
     mut builder: crate::output::create_endpoint_output::Builder,
 ) -> Result<crate::output::create_endpoint_output::Builder, smithy_json::deserialize::Error> {
@@ -239,7 +239,7 @@ pub fn deser_operation_create_endpoint(
     Ok(builder)
 }
 
-pub fn deser_operation_list_endpoints(
+pub fn deser_operation_crate_operation_list_endpoints(
     input: &[u8],
     mut builder: crate::output::list_endpoints_output::Builder,
 ) -> Result<crate::output::list_endpoints_output::Builder, smithy_json::deserialize::Error> {
@@ -254,8 +254,11 @@ pub fn deser_operation_list_endpoints(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Endpoints" => {
-                        builder =
-                            builder.set_endpoints(crate::json_deser::deser_list_endpoints(tokens)?);
+                        builder = builder.set_endpoints(
+                            crate::json_deser::deser_list_com_amazonaws_s3outposts_endpoints(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -291,7 +294,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_endpoints<'a, I>(
+pub fn deser_list_com_amazonaws_s3outposts_endpoints<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Endpoint>>, smithy_json::deserialize::Error>
 where
@@ -310,7 +313,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_endpoint(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_endpoint(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -325,7 +329,7 @@ where
     }
 }
 
-pub fn deser_structure_endpoint<'a, I>(
+pub fn deser_structure_crate_model_endpoint<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Endpoint>, smithy_json::deserialize::Error>
 where
@@ -392,7 +396,7 @@ where
                             }
                             "NetworkInterfaces" => {
                                 builder = builder.set_network_interfaces(
-                                    crate::json_deser::deser_list_network_interfaces(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_s3outposts_network_interfaces(tokens)?
                                 );
                             }
                             "VpcId" => {
@@ -463,7 +467,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_network_interfaces<'a, I>(
+pub fn deser_list_com_amazonaws_s3outposts_network_interfaces<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::NetworkInterface>>, smithy_json::deserialize::Error>
 where
@@ -482,7 +486,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_network_interface(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_network_interface(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -497,7 +504,7 @@ where
     }
 }
 
-pub fn deser_structure_network_interface<'a, I>(
+pub fn deser_structure_crate_model_network_interface<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::NetworkInterface>, smithy_json::deserialize::Error>
 where

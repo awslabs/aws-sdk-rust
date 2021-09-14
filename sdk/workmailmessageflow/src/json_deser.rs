@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_content_locationjson_err(
+pub fn deser_structure_crate_error_invalid_content_locationjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_content_location::Builder,
 ) -> Result<crate::error::invalid_content_location::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_invalid_content_locationjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_message_frozenjson_err(
+pub fn deser_structure_crate_error_message_frozenjson_err(
     input: &[u8],
     mut builder: crate::error::message_frozen::Builder,
 ) -> Result<crate::error::message_frozen::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_message_frozenjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_message_rejectedjson_err(
+pub fn deser_structure_crate_error_message_rejectedjson_err(
     input: &[u8],
     mut builder: crate::error::message_rejected::Builder,
 ) -> Result<crate::error::message_rejected::Builder, smithy_json::deserialize::Error> {

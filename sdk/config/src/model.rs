@@ -62,7 +62,7 @@ impl Tag {
     }
 }
 
-/// <p>The details that identify a resource within AWS Config, including
+/// <p>The details that identify a resource within Config, including
 /// the resource type and resource ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -821,13 +821,13 @@ impl StoredQuery {
     }
 }
 
-/// <p>An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in AWS Config.</p>
+/// <p>An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in Config.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetentionConfiguration {
     /// <p>The name of the retention configuration object.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Number of days AWS Config stores your historical information.</p>
+    /// <p>Number of days Config stores your historical information.</p>
     /// <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
@@ -860,7 +860,7 @@ pub mod retention_configuration {
             self.name = input;
             self
         }
-        /// <p>Number of days AWS Config stores your historical information.</p>
+        /// <p>Number of days Config stores your historical information.</p>
         /// <note>
         /// <p>Currently, only applicable to the configuration item history.</p>
         /// </note>
@@ -964,7 +964,7 @@ impl FailedRemediationExceptionBatch {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemediationException {
-    /// <p>The name of the AWS Config rule.</p>
+    /// <p>The name of the Config rule.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>The type of a resource.</p>
     pub resource_type: std::option::Option<std::string::String>,
@@ -999,7 +999,7 @@ pub mod remediation_exception {
         pub(crate) expiration_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule.</p>
+        /// <p>The name of the Config rule.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -1072,7 +1072,7 @@ impl RemediationException {
     }
 }
 
-/// <p>The details that identify a resource within AWS Config, including the resource type and resource ID. </p>
+/// <p>The details that identify a resource within Config, including the resource type and resource ID. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemediationExceptionResourceKey {
@@ -1212,7 +1212,7 @@ impl FailedRemediationBatch {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemediationConfiguration {
-    /// <p>The name of the AWS Config rule.</p>
+    /// <p>The name of the Config rule.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
     pub target_type: std::option::Option<crate::model::RemediationTargetType>,
@@ -1236,11 +1236,11 @@ pub struct RemediationConfiguration {
     pub execution_controls: std::option::Option<crate::model::ExecutionControls>,
     /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
     /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds,
-    /// AWS Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
+    /// Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
     pub maximum_automatic_attempts: std::option::Option<i32>,
-    /// <p>Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
+    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
     /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5,
-    /// AWS Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
+    /// Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
     pub retry_attempt_seconds: std::option::Option<i64>,
     /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -1290,7 +1290,7 @@ pub mod remediation_configuration {
         pub(crate) created_by_service: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule.</p>
+        /// <p>The name of the Config rule.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -1396,7 +1396,7 @@ pub mod remediation_configuration {
         }
         /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
         /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds,
-        /// AWS Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
+        /// Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
         pub fn maximum_automatic_attempts(mut self, input: i32) -> Self {
             self.maximum_automatic_attempts = Some(input);
             self
@@ -1405,9 +1405,9 @@ pub mod remediation_configuration {
             self.maximum_automatic_attempts = input;
             self
         }
-        /// <p>Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
+        /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
         /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5,
-        /// AWS Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
+        /// Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
         pub fn retry_attempt_seconds(mut self, input: i64) -> Self {
             self.retry_attempt_seconds = Some(input);
             self
@@ -1463,7 +1463,7 @@ impl RemediationConfiguration {
     }
 }
 
-/// <p>The controls that AWS Config uses for executing remediations.</p>
+/// <p>The controls that Config uses for executing remediations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionControls {
@@ -1513,7 +1513,7 @@ impl ExecutionControls {
     }
 }
 
-/// <p>AWS Systems Manager (SSM) specific remediation controls.</p>
+/// <p>Amazon Web Services Systems Manager (SSM) specific remediation controls.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmControls {
@@ -1912,9 +1912,9 @@ impl ConformancePackInputParameter {
     }
 }
 
-/// <p>An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN,
-/// and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule.
-/// It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.</p>
+/// <p>An object that specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN,
+/// and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule.
+/// It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationCustomRuleMetadata {
@@ -1922,16 +1922,16 @@ pub struct OrganizationCustomRuleMetadata {
     pub description: std::option::Option<std::string::String>,
     /// <p>The lambda function ARN.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
-    /// <p>The type of notification that triggers AWS Config to run an evaluation for a rule. You can specify the following notification types:</p>
+    /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when AWS Config delivers a configuration item as a result of a resource change.</p>
+    /// <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when AWS Config delivers an oversized configuration item.
-    /// AWS Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p>
+    /// <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item.
+    /// Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -1942,16 +1942,16 @@ pub struct OrganizationCustomRuleMetadata {
         std::option::Option<std::vec::Vec<crate::model::OrganizationConfigRuleTriggerType>>,
     /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
     pub input_parameters: std::option::Option<std::string::String>,
-    /// <p>The maximum frequency with which AWS Config runs evaluations for a rule.
-    /// Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
+    /// <p>The maximum frequency with which Config runs evaluations for a rule.
+    /// Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
     /// <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
     /// value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
     pub maximum_execution_frequency: std::option::Option<crate::model::MaximumExecutionFrequency>,
-    /// <p>The type of the AWS resource that was evaluated.</p>
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
     pub resource_types_scope: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ID of the AWS resource that was evaluated.</p>
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub resource_id_scope: std::option::Option<std::string::String>,
     /// <p>One part of a key-value pair that make up a tag.
     /// A key is a general label that acts like a category for more specific tag values. </p>
@@ -2053,8 +2053,8 @@ pub mod organization_custom_rule_metadata {
             self.input_parameters = input;
             self
         }
-        /// <p>The maximum frequency with which AWS Config runs evaluations for a rule.
-        /// Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
+        /// <p>The maximum frequency with which Config runs evaluations for a rule.
+        /// Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
         /// <note>
         /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
         /// value for the <code>MaximumExecutionFrequency</code> parameter.</p>
@@ -2086,7 +2086,7 @@ pub mod organization_custom_rule_metadata {
             self.resource_types_scope = input;
             self
         }
-        /// <p>The ID of the AWS resource that was evaluated.</p>
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
         pub fn resource_id_scope(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id_scope = Some(input.into());
             self
@@ -2277,8 +2277,8 @@ impl AsRef<str> for OrganizationConfigRuleTriggerType {
     }
 }
 
-/// <p>An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with the rule identifier.
-/// It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.</p>
+/// <p>An object that specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier.
+/// It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationManagedRuleMetadata {
@@ -2286,19 +2286,19 @@ pub struct OrganizationManagedRuleMetadata {
     pub description: std::option::Option<std::string::String>,
     /// <p>For organization config managed rules, a predefined identifier from a
     /// list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed
-    /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS Managed Config Rules</a>.</p>
+    /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
     pub rule_identifier: std::option::Option<std::string::String>,
     /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
     pub input_parameters: std::option::Option<std::string::String>,
-    /// <p>The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS managed rule that is triggered at a periodic frequency.</p>
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is triggered at a periodic frequency.</p>
     /// <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
     /// value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
     pub maximum_execution_frequency: std::option::Option<crate::model::MaximumExecutionFrequency>,
-    /// <p>The type of the AWS resource that was evaluated.</p>
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
     pub resource_types_scope: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ID of the AWS resource that was evaluated.</p>
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub resource_id_scope: std::option::Option<std::string::String>,
     /// <p>One part of a key-value pair that make up a tag.
     /// A key is a general label that acts like a category for more specific tag values. </p>
@@ -2352,7 +2352,7 @@ pub mod organization_managed_rule_metadata {
         }
         /// <p>For organization config managed rules, a predefined identifier from a
         /// list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed
-        /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS Managed Config Rules</a>.</p>
+        /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
         pub fn rule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_identifier = Some(input.into());
             self
@@ -2376,7 +2376,7 @@ pub mod organization_managed_rule_metadata {
             self.input_parameters = input;
             self
         }
-        /// <p>The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS managed rule that is triggered at a periodic frequency.</p>
+        /// <p>The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is triggered at a periodic frequency.</p>
         /// <note>
         /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
         /// value for the <code>MaximumExecutionFrequency</code> parameter.</p>
@@ -2408,7 +2408,7 @@ pub mod organization_managed_rule_metadata {
             self.resource_types_scope = input;
             self
         }
-        /// <p>The ID of the AWS resource that was evaluated.</p>
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
         pub fn resource_id_scope(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id_scope = Some(input.into());
             self
@@ -2468,15 +2468,15 @@ impl OrganizationManagedRuleMetadata {
     }
 }
 
-/// <p>Identifies an AWS resource and indicates whether it complies with the AWS Config rule that it was evaluated against.</p>
+/// <p>Identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that it was evaluated against.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExternalEvaluation {
-    /// <p>The evaluated compliance resource type. AWS Config accepts <code>AWS::::Account</code> resource type.</p>
+    /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
     pub compliance_resource_type: std::option::Option<std::string::String>,
-    /// <p>The evaluated compliance resource ID. AWS Config accepts only AWS account ID.</p>
+    /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
     pub compliance_resource_id: std::option::Option<std::string::String>,
-    /// <p>The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
+    /// <p>The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
     /// <p>Supplementary information about the reason of compliance. For example, this task was completed on a specific date.</p>
     pub annotation: std::option::Option<std::string::String>,
@@ -2507,7 +2507,7 @@ pub mod external_evaluation {
         pub(crate) ordering_timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The evaluated compliance resource type. AWS Config accepts <code>AWS::::Account</code> resource type.</p>
+        /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
         pub fn compliance_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_resource_type = Some(input.into());
             self
@@ -2519,7 +2519,7 @@ pub mod external_evaluation {
             self.compliance_resource_type = input;
             self
         }
-        /// <p>The evaluated compliance resource ID. AWS Config accepts only AWS account ID.</p>
+        /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
         pub fn compliance_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_resource_id = Some(input.into());
             self
@@ -2531,7 +2531,7 @@ pub mod external_evaluation {
             self.compliance_resource_id = input;
             self
         }
-        /// <p>The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
+        /// <p>The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
         pub fn compliance_type(mut self, input: crate::model::ComplianceType) -> Self {
             self.compliance_type = Some(input);
             self
@@ -2644,36 +2644,34 @@ impl AsRef<str> for ComplianceType {
     }
 }
 
-/// <p>Identifies an AWS resource and indicates whether it complies
-/// with the AWS Config rule that it was evaluated against.</p>
+/// <p>Identifies an Amazon Web Services resource and indicates whether it complies
+/// with the Config rule that it was evaluated against.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Evaluation {
-    /// <p>The type of AWS resource that was evaluated.</p>
+    /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     pub compliance_resource_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS resource that was evaluated.</p>
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub compliance_resource_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the AWS resource complies with the AWS Config
+    /// <p>Indicates whether the Amazon Web Services resource complies with the Config
     /// rule that it was evaluated against.</p>
-    /// <p>For the <code>Evaluation</code> data type, AWS Config supports
+    /// <p>For the <code>Evaluation</code> data type, Config supports
     /// only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-    /// <code>NOT_APPLICABLE</code> values. AWS Config does not support
+    /// <code>NOT_APPLICABLE</code> values. Config does not support
     /// the <code>INSUFFICIENT_DATA</code> value for this data
     /// type.</p>
-    /// <p>Similarly, AWS Config does not accept
+    /// <p>Similarly, Config does not accept
     /// <code>INSUFFICIENT_DATA</code> as the value for
     /// <code>ComplianceType</code> from a <code>PutEvaluations</code>
-    /// request. For example, an AWS Lambda function for a custom AWS Config
-    /// rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS
-    /// Config.</p>
+    /// request. For example, an Lambda function for a custom Config
+    /// rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
     /// <p>Supplementary information about how the evaluation determined
     /// the compliance.</p>
     pub annotation: std::option::Option<std::string::String>,
-    /// <p>The time of the event in AWS Config that triggered the
-    /// evaluation. For event-based evaluations, the time indicates when AWS
-    /// Config created the configuration item that triggered the evaluation.
-    /// For periodic evaluations, the time indicates when AWS Config
+    /// <p>The time of the event in Config that triggered the
+    /// evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation.
+    /// For periodic evaluations, the time indicates when Config
     /// triggered the evaluation at the frequency that you specified (for
     /// example, every 24 hours).</p>
     pub ordering_timestamp: std::option::Option<smithy_types::Instant>,
@@ -2702,7 +2700,7 @@ pub mod evaluation {
         pub(crate) ordering_timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The type of AWS resource that was evaluated.</p>
+        /// <p>The type of Amazon Web Services resource that was evaluated.</p>
         pub fn compliance_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_resource_type = Some(input.into());
             self
@@ -2714,7 +2712,7 @@ pub mod evaluation {
             self.compliance_resource_type = input;
             self
         }
-        /// <p>The ID of the AWS resource that was evaluated.</p>
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
         pub fn compliance_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_resource_id = Some(input.into());
             self
@@ -2726,19 +2724,18 @@ pub mod evaluation {
             self.compliance_resource_id = input;
             self
         }
-        /// <p>Indicates whether the AWS resource complies with the AWS Config
+        /// <p>Indicates whether the Amazon Web Services resource complies with the Config
         /// rule that it was evaluated against.</p>
-        /// <p>For the <code>Evaluation</code> data type, AWS Config supports
+        /// <p>For the <code>Evaluation</code> data type, Config supports
         /// only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code> values. AWS Config does not support
+        /// <code>NOT_APPLICABLE</code> values. Config does not support
         /// the <code>INSUFFICIENT_DATA</code> value for this data
         /// type.</p>
-        /// <p>Similarly, AWS Config does not accept
+        /// <p>Similarly, Config does not accept
         /// <code>INSUFFICIENT_DATA</code> as the value for
         /// <code>ComplianceType</code> from a <code>PutEvaluations</code>
-        /// request. For example, an AWS Lambda function for a custom AWS Config
-        /// rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS
-        /// Config.</p>
+        /// request. For example, an Lambda function for a custom Config
+        /// rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
         pub fn compliance_type(mut self, input: crate::model::ComplianceType) -> Self {
             self.compliance_type = Some(input);
             self
@@ -2760,10 +2757,9 @@ pub mod evaluation {
             self.annotation = input;
             self
         }
-        /// <p>The time of the event in AWS Config that triggered the
-        /// evaluation. For event-based evaluations, the time indicates when AWS
-        /// Config created the configuration item that triggered the evaluation.
-        /// For periodic evaluations, the time indicates when AWS Config
+        /// <p>The time of the event in Config that triggered the
+        /// evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation.
+        /// For periodic evaluations, the time indicates when Config
         /// triggered the evaluation at the frequency that you specified (for
         /// example, every 24 hours).</p>
         pub fn ordering_timestamp(mut self, input: smithy_types::Instant) -> Self {
@@ -2796,39 +2792,38 @@ impl Evaluation {
     }
 }
 
-/// <p>The channel through which AWS Config delivers notifications and
+/// <p>The channel through which Config delivers notifications and
 /// updated configuration states.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliveryChannel {
-    /// <p>The name of the delivery channel. By default, AWS Config
+    /// <p>The name of the delivery channel. By default, Config
     /// assigns the name "default" when creating the delivery channel. To
     /// change the delivery channel name, you must use the
     /// DeleteDeliveryChannel action to delete your current delivery
     /// channel, and then you must use the PutDeliveryChannel command to
     /// create a delivery channel that has the desired name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon S3 bucket to which AWS Config delivers
+    /// <p>The name of the Amazon S3 bucket to which Config delivers
     /// configuration snapshots and configuration history files.</p>
-    /// <p>If you specify a bucket that belongs to another AWS account,
-    /// that bucket must have policies that grant access permissions to AWS
-    /// Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the AWS Config
+    /// <p>If you specify a bucket that belongs to another Amazon Web Services account,
+    /// that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the Config
     /// Developer Guide.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The prefix for the specified Amazon S3 bucket.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed key (CMK) used to encrypt objects delivered by AWS Config.
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS ) KMS key (KMS key) used to encrypt objects delivered by Config.
     /// Must belong to the same Region as the destination S3 bucket.</p>
     pub s3_kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-    /// AWS Config sends notifications about configuration
+    /// Config sends notifications about configuration
     /// changes.</p>
     /// <p>If you choose a topic from another account, the topic must have
-    /// policies that grant access permissions to AWS Config. For more
-    /// information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the AWS Config
+    /// policies that grant access permissions to Config. For more
+    /// information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the Config
     /// Developer Guide.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>The options for how often AWS Config delivers configuration
+    /// <p>The options for how often Config delivers configuration
     /// snapshots to the Amazon S3 bucket.</p>
     pub config_snapshot_delivery_properties:
         std::option::Option<crate::model::ConfigSnapshotDeliveryProperties>,
@@ -2863,7 +2858,7 @@ pub mod delivery_channel {
             std::option::Option<crate::model::ConfigSnapshotDeliveryProperties>,
     }
     impl Builder {
-        /// <p>The name of the delivery channel. By default, AWS Config
+        /// <p>The name of the delivery channel. By default, Config
         /// assigns the name "default" when creating the delivery channel. To
         /// change the delivery channel name, you must use the
         /// DeleteDeliveryChannel action to delete your current delivery
@@ -2877,11 +2872,10 @@ pub mod delivery_channel {
             self.name = input;
             self
         }
-        /// <p>The name of the Amazon S3 bucket to which AWS Config delivers
+        /// <p>The name of the Amazon S3 bucket to which Config delivers
         /// configuration snapshots and configuration history files.</p>
-        /// <p>If you specify a bucket that belongs to another AWS account,
-        /// that bucket must have policies that grant access permissions to AWS
-        /// Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the AWS Config
+        /// <p>If you specify a bucket that belongs to another Amazon Web Services account,
+        /// that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the Config
         /// Developer Guide.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
@@ -2906,7 +2900,7 @@ pub mod delivery_channel {
             self.s3_key_prefix = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed key (CMK) used to encrypt objects delivered by AWS Config.
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS ) KMS key (KMS key) used to encrypt objects delivered by Config.
         /// Must belong to the same Region as the destination S3 bucket.</p>
         pub fn s3_kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_kms_key_arn = Some(input.into());
@@ -2920,11 +2914,11 @@ pub mod delivery_channel {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-        /// AWS Config sends notifications about configuration
+        /// Config sends notifications about configuration
         /// changes.</p>
         /// <p>If you choose a topic from another account, the topic must have
-        /// policies that grant access permissions to AWS Config. For more
-        /// information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the AWS Config
+        /// policies that grant access permissions to Config. For more
+        /// information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the Config
         /// Developer Guide.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
@@ -2937,7 +2931,7 @@ pub mod delivery_channel {
             self.sns_topic_arn = input;
             self
         }
-        /// <p>The options for how often AWS Config delivers configuration
+        /// <p>The options for how often Config delivers configuration
         /// snapshots to the Amazon S3 bucket.</p>
         pub fn config_snapshot_delivery_properties(
             mut self,
@@ -2973,35 +2967,35 @@ impl DeliveryChannel {
     }
 }
 
-/// <p>Provides options for how often AWS Config delivers
+/// <p>Provides options for how often Config delivers
 /// configuration snapshots to the Amazon S3 bucket in your delivery
 /// channel.</p>
 /// <p>The frequency for a rule that triggers evaluations for your
-/// resources when AWS Config delivers the configuration snapshot is set
+/// resources when Config delivers the configuration snapshot is set
 /// by one of two values, depending on which is less frequent:</p>
 /// <ul>
 /// <li>
 /// <p>The value for the <code>deliveryFrequency</code>
 /// parameter within the delivery channel configuration, which
-/// sets how often AWS Config delivers configuration snapshots.
-/// This value also sets how often AWS Config invokes
-/// evaluations for AWS Config rules.</p>
+/// sets how often Config delivers configuration snapshots.
+/// This value also sets how often Config invokes
+/// evaluations for Config rules.</p>
 /// </li>
 /// <li>
 /// <p>The value for the
 /// <code>MaximumExecutionFrequency</code> parameter, which
-/// sets the maximum frequency with which AWS Config invokes
+/// sets the maximum frequency with which Config invokes
 /// evaluations for the rule. For more information, see <a>ConfigRule</a>.</p>
 /// </li>
 /// </ul>
 /// <p>If the <code>deliveryFrequency</code> value is less frequent
 /// than the <code>MaximumExecutionFrequency</code> value for a rule,
-/// AWS Config invokes the rule only as often as the
+/// Config invokes the rule only as often as the
 /// <code>deliveryFrequency</code> value.</p>
 /// <ol>
 /// <li>
 /// <p>For example, you want your rule to run evaluations when
-/// AWS Config delivers the configuration snapshot.</p>
+/// Config delivers the configuration snapshot.</p>
 /// </li>
 /// <li>
 /// <p>You specify the <code>MaximumExecutionFrequency</code>
@@ -3015,7 +3009,7 @@ impl DeliveryChannel {
 /// <li>
 /// <p>Because the value for <code>deliveryFrequency</code> is
 /// less frequent than <code>MaximumExecutionFrequency</code>,
-/// AWS Config invokes evaluations for the rule every 24 hours.
+/// Config invokes evaluations for the rule every 24 hours.
 /// </p>
 /// </li>
 /// </ol>
@@ -3023,13 +3017,12 @@ impl DeliveryChannel {
 /// to be at least as frequent as the <code>deliveryFrequency</code>
 /// value. You can view the <code>deliveryFrequency</code> value by
 /// using the <code>DescribeDeliveryChannnels</code> action.</p>
-/// <p>To update the <code>deliveryFrequency</code> with which AWS
-/// Config delivers your configuration snapshots, use the
+/// <p>To update the <code>deliveryFrequency</code> with which Config delivers your configuration snapshots, use the
 /// <code>PutDeliveryChannel</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigSnapshotDeliveryProperties {
-    /// <p>The frequency with which AWS Config delivers configuration
+    /// <p>The frequency with which Config delivers configuration
     /// snapshots.</p>
     pub delivery_frequency: std::option::Option<crate::model::MaximumExecutionFrequency>,
 }
@@ -3049,7 +3042,7 @@ pub mod config_snapshot_delivery_properties {
         pub(crate) delivery_frequency: std::option::Option<crate::model::MaximumExecutionFrequency>,
     }
     impl Builder {
-        /// <p>The frequency with which AWS Config delivers configuration
+        /// <p>The frequency with which Config delivers configuration
         /// snapshots.</p>
         pub fn delivery_frequency(
             mut self,
@@ -3081,18 +3074,18 @@ impl ConfigSnapshotDeliveryProperties {
 }
 
 /// <p>An object that represents the recording of configuration
-/// changes of an AWS resource.</p>
+/// changes of an Amazon Web Services resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationRecorder {
-    /// <p>The name of the recorder. By default, AWS Config automatically
+    /// <p>The name of the recorder. By default, Config automatically
     /// assigns the name "default" when creating the configuration recorder.
     /// You cannot change the assigned name.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the
-    /// AWS resources associated with the account.</p>
+    /// Amazon Web Services resources associated with the account.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the types of AWS resources for which AWS Config
+    /// <p>Specifies the types of Amazon Web Services resources for which Config
     /// records configuration changes.</p>
     pub recording_group: std::option::Option<crate::model::RecordingGroup>,
 }
@@ -3116,7 +3109,7 @@ pub mod configuration_recorder {
         pub(crate) recording_group: std::option::Option<crate::model::RecordingGroup>,
     }
     impl Builder {
-        /// <p>The name of the recorder. By default, AWS Config automatically
+        /// <p>The name of the recorder. By default, Config automatically
         /// assigns the name "default" when creating the configuration recorder.
         /// You cannot change the assigned name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3128,7 +3121,7 @@ pub mod configuration_recorder {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the
-        /// AWS resources associated with the account.</p>
+        /// Amazon Web Services resources associated with the account.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -3137,7 +3130,7 @@ pub mod configuration_recorder {
             self.role_arn = input;
             self
         }
-        /// <p>Specifies the types of AWS resources for which AWS Config
+        /// <p>Specifies the types of Amazon Web Services resources for which Config
         /// records configuration changes.</p>
         pub fn recording_group(mut self, input: crate::model::RecordingGroup) -> Self {
             self.recording_group = Some(input);
@@ -3167,75 +3160,75 @@ impl ConfigurationRecorder {
     }
 }
 
-/// <p>Specifies the types of AWS resource for which AWS Config
+/// <p>Specifies the types of Amazon Web Services resource for which Config
 /// records configuration changes.</p>
 /// <p>In the recording group, you specify whether all supported types
 /// or specific types of resources are recorded.</p>
-/// <p>By default, AWS Config records configuration changes for all
-/// supported types of regional resources that AWS Config discovers in
+/// <p>By default, Config records configuration changes for all
+/// supported types of regional resources that Config discovers in
 /// the region in which it is running. Regional resources are tied to a
 /// region and can be used only in that region. Examples of regional
 /// resources are EC2 instances and EBS volumes.</p>
-/// <p>You can also have AWS Config record configuration changes for
+/// <p>You can also have Config record configuration changes for
 /// supported types of global resources (for example, IAM resources).
 /// Global resources are not tied to an individual region and can be
 /// used in all regions.</p>
 /// <important>
 /// <p>The configuration details for any global resource are the
-/// same in all regions. If you customize AWS Config in multiple
+/// same in all regions. If you customize Config in multiple
 /// regions to record global resources, it will create multiple
 /// configuration items each time a global resource changes: one
 /// configuration item for each region. These configuration items
 /// will contain identical data. To prevent duplicate configuration
-/// items, you should consider customizing AWS Config in only one
+/// items, you should consider customizing Config in only one
 /// region to record global resources, unless you want the
 /// configuration items to be available in multiple
 /// regions.</p>
 /// </important>
-/// <p>If you don't want AWS Config to record all resources, you can
+/// <p>If you don't want Config to record all resources, you can
 /// specify which types of resources it will record with the
 /// <code>resourceTypes</code> parameter.</p>
 /// <p>For a list of supported resource types, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Resource Types</a>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources AWS Config Records</a>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources Config Records</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordingGroup {
-    /// <p>Specifies whether AWS Config records configuration changes for
+    /// <p>Specifies whether Config records configuration changes for
     /// every supported type of regional resource.</p>
-    /// <p>If you set this option to <code>true</code>, when AWS Config
+    /// <p>If you set this option to <code>true</code>, when Config
     /// adds support for a new type of regional resource, it starts
     /// recording resources of that type automatically.</p>
     /// <p>If you set this option to <code>true</code>, you cannot
     /// enumerate a list of <code>resourceTypes</code>.</p>
     pub all_supported: bool,
-    /// <p>Specifies whether AWS Config includes all supported types of
+    /// <p>Specifies whether Config includes all supported types of
     /// global resources (for example, IAM resources) with the resources
     /// that it records.</p>
     /// <p>Before you can set this option to <code>true</code>, you must
     /// set the <code>allSupported</code> option to
     /// <code>true</code>.</p>
-    /// <p>If you set this option to <code>true</code>, when AWS Config
+    /// <p>If you set this option to <code>true</code>, when Config
     /// adds support for a new type of global resource, it starts recording
     /// resources of that type automatically.</p>
     /// <p>The configuration details for any global resource are the same
     /// in all regions. To prevent duplicate configuration items, you should
-    /// consider customizing AWS Config in only one region to record global
+    /// consider customizing Config in only one region to record global
     /// resources.</p>
     pub include_global_resource_types: bool,
-    /// <p>A comma-separated list that specifies the types of AWS
-    /// resources for which AWS Config records configuration changes (for
+    /// <p>A comma-separated list that specifies the types of Amazon Web Services
+    /// resources for which Config records configuration changes (for
     /// example, <code>AWS::EC2::Instance</code> or
     /// <code>AWS::CloudTrail::Trail</code>).</p>
     /// <p>To record all configuration changes, you must
     /// set the <code>allSupported</code> option to
     /// <code>true</code>.</p>
-    /// <p>If you set this option to <code>false</code>, when AWS Config
+    /// <p>If you set this option to <code>false</code>, when Config
     /// adds support for a new type of resource, it will not record
     /// resources of that type unless you manually add that type to your
     /// recording group.</p>
     /// <p>For a list of valid <code>resourceTypes</code> values, see the
     /// <b>resourceType Value</b> column in
-    /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported AWS Resource Types</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
     pub resource_types: std::option::Option<std::vec::Vec<crate::model::ResourceType>>,
 }
 impl std::fmt::Debug for RecordingGroup {
@@ -3261,9 +3254,9 @@ pub mod recording_group {
         pub(crate) resource_types: std::option::Option<std::vec::Vec<crate::model::ResourceType>>,
     }
     impl Builder {
-        /// <p>Specifies whether AWS Config records configuration changes for
+        /// <p>Specifies whether Config records configuration changes for
         /// every supported type of regional resource.</p>
-        /// <p>If you set this option to <code>true</code>, when AWS Config
+        /// <p>If you set this option to <code>true</code>, when Config
         /// adds support for a new type of regional resource, it starts
         /// recording resources of that type automatically.</p>
         /// <p>If you set this option to <code>true</code>, you cannot
@@ -3276,18 +3269,18 @@ pub mod recording_group {
             self.all_supported = input;
             self
         }
-        /// <p>Specifies whether AWS Config includes all supported types of
+        /// <p>Specifies whether Config includes all supported types of
         /// global resources (for example, IAM resources) with the resources
         /// that it records.</p>
         /// <p>Before you can set this option to <code>true</code>, you must
         /// set the <code>allSupported</code> option to
         /// <code>true</code>.</p>
-        /// <p>If you set this option to <code>true</code>, when AWS Config
+        /// <p>If you set this option to <code>true</code>, when Config
         /// adds support for a new type of global resource, it starts recording
         /// resources of that type automatically.</p>
         /// <p>The configuration details for any global resource are the same
         /// in all regions. To prevent duplicate configuration items, you should
-        /// consider customizing AWS Config in only one region to record global
+        /// consider customizing Config in only one region to record global
         /// resources.</p>
         pub fn include_global_resource_types(mut self, input: bool) -> Self {
             self.include_global_resource_types = Some(input);
@@ -3355,7 +3348,7 @@ pub struct ConfigurationAggregator {
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time of the last update.</p>
     pub last_updated_time: std::option::Option<smithy_types::Instant>,
-    /// <p>AWS service that created the configuration aggregator.</p>
+    /// <p>Amazon Web Services service that created the configuration aggregator.</p>
     pub created_by: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConfigurationAggregator {
@@ -3487,7 +3480,7 @@ pub mod configuration_aggregator {
             self.last_updated_time = input;
             self
         }
-        /// <p>AWS service that created the configuration aggregator.</p>
+        /// <p>Amazon Web Services service that created the configuration aggregator.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.created_by = Some(input.into());
             self
@@ -3522,12 +3515,12 @@ impl ConfigurationAggregator {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationAggregationSource {
-    /// <p>ARN of the IAM role used to retrieve AWS Organization details
+    /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
     /// associated with the aggregator account.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The source regions being aggregated.</p>
     pub aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If true, aggregate existing AWS Config regions and future
+    /// <p>If true, aggregate existing Config regions and future
     /// regions.</p>
     pub all_aws_regions: bool,
 }
@@ -3551,7 +3544,7 @@ pub mod organization_aggregation_source {
         pub(crate) all_aws_regions: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>ARN of the IAM role used to retrieve AWS Organization details
+        /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
         /// associated with the aggregator account.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
@@ -3574,7 +3567,7 @@ pub mod organization_aggregation_source {
             self.aws_regions = input;
             self
         }
-        /// <p>If true, aggregate existing AWS Config regions and future
+        /// <p>If true, aggregate existing Config regions and future
         /// regions.</p>
         pub fn all_aws_regions(mut self, input: bool) -> Self {
             self.all_aws_regions = Some(input);
@@ -3608,7 +3601,7 @@ pub struct AccountAggregationSource {
     /// <p>The 12-digit account ID of the account being aggregated.
     /// </p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If true, aggregate existing AWS Config regions and future
+    /// <p>If true, aggregate existing Config regions and future
     /// regions.</p>
     pub all_aws_regions: bool,
     /// <p>The source regions being aggregated.</p>
@@ -3647,7 +3640,7 @@ pub mod account_aggregation_source {
             self.account_ids = input;
             self
         }
-        /// <p>If true, aggregate existing AWS Config regions and future
+        /// <p>If true, aggregate existing Config regions and future
         /// regions.</p>
         pub fn all_aws_regions(mut self, input: bool) -> Self {
             self.all_aws_regions = Some(input);
@@ -3687,34 +3680,33 @@ impl AccountAggregationSource {
     }
 }
 
-/// <p>An AWS Config rule represents an AWS Lambda function that you
-/// create for a custom rule or a predefined function for an AWS managed
+/// <p>An Config rule represents an Lambda function that you
+/// create for a custom rule or a predefined function for an Config managed
 /// rule. The function evaluates configuration items to assess whether
-/// your AWS resources comply with your desired configurations. This
-/// function can run when AWS Config detects a configuration change to
-/// an AWS resource and at a periodic frequency that you choose (for
+/// your Amazon Web Services resources comply with your desired configurations. This
+/// function can run when Config detects a configuration change to
+/// an Amazon Web Services resource and at a periodic frequency that you choose (for
 /// example, every 24 hours).</p>
 /// <note>
-/// <p>You can use the AWS CLI and AWS SDKs if you want to create
-/// a rule that triggers evaluations for your resources when AWS
-/// Config delivers the configuration snapshot. For more
+/// <p>You can use the Amazon Web Services CLI and Amazon Web Services SDKs if you want to create
+/// a rule that triggers evaluations for your resources when Config delivers the configuration snapshot. For more
 /// information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
 /// </note>
-/// <p>For more information about developing and using AWS Config
-/// rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource Configurations with AWS Config</a>
-/// in the <i>AWS Config Developer Guide</i>.</p>
+/// <p>For more information about developing and using Config
+/// rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Amazon Web Services resource Configurations with Config</a>
+/// in the <i>Config Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigRule {
-    /// <p>The name that you assign to the AWS Config rule. The name is
+    /// <p>The name that you assign to the Config rule. The name is
     /// required if you are adding a new rule.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Config
+    /// <p>The Amazon Resource Name (ARN) of the Config
     /// rule.</p>
     pub config_rule_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS Config rule.</p>
+    /// <p>The ID of the Config rule.</p>
     pub config_rule_id: std::option::Option<std::string::String>,
-    /// <p>The description that you provide for the AWS Config
+    /// <p>The description that you provide for the Config
     /// rule.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Defines which resources can trigger an evaluation for the rule.
@@ -3728,23 +3720,23 @@ pub struct ConfigRule {
     /// <p>The scope can be empty. </p>
     /// </note>
     pub scope: std::option::Option<crate::model::Scope>,
-    /// <p>Provides the rule owner (AWS or customer), the rule identifier,
-    /// and the notifications that cause the function to evaluate your AWS
+    /// <p>Provides the rule owner (Amazon Web Services or customer), the rule identifier,
+    /// and the notifications that cause the function to evaluate your Amazon Web Services
     /// resources.</p>
     pub source: std::option::Option<crate::model::Source>,
-    /// <p>A string, in JSON format, that is passed to the AWS Config rule
+    /// <p>A string, in JSON format, that is passed to the Config rule
     /// Lambda function.</p>
     pub input_parameters: std::option::Option<std::string::String>,
-    /// <p>The maximum frequency with which AWS Config runs evaluations
+    /// <p>The maximum frequency with which Config runs evaluations
     /// for a rule. You can specify a value for
     /// <code>MaximumExecutionFrequency</code> when:</p>
     /// <ul>
     /// <li>
-    /// <p>You are using an AWS managed rule that is triggered at
+    /// <p>You are using an Config managed rule that is triggered at
     /// a periodic frequency.</p>
     /// </li>
     /// <li>
-    /// <p>Your custom rule is triggered when AWS Config delivers
+    /// <p>Your custom rule is triggered when Config delivers
     /// the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
     /// </li>
     /// </ul>
@@ -3755,21 +3747,21 @@ pub struct ConfigRule {
     /// parameter.</p>
     /// </note>
     pub maximum_execution_frequency: std::option::Option<crate::model::MaximumExecutionFrequency>,
-    /// <p>Indicates whether the AWS Config rule is active or is currently
-    /// being deleted by AWS Config. It can also indicate the evaluation
-    /// status for the AWS Config rule.</p>
-    /// <p>AWS Config sets the state of the rule to
+    /// <p>Indicates whether the Config rule is active or is currently
+    /// being deleted by Config. It can also indicate the evaluation
+    /// status for the Config rule.</p>
+    /// <p>Config sets the state of the rule to
     /// <code>EVALUATING</code> temporarily after you use the
     /// <code>StartConfigRulesEvaluation</code> request to evaluate your
-    /// resources against the AWS Config rule.</p>
-    /// <p>AWS Config sets the state of the rule to
+    /// resources against the Config rule.</p>
+    /// <p>Config sets the state of the rule to
     /// <code>DELETING_RESULTS</code> temporarily after you use the
     /// <code>DeleteEvaluationResults</code> request to delete the
-    /// current evaluation results for the AWS Config rule.</p>
-    /// <p>AWS Config temporarily sets the state of a rule to
+    /// current evaluation results for the Config rule.</p>
+    /// <p>Config temporarily sets the state of a rule to
     /// <code>DELETING</code> after you use the
     /// <code>DeleteConfigRule</code> request to delete the rule. After
-    /// AWS Config deletes the rule, the rule and all of its evaluations are
+    /// Config deletes the rule, the rule and all of its evaluations are
     /// erased and are no longer available.</p>
     pub config_rule_state: std::option::Option<crate::model::ConfigRuleState>,
     /// <p>Service principal name of the service that created the
@@ -3819,7 +3811,7 @@ pub mod config_rule {
         pub(crate) created_by: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name that you assign to the AWS Config rule. The name is
+        /// <p>The name that you assign to the Config rule. The name is
         /// required if you are adding a new rule.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
@@ -3832,7 +3824,7 @@ pub mod config_rule {
             self.config_rule_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Config
+        /// <p>The Amazon Resource Name (ARN) of the Config
         /// rule.</p>
         pub fn config_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_arn = Some(input.into());
@@ -3845,7 +3837,7 @@ pub mod config_rule {
             self.config_rule_arn = input;
             self
         }
-        /// <p>The ID of the AWS Config rule.</p>
+        /// <p>The ID of the Config rule.</p>
         pub fn config_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_id = Some(input.into());
             self
@@ -3857,7 +3849,7 @@ pub mod config_rule {
             self.config_rule_id = input;
             self
         }
-        /// <p>The description that you provide for the AWS Config
+        /// <p>The description that you provide for the Config
         /// rule.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
@@ -3885,8 +3877,8 @@ pub mod config_rule {
             self.scope = input;
             self
         }
-        /// <p>Provides the rule owner (AWS or customer), the rule identifier,
-        /// and the notifications that cause the function to evaluate your AWS
+        /// <p>Provides the rule owner (Amazon Web Services or customer), the rule identifier,
+        /// and the notifications that cause the function to evaluate your Amazon Web Services
         /// resources.</p>
         pub fn source(mut self, input: crate::model::Source) -> Self {
             self.source = Some(input);
@@ -3896,7 +3888,7 @@ pub mod config_rule {
             self.source = input;
             self
         }
-        /// <p>A string, in JSON format, that is passed to the AWS Config rule
+        /// <p>A string, in JSON format, that is passed to the Config rule
         /// Lambda function.</p>
         pub fn input_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_parameters = Some(input.into());
@@ -3909,16 +3901,16 @@ pub mod config_rule {
             self.input_parameters = input;
             self
         }
-        /// <p>The maximum frequency with which AWS Config runs evaluations
+        /// <p>The maximum frequency with which Config runs evaluations
         /// for a rule. You can specify a value for
         /// <code>MaximumExecutionFrequency</code> when:</p>
         /// <ul>
         /// <li>
-        /// <p>You are using an AWS managed rule that is triggered at
+        /// <p>You are using an Config managed rule that is triggered at
         /// a periodic frequency.</p>
         /// </li>
         /// <li>
-        /// <p>Your custom rule is triggered when AWS Config delivers
+        /// <p>Your custom rule is triggered when Config delivers
         /// the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
         /// </li>
         /// </ul>
@@ -3942,21 +3934,21 @@ pub mod config_rule {
             self.maximum_execution_frequency = input;
             self
         }
-        /// <p>Indicates whether the AWS Config rule is active or is currently
-        /// being deleted by AWS Config. It can also indicate the evaluation
-        /// status for the AWS Config rule.</p>
-        /// <p>AWS Config sets the state of the rule to
+        /// <p>Indicates whether the Config rule is active or is currently
+        /// being deleted by Config. It can also indicate the evaluation
+        /// status for the Config rule.</p>
+        /// <p>Config sets the state of the rule to
         /// <code>EVALUATING</code> temporarily after you use the
         /// <code>StartConfigRulesEvaluation</code> request to evaluate your
-        /// resources against the AWS Config rule.</p>
-        /// <p>AWS Config sets the state of the rule to
+        /// resources against the Config rule.</p>
+        /// <p>Config sets the state of the rule to
         /// <code>DELETING_RESULTS</code> temporarily after you use the
         /// <code>DeleteEvaluationResults</code> request to delete the
-        /// current evaluation results for the AWS Config rule.</p>
-        /// <p>AWS Config temporarily sets the state of a rule to
+        /// current evaluation results for the Config rule.</p>
+        /// <p>Config temporarily sets the state of a rule to
         /// <code>DELETING</code> after you use the
         /// <code>DeleteConfigRule</code> request to delete the rule. After
-        /// AWS Config deletes the rule, the rule and all of its evaluations are
+        /// Config deletes the rule, the rule and all of its evaluations are
         /// erased and are no longer available.</p>
         pub fn config_rule_state(mut self, input: crate::model::ConfigRuleState) -> Self {
             self.config_rule_state = Some(input);
@@ -4064,24 +4056,22 @@ impl AsRef<str> for ConfigRuleState {
     }
 }
 
-/// <p>Provides the AWS Config rule owner (AWS or customer), the rule
-/// identifier, and the events that trigger the evaluation of your AWS
+/// <p>Provides the Config rule owner (Amazon Web Services or customer), the rule
+/// identifier, and the events that trigger the evaluation of your Amazon Web Services
 /// resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Source {
-    /// <p>Indicates whether AWS or the customer owns and manages the AWS
-    /// Config rule.</p>
+    /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
     pub owner: std::option::Option<crate::model::Owner>,
-    /// <p>For AWS Config managed rules, a predefined identifier from a
+    /// <p>For Config managed rules, a predefined identifier from a
     /// list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed
-    /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS Managed Config Rules</a>.</p>
+    /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
     /// <p>For custom rules, the identifier is the Amazon Resource Name
-    /// (ARN) of the rule's AWS Lambda function, such as
+    /// (ARN) of the rule's Lambda function, such as
     /// <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
     pub source_identifier: std::option::Option<std::string::String>,
-    /// <p>Provides the source and type of the event that causes AWS
-    /// Config to evaluate your AWS resources.</p>
+    /// <p>Provides the source and type of the event that causes Config to evaluate your Amazon Web Services resources.</p>
     pub source_details: std::option::Option<std::vec::Vec<crate::model::SourceDetail>>,
 }
 impl std::fmt::Debug for Source {
@@ -4104,8 +4094,7 @@ pub mod source {
         pub(crate) source_details: std::option::Option<std::vec::Vec<crate::model::SourceDetail>>,
     }
     impl Builder {
-        /// <p>Indicates whether AWS or the customer owns and manages the AWS
-        /// Config rule.</p>
+        /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
         pub fn owner(mut self, input: crate::model::Owner) -> Self {
             self.owner = Some(input);
             self
@@ -4114,11 +4103,11 @@ pub mod source {
             self.owner = input;
             self
         }
-        /// <p>For AWS Config managed rules, a predefined identifier from a
+        /// <p>For Config managed rules, a predefined identifier from a
         /// list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed
-        /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS Managed Config Rules</a>.</p>
+        /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
         /// <p>For custom rules, the identifier is the Amazon Resource Name
-        /// (ARN) of the rule's AWS Lambda function, such as
+        /// (ARN) of the rule's Lambda function, such as
         /// <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
         pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_identifier = Some(input.into());
@@ -4161,33 +4150,32 @@ impl Source {
     }
 }
 
-/// <p>Provides the source and the message types that trigger AWS
-/// Config to evaluate your AWS resources against a rule. It also
-/// provides the frequency with which you want AWS Config to run
+/// <p>Provides the source and the message types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also
+/// provides the frequency with which you want Config to run
 /// evaluations for the rule if the trigger type is periodic. You can
 /// specify the parameter values for <code>SourceDetail</code> only for
 /// custom rules. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceDetail {
-    /// <p>The source of the event, such as an AWS service, that triggers
-    /// AWS Config to evaluate your AWS resources.</p>
+    /// <p>The source of the event, such as an Amazon Web Services service, that triggers
+    /// Config to evaluate your Amazon Web Services resources.</p>
     pub event_source: std::option::Option<crate::model::EventSource>,
-    /// <p>The type of notification that triggers AWS Config to run an
+    /// <p>The type of notification that triggers Config to run an
     /// evaluation for a rule. You can specify the following notification
     /// types:</p>
     /// <ul>
     /// <li>
     /// <p>
     /// <code>ConfigurationItemChangeNotification</code> - Triggers
-    /// an evaluation when AWS Config delivers a configuration item
+    /// an evaluation when Config delivers a configuration item
     /// as a result of a resource change.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>OversizedConfigurationItemChangeNotification</code>
-    /// - Triggers an evaluation when AWS Config delivers an
-    /// oversized configuration item. AWS Config may generate this
+    /// - Triggers an evaluation when Config delivers an
+    /// oversized configuration item. Config may generate this
     /// notification type when a resource changes and the
     /// notification exceeds the maximum size allowed by Amazon
     /// SNS.</p>
@@ -4201,7 +4189,7 @@ pub struct SourceDetail {
     /// <li>
     /// <p>
     /// <code>ConfigurationSnapshotDeliveryCompleted</code> -
-    /// Triggers a periodic evaluation when AWS Config delivers a
+    /// Triggers a periodic evaluation when Config delivers a
     /// configuration snapshot.</p>
     /// </li>
     /// </ul>
@@ -4210,7 +4198,7 @@ pub struct SourceDetail {
     /// <code>ConfigurationItemChangeNotification</code> and one for
     /// <code>OversizedConfigurationItemChangeNotification</code>.</p>
     pub message_type: std::option::Option<crate::model::MessageType>,
-    /// <p>The frequency at which you want AWS Config to run evaluations
+    /// <p>The frequency at which you want Config to run evaluations
     /// for a custom rule with a periodic trigger. If you specify a value
     /// for <code>MaximumExecutionFrequency</code>, then
     /// <code>MessageType</code> must use the
@@ -4220,9 +4208,9 @@ pub struct SourceDetail {
     /// every 24 hours. To change the frequency, specify a valid value
     /// for the <code>MaximumExecutionFrequency</code>
     /// parameter.</p>
-    /// <p>Based on the valid value you choose, AWS Config runs
+    /// <p>Based on the valid value you choose, Config runs
     /// evaluations once for each valid value. For example, if you
-    /// choose <code>Three_Hours</code>, AWS Config runs evaluations
+    /// choose <code>Three_Hours</code>, Config runs evaluations
     /// once every three hours. In this case, <code>Three_Hours</code>
     /// is the frequency of this rule. </p>
     /// </note>
@@ -4252,8 +4240,8 @@ pub mod source_detail {
             std::option::Option<crate::model::MaximumExecutionFrequency>,
     }
     impl Builder {
-        /// <p>The source of the event, such as an AWS service, that triggers
-        /// AWS Config to evaluate your AWS resources.</p>
+        /// <p>The source of the event, such as an Amazon Web Services service, that triggers
+        /// Config to evaluate your Amazon Web Services resources.</p>
         pub fn event_source(mut self, input: crate::model::EventSource) -> Self {
             self.event_source = Some(input);
             self
@@ -4265,21 +4253,21 @@ pub mod source_detail {
             self.event_source = input;
             self
         }
-        /// <p>The type of notification that triggers AWS Config to run an
+        /// <p>The type of notification that triggers Config to run an
         /// evaluation for a rule. You can specify the following notification
         /// types:</p>
         /// <ul>
         /// <li>
         /// <p>
         /// <code>ConfigurationItemChangeNotification</code> - Triggers
-        /// an evaluation when AWS Config delivers a configuration item
+        /// an evaluation when Config delivers a configuration item
         /// as a result of a resource change.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>OversizedConfigurationItemChangeNotification</code>
-        /// - Triggers an evaluation when AWS Config delivers an
-        /// oversized configuration item. AWS Config may generate this
+        /// - Triggers an evaluation when Config delivers an
+        /// oversized configuration item. Config may generate this
         /// notification type when a resource changes and the
         /// notification exceeds the maximum size allowed by Amazon
         /// SNS.</p>
@@ -4293,7 +4281,7 @@ pub mod source_detail {
         /// <li>
         /// <p>
         /// <code>ConfigurationSnapshotDeliveryCompleted</code> -
-        /// Triggers a periodic evaluation when AWS Config delivers a
+        /// Triggers a periodic evaluation when Config delivers a
         /// configuration snapshot.</p>
         /// </li>
         /// </ul>
@@ -4312,7 +4300,7 @@ pub mod source_detail {
             self.message_type = input;
             self
         }
-        /// <p>The frequency at which you want AWS Config to run evaluations
+        /// <p>The frequency at which you want Config to run evaluations
         /// for a custom rule with a periodic trigger. If you specify a value
         /// for <code>MaximumExecutionFrequency</code>, then
         /// <code>MessageType</code> must use the
@@ -4322,9 +4310,9 @@ pub mod source_detail {
         /// every 24 hours. To change the frequency, specify a valid value
         /// for the <code>MaximumExecutionFrequency</code>
         /// parameter.</p>
-        /// <p>Based on the valid value you choose, AWS Config runs
+        /// <p>Based on the valid value you choose, Config runs
         /// evaluations once for each valid value. For example, if you
-        /// choose <code>Three_Hours</code>, AWS Config runs evaluations
+        /// choose <code>Three_Hours</code>, Config runs evaluations
         /// once every three hours. In this case, <code>Three_Hours</code>
         /// is the frequency of this rule. </p>
         /// </note>
@@ -4529,7 +4517,7 @@ impl AsRef<str> for Owner {
     }
 }
 
-/// <p>Defines which resources trigger an evaluation for an AWS Config
+/// <p>Defines which resources trigger an evaluation for an Config
 /// rule. The scope can include one or more resource types, a
 /// combination of a tag key and value, or a combination of one resource
 /// type and one resource ID. Specify a scope to constrain which
@@ -4539,20 +4527,20 @@ impl AsRef<str> for Owner {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scope {
-    /// <p>The resource types of only those AWS resources that you want to
+    /// <p>The resource types of only those Amazon Web Services resources that you want to
     /// trigger an evaluation for the rule. You can only specify one type if
     /// you also specify a resource ID for
     /// <code>ComplianceResourceId</code>.</p>
     pub compliance_resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The tag key that is applied to only those AWS resources that
+    /// <p>The tag key that is applied to only those Amazon Web Services resources that
     /// you want to trigger an evaluation for the rule.</p>
     pub tag_key: std::option::Option<std::string::String>,
-    /// <p>The tag value applied to only those AWS resources that you want
+    /// <p>The tag value applied to only those Amazon Web Services resources that you want
     /// to trigger an evaluation for the rule. If you specify a value for
     /// <code>TagValue</code>, you must also specify a value for
     /// <code>TagKey</code>.</p>
     pub tag_value: std::option::Option<std::string::String>,
-    /// <p>The ID of the only AWS resource that you want to trigger an
+    /// <p>The ID of the only Amazon Web Services resource that you want to trigger an
     /// evaluation for the rule. If you specify a resource ID, you must
     /// specify one resource type for
     /// <code>ComplianceResourceTypes</code>.</p>
@@ -4594,7 +4582,7 @@ pub mod scope {
             self.compliance_resource_types = input;
             self
         }
-        /// <p>The tag key that is applied to only those AWS resources that
+        /// <p>The tag key that is applied to only those Amazon Web Services resources that
         /// you want to trigger an evaluation for the rule.</p>
         pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.tag_key = Some(input.into());
@@ -4604,7 +4592,7 @@ pub mod scope {
             self.tag_key = input;
             self
         }
-        /// <p>The tag value applied to only those AWS resources that you want
+        /// <p>The tag value applied to only those Amazon Web Services resources that you want
         /// to trigger an evaluation for the rule. If you specify a value for
         /// <code>TagValue</code>, you must also specify a value for
         /// <code>TagKey</code>.</p>
@@ -4616,7 +4604,7 @@ pub mod scope {
             self.tag_value = input;
             self
         }
-        /// <p>The ID of the only AWS resource that you want to trigger an
+        /// <p>The ID of the only Amazon Web Services resource that you want to trigger an
         /// evaluation for the rule. If you specify a resource ID, you must
         /// specify one resource type for
         /// <code>ComplianceResourceTypes</code>.</p>
@@ -4852,8 +4840,7 @@ impl StoredQueryMetadata {
     }
 }
 
-/// <p>The details that identify a resource that is discovered by AWS
-/// Config, including the resource type, ID, and (if available) the
+/// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the
 /// custom resource name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4954,7 +4941,7 @@ impl ResourceIdentifier {
     }
 }
 
-/// <p>The details that identify a resource that is collected by AWS Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.</p>
+/// <p>The details that identify a resource that is collected by Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregateResourceIdentifier {
@@ -4962,11 +4949,11 @@ pub struct AggregateResourceIdentifier {
     pub source_account_id: std::option::Option<std::string::String>,
     /// <p>The source region where data is aggregated.</p>
     pub source_region: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS resource.</p>
+    /// <p>The ID of the Amazon Web Services resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The type of the AWS resource.</p>
+    /// <p>The type of the Amazon Web Services resource.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>The name of the AWS resource.</p>
+    /// <p>The name of the Amazon Web Services resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AggregateResourceIdentifier {
@@ -5017,7 +5004,7 @@ pub mod aggregate_resource_identifier {
             self.source_region = input;
             self
         }
-        /// <p>The ID of the AWS resource.</p>
+        /// <p>The ID of the Amazon Web Services resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
@@ -5026,7 +5013,7 @@ pub mod aggregate_resource_identifier {
             self.resource_id = input;
             self
         }
-        /// <p>The type of the AWS resource.</p>
+        /// <p>The type of the Amazon Web Services resource.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
@@ -5038,7 +5025,7 @@ pub mod aggregate_resource_identifier {
             self.resource_type = input;
             self
         }
-        /// <p>The name of the AWS resource.</p>
+        /// <p>The name of the Amazon Web Services resource.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_name = Some(input.into());
             self
@@ -5168,7 +5155,7 @@ impl ResourceFilters {
 pub struct ConfigurationItem {
     /// <p>The version number of the resource configuration.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The 12-digit AWS account ID associated with the
+    /// <p>The 12-digit Amazon Web Services account ID associated with the
     /// resource.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The time when the configuration recording was
@@ -5207,7 +5194,7 @@ pub struct ConfigurationItem {
     pub configuration_item_md5_hash: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) associated with the resource.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The type of AWS resource.</p>
+    /// <p>The type of Amazon Web Services resource.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The ID of the resource (for example,
     /// <code>sg-xxxxxx</code>).</p>
@@ -5227,16 +5214,16 @@ pub struct ConfigurationItem {
     /// <p>A list of CloudTrail event IDs.</p>
     /// <p>A populated field indicates that the current configuration was
     /// initiated by the events recorded in the CloudTrail log. For more
-    /// information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is AWS CloudTrail</a>.</p>
+    /// information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is CloudTrail</a>.</p>
     /// <p>An empty field indicates that the current configuration was not
     /// initiated by any event. As of Version 1.3, the relatedEvents field is empty.
-    /// You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the resource.</p>
+    /// You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the resource.</p>
     pub related_events: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of related AWS resources.</p>
+    /// <p>A list of related Amazon Web Services resources.</p>
     pub relationships: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
     /// <p>The description of the resource configuration.</p>
     pub configuration: std::option::Option<std::string::String>,
-    /// <p>Configuration attributes that AWS Config returns for certain
+    /// <p>Configuration attributes that Config returns for certain
     /// resource types to supplement the information returned for the
     /// <code>configuration</code> parameter.</p>
     pub supplementary_configuration:
@@ -5315,7 +5302,7 @@ pub mod configuration_item {
             self.version = input;
             self
         }
-        /// <p>The 12-digit AWS account ID associated with the
+        /// <p>The 12-digit Amazon Web Services account ID associated with the
         /// resource.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
@@ -5414,7 +5401,7 @@ pub mod configuration_item {
             self.arn = input;
             self
         }
-        /// <p>The type of AWS resource.</p>
+        /// <p>The type of Amazon Web Services resource.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
@@ -5822,7 +5809,7 @@ pub struct OrganizationConformancePackDetailedStatus {
     /// When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account.   
     /// Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
     /// </p>
-    /// <p> AWS Config sets the state of the conformance pack to:</p>
+    /// <p> Config sets the state of the conformance pack to:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -5923,7 +5910,7 @@ pub mod organization_conformance_pack_detailed_status {
         /// When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account.   
         /// Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
         /// </p>
-        /// <p> AWS Config sets the state of the conformance pack to:</p>
+        /// <p> Config sets the state of the conformance pack to:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6120,7 +6107,7 @@ pub struct OrganizationResourceDetailedStatusFilters {
     /// When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account.   
     /// Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
     /// </p>
-    /// <p> AWS Config sets the state of the conformance pack to:</p>
+    /// <p> Config sets the state of the conformance pack to:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -6193,7 +6180,7 @@ pub mod organization_resource_detailed_status_filters {
         /// When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account.   
         /// Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
         /// </p>
-        /// <p> AWS Config sets the state of the conformance pack to:</p>
+        /// <p> Config sets the state of the conformance pack to:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6272,7 +6259,7 @@ pub struct MemberAccountStatus {
     /// When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account.   
     /// Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
     /// </p>
-    /// <p> AWS Config sets the state of the rule to:</p>
+    /// <p> Config sets the state of the rule to:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -6375,7 +6362,7 @@ pub mod member_account_status {
         /// When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account.   
         /// Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
         /// </p>
-        /// <p> AWS Config sets the state of the rule to:</p>
+        /// <p> Config sets the state of the rule to:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6573,7 +6560,7 @@ pub struct StatusDetailFilters {
     /// When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account.   
     /// Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
     /// </p>
-    /// <p>AWS Config sets the state of the rule to:</p>
+    /// <p>Config sets the state of the rule to:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -6650,7 +6637,7 @@ pub mod status_detail_filters {
         /// When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account.   
         /// Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
         /// </p>
-        /// <p>AWS Config sets the state of the rule to:</p>
+        /// <p>Config sets the state of the rule to:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6914,7 +6901,7 @@ impl AsRef<str> for ConformancePackComplianceType {
     }
 }
 
-/// <p>The details of a conformance pack evaluation. Provides AWS Config rule and AWS resource type that was evaluated, the compliance of the conformance pack, related time stamps, and supplementary information. </p>
+/// <p>The details of a conformance pack evaluation. Provides Config rule and Amazon Web Services resource type that was evaluated, the compliance of the conformance pack, related time stamps, and supplementary information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConformancePackEvaluationResult {
@@ -6922,9 +6909,9 @@ pub struct ConformancePackEvaluationResult {
     pub compliance_type: std::option::Option<crate::model::ConformancePackComplianceType>,
     /// <p>Uniquely identifies an evaluation result.</p>
     pub evaluation_result_identifier: std::option::Option<crate::model::EvaluationResultIdentifier>,
-    /// <p>The time when AWS Config rule evaluated AWS resource.</p>
+    /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
     pub config_rule_invoked_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The time when AWS Config recorded the evaluation result. </p>
+    /// <p>The time when Config recorded the evaluation result. </p>
     pub result_recorded_time: std::option::Option<smithy_types::Instant>,
     /// <p>Supplementary information about how the evaluation determined the compliance. </p>
     pub annotation: std::option::Option<std::string::String>,
@@ -6988,7 +6975,7 @@ pub mod conformance_pack_evaluation_result {
             self.evaluation_result_identifier = input;
             self
         }
-        /// <p>The time when AWS Config rule evaluated AWS resource.</p>
+        /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
         pub fn config_rule_invoked_time(mut self, input: smithy_types::Instant) -> Self {
             self.config_rule_invoked_time = Some(input);
             self
@@ -7000,7 +6987,7 @@ pub mod conformance_pack_evaluation_result {
             self.config_rule_invoked_time = input;
             self
         }
-        /// <p>The time when AWS Config recorded the evaluation result. </p>
+        /// <p>The time when Config recorded the evaluation result. </p>
         pub fn result_recorded_time(mut self, input: smithy_types::Instant) -> Self {
             self.result_recorded_time = Some(input);
             self
@@ -7044,13 +7031,12 @@ impl ConformancePackEvaluationResult {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationResultIdentifier {
-    /// <p>Identifies an AWS Config rule used to evaluate an AWS resource,
+    /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource,
     /// and provides the type and ID of the evaluated resource.</p>
     pub evaluation_result_qualifier: std::option::Option<crate::model::EvaluationResultQualifier>,
-    /// <p>The time of the event that triggered the evaluation of your AWS
-    /// resources. The time can indicate when AWS Config delivered a
-    /// configuration item change notification, or it can indicate when AWS
-    /// Config delivered the configuration snapshot, depending on which
+    /// <p>The time of the event that triggered the evaluation of your Amazon Web Services
+    /// resources. The time can indicate when Config delivered a
+    /// configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which
     /// event triggered the evaluation.</p>
     pub ordering_timestamp: std::option::Option<smithy_types::Instant>,
 }
@@ -7076,7 +7062,7 @@ pub mod evaluation_result_identifier {
         pub(crate) ordering_timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>Identifies an AWS Config rule used to evaluate an AWS resource,
+        /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource,
         /// and provides the type and ID of the evaluated resource.</p>
         pub fn evaluation_result_qualifier(
             mut self,
@@ -7092,10 +7078,9 @@ pub mod evaluation_result_identifier {
             self.evaluation_result_qualifier = input;
             self
         }
-        /// <p>The time of the event that triggered the evaluation of your AWS
-        /// resources. The time can indicate when AWS Config delivered a
-        /// configuration item change notification, or it can indicate when AWS
-        /// Config delivered the configuration snapshot, depending on which
+        /// <p>The time of the event that triggered the evaluation of your Amazon Web Services
+        /// resources. The time can indicate when Config delivered a
+        /// configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which
         /// event triggered the evaluation.</p>
         pub fn ordering_timestamp(mut self, input: smithy_types::Instant) -> Self {
             self.ordering_timestamp = Some(input);
@@ -7124,18 +7109,18 @@ impl EvaluationResultIdentifier {
     }
 }
 
-/// <p>Identifies an AWS Config rule that evaluated an AWS resource,
+/// <p>Identifies an Config rule that evaluated an Amazon Web Services resource,
 /// and provides the type and ID of the resource that the rule
 /// evaluated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationResultQualifier {
-    /// <p>The name of the AWS Config rule that was used in the
+    /// <p>The name of the Config rule that was used in the
     /// evaluation.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>The type of AWS resource that was evaluated.</p>
+    /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the evaluated AWS resource.</p>
+    /// <p>The ID of the evaluated Amazon Web Services resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EvaluationResultQualifier {
@@ -7158,7 +7143,7 @@ pub mod evaluation_result_qualifier {
         pub(crate) resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule that was used in the
+        /// <p>The name of the Config rule that was used in the
         /// evaluation.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
@@ -7171,7 +7156,7 @@ pub mod evaluation_result_qualifier {
             self.config_rule_name = input;
             self
         }
-        /// <p>The type of AWS resource that was evaluated.</p>
+        /// <p>The type of Amazon Web Services resource that was evaluated.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
@@ -7183,7 +7168,7 @@ pub mod evaluation_result_qualifier {
             self.resource_type = input;
             self
         }
-        /// <p>The ID of the evaluated AWS resource.</p>
+        /// <p>The ID of the evaluated Amazon Web Services resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
@@ -7209,11 +7194,11 @@ impl EvaluationResultQualifier {
     }
 }
 
-/// <p>Filters a conformance pack by AWS Config rule names, compliance types, AWS resource types, and resource IDs.</p>
+/// <p>Filters a conformance pack by Config rule names, compliance types, Amazon Web Services resource types, and resource IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConformancePackEvaluationFilters {
-    /// <p>Filters the results by AWS Config rule names.</p>
+    /// <p>Filters the results by Config rule names.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
@@ -7321,15 +7306,15 @@ impl ConformancePackEvaluationFilters {
     }
 }
 
-/// <p>The number of AWS resources of a specific type that are
+/// <p>The number of Amazon Web Services resources of a specific type that are
 /// compliant or noncompliant, up to a maximum of 100 for
 /// each.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceSummaryByResourceType {
-    /// <p>The type of AWS resource.</p>
+    /// <p>The type of Amazon Web Services resource.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The number of AWS resources that are compliant or noncompliant,
+    /// <p>The number of Amazon Web Services resources that are compliant or noncompliant,
     /// up to a maximum of 100 for each.</p>
     pub compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
 }
@@ -7351,7 +7336,7 @@ pub mod compliance_summary_by_resource_type {
         pub(crate) compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
     }
     impl Builder {
-        /// <p>The type of AWS resource.</p>
+        /// <p>The type of Amazon Web Services resource.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
@@ -7363,7 +7348,7 @@ pub mod compliance_summary_by_resource_type {
             self.resource_type = input;
             self
         }
-        /// <p>The number of AWS resources that are compliant or noncompliant,
+        /// <p>The number of Amazon Web Services resources that are compliant or noncompliant,
         /// up to a maximum of 100 for each.</p>
         pub fn compliance_summary(mut self, input: crate::model::ComplianceSummary) -> Self {
             self.compliance_summary = Some(input);
@@ -7392,20 +7377,20 @@ impl ComplianceSummaryByResourceType {
     }
 }
 
-/// <p>The number of AWS Config rules or AWS resources that are
+/// <p>The number of Config rules or Amazon Web Services resources that are
 /// compliant and noncompliant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceSummary {
-    /// <p>The number of AWS Config rules or AWS resources that are
+    /// <p>The number of Config rules or Amazon Web Services resources that are
     /// compliant, up to a maximum of 25 for rules and 100 for
     /// resources.</p>
     pub compliant_resource_count: std::option::Option<crate::model::ComplianceContributorCount>,
-    /// <p>The number of AWS Config rules or AWS resources that are
+    /// <p>The number of Config rules or Amazon Web Services resources that are
     /// noncompliant, up to a maximum of 25 for rules and 100 for
     /// resources.</p>
     pub non_compliant_resource_count: std::option::Option<crate::model::ComplianceContributorCount>,
-    /// <p>The time that AWS Config created the compliance
+    /// <p>The time that Config created the compliance
     /// summary.</p>
     pub compliance_summary_timestamp: std::option::Option<smithy_types::Instant>,
 }
@@ -7437,7 +7422,7 @@ pub mod compliance_summary {
         pub(crate) compliance_summary_timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The number of AWS Config rules or AWS resources that are
+        /// <p>The number of Config rules or Amazon Web Services resources that are
         /// compliant, up to a maximum of 25 for rules and 100 for
         /// resources.</p>
         pub fn compliant_resource_count(
@@ -7454,7 +7439,7 @@ pub mod compliance_summary {
             self.compliant_resource_count = input;
             self
         }
-        /// <p>The number of AWS Config rules or AWS resources that are
+        /// <p>The number of Config rules or Amazon Web Services resources that are
         /// noncompliant, up to a maximum of 25 for rules and 100 for
         /// resources.</p>
         pub fn non_compliant_resource_count(
@@ -7471,7 +7456,7 @@ pub mod compliance_summary {
             self.non_compliant_resource_count = input;
             self
         }
-        /// <p>The time that AWS Config created the compliance
+        /// <p>The time that Config created the compliance
         /// summary.</p>
         pub fn compliance_summary_timestamp(mut self, input: smithy_types::Instant) -> Self {
             self.compliance_summary_timestamp = Some(input);
@@ -7501,13 +7486,13 @@ impl ComplianceSummary {
     }
 }
 
-/// <p>The number of AWS resources or AWS Config rules responsible for
+/// <p>The number of Amazon Web Services resources or Config rules responsible for
 /// the current compliance of the item, up to a maximum
 /// number.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceContributorCount {
-    /// <p>The number of AWS resources or AWS Config rules responsible for
+    /// <p>The number of Amazon Web Services resources or Config rules responsible for
     /// the current compliance of the item.</p>
     pub capped_count: i32,
     /// <p>Indicates whether the maximum count is reached.</p>
@@ -7531,7 +7516,7 @@ pub mod compliance_contributor_count {
         pub(crate) cap_exceeded: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The number of AWS resources or AWS Config rules responsible for
+        /// <p>The number of Amazon Web Services resources or Config rules responsible for
         /// the current compliance of the item.</p>
         pub fn capped_count(mut self, input: i32) -> Self {
             self.capped_count = Some(input);
@@ -7566,7 +7551,7 @@ impl ComplianceContributorCount {
     }
 }
 
-/// <p>The details of an AWS Config evaluation. Provides the AWS
+/// <p>The details of an Config evaluation. Provides the Amazon Web Services
 /// resource that was evaluated, the compliance of the resource, related
 /// time stamps, and supplementary information.</p>
 #[non_exhaustive]
@@ -7574,25 +7559,24 @@ impl ComplianceContributorCount {
 pub struct EvaluationResult {
     /// <p>Uniquely identifies the evaluation result.</p>
     pub evaluation_result_identifier: std::option::Option<crate::model::EvaluationResultIdentifier>,
-    /// <p>Indicates whether the AWS resource complies with the AWS Config
+    /// <p>Indicates whether the Amazon Web Services resource complies with the Config
     /// rule that evaluated it.</p>
-    /// <p>For the <code>EvaluationResult</code> data type, AWS Config
+    /// <p>For the <code>EvaluationResult</code> data type, Config
     /// supports only the <code>COMPLIANT</code>,
     /// <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values.
-    /// AWS Config does not support the <code>INSUFFICIENT_DATA</code> value
+    /// Config does not support the <code>INSUFFICIENT_DATA</code> value
     /// for the <code>EvaluationResult</code> data type.</p>
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
-    /// <p>The time when AWS Config recorded the evaluation
+    /// <p>The time when Config recorded the evaluation
     /// result.</p>
     pub result_recorded_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The time when the AWS Config rule evaluated the AWS
+    /// <p>The time when the Config rule evaluated the Amazon Web Services
     /// resource.</p>
     pub config_rule_invoked_time: std::option::Option<smithy_types::Instant>,
     /// <p>Supplementary information about how the evaluation determined
     /// the compliance.</p>
     pub annotation: std::option::Option<std::string::String>,
-    /// <p>An encrypted token that associates an evaluation with an AWS
-    /// Config rule. The token identifies the rule, the AWS resource being
+    /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being
     /// evaluated, and the event that triggered the evaluation.</p>
     pub result_token: std::option::Option<std::string::String>,
 }
@@ -7641,12 +7625,12 @@ pub mod evaluation_result {
             self.evaluation_result_identifier = input;
             self
         }
-        /// <p>Indicates whether the AWS resource complies with the AWS Config
+        /// <p>Indicates whether the Amazon Web Services resource complies with the Config
         /// rule that evaluated it.</p>
-        /// <p>For the <code>EvaluationResult</code> data type, AWS Config
+        /// <p>For the <code>EvaluationResult</code> data type, Config
         /// supports only the <code>COMPLIANT</code>,
         /// <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values.
-        /// AWS Config does not support the <code>INSUFFICIENT_DATA</code> value
+        /// Config does not support the <code>INSUFFICIENT_DATA</code> value
         /// for the <code>EvaluationResult</code> data type.</p>
         pub fn compliance_type(mut self, input: crate::model::ComplianceType) -> Self {
             self.compliance_type = Some(input);
@@ -7659,7 +7643,7 @@ pub mod evaluation_result {
             self.compliance_type = input;
             self
         }
-        /// <p>The time when AWS Config recorded the evaluation
+        /// <p>The time when Config recorded the evaluation
         /// result.</p>
         pub fn result_recorded_time(mut self, input: smithy_types::Instant) -> Self {
             self.result_recorded_time = Some(input);
@@ -7672,7 +7656,7 @@ pub mod evaluation_result {
             self.result_recorded_time = input;
             self
         }
-        /// <p>The time when the AWS Config rule evaluated the AWS
+        /// <p>The time when the Config rule evaluated the Amazon Web Services
         /// resource.</p>
         pub fn config_rule_invoked_time(mut self, input: smithy_types::Instant) -> Self {
             self.config_rule_invoked_time = Some(input);
@@ -7695,8 +7679,7 @@ pub mod evaluation_result {
             self.annotation = input;
             self
         }
-        /// <p>An encrypted token that associates an evaluation with an AWS
-        /// Config rule. The token identifies the rule, the AWS resource being
+        /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being
         /// evaluated, and the event that triggered the evaluation.</p>
         pub fn result_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_token = Some(input.into());
@@ -7844,7 +7827,7 @@ impl AsRef<str> for ResourceCountGroupKey {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceCountFilters {
-    /// <p>The type of the AWS resource.</p>
+    /// <p>The type of the Amazon Web Services resource.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The 12-digit ID of the account.</p>
     pub account_id: std::option::Option<std::string::String>,
@@ -7871,7 +7854,7 @@ pub mod resource_count_filters {
         pub(crate) region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of the AWS resource.</p>
+        /// <p>The type of the Amazon Web Services resource.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
@@ -7925,7 +7908,7 @@ pub struct AggregateConformancePackComplianceSummary {
     /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
     pub compliance_summary:
         std::option::Option<crate::model::AggregateConformancePackComplianceCount>,
-    /// <p>Groups the result based on AWS Account ID or AWS Region.</p>
+    /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub group_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AggregateConformancePackComplianceSummary {
@@ -7962,7 +7945,7 @@ pub mod aggregate_conformance_pack_compliance_summary {
             self.compliance_summary = input;
             self
         }
-        /// <p>Groups the result based on AWS Account ID or AWS Region.</p>
+        /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_name = Some(input.into());
             self
@@ -8118,9 +8101,9 @@ impl AsRef<str> for AggregateConformancePackComplianceSummaryGroupKey {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregateConformancePackComplianceSummaryFilters {
-    /// <p>The 12-digit AWS account ID of the source account.</p>
+    /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The source AWS Region from where the data is aggregated.</p>
+    /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub aws_region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AggregateConformancePackComplianceSummaryFilters {
@@ -8141,7 +8124,7 @@ pub mod aggregate_conformance_pack_compliance_summary_filters {
         pub(crate) aws_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The 12-digit AWS account ID of the source account.</p>
+        /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -8150,7 +8133,7 @@ pub mod aggregate_conformance_pack_compliance_summary_filters {
             self.account_id = input;
             self
         }
-        /// <p>The source AWS Region from where the data is aggregated.</p>
+        /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_region = Some(input.into());
             self
@@ -8184,7 +8167,7 @@ pub struct AggregateComplianceCount {
     /// <p>The 12-digit account ID or region based on the GroupByKey
     /// value.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The number of compliant and noncompliant AWS Config
+    /// <p>The number of compliant and noncompliant Config
     /// rules.</p>
     pub compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
 }
@@ -8216,7 +8199,7 @@ pub mod aggregate_compliance_count {
             self.group_name = input;
             self
         }
-        /// <p>The number of compliant and noncompliant AWS Config
+        /// <p>The number of compliant and noncompliant Config
         /// rules.</p>
         pub fn compliance_summary(mut self, input: crate::model::ComplianceSummary) -> Self {
             self.compliance_summary = Some(input);
@@ -8357,8 +8340,8 @@ impl ConfigRuleComplianceSummaryFilters {
     }
 }
 
-/// <p>The details of an AWS Config evaluation for an account ID and
-/// region in an aggregator. Provides the AWS resource that was
+/// <p>The details of an Config evaluation for an account ID and
+/// region in an aggregator. Provides the Amazon Web Services resource that was
 /// evaluated, the compliance of the resource, related time stamps, and
 /// supplementary information. </p>
 #[non_exhaustive]
@@ -8367,16 +8350,15 @@ pub struct AggregateEvaluationResult {
     /// <p>Uniquely identifies the evaluation result.</p>
     pub evaluation_result_identifier: std::option::Option<crate::model::EvaluationResultIdentifier>,
     /// <p>The resource compliance status.</p>
-    /// <p>For the <code>AggregationEvaluationResult</code> data type, AWS
-    /// Config supports only the <code>COMPLIANT</code> and
-    /// <code>NON_COMPLIANT</code>. AWS Config does not support the
+    /// <p>For the <code>AggregationEvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code> and
+    /// <code>NON_COMPLIANT</code>. Config does not support the
     /// <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code>
     /// value.</p>
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
-    /// <p>The time when AWS Config recorded the aggregate evaluation
+    /// <p>The time when Config recorded the aggregate evaluation
     /// result.</p>
     pub result_recorded_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The time when the AWS Config rule evaluated the AWS
+    /// <p>The time when the Config rule evaluated the Amazon Web Services
     /// resource.</p>
     pub config_rule_invoked_time: std::option::Option<smithy_types::Instant>,
     /// <p>Supplementary information about how the agrregate evaluation
@@ -8435,9 +8417,8 @@ pub mod aggregate_evaluation_result {
             self
         }
         /// <p>The resource compliance status.</p>
-        /// <p>For the <code>AggregationEvaluationResult</code> data type, AWS
-        /// Config supports only the <code>COMPLIANT</code> and
-        /// <code>NON_COMPLIANT</code>. AWS Config does not support the
+        /// <p>For the <code>AggregationEvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code> and
+        /// <code>NON_COMPLIANT</code>. Config does not support the
         /// <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code>
         /// value.</p>
         pub fn compliance_type(mut self, input: crate::model::ComplianceType) -> Self {
@@ -8451,7 +8432,7 @@ pub mod aggregate_evaluation_result {
             self.compliance_type = input;
             self
         }
-        /// <p>The time when AWS Config recorded the aggregate evaluation
+        /// <p>The time when Config recorded the aggregate evaluation
         /// result.</p>
         pub fn result_recorded_time(mut self, input: smithy_types::Instant) -> Self {
             self.result_recorded_time = Some(input);
@@ -8464,7 +8445,7 @@ pub mod aggregate_evaluation_result {
             self.result_recorded_time = input;
             self
         }
-        /// <p>The time when the AWS Config rule evaluated the AWS
+        /// <p>The time when the Config rule evaluated the Amazon Web Services
         /// resource.</p>
         pub fn config_rule_invoked_time(mut self, input: smithy_types::Instant) -> Self {
             self.config_rule_invoked_time = Some(input);
@@ -8530,7 +8511,7 @@ impl AggregateEvaluationResult {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemediationExecutionStatus {
-    /// <p>The details that identify a resource within AWS Config, including
+    /// <p>The details that identify a resource within Config, including
     /// the resource type and resource ID.</p>
     pub resource_key: std::option::Option<crate::model::ResourceKey>,
     /// <p>ENUM of the values.</p>
@@ -8567,7 +8548,7 @@ pub mod remediation_execution_status {
         pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The details that identify a resource within AWS Config, including
+        /// <p>The details that identify a resource within Config, including
         /// the resource type and resource ID.</p>
         pub fn resource_key(mut self, input: crate::model::ResourceKey) -> Self {
             self.resource_key = Some(input);
@@ -8956,7 +8937,7 @@ pub struct OrganizationConformancePackStatus {
     /// Conformance pack status is deleted when the master account deletes
     /// OrganizationConformancePack in all the member accounts and disables service
     /// access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
-    /// <p>AWS Config sets the state of the conformance pack to:</p>
+    /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -9055,7 +9036,7 @@ pub mod organization_conformance_pack_status {
         /// Conformance pack status is deleted when the master account deletes
         /// OrganizationConformancePack in all the member accounts and disables service
         /// access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
-        /// <p>AWS Config sets the state of the conformance pack to:</p>
+        /// <p>Config sets the state of the conformance pack to:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -9238,7 +9219,7 @@ impl AsRef<str> for OrganizationResourceStatus {
     }
 }
 
-/// <p>An organization conformance pack that has information about conformance packs that AWS Config creates in member accounts. </p>
+/// <p>An organization conformance pack that has information about conformance packs that Config creates in member accounts. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationConformancePack {
@@ -9246,7 +9227,7 @@ pub struct OrganizationConformancePack {
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
     pub organization_conformance_pack_arn: std::option::Option<std::string::String>,
-    /// <p>Amazon S3 bucket where AWS Config stores conformance pack templates.  </p>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.  </p>
     /// <note>
     /// <p>This field is optional.</p>
     /// </note>
@@ -9332,7 +9313,7 @@ pub mod organization_conformance_pack {
             self.organization_conformance_pack_arn = input;
             self
         }
-        /// <p>Amazon S3 bucket where AWS Config stores conformance pack templates.  </p>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.  </p>
         /// <note>
         /// <p>This field is optional.</p>
         /// </note>
@@ -9434,7 +9415,7 @@ pub struct OrganizationConfigRuleStatus {
     /// When master account calls PutOrganizationConfigRule action for the first time, config rule status is created in all the member accounts.
     /// When master account calls PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts. Additionally, config rule status is updated when one or more member accounts join or leave an organization.   
     /// Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
-    /// <p>AWS Config sets the state of the rule to:</p>
+    /// <p>Config sets the state of the rule to:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -9528,7 +9509,7 @@ pub mod organization_config_rule_status {
         /// When master account calls PutOrganizationConfigRule action for the first time, config rule status is created in all the member accounts.
         /// When master account calls PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts. Additionally, config rule status is updated when one or more member accounts join or leave an organization.   
         /// Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
-        /// <p>AWS Config sets the state of the rule to:</p>
+        /// <p>Config sets the state of the rule to:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -9714,7 +9695,7 @@ impl AsRef<str> for OrganizationRuleStatus {
     }
 }
 
-/// <p>An organization config rule that has information about config rules that AWS Config creates in member accounts.</p>
+/// <p>An organization config rule that has information about config rules that Config creates in member accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationConfigRule {
@@ -10015,7 +9996,7 @@ pub struct ConfigStreamDeliveryInfo {
     /// <p>Status of the last attempted delivery.</p>
     /// <p>
     /// <b>Note</b> Providing an SNS topic on a
-    /// <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for AWS Config is optional. If the SNS
+    /// <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS
     /// delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
     pub last_status: std::option::Option<crate::model::DeliveryStatus>,
     /// <p>The error code from the last attempted delivery.</p>
@@ -10050,7 +10031,7 @@ pub mod config_stream_delivery_info {
         /// <p>Status of the last attempted delivery.</p>
         /// <p>
         /// <b>Note</b> Providing an SNS topic on a
-        /// <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for AWS Config is optional. If the SNS
+        /// <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS
         /// delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
         pub fn last_status(mut self, input: crate::model::DeliveryStatus) -> Self {
             self.last_status = Some(input);
@@ -10319,7 +10300,7 @@ pub struct ConformancePackStatusDetail {
     /// <p>Amazon Resource Name (ARN) of comformance pack.</p>
     pub conformance_pack_arn: std::option::Option<std::string::String>,
     /// <p>Indicates deployment status of conformance pack.</p>
-    /// <p>AWS Config sets the state of the conformance pack to:</p>
+    /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
     /// <li>
     /// <p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p>
@@ -10338,7 +10319,7 @@ pub struct ConformancePackStatusDetail {
     /// </li>
     /// </ul>
     pub conformance_pack_state: std::option::Option<crate::model::ConformancePackState>,
-    /// <p>Amazon Resource Name (ARN) of AWS CloudFormation stack. </p>
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
     pub stack_arn: std::option::Option<std::string::String>,
     /// <p>The reason of conformance pack creation failure.</p>
     pub conformance_pack_status_reason: std::option::Option<std::string::String>,
@@ -10423,7 +10404,7 @@ pub mod conformance_pack_status_detail {
             self
         }
         /// <p>Indicates deployment status of conformance pack.</p>
-        /// <p>AWS Config sets the state of the conformance pack to:</p>
+        /// <p>Config sets the state of the conformance pack to:</p>
         /// <ul>
         /// <li>
         /// <p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p>
@@ -10452,7 +10433,7 @@ pub mod conformance_pack_status_detail {
             self.conformance_pack_state = input;
             self
         }
-        /// <p>Amazon Resource Name (ARN) of AWS CloudFormation stack. </p>
+        /// <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
         pub fn stack_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_arn = Some(input.into());
             self
@@ -10587,7 +10568,7 @@ impl AsRef<str> for ConformancePackState {
     }
 }
 
-/// <p>Returns details of a conformance pack. A conformance pack is a collection of AWS Config rules and remediation actions that can be easily deployed in an account and a region.</p>
+/// <p>Returns details of a conformance pack. A conformance pack is a collection of Config rules and remediation actions that can be easily deployed in an account and a region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConformancePackDetail {
@@ -10597,7 +10578,7 @@ pub struct ConformancePackDetail {
     pub conformance_pack_arn: std::option::Option<std::string::String>,
     /// <p>ID of the conformance pack.</p>
     pub conformance_pack_id: std::option::Option<std::string::String>,
-    /// <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p>
     /// <note>
     /// <p>This field is optional.</p>
     /// </note>
@@ -10612,7 +10593,7 @@ pub struct ConformancePackDetail {
         std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
     /// <p>Last time when conformation pack update was requested. </p>
     pub last_update_requested_time: std::option::Option<smithy_types::Instant>,
-    /// <p>AWS service that created the conformance pack.</p>
+    /// <p>Amazon Web Services service that created the conformance pack.</p>
     pub created_by: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConformancePackDetail {
@@ -10688,7 +10669,7 @@ pub mod conformance_pack_detail {
             self.conformance_pack_id = input;
             self
         }
-        /// <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p>
         /// <note>
         /// <p>This field is optional.</p>
         /// </note>
@@ -10746,7 +10727,7 @@ pub mod conformance_pack_detail {
             self.last_update_requested_time = input;
             self
         }
-        /// <p>AWS service that created the conformance pack.</p>
+        /// <p>Amazon Web Services service that created the conformance pack.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.created_by = Some(input.into());
             self
@@ -10777,13 +10758,13 @@ impl ConformancePackDetail {
     }
 }
 
-/// <p>Compliance information of one or more AWS Config rules within a conformance pack. You can filter using AWS Config rule names and compliance types.</p>
+/// <p>Compliance information of one or more Config rules within a conformance pack. You can filter using Config rule names and compliance types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConformancePackRuleCompliance {
     /// <p>Name of the config rule.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>Compliance of the AWS Config rule.</p>
+    /// <p>Compliance of the Config rule.</p>
     /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
     pub compliance_type: std::option::Option<crate::model::ConformancePackComplianceType>,
     /// <p>Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives.
@@ -10823,7 +10804,7 @@ pub mod conformance_pack_rule_compliance {
             self.config_rule_name = input;
             self
         }
-        /// <p>Compliance of the AWS Config rule.</p>
+        /// <p>Compliance of the Config rule.</p>
         /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
         pub fn compliance_type(
             mut self,
@@ -10869,11 +10850,11 @@ impl ConformancePackRuleCompliance {
     }
 }
 
-/// <p>Filters the conformance pack by compliance types and AWS Config rule names.</p>
+/// <p>Filters the conformance pack by compliance types and Config rule names.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConformancePackComplianceFilters {
-    /// <p>Filters the results by AWS Config rule names.</p>
+    /// <p>Filters the results by Config rule names.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
@@ -11192,7 +11173,7 @@ pub struct AggregatedSourceStatus {
     pub last_update_status: std::option::Option<crate::model::AggregatedSourceStatusType>,
     /// <p>The time of the last update.</p>
     pub last_update_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The error code that AWS Config returned when the source account
+    /// <p>The error code that Config returned when the source account
     /// aggregation last failed.</p>
     pub last_error_code: std::option::Option<std::string::String>,
     /// <p>The message indicating that the source account aggregation
@@ -11299,7 +11280,7 @@ pub mod aggregated_source_status {
             self.last_update_time = input;
             self
         }
-        /// <p>The error code that AWS Config returned when the source account
+        /// <p>The error code that Config returned when the source account
         /// aggregation last failed.</p>
         pub fn last_error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_error_code = Some(input.into());
@@ -11449,57 +11430,55 @@ impl AsRef<str> for AggregatedSourceType {
     }
 }
 
-/// <p>Status information for your AWS managed Config rules. The
+/// <p>Status information for your Config managed rules. The
 /// status includes information such as the last time the rule ran, the
 /// last time it failed, and the related error for the last
 /// failure.</p>
-/// <p>This action does not return status information about custom AWS
-/// Config rules.</p>
+/// <p>This action does not return status information about custom Config rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigRuleEvaluationStatus {
-    /// <p>The name of the AWS Config rule.</p>
+    /// <p>The name of the Config rule.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Config
+    /// <p>The Amazon Resource Name (ARN) of the Config
     /// rule.</p>
     pub config_rule_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS Config rule.</p>
+    /// <p>The ID of the Config rule.</p>
     pub config_rule_id: std::option::Option<std::string::String>,
-    /// <p>The time that AWS Config last successfully invoked the AWS
-    /// Config rule to evaluate your AWS resources.</p>
+    /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
     pub last_successful_invocation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The time that AWS Config last failed to invoke the AWS Config
-    /// rule to evaluate your AWS resources.</p>
+    /// <p>The time that Config last failed to invoke the Config
+    /// rule to evaluate your Amazon Web Services resources.</p>
     pub last_failed_invocation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The time that AWS Config last successfully evaluated your AWS
+    /// <p>The time that Config last successfully evaluated your Amazon Web Services
     /// resources against the rule.</p>
     pub last_successful_evaluation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The time that AWS Config last failed to evaluate your AWS
+    /// <p>The time that Config last failed to evaluate your Amazon Web Services
     /// resources against the rule.</p>
     pub last_failed_evaluation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The time that you first activated the AWS Config
+    /// <p>The time that you first activated the Config
     /// rule.</p>
     pub first_activated_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The time that you last turned off the AWS Config rule.</p>
+    /// <p>The time that you last turned off the Config rule.</p>
     pub last_deactivated_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The error code that AWS Config returned when the rule last
+    /// <p>The error code that Config returned when the rule last
     /// failed.</p>
     pub last_error_code: std::option::Option<std::string::String>,
-    /// <p>The error message that AWS Config returned when the rule last
+    /// <p>The error message that Config returned when the rule last
     /// failed.</p>
     pub last_error_message: std::option::Option<std::string::String>,
-    /// <p>Indicates whether AWS Config has evaluated your resources
+    /// <p>Indicates whether Config has evaluated your resources
     /// against the rule at least once.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>true</code> - AWS Config has evaluated your AWS
+    /// <code>true</code> - Config has evaluated your Amazon Web Services
     /// resources against the rule at least once.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>false</code> - AWS Config has not once finished
-    /// evaluating your AWS resources against the rule.</p>
+    /// <code>false</code> - Config has not once finished
+    /// evaluating your Amazon Web Services resources against the rule.</p>
     /// </li>
     /// </ul>
     pub first_evaluation_started: bool,
@@ -11554,7 +11533,7 @@ pub mod config_rule_evaluation_status {
         pub(crate) first_evaluation_started: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule.</p>
+        /// <p>The name of the Config rule.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -11566,7 +11545,7 @@ pub mod config_rule_evaluation_status {
             self.config_rule_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Config
+        /// <p>The Amazon Resource Name (ARN) of the Config
         /// rule.</p>
         pub fn config_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_arn = Some(input.into());
@@ -11579,7 +11558,7 @@ pub mod config_rule_evaluation_status {
             self.config_rule_arn = input;
             self
         }
-        /// <p>The ID of the AWS Config rule.</p>
+        /// <p>The ID of the Config rule.</p>
         pub fn config_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_id = Some(input.into());
             self
@@ -11591,8 +11570,7 @@ pub mod config_rule_evaluation_status {
             self.config_rule_id = input;
             self
         }
-        /// <p>The time that AWS Config last successfully invoked the AWS
-        /// Config rule to evaluate your AWS resources.</p>
+        /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
         pub fn last_successful_invocation_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_successful_invocation_time = Some(input);
             self
@@ -11604,8 +11582,8 @@ pub mod config_rule_evaluation_status {
             self.last_successful_invocation_time = input;
             self
         }
-        /// <p>The time that AWS Config last failed to invoke the AWS Config
-        /// rule to evaluate your AWS resources.</p>
+        /// <p>The time that Config last failed to invoke the Config
+        /// rule to evaluate your Amazon Web Services resources.</p>
         pub fn last_failed_invocation_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_failed_invocation_time = Some(input);
             self
@@ -11617,7 +11595,7 @@ pub mod config_rule_evaluation_status {
             self.last_failed_invocation_time = input;
             self
         }
-        /// <p>The time that AWS Config last successfully evaluated your AWS
+        /// <p>The time that Config last successfully evaluated your Amazon Web Services
         /// resources against the rule.</p>
         pub fn last_successful_evaluation_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_successful_evaluation_time = Some(input);
@@ -11630,7 +11608,7 @@ pub mod config_rule_evaluation_status {
             self.last_successful_evaluation_time = input;
             self
         }
-        /// <p>The time that AWS Config last failed to evaluate your AWS
+        /// <p>The time that Config last failed to evaluate your Amazon Web Services
         /// resources against the rule.</p>
         pub fn last_failed_evaluation_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_failed_evaluation_time = Some(input);
@@ -11643,7 +11621,7 @@ pub mod config_rule_evaluation_status {
             self.last_failed_evaluation_time = input;
             self
         }
-        /// <p>The time that you first activated the AWS Config
+        /// <p>The time that you first activated the Config
         /// rule.</p>
         pub fn first_activated_time(mut self, input: smithy_types::Instant) -> Self {
             self.first_activated_time = Some(input);
@@ -11656,7 +11634,7 @@ pub mod config_rule_evaluation_status {
             self.first_activated_time = input;
             self
         }
-        /// <p>The time that you last turned off the AWS Config rule.</p>
+        /// <p>The time that you last turned off the Config rule.</p>
         pub fn last_deactivated_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_deactivated_time = Some(input);
             self
@@ -11668,7 +11646,7 @@ pub mod config_rule_evaluation_status {
             self.last_deactivated_time = input;
             self
         }
-        /// <p>The error code that AWS Config returned when the rule last
+        /// <p>The error code that Config returned when the rule last
         /// failed.</p>
         pub fn last_error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_error_code = Some(input.into());
@@ -11681,7 +11659,7 @@ pub mod config_rule_evaluation_status {
             self.last_error_code = input;
             self
         }
-        /// <p>The error message that AWS Config returned when the rule last
+        /// <p>The error message that Config returned when the rule last
         /// failed.</p>
         pub fn last_error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_error_message = Some(input.into());
@@ -11694,18 +11672,18 @@ pub mod config_rule_evaluation_status {
             self.last_error_message = input;
             self
         }
-        /// <p>Indicates whether AWS Config has evaluated your resources
+        /// <p>Indicates whether Config has evaluated your resources
         /// against the rule at least once.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>true</code> - AWS Config has evaluated your AWS
+        /// <code>true</code> - Config has evaluated your Amazon Web Services
         /// resources against the rule at least once.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>false</code> - AWS Config has not once finished
-        /// evaluating your AWS resources against the rule.</p>
+        /// <code>false</code> - Config has not once finished
+        /// evaluating your Amazon Web Services resources against the rule.</p>
         /// </li>
         /// </ul>
         pub fn first_evaluation_started(mut self, input: bool) -> Self {
@@ -11742,20 +11720,19 @@ impl ConfigRuleEvaluationStatus {
     }
 }
 
-/// <p>Indicates whether an AWS resource that is evaluated according
-/// to one or more AWS Config rules is compliant. A resource is
+/// <p>Indicates whether an Amazon Web Services resource that is evaluated according
+/// to one or more Config rules is compliant. A resource is
 /// compliant if it complies with all of the rules that evaluate it. A
 /// resource is noncompliant if it does not comply with one or more of
 /// these rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceByResource {
-    /// <p>The type of the AWS resource that was evaluated.</p>
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS resource that was evaluated.</p>
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the AWS resource complies with all of the AWS
-    /// Config rules that evaluated it.</p>
+    /// <p>Indicates whether the Amazon Web Services resource complies with all of the Config rules that evaluated it.</p>
     pub compliance: std::option::Option<crate::model::Compliance>,
 }
 impl std::fmt::Debug for ComplianceByResource {
@@ -11778,7 +11755,7 @@ pub mod compliance_by_resource {
         pub(crate) compliance: std::option::Option<crate::model::Compliance>,
     }
     impl Builder {
-        /// <p>The type of the AWS resource that was evaluated.</p>
+        /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
@@ -11790,7 +11767,7 @@ pub mod compliance_by_resource {
             self.resource_type = input;
             self
         }
-        /// <p>The ID of the AWS resource that was evaluated.</p>
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
@@ -11799,8 +11776,7 @@ pub mod compliance_by_resource {
             self.resource_id = input;
             self
         }
-        /// <p>Indicates whether the AWS resource complies with all of the AWS
-        /// Config rules that evaluated it.</p>
+        /// <p>Indicates whether the Amazon Web Services resource complies with all of the Config rules that evaluated it.</p>
         pub fn compliance(mut self, input: crate::model::Compliance) -> Self {
             self.compliance = Some(input);
             self
@@ -11829,30 +11805,28 @@ impl ComplianceByResource {
     }
 }
 
-/// <p>Indicates whether an AWS resource or AWS Config rule is
+/// <p>Indicates whether an Amazon Web Services resource or Config rule is
 /// compliant and provides the number of contributors that affect the
 /// compliance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Compliance {
-    /// <p>Indicates whether an AWS resource or AWS Config rule is
+    /// <p>Indicates whether an Amazon Web Services resource or Config rule is
     /// compliant.</p>
-    /// <p>A resource is compliant if it complies with all of the AWS
-    /// Config rules that evaluate it. A resource is noncompliant if it does
+    /// <p>A resource is compliant if it complies with all of the Config rules that evaluate it. A resource is noncompliant if it does
     /// not comply with one or more of these rules.</p>
     /// <p>A rule is compliant if all of the resources that the rule
     /// evaluates comply with it. A rule is noncompliant if any of these
     /// resources do not comply.</p>
-    /// <p>AWS Config returns the <code>INSUFFICIENT_DATA</code> value
-    /// when no evaluation results are available for the AWS resource or AWS
-    /// Config rule.</p>
-    /// <p>For the <code>Compliance</code> data type, AWS Config supports
+    /// <p>Config returns the <code>INSUFFICIENT_DATA</code> value
+    /// when no evaluation results are available for the Amazon Web Services resource or Config rule.</p>
+    /// <p>For the <code>Compliance</code> data type, Config supports
     /// only <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-    /// <code>INSUFFICIENT_DATA</code> values. AWS Config does not
+    /// <code>INSUFFICIENT_DATA</code> values. Config does not
     /// support the <code>NOT_APPLICABLE</code> value for the
     /// <code>Compliance</code> data type.</p>
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
-    /// <p>The number of AWS resources or AWS Config rules that cause a
+    /// <p>The number of Amazon Web Services resources or Config rules that cause a
     /// result of <code>NON_COMPLIANT</code>, up to a maximum
     /// number.</p>
     pub compliance_contributor_count: std::option::Option<crate::model::ComplianceContributorCount>,
@@ -11879,20 +11853,18 @@ pub mod compliance {
             std::option::Option<crate::model::ComplianceContributorCount>,
     }
     impl Builder {
-        /// <p>Indicates whether an AWS resource or AWS Config rule is
+        /// <p>Indicates whether an Amazon Web Services resource or Config rule is
         /// compliant.</p>
-        /// <p>A resource is compliant if it complies with all of the AWS
-        /// Config rules that evaluate it. A resource is noncompliant if it does
+        /// <p>A resource is compliant if it complies with all of the Config rules that evaluate it. A resource is noncompliant if it does
         /// not comply with one or more of these rules.</p>
         /// <p>A rule is compliant if all of the resources that the rule
         /// evaluates comply with it. A rule is noncompliant if any of these
         /// resources do not comply.</p>
-        /// <p>AWS Config returns the <code>INSUFFICIENT_DATA</code> value
-        /// when no evaluation results are available for the AWS resource or AWS
-        /// Config rule.</p>
-        /// <p>For the <code>Compliance</code> data type, AWS Config supports
+        /// <p>Config returns the <code>INSUFFICIENT_DATA</code> value
+        /// when no evaluation results are available for the Amazon Web Services resource or Config rule.</p>
+        /// <p>For the <code>Compliance</code> data type, Config supports
         /// only <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-        /// <code>INSUFFICIENT_DATA</code> values. AWS Config does not
+        /// <code>INSUFFICIENT_DATA</code> values. Config does not
         /// support the <code>NOT_APPLICABLE</code> value for the
         /// <code>Compliance</code> data type.</p>
         pub fn compliance_type(mut self, input: crate::model::ComplianceType) -> Self {
@@ -11906,7 +11878,7 @@ pub mod compliance {
             self.compliance_type = input;
             self
         }
-        /// <p>The number of AWS resources or AWS Config rules that cause a
+        /// <p>The number of Amazon Web Services resources or Config rules that cause a
         /// result of <code>NON_COMPLIANT</code>, up to a maximum
         /// number.</p>
         pub fn compliance_contributor_count(
@@ -11939,16 +11911,16 @@ impl Compliance {
     }
 }
 
-/// <p>Indicates whether an AWS Config rule is compliant. A rule is
+/// <p>Indicates whether an Config rule is compliant. A rule is
 /// compliant if all of the resources that the rule evaluated comply
 /// with it. A rule is noncompliant if any of these resources do not
 /// comply.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceByConfigRule {
-    /// <p>The name of the AWS Config rule.</p>
+    /// <p>The name of the Config rule.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the AWS Config rule is compliant.</p>
+    /// <p>Indicates whether the Config rule is compliant.</p>
     pub compliance: std::option::Option<crate::model::Compliance>,
 }
 impl std::fmt::Debug for ComplianceByConfigRule {
@@ -11969,7 +11941,7 @@ pub mod compliance_by_config_rule {
         pub(crate) compliance: std::option::Option<crate::model::Compliance>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule.</p>
+        /// <p>The name of the Config rule.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -11981,7 +11953,7 @@ pub mod compliance_by_config_rule {
             self.config_rule_name = input;
             self
         }
-        /// <p>Indicates whether the AWS Config rule is compliant.</p>
+        /// <p>Indicates whether the Config rule is compliant.</p>
         pub fn compliance(mut self, input: crate::model::Compliance) -> Self {
             self.compliance = Some(input);
             self
@@ -12020,9 +11992,9 @@ pub struct AggregateComplianceByConformancePack {
     pub conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>The compliance status of the conformance pack.</p>
     pub compliance: std::option::Option<crate::model::AggregateConformancePackCompliance>,
-    /// <p>The 12-digit AWS account ID of the source account.</p>
+    /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The source AWS Region from where the data is aggregated.</p>
+    /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub aws_region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AggregateComplianceByConformancePack {
@@ -12075,7 +12047,7 @@ pub mod aggregate_compliance_by_conformance_pack {
             self.compliance = input;
             self
         }
-        /// <p>The 12-digit AWS account ID of the source account.</p>
+        /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -12084,7 +12056,7 @@ pub mod aggregate_compliance_by_conformance_pack {
             self.account_id = input;
             self
         }
-        /// <p>The source AWS Region from where the data is aggregated.</p>
+        /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_region = Some(input.into());
             self
@@ -12121,9 +12093,9 @@ impl AggregateComplianceByConformancePack {
 pub struct AggregateConformancePackCompliance {
     /// <p>The compliance status of the conformance pack.</p>
     pub compliance_type: std::option::Option<crate::model::ConformancePackComplianceType>,
-    /// <p>The number of compliant AWS Config Rules.</p>
+    /// <p>The number of compliant Config Rules.</p>
     pub compliant_rule_count: i32,
-    /// <p>The number of noncompliant AWS Config Rules.</p>
+    /// <p>The number of noncompliant Config Rules.</p>
     pub non_compliant_rule_count: i32,
     /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
     pub total_rule_count: i32,
@@ -12166,7 +12138,7 @@ pub mod aggregate_conformance_pack_compliance {
             self.compliance_type = input;
             self
         }
-        /// <p>The number of compliant AWS Config Rules.</p>
+        /// <p>The number of compliant Config Rules.</p>
         pub fn compliant_rule_count(mut self, input: i32) -> Self {
             self.compliant_rule_count = Some(input);
             self
@@ -12175,7 +12147,7 @@ pub mod aggregate_conformance_pack_compliance {
             self.compliant_rule_count = input;
             self
         }
-        /// <p>The number of noncompliant AWS Config Rules.</p>
+        /// <p>The number of noncompliant Config Rules.</p>
         pub fn non_compliant_rule_count(mut self, input: i32) -> Self {
             self.non_compliant_rule_count = Some(input);
             self
@@ -12219,9 +12191,9 @@ pub struct AggregateConformancePackComplianceFilters {
     pub conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>The compliance status of the conformance pack.</p>
     pub compliance_type: std::option::Option<crate::model::ConformancePackComplianceType>,
-    /// <p>The 12-digit AWS account ID of the source account.</p>
+    /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The source AWS Region from where the data is aggregated.</p>
+    /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub aws_region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AggregateConformancePackComplianceFilters {
@@ -12274,7 +12246,7 @@ pub mod aggregate_conformance_pack_compliance_filters {
             self.compliance_type = input;
             self
         }
-        /// <p>The 12-digit AWS account ID of the source account.</p>
+        /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -12283,7 +12255,7 @@ pub mod aggregate_conformance_pack_compliance_filters {
             self.account_id = input;
             self
         }
-        /// <p>The source AWS Region from where the data is aggregated.</p>
+        /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_region = Some(input.into());
             self
@@ -12310,7 +12282,7 @@ impl AggregateConformancePackComplianceFilters {
     }
 }
 
-/// <p>Indicates whether an AWS Config rule is compliant based on
+/// <p>Indicates whether an Config rule is compliant based on
 /// account ID, region, compliance, and rule name.</p>
 /// <p>A rule is compliant if all of the resources that the rule
 /// evaluated comply with it. It is noncompliant if any of these
@@ -12318,9 +12290,9 @@ impl AggregateConformancePackComplianceFilters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregateComplianceByConfigRule {
-    /// <p>The name of the AWS Config rule.</p>
+    /// <p>The name of the Config rule.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether an AWS resource or AWS Config rule is
+    /// <p>Indicates whether an Amazon Web Services resource or Config rule is
     /// compliant and provides the number of contributors that affect the
     /// compliance.</p>
     pub compliance: std::option::Option<crate::model::Compliance>,
@@ -12351,7 +12323,7 @@ pub mod aggregate_compliance_by_config_rule {
         pub(crate) aws_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule.</p>
+        /// <p>The name of the Config rule.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -12363,7 +12335,7 @@ pub mod aggregate_compliance_by_config_rule {
             self.config_rule_name = input;
             self
         }
-        /// <p>Indicates whether an AWS resource or AWS Config rule is
+        /// <p>Indicates whether an Amazon Web Services resource or Config rule is
         /// compliant and provides the number of contributors that affect the
         /// compliance.</p>
         pub fn compliance(mut self, input: crate::model::Compliance) -> Self {
@@ -12418,12 +12390,11 @@ impl AggregateComplianceByConfigRule {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigRuleComplianceFilters {
-    /// <p>The name of the AWS Config rule.</p>
+    /// <p>The name of the Config rule.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>The rule compliance status.</p>
-    /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, AWS
-    /// Config supports only <code>COMPLIANT</code> and
-    /// <code>NON_COMPLIANT</code>. AWS Config does not support the
+    /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and
+    /// <code>NON_COMPLIANT</code>. Config does not support the
     /// <code>NOT_APPLICABLE</code> and the
     /// <code>INSUFFICIENT_DATA</code> values.</p>
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
@@ -12456,7 +12427,7 @@ pub mod config_rule_compliance_filters {
         pub(crate) aws_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS Config rule.</p>
+        /// <p>The name of the Config rule.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
@@ -12469,9 +12440,8 @@ pub mod config_rule_compliance_filters {
             self
         }
         /// <p>The rule compliance status.</p>
-        /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, AWS
-        /// Config supports only <code>COMPLIANT</code> and
-        /// <code>NON_COMPLIANT</code>. AWS Config does not support the
+        /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and
+        /// <code>NON_COMPLIANT</code>. Config does not support the
         /// <code>NOT_APPLICABLE</code> and the
         /// <code>INSUFFICIENT_DATA</code> values.</p>
         pub fn compliance_type(mut self, input: crate::model::ComplianceType) -> Self {
@@ -12527,7 +12497,7 @@ impl ConfigRuleComplianceFilters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedDeleteRemediationExceptionsBatch {
-    /// <p>Returns a failure message for delete remediation exception. For example, AWS Config creates an exception due to an internal error.</p>
+    /// <p>Returns a failure message for delete remediation exception. For example, Config creates an exception due to an internal error.</p>
     pub failure_message: std::option::Option<std::string::String>,
     /// <p>Returns remediation exception resource key object of the failed items.</p>
     pub failed_items:
@@ -12552,7 +12522,7 @@ pub mod failed_delete_remediation_exceptions_batch {
             std::option::Option<std::vec::Vec<crate::model::RemediationExceptionResourceKey>>,
     }
     impl Builder {
-        /// <p>Returns a failure message for delete remediation exception. For example, AWS Config creates an exception due to an internal error.</p>
+        /// <p>Returns a failure message for delete remediation exception. For example, Config creates an exception due to an internal error.</p>
         pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_message = Some(input.into());
             self
@@ -12604,7 +12574,7 @@ impl FailedDeleteRemediationExceptionsBatch {
 pub struct BaseConfigurationItem {
     /// <p>The version number of the resource configuration.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The 12-digit AWS account ID associated with the resource.</p>
+    /// <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The time when the configuration recording was initiated.</p>
     pub configuration_item_capture_time: std::option::Option<smithy_types::Instant>,
@@ -12635,7 +12605,7 @@ pub struct BaseConfigurationItem {
     pub configuration_state_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The type of AWS resource.</p>
+    /// <p>The type of Amazon Web Services resource.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub resource_id: std::option::Option<std::string::String>,
@@ -12649,7 +12619,7 @@ pub struct BaseConfigurationItem {
     pub resource_creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The description of the resource configuration.</p>
     pub configuration: std::option::Option<std::string::String>,
-    /// <p>Configuration attributes that AWS Config returns for certain
+    /// <p>Configuration attributes that Config returns for certain
     /// resource types to supplement the information returned for the
     /// configuration parameter.</p>
     pub supplementary_configuration:
@@ -12715,7 +12685,7 @@ pub mod base_configuration_item {
             self.version = input;
             self
         }
-        /// <p>The 12-digit AWS account ID associated with the resource.</p>
+        /// <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -12793,7 +12763,7 @@ pub mod base_configuration_item {
             self.arn = input;
             self
         }
-        /// <p>The type of AWS resource.</p>
+        /// <p>The type of Amazon Web Services resource.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self

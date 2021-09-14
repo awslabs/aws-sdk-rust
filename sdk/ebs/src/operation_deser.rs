@@ -21,11 +21,7 @@ pub fn parse_complete_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CompleteSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CompleteSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -42,11 +38,7 @@ pub fn parse_complete_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CompleteSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CompleteSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -63,12 +55,7 @@ pub fn parse_complete_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_throttled_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_request_throttled_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::CompleteSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_request_throttled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CompleteSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -77,26 +64,23 @@ pub fn parse_complete_snapshot_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::CompleteSnapshotError {
-                meta: generic,
-                kind: crate::error::CompleteSnapshotErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::CompleteSnapshotError {
+            meta: generic,
+            kind: crate::error::CompleteSnapshotErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CompleteSnapshotError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CompleteSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::CompleteSnapshotError {
             meta: generic,
             kind: crate::error::CompleteSnapshotErrorKind::ServiceQuotaExceededException({
@@ -106,7 +90,7 @@ pub fn parse_complete_snapshot_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CompleteSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CompleteSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -123,11 +107,7 @@ pub fn parse_complete_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CompleteSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CompleteSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -149,9 +129,11 @@ pub fn parse_complete_snapshot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::complete_snapshot_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_complete_snapshot(response.body().as_ref(), output)
-                .map_err(crate::error::CompleteSnapshotError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_complete_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CompleteSnapshotError::unhandled)?;
         output.build()
     })
 }
@@ -213,11 +195,7 @@ pub fn parse_get_snapshot_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetSnapshotBlockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -234,11 +212,7 @@ pub fn parse_get_snapshot_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetSnapshotBlockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -255,12 +229,7 @@ pub fn parse_get_snapshot_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_throttled_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_request_throttled_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::GetSnapshotBlockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_request_throttled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -269,26 +238,23 @@ pub fn parse_get_snapshot_block_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::GetSnapshotBlockError {
-                meta: generic,
-                kind: crate::error::GetSnapshotBlockErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetSnapshotBlockError {
+            meta: generic,
+            kind: crate::error::GetSnapshotBlockErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::GetSnapshotBlockError {
             meta: generic,
             kind: crate::error::GetSnapshotBlockErrorKind::ServiceQuotaExceededException({
@@ -298,7 +264,7 @@ pub fn parse_get_snapshot_block_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -315,11 +281,7 @@ pub fn parse_get_snapshot_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetSnapshotBlockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -354,11 +316,7 @@ pub fn parse_list_changed_blocks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListChangedBlocksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListChangedBlocksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -375,11 +333,7 @@ pub fn parse_list_changed_blocks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListChangedBlocksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListChangedBlocksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -396,12 +350,7 @@ pub fn parse_list_changed_blocks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_throttled_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_request_throttled_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::ListChangedBlocksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_request_throttled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListChangedBlocksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -410,26 +359,23 @@ pub fn parse_list_changed_blocks_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListChangedBlocksError {
-                meta: generic,
-                kind: crate::error::ListChangedBlocksErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListChangedBlocksError {
+            meta: generic,
+            kind: crate::error::ListChangedBlocksErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListChangedBlocksError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListChangedBlocksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::ListChangedBlocksError {
             meta: generic,
             kind: crate::error::ListChangedBlocksErrorKind::ServiceQuotaExceededException({
@@ -439,7 +385,7 @@ pub fn parse_list_changed_blocks_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListChangedBlocksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListChangedBlocksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -456,11 +402,7 @@ pub fn parse_list_changed_blocks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListChangedBlocksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListChangedBlocksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -482,7 +424,7 @@ pub fn parse_list_changed_blocks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_changed_blocks_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_changed_blocks(
+        output = crate::json_deser::deser_operation_crate_operation_list_changed_blocks(
             response.body().as_ref(),
             output,
         )
@@ -515,11 +457,7 @@ pub fn parse_list_snapshot_blocks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -536,11 +474,7 @@ pub fn parse_list_snapshot_blocks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -557,12 +491,7 @@ pub fn parse_list_snapshot_blocks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_throttled_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_request_throttled_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_request_throttled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -571,26 +500,23 @@ pub fn parse_list_snapshot_blocks_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListSnapshotBlocksError {
-                meta: generic,
-                kind: crate::error::ListSnapshotBlocksErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListSnapshotBlocksError {
+            meta: generic,
+            kind: crate::error::ListSnapshotBlocksErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::ListSnapshotBlocksError {
             meta: generic,
             kind: crate::error::ListSnapshotBlocksErrorKind::ServiceQuotaExceededException({
@@ -600,7 +526,7 @@ pub fn parse_list_snapshot_blocks_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -617,11 +543,7 @@ pub fn parse_list_snapshot_blocks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSnapshotBlocksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -645,7 +567,7 @@ pub fn parse_list_snapshot_blocks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_snapshot_blocks_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_snapshot_blocks(
+        output = crate::json_deser::deser_operation_crate_operation_list_snapshot_blocks(
             response.body().as_ref(),
             output,
         )
@@ -676,11 +598,7 @@ pub fn parse_put_snapshot_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutSnapshotBlockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutSnapshotBlockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -697,11 +615,7 @@ pub fn parse_put_snapshot_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutSnapshotBlockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutSnapshotBlockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -718,12 +632,7 @@ pub fn parse_put_snapshot_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_throttled_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_request_throttled_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::PutSnapshotBlockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_request_throttled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutSnapshotBlockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -732,26 +641,23 @@ pub fn parse_put_snapshot_block_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::PutSnapshotBlockError {
-                meta: generic,
-                kind: crate::error::PutSnapshotBlockErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::PutSnapshotBlockError {
+            meta: generic,
+            kind: crate::error::PutSnapshotBlockErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutSnapshotBlockError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutSnapshotBlockError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::PutSnapshotBlockError {
             meta: generic,
             kind: crate::error::PutSnapshotBlockErrorKind::ServiceQuotaExceededException({
@@ -761,7 +667,7 @@ pub fn parse_put_snapshot_block_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutSnapshotBlockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutSnapshotBlockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -778,11 +684,7 @@ pub fn parse_put_snapshot_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutSnapshotBlockError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutSnapshotBlockError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -843,11 +745,7 @@ pub fn parse_start_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -865,7 +763,7 @@ pub fn parse_start_snapshot_error(
                     let mut output =
                         crate::error::concurrent_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_concurrent_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -874,27 +772,25 @@ pub fn parse_start_snapshot_error(
                 tmp
             }),
         },
-        "ConflictException" => crate::error::StartSnapshotError {
-            meta: generic,
-            kind: crate::error::StartSnapshotErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => {
+            crate::error::StartSnapshotError {
+                meta: generic,
+                kind: crate::error::StartSnapshotErrorKind::ConflictException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartSnapshotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSnapshotError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::StartSnapshotError {
             meta: generic,
             kind: crate::error::StartSnapshotErrorKind::InternalServerException({
@@ -903,11 +799,7 @@ pub fn parse_start_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -924,12 +816,7 @@ pub fn parse_start_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_throttled_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_request_throttled_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::StartSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_request_throttled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -938,26 +825,23 @@ pub fn parse_start_snapshot_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::StartSnapshotError {
-                meta: generic,
-                kind: crate::error::StartSnapshotErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::StartSnapshotError {
+            meta: generic,
+            kind: crate::error::StartSnapshotErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSnapshotError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::StartSnapshotError {
             meta: generic,
             kind: crate::error::StartSnapshotErrorKind::ServiceQuotaExceededException({
@@ -967,7 +851,7 @@ pub fn parse_start_snapshot_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -984,11 +868,7 @@ pub fn parse_start_snapshot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartSnapshotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSnapshotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1009,9 +889,11 @@ pub fn parse_start_snapshot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_snapshot_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_start_snapshot(response.body().as_ref(), output)
-                .map_err(crate::error::StartSnapshotError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_start_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartSnapshotError::unhandled)?;
         output.build()
     })
 }

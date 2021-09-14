@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+//! Region providers that augment existing providers with new functionality
+
 use aws_types::region::Region;
 use std::borrow::Cow;
 use std::fmt::Debug;
@@ -10,7 +12,7 @@ use tracing::Instrument;
 
 /// Load a region by selecting the first from a series of region providers.
 ///
-/// # Example
+/// # Examples
 /// ```rust
 /// use aws_types::region::Region;
 /// use std::env;

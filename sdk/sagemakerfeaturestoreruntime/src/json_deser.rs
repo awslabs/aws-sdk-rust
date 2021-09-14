@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_forbiddenjson_err(
+pub fn deser_structure_crate_error_access_forbiddenjson_err(
     input: &[u8],
     mut builder: crate::error::access_forbidden::Builder,
 ) -> Result<crate::error::access_forbidden::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_forbiddenjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_failurejson_err(
+pub fn deser_structure_crate_error_internal_failurejson_err(
     input: &[u8],
     mut builder: crate::error::internal_failure::Builder,
 ) -> Result<crate::error::internal_failure::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_internal_failurejson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_unavailablejson_err(
+pub fn deser_structure_crate_error_service_unavailablejson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable::Builder,
 ) -> Result<crate::error::service_unavailable::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_service_unavailablejson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_errorjson_err(
+pub fn deser_structure_crate_error_validation_errorjson_err(
     input: &[u8],
     mut builder: crate::error::validation_error::Builder,
 ) -> Result<crate::error::validation_error::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_validation_errorjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_get_record(
+pub fn deser_operation_crate_operation_batch_get_record(
     input: &[u8],
     mut builder: crate::output::batch_get_record_output::Builder,
 ) -> Result<crate::output::batch_get_record_output::Builder, smithy_json::deserialize::Error> {
@@ -177,17 +177,17 @@ pub fn deser_operation_batch_get_record(
                 match key.to_unescaped()?.as_ref() {
                     "Errors" => {
                         builder = builder.set_errors(
-                            crate::json_deser::deser_list_batch_get_record_errors(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_sagemakerfeaturestoreruntime_batch_get_record_errors(tokens)?
                         );
                     }
                     "Records" => {
                         builder = builder.set_records(
-                            crate::json_deser::deser_list_batch_get_record_result_details(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_sagemakerfeaturestoreruntime_batch_get_record_result_details(tokens)?
                         );
                     }
                     "UnprocessedIdentifiers" => {
                         builder = builder.set_unprocessed_identifiers(
-                            crate::json_deser::deser_list_unprocessed_identifiers(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_sagemakerfeaturestoreruntime_unprocessed_identifiers(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -208,7 +208,7 @@ pub fn deser_operation_batch_get_record(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_foundjson_err(
+pub fn deser_structure_crate_error_resource_not_foundjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found::Builder,
 ) -> Result<crate::error::resource_not_found::Builder, smithy_json::deserialize::Error> {
@@ -247,7 +247,7 @@ pub fn deser_structure_resource_not_foundjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_record(
+pub fn deser_operation_crate_operation_get_record(
     input: &[u8],
     mut builder: crate::output::get_record_output::Builder,
 ) -> Result<crate::output::get_record_output::Builder, smithy_json::deserialize::Error> {
@@ -262,7 +262,9 @@ pub fn deser_operation_get_record(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Record" => {
-                        builder = builder.set_record(crate::json_deser::deser_list_record(tokens)?);
+                        builder = builder.set_record(
+                            crate::json_deser::deser_list_com_amazonaws_sagemakerfeaturestoreruntime_record(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -291,7 +293,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_batch_get_record_errors<'a, I>(
+pub fn deser_list_com_amazonaws_sagemakerfeaturestoreruntime_batch_get_record_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::BatchGetRecordError>>, smithy_json::deserialize::Error>
 where
@@ -311,7 +313,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_batch_get_record_error(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_batch_get_record_error(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -327,7 +331,10 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_batch_get_record_result_details<'a, I>(
+pub fn deser_list_com_amazonaws_sagemakerfeaturestoreruntime_batch_get_record_result_details<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchGetRecordResultDetail>>,
@@ -350,9 +357,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_batch_get_record_result_detail(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_batch_get_record_result_detail(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -368,7 +374,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_unprocessed_identifiers<'a, I>(
+pub fn deser_list_com_amazonaws_sagemakerfeaturestoreruntime_unprocessed_identifiers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
@@ -391,7 +397,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_batch_get_record_identifier(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_batch_get_record_identifier(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -407,7 +414,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_record<'a, I>(
+pub fn deser_list_com_amazonaws_sagemakerfeaturestoreruntime_record<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::FeatureValue>>, smithy_json::deserialize::Error>
 where
@@ -426,7 +433,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_feature_value(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_feature_value(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -441,7 +449,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_get_record_error<'a, I>(
+pub fn deser_structure_crate_model_batch_get_record_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchGetRecordError>, smithy_json::deserialize::Error>
 where
@@ -513,7 +521,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_get_record_result_detail<'a, I>(
+pub fn deser_structure_crate_model_batch_get_record_result_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchGetRecordResultDetail>, smithy_json::deserialize::Error>
 where
@@ -550,8 +558,9 @@ where
                                 );
                             }
                             "Record" => {
-                                builder = builder
-                                    .set_record(crate::json_deser::deser_list_record(tokens)?);
+                                builder = builder.set_record(
+                                    crate::json_deser::deser_list_com_amazonaws_sagemakerfeaturestoreruntime_record(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -571,7 +580,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_get_record_identifier<'a, I>(
+pub fn deser_structure_crate_model_batch_get_record_identifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchGetRecordIdentifier>, smithy_json::deserialize::Error>
 where
@@ -600,12 +609,12 @@ where
                             }
                             "RecordIdentifiersValueAsString" => {
                                 builder = builder.set_record_identifiers_value_as_string(
-                                    crate::json_deser::deser_list_record_identifiers(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_sagemakerfeaturestoreruntime_record_identifiers(tokens)?
                                 );
                             }
                             "FeatureNames" => {
                                 builder = builder.set_feature_names(
-                                    crate::json_deser::deser_list_feature_names(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_sagemakerfeaturestoreruntime_feature_names(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -626,7 +635,7 @@ where
     }
 }
 
-pub fn deser_structure_feature_value<'a, I>(
+pub fn deser_structure_crate_model_feature_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FeatureValue>, smithy_json::deserialize::Error>
 where
@@ -681,7 +690,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_record_identifiers<'a, I>(
+pub fn deser_list_com_amazonaws_sagemakerfeaturestoreruntime_record_identifiers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -719,7 +728,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_feature_names<'a, I>(
+pub fn deser_list_com_amazonaws_sagemakerfeaturestoreruntime_feature_names<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where

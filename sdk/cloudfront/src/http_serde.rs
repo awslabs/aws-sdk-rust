@@ -5,12 +5,9 @@ pub fn deser_payload_create_cache_policy_create_cache_policy_output_cache_policy
     std::option::Option<crate::model::CachePolicy>,
     crate::error::CreateCachePolicyError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_create_cache_policy_output_cache_policy(body)
-                .map_err(crate::error::CreateCachePolicyError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_cache_policy_output_cache_policy(body).map_err(crate::error::CreateCachePolicyError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_create_cache_policy_create_cache_policy_output_e_tag(
@@ -36,7 +33,7 @@ pub fn deser_payload_create_cloud_front_origin_access_identity_create_cloud_fron
     crate::error::CreateCloudFrontOriginAccessIdentityError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_create_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(body).map_err(crate::error::CreateCloudFrontOriginAccessIdentityError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(body).map_err(crate::error::CreateCloudFrontOriginAccessIdentityError::unhandled)
     }).transpose()
 }
 
@@ -62,12 +59,9 @@ pub fn deser_payload_create_distribution_create_distribution_output_distribution
     std::option::Option<crate::model::Distribution>,
     crate::error::CreateDistributionError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_create_distribution_output_distribution(body)
-                .map_err(crate::error::CreateDistributionError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_distribution_output_distribution(body).map_err(crate::error::CreateDistributionError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_create_distribution_create_distribution_output_e_tag(
@@ -92,12 +86,9 @@ pub fn deser_payload_create_distribution_with_tags_create_distribution_with_tags
     std::option::Option<crate::model::Distribution>,
     crate::error::CreateDistributionWithTagsError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_create_distribution_with_tags_output_distribution(body)
-                .map_err(crate::error::CreateDistributionWithTagsError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_distribution_with_tags_output_distribution(body).map_err(crate::error::CreateDistributionWithTagsError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_create_distribution_with_tags_create_distribution_with_tags_output_e_tag(
@@ -131,7 +122,7 @@ pub fn deser_payload_create_field_level_encryption_config_create_field_level_enc
     crate::error::CreateFieldLevelEncryptionConfigError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_create_field_level_encryption_config_output_field_level_encryption(body).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_config_output_field_level_encryption(body).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)
     }).transpose()
 }
 
@@ -158,7 +149,7 @@ pub fn deser_payload_create_field_level_encryption_profile_create_field_level_en
     crate::error::CreateFieldLevelEncryptionProfileError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_create_field_level_encryption_profile_output_field_level_encryption_profile(body).map_err(crate::error::CreateFieldLevelEncryptionProfileError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_profile_output_field_level_encryption_profile(body).map_err(crate::error::CreateFieldLevelEncryptionProfileError::unhandled)
     }).transpose()
 }
 
@@ -184,12 +175,9 @@ pub fn deser_payload_create_function_create_function_output_function_summary(
     std::option::Option<crate::model::FunctionSummary>,
     crate::error::CreateFunctionError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_create_function_output_function_summary(body)
-                .map_err(crate::error::CreateFunctionError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_function_output_function_summary(body).map_err(crate::error::CreateFunctionError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_create_function_create_function_output_location(
@@ -206,12 +194,9 @@ pub fn deser_payload_create_invalidation_create_invalidation_output_invalidation
     std::option::Option<crate::model::Invalidation>,
     crate::error::CreateInvalidationError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_create_invalidation_output_invalidation(body)
-                .map_err(crate::error::CreateInvalidationError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_invalidation_output_invalidation(body).map_err(crate::error::CreateInvalidationError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_create_invalidation_create_invalidation_output_location(
@@ -236,12 +221,9 @@ pub fn deser_payload_create_key_group_create_key_group_output_key_group(
     std::option::Option<crate::model::KeyGroup>,
     crate::error::CreateKeyGroupError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_create_key_group_output_key_group(body)
-                .map_err(crate::error::CreateKeyGroupError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_key_group_output_key_group(body).map_err(crate::error::CreateKeyGroupError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_create_key_group_create_key_group_output_location(
@@ -259,7 +241,7 @@ pub fn deser_payload_create_monitoring_subscription_create_monitoring_subscripti
     crate::error::CreateMonitoringSubscriptionError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_create_monitoring_subscription_output_monitoring_subscription(body).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_monitoring_subscription_output_monitoring_subscription(body).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)
     }).transpose()
 }
 
@@ -286,7 +268,7 @@ pub fn deser_payload_create_origin_request_policy_create_origin_request_policy_o
     crate::error::CreateOriginRequestPolicyError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_create_origin_request_policy_output_origin_request_policy(body).map_err(crate::error::CreateOriginRequestPolicyError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_origin_request_policy_output_origin_request_policy(body).map_err(crate::error::CreateOriginRequestPolicyError::unhandled)
     }).transpose()
 }
 
@@ -312,12 +294,9 @@ pub fn deser_payload_create_public_key_create_public_key_output_public_key(
     std::option::Option<crate::model::PublicKey>,
     crate::error::CreatePublicKeyError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_create_public_key_output_public_key(body)
-                .map_err(crate::error::CreatePublicKeyError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_public_key_output_public_key(body).map_err(crate::error::CreatePublicKeyError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_create_streaming_distribution_create_streaming_distribution_output_e_tag(
@@ -343,7 +322,7 @@ pub fn deser_payload_create_streaming_distribution_create_streaming_distribution
     crate::error::CreateStreamingDistributionError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_create_streaming_distribution_output_streaming_distribution(body).map_err(crate::error::CreateStreamingDistributionError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_output_streaming_distribution(body).map_err(crate::error::CreateStreamingDistributionError::unhandled)
     }).transpose()
 }
 
@@ -370,7 +349,7 @@ pub fn deser_payload_create_streaming_distribution_with_tags_create_streaming_di
     crate::error::CreateStreamingDistributionWithTagsError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_create_streaming_distribution_with_tags_output_streaming_distribution(body).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_with_tags_output_streaming_distribution(body).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)
     }).transpose()
 }
 
@@ -388,12 +367,9 @@ pub fn deser_payload_describe_function_describe_function_output_function_summary
     std::option::Option<crate::model::FunctionSummary>,
     crate::error::DescribeFunctionError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_describe_function_output_function_summary(body)
-                .map_err(crate::error::DescribeFunctionError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_describe_function_output_function_summary(body).map_err(crate::error::DescribeFunctionError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_cache_policy_get_cache_policy_output_cache_policy(
@@ -402,12 +378,9 @@ pub fn deser_payload_get_cache_policy_get_cache_policy_output_cache_policy(
     std::option::Option<crate::model::CachePolicy>,
     crate::error::GetCachePolicyError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_cache_policy_output_cache_policy(body)
-                .map_err(crate::error::GetCachePolicyError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_cache_policy_output_cache_policy(body).map_err(crate::error::GetCachePolicyError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_cache_policy_get_cache_policy_output_e_tag(
@@ -424,12 +397,9 @@ pub fn deser_payload_get_cache_policy_config_get_cache_policy_config_output_cach
     std::option::Option<crate::model::CachePolicyConfig>,
     crate::error::GetCachePolicyConfigError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_cache_policy_config_output_cache_policy_config(body)
-                .map_err(crate::error::GetCachePolicyConfigError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_cache_policy_config_output_cache_policy_config(body).map_err(crate::error::GetCachePolicyConfigError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_cache_policy_config_get_cache_policy_config_output_e_tag(
@@ -447,7 +417,7 @@ pub fn deser_payload_get_cloud_front_origin_access_identity_get_cloud_front_orig
     crate::error::GetCloudFrontOriginAccessIdentityError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(body).map_err(crate::error::GetCloudFrontOriginAccessIdentityError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(body).map_err(crate::error::GetCloudFrontOriginAccessIdentityError::unhandled)
     }).transpose()
 }
 
@@ -466,7 +436,7 @@ pub fn deser_payload_get_cloud_front_origin_access_identity_config_get_cloud_fro
     crate::error::GetCloudFrontOriginAccessIdentityConfigError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_cloud_front_origin_access_identity_config_output_cloud_front_origin_access_identity_config(body).map_err(crate::error::GetCloudFrontOriginAccessIdentityConfigError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_cloud_front_origin_access_identity_config_output_cloud_front_origin_access_identity_config(body).map_err(crate::error::GetCloudFrontOriginAccessIdentityConfigError::unhandled)
     }).transpose()
 }
 
@@ -484,12 +454,9 @@ pub fn deser_payload_get_distribution_get_distribution_output_distribution(
     std::option::Option<crate::model::Distribution>,
     crate::error::GetDistributionError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_distribution_output_distribution(body)
-                .map_err(crate::error::GetDistributionError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_distribution_output_distribution(body).map_err(crate::error::GetDistributionError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_distribution_get_distribution_output_e_tag(
@@ -506,12 +473,9 @@ pub fn deser_payload_get_distribution_config_get_distribution_config_output_dist
     std::option::Option<crate::model::DistributionConfig>,
     crate::error::GetDistributionConfigError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_distribution_config_output_distribution_config(body)
-                .map_err(crate::error::GetDistributionConfigError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_distribution_config_output_distribution_config(body).map_err(crate::error::GetDistributionConfigError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_distribution_config_get_distribution_config_output_e_tag(
@@ -536,14 +500,9 @@ pub fn deser_payload_get_field_level_encryption_get_field_level_encryption_outpu
     std::option::Option<crate::model::FieldLevelEncryption>,
     crate::error::GetFieldLevelEncryptionError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_field_level_encryption_output_field_level_encryption(
-                body,
-            )
-            .map_err(crate::error::GetFieldLevelEncryptionError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_field_level_encryption_output_field_level_encryption(body).map_err(crate::error::GetFieldLevelEncryptionError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_field_level_encryption_config_get_field_level_encryption_config_output_e_tag(
@@ -561,7 +520,7 @@ pub fn deser_payload_get_field_level_encryption_config_get_field_level_encryptio
     crate::error::GetFieldLevelEncryptionConfigError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_field_level_encryption_config_output_field_level_encryption_config(body).map_err(crate::error::GetFieldLevelEncryptionConfigError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_field_level_encryption_config_output_field_level_encryption_config(body).map_err(crate::error::GetFieldLevelEncryptionConfigError::unhandled)
     }).transpose()
 }
 
@@ -580,7 +539,7 @@ pub fn deser_payload_get_field_level_encryption_profile_get_field_level_encrypti
     crate::error::GetFieldLevelEncryptionProfileError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_field_level_encryption_profile_output_field_level_encryption_profile(body).map_err(crate::error::GetFieldLevelEncryptionProfileError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_field_level_encryption_profile_output_field_level_encryption_profile(body).map_err(crate::error::GetFieldLevelEncryptionProfileError::unhandled)
     }).transpose()
 }
 
@@ -599,7 +558,7 @@ pub fn deser_payload_get_field_level_encryption_profile_config_get_field_level_e
     crate::error::GetFieldLevelEncryptionProfileConfigError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_field_level_encryption_profile_config_output_field_level_encryption_profile_config(body).map_err(crate::error::GetFieldLevelEncryptionProfileConfigError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_field_level_encryption_profile_config_output_field_level_encryption_profile_config(body).map_err(crate::error::GetFieldLevelEncryptionProfileConfigError::unhandled)
     }).transpose()
 }
 
@@ -633,12 +592,9 @@ pub fn deser_payload_get_invalidation_get_invalidation_output_invalidation(
     std::option::Option<crate::model::Invalidation>,
     crate::error::GetInvalidationError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_invalidation_output_invalidation(body)
-                .map_err(crate::error::GetInvalidationError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_invalidation_output_invalidation(body).map_err(crate::error::GetInvalidationError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_key_group_get_key_group_output_e_tag(
@@ -653,12 +609,9 @@ pub fn deser_payload_get_key_group_get_key_group_output_key_group(
     body: &[u8],
 ) -> std::result::Result<std::option::Option<crate::model::KeyGroup>, crate::error::GetKeyGroupError>
 {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_key_group_output_key_group(body)
-                .map_err(crate::error::GetKeyGroupError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_key_group_output_key_group(body).map_err(crate::error::GetKeyGroupError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_key_group_config_get_key_group_config_output_e_tag(
@@ -675,12 +628,9 @@ pub fn deser_payload_get_key_group_config_get_key_group_config_output_key_group_
     std::option::Option<crate::model::KeyGroupConfig>,
     crate::error::GetKeyGroupConfigError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_key_group_config_output_key_group_config(body)
-                .map_err(crate::error::GetKeyGroupConfigError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_key_group_config_output_key_group_config(body).map_err(crate::error::GetKeyGroupConfigError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_monitoring_subscription_get_monitoring_subscription_output_monitoring_subscription(
@@ -690,7 +640,7 @@ pub fn deser_payload_get_monitoring_subscription_get_monitoring_subscription_out
     crate::error::GetMonitoringSubscriptionError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_monitoring_subscription_output_monitoring_subscription(body).map_err(crate::error::GetMonitoringSubscriptionError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_monitoring_subscription_output_monitoring_subscription(body).map_err(crate::error::GetMonitoringSubscriptionError::unhandled)
     }).transpose()
 }
 
@@ -708,14 +658,9 @@ pub fn deser_payload_get_origin_request_policy_get_origin_request_policy_output_
     std::option::Option<crate::model::OriginRequestPolicy>,
     crate::error::GetOriginRequestPolicyError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_origin_request_policy_output_origin_request_policy(
-                body,
-            )
-            .map_err(crate::error::GetOriginRequestPolicyError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_origin_request_policy_output_origin_request_policy(body).map_err(crate::error::GetOriginRequestPolicyError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_origin_request_policy_config_get_origin_request_policy_config_output_e_tag(
@@ -733,7 +678,7 @@ pub fn deser_payload_get_origin_request_policy_config_get_origin_request_policy_
     crate::error::GetOriginRequestPolicyConfigError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_origin_request_policy_config_output_origin_request_policy_config(body).map_err(crate::error::GetOriginRequestPolicyConfigError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_origin_request_policy_config_output_origin_request_policy_config(body).map_err(crate::error::GetOriginRequestPolicyConfigError::unhandled)
     }).transpose()
 }
 
@@ -751,12 +696,9 @@ pub fn deser_payload_get_public_key_get_public_key_output_public_key(
     std::option::Option<crate::model::PublicKey>,
     crate::error::GetPublicKeyError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_public_key_output_public_key(body)
-                .map_err(crate::error::GetPublicKeyError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_public_key_output_public_key(body).map_err(crate::error::GetPublicKeyError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_public_key_config_get_public_key_config_output_e_tag(
@@ -773,12 +715,9 @@ pub fn deser_payload_get_public_key_config_get_public_key_config_output_public_k
     std::option::Option<crate::model::PublicKeyConfig>,
     crate::error::GetPublicKeyConfigError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_public_key_config_output_public_key_config(body)
-                .map_err(crate::error::GetPublicKeyConfigError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_public_key_config_output_public_key_config(body).map_err(crate::error::GetPublicKeyConfigError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_streaming_distribution_get_streaming_distribution_output_e_tag(
@@ -795,14 +734,9 @@ pub fn deser_payload_get_streaming_distribution_get_streaming_distribution_outpu
     std::option::Option<crate::model::StreamingDistribution>,
     crate::error::GetStreamingDistributionError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_streaming_distribution_output_streaming_distribution(
-                body,
-            )
-            .map_err(crate::error::GetStreamingDistributionError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_streaming_distribution_output_streaming_distribution(body).map_err(crate::error::GetStreamingDistributionError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_streaming_distribution_config_get_streaming_distribution_config_output_e_tag(
@@ -820,7 +754,7 @@ pub fn deser_payload_get_streaming_distribution_config_get_streaming_distributio
     crate::error::GetStreamingDistributionConfigError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_streaming_distribution_config_output_streaming_distribution_config(body).map_err(crate::error::GetStreamingDistributionConfigError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_streaming_distribution_config_output_streaming_distribution_config(body).map_err(crate::error::GetStreamingDistributionConfigError::unhandled)
     }).transpose()
 }
 
@@ -830,12 +764,9 @@ pub fn deser_payload_list_cache_policies_list_cache_policies_output_cache_policy
     std::option::Option<crate::model::CachePolicyList>,
     crate::error::ListCachePoliciesError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_list_cache_policies_output_cache_policy_list(body)
-                .map_err(crate::error::ListCachePoliciesError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_cache_policies_output_cache_policy_list(body).map_err(crate::error::ListCachePoliciesError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_list_cloud_front_origin_access_identities_list_cloud_front_origin_access_identities_output_cloud_front_origin_access_identity_list(
@@ -845,7 +776,7 @@ pub fn deser_payload_list_cloud_front_origin_access_identities_list_cloud_front_
     crate::error::ListCloudFrontOriginAccessIdentitiesError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_list_cloud_front_origin_access_identities_output_cloud_front_origin_access_identity_list(body).map_err(crate::error::ListCloudFrontOriginAccessIdentitiesError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_cloud_front_origin_access_identities_output_cloud_front_origin_access_identity_list(body).map_err(crate::error::ListCloudFrontOriginAccessIdentitiesError::unhandled)
     }).transpose()
 }
 
@@ -855,14 +786,9 @@ pub fn deser_payload_list_conflicting_aliases_list_conflicting_aliases_output_co
     std::option::Option<crate::model::ConflictingAliasesList>,
     crate::error::ListConflictingAliasesError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_list_conflicting_aliases_output_conflicting_aliases_list(
-                body,
-            )
-            .map_err(crate::error::ListConflictingAliasesError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_conflicting_aliases_output_conflicting_aliases_list(body).map_err(crate::error::ListConflictingAliasesError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_list_distributions_list_distributions_output_distribution_list(
@@ -871,12 +797,9 @@ pub fn deser_payload_list_distributions_list_distributions_output_distribution_l
     std::option::Option<crate::model::DistributionList>,
     crate::error::ListDistributionsError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_list_distributions_output_distribution_list(body)
-                .map_err(crate::error::ListDistributionsError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_output_distribution_list(body).map_err(crate::error::ListDistributionsError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_list_distributions_by_cache_policy_id_list_distributions_by_cache_policy_id_output_distribution_id_list(
@@ -886,7 +809,7 @@ pub fn deser_payload_list_distributions_by_cache_policy_id_list_distributions_by
     crate::error::ListDistributionsByCachePolicyIdError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_list_distributions_by_cache_policy_id_output_distribution_id_list(body).map_err(crate::error::ListDistributionsByCachePolicyIdError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_by_cache_policy_id_output_distribution_id_list(body).map_err(crate::error::ListDistributionsByCachePolicyIdError::unhandled)
     }).transpose()
 }
 
@@ -897,7 +820,7 @@ pub fn deser_payload_list_distributions_by_key_group_list_distributions_by_key_g
     crate::error::ListDistributionsByKeyGroupError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_list_distributions_by_key_group_output_distribution_id_list(body).map_err(crate::error::ListDistributionsByKeyGroupError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_by_key_group_output_distribution_id_list(body).map_err(crate::error::ListDistributionsByKeyGroupError::unhandled)
     }).transpose()
 }
 
@@ -908,7 +831,7 @@ pub fn deser_payload_list_distributions_by_origin_request_policy_id_list_distrib
     crate::error::ListDistributionsByOriginRequestPolicyIdError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_list_distributions_by_origin_request_policy_id_output_distribution_id_list(body).map_err(crate::error::ListDistributionsByOriginRequestPolicyIdError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_by_origin_request_policy_id_output_distribution_id_list(body).map_err(crate::error::ListDistributionsByOriginRequestPolicyIdError::unhandled)
     }).transpose()
 }
 
@@ -919,7 +842,7 @@ pub fn deser_payload_list_distributions_by_realtime_log_config_list_distribution
     crate::error::ListDistributionsByRealtimeLogConfigError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_list_distributions_by_realtime_log_config_output_distribution_list(body).map_err(crate::error::ListDistributionsByRealtimeLogConfigError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_by_realtime_log_config_output_distribution_list(body).map_err(crate::error::ListDistributionsByRealtimeLogConfigError::unhandled)
     }).transpose()
 }
 
@@ -930,7 +853,7 @@ pub fn deser_payload_list_distributions_by_web_acl_id_list_distributions_by_web_
     crate::error::ListDistributionsByWebACLIdError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_list_distributions_by_web_acl_id_output_distribution_list(body).map_err(crate::error::ListDistributionsByWebACLIdError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_by_web_acl_id_output_distribution_list(body).map_err(crate::error::ListDistributionsByWebACLIdError::unhandled)
     }).transpose()
 }
 
@@ -941,7 +864,7 @@ pub fn deser_payload_list_field_level_encryption_configs_list_field_level_encryp
     crate::error::ListFieldLevelEncryptionConfigsError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_list_field_level_encryption_configs_output_field_level_encryption_list(body).map_err(crate::error::ListFieldLevelEncryptionConfigsError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_field_level_encryption_configs_output_field_level_encryption_list(body).map_err(crate::error::ListFieldLevelEncryptionConfigsError::unhandled)
     }).transpose()
 }
 
@@ -952,7 +875,7 @@ pub fn deser_payload_list_field_level_encryption_profiles_list_field_level_encry
     crate::error::ListFieldLevelEncryptionProfilesError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_list_field_level_encryption_profiles_output_field_level_encryption_profile_list(body).map_err(crate::error::ListFieldLevelEncryptionProfilesError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_field_level_encryption_profiles_output_field_level_encryption_profile_list(body).map_err(crate::error::ListFieldLevelEncryptionProfilesError::unhandled)
     }).transpose()
 }
 
@@ -962,12 +885,9 @@ pub fn deser_payload_list_functions_list_functions_output_function_list(
     std::option::Option<crate::model::FunctionList>,
     crate::error::ListFunctionsError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_list_functions_output_function_list(body)
-                .map_err(crate::error::ListFunctionsError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_functions_output_function_list(body).map_err(crate::error::ListFunctionsError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_list_invalidations_list_invalidations_output_invalidation_list(
@@ -976,12 +896,9 @@ pub fn deser_payload_list_invalidations_list_invalidations_output_invalidation_l
     std::option::Option<crate::model::InvalidationList>,
     crate::error::ListInvalidationsError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_list_invalidations_output_invalidation_list(body)
-                .map_err(crate::error::ListInvalidationsError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_invalidations_output_invalidation_list(body).map_err(crate::error::ListInvalidationsError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_list_key_groups_list_key_groups_output_key_group_list(
@@ -990,12 +907,9 @@ pub fn deser_payload_list_key_groups_list_key_groups_output_key_group_list(
     std::option::Option<crate::model::KeyGroupList>,
     crate::error::ListKeyGroupsError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_list_key_groups_output_key_group_list(body)
-                .map_err(crate::error::ListKeyGroupsError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_key_groups_output_key_group_list(body).map_err(crate::error::ListKeyGroupsError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_list_origin_request_policies_list_origin_request_policies_output_origin_request_policy_list(
@@ -1005,7 +919,7 @@ pub fn deser_payload_list_origin_request_policies_list_origin_request_policies_o
     crate::error::ListOriginRequestPoliciesError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_list_origin_request_policies_output_origin_request_policy_list(body).map_err(crate::error::ListOriginRequestPoliciesError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_origin_request_policies_output_origin_request_policy_list(body).map_err(crate::error::ListOriginRequestPoliciesError::unhandled)
     }).transpose()
 }
 
@@ -1015,12 +929,9 @@ pub fn deser_payload_list_public_keys_list_public_keys_output_public_key_list(
     std::option::Option<crate::model::PublicKeyList>,
     crate::error::ListPublicKeysError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_list_public_keys_output_public_key_list(body)
-                .map_err(crate::error::ListPublicKeysError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_public_keys_output_public_key_list(body).map_err(crate::error::ListPublicKeysError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_list_realtime_log_configs_list_realtime_log_configs_output_realtime_log_configs(
@@ -1029,14 +940,9 @@ pub fn deser_payload_list_realtime_log_configs_list_realtime_log_configs_output_
     std::option::Option<crate::model::RealtimeLogConfigs>,
     crate::error::ListRealtimeLogConfigsError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_list_realtime_log_configs_output_realtime_log_configs(
-                body,
-            )
-            .map_err(crate::error::ListRealtimeLogConfigsError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_realtime_log_configs_output_realtime_log_configs(body).map_err(crate::error::ListRealtimeLogConfigsError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_list_streaming_distributions_list_streaming_distributions_output_streaming_distribution_list(
@@ -1046,7 +952,7 @@ pub fn deser_payload_list_streaming_distributions_list_streaming_distributions_o
     crate::error::ListStreamingDistributionsError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_list_streaming_distributions_output_streaming_distribution_list(body).map_err(crate::error::ListStreamingDistributionsError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_streaming_distributions_output_streaming_distribution_list(body).map_err(crate::error::ListStreamingDistributionsError::unhandled)
     }).transpose()
 }
 
@@ -1056,12 +962,9 @@ pub fn deser_payload_list_tags_for_resource_list_tags_for_resource_output_tags(
     std::option::Option<crate::model::Tags>,
     crate::error::ListTagsForResourceError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_list_tags_for_resource_output_tags(body)
-                .map_err(crate::error::ListTagsForResourceError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_tags_for_resource_output_tags(body).map_err(crate::error::ListTagsForResourceError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_publish_function_publish_function_output_function_summary(
@@ -1070,12 +973,9 @@ pub fn deser_payload_publish_function_publish_function_output_function_summary(
     std::option::Option<crate::model::FunctionSummary>,
     crate::error::PublishFunctionError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_publish_function_output_function_summary(body)
-                .map_err(crate::error::PublishFunctionError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_publish_function_output_function_summary(body).map_err(crate::error::PublishFunctionError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_test_function_test_function_output_test_result(
@@ -1084,12 +984,9 @@ pub fn deser_payload_test_function_test_function_output_test_result(
     std::option::Option<crate::model::TestResult>,
     crate::error::TestFunctionError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_test_function_output_test_result(body)
-                .map_err(crate::error::TestFunctionError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_test_function_output_test_result(body).map_err(crate::error::TestFunctionError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_update_cache_policy_update_cache_policy_output_cache_policy(
@@ -1098,12 +995,9 @@ pub fn deser_payload_update_cache_policy_update_cache_policy_output_cache_policy
     std::option::Option<crate::model::CachePolicy>,
     crate::error::UpdateCachePolicyError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_update_cache_policy_output_cache_policy(body)
-                .map_err(crate::error::UpdateCachePolicyError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_cache_policy_output_cache_policy(body).map_err(crate::error::UpdateCachePolicyError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_update_cache_policy_update_cache_policy_output_e_tag(
@@ -1121,7 +1015,7 @@ pub fn deser_payload_update_cloud_front_origin_access_identity_update_cloud_fron
     crate::error::UpdateCloudFrontOriginAccessIdentityError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_update_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(body).map_err(crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(body).map_err(crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled)
     }).transpose()
 }
 
@@ -1139,12 +1033,9 @@ pub fn deser_payload_update_distribution_update_distribution_output_distribution
     std::option::Option<crate::model::Distribution>,
     crate::error::UpdateDistributionError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_update_distribution_output_distribution(body)
-                .map_err(crate::error::UpdateDistributionError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_distribution_output_distribution(body).map_err(crate::error::UpdateDistributionError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_update_distribution_update_distribution_output_e_tag(
@@ -1170,7 +1061,7 @@ pub fn deser_payload_update_field_level_encryption_config_update_field_level_enc
     crate::error::UpdateFieldLevelEncryptionConfigError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_update_field_level_encryption_config_output_field_level_encryption(body).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_config_output_field_level_encryption(body).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)
     }).transpose()
 }
 
@@ -1189,7 +1080,7 @@ pub fn deser_payload_update_field_level_encryption_profile_update_field_level_en
     crate::error::UpdateFieldLevelEncryptionProfileError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_update_field_level_encryption_profile_output_field_level_encryption_profile(body).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_profile_output_field_level_encryption_profile(body).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)
     }).transpose()
 }
 
@@ -1207,12 +1098,9 @@ pub fn deser_payload_update_function_update_function_output_function_summary(
     std::option::Option<crate::model::FunctionSummary>,
     crate::error::UpdateFunctionError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_update_function_output_function_summary(body)
-                .map_err(crate::error::UpdateFunctionError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_function_output_function_summary(body).map_err(crate::error::UpdateFunctionError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_update_key_group_update_key_group_output_e_tag(
@@ -1229,12 +1117,9 @@ pub fn deser_payload_update_key_group_update_key_group_output_key_group(
     std::option::Option<crate::model::KeyGroup>,
     crate::error::UpdateKeyGroupError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_update_key_group_output_key_group(body)
-                .map_err(crate::error::UpdateKeyGroupError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_key_group_output_key_group(body).map_err(crate::error::UpdateKeyGroupError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_update_origin_request_policy_update_origin_request_policy_output_e_tag(
@@ -1252,7 +1137,7 @@ pub fn deser_payload_update_origin_request_policy_update_origin_request_policy_o
     crate::error::UpdateOriginRequestPolicyError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_update_origin_request_policy_output_origin_request_policy(body).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_origin_request_policy_output_origin_request_policy(body).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)
     }).transpose()
 }
 
@@ -1270,12 +1155,9 @@ pub fn deser_payload_update_public_key_update_public_key_output_public_key(
     std::option::Option<crate::model::PublicKey>,
     crate::error::UpdatePublicKeyError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_update_public_key_output_public_key(body)
-                .map_err(crate::error::UpdatePublicKeyError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_public_key_output_public_key(body).map_err(crate::error::UpdatePublicKeyError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_update_streaming_distribution_update_streaming_distribution_output_e_tag(
@@ -1293,6 +1175,6 @@ pub fn deser_payload_update_streaming_distribution_update_streaming_distribution
     crate::error::UpdateStreamingDistributionError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_update_streaming_distribution_output_streaming_distribution(body).map_err(crate::error::UpdateStreamingDistributionError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_streaming_distribution_output_streaming_distribution(body).map_err(crate::error::UpdateStreamingDistributionError::unhandled)
     }).transpose()
 }

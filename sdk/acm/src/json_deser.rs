@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_invalid_arn_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_arn_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_arn_exception::Builder,
 ) -> Result<crate::error::invalid_arn_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_invalid_arn_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_parameter_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_parameter_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_parameter_exception::Builder,
 ) -> Result<crate::error::invalid_parameter_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_invalid_parameter_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_tag_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_tag_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_tag_exception::Builder,
 ) -> Result<crate::error::invalid_tag_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_invalid_tag_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_tag_policy_exceptionjson_err(
+pub fn deser_structure_crate_error_tag_policy_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::tag_policy_exception::Builder,
 ) -> Result<crate::error::tag_policy_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_tag_policy_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -239,7 +239,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_tags_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_tags_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_tags_exception::Builder,
 ) -> Result<crate::error::too_many_tags_exception::Builder, smithy_json::deserialize::Error> {
@@ -278,7 +278,7 @@ pub fn deser_structure_too_many_tags_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_in_use_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_in_use_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_in_use_exception::Builder,
 ) -> Result<crate::error::resource_in_use_exception::Builder, smithy_json::deserialize::Error> {
@@ -317,7 +317,7 @@ pub fn deser_structure_resource_in_use_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_certificate(
+pub fn deser_operation_crate_operation_describe_certificate(
     input: &[u8],
     mut builder: crate::output::describe_certificate_output::Builder,
 ) -> Result<crate::output::describe_certificate_output::Builder, smithy_json::deserialize::Error> {
@@ -333,7 +333,9 @@ pub fn deser_operation_describe_certificate(
                 match key.to_unescaped()?.as_ref() {
                     "Certificate" => {
                         builder = builder.set_certificate(
-                            crate::json_deser::deser_structure_certificate_detail(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_certificate_detail(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -354,7 +356,7 @@ pub fn deser_operation_describe_certificate(
     Ok(builder)
 }
 
-pub fn deser_structure_request_in_progress_exceptionjson_err(
+pub fn deser_structure_crate_error_request_in_progress_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::request_in_progress_exception::Builder,
 ) -> Result<crate::error::request_in_progress_exception::Builder, smithy_json::deserialize::Error> {
@@ -393,7 +395,7 @@ pub fn deser_structure_request_in_progress_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_export_certificate(
+pub fn deser_operation_crate_operation_export_certificate(
     input: &[u8],
     mut builder: crate::output::export_certificate_output::Builder,
 ) -> Result<crate::output::export_certificate_output::Builder, smithy_json::deserialize::Error> {
@@ -446,7 +448,7 @@ pub fn deser_operation_export_certificate(
     Ok(builder)
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -485,7 +487,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_account_configuration(
+pub fn deser_operation_crate_operation_get_account_configuration(
     input: &[u8],
     mut builder: crate::output::get_account_configuration_output::Builder,
 ) -> Result<crate::output::get_account_configuration_output::Builder, smithy_json::deserialize::Error>
@@ -502,7 +504,7 @@ pub fn deser_operation_get_account_configuration(
                 match key.to_unescaped()?.as_ref() {
                     "ExpiryEvents" => {
                         builder = builder.set_expiry_events(
-                            crate::json_deser::deser_structure_expiry_events_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_expiry_events_configuration(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -523,7 +525,7 @@ pub fn deser_operation_get_account_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_get_certificate(
+pub fn deser_operation_crate_operation_get_certificate(
     input: &[u8],
     mut builder: crate::output::get_certificate_output::Builder,
 ) -> Result<crate::output::get_certificate_output::Builder, smithy_json::deserialize::Error> {
@@ -569,7 +571,7 @@ pub fn deser_operation_get_certificate(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -608,7 +610,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_import_certificate(
+pub fn deser_operation_crate_operation_import_certificate(
     input: &[u8],
     mut builder: crate::output::import_certificate_output::Builder,
 ) -> Result<crate::output::import_certificate_output::Builder, smithy_json::deserialize::Error> {
@@ -647,7 +649,7 @@ pub fn deser_operation_import_certificate(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_args_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_args_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_args_exception::Builder,
 ) -> Result<crate::error::invalid_args_exception::Builder, smithy_json::deserialize::Error> {
@@ -686,7 +688,7 @@ pub fn deser_structure_invalid_args_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_certificates(
+pub fn deser_operation_crate_operation_list_certificates(
     input: &[u8],
     mut builder: crate::output::list_certificates_output::Builder,
 ) -> Result<crate::output::list_certificates_output::Builder, smithy_json::deserialize::Error> {
@@ -709,7 +711,7 @@ pub fn deser_operation_list_certificates(
                     }
                     "CertificateSummaryList" => {
                         builder = builder.set_certificate_summary_list(
-                            crate::json_deser::deser_list_certificate_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_acm_certificate_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -730,7 +732,7 @@ pub fn deser_operation_list_certificates(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_certificate(
+pub fn deser_operation_crate_operation_list_tags_for_certificate(
     input: &[u8],
     mut builder: crate::output::list_tags_for_certificate_output::Builder,
 ) -> Result<crate::output::list_tags_for_certificate_output::Builder, smithy_json::deserialize::Error>
@@ -746,7 +748,9 @@ pub fn deser_operation_list_tags_for_certificate(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_acm_tag_list(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -766,7 +770,7 @@ pub fn deser_operation_list_tags_for_certificate(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -805,7 +809,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -844,7 +848,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_domain_validation_options_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_domain_validation_options_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_domain_validation_options_exception::Builder,
 ) -> Result<
@@ -886,7 +890,7 @@ pub fn deser_structure_invalid_domain_validation_options_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_request_certificate(
+pub fn deser_operation_crate_operation_request_certificate(
     input: &[u8],
     mut builder: crate::output::request_certificate_output::Builder,
 ) -> Result<crate::output::request_certificate_output::Builder, smithy_json::deserialize::Error> {
@@ -925,7 +929,7 @@ pub fn deser_operation_request_certificate(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_state_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_state_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_state_exception::Builder,
 ) -> Result<crate::error::invalid_state_exception::Builder, smithy_json::deserialize::Error> {
@@ -972,7 +976,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_certificate_detail<'a, I>(
+pub fn deser_structure_crate_model_certificate_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CertificateDetail>, smithy_json::deserialize::Error>
 where
@@ -1010,12 +1014,14 @@ where
                             }
                             "SubjectAlternativeNames" => {
                                 builder = builder.set_subject_alternative_names(
-                                    crate::json_deser::deser_list_domain_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_acm_domain_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "DomainValidationOptions" => {
                                 builder = builder.set_domain_validation_options(
-                                    crate::json_deser::deser_list_domain_validation_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_acm_domain_validation_list(tokens)?
                                 );
                             }
                             "Serial" => {
@@ -1142,7 +1148,9 @@ where
                             }
                             "InUseBy" => {
                                 builder = builder.set_in_use_by(
-                                    crate::json_deser::deser_list_in_use_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_acm_in_use_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "FailureReason" => {
@@ -1172,17 +1180,21 @@ where
                             }
                             "RenewalSummary" => {
                                 builder = builder.set_renewal_summary(
-                                    crate::json_deser::deser_structure_renewal_summary(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_renewal_summary(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "KeyUsages" => {
                                 builder = builder.set_key_usages(
-                                    crate::json_deser::deser_list_key_usage_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_acm_key_usage_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ExtendedKeyUsages" => {
                                 builder = builder.set_extended_key_usages(
-                                    crate::json_deser::deser_list_extended_key_usage_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_acm_extended_key_usage_list(tokens)?
                                 );
                             }
                             "CertificateAuthorityArn" => {
@@ -1209,7 +1221,7 @@ where
                             }
                             "Options" => {
                                 builder = builder.set_options(
-                                    crate::json_deser::deser_structure_certificate_options(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_certificate_options(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1230,7 +1242,7 @@ where
     }
 }
 
-pub fn deser_structure_expiry_events_configuration<'a, I>(
+pub fn deser_structure_crate_model_expiry_events_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ExpiryEventsConfiguration>, smithy_json::deserialize::Error>
 where
@@ -1275,7 +1287,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_certificate_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_acm_certificate_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::CertificateSummary>>, smithy_json::deserialize::Error>
 where
@@ -1294,7 +1306,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_certificate_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_certificate_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1310,7 +1325,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_acm_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -1329,7 +1344,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1345,7 +1360,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_domain_list<'a, I>(
+pub fn deser_list_com_amazonaws_acm_domain_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1383,7 +1398,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_domain_validation_list<'a, I>(
+pub fn deser_list_com_amazonaws_acm_domain_validation_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DomainValidation>>, smithy_json::deserialize::Error>
 where
@@ -1402,7 +1417,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_domain_validation(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_domain_validation(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1418,7 +1436,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_in_use_list<'a, I>(
+pub fn deser_list_com_amazonaws_acm_in_use_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1455,7 +1473,7 @@ where
     }
 }
 
-pub fn deser_structure_renewal_summary<'a, I>(
+pub fn deser_structure_crate_model_renewal_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RenewalSummary>, smithy_json::deserialize::Error>
 where
@@ -1487,7 +1505,7 @@ where
                             }
                             "DomainValidationOptions" => {
                                 builder = builder.set_domain_validation_options(
-                                    crate::json_deser::deser_list_domain_validation_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_acm_domain_validation_list(tokens)?
                                 );
                             }
                             "RenewalStatusReason" => {
@@ -1529,7 +1547,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_key_usage_list<'a, I>(
+pub fn deser_list_com_amazonaws_acm_key_usage_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::KeyUsage>>, smithy_json::deserialize::Error>
 where
@@ -1548,7 +1566,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_key_usage(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_key_usage(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1564,7 +1583,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_extended_key_usage_list<'a, I>(
+pub fn deser_list_com_amazonaws_acm_extended_key_usage_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ExtendedKeyUsage>>, smithy_json::deserialize::Error>
 where
@@ -1583,7 +1602,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_extended_key_usage(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_extended_key_usage(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1598,7 +1620,7 @@ where
     }
 }
 
-pub fn deser_structure_certificate_options<'a, I>(
+pub fn deser_structure_crate_model_certificate_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CertificateOptions>, smithy_json::deserialize::Error>
 where
@@ -1643,7 +1665,7 @@ where
     }
 }
 
-pub fn deser_structure_certificate_summary<'a, I>(
+pub fn deser_structure_crate_model_certificate_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CertificateSummary>, smithy_json::deserialize::Error>
 where
@@ -1697,7 +1719,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -1751,7 +1773,7 @@ where
     }
 }
 
-pub fn deser_structure_domain_validation<'a, I>(
+pub fn deser_structure_crate_model_domain_validation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DomainValidation>, smithy_json::deserialize::Error>
 where
@@ -1780,7 +1802,7 @@ where
                             }
                             "ValidationEmails" => {
                                 builder = builder.set_validation_emails(
-                                    crate::json_deser::deser_list_validation_email_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_acm_validation_email_list(tokens)?
                                 );
                             }
                             "ValidationDomain" => {
@@ -1806,7 +1828,9 @@ where
                             }
                             "ResourceRecord" => {
                                 builder = builder.set_resource_record(
-                                    crate::json_deser::deser_structure_resource_record(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_resource_record(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ValidationMethod" => {
@@ -1840,7 +1864,7 @@ where
     }
 }
 
-pub fn deser_structure_key_usage<'a, I>(
+pub fn deser_structure_crate_model_key_usage<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::KeyUsage>, smithy_json::deserialize::Error>
 where
@@ -1888,7 +1912,7 @@ where
     }
 }
 
-pub fn deser_structure_extended_key_usage<'a, I>(
+pub fn deser_structure_crate_model_extended_key_usage<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ExtendedKeyUsage>, smithy_json::deserialize::Error>
 where
@@ -1947,7 +1971,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_validation_email_list<'a, I>(
+pub fn deser_list_com_amazonaws_acm_validation_email_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1984,7 +2008,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_record<'a, I>(
+pub fn deser_structure_crate_model_resource_record<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceRecord>, smithy_json::deserialize::Error>
 where
